@@ -14,7 +14,7 @@ export default function PrivacyPage() {
         {/* Header */}
         <div className="mb-12 pb-8 border-b border-slate-200">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-3">Privacy Policy</h1>
-          <p className="text-sm text-slate-500">Last updated: March 2025</p>
+          <p className="text-sm text-slate-500">Last updated: March 2026</p>
         </div>
 
         <div className="prose prose-slate max-w-none space-y-10 text-slate-700">
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Introduction</h2>
             <p className="leading-relaxed">
-              BookedOnCall Inc. (&quot;BookedOnCall,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our AI phone answering and appointment booking platform (the &quot;Service&quot;).
+              BookedOnCall (&quot;BookedOnCall,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our AI phone answering and appointment booking platform (the &quot;Service&quot;).
             </p>
             <p className="leading-relaxed mt-3">
               By using the Service, you consent to the practices described in this policy. If you do not agree with this policy, please do not use the Service.
@@ -101,7 +101,13 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Caller Privacy</h2>
             <p className="leading-relaxed">
-              When BookedOnCall answers a call on your behalf, the caller is speaking with an automated service. Depending on your jurisdiction, you may be required to notify callers that they are being recorded or speaking with an AI. You are responsible for complying with applicable call recording consent laws in your state. BookedOnCall provides a default disclosure at the start of calls that can be customized in your account settings.
+              When BookedOnCall answers a call on your behalf, the caller is speaking with an AI-powered automated service. Calls are recorded and transcribed to provide you with call summaries and to improve service quality.
+            </p>
+            <p className="leading-relaxed mt-3">
+              <strong className="text-slate-900">Important — Call Recording Consent:</strong> U.S. states have different laws regarding call recording consent. Some states (including California, Connecticut, Florida, Illinois, Maryland, Massachusetts, Montana, New Hampshire, Pennsylvania, and Washington) require <strong>all-party consent</strong>, meaning every person on the call must be informed that the call is being recorded. Other states require only one-party consent. <strong>You are responsible for ensuring compliance with the call recording and AI disclosure laws in your state and the states where your callers are located.</strong>
+            </p>
+            <p className="leading-relaxed mt-3">
+              BookedOnCall provides a configurable disclosure option at the start of calls. We strongly recommend enabling this disclosure, especially if you operate in or receive calls from two-party consent states. Failure to comply with applicable consent laws may result in legal liability for you as the business operator. BookedOnCall is not responsible for your compliance with local recording consent or AI disclosure requirements.
             </p>
           </section>
 
@@ -145,7 +151,7 @@ export default function PrivacyPage() {
               If you have questions about this Privacy Policy or how we handle your data, please contact us:
             </p>
             <div className="mt-4 bg-slate-50 border border-slate-200 rounded-xl p-5 text-sm text-slate-600 space-y-1">
-              <p><strong className="text-slate-900">BookedOnCall Inc.</strong></p>
+              <p><strong className="text-slate-900">BookedOnCall</strong></p>
               <p>Email: <a href="mailto:privacy@bookedoncall.com" className="text-amber-600 hover:underline">privacy@bookedoncall.com</a></p>
               <p>Website: <a href="https://bookedoncall.com" className="text-amber-600 hover:underline">bookedoncall.com</a></p>
             </div>

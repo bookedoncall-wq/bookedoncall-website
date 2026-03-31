@@ -14,7 +14,7 @@ export default function TermsPage() {
         {/* Header */}
         <div className="mb-12 pb-8 border-b border-slate-200">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-3">Terms of Service</h1>
-          <p className="text-sm text-slate-500">Last updated: March 2025</p>
+          <p className="text-sm text-slate-500">Last updated: March 2026</p>
         </div>
 
         <div className="prose prose-slate max-w-none space-y-10 text-slate-700">
@@ -25,7 +25,7 @@ export default function TermsPage() {
               By accessing or using the BookedOnCall platform, website, or any related services (collectively, the &quot;Service&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree to these Terms, do not use the Service. These Terms apply to all visitors, users, and others who access or use the Service.
             </p>
             <p className="leading-relaxed mt-3">
-              BookedOnCall Inc. (&quot;BookedOnCall,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) reserves the right to modify these Terms at any time. We will provide notice of material changes by updating the &quot;Last updated&quot; date above. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms.
+              BookedOnCall (&quot;BookedOnCall,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) reserves the right to modify these Terms at any time. We will provide notice of material changes by updating the &quot;Last updated&quot; date above. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms.
             </p>
           </section>
 
@@ -115,7 +115,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">10. Governing Law</h2>
             <p className="leading-relaxed">
-              These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved exclusively in the state or federal courts located in Delaware.
+              These Terms shall be governed by and construed in accordance with the laws of the United States and the state in which BookedOnCall is incorporated or registered at the time any dispute arises. The specific governing jurisdiction will be updated in these Terms upon formal incorporation. Any disputes arising under these Terms shall be resolved in the courts of the applicable jurisdiction.
             </p>
           </section>
 

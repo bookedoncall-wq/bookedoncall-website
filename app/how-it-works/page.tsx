@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "See exactly how BookedOnCall answers calls, qualifies leads, and books appointments in under 2 minutes.",
+    "See exactly how BookedOnCall answers calls, qualifies leads, and books appointments — step by step.",
   alternates: { canonical: `${siteConfig.url}/how-it-works` },
 }
 
@@ -88,10 +88,10 @@ export default function HowItWorksPage() {
             From ring to booked
           </div>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-5 tracking-tight">
-            From Ring to Booked<br />in Under 2 Minutes
+            From Ring to Booked<br />in Minutes
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed">
-            Here&apos;s exactly what happens when a customer calls your number — step by step.
+            Here&apos;s exactly what happens when a customer calls your number — most calls go from ring to booked in just a few minutes.
           </p>
         </div>
       </section>
@@ -159,12 +159,12 @@ export default function HowItWorksPage() {
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Complex or unusual requests</h3>
                 <p className="text-slate-600 leading-relaxed mb-5">
                   When a caller has an unusual request, needs a custom quote, or asks something outside
-                  the standard flow, BookedOnCall handles it gracefully and flags it for your follow-up.
+                  the standard flow, BookedOnCall captures their information and ensures nothing falls through the cracks.
                 </p>
                 <ul className="space-y-2">
                   {[
-                    "Caller is informed that you'll personally follow up on their request",
-                    "Full call details and notes are sent to you immediately",
+                    "AI captures the caller's info for a live callback from you",
+                    "Full call details and notes are forwarded to you via SMS immediately",
                     "Job is flagged as needing your review in the dashboard",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
@@ -184,13 +184,13 @@ export default function HowItWorksPage() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Emergency handling</h3>
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  Burst pipe at midnight? Gas smell? BookedOnCall detects emergency language and escalates
-                  immediately — no waiting, no voicemail.
+                  Burst pipe at midnight? Gas smell? BookedOnCall detects emergency language, captures the
+                  caller&apos;s details, and gets you notified urgently — no voicemail, no waiting.
                 </p>
                 <ul className="space-y-2">
                   {[
                     "Emergency keyword detection in natural conversation",
-                    "You receive an urgent SMS alert right away",
+                    "You receive an urgent SMS alert with caller details right away",
                     "Caller is offered your emergency callback or on-call number",
                     "Emergency rate information shared upfront",
                   ].map((item) => (
@@ -214,17 +214,17 @@ export default function HowItWorksPage() {
             Ready to never miss a call again?
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            10-minute setup. Works with Jobber and Google Calendar. One answered call can pay for the whole month.
+            Quick setup. Works with Jobber and Google Calendar. One answered call can pay for the whole month.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/pricing"
+              href="/sign-up"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 rounded-lg border-transparent"
               )}
             >
-              Get Started
+              Join the Waitlist
             </Link>
             <Link
               href="/pricing"

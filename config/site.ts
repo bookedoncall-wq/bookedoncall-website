@@ -3,14 +3,8 @@ export const siteConfig = {
   description:
     "Every call answered. Every job booked. AI call answering built for the trades.",
   url: "https://bookedoncall.com",
-  appUrl: "https://app.bookedoncall.com",
-  signUpUrl: "https://app.bookedoncall.com/sign-up",
-  loginUrl: "https://app.bookedoncall.com/sign-in",
   email: "bookedoncall@bookedoncall.com",
-  socials: {
-    instagram: "https://instagram.com/bookedoncall",
-    facebook: "https://facebook.com/bookedoncall",
-  },
+  founderLinkedIn: "https://www.linkedin.com/in/david-carley/",
   trades: [
     "Electricians",
     "Plumbers",

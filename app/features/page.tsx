@@ -161,17 +161,17 @@ export default function FeaturesPage() {
             All of this, starting at $250/month
           </h2>
           <p className="text-amber-100 text-lg mb-10">
-            One answered call can pay for the whole month. Set up in under 10 minutes.
+            One answered call can pay for the whole month. Quick, guided setup.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/pricing"
+              href="/sign-up"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "bg-white hover:bg-amber-50 text-amber-600 font-bold px-8 rounded-lg shadow border-transparent"
               )}
             >
-              Get Started
+              Join the Waitlist
             </Link>
             <Link
               href="/pricing"

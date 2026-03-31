@@ -5,7 +5,6 @@ import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/config/site"
 import { plans } from "@/config/pricing"
-import { PlanCheckoutButton } from "@/components/PlanCheckoutButton"
 import { HeroGraphic } from "@/components/sections/HeroGraphic"
 import {
   PhoneMissed,
@@ -18,6 +17,8 @@ import {
   Clock,
   Check,
   Wrench,
+  Play,
+  ArrowRight,
 } from "lucide-react"
 
 export default function HomePage() {
@@ -43,13 +44,13 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
                 <Link
-                  href="/pricing"
+                  href="/sign-up"
                   className={cn(
                     buttonVariants({ size: "lg" }),
                     "bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 text-lg rounded-lg shadow-md border-transparent"
                   )}
                 >
-                  Get Started
+                  Join the Waitlist
                 </Link>
                 <Link
                   href="/how-it-works"
@@ -88,9 +89,9 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
             {[
-              { icon: Phone, text: "Answers in under 2 seconds" },
+              { icon: Phone, text: "Answers on the first ring" },
               { icon: Clock, text: "Works 24/7 — nights & weekends" },
-              { icon: Zap, text: "10-minute setup" },
+              { icon: Zap, text: "Quick, guided setup" },
             ].map((item) => (
               <div key={item.text} className="flex items-center justify-center gap-2 text-white">
                 <item.icon className="w-4 h-4 text-amber-400" />
@@ -269,6 +270,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* AUDIO DEMO */}
+      <section className="bg-slate-950 py-20 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-amber-500/20">
+            <Phone className="w-3.5 h-3.5" />
+            Hear it in action
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
+            Listen to a sample call
+          </h2>
+          <p className="text-slate-400 text-lg mb-10 leading-relaxed">
+            Hear how BookedOnCall handles a real plumbing inquiry — from greeting to booking confirmation.
+          </p>
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-lg mx-auto">
+            <div className="w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center mx-auto mb-5">
+              <Play className="w-8 h-8 text-amber-400" />
+            </div>
+            <p className="text-white font-semibold mb-2">Audio Demo</p>
+            <p className="text-slate-500 text-sm mb-6">Sample call: Emergency plumbing booking</p>
+            <div className="bg-slate-800 rounded-lg h-12 flex items-center justify-center">
+              <p className="text-slate-500 text-sm">Coming soon — demo recording in progress</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* INTEGRATIONS */}
       <section className="bg-slate-50 border-y border-slate-200 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -334,11 +361,17 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <PlanCheckoutButton
-                    planId={plan.planId}
-                    label={plan.cta}
-                    highlighted={plan.highlighted}
-                  />
+                  <Link
+                    href="/sign-up"
+                    className={cn(
+                      "w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-base transition-colors",
+                      plan.highlighted
+                        ? "bg-amber-500 hover:bg-amber-400 text-white shadow-sm"
+                        : "bg-slate-900 hover:bg-slate-800 text-white"
+                    )}
+                  >
+                    Join the Waitlist
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -362,18 +395,18 @@ export default function HomePage() {
             <span className="text-amber-400">Start booking more jobs.</span>
           </h2>
           <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            10-minute setup. Works with Jobber and Google Calendar. One answered call can pay for the whole month.
+            Quick setup. Works with Jobber and Google Calendar. One answered call can pay for the whole month.
           </p>
           <Link
-            href="/pricing"
+            href="/sign-up"
             className={cn(
               buttonVariants({ size: "lg" }),
               "bg-amber-500 hover:bg-amber-400 text-white font-bold px-10 text-lg rounded-lg shadow-lg border-transparent"
             )}
           >
-            Get Started Today
+            Join the Waitlist
           </Link>
-          <p className="text-slate-600 text-sm mt-4">Setup in under 10 minutes</p>
+          <p className="text-slate-600 text-sm mt-4">Launching soon — be first in line</p>
         </div>
       </section>
     </>

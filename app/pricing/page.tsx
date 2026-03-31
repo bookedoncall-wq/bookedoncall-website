@@ -1,10 +1,12 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { buttonVariants } from "@/lib/button-variants"
+import { cn } from "@/lib/utils"
 import { siteConfig } from "@/config/site"
 import { plans } from "@/config/pricing"
-import { PlanCheckoutButton } from "@/components/PlanCheckoutButton"
 import { Check, HelpCircle, Phone, Clock } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -100,12 +102,18 @@ export default function PricingPage() {
                     ))}
                   </ul>
 
-                  {/* Stripe checkout CTA */}
-                  <PlanCheckoutButton
-                    planId={plan.planId}
-                    label={plan.cta}
-                    highlighted={plan.highlighted}
-                  />
+                  {/* Waitlist CTA */}
+                  <Link
+                    href="/sign-up"
+                    className={cn(
+                      "w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-base transition-colors",
+                      plan.highlighted
+                        ? "bg-amber-500 hover:bg-amber-400 text-white shadow-sm"
+                        : "bg-slate-900 hover:bg-slate-800 text-white"
+                    )}
+                  >
+                    Join the Waitlist
+                  </Link>
                   <p className="text-xs text-slate-400 text-center mt-3">
                     Billed monthly. Cancel anytime.
                   </p>
@@ -186,24 +194,19 @@ export default function PricingPage() {
             Every call answered starts here.
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            10-minute setup. Works with Jobber and Google Calendar — tools you already use.
+            Quick setup. Works with Jobber and Google Calendar — tools you already use.
           </p>
-          <PlanCheckoutButton
-            planId="pro"
-            label="Get Started Today"
-            highlighted={true}
-            className="max-w-xs mx-auto text-lg px-10 py-4"
-          />
+          <Link
+            href="/sign-up"
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "bg-amber-500 hover:bg-amber-400 text-white font-bold max-w-xs mx-auto text-lg px-10 py-4 rounded-lg border-transparent"
+            )}
+          >
+            Join the Waitlist
+          </Link>
           <p className="text-slate-600 text-sm mt-4">
-            Already have an account?{" "}
-            <a
-              href={siteConfig.loginUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-amber-500 hover:text-amber-400 underline underline-offset-2"
-            >
-              Log in
-            </a>
+            Launching soon — be first in line
           </p>
         </div>
       </section>

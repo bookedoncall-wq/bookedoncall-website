@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Features", href: "/features" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
 ]
 
 export default function Nav() {
@@ -41,22 +42,14 @@ export default function Nav() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href={siteConfig.loginUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
-            >
-              Log In
-            </a>
             <Link
-              href="/pricing"
+              href="/sign-up"
               className={cn(
                 buttonVariants({ size: "sm" }),
                 "bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-lg border-transparent"
               )}
             >
-              Get Started
+              Join the Waitlist
             </Link>
           </div>
 
@@ -86,26 +79,15 @@ export default function Nav() {
               </Link>
             ))}
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
-              <a
-                href={siteConfig.loginUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "sm" }),
-                  "w-full justify-center"
-                )}
-              >
-                Log In
-              </a>
               <Link
-                href="/pricing"
+                href="/sign-up"
                 className={cn(
                   buttonVariants({ size: "sm" }),
                   "w-full justify-center bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-lg border-transparent"
                 )}
                 onClick={() => setMobileOpen(false)}
               >
-                Get Started
+                Join the Waitlist
               </Link>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { siteConfig } from "@/config/site"
-import { Mail } from "lucide-react"
+import { Mail, ExternalLink } from "lucide-react"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -47,8 +47,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-sm hover:text-white transition-colors">
-                  Get Started
+                <Link href="/about" className="text-sm hover:text-white transition-colors">
+                  About
                 </Link>
               </li>
             </ul>
@@ -71,28 +71,19 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social / Connect */}
+          {/* Connect */}
           <div>
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Connect</h4>
             <ul className="space-y-3">
               <li>
                 <a
-                  href={siteConfig.socials.instagram}
+                  href={siteConfig.founderLinkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-sm hover:text-white transition-colors"
                 >
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href={siteConfig.socials.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm hover:text-white transition-colors"
-                >
-                  Facebook
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  LinkedIn
                 </a>
               </li>
               <li>
