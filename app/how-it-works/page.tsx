@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "See exactly how BookedOnCall answers calls, qualifies leads, and books appointments — step by step.",
+    "How BookedOnCall works: AI answers your business calls, qualifies leads, checks your calendar, and books appointments automatically. Integrates with Jobber and Google Calendar.",
   alternates: { canonical: `${siteConfig.url}/how-it-works` },
 }
 
@@ -31,7 +31,7 @@ const steps = [
     icon: Phone,
     title: "Customer calls your business number",
     description:
-      "A potential customer dials your forwarded business number. BookedOnCall picks up on the first ring — no hold music, no voicemail, no missed opportunity. Available 24/7, including evenings and weekends.",
+      "A potential customer dials your forwarded business number. BookedOnCall picks up fast so they never hit voicemail. Available 24/7, including evenings and weekends.",
     detail: "Your existing phone number can be forwarded directly, or we provide a new local number.",
   },
   {
@@ -39,9 +39,9 @@ const steps = [
     icon: Bot,
     title: "BookedOnCall answers immediately",
     description:
-      "Your AI booking assistant greets the caller with a professional, natural-sounding introduction using your business name. There's no robotic tone — callers engage naturally and get the help they need right away.",
+      "Your AI booking assistant greets the caller with a professional, natural-sounding introduction using your business name. No robotic tone. Callers engage naturally and get the help they need right away.",
     detail:
-      "Example: \"Thanks for calling Mike's Plumbing! I'm the booking assistant — I can get you scheduled today. What's going on?\"",
+      "Example: \"Thanks for calling Mike's Plumbing! I'm the booking assistant. I can get you scheduled today. What's going on?\"",
   },
   {
     number: "03",
@@ -49,7 +49,7 @@ const steps = [
     title: "AI captures name and service needed",
     description:
       "BookedOnCall asks the right qualifying questions: what service do you need, is this an emergency, when are you available? It captures the caller's name, phone number, and full job details.",
-    detail: "The AI handles interruptions, accents, and unclear answers — just like a real person would.",
+    detail: "The AI handles interruptions, accents, and unclear answers the way a real person would.",
   },
   {
     number: "04",
@@ -64,7 +64,7 @@ const steps = [
     icon: DollarSign,
     title: "Presents pricing and gets confirmation",
     description:
-      "The AI shares your standard service rates and any diagnostic or trip fees — exactly how you've configured them. The caller confirms they're ready to proceed before anything gets booked.",
+      "The AI shares your standard service rates and any diagnostic or trip fees, exactly how you've configured them. The caller confirms they're ready to proceed before anything gets booked.",
     detail: "You control the pricing script. Edit it anytime from your dashboard.",
   },
   {
@@ -73,7 +73,7 @@ const steps = [
     title: "Books the appointment and sends SMS confirmation",
     description:
       "The job is added to your calendar. The caller receives an SMS confirmation with the appointment details. You receive a text notification with a full summary: name, address, service, time, and any notes.",
-    detail: "Calendar event and Jobber job are created automatically — zero manual entry needed.",
+    detail: "Calendar event and Jobber job are created automatically. Zero manual entry needed.",
   },
 ]
 
@@ -85,13 +85,13 @@ export default function HowItWorksPage() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-800 text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-amber-200">
             <Phone className="w-3.5 h-3.5" />
-            From ring to booked
+            From call to booked
           </div>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-5 tracking-tight">
-            From Ring to Booked<br />in Minutes
+            From Call to Booked<br />in Minutes
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed">
-            Here&apos;s exactly what happens when a customer calls your number — most calls go from ring to booked in just a few minutes.
+            Here&apos;s exactly what happens when a customer calls your number. Most calls go from first ring to confirmed booking in just a few minutes.
           </p>
         </div>
       </section>
@@ -145,7 +145,7 @@ export default function HowItWorksPage() {
             </h2>
             <p className="text-slate-600 mt-4 text-lg leading-relaxed">
               Not every call is a straightforward booking. BookedOnCall is built to handle edge cases
-              gracefully — without leaving anyone on hold or sending them to voicemail.
+              gracefully, without leaving anyone on hold or sending them to voicemail.
             </p>
           </div>
 
@@ -185,7 +185,7 @@ export default function HowItWorksPage() {
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Emergency handling</h3>
                 <p className="text-slate-600 leading-relaxed mb-5">
                   Burst pipe at midnight? Gas smell? BookedOnCall detects emergency language, captures the
-                  caller&apos;s details, and gets you notified urgently — no voicemail, no waiting.
+                  caller&apos;s details, and gets you notified urgently. No voicemail, no waiting.
                 </p>
                 <ul className="space-y-2">
                   {[
@@ -214,7 +214,7 @@ export default function HowItWorksPage() {
             Ready to never miss a call again?
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            Quick setup. Works with Jobber and Google Calendar. One answered call can pay for the whole month.
+            Works with Jobber and Google Calendar. One answered call can pay for the whole month.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

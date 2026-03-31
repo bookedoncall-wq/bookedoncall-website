@@ -39,8 +39,8 @@ export default function HomePage() {
                 <span className="text-amber-500">Every Job Booked.</span>
               </h1>
               <p className="text-xl text-slate-600 max-w-xl mb-10 leading-relaxed">
-                While you&apos;re working, we&apos;re answering. BookedOnCall picks up every call,
-                qualifies the lead, and books the appointment — automatically.
+                While you&apos;re on the job, BookedOnCall picks up your calls,
+                qualifies the lead, and books the appointment automatically.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
                 <Link
@@ -89,8 +89,8 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
             {[
-              { icon: Phone, text: "Answers on the first ring" },
-              { icon: Clock, text: "Works 24/7 — nights & weekends" },
+              { icon: Phone, text: "Picks up fast, every time" },
+              { icon: Clock, text: "Works 24/7, nights and weekends" },
               { icon: Zap, text: "Quick, guided setup" },
             ].map((item) => (
               <div key={item.text} className="flex items-center justify-center gap-2 text-white">
@@ -110,7 +110,7 @@ export default function HomePage() {
               Every missed call is a missed paycheck
             </h2>
             <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
-              You&apos;re on the job. Your phone rings. Here&apos;s what happens next — and what it costs you.
+              You&apos;re on the job. Your phone rings. Here&apos;s what happens next, and what it costs you.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -121,7 +121,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Missed calls = missed jobs</h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
-                  Most callers won&apos;t leave a voicemail — they&apos;ll call your competitor instead. Every
+                  Most callers won&apos;t leave a voicemail. They&apos;ll call your competitor instead. Every
                   unanswered ring is real revenue walking out the door.
                 </p>
               </CardContent>
@@ -133,8 +133,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3">First to answer wins the job</h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
-                  Even if they leave a message, they&apos;ve already called someone else. Response time wins
-                  jobs in the trades — and we answer on the first ring.
+                  Even if they leave a message, they&apos;ve already called someone else. In the trades,
+                  the fastest response wins the job. BookedOnCall makes sure that&apos;s you.
                 </p>
               </CardContent>
             </Card>
@@ -146,7 +146,7 @@ export default function HomePage() {
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Your hands are full</h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
                   You&apos;re in the middle of a job. You can&apos;t stop to take calls, and you shouldn&apos;t have to.
-                  That&apos;s what BookedOnCall is for.
+                  BookedOnCall handles it so you can keep working.
                 </p>
               </CardContent>
             </Card>
@@ -171,7 +171,7 @@ export default function HomePage() {
                 step: "1",
                 icon: Phone,
                 title: "Customer calls",
-                desc: "Your business number rings. BookedOnCall picks up instantly — every time, day or night.",
+                desc: "Your business number rings. BookedOnCall picks up the call, day or night, weekday or weekend.",
               },
               {
                 step: "2",
@@ -216,7 +216,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              Everything a receptionist does — automated
+              Everything a receptionist does, automated
             </h2>
             <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
               No training required. No sick days. No overtime.
@@ -242,7 +242,7 @@ export default function HomePage() {
               {
                 icon: Zap,
                 title: "Jobber & Calendar Sync",
-                desc: "Plugs directly into Jobber and Google Calendar — tools you already use.",
+                desc: "Plugs directly into Jobber and Google Calendar. Works with tools you already use.",
               },
             ].map((feat) => (
               <Card
@@ -281,7 +281,7 @@ export default function HomePage() {
             Listen to a sample call
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            Hear how BookedOnCall handles a real plumbing inquiry — from greeting to booking confirmation.
+            Hear how BookedOnCall handles a real plumbing inquiry, from greeting to booking confirmation.
           </p>
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-lg mx-auto">
             <div className="w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center mx-auto mb-5">
@@ -290,7 +290,7 @@ export default function HomePage() {
             <p className="text-white font-semibold mb-2">Audio Demo</p>
             <p className="text-slate-500 text-sm mb-6">Sample call: Emergency plumbing booking</p>
             <div className="bg-slate-800 rounded-lg h-12 flex items-center justify-center">
-              <p className="text-slate-500 text-sm">Coming soon — demo recording in progress</p>
+              <p className="text-slate-500 text-sm">Coming soon</p>
             </div>
           </div>
         </div>
@@ -406,7 +406,7 @@ export default function HomePage() {
           >
             Join the Waitlist
           </Link>
-          <p className="text-slate-600 text-sm mt-4">Launching soon — be first in line</p>
+          <p className="text-slate-600 text-sm mt-4">Launching soon. Be first in line.</p>
         </div>
       </section>
     </>

@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "BookedOnCall Terms of Service — read our terms before using the platform.",
+  description: "BookedOnCall Terms of Service. Read our terms before using the platform.",
   alternates: { canonical: `${siteConfig.url}/terms` },
 }
 

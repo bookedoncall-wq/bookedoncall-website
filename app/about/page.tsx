@@ -18,7 +18,7 @@ import { Card, CardContent } from "@/components/ui/card"
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The story behind BookedOnCall — why we're building the AI receptionist that trades businesses deserve.",
+    "About BookedOnCall: founded to solve missed calls for trades professionals. AI-powered call answering so plumbers, electricians, and HVAC techs never lose a job because they couldn't pick up the phone.",
   alternates: { canonical: `${siteConfig.url}/about` },
 }
 
@@ -27,7 +27,7 @@ const values = [
     icon: Phone,
     title: "Every Call Matters",
     description:
-      "Behind every ring is a homeowner with a problem and a tradesperson who can solve it. We exist to make sure those two connect — every single time.",
+      "Behind every ring is a homeowner with a problem and a tradesperson who can solve it. We exist to make sure those two connect, every single time.",
   },
   {
     icon: Users,
@@ -39,13 +39,13 @@ const values = [
     icon: Heart,
     title: "Respect the Trade",
     description:
-      "Tradespeople build and fix the world with their hands. We build technology that honors that work — never replaces it, always supports it.",
+      "Tradespeople build and fix the world with their hands. We build technology that honors that work. We never replace it. We always support it.",
   },
   {
     icon: Target,
     title: "Simple by Design",
     description:
-      "If it takes an hour to set up or a manual to operate, we've failed. BookedOnCall should feel as natural as answering your own phone — just better.",
+      "If it takes an hour to set up or a manual to operate, we've failed. BookedOnCall should feel as natural as answering your own phone, only faster.",
   },
 ]
 
@@ -82,7 +82,7 @@ export default function AboutPage() {
           <div className="prose prose-slate max-w-none text-slate-700 space-y-6">
             <p className="text-lg leading-relaxed">
               I grew up around the trades. My family, my neighbors, the people I looked up to
-              as a kid — they were plumbers, electricians, HVAC techs, and contractors. I watched
+              as a kid were plumbers, electricians, HVAC techs, and contractors. I watched
               them leave for work before sunrise and come home after dark, building and fixing
               the things the rest of us take for granted. They took immense pride in their craft,
               and the community trusted them with their homes.
@@ -92,24 +92,24 @@ export default function AboutPage() {
               But I also watched something else: the phone would ring while they were elbow-deep
               in a job, and it would go to voicemail. Or it would ring at dinner, on a Saturday
               morning, at 10 p.m. on a Tuesday. And more often than not, the caller didn&apos;t
-              leave a message — they just called someone else. That&apos;s the harsh reality of the
+              leave a message. They just called someone else. That&apos;s the harsh reality of the
               trades: <span className="font-semibold text-slate-900">missed calls are missed money</span>.
               I saw it firsthand growing up, and I saw it again years later when I was having my
               own house renovated.
             </p>
 
             <p className="text-lg leading-relaxed">
-              The contractor doing my renovation was one of the best in the area — meticulous work,
+              The contractor doing my renovation was one of the best in the area. Meticulous work,
               fair pricing, great reputation. But he was constantly losing leads because he was a
               one-man operation. While he was on a ladder or under a sink, potential customers were
               calling and getting silence. The big outfits with dedicated receptionists and office
-              staff were scooping up the work, not because they were better at the trade — but
+              staff were scooping up the work, not because they were better at the trade, but
               because they could answer the phone.
             </p>
 
             <p className="text-lg leading-relaxed">
               That felt deeply wrong to me. The solopreneur, the two-person crew, the family-run
-              business — <span className="font-semibold text-slate-900">they&apos;re the backbone of this industry</span>.
+              business, <span className="font-semibold text-slate-900">they&apos;re the backbone of this industry</span>.
               They do exceptional work. They show up, they care, they stand behind what they build.
               But they don&apos;t have the resources for a full-time receptionist. They can&apos;t afford
               to hire someone just to answer the phone. And they shouldn&apos;t have to choose between
@@ -117,15 +117,15 @@ export default function AboutPage() {
             </p>
 
             <p className="text-lg leading-relaxed">
-              That&apos;s why I built BookedOnCall. Not to replace the personal touch — but to make sure
+              That&apos;s why I built BookedOnCall. Not to replace the personal touch, but to make sure
               it&apos;s there even when the tradesperson can&apos;t be. An AI receptionist that picks up
-              on the first ring, qualifies the caller, checks your schedule, and books the job —
-              so you never lose work just because your hands were full.
+              your calls, qualifies the caller, checks your schedule, and books the job so you
+              never lose work just because your hands were full.
             </p>
 
             <p className="text-lg leading-relaxed font-semibold text-slate-900">
               My goal is to democratize what the big companies have always had and make it accessible
-              to every trades professional — so they can grow their livelihood, provide quality service
+              to every trades professional so they can grow their livelihood, provide quality service
               to their customers, and never have to worry about what they might be missing.
             </p>
           </div>
@@ -196,7 +196,7 @@ export default function AboutPage() {
             We&apos;re building this for you.
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            BookedOnCall is launching soon. Join the waitlist to be the first to know — and
+            BookedOnCall is launching soon. Join the waitlist to be the first to know and
             to help shape what we build next.
           </p>
           <Link

@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "BookedOnCall Privacy Policy — how we collect, use, and protect your data.",
+  description: "BookedOnCall Privacy Policy. How we collect, use, and protect your data.",
   alternates: { canonical: `${siteConfig.url}/privacy` },
 }
 
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
 
             <h3 className="text-lg font-semibold text-slate-800 mt-5 mb-2">Integration Data</h3>
             <p className="leading-relaxed">
-              If you connect third-party services like Jobber or Google Calendar, we access data from those platforms as authorized by you — including calendar availability and existing job records.
+              If you connect third-party services like Jobber or Google Calendar, we access data from those platforms as authorized by you, including calendar availability and existing job records.
             </p>
 
             <h3 className="text-lg font-semibold text-slate-800 mt-5 mb-2">Usage Data</h3>

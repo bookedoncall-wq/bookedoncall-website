@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 }
 
 const highlights = [
-  { icon: Phone, text: "AI answers every call on the first ring" },
+  { icon: Phone, text: "AI answers every call, fast" },
   { icon: CalendarCheck, text: "Books appointments directly into your calendar" },
   { icon: Wrench, text: "Integrates with Jobber and Google Calendar" },
-  { icon: Zap, text: "Quick, guided setup — we walk you through it" },
+  { icon: Zap, text: "Quick, guided setup. We walk you through it." },
 ]
 
 export default function WaitlistPage() {

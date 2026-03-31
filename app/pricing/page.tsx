@@ -12,7 +12,7 @@ import { Check, HelpCircle, Phone, Clock } from "lucide-react"
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Simple, transparent pricing for BookedOnCall. One answered call can pay for the whole month. No setup fees. Cancel anytime.",
+    "BookedOnCall pricing: AI call answering for trades businesses starting at $250/month. Includes Jobber integration, Google Calendar sync, SMS confirmations. No setup fees, cancel anytime.",
   alternates: { canonical: `${siteConfig.url}/pricing` },
 }
 
@@ -39,9 +39,26 @@ const faqs = [
   },
 ]
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+}
+
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* HERO */}
       <section className="bg-white py-28 px-4 border-b border-slate-100">
         <div className="max-w-2xl mx-auto text-center">
@@ -134,7 +151,7 @@ export default function PricingPage() {
                   <p className="text-slate-600 text-sm leading-relaxed">
                     You get a block of minutes each month. Use them for as many calls as you need.
                     If you go over, extra minutes are{" "}
-                    <span className="font-semibold text-slate-900">$0.75/minute</span> — added to
+                    <span className="font-semibold text-slate-900">$0.75/minute</span>, added to
                     your next invoice automatically. Track your usage anytime from your dashboard.
                   </p>
                 </div>
@@ -194,7 +211,7 @@ export default function PricingPage() {
             Every call answered starts here.
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            Quick setup. Works with Jobber and Google Calendar — tools you already use.
+            Works with Jobber and Google Calendar, tools you already use.
           </p>
           <Link
             href="/sign-up"
@@ -206,7 +223,7 @@ export default function PricingPage() {
             Join the Waitlist
           </Link>
           <p className="text-slate-600 text-sm mt-4">
-            Launching soon — be first in line
+            Launching soon. Be first in line.
           </p>
         </div>
       </section>

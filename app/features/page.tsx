@@ -24,7 +24,7 @@ import {
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Every feature BookedOnCall provides to automatically answer calls, qualify leads, and book jobs for your trades business.",
+    "BookedOnCall features: AI voice answering, lead qualification, automatic booking, SMS confirmations, Jobber and Google Calendar integration, emergency detection, and more for trades businesses.",
   alternates: { canonical: `${siteConfig.url}/features` },
 }
 
@@ -33,13 +33,13 @@ const features = [
     icon: Phone,
     name: "AI Voice Answering",
     description:
-      "Your calls are answered immediately by a natural-sounding AI — no robotic tone, no long pauses. Callers hear your business name and feel like they reached a real receptionist.",
+      "Your calls are answered fast by a natural-sounding AI voice. No robotic tone, no long pauses. Callers hear your business name and feel like they reached a real receptionist.",
   },
   {
     icon: UserCheck,
     name: "Lead Qualification",
     description:
-      "The AI asks the right questions to determine if the caller is a qualified lead: what service they need, their location, their timeline, and their budget expectations — before any booking happens.",
+      "The AI asks the right questions to determine if the caller is a qualified lead: what service they need, their location, their timeline, and their budget expectations. All before any booking happens.",
   },
   {
     icon: CalendarCheck,
@@ -51,7 +51,7 @@ const features = [
     icon: BookOpen,
     name: "Automatic Booking",
     description:
-      "Qualified leads are booked directly into your calendar and Jobber — no manual entry, no copy-pasting. The appointment shows up ready for your morning, exactly how you configured it.",
+      "Qualified leads are booked directly into your calendar and Jobber. No manual entry, no copy-pasting. The appointment shows up ready for your morning, exactly how you configured it.",
   },
   {
     icon: MessageSquare,
@@ -63,13 +63,13 @@ const features = [
     icon: DollarSign,
     name: "Pricing Presentation",
     description:
-      "The AI shares your configured service rates, trip fees, and diagnostic charges during the call — so callers know what to expect before you arrive. Fewer sticker-shock cancellations.",
+      "The AI shares your configured service rates, trip fees, and diagnostic charges during the call so callers know what to expect before you arrive. Fewer sticker-shock cancellations.",
   },
   {
     icon: MapPin,
     name: "Service Area Verification",
     description:
-      "Set your service radius by zip codes or miles from your base. BookedOnCall verifies the caller's address before booking — you'll never show up to a job 45 minutes outside your area.",
+      "Set your service radius by zip codes or miles from your base. BookedOnCall verifies the caller's address before booking so you never show up to a job 45 minutes outside your area.",
   },
   {
     icon: AlertTriangle,
@@ -93,7 +93,7 @@ const features = [
     icon: TrendingUp,
     name: "Upsell Prompts",
     description:
-      "The AI includes natural upsell prompts — mentioning a seasonal tune-up when booking HVAC, or a drain cleaning when booking plumbing. Increase average job value without any extra effort.",
+      "The AI includes natural upsell prompts, like mentioning a seasonal tune-up when booking HVAC or a drain cleaning when booking plumbing. Increase average job value without any extra effort.",
   },
   {
     icon: FileText,
@@ -111,7 +111,7 @@ const features = [
     icon: Users,
     name: "Team Member Access",
     description:
-      "Add office staff or a co-owner to your account so they can view call history, update availability, and manage settings — without needing full admin access.",
+      "Add office staff or a co-owner to your account so they can view call history, update availability, and manage settings without needing full admin access.",
   },
 ]
 
@@ -126,7 +126,7 @@ export default function FeaturesPage() {
             <span className="text-amber-500">Nothing You Don&apos;t</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed">
-            BookedOnCall is purpose-built for trades professionals — not bloated enterprise software.
+            BookedOnCall is purpose-built for trades professionals, not bloated enterprise software.
             Every feature here earns its place.
           </p>
         </div>
