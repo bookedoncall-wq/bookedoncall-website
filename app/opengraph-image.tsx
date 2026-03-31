@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
-export const alt = "BookedOnCall | Every Call Answered. Every Job Booked."
+export const alt = "BookedOnCall | AI Call Answering for Trades Businesses"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -80,7 +80,7 @@ export default function OGImage() {
               letterSpacing: "-0.03em",
             }}
           >
-            Every Call Answered.
+            Answer More Calls.
           </span>
           <span
             style={{
@@ -92,7 +92,7 @@ export default function OGImage() {
               letterSpacing: "-0.03em",
             }}
           >
-            Every Job Booked.
+            Book More Jobs.
           </span>
         </div>
 
@@ -106,7 +106,7 @@ export default function OGImage() {
             lineHeight: 1.5,
           }}
         >
-          AI call answering built for the trades.
+          AI-powered call answering built for trades businesses.
         </span>
 
         {/* Bottom bar */}

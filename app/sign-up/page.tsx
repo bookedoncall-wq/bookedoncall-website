@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 const highlights = [
-  { icon: Phone, text: "AI answers every call, fast" },
+  { icon: Phone, text: "AI picks up your calls, fast" },
   { icon: CalendarCheck, text: "Books appointments directly into your calendar" },
   { icon: Wrench, text: "Integrates with Jobber and Google Calendar" },
   { icon: Zap, text: "Quick, guided setup. We walk you through it." },
@@ -33,7 +33,7 @@ export default function WaitlistPage() {
           </h1>
           <p className="text-slate-600 text-lg">
             BookedOnCall is launching soon. Join the waitlist and we&apos;ll let you know the moment
-            you can start answering every call automatically.
+            you can start capturing more calls automatically.
           </p>
         </div>
 

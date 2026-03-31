@@ -33,7 +33,7 @@ const features = [
     icon: Phone,
     name: "AI Voice Answering",
     description:
-      "Your calls are answered fast by a natural-sounding AI voice. No robotic tone, no long pauses. Callers hear your business name and feel like they reached a real receptionist.",
+      "Calls are picked up by a natural-sounding AI voice. No robotic tone, no long pauses. Callers hear your business name and feel like they reached a real receptionist.",
   },
   {
     icon: UserCheck,

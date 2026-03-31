@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     template: `%s | ${siteConfig.name}`,
-    default: `${siteConfig.name} | Every Call Answered. Every Job Booked.`,
+    default: `${siteConfig.name} | AI Call Answering for Trades Businesses`,
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
@@ -40,20 +40,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Every Call Answered. Every Job Booked.`,
+    title: `${siteConfig.name} | AI Call Answering for Trades Businesses`,
     description: siteConfig.description,
     images: [
       {
         url: `${siteConfig.url}/opengraph-image`,
         width: 1200,
         height: 630,
-        alt: "BookedOnCall | Every Call Answered. Every Job Booked.",
+        alt: "BookedOnCall | AI Call Answering for Trades Businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Every Call Answered. Every Job Booked.`,
+    title: `${siteConfig.name} | AI Call Answering for Trades Businesses`,
     description: siteConfig.description,
   },
   robots: {

@@ -211,7 +211,7 @@ export default function HowItWorksPage() {
         <div className="max-w-2xl mx-auto text-center">
           <MessageSquare className="w-12 h-12 text-amber-400 mx-auto mb-5" />
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
-            Ready to never miss a call again?
+            Ready to stop missing calls?
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
             Works with Jobber and Google Calendar. One answered call can pay for the whole month.

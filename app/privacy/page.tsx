@@ -75,10 +75,10 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Data Retention</h2>
             <p className="leading-relaxed">
-              We retain your account data for as long as your account is active. After account closure, we retain data for up to 90 days before permanent deletion, unless a longer period is required by law.
+              We retain your account data for as long as your account is active. The specific retention period for call recordings, transcripts, and other operational data depends on your enabled features, your account configuration, and our operational and legal requirements.
             </p>
             <p className="leading-relaxed mt-3">
-              Call recordings and transcripts are retained for 12 months by default and are accessible from your dashboard. You can delete individual call records at any time. After account closure, all call data is deleted within 90 days.
+              You can delete individual call records at any time from your dashboard. After account closure, we will delete your data within a reasonable period, subject to any legal obligations that require longer retention. We will inform you of applicable retention timelines upon request.
             </p>
           </section>
 
@@ -88,10 +88,9 @@ export default function PrivacyPage() {
               BookedOnCall integrates with and relies on the following third-party service providers:
             </p>
             <ul className="list-disc list-inside space-y-2 mt-3 text-slate-600">
-              <li><strong>Twilio</strong> — Voice call handling and SMS delivery. Twilio processes call audio and metadata on our behalf.</li>
-              <li><strong>Jobber</strong> — Job management integration. We access Jobber data only as explicitly authorized by you.</li>
-              <li><strong>Google Calendar</strong> — Availability checking and appointment creation. We access Calendar data only as explicitly authorized via OAuth.</li>
-              <li><strong>Stripe</strong> — Payment processing. We do not store payment card details; they are handled by Stripe.</li>
+              <li><strong>Twilio:</strong> Voice call handling and SMS delivery. Twilio processes call audio and metadata on our behalf.</li>
+              <li><strong>Jobber:</strong> Job management integration. We access Jobber data only as explicitly authorized by you.</li>
+              <li><strong>Google Calendar:</strong> Availability checking and appointment creation. We access Calendar data only as explicitly authorized via OAuth.</li>
             </ul>
             <p className="leading-relaxed mt-4">
               Each third-party provider has its own privacy policy. We encourage you to review those policies.

@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "BookedOnCall",
   description:
-    "Every call answered. Every job booked. AI call answering built for the trades.",
+    "AI-powered call answering and appointment booking built for trades businesses. Answer more calls, book more jobs.",
   url: "https://bookedoncall.com",
   email: "bookedoncall@bookedoncall.com",
   founderLinkedIn: "https://www.linkedin.com/in/david-carley/",

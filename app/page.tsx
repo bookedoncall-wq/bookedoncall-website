@@ -35,8 +35,8 @@ export default function HomePage() {
                 AI-powered call answering for trades businesses
               </div>
               <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight mb-6">
-                Every Call Answered.<br />
-                <span className="text-amber-500">Every Job Booked.</span>
+                Answer More Calls.<br />
+                <span className="text-amber-500">Book More Jobs.</span>
               </h1>
               <p className="text-xl text-slate-600 max-w-xl mb-10 leading-relaxed">
                 While you&apos;re on the job, BookedOnCall picks up your calls,
@@ -162,7 +162,7 @@ export default function HomePage() {
               While You&apos;re Working, We&apos;re Answering.
             </h2>
             <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
-              Set up once. Then forget about it. Every call handled.
+              Set up once. Then forget about it. Your calls, handled.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -227,7 +227,7 @@ export default function HomePage() {
               {
                 icon: Phone,
                 title: "AI Voice Answering",
-                desc: "Sounds professional, handles every call like a trained receptionist.",
+                desc: "Sounds professional. Handles calls like a trained receptionist.",
               },
               {
                 icon: CalendarCheck,

@@ -55,7 +55,7 @@ export default function TermsPage() {
               BookedOnCall offers subscription plans billed on a monthly basis. By subscribing, you authorize us to charge your payment method on a recurring basis. All fees are stated in US dollars and are non-refundable except as expressly set forth in these Terms.
             </p>
             <p className="leading-relaxed mt-3">
-              If you exceed the included call minutes in your plan, overage charges will be billed at the rate specified in your plan at the end of each billing period. We will notify you by email when you have reached 80% of your included minutes.
+              If you exceed the included call minutes in your plan, overage charges will be billed at the rate specified in your plan at the end of each billing period. We provide usage-based alerts at projected threshold levels (typically at 50% and 80% of your included minutes) via your dashboard, email, and/or SMS to help you manage usage. These alerts are operational guidance and may not reflect final reconciled billing amounts.
             </p>
             <p className="leading-relaxed mt-3">
               If payment fails, we reserve the right to suspend your account until payment is received. We will attempt to notify you before suspension occurs.
@@ -108,7 +108,10 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">9. Disclaimer of Warranties</h2>
             <p className="leading-relaxed">
-              The Service is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis without warranties of any kind, either express or implied. BookedOnCall does not warrant that the Service will be uninterrupted, error-free, or completely secure. We do not guarantee that every inbound call will be successfully answered or that all bookings will be completed without issue.
+              The Service is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis without warranties of any kind, either express or implied. BookedOnCall does not warrant that the Service will be uninterrupted, error-free, or completely secure.
+            </p>
+            <p className="leading-relaxed mt-3">
+              Without limiting the foregoing, BookedOnCall does not guarantee: (a) that every inbound call will be successfully answered or that all bookings will be completed without issue; (b) continuous or guaranteed uptime of the Service; (c) that emergency calls will be detected or escalated in every case; or (d) that the Service is a substitute for human judgment, a live receptionist, or professional emergency response. The Service is an AI-powered automation tool and should be used as one component of your business communication strategy.
             </p>
           </section>
 

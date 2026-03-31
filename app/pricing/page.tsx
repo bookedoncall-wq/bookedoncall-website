@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "What happens if I go over my minutes?",
     answer:
-      "If you exceed your plan's included minutes, additional minutes are billed at $0.75/minute at the end of your billing cycle. You'll receive a notification when you're at 80% of your included minutes so there are no surprises.",
+      "If you exceed your plan's included minutes, additional minutes are billed at $0.75/minute at the end of your billing cycle. You'll receive usage alerts at 50% and 80% of your included minutes via your dashboard, email, and SMS so you can manage usage before overages occur.",
   },
   {
     question: "Can I change plans?",
@@ -208,7 +208,7 @@ export default function PricingPage() {
       <section className="bg-slate-950 py-28 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
-            Every call answered starts here.
+            It starts with answering the phone.
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
             Works with Jobber and Google Calendar, tools you already use.

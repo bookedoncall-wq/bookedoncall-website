@@ -68,6 +68,11 @@ export default function Footer() {
                   Privacy Policy
                 </Link>
               </li>
+              <li>
+                <Link href="/dpa" className="text-sm hover:text-white transition-colors">
+                  Data Processing Agreement
+                </Link>
+              </li>
             </ul>
           </div>
 
