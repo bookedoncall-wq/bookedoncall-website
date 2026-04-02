@@ -72,7 +72,7 @@ export default function PricingPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Email us about {plan.name}
+                Talk to us about {plan.name}
               </TrackedLink>
             </article>
           ))}
@@ -140,7 +140,7 @@ export default function PricingPage() {
 
       <CtaBand
         title="Ready to get started?"
-        body="Choose your plan and we will help you get BookedOnCall set up for your business."
+        body="Choose the plan that looks right and we will help you get BookedOnCall set up for your business."
       />
     </>
   )

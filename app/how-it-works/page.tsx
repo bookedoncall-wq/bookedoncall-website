@@ -24,8 +24,8 @@ export default function HowItWorksPage() {
         })}
       />
       <PageIntro
-        eyebrow="Workflow"
-        title="From missed call to booked job."
+        eyebrow="How it works"
+        title="What happens when a customer calls."
         description="BookedOnCall answers the call, gets the basics, checks availability when it should, and hands off anything that still needs your team."
       />
 
@@ -59,8 +59,8 @@ export default function HowItWorksPage() {
       </section>
 
       <CtaBand
-        title="Ready to see it in action?"
-        body="Choose a plan and we will help you set BookedOnCall up for the way your team handles calls."
+        title="Want to talk through your call flow?"
+        body="See the plans and we will help you set BookedOnCall up for the way your team handles calls."
       />
     </>
   )

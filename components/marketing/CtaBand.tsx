@@ -24,7 +24,7 @@ export function CtaBand({ title, body }: CtaBandProps) {
               "rounded-xl border-transparent bg-amber-500 px-6 text-white hover:bg-amber-400"
             )}
           >
-            Get started
+            See plans
           </TrackedLink>
           <TrackedLink
             href={`mailto:${siteConfig.email}`}
@@ -35,7 +35,7 @@ export function CtaBand({ title, body }: CtaBandProps) {
               "rounded-xl border-slate-700 bg-transparent px-6 text-white hover:bg-slate-900"
             )}
           >
-            Contact sales
+            Talk to us
           </TrackedLink>
         </div>
       </div>

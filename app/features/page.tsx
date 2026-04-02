@@ -54,7 +54,7 @@ export default function FeaturesPage() {
       />
       <PageIntro
         eyebrow="Features"
-        title="What BookedOnCall helps with."
+        title="What your team gets with BookedOnCall."
         description="BookedOnCall is built for the real calls trades businesses get every day: new jobs, scheduling requests, callbacks, and after-hours intake."
       />
 
@@ -134,7 +134,7 @@ export default function FeaturesPage() {
 
       <CtaBand
         title="Ready to answer more calls?"
-        body="Choose a plan and set BookedOnCall up the way your team wants to handle new jobs."
+        body="See the plans and talk through how you want BookedOnCall to handle new calls."
       />
     </>
   )

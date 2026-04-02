@@ -34,10 +34,10 @@ export default function HomePage() {
             </p>
             <div className="grid gap-5">
               <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                Answer more calls while your team is out on jobs.
+                Miss fewer calls. Book more work.
               </h1>
               <p className="max-w-3xl text-xl leading-8 text-slate-600">
-                BookedOnCall answers new calls, asks the right questions, and either books the job or captures a clean callback for your team.
+                When the phone rings while your team is on a job, BookedOnCall answers, gets the details, and helps move the customer toward a booking or a callback.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -50,7 +50,7 @@ export default function HomePage() {
                   "rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Get started
+                See plans
               </TrackedLink>
               <TrackedLink
                 href="/how-it-works"
@@ -299,7 +299,7 @@ export default function HomePage() {
 
       <CtaBand
         title="Want to see if it fits your business?"
-        body="Review features, pricing, integrations, and FAQs, then choose your plan when you're ready."
+        body="Review the plans, see how it works, and reach out when you want to talk through your call flow."
       />
     </>
   )

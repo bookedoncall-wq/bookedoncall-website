@@ -50,7 +50,7 @@ export default function Footer() {
                 eventPayload={{ placement: "footer_primary" }}
                 className="rounded-xl bg-white px-4 py-2 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-100"
               >
-                Get started
+                See plans
               </TrackedLink>
               <TrackedLink
                 href={`mailto:${siteConfig.email}`}
@@ -58,7 +58,7 @@ export default function Footer() {
                 eventPayload={{ placement: "footer_contact" }}
                 className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:border-slate-500 hover:bg-slate-900"
               >
-                Contact
+                Talk to us
               </TrackedLink>
             </div>
           </div>

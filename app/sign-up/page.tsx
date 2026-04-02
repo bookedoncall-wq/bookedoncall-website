@@ -17,8 +17,8 @@ export default function SignUpPage() {
     <>
       <PageIntro
         eyebrow="Get started"
-        title="Choose the plan that fits your business."
-        description="Pick Starter for straightforward call coverage or Pro for a more branded caller experience, then contact us to get started."
+        title="Tell us about your business."
+        description="Pick the plan that looks closest, then reach out. We will help you decide what fits, how scheduling should work, and how you want calls handled."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -41,16 +41,16 @@ export default function SignUpPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Email us about {plan.name}
+                Talk to us about {plan.name}
               </TrackedLink>
             </article>
           ))}
         </div>
 
         <div className="mx-auto mt-8 grid max-w-4xl gap-4 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-black text-slate-950">Questions before you start?</h2>
+          <h2 className="text-2xl font-black text-slate-950">Not sure which plan fits?</h2>
           <p className="text-base leading-7 text-slate-600">
-            Email us and we can talk through your trade, scheduling setup, and which plan fits best.
+            Reach out and we can talk through your trade, scheduling setup, and what kind of calls you want BookedOnCall to handle.
           </p>
           <TrackedLink
             href={`mailto:${siteConfig.email}`}

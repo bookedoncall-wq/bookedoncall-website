@@ -57,7 +57,7 @@ export default function Nav() {
               "rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
             )}
           >
-            Get started
+            See plans
           </TrackedLink>
         </div>
 
@@ -99,12 +99,12 @@ export default function Nav() {
               href={buildGetStartedHref(undefined, "website-mobile-nav")}
               eventName="signup_started"
               eventPayload={{ placement: "mobile_nav_primary" }}
-              className={cn(
+            className={cn(
                 buttonVariants({ size: "sm" }),
                 "mt-2 justify-center rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
               )}
             >
-              Get started
+              See plans
             </TrackedLink>
           </div>
         </div>
