@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { siteConfig } from "@/config/site"
 
 export const runtime = "nodejs"
 
@@ -62,6 +63,26 @@ function validateLead(lead: ReturnType<typeof normalizeLead>) {
   return errors
 }
 
+function buildLeadMailtoHref(lead: ReturnType<typeof normalizeLead>) {
+  const subject = `${siteConfig.name} ${lead.planInterest || "Starter"} lead`
+  const body = [
+    `New ${siteConfig.name} website lead`,
+    "",
+    `Name: ${lead.name}`,
+    `Business name: ${lead.businessName}`,
+    `Trade: ${lead.trade}`,
+    `Phone: ${lead.phone}`,
+    `Email: ${lead.email || "Not provided"}`,
+    `Plan: ${lead.planInterest}`,
+    `Source: ${lead.source || "website-form"}`,
+    "",
+    "Notes:",
+    lead.details || "None provided",
+  ].join("\n")
+
+  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
+
 export async function POST(request: Request) {
   let payload: LeadPayload
 
@@ -92,33 +113,40 @@ export async function POST(request: Request) {
   const webhookUrl = process.env.BOOKEDONCALL_LEAD_WEBHOOK_URL?.trim()
   const webhookSecret = process.env.BOOKEDONCALL_LEAD_WEBHOOK_SECRET?.trim()
 
-  if (webhookUrl) {
-    try {
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          ...(webhookSecret ? { "x-bookedoncall-lead-secret": webhookSecret } : {}),
-        },
-        body: JSON.stringify(leadRecord),
-        cache: "no-store",
-      })
+  if (!webhookUrl) {
+    return NextResponse.json({
+      ok: true,
+      delivery: "mailto",
+      mailtoHref: buildLeadMailtoHref(lead),
+      message: "Your email app should open with your details filled in.",
+    })
+  }
 
-      if (!response.ok) {
-        console.error("bookedoncall_website_lead_delivery_failed", response.status, await response.text())
-        return NextResponse.json(
-          { ok: false, message: "We could not submit your request right now. Please try again." },
-          { status: 502 }
-        )
-      }
-    } catch (error) {
-      console.error("bookedoncall_website_lead_delivery_error", error)
+  try {
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        ...(webhookSecret ? { "x-bookedoncall-lead-secret": webhookSecret } : {}),
+      },
+      body: JSON.stringify(leadRecord),
+      cache: "no-store",
+    })
+
+    if (!response.ok) {
+      console.error("bookedoncall_website_lead_delivery_failed", response.status, await response.text())
       return NextResponse.json(
         { ok: false, message: "We could not submit your request right now. Please try again." },
         { status: 502 }
       )
     }
+  } catch (error) {
+    console.error("bookedoncall_website_lead_delivery_error", error)
+    return NextResponse.json(
+      { ok: false, message: "We could not submit your request right now. Please try again." },
+      { status: 502 }
+    )
   }
 
-  return NextResponse.json({ ok: true })
+  return NextResponse.json({ ok: true, delivery: "webhook" })
 }

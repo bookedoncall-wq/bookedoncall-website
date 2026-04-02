@@ -73,6 +73,8 @@ export function LeadCaptureForm() {
         ok?: boolean
         message?: string
         errors?: Record<string, string>
+        delivery?: "webhook" | "mailto"
+        mailtoHref?: string
       }
 
       if (!response.ok || !body.ok) {
@@ -86,16 +88,21 @@ export function LeadCaptureForm() {
         placement: "sign_up_form",
         planId: planInterest,
         trade: form.trade,
+        delivery: body.delivery || "unknown",
       })
 
       setStatus("success")
-      setMessage("Thanks. We received your details and will follow up soon.")
+      setMessage(body.message || "Thanks. We received your details and will follow up soon.")
       setErrors({})
       setForm((current) => ({
         ...current,
         details: "",
         website: "",
       }))
+
+      if (body.delivery === "mailto" && body.mailtoHref) {
+        window.location.href = body.mailtoHref
+      }
     } catch {
       setStatus("error")
       setMessage("We could not submit your request. Please try again.")
