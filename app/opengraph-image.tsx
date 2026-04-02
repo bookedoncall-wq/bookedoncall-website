@@ -41,7 +41,7 @@ export default function OGImage() {
             AI call answering for trades businesses.
           </span>
           <span style={{ fontSize: 28, lineHeight: 1.4, color: "#334155" }}>
-            Answer trades calls, capture structured intake, and route qualified work into the app surface that owns onboarding and billing truth.
+            Answer trades calls, capture structured intake, and keep scheduling, setup, and billing in one place.
           </span>
         </div>
 

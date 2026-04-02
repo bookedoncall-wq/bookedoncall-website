@@ -6,7 +6,7 @@ import { buildBreadcrumbSchema, buildFaqSchema, buildPageMetadata } from "@/lib/
 export const metadata = buildPageMetadata({
   title: "FAQ",
   description:
-    "Frequently asked questions about BookedOnCall pricing, integrations, onboarding, and how the app decides between booking, callback capture, and human follow-up.",
+    "Frequently asked questions about BookedOnCall pricing, integrations, onboarding, bookings, callbacks, and follow-up.",
   path: "/faq",
 })
 
@@ -18,7 +18,7 @@ export default function FaqPage() {
       <PageIntro
         eyebrow="FAQ"
         title="Questions worth answering before you pay."
-        description="These answers are written to match how the product actually works today, not how a generic SaaS landing page wishes it worked."
+        description="These answers explain how BookedOnCall works for pricing, setup, scheduling, and follow-up."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">

@@ -27,7 +27,7 @@ export default function PlumbersPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="If you run plumbing calls all day, start in the app." body="That is where pricing, onboarding, dashboard visibility, and business-specific workflow settings now stay aligned." />
+      <CtaBand title="Ready to set up plumbing call coverage?" body="Choose a plan, finish setup, and tailor the workflow to how your team handles callbacks, booking, and urgent jobs." />
     </>
   )
 }

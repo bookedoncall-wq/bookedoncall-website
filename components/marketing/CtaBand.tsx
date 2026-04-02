@@ -24,7 +24,7 @@ export function CtaBand({ title, body }: CtaBandProps) {
               "rounded-xl border-transparent bg-amber-500 px-6 text-white hover:bg-amber-400"
             )}
           >
-            Start in app
+            Get started
           </TrackedLink>
           <TrackedLink
             href={`mailto:${siteConfig.email}`}

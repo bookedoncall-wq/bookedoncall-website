@@ -27,7 +27,7 @@ export default function GoogleCalendarPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Need calendar-backed availability?" body="Finish onboarding in the app, then connect Google Calendar from the owner dashboard where readiness and fallback state are visible." />
+      <CtaBand title="Need calendar-backed availability?" body="Choose a plan, finish setup, and connect Google Calendar for supported scheduling workflows." />
     </>
   )
 }

@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 export const metadata = buildPageMetadata({
   title: "Pricing",
   description:
-    "BookedOnCall pricing for trades businesses, with app-owned checkout, monthly plans, and minute-based overages tied to the actual owner onboarding flow.",
+    "BookedOnCall pricing for trades businesses with monthly plans, included minutes, and minute-based overages.",
   path: "/pricing",
 })
 
@@ -22,8 +22,8 @@ export default function PricingPage() {
       <StructuredData data={buildFaqSchema(faqEntries)} />
       <PageIntro
         eyebrow="Pricing"
-        title="Public pricing, app-owned checkout."
-        description="The marketing site shows the plans. The app owns checkout, subscription attachment, and onboarding so pricing truth does not drift away from product reality."
+        title="Simple monthly pricing."
+        description="Choose the plan that fits your call volume, then finish setup and account creation in one flow."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -72,7 +72,7 @@ export default function PricingPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Start {plan.name.toLowerCase()} in app
+                Get started with {plan.name}
               </TrackedLink>
             </article>
           ))}
@@ -82,12 +82,12 @@ export default function PricingPage() {
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">What this pricing page does not hide</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">What to expect after checkout</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
-              <li>Checkout happens on the app domain.</li>
-              <li>Onboarding provisions the business after payment and sign-up.</li>
+              <li>Create your account or sign in.</li>
+              <li>Add your business details and finish setup.</li>
               <li>Scheduling behavior still depends on the business configuration and integrations.</li>
-              <li>Overages are minute-based and tied to the plan attached inside the app.</li>
+              <li>Extra minutes are billed at the published per-minute rate for your plan.</li>
             </ul>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
@@ -105,8 +105,8 @@ export default function PricingPage() {
       </section>
 
       <CtaBand
-        title="Want pricing tied to the real onboarding flow?"
-        body="Use the app-domain start flow so checkout, sign-up, and business provisioning all happen in the same product-owned path."
+        title="Ready to get started?"
+        body="Choose your plan and finish setup in one guided flow."
       />
     </>
   )

@@ -17,7 +17,7 @@ export const faqEntries = [
   {
     question: "What happens after checkout?",
     answer:
-      "Checkout happens on the app domain. From there, the owner creates or signs in to an account, enters business basics, and lands in the dashboard with the starter service catalog and subscription attached."
+      "After checkout, you create or sign in to your account, add your business details, and continue setup from your dashboard."
   },
   {
     question: "How are extra minutes billed?",
@@ -29,7 +29,7 @@ export const faqEntries = [
 export const homepageHighlights = [
   {
     title: "Answer missed calls without hiring a live receptionist",
-    body: "BookedOnCall picks up inbound calls, asks structured intake questions, and records what happened in the owner dashboard."
+    body: "BookedOnCall picks up inbound calls, asks structured intake questions, and sends a clear summary to your dashboard."
   },
   {
     title: "Capture callbacks even when a job cannot be booked immediately",
@@ -55,8 +55,8 @@ export const workflowSteps = [
     body: "BookedOnCall can check the configured provider and either offer a supported slot or capture a callback if the workflow needs a human."
   },
   {
-    title: "The owner dashboard becomes the source of record",
-    body: "Call summaries, booking outcomes, integration status, and business settings all live on the app side instead of being guessed from the marketing site."
+    title: "Everything lands in one dashboard",
+    body: "Call summaries, booking outcomes, integration status, and business settings all stay in one dashboard."
   }
 ] as const
 
@@ -64,10 +64,10 @@ export const useCasePages = {
   plumbers: {
     title: "AI call answering for plumbing businesses",
     summary:
-      "BookedOnCall helps plumbing companies catch emergency calls, after-hours callbacks, and routine booking requests without making promises the team has not configured.",
+      "BookedOnCall helps plumbing companies catch emergency calls, after-hours callbacks, and routine booking requests while keeping the right jobs with a human.",
     bullets: [
       "Capture leak, clog, water heater, and diagnostic calls while crews are on site.",
-      "Route emergency language for human review instead of relying on generic marketing promises.",
+      "Route emergency language for human review when the job needs a person.",
       "Use Jobber or Google Calendar scheduling when the plumbing business has connected and enabled that workflow."
     ]
   },
@@ -78,7 +78,7 @@ export const useCasePages = {
     bullets: [
       "Handle tune-up, no-heat, and no-cool calls with structured intake.",
       "Collect callback details when the request needs dispatch review or manual slot confirmation.",
-      "Start from a seeded HVAC starter service catalog in the owner dashboard."
+      "Start with an HVAC-ready service catalog and tailor it to your business."
     ]
   },
   electricians: {
@@ -87,8 +87,8 @@ export const useCasePages = {
       "BookedOnCall helps electrical businesses answer inbound demand, qualify scope, and route riskier jobs toward manual review when that is the safer workflow.",
     bullets: [
       "Collect project details for panel, outlet, lighting, and troubleshooting calls.",
-      "Avoid overpromising on emergency dispatch or job type support the business has not configured.",
-      "Use the same owner dashboard to review leads, integrations, and business settings."
+      "Route higher-risk jobs to callback or manual review when that is the safer workflow.",
+      "Review leads, integrations, and business settings in one dashboard."
     ]
   }
 } as const
@@ -100,7 +100,7 @@ export const integrationPages = {
       "BookedOnCall can use Jobber as a connected scheduling system for supported businesses. The business still owns how scheduling, follow-up, and manual review rules are configured.",
     bullets: [
       "Use Jobber-backed availability when the business selects Jobber as the scheduling provider.",
-      "Keep connected-account state visible in the owner dashboard.",
+      "Keep connected-account status visible in your dashboard.",
       "Avoid claiming universal write-through behavior when a workflow still requires pending sync or human review."
     ]
   },
@@ -110,7 +110,7 @@ export const integrationPages = {
       "BookedOnCall can check Google Calendar availability and write back supported bookings when a business has connected a supported calendar account.",
     bullets: [
       "Read availability from the configured Google Calendar connection.",
-      "Use the owner dashboard to review integration readiness and current posture.",
+      "Review calendar connection status and booking settings in your dashboard.",
       "Keep fallback callback capture available for flows that are not safe to auto-book."
     ]
   }

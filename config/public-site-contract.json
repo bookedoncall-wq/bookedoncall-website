@@ -35,7 +35,7 @@
     "Captures caller name, phone number, job details, and callback information.",
     "Checks scheduling availability against the configured provider when the business has enabled scheduling.",
     "Supports Jobber and Google Calendar integrations when a business connects and configures those accounts.",
-    "Writes call summaries and operational data into the BookedOnCall owner dashboard.",
+    "Delivers call summaries and booking outcomes in your BookedOnCall dashboard.",
     "Queues SMS or email follow-up flows when the business configuration enables those channels."
   ],
   "integrations": [
@@ -57,14 +57,14 @@
       "monthlyUsd": 250,
       "includedMinutes": 200,
       "overageMinuteUsd": 0.75,
-      "summary": "For owner-operators who want missed-call coverage, lead capture, and a clean launch path.",
+      "summary": "For small teams that want missed-call coverage, lead capture, and a clean launch path.",
       "features": [
         "200 included call minutes each month",
         "Inbound call answering and lead qualification",
-        "Callback capture and operator handoff support",
+        "Callback capture and team handoff support",
         "Scheduling against the configured provider when enabled",
         "Jobber or Google Calendar integration when connected",
-        "Call summaries in the owner dashboard"
+        "Call summaries in your dashboard"
       ]
     },
     {
@@ -77,10 +77,10 @@
       "features": [
         "400 included call minutes each month",
         "Inbound call answering and lead qualification",
-        "Callback capture and operator handoff support",
+        "Callback capture and team handoff support",
         "Scheduling against the configured provider when enabled",
         "Jobber or Google Calendar integration when connected",
-        "Call summaries in the owner dashboard"
+        "Call summaries in your dashboard"
       ]
     }
   ]

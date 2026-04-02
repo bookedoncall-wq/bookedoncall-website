@@ -27,7 +27,7 @@ export default function ElectriciansPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Run electrical intake from a cleaner operator workflow." body="Use the app-domain onboarding flow so business provisioning, membership, pricing, and dashboard visibility are all attached to the same product state." />
+      <CtaBand title="Ready to set up electrical call handling?" body="Choose a plan, finish setup, and tailor electrical intake for booked work, callbacks, and manual review." />
     </>
   )
 }

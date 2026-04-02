@@ -27,7 +27,7 @@ export default function JobberPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Need Jobber in the loop?" body="Connect it from the owner dashboard after onboarding instead of relying on a landing page promise alone." />
+      <CtaBand title="Need Jobber in the loop?" body="Choose a plan, finish setup, and connect Jobber for supported scheduling workflows." />
     </>
   )
 }

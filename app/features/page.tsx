@@ -8,7 +8,7 @@ import { buildPageMetadata, buildBreadcrumbSchema, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Features",
   description:
-    "BookedOnCall answers inbound calls, captures structured lead data, checks configured availability, and records outcomes in the owner dashboard for trades businesses.",
+    "BookedOnCall answers inbound calls, captures structured lead data, checks configured availability, and sends the result where your team can act on it.",
   path: "/features",
 })
 
@@ -30,11 +30,11 @@ const capabilityGroups = [
     ]
   },
   {
-    title: "Owner operations",
+    title: "Business setup and follow-up",
     items: [
-      "Write summaries and runtime data into the owner dashboard.",
-      "Expose integration state, billing, and business settings inside the app.",
-      "Keep onboarding and plan attachment on the app domain."
+      "Send call summaries and outcomes to your dashboard.",
+      "Show integration status, billing, and business settings in one place.",
+      "Guide you through checkout, account setup, and onboarding in one flow."
     ]
   }
 ] as const
@@ -53,8 +53,8 @@ export default function FeaturesPage() {
       />
       <PageIntro
         eyebrow="Product capabilities"
-        title="A tighter feature list is better than a louder one."
-        description="This page focuses on the behaviors the app can actually own today: inbound call handling, structured qualification, connected scheduling when enabled, and owner-side operational visibility."
+        title="What BookedOnCall can do today."
+        description="BookedOnCall focuses on clear, useful jobs: answer calls, collect structured intake, check scheduling when enabled, and route the result where your team can act on it."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -75,8 +75,8 @@ export default function FeaturesPage() {
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Plain-language truth</p>
-            <h2 className="text-4xl font-black text-slate-950">What the public site is comfortable claiming.</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Core capabilities</p>
+            <h2 className="text-4xl font-black text-slate-950">What BookedOnCall handles.</h2>
           </div>
           <div className="grid gap-3">
             {validatedCapabilities.map((capability) => (
@@ -108,7 +108,7 @@ export default function FeaturesPage() {
                 eventPayload={{ placement: "features_deeper", href: "/how-it-works" }}
                 className="rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-900 transition-colors hover:border-amber-300"
               >
-                Review the call-to-dashboard workflow
+                See how a call moves through the workflow
               </TrackedLink>
               {integrations.map((integration) => (
                 <TrackedLink
@@ -127,8 +127,8 @@ export default function FeaturesPage() {
       </section>
 
       <CtaBand
-        title="Prefer to validate the workflow in context?"
-        body="Start in the app, complete checkout, and finish onboarding on the same product surface that owns business provisioning, billing, and dashboard access."
+        title="Ready to set up your call flow?"
+        body="Choose your plan and finish setup in one guided flow."
       />
     </>
   )

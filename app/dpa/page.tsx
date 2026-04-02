@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site"
 export const metadata = buildPageMetadata({
   title: "Data Processing Addendum",
   description:
-    "BookedOnCall data processing addendum for customers using the app-owned onboarding and business operations flow.",
+    "BookedOnCall data processing addendum for customer accounts and service operations.",
   path: "/dpa",
 })
 
@@ -15,7 +15,7 @@ export default function DpaPage() {
       <PageIntro
         eyebrow="Legal"
         title="Data Processing Addendum"
-        description="This summary DPA page reflects the current product posture: customer businesses control their connected accounts and business settings through the app, and the public site does not represent a separate processing surface."
+        description="This summary DPA describes how BookedOnCall processes customer data to provide the service, including account setup, connected integrations, and ongoing operations."
       />
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-4xl gap-6 rounded-[1.75rem] border border-white bg-white p-8 shadow-sm">

@@ -57,7 +57,7 @@ export default function Nav() {
               "rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
             )}
           >
-            Start in app
+            Get started
           </TrackedLink>
         </div>
 
@@ -104,7 +104,7 @@ export default function Nav() {
                 "mt-2 justify-center rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
               )}
             >
-              Start in app
+              Get started
             </TrackedLink>
           </div>
         </div>

@@ -50,7 +50,7 @@ export default function Footer() {
                 eventPayload={{ placement: "footer_primary" }}
                 className="rounded-xl bg-white px-4 py-2 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-100"
               >
-                Start in app
+                Get started
               </TrackedLink>
               <TrackedLink
                 href={`${siteConfig.appUrl}/sign-in`}
@@ -84,8 +84,8 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-3 border-t border-slate-800 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. Public marketing site for the BookedOnCall app.</p>
-          <p>Canonical transaction surface: {siteConfig.appUrl}</p>
+          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. AI call answering for trades businesses.</p>
+          <p>Account access: {siteConfig.appUrl}</p>
         </div>
       </div>
     </footer>

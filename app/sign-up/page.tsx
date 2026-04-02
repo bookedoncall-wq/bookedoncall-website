@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 export const metadata = buildPageMetadata({
   title: "Start your account",
   description:
-    "Start BookedOnCall on the app domain, then create or sign in to your owner account during onboarding.",
+    "Choose a BookedOnCall plan, then create or sign in to your account during setup.",
   path: "/sign-up",
 })
 
@@ -16,9 +16,9 @@ export default function SignUpPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Start in app"
-        title="The app owns checkout and onboarding now."
-        description="This page exists to point you at the canonical start flow. The marketing site no longer runs a separate checkout or alternate lead-capture path."
+        eyebrow="Get started"
+        title="Choose a plan and set up your account."
+        description="Pick the plan that fits your call volume and continue to account setup."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -41,16 +41,16 @@ export default function SignUpPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Start {plan.name.toLowerCase()} in app
+                Get started with {plan.name}
               </TrackedLink>
             </article>
           ))}
         </div>
 
         <div className="mx-auto mt-8 grid max-w-4xl gap-4 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-black text-slate-950">Already have an owner account?</h2>
+          <h2 className="text-2xl font-black text-slate-950">Already have an account?</h2>
           <p className="text-base leading-7 text-slate-600">
-            You can sign in directly on the app domain and continue from there.
+            Sign in and continue your setup or manage your business.
           </p>
           <TrackedLink
             href={`${siteConfig.appUrl}/sign-in`}
@@ -58,7 +58,7 @@ export default function SignUpPage() {
             eventPayload={{ placement: "start_page_signin" }}
             className="w-fit text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
           >
-            Open app sign-in
+            Sign in
           </TrackedLink>
         </div>
       </section>

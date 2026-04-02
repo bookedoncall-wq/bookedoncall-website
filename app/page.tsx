@@ -11,7 +11,7 @@ import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 export const metadata = buildPageMetadata({
   title: "AI call answering for trades businesses",
   description:
-    "BookedOnCall answers inbound calls for trades businesses, captures qualified leads, checks configured availability, and routes work into the owner dashboard.",
+    "BookedOnCall answers inbound calls for trades businesses, captures job details, checks configured availability, and helps your team book appointments or route callbacks.",
   path: "/",
 })
 
@@ -20,7 +20,7 @@ export default function HomePage() {
     <>
       <StructuredData
         data={buildServiceSchema({
-          name: "BookedOnCall marketing site",
+          name: "BookedOnCall",
           description: siteConfig.description,
           path: "/",
         })}
@@ -30,14 +30,14 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div className="grid gap-7">
             <p className="w-fit rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
-              Honest AI call answering for home-service operators
+              AI call answering for trades businesses
             </p>
             <div className="grid gap-5">
               <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                Catch more inbound demand without turning your website into a fake product promise.
+                Answer more calls while your team is in the field.
               </h1>
               <p className="max-w-3xl text-xl leading-8 text-slate-600">
-                BookedOnCall answers calls for trades businesses, captures the intake data you actually need, and books or routes follow-up based on the business configuration inside the app.
+                BookedOnCall answers calls for trades businesses, captures the job details you need, and books appointments or routes callbacks based on your setup.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -50,7 +50,7 @@ export default function HomePage() {
                   "rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Start in app
+                Get started
               </TrackedLink>
               <TrackedLink
                 href="/how-it-works"
@@ -97,12 +97,12 @@ export default function HomePage() {
             <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5">
               <div className="flex items-center gap-3">
                 <ClipboardList className="size-5 text-amber-500" />
-                <strong className="text-slate-950">What the owner gets</strong>
+                <strong className="text-slate-950">What you get after the call</strong>
               </div>
               <ul className="grid gap-2 text-sm leading-6 text-slate-600">
-                <li>Structured call summary in the owner dashboard</li>
-                <li>Booking result or callback outcome tied to the business workflow</li>
-                <li>Integration status surfaced on the app side, not guessed from marketing copy</li>
+                <li>Structured call summary in your dashboard</li>
+                <li>Booking result or callback outcome tied to your workflow</li>
+                <li>Clear visibility into follow-up and connected integrations</li>
               </ul>
             </div>
           </aside>
@@ -121,7 +121,7 @@ export default function HomePage() {
           </p>
           <p className="flex items-center justify-center gap-2">
             <ShieldCheck className="size-4 text-amber-300" />
-            One app-side source of truth for billing and onboarding
+            One place for setup, billing, and follow-up
           </p>
         </div>
       </section>
@@ -140,10 +140,10 @@ export default function HomePage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How the product actually works</p>
-            <h2 className="text-4xl font-black text-slate-950">A straight line from website promise to app behavior.</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
+            <h2 className="text-4xl font-black text-slate-950">From first ring to booked job or callback.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              The marketing site only describes flows the app can own: answer the call, qualify the request, check configured availability, and hand the result into the owner dashboard.
+              BookedOnCall answers the call, qualifies the request, checks availability when scheduling is enabled, and either books a supported slot or captures a clean callback for your team.
             </p>
           </div>
           <div className="grid gap-4">
@@ -164,10 +164,10 @@ export default function HomePage() {
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Validated public capabilities</p>
-            <h2 className="text-4xl font-black text-slate-950">What the public site can say without hedging.</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What BookedOnCall handles</p>
+            <h2 className="text-4xl font-black text-slate-950">Built for the calls trades businesses get every day.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              These are the app-backed behaviors this site is willing to claim plainly.
+              These are the core jobs BookedOnCall is built to handle.
             </p>
           </div>
           <div className="grid gap-3">
@@ -187,7 +187,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Supported integrations</p>
             <h2 className="text-4xl font-black text-slate-950">Connected systems remain business-controlled.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              Integrations live in the owner dashboard. This site only promises the connected behavior the app can actually verify.
+              BookedOnCall supports Jobber and Google Calendar for businesses that choose those scheduling paths.
             </p>
             <div className="flex flex-wrap gap-3">
               {integrations.map((integration) => (
@@ -205,8 +205,8 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Public pricing</p>
-            <h2 className="text-4xl font-black text-slate-950">Simple monthly plans tied to the app, not the landing page.</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Pricing</p>
+            <h2 className="text-4xl font-black text-slate-950">Simple monthly pricing.</h2>
             <div className="grid gap-4">
               {plans.map((plan) => (
                 <article key={plan.id} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
@@ -224,7 +224,7 @@ export default function HomePage() {
                     eventPayload={{ placement: "home_plan", planId: plan.id }}
                     className="text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
                   >
-                    Start {plan.name.toLowerCase()} in app
+                    Choose {plan.name}
                   </TrackedLink>
                 </article>
               ))}
@@ -235,7 +235,7 @@ export default function HomePage() {
 
       <CtaBand
         title="Want the full details before you buy?"
-        body="Review features, pricing, integrations, and FAQs first, then start checkout on the app domain when the flow matches how your business actually works."
+        body="Review features, pricing, integrations, and FAQs, then get started when you're ready to set up your call flow."
       />
     </>
   )
