@@ -88,7 +88,7 @@ export default function HomePage() {
                   <strong>Caller:</strong> &ldquo;My AC stopped working. Can someone come out this week?&rdquo;
                 </p>
                 <p>
-                  <strong>Assistant:</strong> gets the problem, callback details, and address, then checks the next available path.
+                  <strong>Assistant:</strong> gets the problem, callback details, and address, then checks your calendar or sends the info to your team.
                 </p>
                 <p>
                   <strong>Outcome:</strong> book the job when it fits your setup, or send a clean callback to your team.
@@ -138,7 +138,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why people trust it</p>
@@ -157,7 +157,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {homepageTrustPoints.map((item) => (
-              <article key={item.title} className="rounded-[1.5rem] border border-white bg-white p-6 shadow-sm">
+              <article key={item.title} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
                 <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
                 <p className="text-base leading-7 text-slate-600">{item.body}</p>
               </article>

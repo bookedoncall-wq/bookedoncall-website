@@ -32,7 +32,7 @@ export default function SignUpPage() {
                 <p className="text-base leading-7 text-slate-600">{plan.summary}</p>
               </div>
               <p className="text-sm font-semibold text-slate-700">
-                ${plan.monthlyUsd}/month with {plan.includedMinutes} included minutes.
+                ${plan.monthlyUsd}/month with {plan.includedMinutes} included minutes. Additional minutes are ${plan.overageMinuteUsd.toFixed(2)} each.
               </p>
               <TrackedLink
                 href={buildLeadFormHref(plan.id, "website-start-page")}
