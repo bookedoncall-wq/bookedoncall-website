@@ -1,5 +1,10 @@
 export const faqEntries = [
   {
+    question: "What is the difference between Starter and Pro?",
+    answer:
+      "Starter includes the core call-answering, callback, scheduling, and dashboard workflow with the default assistant setup. Pro adds more included minutes plus control over the assistant voice, assistant name, greeting, and assistant behavior."
+  },
+  {
     question: "Does BookedOnCall always book appointments automatically?",
     answer:
       "No. Booking depends on the business configuration. BookedOnCall can capture leads and callbacks in every setup, and it can book when the business has enabled scheduling and connected a supported availability source."
@@ -17,7 +22,7 @@ export const faqEntries = [
   {
     question: "What happens after checkout?",
     answer:
-      "After checkout, you create or sign in to your account, add your business details, and continue setup from your dashboard."
+      "After checkout, you create or sign in to your account, add your business details, and continue setup from your dashboard. Pro customers can also customize the assistant voice, name, greeting, and behavior once setup is complete."
   },
   {
     question: "How are extra minutes billed?",

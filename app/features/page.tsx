@@ -34,6 +34,7 @@ const capabilityGroups = [
     items: [
       "Send call summaries and outcomes to your dashboard.",
       "Show integration status, billing, and business settings in one place.",
+      "Use Pro to choose the assistant voice, assistant name, and branded greeting.",
       "Guide you through checkout, account setup, and onboarding in one flow."
     ]
   }

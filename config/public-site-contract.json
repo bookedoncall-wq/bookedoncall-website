@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "brand": {
     "name": "BookedOnCall",
     "tagline": "AI call answering for trades businesses",
@@ -57,14 +57,23 @@
       "monthlyUsd": 250,
       "includedMinutes": 200,
       "overageMinuteUsd": 0.75,
-      "summary": "For small teams that want missed-call coverage, lead capture, and a clean launch path.",
+      "summary": "For small teams that want default assistant setup, call coverage, lead capture, and supported scheduling.",
+      "capabilities": {
+        "assistantName": false,
+        "voiceSelection": false,
+        "customGreeting": false,
+        "assistantInstructions": false,
+        "firstMessageMode": false,
+        "voiceUnavailableMessage": false
+      },
       "features": [
         "200 included call minutes each month",
         "Inbound call answering and lead qualification",
         "Callback capture and team handoff support",
         "Scheduling against the configured provider when enabled",
         "Jobber or Google Calendar integration when connected",
-        "Call summaries in your dashboard"
+        "Call summaries in your dashboard",
+        "Default assistant setup with standard voice and greeting"
       ]
     },
     {
@@ -73,14 +82,25 @@
       "monthlyUsd": 350,
       "includedMinutes": 400,
       "overageMinuteUsd": 0.75,
-      "summary": "For higher-volume teams that want more included capacity and the same core workflow controls.",
+      "summary": "For teams that want more included minutes plus branded assistant voice and behavior controls.",
+      "capabilities": {
+        "assistantName": true,
+        "voiceSelection": true,
+        "customGreeting": true,
+        "assistantInstructions": true,
+        "firstMessageMode": true,
+        "voiceUnavailableMessage": true
+      },
       "features": [
         "400 included call minutes each month",
         "Inbound call answering and lead qualification",
         "Callback capture and team handoff support",
         "Scheduling against the configured provider when enabled",
         "Jobber or Google Calendar integration when connected",
-        "Call summaries in your dashboard"
+        "Call summaries in your dashboard",
+        "Choose the voice callers hear",
+        "Give the assistant a custom name",
+        "Customize the greeting and assistant behavior"
       ]
     }
   ]

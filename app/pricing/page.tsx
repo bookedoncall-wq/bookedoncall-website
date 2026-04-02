@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 export const metadata = buildPageMetadata({
   title: "Pricing",
   description:
-    "BookedOnCall pricing for trades businesses with monthly plans, included minutes, and minute-based overages.",
+    "BookedOnCall pricing for trades businesses with Starter and Pro plans, included minutes, and branded assistant controls on Pro.",
   path: "/pricing",
 })
 
@@ -23,7 +23,7 @@ export default function PricingPage() {
       <PageIntro
         eyebrow="Pricing"
         title="Simple monthly pricing."
-        description="Choose the plan that fits your call volume, then finish setup and account creation in one flow."
+        description="Choose between the default assistant setup on Starter or the added voice and branding controls on Pro, then finish setup and account creation in one flow."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -81,6 +81,19 @@ export default function PricingPage() {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+            <h2 className="mb-4 text-3xl font-black text-slate-950">Starter vs Pro</h2>
+            <div className="grid gap-4 text-sm leading-7 text-slate-600">
+              <div>
+                <h3 className="text-lg font-black text-slate-950">Starter</h3>
+                <p>Use the default assistant setup with core call answering, callback capture, supported scheduling, and dashboard summaries.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-black text-slate-950">Pro</h3>
+                <p>Choose the voice callers hear, give the assistant a custom name, and customize the greeting and assistant behavior.</p>
+              </div>
+            </div>
+          </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">What to expect after checkout</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
