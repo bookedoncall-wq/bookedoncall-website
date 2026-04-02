@@ -35,7 +35,7 @@ export default function HomePage() {
             </p>
             <div className="grid gap-5">
               <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                Miss fewer calls. Book more work.
+                Your crew is busy. Your phone still gets answered.
               </h1>
               <p className="max-w-3xl text-xl leading-8 text-slate-600">
                 When the phone rings while your team is on a job, BookedOnCall answers, gets the details, and helps move the customer toward a booking or a callback.
@@ -162,6 +162,77 @@ export default function HomePage() {
                 <p className="text-base leading-7 text-slate-600">{item.body}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10">
+          <div className="grid gap-4 text-center">
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">The math on missed calls</p>
+            <h2 className="text-4xl font-black text-slate-950">What your crew loses when the phone rings.</h2>
+            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
+              The real cost of missed calls goes beyond the phone bill. Compare what it takes to keep that line covered.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <article className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+              <h3 className="mb-3 text-lg font-black text-slate-950">Full-time receptionist</h3>
+              <p className="text-3xl font-black text-slate-950 mb-3">$35K-45K</p>
+              <p className="text-sm leading-6 text-slate-600">per year, plus benefits, training, and turnover costs</p>
+            </article>
+            <article className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+              <h3 className="mb-3 text-lg font-black text-slate-950">Traditional answering service</h3>
+              <p className="text-3xl font-black text-slate-950 mb-3">$300-800</p>
+              <p className="text-sm leading-6 text-slate-600">per month with long-term contracts</p>
+            </article>
+            <article className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+              <h3 className="mb-3 text-lg font-black text-slate-950">BookedOnCall Starter</h3>
+              <p className="text-3xl font-black text-slate-950 mb-3">$250</p>
+              <p className="text-sm leading-6 text-slate-600">per month, no contract, cancel anytime</p>
+            </article>
+            <article className="rounded-[1.5rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
+              <h3 className="mb-3 text-lg font-black text-slate-950">The actual ROI</h3>
+              <p className="text-sm leading-7 text-slate-600">When BookedOnCall helps you land just 2 to 3 extra jobs per month, it pays for itself many times over.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10">
+          <div className="grid gap-4 text-center">
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why BookedOnCall</p>
+            <h2 className="text-4xl font-black text-slate-950">Built for trades. Honest about AI. Built by people who get it.</h2>
+            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
+              Most call-answering tools are built for generic customer service. BookedOnCall is different.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="mb-3 text-xl font-black text-slate-950">Built specifically for trades</h3>
+              <p className="text-sm leading-7 text-slate-600">
+                Designed around plumbing, HVAC, electrical, and home-service call flows. Not a one-size-fits-all generic tool.
+              </p>
+            </article>
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="mb-3 text-xl font-black text-slate-950">Honest about what AI can do</h3>
+              <p className="text-sm leading-7 text-slate-600">
+                We don't promise every call will be perfect. We focus on catching the jobs that matter and handing off the rest cleanly to your team.
+              </p>
+            </article>
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="mb-3 text-xl font-black text-slate-950">Your tools, not ours</h3>
+              <p className="text-sm leading-7 text-slate-600">
+                Integrates with Jobber and Google Calendar so you keep using the systems your crew already trusts.
+              </p>
+            </article>
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="mb-3 text-xl font-black text-slate-950">No long contracts</h3>
+              <p className="text-sm leading-7 text-slate-600">
+                Simple monthly pricing with no enterprise sales process. Start small, scale when it works for you.
+              </p>
+            </article>
           </div>
         </div>
       </section>

@@ -138,6 +138,27 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-5xl gap-6 text-center sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-2">
+            <p className="text-2xl font-black text-slate-950">No contracts</p>
+            <p className="text-sm leading-6 text-slate-500">Month-to-month billing. Cancel anytime.</p>
+          </div>
+          <div className="grid gap-2">
+            <p className="text-2xl font-black text-slate-950">No setup fees</p>
+            <p className="text-sm leading-6 text-slate-500">We help you get configured at no extra cost.</p>
+          </div>
+          <div className="grid gap-2">
+            <p className="text-2xl font-black text-slate-950">No per-call charges</p>
+            <p className="text-sm leading-6 text-slate-500">Pay for minutes used, not individual calls.</p>
+          </div>
+          <div className="grid gap-2">
+            <p className="text-2xl font-black text-slate-950">Colorado-based</p>
+            <p className="text-sm leading-6 text-slate-500">Built and operated in the US.</p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand
         title="Ready to get started?"
         body="Choose the plan that looks right and we will help you get BookedOnCall set up for your business."

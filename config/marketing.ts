@@ -28,6 +28,46 @@ export const faqEntries = [
     question: "How are extra minutes billed?",
     answer:
       "Plans include a monthly minute allowance. Additional minutes are billed at the published per-minute rate for the selected plan."
+  },
+  {
+    question: "How long does setup take?",
+    answer:
+      "Setup usually takes one call to go over your preferences and a short configuration step. Most teams are live within a day or two."
+  },
+  {
+    question: "Can BookedOnCall handle emergency or urgent calls?",
+    answer:
+      "BookedOnCall can flag calls that sound urgent based on what the caller describes, like a burst pipe or no heat in winter. Urgent calls are routed to your team as high-priority callbacks so someone can respond faster. It does not replace your own emergency protocols."
+  },
+  {
+    question: "Do I need to change my phone number?",
+    answer:
+      "No. You keep your existing business number. BookedOnCall answers the calls your team cannot get to, either by forwarding or as a backup after a set number of rings."
+  },
+  {
+    question: "What happens if the caller speaks Spanish?",
+    answer:
+      "BookedOnCall currently handles English calls. Spanish-language support is on the roadmap but is not available today."
+  },
+  {
+    question: "Can I try BookedOnCall before committing?",
+    answer:
+      "We are not offering a self-serve free trial right now, but we are happy to walk you through a demo call so you can hear how it sounds for your trade before you decide."
+  },
+  {
+    question: "Is there a long-term contract?",
+    answer:
+      "No. BookedOnCall is billed monthly with no long-term commitment. You can cancel anytime."
+  },
+  {
+    question: "How does BookedOnCall compare to a live answering service?",
+    answer:
+      "A traditional answering service uses human operators who follow a script. BookedOnCall uses AI to handle the call, collect details, and route the next step. The trade-off is cost: live services often charge $1-2 per minute or more. BookedOnCall includes minutes in the plan at a lower per-minute rate, and the assistant is available around the clock without staffing limitations."
+  },
+  {
+    question: "What information does the assistant collect on each call?",
+    answer:
+      "The assistant collects the caller's name, callback number, service address, and a description of the work needed. Depending on your setup, it can also ask about urgency, property type, and preferred scheduling windows."
   }
 ] as const
 
@@ -58,6 +98,10 @@ export const homepageTrustPoints = [
   {
     title: "Practical over flashy",
     body: "The goal is simple: answer more calls, capture better details, and help your team move faster on real work.",
+  },
+  {
+    title: "No long-term contracts",
+    body: "BookedOnCall is billed monthly. No annual commitments, no setup fees, no cancellation penalties. If it works for your business, you keep it.",
   },
 ] as const
 

@@ -90,6 +90,29 @@ export default function FeaturesPage() {
       </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8">
+          <div className="grid gap-4 text-center">
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it compares</p>
+            <h2 className="text-4xl font-black text-slate-950">BookedOnCall vs the alternatives.</h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="mb-3 text-xl font-black text-slate-950">vs Voicemail</h3>
+              <p className="text-sm leading-7 text-slate-600">Voicemail captures a fraction of the details your team needs and many callers hang up before leaving a message. BookedOnCall asks the right questions and collects structured job details.</p>
+            </article>
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="mb-3 text-xl font-black text-slate-950">vs Hiring a receptionist</h3>
+              <p className="text-sm leading-7 text-slate-600">A full-time receptionist costs $35,000 to $45,000 per year and still cannot answer calls at 2 AM. BookedOnCall starts at $250/month and works around the clock.</p>
+            </article>
+            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="mb-3 text-xl font-black text-slate-950">vs Generic AI tools</h3>
+              <p className="text-sm leading-7 text-slate-600">Most AI answering tools are built for any industry. BookedOnCall is built for trades: plumbing, HVAC, electrical, painting, flooring, landscaping, and general home services.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
           <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">When BookedOnCall books the job</h2>
