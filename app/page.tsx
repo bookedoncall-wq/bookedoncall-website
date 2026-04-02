@@ -12,7 +12,7 @@ import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 export const metadata = buildPageMetadata({
   title: "AI call answering for trades businesses",
   description:
-    "BookedOnCall answers missed calls for trades businesses, captures the customer details your team needs, and helps book jobs or capture callbacks.",
+    "BookedOnCall answers missed calls for trades businesses, captures the customer details you need, and helps book jobs or capture callbacks.",
   path: "/",
 })
 
@@ -35,10 +35,10 @@ export default function HomePage() {
             </p>
             <div className="grid gap-5">
               <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                Your crew is busy. Your phone still gets answered.
+                You are on the job. Your phone still gets answered.
               </h1>
               <p className="max-w-3xl text-xl leading-8 text-slate-600">
-                When the phone rings while your team is on a job, BookedOnCall answers, gets the details, and helps move the customer toward a booking or a callback.
+                When the phone rings while you are on a job, BookedOnCall answers, gets the details, and helps move the customer toward a booking or a callback.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -170,7 +170,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-10">
           <div className="grid gap-4 text-center">
             <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">The math on missed calls</p>
-            <h2 className="text-4xl font-black text-slate-950">What your crew loses when the phone rings.</h2>
+            <h2 className="text-4xl font-black text-slate-950">What you lose when the phone goes unanswered.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
               The real cost of missed calls goes beyond the phone bill. Compare what it takes to keep that line covered.
             </p>
@@ -224,7 +224,7 @@ export default function HomePage() {
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">Your tools, not ours</h3>
               <p className="text-sm leading-7 text-slate-600">
-                Integrates with Jobber and Google Calendar so you keep using the systems your crew already trusts.
+                Integrates with Jobber and Google Calendar so you keep using the tools you already trust.
               </p>
             </article>
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
