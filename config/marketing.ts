@@ -37,13 +37,28 @@ export const homepageHighlights = [
     body: "BookedOnCall answers the calls your team misses and gathers the basics before the lead goes cold."
   },
   {
-    title: "Book what you want booked",
-    body: "When the call fits your rules and connected calendar, BookedOnCall can offer an appointment on the spot."
+    title: "Sound buttoned-up even when the crew is busy",
+    body: "Give callers a fast, professional first response even when nobody can stop mid-job to answer the phone."
   },
   {
     title: "Keep using the tools you already know",
     body: "Connect Jobber or Google Calendar so BookedOnCall fits the way your business already schedules work."
   }
+] as const
+
+export const homepageTrustPoints = [
+  {
+    title: "Built from a real trades problem",
+    body: "BookedOnCall was built because too many good trades businesses lose work simply because nobody can answer the phone while the job is getting done.",
+  },
+  {
+    title: "Made for smaller teams",
+    body: "This is for the owner-operator, the family shop, and the growing crew that wants to look professional without paying for a full front desk.",
+  },
+  {
+    title: "Practical over flashy",
+    body: "The goal is simple: answer more calls, capture better details, and help your team move faster on real work.",
+  },
 ] as const
 
 export const workflowSteps = [
@@ -67,36 +82,177 @@ export const workflowSteps = [
 
 export const useCasePages = {
   plumbers: {
+    label: "Plumbers",
+    navLabel: "For Plumbers",
+    path: "/for/plumbers",
     title: "AI call answering for plumbing businesses",
     summary:
       "BookedOnCall helps plumbing businesses answer leak, clog, and water-heater calls while the crew is busy, then book the job or capture a callback.",
-    bullets: [
-      "Catch emergency and routine plumbing calls while the team is on site.",
+    cardSummary: "Handle leak, drain, and water-heater calls without sending customers to voicemail.",
+    commonCalls: [
+      "Leak, clog, water-heater, and sewer-line calls that need a fast first response.",
+      "Routine plumbing jobs where the customer wants to know if you can get them on the schedule.",
+      "After-hours calls where you still want the customer details captured cleanly."
+    ],
+    reasons: [
+      "Catch emergency and routine plumbing calls while the crew is on site.",
       "Gather the customer details your office needs before calling back.",
-      "Use Jobber or Google Calendar if you want BookedOnCall to offer appointments."
-    ]
+      "Offer appointments when your scheduling setup allows it."
+    ],
+    trustCopy:
+      "Plumbing calls are often urgent. When water is going where it should not, people do not want to hear voicemail. BookedOnCall helps you sound responsive even when the whole team is already in the field.",
+    ctaTitle: "Ready to set up plumbing call coverage?",
+    ctaBody: "Choose a plan and make sure the next plumbing call gets answered."
   },
   hvac: {
+    label: "HVAC",
+    navLabel: "For HVAC",
+    path: "/for/hvac",
     title: "AI call answering for HVAC companies",
     summary:
       "BookedOnCall helps HVAC companies answer no-heat, no-cool, tune-up, and diagnostic calls without sending customers to voicemail.",
-    bullets: [
+    cardSummary: "Handle no-cool, no-heat, tune-up, and diagnostic calls with a better first response.",
+    commonCalls: [
+      "No-cool, no-heat, tune-up, and diagnostic calls that come in while your techs are already on jobs.",
+      "Seasonal rush calls where customers want to know when someone can come out.",
+      "After-hours issues where you want to capture symptoms, address, and callback details right away."
+    ],
+    reasons: [
       "Handle tune-up, no-heat, and no-cool calls with clear intake.",
       "Collect symptoms, address, and callback details before dispatch steps in.",
       "Offer appointments when your calendar is connected, or send the call back for follow-up."
-    ]
+    ],
+    trustCopy:
+      "HVAC calls can be high-pressure and time-sensitive, especially in peak summer and winter weeks. BookedOnCall helps your business sound steady and responsive when demand jumps and the team is stretched.",
+    ctaTitle: "Need better HVAC call coverage?",
+    ctaBody: "Choose a plan and make sure heating and cooling calls get answered the first time."
   },
   electricians: {
+    label: "Electricians",
+    navLabel: "For Electricians",
+    path: "/for/electricians",
     title: "AI call answering for electrical contractors",
     summary:
       "BookedOnCall helps electrical contractors answer new calls, qualify the work, and send risky or complex jobs back for human review when needed.",
-    bullets: [
+    cardSummary: "Qualify electrical jobs clearly and send risky or unusual work back for human review.",
+    commonCalls: [
+      "Panel, outlet, lighting, troubleshooting, and service-upgrade calls that need better intake.",
+      "Jobs where safety, scope, or pricing questions mean a person should make the final call.",
+      "New-customer inquiries where the office needs clear notes before calling back."
+    ],
+    reasons: [
       "Collect project details for panel, outlet, lighting, and troubleshooting calls.",
       "Send higher-risk work back to your team instead of forcing a bad booking.",
       "Keep new leads organized so your office can move quickly."
-    ]
+    ],
+    trustCopy:
+      "Electrical work often needs a little more judgment before anything gets promised. BookedOnCall helps you capture the right details, keep the customer moving, and hand the job back to your team when that is the right call.",
+    ctaTitle: "Ready to set up electrical call handling?",
+    ctaBody: "Choose a plan and give new electrical leads a better first response."
+  },
+  painters: {
+    label: "Painters",
+    navLabel: "For Painters",
+    path: "/for/painters",
+    title: "AI call answering for painting businesses",
+    summary:
+      "BookedOnCall helps painting businesses answer estimate requests, project inquiries, and callback needs without losing leads to voicemail.",
+    cardSummary: "Handle estimate requests and painting inquiries while the crew is on site or in the middle of a project.",
+    commonCalls: [
+      "Interior and exterior painting estimate requests from homeowners who want a quick response.",
+      "Questions about timelines, project scope, and callback follow-up while the team is out working.",
+      "New leads that need to be captured clearly before your office or estimator calls back."
+    ],
+    reasons: [
+      "Catch estimate requests while painters are on ladders, in prep, or on active projects.",
+      "Collect address, project details, and callback information before the lead cools off.",
+      "Keep the pipeline moving even when the first step is a callback, not an instant booking."
+    ],
+    trustCopy:
+      "Painting businesses win work by being responsive, organized, and easy to deal with. BookedOnCall helps you make that strong first impression even when the whole crew is in the field.",
+    ctaTitle: "Need better coverage for painting leads?",
+    ctaBody: "Choose a plan and make sure estimate requests do not disappear into voicemail."
+  },
+  flooring: {
+    label: "Flooring",
+    navLabel: "For Flooring",
+    path: "/for/flooring",
+    title: "AI call answering for flooring contractors",
+    summary:
+      "BookedOnCall helps flooring contractors answer installation, replacement, and repair calls without letting new leads slip past the office.",
+    cardSummary: "Capture flooring installs, replacements, and repair requests with a more professional first response.",
+    commonCalls: [
+      "Hardwood, tile, vinyl, carpet, and repair calls that come in while the team is on install.",
+      "Measurement and estimate requests where the office needs clean notes before following up.",
+      "Customers comparing contractors and deciding who actually answers the phone."
+    ],
+    reasons: [
+      "Catch flooring leads while the crew is on install and cannot stop to answer.",
+      "Collect room details, surface type, address, and callback information up front.",
+      "Make it easier for your office to follow up fast with the right context."
+    ],
+    trustCopy:
+      "A lot of flooring work starts with an estimate request. If the first call goes unanswered, that customer may never call back. BookedOnCall helps you keep those opportunities alive.",
+    ctaTitle: "Ready for better flooring lead coverage?",
+    ctaBody: "Choose a plan and make it easier to respond quickly to new flooring inquiries."
+  },
+  landscaping: {
+    label: "Landscapers",
+    navLabel: "For Landscapers",
+    path: "/for/landscaping",
+    title: "AI call answering for landscaping businesses",
+    summary:
+      "BookedOnCall helps landscaping businesses answer maintenance, cleanup, irrigation, and project calls while the crew is outside doing the work.",
+    cardSummary: "Handle maintenance, cleanup, irrigation, and project calls without missing new business.",
+    commonCalls: [
+      "Maintenance, cleanup, irrigation, and install calls that come in while your crew is on route.",
+      "Seasonal spikes where homeowners are calling several companies at once.",
+      "Project inquiries that need to be captured clearly before your office follows up."
+    ],
+    reasons: [
+      "Catch landscaping calls while the crew is driving between jobs or already on site.",
+      "Collect property details, service needs, and callback info before the customer moves on.",
+      "Keep routine jobs moving while still handing larger project decisions back to your team."
+    ],
+    trustCopy:
+      "Landscaping teams spend most of the day away from the phone. BookedOnCall helps you stay responsive without forcing someone to stop mid-route just to catch the next lead.",
+    ctaTitle: "Need better landscaping call coverage?",
+    ctaBody: "Choose a plan and make sure maintenance and project calls get a faster first response."
+  },
+  "general-home-services": {
+    label: "General Home Services",
+    navLabel: "For General Home Services",
+    path: "/for/general-home-services",
+    title: "AI call answering for general home-service businesses",
+    summary:
+      "BookedOnCall helps home-service businesses answer new calls, capture the job details, and route the next step without losing good leads to voicemail.",
+    cardSummary: "A better first response for handyman, repair, install, and general home-service calls.",
+    commonCalls: [
+      "Handyman, repair, install, and general service inquiries that come in while your team is already booked out in the field.",
+      "Calls that need a quick first response and a clean callback instead of a long voicemail.",
+      "New-customer inquiries where the office needs the basics before deciding on the next step."
+    ],
+    reasons: [
+      "Catch new calls while your team is out working instead of tied to the phone.",
+      "Collect the details your office needs before calling the customer back.",
+      "Keep your process simple without replacing the tools and habits your business already uses."
+    ],
+    trustCopy:
+      "A lot of growing home-service businesses are too busy to answer every call and too small to hire a dedicated receptionist. BookedOnCall is built for that middle ground.",
+    ctaTitle: "Need a better way to answer new service calls?",
+    ctaBody: "Choose a plan and make sure new home-service leads get a better first response."
   }
 } as const
+
+export const useCaseOrder = [
+  "plumbers",
+  "hvac",
+  "electricians",
+  "painters",
+  "flooring",
+  "landscaping",
+  "general-home-services",
+] as const
 
 export const integrationPages = {
   jobber: {

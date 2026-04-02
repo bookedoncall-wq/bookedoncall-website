@@ -3,7 +3,7 @@ import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { buildGetStartedHref, integrations, plans, siteConfig, supportedTrades, validatedCapabilities } from "@/config/site"
-import { homepageHighlights, workflowSteps } from "@/config/marketing"
+import { homepageHighlights, homepageTrustPoints, useCaseOrder, useCasePages, workflowSteps } from "@/config/marketing"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
 import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
@@ -138,6 +138,34 @@ export default function HomePage() {
       </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-4">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why people trust it</p>
+            <h2 className="text-4xl font-black text-slate-950">Built for real trades businesses, not call-center theory.</h2>
+            <p className="text-lg leading-8 text-slate-600">
+              BookedOnCall exists because smaller trades teams lose real work when the phone rings at the wrong moment. The product is built around that reality.
+            </p>
+            <TrackedLink
+              href="/about"
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "home_about", href: "/about" }}
+              className="w-fit text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
+            >
+              Read the founder story
+            </TrackedLink>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {homepageTrustPoints.map((item) => (
+              <article key={item.title} className="rounded-[1.5rem] border border-white bg-white p-6 shadow-sm">
+                <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
+                <p className="text-base leading-7 text-slate-600">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
@@ -157,6 +185,38 @@ export default function HomePage() {
                 <p className="text-base leading-7 text-slate-600">{step.body}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8">
+          <div className="grid gap-4 text-center">
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">By trade</p>
+            <h2 className="text-4xl font-black text-slate-950">Built for the kinds of businesses that live on the phone.</h2>
+            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
+              Plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service teams all have different calls coming in. The goal is the same: answer them faster and lose fewer jobs.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {useCaseOrder.map((key) => {
+              const useCase = useCasePages[key]
+              return (
+                <TrackedLink
+                  key={useCase.path}
+                  href={useCase.path}
+                  eventName="marketing_cta_clicked"
+                  eventPayload={{ placement: "home_use_case", path: useCase.path }}
+                  className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 text-left transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+                >
+                  <div className="grid gap-2">
+                    <h3 className="text-xl font-black text-slate-950">{useCase.label}</h3>
+                    <p className="text-sm leading-6 text-slate-600">{useCase.cardSummary}</p>
+                    <span className="pt-2 text-sm font-bold text-amber-700">Read more</span>
+                  </div>
+                </TrackedLink>
+              )
+            })}
           </div>
         </div>
       </section>

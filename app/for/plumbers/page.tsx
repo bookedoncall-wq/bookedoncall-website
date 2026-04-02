@@ -1,33 +1,15 @@
-import { CtaBand } from "@/components/marketing/CtaBand"
-import { PageIntro } from "@/components/marketing/PageIntro"
-import { StructuredData } from "@/components/marketing/StructuredData"
+import { UseCasePage } from "@/components/marketing/UseCasePage"
 import { useCasePages } from "@/config/marketing"
-import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
+import { buildPageMetadata } from "@/lib/seo"
 
 const content = useCasePages.plumbers
 
 export const metadata = buildPageMetadata({
   title: "For plumbing businesses",
   description: content.summary,
-  path: "/for/plumbers",
+  path: content.path,
 })
 
 export default function PlumbersPage() {
-  return (
-    <>
-      <StructuredData data={buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "For plumbers", path: "/for/plumbers" }])} />
-      <StructuredData data={buildServiceSchema({ name: content.title, description: content.summary, path: "/for/plumbers" })} />
-      <PageIntro eyebrow="Use case" title={content.title} description={content.summary} />
-      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-4xl gap-4">
-          {content.bullets.map((bullet) => (
-            <article key={bullet} className="rounded-[1.5rem] border border-white bg-white p-6 shadow-sm text-base leading-8 text-slate-600">
-              {bullet}
-            </article>
-          ))}
-        </div>
-      </section>
-      <CtaBand title="Ready to set up plumbing call coverage?" body="Choose a plan and make sure the next plumbing call gets answered." />
-    </>
-  )
+  return <UseCasePage crumbLabel="For plumbers" path={content.path} content={content} />
 }

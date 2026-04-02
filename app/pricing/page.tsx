@@ -23,7 +23,7 @@ export default function PricingPage() {
       <PageIntro
         eyebrow="Pricing"
         title="Straightforward monthly pricing."
-        description="Starter gives you simple call coverage. Pro adds more minutes and more control over how the assistant sounds and introduces itself."
+        description="Starter keeps things simple. Pro adds a more branded caller experience for teams that want more control over how the assistant sounds and introduces itself."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -82,20 +82,29 @@ export default function PricingPage() {
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">Starter vs Pro</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">Who Starter fits best</h2>
             <div className="grid gap-4 text-sm leading-7 text-slate-600">
               <div>
-                <h3 className="text-lg font-black text-slate-950">Starter</h3>
-                <p>Keep it simple with the default assistant voice, default greeting, answered calls, callbacks, and booking when enabled.</p>
+                <p>Starter is built for shops that want missed-call coverage, clear callbacks, and a simple setup without a lot of extra decisions.</p>
               </div>
               <div>
-                <h3 className="text-lg font-black text-slate-950">Pro</h3>
-                <p>Choose the voice callers hear, give the assistant a custom name, and shape the way it opens and responds.</p>
+                <p>It is a strong fit for owner-operators, family-run businesses, and growing teams that want to stop losing leads to voicemail.</p>
               </div>
             </div>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">What happens next</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">Why teams choose Pro</h2>
+            <div className="grid gap-4 text-sm leading-7 text-slate-600">
+              <div>
+                <p>Pro is for teams that want a more branded caller experience, more included minutes, and more control over how the assistant sounds.</p>
+              </div>
+              <div>
+                <p>You can choose the voice callers hear, give the assistant a custom name, and shape the greeting and behavior so it feels more like your business.</p>
+              </div>
+            </div>
+          </article>
+          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+            <h2 className="mb-4 text-3xl font-black text-slate-950">How setup works</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
               <li>Choose the plan that fits your business.</li>
               <li>Tell us how you want BookedOnCall to handle your calls.</li>
@@ -104,7 +113,19 @@ export default function PricingPage() {
             </ul>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">FAQ</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">Why people trust it</h2>
+            <div className="grid gap-4 text-sm leading-7 text-slate-600">
+              <p>BookedOnCall was built around a simple problem: too many good trades businesses lose work because nobody can answer the phone while the crew is on a job.</p>
+              <p>That is why the product is focused on the basics that matter most: answering more calls, capturing clean details, and helping your team move faster on real work.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8">
+          <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+            <h2 className="mb-4 text-3xl font-black text-slate-950">Questions people usually ask before buying</h2>
             <div className="grid gap-4">
               {faqEntries.map((entry) => (
                 <div key={entry.question}>
