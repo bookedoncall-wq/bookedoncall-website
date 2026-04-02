@@ -41,13 +41,13 @@ export default function OGImage() {
             AI call answering for trades businesses.
           </span>
           <span style={{ fontSize: 28, lineHeight: 1.4, color: "#334155" }}>
-            Answer trades calls, capture structured intake, and keep scheduling, setup, and billing in one place.
+            Answer missed calls, capture customer details, and book jobs or callbacks without sending leads to voicemail.
           </span>
         </div>
 
         <div style={{ display: "flex", gap: "20px", fontSize: 22, color: "#e2e8f0" }}>
           <span>bookedoncall.com</span>
-          <span>app.bookedoncall.com</span>
+          <span>bookedoncall.com/sign-up</span>
         </div>
       </div>
     ),

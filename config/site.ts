@@ -9,7 +9,6 @@ export const siteConfig = {
   title: `${contract.brand.name} | ${contract.brand.tagline}`,
   description: contract.brand.description,
   url: contract.brand.websiteOrigin,
-  appUrl: contract.brand.appOrigin,
   email: contract.contacts.salesEmail,
   supportEmail: contract.contacts.supportEmail,
   privacyEmail: contract.contacts.privacyEmail,
@@ -45,8 +44,8 @@ export function getPlan(planId?: string | null) {
   return plans.find((plan) => plan.id === normalized) || null
 }
 
-export function buildAppStartHref(planId?: string | null, source = "website") {
-  const url = new URL("/start", `${siteConfig.appUrl}/`)
+export function buildGetStartedHref(planId?: string | null, source = "website") {
+  const url = new URL("/sign-up", `${siteConfig.url}/`)
   const plan = getPlan(planId) || plans[0]
   if (plan) {
     url.searchParams.set("plan", plan.id)
@@ -54,7 +53,26 @@ export function buildAppStartHref(planId?: string | null, source = "website") {
   if (source) {
     url.searchParams.set("source", source)
   }
-  return url.toString()
+  return `${url.pathname}${url.search}`
+}
+
+export function buildPlanContactHref(planId?: string | null, source = "website") {
+  const plan = getPlan(planId) || plans[0]
+  const subject = `${siteConfig.name} ${plan?.name || "Plan"} interest`
+  const body = [
+    `Hi ${siteConfig.name},`,
+    "",
+    `I'm interested in the ${plan?.name || "Starter"} plan.`,
+    "",
+    "Business name:",
+    "Trade:",
+    "Best phone number:",
+    "Anything you should know about our call flow:",
+    "",
+    `Source: ${source}`,
+  ].join("\n")
+
+  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }
 
 export function absoluteUrl(path = "/") {

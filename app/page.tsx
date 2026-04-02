@@ -2,7 +2,7 @@ import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck, Wrenc
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { buildAppStartHref, integrations, plans, siteConfig, supportedTrades, validatedCapabilities } from "@/config/site"
+import { buildGetStartedHref, integrations, plans, siteConfig, supportedTrades, validatedCapabilities } from "@/config/site"
 import { homepageHighlights, workflowSteps } from "@/config/marketing"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -42,8 +42,8 @@ export default function HomePage() {
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <TrackedLink
-                href={buildAppStartHref(undefined, "website-home-hero")}
-                eventName="checkout_started"
+                href={buildGetStartedHref(undefined, "website-home-hero")}
+                eventName="signup_started"
                 eventPayload={{ placement: "home_hero_primary" }}
                 className={cn(
                   buttonVariants({ size: "lg" }),
@@ -189,16 +189,20 @@ export default function HomePage() {
             <p className="text-lg leading-8 text-slate-600">
               Connect Jobber or Google Calendar so BookedOnCall fits the way your business already schedules work.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="grid gap-3 sm:grid-cols-2">
               {integrations.map((integration) => (
                 <TrackedLink
                   key={integration.id}
                   href={`/integrations/${integration.id}`}
                   eventName="marketing_cta_clicked"
                   eventPayload={{ placement: "home_integrations", integration: integration.id }}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 transition-colors hover:border-amber-300 hover:text-slate-950"
+                  className="flex min-h-[168px] flex-col justify-between rounded-[1.5rem] border border-slate-200 bg-white p-5 text-left transition-colors hover:border-amber-300 hover:bg-amber-50/40"
                 >
-                  {integration.name}
+                  <div className="grid gap-2">
+                    <div className="text-base font-black text-slate-950">{integration.name}</div>
+                    <p className="text-sm leading-6 text-slate-600">{integration.description}</p>
+                  </div>
+                  <span className="text-sm font-bold text-amber-700">See integration details</span>
                 </TrackedLink>
               ))}
             </div>
@@ -219,7 +223,7 @@ export default function HomePage() {
                     {plan.includedMinutes} included minutes, then ${plan.overageMinuteUsd.toFixed(2)}/minute.
                   </p>
                   <TrackedLink
-                    href={buildAppStartHref(plan.id, "website-home-plan")}
+                    href={buildGetStartedHref(plan.id, "website-home-plan")}
                     eventName="pricing_plan_selected"
                     eventPayload={{ placement: "home_plan", planId: plan.id }}
                     className="text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
@@ -234,7 +238,7 @@ export default function HomePage() {
       </section>
 
       <CtaBand
-        title="Want the full details before you start?"
+        title="Want to see if it fits your business?"
         body="Review features, pricing, integrations, and FAQs, then choose your plan when you're ready."
       />
     </>

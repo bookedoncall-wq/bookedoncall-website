@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site"
 export const metadata = buildPageMetadata({
   title: "Privacy Policy",
   description:
-    "BookedOnCall privacy information for bookedoncall.com, customer accounts, and service operations.",
+    "BookedOnCall privacy information for bookedoncall.com, customer setup, and service operations.",
   path: "/privacy",
 })
 
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <PageIntro
         eyebrow="Legal"
         title="Privacy Policy"
-        description="This policy explains how BookedOnCall handles information collected through bookedoncall.com, account setup, and operation of the service."
+        description="This policy explains how BookedOnCall handles information collected through bookedoncall.com, customer setup, and operation of the service."
       />
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-4xl gap-6 rounded-[1.75rem] border border-white bg-white p-8 shadow-sm">
@@ -23,13 +23,13 @@ export default function PrivacyPage() {
           <section className="grid gap-3">
             <h2 className="text-2xl font-black text-slate-950">What this site covers</h2>
             <p className="text-base leading-8 text-slate-700">
-            This policy covers bookedoncall.com, account setup, and use of the BookedOnCall service, including connected integrations and customer dashboard activity.
+            This policy covers bookedoncall.com, customer inquiries, setup, and use of the BookedOnCall service, including connected integrations and call records.
             </p>
           </section>
           <section className="grid gap-3">
             <h2 className="text-2xl font-black text-slate-950">What information we collect</h2>
             <p className="text-base leading-8 text-slate-700">
-            We may receive contact details you provide directly, usage data about website and setup activity, and business or account information created when you use BookedOnCall.
+            We may receive contact details you provide directly, website usage data, and business information shared during setup and ongoing use of BookedOnCall.
             </p>
           </section>
           <section className="grid gap-3">
@@ -39,9 +39,9 @@ export default function PrivacyPage() {
             </p>
           </section>
           <section className="grid gap-3">
-            <h2 className="text-2xl font-black text-slate-950">Data deletion and account closure</h2>
+            <h2 className="text-2xl font-black text-slate-950">Data deletion and service closure</h2>
             <p className="text-base leading-8 text-slate-700">
-            Requests related to account closure, business data handling, or deletion should be sent to {siteConfig.privacyEmail}.
+            Requests related to service closure, business data handling, or deletion should be sent to {siteConfig.privacyEmail}.
             </p>
           </section>
           <section className="grid gap-3">

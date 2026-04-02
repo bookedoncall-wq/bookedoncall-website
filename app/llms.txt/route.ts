@@ -5,7 +5,7 @@ export async function GET() {
     `# ${siteConfig.name}`,
     "",
     `- Website: ${siteConfig.url}`,
-    `- App: ${siteConfig.appUrl}`,
+    `- Get started: ${siteConfig.url}/sign-up`,
     `- Description: ${siteConfig.description}`,
     `- Supported trades: ${publicSiteContract.supportedTrades.join(", ")}`,
     `- Integrations: ${publicSiteContract.integrations.map((integration) => integration.name).join(", ")}`,

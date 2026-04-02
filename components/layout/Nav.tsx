@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { buildAppStartHref, primaryNav, siteConfig } from "@/config/site"
+import { buildGetStartedHref, primaryNav, siteConfig } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 export default function Nav() {
@@ -41,16 +41,16 @@ export default function Nav() {
 
         <div className="hidden items-center gap-3 md:flex">
           <TrackedLink
-            href={`${siteConfig.appUrl}/sign-in`}
-            eventName="signup_started"
-            eventPayload={{ placement: "nav_signin" }}
+            href={`mailto:${siteConfig.email}`}
+            eventName="contact_sales_clicked"
+            eventPayload={{ placement: "nav_contact" }}
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950"
           >
-            Sign in
+            Contact
           </TrackedLink>
           <TrackedLink
-            href={buildAppStartHref(undefined, "website-nav")}
-            eventName="checkout_started"
+            href={buildGetStartedHref(undefined, "website-nav")}
+            eventName="signup_started"
             eventPayload={{ placement: "nav_primary" }}
             className={cn(
               buttonVariants({ size: "sm" }),
@@ -88,16 +88,16 @@ export default function Nav() {
               </TrackedLink>
             ))}
             <TrackedLink
-              href={`${siteConfig.appUrl}/sign-in`}
-              eventName="signup_started"
-              eventPayload={{ placement: "mobile_nav_signin" }}
+              href={`mailto:${siteConfig.email}`}
+              eventName="contact_sales_clicked"
+              eventPayload={{ placement: "mobile_nav_contact" }}
               className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
             >
-              Sign in
+              Contact
             </TrackedLink>
             <TrackedLink
-              href={buildAppStartHref(undefined, "website-mobile-nav")}
-              eventName="checkout_started"
+              href={buildGetStartedHref(undefined, "website-mobile-nav")}
+              eventName="signup_started"
               eventPayload={{ placement: "mobile_nav_primary" }}
               className={cn(
                 buttonVariants({ size: "sm" }),

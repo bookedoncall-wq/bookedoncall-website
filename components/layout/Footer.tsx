@@ -1,4 +1,4 @@
-import { buildAppStartHref, secondaryNav, siteConfig } from "@/config/site"
+import { buildGetStartedHref, secondaryNav, siteConfig } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 const footerColumns = [
@@ -45,20 +45,20 @@ export default function Footer() {
             <p className="max-w-sm text-sm leading-7 text-slate-400">{siteConfig.description}</p>
             <div className="flex flex-wrap gap-3">
               <TrackedLink
-                href={buildAppStartHref(undefined, "website-footer")}
-                eventName="checkout_started"
+                href={buildGetStartedHref(undefined, "website-footer")}
+                eventName="signup_started"
                 eventPayload={{ placement: "footer_primary" }}
                 className="rounded-xl bg-white px-4 py-2 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-100"
               >
                 Get started
               </TrackedLink>
               <TrackedLink
-                href={`${siteConfig.appUrl}/sign-in`}
-                eventName="signup_started"
-                eventPayload={{ placement: "footer_signin" }}
+                href={`mailto:${siteConfig.email}`}
+                eventName="contact_sales_clicked"
+                eventPayload={{ placement: "footer_contact" }}
                 className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:border-slate-500 hover:bg-slate-900"
               >
-                Sign in
+                Contact
               </TrackedLink>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-3 border-t border-slate-800 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {siteConfig.name}. AI call answering for trades businesses.</p>
-          <p>Customer login: {siteConfig.appUrl}</p>
+          <p>Questions? {siteConfig.email}</p>
         </div>
       </div>
     </footer>

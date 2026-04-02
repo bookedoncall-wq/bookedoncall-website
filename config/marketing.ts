@@ -20,9 +20,9 @@ export const faqEntries = [
       "BookedOnCall can still collect the customer details and send the call back to your team for review instead of forcing a booking."
   },
   {
-    question: "What happens after checkout?",
+    question: "What happens after I choose a plan?",
     answer:
-      "After checkout, you create your account, add your business details, and finish setup. Pro customers can also choose the assistant voice, name, greeting, and behavior."
+      "Reach out and we will help you get set up. We will talk through your trade, scheduling setup, and how you want calls handled. Pro customers can also choose the assistant voice, name, greeting, and behavior."
   },
   {
     question: "How are extra minutes billed?",

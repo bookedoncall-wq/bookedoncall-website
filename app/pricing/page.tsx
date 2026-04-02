@@ -3,7 +3,7 @@ import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { faqEntries } from "@/config/marketing"
-import { buildAppStartHref, plans } from "@/config/site"
+import { buildPlanContactHref, plans } from "@/config/site"
 import { buildBreadcrumbSchema, buildFaqSchema, buildPageMetadata } from "@/lib/seo"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -64,7 +64,7 @@ export default function PricingPage() {
               </ul>
 
               <TrackedLink
-                href={buildAppStartHref(plan.id, "website-pricing")}
+                href={buildPlanContactHref(plan.id, "website-pricing")}
                 eventName="pricing_plan_selected"
                 eventPayload={{ placement: "pricing_card", planId: plan.id }}
                 className={cn(
@@ -72,7 +72,7 @@ export default function PricingPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Get started with {plan.name}
+                Email us about {plan.name}
               </TrackedLink>
             </article>
           ))}
@@ -95,10 +95,10 @@ export default function PricingPage() {
             </div>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">What to expect after checkout</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">What happens next</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
-              <li>Create your account or sign in.</li>
-              <li>Add your business details and finish setup.</li>
+              <li>Choose the plan that fits your business.</li>
+              <li>Tell us how you want BookedOnCall to handle your calls.</li>
               <li>Connect your calendar if you want BookedOnCall to offer appointment times.</li>
               <li>Extra minutes are billed at the published per-minute rate for your plan.</li>
             </ul>
@@ -119,7 +119,7 @@ export default function PricingPage() {
 
       <CtaBand
         title="Ready to get started?"
-        body="Choose your plan and finish setup when you're ready."
+        body="Choose your plan and we will help you get BookedOnCall set up for your business."
       />
     </>
   )

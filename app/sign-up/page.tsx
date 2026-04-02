@@ -1,14 +1,14 @@
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { buildAppStartHref, plans, siteConfig } from "@/config/site"
+import { buildPlanContactHref, plans, siteConfig } from "@/config/site"
 import { buildPageMetadata } from "@/lib/seo"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
 
 export const metadata = buildPageMetadata({
-  title: "Start your account",
+  title: "Choose your plan",
   description:
-    "Choose a BookedOnCall plan, then create or sign in to your account during setup. Pro adds a more branded caller experience.",
+    "Choose a BookedOnCall plan and contact us to get started. Pro adds a more branded caller experience.",
   path: "/sign-up",
 })
 
@@ -17,8 +17,8 @@ export default function SignUpPage() {
     <>
       <PageIntro
         eyebrow="Get started"
-        title="Choose a plan and set up your account."
-        description="Pick Starter for straightforward setup or Pro for a more branded caller experience, then continue to account setup."
+        title="Choose the plan that fits your business."
+        description="Pick Starter for straightforward call coverage or Pro for a more branded caller experience, then contact us to get started."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -33,7 +33,7 @@ export default function SignUpPage() {
                 ${plan.monthlyUsd}/month with {plan.includedMinutes} included minutes.
               </p>
               <TrackedLink
-                href={buildAppStartHref(plan.id, "website-start-page")}
+                href={buildPlanContactHref(plan.id, "website-start-page")}
                 eventName="pricing_plan_selected"
                 eventPayload={{ placement: "start_page_card", planId: plan.id }}
                 className={cn(
@@ -41,24 +41,24 @@ export default function SignUpPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Get started with {plan.name}
+                Email us about {plan.name}
               </TrackedLink>
             </article>
           ))}
         </div>
 
         <div className="mx-auto mt-8 grid max-w-4xl gap-4 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-black text-slate-950">Already have an account?</h2>
+          <h2 className="text-2xl font-black text-slate-950">Questions before you start?</h2>
           <p className="text-base leading-7 text-slate-600">
-            Sign in and continue your setup or manage your business.
+            Email us and we can talk through your trade, scheduling setup, and which plan fits best.
           </p>
           <TrackedLink
-            href={`${siteConfig.appUrl}/sign-in`}
-            eventName="signup_started"
-            eventPayload={{ placement: "start_page_signin" }}
+            href={`mailto:${siteConfig.email}`}
+            eventName="contact_sales_clicked"
+            eventPayload={{ placement: "start_page_contact" }}
             className="w-fit text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
           >
-            Sign in
+            {siteConfig.email}
           </TrackedLink>
         </div>
       </section>

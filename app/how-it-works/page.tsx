@@ -60,7 +60,7 @@ export default function HowItWorksPage() {
 
       <CtaBand
         title="Ready to see it in action?"
-        body="Choose a plan, create your account, and set BookedOnCall up for the way your team handles calls."
+        body="Choose a plan and we will help you set BookedOnCall up for the way your team handles calls."
       />
     </>
   )

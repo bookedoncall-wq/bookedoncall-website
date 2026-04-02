@@ -1,4 +1,4 @@
-import { buildAppStartHref, siteConfig } from "@/config/site"
+import { buildGetStartedHref, siteConfig } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -16,8 +16,8 @@ export function CtaBand({ title, body }: CtaBandProps) {
         <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-300">{body}</p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <TrackedLink
-            href={buildAppStartHref(undefined, "website-cta-band")}
-            eventName="checkout_started"
+            href={buildGetStartedHref(undefined, "website-cta-band")}
+            eventName="signup_started"
             eventPayload={{ placement: "cta_band_primary" }}
             className={cn(
               buttonVariants({ size: "lg" }),

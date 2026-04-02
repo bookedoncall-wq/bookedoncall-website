@@ -3,7 +3,7 @@
   "brand": {
     "name": "BookedOnCall",
     "tagline": "AI call answering for trades businesses",
-    "description": "BookedOnCall answers missed calls for home-service businesses, gathers the customer details your team needs, and helps book jobs or capture callbacks.",
+    "description": "BookedOnCall answers missed calls for trades businesses, gathers the customer details your team needs, and helps book jobs or capture callbacks.",
     "websiteOrigin": "https://bookedoncall.com",
     "appOrigin": "https://app.bookedoncall.com"
   },
@@ -19,7 +19,7 @@
     "venue": "Colorado"
   },
   "featureFlags": {
-    "selfServeCheckout": true
+    "selfServeCheckout": false
   },
   "supportedTrades": [
     "Plumbing",
@@ -57,7 +57,7 @@
       "monthlyUsd": 250,
       "includedMinutes": 200,
       "overageMinuteUsd": 0.75,
-      "summary": "For owner-operators and small teams that want missed-call coverage, callback capture, and straightforward setup.",
+      "summary": "For small teams that want missed-call coverage, callback capture, and straightforward setup.",
       "capabilities": {
         "assistantName": false,
         "voiceSelection": false,
