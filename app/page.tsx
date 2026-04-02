@@ -1,4 +1,5 @@
 import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck, Wrench } from "lucide-react"
+import { ComingSoonProof } from "@/components/marketing/ComingSoonProof"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
@@ -220,6 +221,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ComingSoonProof
+        title="More proof is on the way."
+        description="We do not have public demos, customer proof, or trade-by-trade case studies ready yet, but the site now has a place for them as soon as they are ready to publish."
+      />
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">

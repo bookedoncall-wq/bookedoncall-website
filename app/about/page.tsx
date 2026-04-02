@@ -1,4 +1,5 @@
 import { Heart, Phone, Target, Users } from "lucide-react"
+import { ComingSoonProof } from "@/components/marketing/ComingSoonProof"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
@@ -128,6 +129,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <ComingSoonProof
+        title="More of the story will live here."
+        description="As BookedOnCall grows, this is where we will publish sample calls, customer proof, and case studies that show how real trades businesses are using it."
+      />
 
       <CtaBand
         title="Want to see if BookedOnCall fits your business?"

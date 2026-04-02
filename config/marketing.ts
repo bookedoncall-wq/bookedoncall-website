@@ -61,6 +61,21 @@ export const homepageTrustPoints = [
   },
 ] as const
 
+export const comingSoonProofItems = [
+  {
+    title: "Sample call demos",
+    body: "Real example call flows by trade so people can hear how BookedOnCall sounds on plumbing, HVAC, electrical, and other home-service calls.",
+  },
+  {
+    title: "Customer proof",
+    body: "Before-and-after results showing how teams use BookedOnCall to answer more calls, capture more leads, and keep work from slipping to voicemail.",
+  },
+  {
+    title: "Trade case studies",
+    body: "Short breakdowns of how different shops set up scheduling, callbacks, and follow-up for the kinds of calls they get every day.",
+  },
+] as const
+
 export const workflowSteps = [
   {
     title: "A customer calls your business",
