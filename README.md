@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BookedOnCall Website
 
-## Getting Started
+This repo is the standalone public marketing and discovery site for BookedOnCall. It is intentionally separate from the canonical SaaS monorepo and should stay thin: public messaging, structured content, discovery surfaces, and clean handoff into the app domain.
 
-First, run the development server:
+## Canonical system boundaries
+
+- `bookedoncall.com` is the marketing and discovery surface.
+- `app.bookedoncall.com` is the canonical product surface.
+- Checkout, sign-up, onboarding, billing, and business provisioning are owned by the app domain.
+- The canonical product repo lives at `/Users/david/Documents/Trades Intelligent Assistant/TVA_All_In_One`.
+
+## Public product truth
+
+The website consumes a checked-in snapshot of the monorepo public contract:
+
+- `config/public-site-contract.json`
+
+That snapshot is derived from:
+
+- `/Users/david/Documents/Trades Intelligent Assistant/TVA_All_In_One/config/bookedoncall-public-site-contract.json`
+
+Sync it whenever the public product contract changes:
+
+```bash
+npm run sync:monorepo-truth
+```
+
+## Local commands
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
+npm run verify:content
+npm run sync:monorepo-truth
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment and deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This repo should not hold checkout or billing secrets. There is no website-owned Stripe flow anymore.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- No `STRIPE_SECRET_KEY` should be configured here.
+- App handoff URLs come from the checked-in public contract snapshot.
+- Security headers, robots, sitemap, manifest, and `llms.txt` are generated from the App Router.
 
-## Learn More
+## Content and verification guardrails
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run lint` must pass with zero warnings.
+- `npm run build` must pass before deploy.
+- `npm run verify:content` checks for required routes, metadata files, contract presence, and stale marketing claims.
+- `.github/workflows/verify-content.yml` is the baseline CI workflow for this repo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editing rules
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Do not reintroduce a website-owned checkout route.
+- Do not drift from the monorepo public contract for plans, app URLs, or legal contacts.
+- Do not describe booking, reminders, write-through integrations, or dashboard capabilities more strongly than the app currently supports.
+- Prefer concrete, machine-readable copy over vague marketing language. This repo is optimized for both human conversion and search/AI discoverability.

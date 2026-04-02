@@ -1,232 +1,113 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
+import { CtaBand } from "@/components/marketing/CtaBand"
+import { PageIntro } from "@/components/marketing/PageIntro"
+import { StructuredData } from "@/components/marketing/StructuredData"
+import { TrackedLink } from "@/components/marketing/TrackedLink"
+import { faqEntries } from "@/config/marketing"
+import { buildAppStartHref, plans } from "@/config/site"
+import { buildBreadcrumbSchema, buildFaqSchema, buildPageMetadata } from "@/lib/seo"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { siteConfig } from "@/config/site"
-import { plans } from "@/config/pricing"
-import { Check, HelpCircle, Phone, Clock } from "lucide-react"
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Pricing",
   description:
-    "BookedOnCall pricing: AI call answering for trades businesses starting at $250/month. Includes Jobber integration, Google Calendar sync, SMS confirmations. No setup fees, cancel anytime.",
-  alternates: { canonical: `${siteConfig.url}/pricing` },
-}
-
-const faqs = [
-  {
-    question: "What happens if I go over my minutes?",
-    answer:
-      "If you exceed your plan's included minutes, additional minutes are billed at $0.75/minute at the end of your billing cycle. You'll receive usage alerts at 50% and 80% of your included minutes via your dashboard, email, and SMS so you can manage usage before overages occur.",
-  },
-  {
-    question: "Can I change plans?",
-    answer:
-      "Yes, you can upgrade or downgrade your plan at any time from your account dashboard. Upgrades take effect immediately; downgrades take effect at the start of your next billing period.",
-  },
-  {
-    question: "Is there a setup fee?",
-    answer:
-      "No setup fee, ever. Your first month's subscription is collected when you activate your account. Onboarding and configuration support is included at no extra charge.",
-  },
-  {
-    question: "Can I cancel anytime?",
-    answer:
-      "Yes. Cancel from your account settings at any time. Your service continues until the end of your current billing period. No long-term contracts, no cancellation fees.",
-  },
-]
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map((faq) => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer,
-    },
-  })),
-}
+    "BookedOnCall pricing for trades businesses, with app-owned checkout, monthly plans, and minute-based overages tied to the actual owner onboarding flow.",
+  path: "/pricing",
+})
 
 export default function PricingPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      <StructuredData data={buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }])} />
+      <StructuredData data={buildFaqSchema(faqEntries)} />
+      <PageIntro
+        eyebrow="Pricing"
+        title="Public pricing, app-owned checkout."
+        description="The marketing site shows the plans. The app owns checkout, subscription attachment, and onboarding so pricing truth does not drift away from product reality."
       />
-      {/* HERO */}
-      <section className="bg-white py-28 px-4 border-b border-slate-100">
-        <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-5 tracking-tight">
-            Priced to Pay for Itself
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
-            One answered call can pay for the whole month. No setup fees. Cancel anytime.
-          </p>
-        </div>
-      </section>
 
-      {/* PLAN CARDS */}
-      <section className="bg-slate-50 py-28 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {plans.map((plan) => (
-              <Card
-                key={plan.name}
-                className={`border-2 relative ${
-                  plan.highlighted
-                    ? "border-amber-500 shadow-xl shadow-amber-100"
-                    : "border-slate-200 shadow-sm"
-                }`}
-              >
-                {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-amber-500 text-white font-semibold px-4 py-1 text-sm shadow">
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-                <CardContent className="p-8">
-                  {/* Plan header */}
-                  <div className="mb-6">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-1">{plan.name}</h2>
-                    <p className="text-slate-500 text-sm">{plan.description}</p>
-                  </div>
-
-                  {/* Price */}
-                  <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-5xl font-extrabold text-slate-900">${plan.price}</span>
-                    <span className="text-slate-500">/month</span>
-                  </div>
-                  <p className="text-sm text-slate-500 mb-6">
-                    {plan.minutes} minutes included
-                  </p>
-
-                  <Separator className="mb-6" />
-
-                  {/* Features */}
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-sm text-slate-700">
-                        <Check className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Waitlist CTA */}
-                  <Link
-                    href="/sign-up"
-                    className={cn(
-                      "w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-base transition-colors",
-                      plan.highlighted
-                        ? "bg-amber-500 hover:bg-amber-400 text-white shadow-sm"
-                        : "bg-slate-900 hover:bg-slate-800 text-white"
-                    )}
-                  >
-                    Join the Waitlist
-                  </Link>
-                  <p className="text-xs text-slate-400 text-center mt-3">
-                    Billed monthly. Cancel anytime.
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Overage note */}
-          <div className="mt-10 max-w-2xl mx-auto">
-            <Card className="border border-slate-200 bg-white shadow-sm">
-              <CardContent className="p-6 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
-                  <Phone className="w-5 h-5 text-amber-500" />
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+          {plans.map((plan, index) => (
+            <article
+              key={plan.id}
+              className={cn(
+                "grid gap-5 rounded-[1.75rem] border bg-white p-7 shadow-sm",
+                index === 1 ? "border-amber-300 shadow-[0_20px_40px_rgba(245,158,11,0.12)]" : "border-slate-200"
+              )}
+            >
+              <div className="grid gap-2">
+                <div className="flex items-center justify-between gap-3">
+                  <h2 className="text-3xl font-black text-slate-950">{plan.name}</h2>
+                  {index === 1 ? (
+                    <span className="rounded-full bg-amber-500 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white">
+                      Popular
+                    </span>
+                  ) : null}
                 </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-1">Simple as a pre-paid phone plan</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    You get a block of minutes each month. Use them for as many calls as you need.
-                    If you go over, extra minutes are{" "}
-                    <span className="font-semibold text-slate-900">$0.75/minute</span>, added to
-                    your next invoice automatically. Track your usage anytime from your dashboard.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* TRUST SIGNALS */}
-      <section className="bg-white border-y border-slate-100 py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            {[
-              { icon: Check, label: "No setup fees", sub: "Start immediately, pay monthly" },
-              { icon: Clock, label: "Cancel anytime", sub: "No long-term contracts" },
-              { icon: HelpCircle, label: "Onboarding included", sub: "We help you get configured" },
-            ].map((item) => (
-              <div key={item.label} className="flex flex-col items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center">
-                  <item.icon className="w-5 h-5 text-amber-500" />
-                </div>
-                <p className="font-bold text-slate-900">{item.label}</p>
-                <p className="text-sm text-slate-500">{item.sub}</p>
+                <p className="text-base leading-7 text-slate-600">{plan.summary}</p>
               </div>
-            ))}
-          </div>
+
+              <div className="flex items-end gap-2">
+                <strong className="text-5xl font-black text-slate-950">${plan.monthlyUsd}</strong>
+                <span className="pb-2 text-slate-500">/ month</span>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
+                {plan.includedMinutes} included minutes, then ${plan.overageMinuteUsd.toFixed(2)}/minute.
+              </div>
+
+              <ul className="grid gap-3 text-sm leading-7 text-slate-600">
+                {plan.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+
+              <TrackedLink
+                href={buildAppStartHref(plan.id, "website-pricing")}
+                eventName="pricing_plan_selected"
+                eventPayload={{ placement: "pricing_card", planId: plan.id }}
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
+                )}
+              >
+                Start {plan.name.toLowerCase()} in app
+              </TrackedLink>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-slate-50 py-28 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-16 text-center tracking-tight">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <Card key={i} className="border border-slate-200 shadow-sm bg-white">
-                <CardContent className="p-7">
-                  <h3 className="font-bold text-slate-900 mb-3 flex items-start gap-2">
-                    <HelpCircle className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
-                    {faq.question}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed text-sm pl-7">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+            <h2 className="mb-4 text-3xl font-black text-slate-950">What this pricing page does not hide</h2>
+            <ul className="grid gap-3 text-sm leading-7 text-slate-600">
+              <li>Checkout happens on the app domain.</li>
+              <li>Onboarding provisions the business after payment and sign-up.</li>
+              <li>Scheduling behavior still depends on the business configuration and integrations.</li>
+              <li>Overages are minute-based and tied to the plan attached inside the app.</li>
+            </ul>
+          </article>
+          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+            <h2 className="mb-4 text-3xl font-black text-slate-950">FAQ</h2>
+            <div className="grid gap-4">
+              {faqEntries.map((entry) => (
+                <div key={entry.question}>
+                  <h3 className="text-lg font-black text-slate-950">{entry.question}</h3>
+                  <p className="mt-1 text-sm leading-7 text-slate-600">{entry.answer}</p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section className="bg-slate-950 py-28 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
-            It starts with answering the phone.
-          </h2>
-          <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            Works with Jobber and Google Calendar, tools you already use.
-          </p>
-          <Link
-            href="/sign-up"
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "bg-amber-500 hover:bg-amber-400 text-white font-bold max-w-xs mx-auto text-lg px-10 py-4 rounded-lg border-transparent"
-            )}
-          >
-            Join the Waitlist
-          </Link>
-          <p className="text-slate-600 text-sm mt-4">
-            Launching soon. Be first in line.
-          </p>
-        </div>
-      </section>
+      <CtaBand
+        title="Want pricing tied to the real onboarding flow?"
+        body="Use the app-domain start flow so checkout, sign-up, and business provisioning all happen in the same product-owned path."
+      />
     </>
   )
 }

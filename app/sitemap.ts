@@ -1,18 +1,42 @@
 import type { MetadataRoute } from "next"
-import { siteConfig } from "@/config/site"
+import { absoluteUrl } from "@/config/site"
+
+const pages = [
+  "/",
+  "/features",
+  "/how-it-works",
+  "/pricing",
+  "/sign-up",
+  "/about",
+  "/faq",
+  "/for/plumbers",
+  "/for/hvac",
+  "/for/electricians",
+  "/integrations/jobber",
+  "/integrations/google-calendar",
+  "/privacy",
+  "/terms",
+  "/dpa",
+] as const
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url
-
-  return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
-    { url: `${baseUrl}/features`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/how-it-works`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/pricing`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/sign-up`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: `${baseUrl}/dpa`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-  ]
+  const now = new Date()
+  return pages.map((path) => ({
+    url: absoluteUrl(path),
+    lastModified: now,
+    changeFrequency:
+      path === "/" || path === "/pricing" || path === "/faq"
+        ? "weekly"
+        : path.startsWith("/for/") || path.startsWith("/integrations/")
+          ? "monthly"
+          : "monthly",
+    priority:
+      path === "/"
+        ? 1
+        : path === "/pricing"
+          ? 0.95
+          : path === "/features" || path === "/how-it-works" || path === "/faq"
+            ? 0.85
+            : 0.7,
+  }))
 }

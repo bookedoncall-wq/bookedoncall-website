@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
-export const alt = "BookedOnCall | AI Call Answering for Trades Businesses"
+export const alt = "BookedOnCall | AI call answering for trades businesses"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -14,117 +14,43 @@ export default function OGImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#0F172A",
-          padding: "60px 80px",
+          justifyContent: "space-between",
+          padding: "64px 72px",
+          background:
+            "linear-gradient(160deg, rgba(255,247,237,1) 0%, rgba(255,255,255,1) 35%, rgba(15,23,42,1) 100%)",
+          color: "#0f172a",
         }}
       >
-        {/* Logo */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "32px",
-          }}
-        >
-          <span
-            style={{
-              fontSize: "36px",
-              fontWeight: 800,
-              color: "#FFFFFF",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            BookedOn
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontSize: 38, fontWeight: 800 }}>
+            BookedOn<span style={{ color: "#f59e0b" }}>Call</span>
           </span>
           <span
             style={{
-              fontSize: "36px",
-              fontWeight: 800,
-              color: "#F59E0B",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Call
-          </span>
-          <div
-            style={{
-              width: "8px",
-              height: "8px",
-              borderRadius: "50%",
-              backgroundColor: "#F59E0B",
-              marginLeft: "4px",
-              marginBottom: "16px",
+              width: "10px",
+              height: "10px",
+              borderRadius: "999px",
+              backgroundColor: "#f59e0b",
+              marginTop: "2px",
             }}
           />
         </div>
 
-        {/* Headline */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "8px",
-            marginBottom: "36px",
-          }}
-        >
-          <span
-            style={{
-              fontSize: "64px",
-              fontWeight: 800,
-              color: "#FFFFFF",
-              lineHeight: 1.1,
-              textAlign: "center",
-              letterSpacing: "-0.03em",
-            }}
-          >
-            Answer More Calls.
+        <div style={{ display: "flex", flexDirection: "column", gap: "18px", maxWidth: "860px" }}>
+          <span style={{ fontSize: 70, fontWeight: 900, lineHeight: 1 }}>
+            AI call answering for trades businesses.
           </span>
-          <span
-            style={{
-              fontSize: "64px",
-              fontWeight: 800,
-              color: "#F59E0B",
-              lineHeight: 1.1,
-              textAlign: "center",
-              letterSpacing: "-0.03em",
-            }}
-          >
-            Book More Jobs.
+          <span style={{ fontSize: 28, lineHeight: 1.4, color: "#334155" }}>
+            Answer trades calls, capture structured intake, and route qualified work into the app surface that owns onboarding and billing truth.
           </span>
         </div>
 
-        {/* Subhead */}
-        <span
-          style={{
-            fontSize: "24px",
-            color: "#94A3B8",
-            textAlign: "center",
-            maxWidth: "700px",
-            lineHeight: 1.5,
-          }}
-        >
-          AI-powered call answering built for trades businesses.
-        </span>
-
-        {/* Bottom bar */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "40px",
-            display: "flex",
-            gap: "32px",
-            alignItems: "center",
-          }}
-        >
-          <span style={{ fontSize: "18px", color: "#64748B" }}>
-            bookedoncall.com
-          </span>
+        <div style={{ display: "flex", gap: "20px", fontSize: 22, color: "#e2e8f0" }}>
+          <span>bookedoncall.com</span>
+          <span>app.bookedoncall.com</span>
         </div>
       </div>
     ),
-    { ...size }
+    size
   )
 }

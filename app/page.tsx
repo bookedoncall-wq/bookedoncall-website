@@ -1,414 +1,242 @@
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck, Wrench } from "lucide-react"
+import { CtaBand } from "@/components/marketing/CtaBand"
+import { StructuredData } from "@/components/marketing/StructuredData"
+import { TrackedLink } from "@/components/marketing/TrackedLink"
+import { buildAppStartHref, integrations, plans, siteConfig, supportedTrades, validatedCapabilities } from "@/config/site"
+import { homepageHighlights, workflowSteps } from "@/config/marketing"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { siteConfig } from "@/config/site"
-import { plans } from "@/config/pricing"
-import { HeroGraphic } from "@/components/sections/HeroGraphic"
-import {
-  PhoneMissed,
-  Voicemail,
-  HardHat,
-  Phone,
-  CalendarCheck,
-  MessageSquare,
-  Zap,
-  Clock,
-  Check,
-  Wrench,
-  Play,
-  ArrowRight,
-} from "lucide-react"
+import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
+
+export const metadata = buildPageMetadata({
+  title: "AI call answering for trades businesses",
+  description:
+    "BookedOnCall answers inbound calls for trades businesses, captures qualified leads, checks configured availability, and routes work into the owner dashboard.",
+  path: "/",
+})
 
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="bg-white py-28 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            {/* Text column */}
-            <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-800 text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-amber-200">
-                <Zap className="w-3.5 h-3.5" />
-                AI-powered call answering for trades businesses
-              </div>
-              <h1 className="text-5xl sm:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight mb-6">
-                Answer More Calls.<br />
-                <span className="text-amber-500">Book More Jobs.</span>
+      <StructuredData
+        data={buildServiceSchema({
+          name: "BookedOnCall marketing site",
+          description: siteConfig.description,
+          path: "/",
+        })}
+      />
+
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div className="grid gap-7">
+            <p className="w-fit rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
+              Honest AI call answering for home-service operators
+            </p>
+            <div className="grid gap-5">
+              <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
+                Catch more inbound demand without turning your website into a fake product promise.
               </h1>
-              <p className="text-xl text-slate-600 max-w-xl mb-10 leading-relaxed">
-                While you&apos;re on the job, BookedOnCall picks up your calls,
-                qualifies the lead, and books the appointment automatically.
+              <p className="max-w-3xl text-xl leading-8 text-slate-600">
+                BookedOnCall answers calls for trades businesses, captures the intake data you actually need, and books or routes follow-up based on the business configuration inside the app.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-                <Link
-                  href="/sign-up"
-                  className={cn(
-                    buttonVariants({ size: "lg" }),
-                    "bg-amber-500 hover:bg-amber-400 text-white font-bold px-8 text-lg rounded-lg shadow-md border-transparent"
-                  )}
-                >
-                  Join the Waitlist
-                </Link>
-                <Link
-                  href="/how-it-works"
-                  className={cn(
-                    buttonVariants({ variant: "outline", size: "lg" }),
-                    "font-semibold px-8 text-lg rounded-lg border-slate-300"
-                  )}
-                >
-                  See How It Works
-                </Link>
-              </div>
-              {/* Trade type pills */}
-              <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                {siteConfig.trades.map((trade) => (
-                  <Badge
-                    key={trade}
-                    variant="secondary"
-                    className="bg-slate-100 text-slate-600 border border-slate-200 text-sm px-3 py-1 rounded-full font-medium"
-                  >
-                    {trade}
-                  </Badge>
-                ))}
-              </div>
             </div>
-
-            {/* Graphic column — hidden on mobile */}
-            <div className="hidden lg:flex flex-1 justify-center items-center">
-              <HeroGraphic className="w-72 h-auto drop-shadow-sm" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BENEFIT BAR */}
-      <section className="bg-slate-950 py-6 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-            {[
-              { icon: Phone, text: "Picks up fast, every time" },
-              { icon: Clock, text: "Works 24/7, nights and weekends" },
-              { icon: Zap, text: "Quick, guided setup" },
-            ].map((item) => (
-              <div key={item.text} className="flex items-center justify-center gap-2 text-white">
-                <item.icon className="w-4 h-4 text-amber-400" />
-                <span className="text-sm font-medium">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PAIN POINTS */}
-      <section className="bg-white py-28 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              Every missed call is a missed paycheck
-            </h2>
-            <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
-              You&apos;re on the job. Your phone rings. Here&apos;s what happens next, and what it costs you.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="border border-slate-200 shadow-sm">
-              <CardContent className="p-8 text-center">
-                <div className="w-14 h-14 rounded-full bg-amber-50 flex items-center justify-center mx-auto mb-5">
-                  <PhoneMissed className="w-7 h-7 text-amber-500" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">Missed calls = missed jobs</h3>
-                <p className="text-slate-600 leading-relaxed text-sm">
-                  Most callers won&apos;t leave a voicemail. They&apos;ll call your competitor instead. Every
-                  unanswered ring is real revenue walking out the door.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border border-slate-200 shadow-sm">
-              <CardContent className="p-8 text-center">
-                <div className="w-14 h-14 rounded-full bg-amber-50 flex items-center justify-center mx-auto mb-5">
-                  <Voicemail className="w-7 h-7 text-amber-500" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">First to answer wins the job</h3>
-                <p className="text-slate-600 leading-relaxed text-sm">
-                  Even if they leave a message, they&apos;ve already called someone else. In the trades,
-                  the fastest response wins the job. BookedOnCall makes sure that&apos;s you.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border border-slate-200 shadow-sm">
-              <CardContent className="p-8 text-center">
-                <div className="w-14 h-14 rounded-full bg-amber-50 flex items-center justify-center mx-auto mb-5">
-                  <HardHat className="w-7 h-7 text-amber-500" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">Your hands are full</h3>
-                <p className="text-slate-600 leading-relaxed text-sm">
-                  You&apos;re in the middle of a job. You can&apos;t stop to take calls, and you shouldn&apos;t have to.
-                  BookedOnCall handles it so you can keep working.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS (BRIEF) */}
-      <section className="bg-slate-50 py-28 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              While You&apos;re Working, We&apos;re Answering.
-            </h2>
-            <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
-              Set up once. Then forget about it. Your calls, handled.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "1",
-                icon: Phone,
-                title: "Customer calls",
-                desc: "Your business number rings. BookedOnCall picks up the call, day or night, weekday or weekend.",
-              },
-              {
-                step: "2",
-                icon: CalendarCheck,
-                title: "AI qualifies & books",
-                desc: "The AI captures the caller's info, checks your schedule, and books the appointment on the spot.",
-              },
-              {
-                step: "3",
-                icon: MessageSquare,
-                title: "You get a text",
-                desc: "You receive an SMS summary with the caller's name, service needed, and appointment details.",
-              },
-            ].map((item) => (
-              <div key={item.step} className="flex flex-col items-center text-center">
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 rounded-full bg-amber-500 flex items-center justify-center shadow-md">
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-slate-900 text-white text-xs font-bold flex items-center justify-center">
-                    {item.step}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/how-it-works"
-              className={cn(buttonVariants({ variant: "outline" }), "border-slate-300 font-semibold")}
-            >
-              See the full call flow &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURES HIGHLIGHT */}
-      <section className="bg-white py-28 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              Everything a receptionist does, automated
-            </h2>
-            <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
-              No training required. No sick days. No overtime.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Phone,
-                title: "AI Voice Answering",
-                desc: "Sounds professional. Handles calls like a trained receptionist.",
-              },
-              {
-                icon: CalendarCheck,
-                title: "Instant Booking",
-                desc: "Syncs with your calendar and books the job in real time, no back-and-forth.",
-              },
-              {
-                icon: MessageSquare,
-                title: "SMS Confirmations",
-                desc: "Callers get instant text confirmation. You get a summary notification.",
-              },
-              {
-                icon: Zap,
-                title: "Jobber & Calendar Sync",
-                desc: "Plugs directly into Jobber and Google Calendar. Works with tools you already use.",
-              },
-            ].map((feat) => (
-              <Card
-                key={feat.title}
-                className="border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <CardContent className="p-6">
-                  <div className="w-11 h-11 rounded-lg bg-amber-50 flex items-center justify-center mb-4">
-                    <feat.icon className="w-5 h-5 text-amber-500" />
-                  </div>
-                  <h3 className="font-bold text-slate-900 mb-2">{feat.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{feat.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/features"
-              className={cn(buttonVariants({ variant: "outline" }), "border-slate-300 font-semibold")}
-            >
-              View all features &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* AUDIO DEMO */}
-      <section className="bg-slate-950 py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-amber-500/20">
-            <Phone className="w-3.5 h-3.5" />
-            Hear it in action
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
-            Listen to a sample call
-          </h2>
-          <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            Hear how BookedOnCall handles a real plumbing inquiry, from greeting to booking confirmation.
-          </p>
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-lg mx-auto">
-            <div className="w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center mx-auto mb-5">
-              <Play className="w-8 h-8 text-amber-400" />
-            </div>
-            <p className="text-white font-semibold mb-2">Audio Demo</p>
-            <p className="text-slate-500 text-sm mb-6">Sample call: Emergency plumbing booking</p>
-            <div className="bg-slate-800 rounded-lg h-12 flex items-center justify-center">
-              <p className="text-slate-500 text-sm">Coming soon</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTEGRATIONS */}
-      <section className="bg-slate-50 border-y border-slate-200 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-8">
-            Works with tools you already use
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            {[
-              { name: "Jobber", icon: Wrench },
-              { name: "Google Calendar", icon: CalendarCheck },
-              { name: "SMS Notifications", icon: MessageSquare },
-            ].map((tool) => (
-              <div
-                key={tool.name}
-                className="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-6 py-4 shadow-sm"
-              >
-                <tool.icon className="w-5 h-5 text-slate-700" />
-                <span className="font-semibold text-slate-800">{tool.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING TEASER */}
-      <section className="bg-white py-28 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              Simple, transparent pricing
-            </h2>
-            <p className="text-slate-600 text-lg leading-relaxed">
-              One answered call can pay for the whole month.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {plans.map((plan) => (
-              <Card
-                key={plan.name}
-                className={`border-2 shadow-sm relative ${
-                  plan.highlighted ? "border-amber-500 shadow-amber-100" : "border-slate-200"
-                }`}
-              >
-                {plan.highlighted && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-amber-500 text-white font-semibold px-3 py-0.5">
-                      Most Popular
-                    </Badge>
-                  </div>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <TrackedLink
+                href={buildAppStartHref(undefined, "website-home-hero")}
+                eventName="checkout_started"
+                eventPayload={{ placement: "home_hero_primary" }}
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
-                <CardContent className="p-7">
-                  <h3 className="text-xl font-bold text-slate-900 mb-1">{plan.name}</h3>
-                  <p className="text-sm text-slate-500 mb-4">{plan.description}</p>
-                  <div className="flex items-baseline gap-1 mb-6">
-                    <span className="text-4xl font-extrabold text-slate-900">${plan.price}</span>
-                    <span className="text-slate-500 text-sm">/month</span>
-                  </div>
-                  <ul className="space-y-2.5 mb-7">
-                    {plan.features.slice(0, 5).map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-slate-700">
-                        <Check className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/sign-up"
-                    className={cn(
-                      "w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-base transition-colors",
-                      plan.highlighted
-                        ? "bg-amber-500 hover:bg-amber-400 text-white shadow-sm"
-                        : "bg-slate-900 hover:bg-slate-800 text-white"
-                    )}
-                  >
-                    Join the Waitlist
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
+              >
+                Start in app
+              </TrackedLink>
+              <TrackedLink
+                href="/how-it-works"
+                eventName="marketing_cta_clicked"
+                eventPayload={{ placement: "home_hero_secondary", href: "/how-it-works" }}
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "rounded-xl border-slate-300 px-6 text-slate-950 hover:bg-white"
+                )}
+              >
+                See the workflow
+              </TrackedLink>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {supportedTrades.map((trade) => (
+                <span
+                  key={trade}
+                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-600"
+                >
+                  {trade}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="text-center mt-8">
-            <Link
-              href="/pricing"
-              className="text-sm text-amber-600 font-semibold hover:text-amber-500 underline underline-offset-2"
-            >
-              View full pricing details &rarr;
-            </Link>
+
+          <aside className="grid gap-4 rounded-[2rem] border border-amber-100 bg-white p-6 shadow-[0_28px_60px_rgba(15,23,42,0.08)]">
+            <div className="rounded-2xl bg-slate-950 p-5 text-white">
+              <div className="mb-4 flex items-center justify-between">
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-amber-300">Call flow snapshot</span>
+                <PhoneCall className="size-5 text-amber-300" />
+              </div>
+              <div className="grid gap-3 text-sm leading-6 text-slate-200">
+                <p>
+                  <strong>Caller:</strong> &ldquo;My AC stopped working and I need someone this week.&rdquo;
+                </p>
+                <p>
+                  <strong>Assistant:</strong> captures the issue, confirms location, and checks the configured scheduling path.
+                </p>
+                <p>
+                  <strong>Outcome:</strong> book a supported slot or log a callback if the request needs manual review.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <div className="flex items-center gap-3">
+                <ClipboardList className="size-5 text-amber-500" />
+                <strong className="text-slate-950">What the owner gets</strong>
+              </div>
+              <ul className="grid gap-2 text-sm leading-6 text-slate-600">
+                <li>Structured call summary in the owner dashboard</li>
+                <li>Booking result or callback outcome tied to the business workflow</li>
+                <li>Integration status surfaced on the app side, not guessed from marketing copy</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="border-y border-slate-200 bg-slate-950 px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-4 text-center text-sm font-semibold text-white sm:grid-cols-3">
+          <p className="flex items-center justify-center gap-2">
+            <PhoneCall className="size-4 text-amber-300" />
+            Inbound call coverage while crews are on site
+          </p>
+          <p className="flex items-center justify-center gap-2">
+            <CalendarClock className="size-4 text-amber-300" />
+            Scheduling only when the business has enabled it
+          </p>
+          <p className="flex items-center justify-center gap-2">
+            <ShieldCheck className="size-4 text-amber-300" />
+            One app-side source of truth for billing and onboarding
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-3">
+          {homepageHighlights.map((item) => (
+            <article key={item.title} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+              <h2 className="mb-3 text-2xl font-black text-slate-950">{item.title}</h2>
+              <p className="text-base leading-7 text-slate-600">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+          <div className="grid gap-4">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How the product actually works</p>
+            <h2 className="text-4xl font-black text-slate-950">A straight line from website promise to app behavior.</h2>
+            <p className="text-lg leading-8 text-slate-600">
+              The marketing site only describes flows the app can own: answer the call, qualify the request, check configured availability, and hand the result into the owner dashboard.
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {workflowSteps.map((step, index) => (
+              <article key={step.title} className="grid gap-3 rounded-[1.5rem] border border-white bg-white p-6 shadow-sm">
+                <div className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">
+                  <span>Step {index + 1}</span>
+                  <ArrowRight className="size-4" />
+                </div>
+                <h3 className="text-2xl font-black text-slate-950">{step.title}</h3>
+                <p className="text-base leading-7 text-slate-600">{step.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="bg-slate-950 py-28 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-5 leading-tight tracking-tight">
-            Stop missing calls.<br />
-            <span className="text-amber-400">Start booking more jobs.</span>
-          </h2>
-          <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Quick setup. Works with Jobber and Google Calendar. One answered call can pay for the whole month.
-          </p>
-          <Link
-            href="/sign-up"
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "bg-amber-500 hover:bg-amber-400 text-white font-bold px-10 text-lg rounded-lg shadow-lg border-transparent"
-            )}
-          >
-            Join the Waitlist
-          </Link>
-          <p className="text-slate-600 text-sm mt-4">Launching soon. Be first in line.</p>
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
+          <div className="grid gap-4">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Validated public capabilities</p>
+            <h2 className="text-4xl font-black text-slate-950">What the public site can say without hedging.</h2>
+            <p className="text-lg leading-8 text-slate-600">
+              These are the app-backed behaviors this site is willing to claim plainly.
+            </p>
+          </div>
+          <div className="grid gap-3">
+            {validatedCapabilities.map((capability) => (
+              <div key={capability} className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <Wrench className="mt-1 size-5 shrink-0 text-amber-500" />
+                <p className="text-sm leading-7 text-slate-700">{capability}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
+          <div className="grid gap-4">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Supported integrations</p>
+            <h2 className="text-4xl font-black text-slate-950">Connected systems remain business-controlled.</h2>
+            <p className="text-lg leading-8 text-slate-600">
+              Integrations live in the owner dashboard. This site only promises the connected behavior the app can actually verify.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {integrations.map((integration) => (
+                <TrackedLink
+                  key={integration.id}
+                  href={`/integrations/${integration.id}`}
+                  eventName="marketing_cta_clicked"
+                  eventPayload={{ placement: "home_integrations", integration: integration.id }}
+                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 transition-colors hover:border-amber-300 hover:text-slate-950"
+                >
+                  {integration.name}
+                </TrackedLink>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Public pricing</p>
+            <h2 className="text-4xl font-black text-slate-950">Simple monthly plans tied to the app, not the landing page.</h2>
+            <div className="grid gap-4">
+              {plans.map((plan) => (
+                <article key={plan.id} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <h3 className="text-2xl font-black text-slate-950">{plan.name}</h3>
+                    <strong className="text-2xl text-slate-950">${plan.monthlyUsd}/mo</strong>
+                  </div>
+                  <p className="mb-4 text-sm leading-7 text-slate-600">{plan.summary}</p>
+                  <p className="mb-4 text-sm font-semibold text-slate-700">
+                    {plan.includedMinutes} included minutes, then ${plan.overageMinuteUsd.toFixed(2)}/minute.
+                  </p>
+                  <TrackedLink
+                    href={buildAppStartHref(plan.id, "website-home-plan")}
+                    eventName="pricing_plan_selected"
+                    eventPayload={{ placement: "home_plan", planId: plan.id }}
+                    className="text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
+                  >
+                    Start {plan.name.toLowerCase()} in app
+                  </TrackedLink>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand
+        title="Want the full details before you buy?"
+        body="Review features, pricing, integrations, and FAQs first, then start checkout on the app domain when the flow matches how your business actually works."
+      />
     </>
   )
 }

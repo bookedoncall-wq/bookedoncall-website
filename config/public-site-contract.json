@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "brand": {
+    "name": "BookedOnCall",
+    "tagline": "AI call answering for trades businesses",
+    "description": "BookedOnCall answers inbound calls for home-service businesses, qualifies the caller, captures lead details, and can book or route follow-up based on the business configuration.",
+    "websiteOrigin": "https://bookedoncall.com",
+    "appOrigin": "https://app.bookedoncall.com"
+  },
+  "contacts": {
+    "salesEmail": "bookedoncall@bookedoncall.com",
+    "supportEmail": "bookedoncall@bookedoncall.com",
+    "privacyEmail": "bookedoncall@bookedoncall.com",
+    "legalEmail": "bookedoncall@bookedoncall.com"
+  },
+  "legal": {
+    "lastUpdated": "2026-04-01",
+    "governingLaw": "Colorado",
+    "venue": "Colorado"
+  },
+  "featureFlags": {
+    "selfServeCheckout": true
+  },
+  "supportedTrades": [
+    "Plumbing",
+    "HVAC",
+    "Electrical",
+    "Painting",
+    "Flooring",
+    "Landscaping",
+    "General home services"
+  ],
+  "validatedCapabilities": [
+    "Answers inbound calls for trades businesses using a configured AI assistant.",
+    "Captures caller name, phone number, job details, and callback information.",
+    "Checks scheduling availability against the configured provider when the business has enabled scheduling.",
+    "Supports Jobber and Google Calendar integrations when a business connects and configures those accounts.",
+    "Writes call summaries and operational data into the BookedOnCall owner dashboard.",
+    "Queues SMS or email follow-up flows when the business configuration enables those channels."
+  ],
+  "integrations": [
+    {
+      "id": "jobber",
+      "name": "Jobber",
+      "description": "BookedOnCall can use Jobber as a scheduling provider and can sync eligible bookings through the configured Jobber connection."
+    },
+    {
+      "id": "google-calendar",
+      "name": "Google Calendar",
+      "description": "BookedOnCall can check availability against Google Calendar and write bookings back when the business has connected a supported calendar account."
+    }
+  ],
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "monthlyUsd": 250,
+      "includedMinutes": 200,
+      "overageMinuteUsd": 0.75,
+      "summary": "For owner-operators who want missed-call coverage, lead capture, and a clean launch path.",
+      "features": [
+        "200 included call minutes each month",
+        "Inbound call answering and lead qualification",
+        "Callback capture and operator handoff support",
+        "Scheduling against the configured provider when enabled",
+        "Jobber or Google Calendar integration when connected",
+        "Call summaries in the owner dashboard"
+      ]
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "monthlyUsd": 350,
+      "includedMinutes": 400,
+      "overageMinuteUsd": 0.75,
+      "summary": "For higher-volume teams that want more included capacity and the same core workflow controls.",
+      "features": [
+        "400 included call minutes each month",
+        "Inbound call answering and lead qualification",
+        "Callback capture and operator handoff support",
+        "Scheduling against the configured provider when enabled",
+        "Jobber or Google Calendar integration when connected",
+        "Call summaries in the owner dashboard"
+      ]
+    }
+  ]
+}

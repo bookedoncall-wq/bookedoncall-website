@@ -1,98 +1,114 @@
 "use client"
 
-import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { siteConfig } from "@/config/site"
-
-const navLinks = [
-  { label: "Features", href: "/features" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
-]
+import { buildAppStartHref, primaryNav, siteConfig } from "@/config/site"
+import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo — single inline flow, no gap */}
-          <Link href="/" className="flex items-center font-bold text-xl tracking-tight text-slate-900">
-            <span>BookedOn<span className="text-amber-500">Call</span></span>
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 ml-1 mb-3 inline-block flex-shrink-0" />
-          </Link>
+    <header className="sticky top-0 z-50 border-b border-white/70 bg-white/85 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <TrackedLink
+          href="/"
+          eventName="marketing_cta_clicked"
+          eventPayload={{ placement: "nav_logo" }}
+          className="flex items-center gap-2 text-lg font-black tracking-tight text-slate-950"
+        >
+          <span>
+            BookedOn<span className="text-amber-500">Call</span>
+          </span>
+          <span className="inline-block h-2 w-2 rounded-full bg-amber-500" aria-hidden="true" />
+        </TrackedLink>
 
-          {/* Desktop nav links */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/sign-up"
-              className={cn(
-                buttonVariants({ size: "sm" }),
-                "bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-lg border-transparent"
-              )}
+        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
+          {primaryNav.map((link) => (
+            <TrackedLink
+              key={link.href}
+              href={link.href}
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "nav_link", href: link.href }}
+              className="text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950"
             >
-              Join the Waitlist
-            </Link>
-          </div>
+              {link.label}
+            </TrackedLink>
+          ))}
+        </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+        <div className="hidden items-center gap-3 md:flex">
+          <TrackedLink
+            href={`${siteConfig.appUrl}/sign-in`}
+            eventName="signup_started"
+            eventPayload={{ placement: "nav_signin" }}
+            className="text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950"
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+            Sign in
+          </TrackedLink>
+          <TrackedLink
+            href={buildAppStartHref(undefined, "website-nav")}
+            eventName="checkout_started"
+            eventPayload={{ placement: "nav_primary" }}
+            className={cn(
+              buttonVariants({ size: "sm" }),
+              "rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
+            )}
+          >
+            Start in app
+          </TrackedLink>
         </div>
+
+        <button
+          type="button"
+          className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950 md:hidden"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMobileOpen((open) => !open)}
+        >
+          {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
       </div>
 
-      {/* Mobile dropdown */}
-      {mobileOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white">
-          <div className="px-4 py-4 space-y-3">
-            {navLinks.map((link) => (
-              <Link
+      {mobileOpen ? (
+        <div id="mobile-nav" className="border-t border-slate-200 bg-white md:hidden">
+          <div className="mx-auto grid max-w-6xl gap-3 px-4 py-4 sm:px-6">
+            {primaryNav.map((link) => (
+              <TrackedLink
                 key={link.href}
                 href={link.href}
-                className="block text-sm font-medium text-slate-700 hover:text-slate-900 py-2"
-                onClick={() => setMobileOpen(false)}
+                eventName="marketing_cta_clicked"
+                eventPayload={{ placement: "mobile_nav_link", href: link.href }}
+                className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
               >
                 {link.label}
-              </Link>
+              </TrackedLink>
             ))}
-            <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
-              <Link
-                href="/sign-up"
-                className={cn(
-                  buttonVariants({ size: "sm" }),
-                  "w-full justify-center bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-lg border-transparent"
-                )}
-                onClick={() => setMobileOpen(false)}
-              >
-                Join the Waitlist
-              </Link>
-            </div>
+            <TrackedLink
+              href={`${siteConfig.appUrl}/sign-in`}
+              eventName="signup_started"
+              eventPayload={{ placement: "mobile_nav_signin" }}
+              className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
+            >
+              Sign in
+            </TrackedLink>
+            <TrackedLink
+              href={buildAppStartHref(undefined, "website-mobile-nav")}
+              eventName="checkout_started"
+              eventPayload={{ placement: "mobile_nav_primary" }}
+              className={cn(
+                buttonVariants({ size: "sm" }),
+                "mt-2 justify-center rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
+              )}
+            >
+              Start in app
+            </TrackedLink>
           </div>
         </div>
-      )}
+      ) : null}
     </header>
   )
 }
