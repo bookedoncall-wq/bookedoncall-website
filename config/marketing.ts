@@ -22,7 +22,7 @@ export const faqEntries = [
   {
     question: "What happens after I choose a plan?",
     answer:
-      "Reach out and we will help you get set up. We will talk through your trade, scheduling setup, and how you want calls handled. Pro customers can also choose the assistant voice, name, greeting, and behavior."
+      "Send us your details through the form and we will follow up. We will talk through your trade, scheduling setup, and how you want calls handled. Pro customers can also choose the assistant voice, name, greeting, and behavior."
   },
   {
     question: "How are extra minutes billed?",
@@ -63,8 +63,8 @@ export const homepageTrustPoints = [
 
 export const comingSoonProofItems = [
   {
-    title: "Sample call demos",
-    body: "Real example call flows by trade so people can hear how BookedOnCall sounds on plumbing, HVAC, electrical, and other home-service calls.",
+    title: "Audio call demos",
+    body: "Recorded examples by trade so people can hear how BookedOnCall sounds on plumbing, HVAC, electrical, and other home-service calls.",
   },
   {
     title: "Customer proof",

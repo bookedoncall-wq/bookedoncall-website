@@ -3,7 +3,7 @@ import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { faqEntries } from "@/config/marketing"
-import { buildPlanContactHref, plans } from "@/config/site"
+import { buildLeadFormHref, plans } from "@/config/site"
 import { buildBreadcrumbSchema, buildFaqSchema, buildPageMetadata } from "@/lib/seo"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -64,7 +64,7 @@ export default function PricingPage() {
               </ul>
 
               <TrackedLink
-                href={buildPlanContactHref(plan.id, "website-pricing")}
+                href={buildLeadFormHref(plan.id, "website-pricing")}
                 eventName="pricing_plan_selected"
                 eventPayload={{ placement: "pricing_card", planId: plan.id }}
                 className={cn(
@@ -72,7 +72,7 @@ export default function PricingPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Talk to us about {plan.name}
+                Choose {plan.name}
               </TrackedLink>
             </article>
           ))}

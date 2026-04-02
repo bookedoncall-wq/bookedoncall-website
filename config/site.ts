@@ -60,23 +60,8 @@ export function buildGetStartedHref(planId?: string | null, source = "website") 
   return `${url.pathname}${url.search}`
 }
 
-export function buildPlanContactHref(planId?: string | null, source = "website") {
-  const plan = getPlan(planId) || plans[0]
-  const subject = `${siteConfig.name} ${plan?.name || "Plan"} interest`
-  const body = [
-    `Hi ${siteConfig.name},`,
-    "",
-    `I'm interested in the ${plan?.name || "Starter"} plan.`,
-    "",
-    "Business name:",
-    "Trade:",
-    "Best phone number:",
-    "Anything you should know about our call flow:",
-    "",
-    `Source: ${source}`,
-  ].join("\n")
-
-  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+export function buildLeadFormHref(planId?: string | null, source = "website") {
+  return `${buildGetStartedHref(planId, source)}#lead-form`
 }
 
 export function absoluteUrl(path = "/") {

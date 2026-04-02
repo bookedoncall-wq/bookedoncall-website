@@ -6,7 +6,7 @@ import { buildBreadcrumbSchema, buildFaqSchema, buildPageMetadata } from "@/lib/
 export const metadata = buildPageMetadata({
   title: "FAQ",
   description:
-    "Frequently asked questions about BookedOnCall pricing, integrations, onboarding, bookings, callbacks, and follow-up.",
+    "Frequently asked questions about BookedOnCall pricing, setup, integrations, bookings, callbacks, and follow-up.",
   path: "/faq",
 })
 

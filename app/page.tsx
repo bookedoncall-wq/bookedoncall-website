@@ -3,7 +3,7 @@ import { ComingSoonProof } from "@/components/marketing/ComingSoonProof"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { buildGetStartedHref, integrations, plans, siteConfig, supportedTrades, validatedCapabilities } from "@/config/site"
+import { buildGetStartedHref, buildLeadFormHref, integrations, plans, siteConfig, supportedTrades, validatedCapabilities } from "@/config/site"
 import { homepageHighlights, homepageTrustPoints, useCaseOrder, useCasePages, workflowSteps } from "@/config/marketing"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -222,9 +222,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8">
+          <div className="grid gap-4 text-center">
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">See more</p>
+            <h2 className="text-4xl font-black text-slate-950">Guides, comparisons, and sample calls.</h2>
+            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
+              If you want more than a homepage overview, start with these pages.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            <TrackedLink
+              href="/demo-calls"
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "home_resources", href: "/demo-calls" }}
+              className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            >
+              <h3 className="mb-3 text-2xl font-black text-slate-950">Sample call transcripts</h3>
+              <p className="text-base leading-7 text-slate-600">
+                Read illustrative plumbing, HVAC, and electrical call examples to hear how the call flow can sound.
+              </p>
+            </TrackedLink>
+            <TrackedLink
+              href="/compare/ai-receptionist-vs-voicemail"
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "home_resources", href: "/compare/ai-receptionist-vs-voicemail" }}
+              className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            >
+              <h3 className="mb-3 text-2xl font-black text-slate-950">AI receptionist vs voicemail</h3>
+              <p className="text-base leading-7 text-slate-600">
+                A practical comparison for trades businesses that miss calls because everyone is already out working.
+              </p>
+            </TrackedLink>
+            <TrackedLink
+              href="/compare/after-hours-call-answering-for-plumbers"
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "home_resources", href: "/compare/after-hours-call-answering-for-plumbers" }}
+              className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            >
+              <h3 className="mb-3 text-2xl font-black text-slate-950">After-hours call answering for plumbers</h3>
+              <p className="text-base leading-7 text-slate-600">
+                A trade-specific guide on why plumbing calls after hours matter and how to avoid losing them.
+              </p>
+            </TrackedLink>
+          </div>
+        </div>
+      </section>
+
       <ComingSoonProof
         title="More proof is on the way."
-        description="We do not have public demos, customer proof, or trade-by-trade case studies ready yet, but the site now has a place for them as soon as they are ready to publish."
+        description="We do not have public audio demos, customer proof, or trade-by-trade case studies ready yet, but the site now has a place for them as soon as they are ready to publish."
       />
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
@@ -289,7 +336,7 @@ export default function HomePage() {
                     {plan.includedMinutes} included minutes, then ${plan.overageMinuteUsd.toFixed(2)}/minute.
                   </p>
                   <TrackedLink
-                    href={buildGetStartedHref(plan.id, "website-home-plan")}
+                    href={buildLeadFormHref(plan.id, "website-home-plan")}
                     eventName="pricing_plan_selected"
                     eventPayload={{ placement: "home_plan", planId: plan.id }}
                     className="text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"

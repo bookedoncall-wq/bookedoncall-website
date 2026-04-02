@@ -1,12 +1,12 @@
 # BookedOnCall Website
 
-This repo is the standalone public marketing and discovery site for BookedOnCall. It is intentionally separate from the canonical SaaS monorepo and should stay thin: public messaging, structured content, discovery surfaces, and clean handoff into the app domain.
+This repo is the standalone public marketing and discovery site for BookedOnCall. It is intentionally separate from the canonical SaaS monorepo and should stay thin: public messaging, structured content, discovery surfaces, lead capture, and clean product positioning for trades businesses.
 
 ## Canonical system boundaries
 
 - `bookedoncall.com` is the marketing and discovery surface.
-- `app.bookedoncall.com` is the canonical product surface.
-- Checkout, sign-up, onboarding, billing, and business provisioning are owned by the app domain.
+- The current public conversion path is a website-owned lead form at `/sign-up`.
+- `app.bookedoncall.com` remains the planned canonical product surface in the broader system, but it is not the live public entry point right now.
 - The canonical product repo lives at `/Users/david/Documents/Trades Intelligent Assistant/TVA_All_In_One`.
 
 ## Public product truth
@@ -37,10 +37,11 @@ npm run sync:monorepo-truth
 
 ## Environment and deployment
 
-This repo should not hold checkout or billing secrets. There is no website-owned Stripe flow anymore.
+This repo should not hold checkout or billing secrets. There is no website-owned Stripe flow.
 
-- No `STRIPE_SECRET_KEY` should be configured here.
-- App handoff URLs come from the checked-in public contract snapshot.
+- Lead form submissions post to `app/api/leads/route.ts`.
+- In production, set `BOOKEDONCALL_LEAD_WEBHOOK_URL` to forward lead submissions into your CRM, automation tool, or internal intake endpoint.
+- `BOOKEDONCALL_LEAD_WEBHOOK_SECRET` is optional and can be used to authenticate those webhook deliveries.
 - Security headers, robots, sitemap, manifest, and `llms.txt` are generated from the App Router.
 
 ## Content and verification guardrails

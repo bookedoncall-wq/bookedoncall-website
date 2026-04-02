@@ -13,7 +13,11 @@ const requiredRoutes = [
   "app/how-it-works/page.tsx",
   "app/pricing/page.tsx",
   "app/sign-up/page.tsx",
+  "app/api/leads/route.ts",
   "app/faq/page.tsx",
+  "app/demo-calls/page.tsx",
+  "app/compare/ai-receptionist-vs-voicemail/page.tsx",
+  "app/compare/after-hours-call-answering-for-plumbers/page.tsx",
   "app/for/plumbers/page.tsx",
   "app/for/hvac/page.tsx",
   "app/for/electricians/page.tsx",
@@ -43,6 +47,7 @@ const bannedPatterns = [
 ]
 
 const requiredFiles = [
+  ".env.example",
   "config/public-site-contract.json",
   "scripts/sync-monorepo-public-truth.mjs",
   ".github/workflows/verify-content.yml",
@@ -92,8 +97,8 @@ if (!layoutSource.includes("StructuredData")) {
 }
 
 const sitemapSource = readText("app/sitemap.ts")
-if (!sitemapSource.includes("/faq") || !sitemapSource.includes("/integrations/jobber")) {
-  errors.push("app/sitemap.ts must include FAQ and integration pages")
+if (!sitemapSource.includes("/faq") || !sitemapSource.includes("/integrations/jobber") || !sitemapSource.includes("/demo-calls")) {
+  errors.push("app/sitemap.ts must include FAQ, demo, and integration pages")
 }
 
 if (fs.existsSync(path.join(repoRoot, "app/api/checkout/route.ts"))) {
@@ -107,6 +112,11 @@ if (fs.existsSync(path.join(repoRoot, "public/robots.txt"))) {
 const packageJson = JSON.parse(readText("package.json"))
 if (packageJson.dependencies?.stripe || packageJson.devDependencies?.stripe) {
   errors.push("package.json must not depend on stripe in the website repo")
+}
+
+const envExample = readText(".env.example")
+if (/^\s*STRIPE_[A-Z0-9_]*\s*=/im.test(envExample)) {
+  errors.push(".env.example must not define STRIPE_* variables in the website repo")
 }
 
 if (errors.length > 0) {

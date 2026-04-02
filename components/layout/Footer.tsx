@@ -8,6 +8,8 @@ const footerColumns = [
       { label: "Features", href: "/features" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Demo Calls", href: "/demo-calls" },
+      { label: "AI vs Voicemail", href: "/compare/ai-receptionist-vs-voicemail" },
       { label: "FAQ", href: "/faq" },
     ],
   },
