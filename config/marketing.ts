@@ -2,27 +2,27 @@ export const faqEntries = [
   {
     question: "What is the difference between Starter and Pro?",
     answer:
-      "Starter includes the core call-answering, callback, scheduling, and dashboard workflow with the default assistant setup. Pro adds more included minutes plus control over the assistant voice, assistant name, greeting, and assistant behavior."
+      "Starter gives you the core product: answered calls, callback capture, booking when enabled, and call summaries after every conversation. Pro adds more included minutes and more control over how the assistant sounds and introduces itself."
   },
   {
     question: "Does BookedOnCall always book appointments automatically?",
     answer:
-      "No. Booking depends on the business configuration. BookedOnCall can capture leads and callbacks in every setup, and it can book when the business has enabled scheduling and connected a supported availability source."
+      "No. BookedOnCall books jobs only when scheduling is turned on and the request fits the rules you want it to follow. It can still capture the lead and send the call back to your team when a person should decide."
   },
   {
     question: "What integrations are supported today?",
     answer:
-      "BookedOnCall supports Jobber and Google Calendar integrations when the business connects and configures those accounts. The exact read and write behavior depends on the chosen scheduling provider and business settings."
+      "BookedOnCall works with Jobber and Google Calendar so it can fit into the scheduling tools many home-service teams already use."
   },
   {
     question: "What happens if a job is outside the service area or needs manual review?",
     answer:
-      "The system can collect the caller details, flag the issue, and route the case for human follow-up instead of promising a booking that the business has not configured or approved."
+      "BookedOnCall can still collect the customer details and send the call back to your team for review instead of forcing a booking."
   },
   {
     question: "What happens after checkout?",
     answer:
-      "After checkout, you create or sign in to your account, add your business details, and continue setup from your dashboard. Pro customers can also customize the assistant voice, name, greeting, and behavior once setup is complete."
+      "After checkout, you create your account, add your business details, and finish setup. Pro customers can also choose the assistant voice, name, greeting, and behavior."
   },
   {
     question: "How are extra minutes billed?",
@@ -33,35 +33,35 @@ export const faqEntries = [
 
 export const homepageHighlights = [
   {
-    title: "Answer missed calls without hiring a live receptionist",
-    body: "BookedOnCall picks up inbound calls, asks structured intake questions, and sends a clear summary to your dashboard."
+    title: "Stop losing jobs to voicemail",
+    body: "BookedOnCall answers the calls your team misses and gathers the basics before the lead goes cold."
   },
   {
-    title: "Capture callbacks even when a job cannot be booked immediately",
-    body: "If a request needs manual review, service-area confirmation, or human approval, the system can collect the contact details and hand the case back cleanly."
+    title: "Book what you want booked",
+    body: "When the call fits your rules and connected calendar, BookedOnCall can offer an appointment on the spot."
   },
   {
-    title: "Use the integrations you already run",
-    body: "Jobber and Google Calendar can be connected for supported scheduling flows instead of forcing a brand-new back office stack."
+    title: "Keep using the tools you already know",
+    body: "Connect Jobber or Google Calendar so BookedOnCall fits the way your business already schedules work."
   }
 ] as const
 
 export const workflowSteps = [
   {
-    title: "A caller reaches your business number",
-    body: "Your forwarded line rings into BookedOnCall instead of voicemail so inbound demand is captured while your team is on a job."
+    title: "A customer calls your business",
+    body: "BookedOnCall answers when your team cannot get to the phone."
   },
   {
-    title: "The assistant qualifies the request",
-    body: "The system asks for the caller name, callback number, job details, and any intake data required by the configured service."
+    title: "The assistant gets the basics",
+    body: "Caller name, callback number, address, and job details are collected so your team is not starting from scratch."
   },
   {
-    title: "Availability is checked when scheduling is enabled",
-    body: "BookedOnCall can check the configured provider and either offer a supported slot or capture a callback if the workflow needs a human."
+    title: "BookedOnCall checks the next step",
+    body: "When scheduling is connected, it can offer an appointment. If not, it captures a clean callback for your team."
   },
   {
-    title: "Everything lands in one dashboard",
-    body: "Call summaries, booking outcomes, integration status, and business settings all stay in one dashboard."
+    title: "Your team gets the result",
+    body: "Every call ends with a clear summary, a booked appointment, or a callback request."
   }
 ] as const
 
@@ -69,31 +69,31 @@ export const useCasePages = {
   plumbers: {
     title: "AI call answering for plumbing businesses",
     summary:
-      "BookedOnCall helps plumbing companies catch emergency calls, after-hours callbacks, and routine booking requests while keeping the right jobs with a human.",
+      "BookedOnCall helps plumbing businesses answer leak, clog, and water-heater calls while the crew is busy, then book the job or capture a callback.",
     bullets: [
-      "Capture leak, clog, water heater, and diagnostic calls while crews are on site.",
-      "Route emergency language for human review when the job needs a person.",
-      "Use Jobber or Google Calendar scheduling when the plumbing business has connected and enabled that workflow."
+      "Catch emergency and routine plumbing calls while the team is on site.",
+      "Gather the customer details your office needs before calling back.",
+      "Use Jobber or Google Calendar if you want BookedOnCall to offer appointments."
     ]
   },
   hvac: {
     title: "AI call answering for HVAC companies",
     summary:
-      "BookedOnCall helps HVAC shops answer heating and cooling calls, collect structured intake, and route maintenance or diagnostic work into the configured booking flow.",
+      "BookedOnCall helps HVAC companies answer no-heat, no-cool, tune-up, and diagnostic calls without sending customers to voicemail.",
     bullets: [
-      "Handle tune-up, no-heat, and no-cool calls with structured intake.",
-      "Collect callback details when the request needs dispatch review or manual slot confirmation.",
-      "Start with an HVAC-ready service catalog and tailor it to your business."
+      "Handle tune-up, no-heat, and no-cool calls with clear intake.",
+      "Collect symptoms, address, and callback details before dispatch steps in.",
+      "Offer appointments when your calendar is connected, or send the call back for follow-up."
     ]
   },
   electricians: {
     title: "AI call answering for electrical contractors",
     summary:
-      "BookedOnCall helps electrical businesses answer inbound demand, qualify scope, and route riskier jobs toward manual review when that is the safer workflow.",
+      "BookedOnCall helps electrical contractors answer new calls, qualify the work, and send risky or complex jobs back for human review when needed.",
     bullets: [
       "Collect project details for panel, outlet, lighting, and troubleshooting calls.",
-      "Route higher-risk jobs to callback or manual review when that is the safer workflow.",
-      "Review leads, integrations, and business settings in one dashboard."
+      "Send higher-risk work back to your team instead of forcing a bad booking.",
+      "Keep new leads organized so your office can move quickly."
     ]
   }
 } as const
@@ -102,21 +102,21 @@ export const integrationPages = {
   jobber: {
     title: "BookedOnCall + Jobber",
     summary:
-      "BookedOnCall can use Jobber as a connected scheduling system for supported businesses. The business still owns how scheduling, follow-up, and manual review rules are configured.",
+      "Connect BookedOnCall to Jobber so new calls can flow into the scheduling process your team already uses.",
     bullets: [
-      "Use Jobber-backed availability when the business selects Jobber as the scheduling provider.",
-      "Keep connected-account status visible in your dashboard.",
-      "Avoid claiming universal write-through behavior when a workflow still requires pending sync or human review."
+      "Check availability through Jobber when you want BookedOnCall to offer appointment times.",
+      "Keep your office on the same tools it already uses every day.",
+      "Fall back to a clean callback handoff when a job still needs a person."
     ]
   },
   "google-calendar": {
     title: "BookedOnCall + Google Calendar",
     summary:
-      "BookedOnCall can check Google Calendar availability and write back supported bookings when a business has connected a supported calendar account.",
+      "Connect BookedOnCall to Google Calendar so callers can be offered supported appointment times when you want them to be.",
     bullets: [
-      "Read availability from the configured Google Calendar connection.",
-      "Review calendar connection status and booking settings in your dashboard.",
-      "Keep fallback callback capture available for flows that are not safe to auto-book."
+      "Check availability against your connected calendar.",
+      "Offer supported appointment times without changing the way your team schedules work.",
+      "Keep callback capture available for jobs that still need a human decision."
     ]
   }
 } as const

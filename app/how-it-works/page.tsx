@@ -7,7 +7,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "How It Works",
   description:
-    "BookedOnCall answers calls, qualifies the request, checks configured availability, and either books supported work or captures callbacks.",
+    "BookedOnCall answers the call, gets the basics, offers supported bookings, and hands off anything that still needs your team.",
   path: "/how-it-works",
 })
 
@@ -19,14 +19,14 @@ export default function HowItWorksPage() {
         data={buildServiceSchema({
           name: "How BookedOnCall works",
           description:
-            "BookedOnCall routes inbound trades calls into structured qualification, configured scheduling checks, and follow-up your team can act on.",
+            "BookedOnCall answers the call, gets the details, and moves the customer toward a booking or callback.",
           path: "/how-it-works",
         })}
       />
       <PageIntro
         eyebrow="Workflow"
-        title="From missed call coverage to booked work."
-        description="BookedOnCall answers the call, qualifies the request, checks your scheduling rules, and either books the job or captures the callback details your team needs."
+        title="From missed call to booked job."
+        description="BookedOnCall answers the call, gets the basics, checks availability when it should, and hands off anything that still needs your team."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -44,23 +44,23 @@ export default function HowItWorksPage() {
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">When a request can be booked</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">When BookedOnCall books the job</h2>
             <p className="text-base leading-8 text-slate-600">
-              The business must have enabled scheduling, connected a supported provider, and configured the service in a way the assistant can safely handle. Those settings determine whether the system books the request or routes it as a callback.
+              If scheduling is connected and the request fits the rules you want automated, BookedOnCall can offer an appointment on the call.
             </p>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">When a request stays human-led</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">When your team takes over</h2>
             <p className="text-base leading-8 text-slate-600">
-              Complex jobs, out-of-area work, unsupported services, or flows that need manual confirmation can fall back to structured callback capture instead of forcing a booking.
+              Out-of-area requests, approval-only jobs, and anything you want reviewed still get handed back cleanly with the customer details attached.
             </p>
           </article>
         </div>
       </section>
 
       <CtaBand
-        title="Ready to set up your call flow?"
-        body="Choose a plan, create your account, and finish setup in one place."
+        title="Ready to see it in action?"
+        body="Choose a plan, create your account, and set BookedOnCall up for the way your team handles calls."
       />
     </>
   )

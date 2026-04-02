@@ -11,7 +11,7 @@ import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 export const metadata = buildPageMetadata({
   title: "AI call answering for trades businesses",
   description:
-    "BookedOnCall answers inbound calls for trades businesses, captures job details, checks configured availability, and helps your team book appointments or route callbacks.",
+    "BookedOnCall answers missed calls for trades businesses, captures the customer details your team needs, and helps book jobs or capture callbacks.",
   path: "/",
 })
 
@@ -34,10 +34,10 @@ export default function HomePage() {
             </p>
             <div className="grid gap-5">
               <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                Answer more calls while your team is in the field.
+                Answer more calls while your team is out on jobs.
               </h1>
               <p className="max-w-3xl text-xl leading-8 text-slate-600">
-                BookedOnCall answers calls for trades businesses, captures the job details you need, and books appointments or routes callbacks based on your setup.
+                BookedOnCall answers new calls, asks the right questions, and either books the job or captures a clean callback for your team.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -61,7 +61,7 @@ export default function HomePage() {
                   "rounded-xl border-slate-300 px-6 text-slate-950 hover:bg-white"
                 )}
               >
-                See the workflow
+                See how it works
               </TrackedLink>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -79,30 +79,30 @@ export default function HomePage() {
           <aside className="grid gap-4 rounded-[2rem] border border-amber-100 bg-white p-6 shadow-[0_28px_60px_rgba(15,23,42,0.08)]">
             <div className="rounded-2xl bg-slate-950 p-5 text-white">
               <div className="mb-4 flex items-center justify-between">
-                <span className="text-sm font-bold uppercase tracking-[0.18em] text-amber-300">Call flow snapshot</span>
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-amber-300">Example call</span>
                 <PhoneCall className="size-5 text-amber-300" />
               </div>
               <div className="grid gap-3 text-sm leading-6 text-slate-200">
                 <p>
-                  <strong>Caller:</strong> &ldquo;My AC stopped working and I need someone this week.&rdquo;
+                  <strong>Caller:</strong> &ldquo;My AC stopped working. Can someone come out this week?&rdquo;
                 </p>
                 <p>
-                  <strong>Assistant:</strong> captures the issue, confirms location, and checks the configured scheduling path.
+                  <strong>Assistant:</strong> gets the problem, callback details, and address, then checks the next available path.
                 </p>
                 <p>
-                  <strong>Outcome:</strong> book a supported slot or log a callback if the request needs manual review.
+                  <strong>Outcome:</strong> book the job when it fits your setup, or send a clean callback to your team.
                 </p>
               </div>
             </div>
             <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5">
               <div className="flex items-center gap-3">
                 <ClipboardList className="size-5 text-amber-500" />
-                <strong className="text-slate-950">What you get after the call</strong>
+                <strong className="text-slate-950">After the call</strong>
               </div>
               <ul className="grid gap-2 text-sm leading-6 text-slate-600">
-                <li>Structured call summary in your dashboard</li>
-                <li>Booking result or callback outcome tied to your workflow</li>
-                <li>Clear visibility into follow-up and connected integrations</li>
+                <li>A clear summary your team can review fast</li>
+                <li>A booked appointment or callback request</li>
+                <li>Customer details and next steps in one place</li>
               </ul>
             </div>
           </aside>
@@ -117,11 +117,11 @@ export default function HomePage() {
           </p>
           <p className="flex items-center justify-center gap-2">
             <CalendarClock className="size-4 text-amber-300" />
-            Scheduling only when the business has enabled it
+            Appointment booking when your rules and calendar allow it
           </p>
           <p className="flex items-center justify-center gap-2">
             <ShieldCheck className="size-4 text-amber-300" />
-            One place for setup, billing, and follow-up
+            Clean callback handoff when a person needs to step in
           </p>
         </div>
       </section>
@@ -141,9 +141,9 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
-            <h2 className="text-4xl font-black text-slate-950">From first ring to booked job or callback.</h2>
+            <h2 className="text-4xl font-black text-slate-950">From first ring to booked job or clean callback.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall answers the call, qualifies the request, checks availability when scheduling is enabled, and either books a supported slot or captures a clean callback for your team.
+              BookedOnCall answers the call, gets the basics, checks availability when it should, and hands off anything that still needs your team.
             </p>
           </div>
           <div className="grid gap-4">
@@ -167,7 +167,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What BookedOnCall handles</p>
             <h2 className="text-4xl font-black text-slate-950">Built for the calls trades businesses get every day.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              These are the core jobs BookedOnCall is built to handle.
+              These are the calls BookedOnCall is built to handle well.
             </p>
           </div>
           <div className="grid gap-3">
@@ -185,9 +185,9 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Supported integrations</p>
-            <h2 className="text-4xl font-black text-slate-950">Connected systems remain business-controlled.</h2>
+            <h2 className="text-4xl font-black text-slate-950">Works with the tools your team already uses.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall supports Jobber and Google Calendar for businesses that choose those scheduling paths.
+              Connect Jobber or Google Calendar so BookedOnCall fits the way your business already schedules work.
             </p>
             <div className="flex flex-wrap gap-3">
               {integrations.map((integration) => (
@@ -234,8 +234,8 @@ export default function HomePage() {
       </section>
 
       <CtaBand
-        title="Want the full details before you buy?"
-        body="Review features, pricing, integrations, and FAQs, then get started when you're ready to set up your call flow."
+        title="Want the full details before you start?"
+        body="Review features, pricing, integrations, and FAQs, then choose your plan when you're ready."
       />
     </>
   )

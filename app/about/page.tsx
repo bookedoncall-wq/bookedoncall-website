@@ -39,7 +39,7 @@ export default function AboutPage() {
           <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">What it helps with</h2>
             <p className="text-base leading-8 text-slate-600">
-              BookedOnCall helps with missed-call coverage, after-hours intake, lead qualification, callback capture, and supported scheduling for businesses that have configured that workflow.
+              BookedOnCall helps with missed-call coverage, after-hours intake, callback capture, and appointment booking for businesses that want the assistant to offer times.
             </p>
           </article>
         </div>
@@ -50,7 +50,7 @@ export default function AboutPage() {
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">How BookedOnCall is designed</h2>
             <p className="text-base leading-8 text-slate-600">
-              The product is designed to collect clear intake, respect your scheduling rules, and hand off anything that needs a person. That keeps the workflow practical for real trades businesses instead of forcing every call into the same path.
+              The product is designed to ask the right questions, keep the call moving, and hand off anything that still needs a person. That keeps it practical for real trades businesses instead of forcing every call into the same path.
             </p>
           </article>
         </div>
@@ -58,7 +58,7 @@ export default function AboutPage() {
 
       <CtaBand
         title="Want to see if BookedOnCall fits your business?"
-        body="Review pricing, choose a plan, and set up the workflow that matches how your team handles calls."
+        body="Review pricing, choose a plan, and set BookedOnCall up the way your team handles calls."
       />
     </>
   )

@@ -8,34 +8,34 @@ import { buildPageMetadata, buildBreadcrumbSchema, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Features",
   description:
-    "BookedOnCall answers inbound calls, captures structured lead data, checks configured availability, and sends the result where your team can act on it.",
+    "BookedOnCall helps trades businesses answer missed calls, collect customer details, book supported work, and hand off the rest cleanly.",
   path: "/features",
 })
 
 const capabilityGroups = [
   {
-    title: "Call handling",
+    title: "Answer the call",
     items: [
-      "Answer inbound calls with a configured AI assistant.",
-      "Capture caller name, callback number, and job details.",
-      "Route edge cases into callback or human-follow-up flows."
+      "Answer missed calls with an AI assistant for your business.",
+      "Capture caller name, callback number, address, and job details.",
+      "Handle after-hours calls without sending customers to voicemail."
     ]
   },
   {
-    title: "Scheduling",
+    title: "Book what can be booked",
     items: [
-      "Check the configured scheduling provider when a business has enabled it.",
-      "Book supported requests into the selected workflow.",
-      "Fall back to callback capture instead of bluffing unsupported bookings."
+      "Check availability when your calendar or scheduling tool is connected.",
+      "Offer appointments for the jobs you want BookedOnCall to handle.",
+      "Keep scheduling simple instead of making callers wait for a basic booking."
     ]
   },
   {
-    title: "Business setup and follow-up",
+    title: "Hand off what needs a person",
     items: [
-      "Send call summaries and outcomes to your dashboard.",
-      "Show integration status, billing, and business settings in one place.",
+      "Send callbacks and manual-review jobs back to your team cleanly.",
+      "Keep summaries, customer details, and next steps in one place.",
       "Use Pro to choose the assistant voice, assistant name, and branded greeting.",
-      "Guide you through checkout, account setup, and onboarding in one flow."
+      "Get set up without changing the tools your team already relies on."
     ]
   }
 ] as const
@@ -48,14 +48,14 @@ export default function FeaturesPage() {
         data={buildServiceSchema({
           name: "BookedOnCall features",
           description:
-            "BookedOnCall helps trades businesses answer calls, collect intake, and route work into configured scheduling or callback workflows.",
+            "BookedOnCall helps trades businesses answer calls, collect intake, and either book supported work or hand the call back cleanly.",
           path: "/features",
         })}
       />
       <PageIntro
-        eyebrow="Product capabilities"
-        title="What BookedOnCall can do today."
-        description="BookedOnCall focuses on clear, useful jobs: answer calls, collect structured intake, check scheduling when enabled, and route the result where your team can act on it."
+        eyebrow="Features"
+        title="What BookedOnCall helps with."
+        description="BookedOnCall is built for the real calls trades businesses get every day: new jobs, scheduling requests, callbacks, and after-hours intake."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -77,7 +77,7 @@ export default function FeaturesPage() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Core capabilities</p>
-            <h2 className="text-4xl font-black text-slate-950">What BookedOnCall handles.</h2>
+            <h2 className="text-4xl font-black text-slate-950">What BookedOnCall can handle today.</h2>
           </div>
           <div className="grid gap-3">
             {validatedCapabilities.map((capability) => (
@@ -92,16 +92,21 @@ export default function FeaturesPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
           <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">What depends on configuration</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">When BookedOnCall books the job</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
-              <li>Automatic booking requires an enabled scheduling path and a connected provider.</li>
-              <li>Jobber and Google Calendar behavior depends on a business-level connected account.</li>
-              <li>SMS and email follow-up depend on the business messaging configuration.</li>
-              <li>Emergency escalation rules depend on how the business has configured those workflows.</li>
+              <li>Scheduling is turned on for the kinds of jobs you want BookedOnCall to handle.</li>
+              <li>Jobber or Google Calendar is connected.</li>
+              <li>The request fits the rules you want booked automatically.</li>
+              <li>The caller gives the details needed to move forward.</li>
             </ul>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">Where to go deeper</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">When your team takes over</h2>
+            <ul className="mb-6 grid gap-3 text-sm leading-7 text-slate-600">
+              <li>Out-of-area requests, approval-only jobs, and edge cases can be sent back as callbacks.</li>
+              <li>Your team still gets the customer details and a clean summary of the call.</li>
+              <li>Nothing has to be forced into a booking just to keep the caller moving.</li>
+            </ul>
             <div className="grid gap-3 text-sm leading-7">
               <TrackedLink
                 href="/how-it-works"
@@ -109,7 +114,7 @@ export default function FeaturesPage() {
                 eventPayload={{ placement: "features_deeper", href: "/how-it-works" }}
                 className="rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-900 transition-colors hover:border-amber-300"
               >
-                See how a call moves through the workflow
+                See how a call moves from first ring to next step
               </TrackedLink>
               {integrations.map((integration) => (
                 <TrackedLink
@@ -128,8 +133,8 @@ export default function FeaturesPage() {
       </section>
 
       <CtaBand
-        title="Ready to set up your call flow?"
-        body="Choose your plan and finish setup in one guided flow."
+        title="Ready to answer more calls?"
+        body="Choose a plan and set BookedOnCall up the way your team wants to handle new jobs."
       />
     </>
   )

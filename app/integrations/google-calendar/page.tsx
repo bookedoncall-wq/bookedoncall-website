@@ -27,7 +27,7 @@ export default function GoogleCalendarPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Need calendar-backed availability?" body="Choose a plan, finish setup, and connect Google Calendar for supported scheduling workflows." />
+      <CtaBand title="Need calendar-backed availability?" body="Choose a plan and connect Google Calendar so callers can be offered supported appointment times." />
     </>
   )
 }

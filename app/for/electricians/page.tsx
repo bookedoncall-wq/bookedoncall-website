@@ -27,7 +27,7 @@ export default function ElectriciansPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Ready to set up electrical call handling?" body="Choose a plan, finish setup, and tailor electrical intake for booked work, callbacks, and manual review." />
+      <CtaBand title="Ready to set up electrical call handling?" body="Choose a plan and give new electrical leads a better first response." />
     </>
   )
 }

@@ -27,7 +27,7 @@ export default function HvacPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Need a cleaner HVAC intake flow?" body="Choose a plan, finish setup, and tailor your service catalog and booking rules for HVAC calls." />
+      <CtaBand title="Need better HVAC call coverage?" body="Choose a plan and make sure heating and cooling calls get answered the first time." />
     </>
   )
 }

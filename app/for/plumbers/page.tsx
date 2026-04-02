@@ -27,7 +27,7 @@ export default function PlumbersPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Ready to set up plumbing call coverage?" body="Choose a plan, finish setup, and tailor the workflow to how your team handles callbacks, booking, and urgent jobs." />
+      <CtaBand title="Ready to set up plumbing call coverage?" body="Choose a plan and make sure the next plumbing call gets answered." />
     </>
   )
 }

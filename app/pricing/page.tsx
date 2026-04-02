@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 export const metadata = buildPageMetadata({
   title: "Pricing",
   description:
-    "BookedOnCall pricing for trades businesses with Starter and Pro plans, included minutes, and branded assistant controls on Pro.",
+    "BookedOnCall pricing for Starter and Pro plans, included minutes, and extra branding controls on Pro.",
   path: "/pricing",
 })
 
@@ -22,8 +22,8 @@ export default function PricingPage() {
       <StructuredData data={buildFaqSchema(faqEntries)} />
       <PageIntro
         eyebrow="Pricing"
-        title="Simple monthly pricing."
-        description="Choose between the default assistant setup on Starter or the added voice and branding controls on Pro, then finish setup and account creation in one flow."
+        title="Straightforward monthly pricing."
+        description="Starter gives you simple call coverage. Pro adds more minutes and more control over how the assistant sounds and introduces itself."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -86,11 +86,11 @@ export default function PricingPage() {
             <div className="grid gap-4 text-sm leading-7 text-slate-600">
               <div>
                 <h3 className="text-lg font-black text-slate-950">Starter</h3>
-                <p>Use the default assistant setup with core call answering, callback capture, supported scheduling, and dashboard summaries.</p>
+                <p>Keep it simple with the default assistant voice, default greeting, answered calls, callbacks, and booking when enabled.</p>
               </div>
               <div>
                 <h3 className="text-lg font-black text-slate-950">Pro</h3>
-                <p>Choose the voice callers hear, give the assistant a custom name, and customize the greeting and assistant behavior.</p>
+                <p>Choose the voice callers hear, give the assistant a custom name, and shape the way it opens and responds.</p>
               </div>
             </div>
           </article>
@@ -99,7 +99,7 @@ export default function PricingPage() {
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
               <li>Create your account or sign in.</li>
               <li>Add your business details and finish setup.</li>
-              <li>Scheduling behavior still depends on the business configuration and integrations.</li>
+              <li>Connect your calendar if you want BookedOnCall to offer appointment times.</li>
               <li>Extra minutes are billed at the published per-minute rate for your plan.</li>
             </ul>
           </article>
@@ -119,7 +119,7 @@ export default function PricingPage() {
 
       <CtaBand
         title="Ready to get started?"
-        body="Choose your plan and finish setup in one guided flow."
+        body="Choose your plan and finish setup when you're ready."
       />
     </>
   )

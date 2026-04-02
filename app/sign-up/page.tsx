@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 export const metadata = buildPageMetadata({
   title: "Start your account",
   description:
-    "Choose a BookedOnCall plan, then create or sign in to your account during setup. Pro adds custom assistant voice and branding controls.",
+    "Choose a BookedOnCall plan, then create or sign in to your account during setup. Pro adds a more branded caller experience.",
   path: "/sign-up",
 })
 
@@ -18,7 +18,7 @@ export default function SignUpPage() {
       <PageIntro
         eyebrow="Get started"
         title="Choose a plan and set up your account."
-        description="Pick the default setup on Starter or the added voice and branding controls on Pro, then continue to account setup."
+        description="Pick Starter for straightforward setup or Pro for a more branded caller experience, then continue to account setup."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">

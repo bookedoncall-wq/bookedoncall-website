@@ -85,7 +85,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-3 border-t border-slate-800 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {siteConfig.name}. AI call answering for trades businesses.</p>
-          <p>Account access: {siteConfig.appUrl}</p>
+          <p>Customer login: {siteConfig.appUrl}</p>
         </div>
       </div>
     </footer>
