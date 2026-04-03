@@ -17,7 +17,7 @@ const sections = [
   {
     title: "Where BookedOnCall fits",
     body:
-      "BookedOnCall gives plumbing businesses a better after-hours first response. It can collect the customer details, capture the problem, and help your team follow up faster instead of starting from a rushed voicemail.",
+      "BookedOnCall gives plumbing businesses a better after-hours first response. It can collect the customer details, capture the problem, and help you follow up faster instead of starting from a rushed voicemail.",
   },
 ] as const
 
@@ -68,7 +68,7 @@ export default function AfterHoursCallAnsweringForPlumbersPage() {
             <h2 className="mb-4 text-3xl font-black text-slate-950">What a better setup looks like</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-700">
               <li>Urgent callers get a response instead of a dead-end voicemail.</li>
-              <li>Your team gets the customer name, number, address, and problem details.</li>
+              <li>You get the customer name, number, address, and problem details.</li>
               <li>Jobs that need a person still come back as clean callbacks instead of scattered messages.</li>
             </ul>
           </article>

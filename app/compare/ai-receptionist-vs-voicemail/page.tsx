@@ -17,12 +17,12 @@ const comparisonRows = [
   {
     topic: "After-hours coverage",
     voicemail: "Calls usually stack up until the next day.",
-    bookedOnCall: "After-hours callers still get a response and your team still gets the details.",
+    bookedOnCall: "After-hours callers still get a response and you still get the details.",
   },
   {
     topic: "Next step",
     voicemail: "Your office has to start from scratch when calling back.",
-    bookedOnCall: "Your team starts with a cleaner summary and can move faster on booking or follow-up.",
+    bookedOnCall: "You start with a cleaner summary and can move faster on booking or follow-up.",
   },
 ] as const
 
@@ -53,7 +53,7 @@ export default function AiReceptionistVsVoicemailPage() {
       <PageIntro
         eyebrow="Comparison"
         title="AI receptionist vs voicemail."
-        description="If your team misses calls because everyone is out working, voicemail is usually the fallback. For a lot of trades businesses, it is also where good jobs disappear."
+        description="If you miss calls because everyone is out working, voicemail is usually the fallback. For a lot of trades businesses, it is also where good jobs disappear."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -89,7 +89,7 @@ export default function AiReceptionistVsVoicemailPage() {
 
       <CtaBand
         title="Want something better than voicemail?"
-        body="See the plans and tell us how your team handles calls today."
+        body="See the plans and tell us how you handle calls today."
       />
     </>
   )

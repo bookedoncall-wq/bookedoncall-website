@@ -41,7 +41,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
           </article>
 
           <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">Why teams use BookedOnCall</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">Why businesses use BookedOnCall</h2>
             <div className="grid gap-3">
               {content.reasons.map((item) => (
                 <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-base leading-8 text-slate-700">

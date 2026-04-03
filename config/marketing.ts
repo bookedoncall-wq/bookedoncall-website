@@ -2,22 +2,22 @@ export const faqEntries = [
   {
     question: "What is the difference between Starter and Pro?",
     answer:
-      "Starter gives you the core product: answered calls, callback capture, booking when enabled, and call summaries after every conversation. Pro adds more included minutes and more control over how the assistant sounds and introduces itself."
+      "Starter gives you the core product: answered calls, callback capture, booking when enabled, and clear summaries with the next step. Pro adds more included minutes and more control over how the assistant sounds and introduces itself."
   },
   {
     question: "Does BookedOnCall always book appointments automatically?",
     answer:
-      "No. BookedOnCall books jobs only when scheduling is turned on and the request fits the rules you want it to follow. It can still capture the lead and send the call back to your team when a person should decide."
+      "No. BookedOnCall books jobs only when scheduling is turned on and the request fits the rules you want it to follow. It can still capture the lead and send the call back to you when a person should decide."
   },
   {
     question: "What integrations are supported today?",
     answer:
-      "BookedOnCall works with Jobber and Google Calendar so it can fit into the scheduling tools many home-service teams already use."
+      "BookedOnCall works with Jobber and Google Calendar so it can fit into the scheduling tools many home-service businesses already use."
   },
   {
     question: "What happens if a job is outside the service area or needs manual review?",
     answer:
-      "BookedOnCall can still collect the customer details and send the call back to your team for review instead of forcing a booking."
+      "BookedOnCall can still collect the customer details and send the call back to you for review instead of forcing a booking."
   },
   {
     question: "What happens after I choose a plan?",
@@ -32,17 +32,17 @@ export const faqEntries = [
   {
     question: "How long does setup take?",
     answer:
-      "Setup usually takes one call to go over your preferences and a short configuration step. Most teams are live within a day or two."
+      "Setup usually takes one call to go over your preferences and a short configuration step. Most businesses are live within a day or two."
   },
   {
     question: "Can BookedOnCall handle emergency or urgent calls?",
     answer:
-      "BookedOnCall can flag calls that sound urgent based on what the caller describes, like a burst pipe or no heat in winter. Urgent calls are routed to your team as high-priority callbacks so someone can respond faster. It does not replace your own emergency protocols."
+      "BookedOnCall can flag calls that sound urgent based on what the caller describes, like a burst pipe or no heat in winter. It can mark those calls for fast follow-up, but it does not replace your own emergency protocols."
   },
   {
     question: "Do I need to change my phone number?",
     answer:
-      "No. You keep your existing business number. BookedOnCall answers the calls your team cannot get to, either by forwarding or as a backup after a set number of rings."
+      "No. You keep your existing business number. BookedOnCall answers the calls you cannot get to, either by forwarding or as a backup after a set number of rings."
   },
   {
     question: "What happens if the caller speaks Spanish?",
@@ -74,7 +74,7 @@ export const faqEntries = [
 export const homepageHighlights = [
   {
     title: "Stop losing jobs to voicemail",
-    body: "BookedOnCall answers the calls your team misses and gathers the basics before the lead goes cold."
+    body: "BookedOnCall answers the calls you miss and gathers the basics before the lead goes cold."
   },
   {
     title: "Sound buttoned-up even when the crew is busy",
@@ -92,12 +92,12 @@ export const homepageTrustPoints = [
     body: "BookedOnCall was built because too many good trades businesses lose work simply because nobody can answer the phone while the job is getting done.",
   },
   {
-    title: "Made for smaller teams",
-    body: "This is for the owner-operator, the family shop, and the growing crew that wants to look professional without paying for a full front desk.",
+    title: "Made for owner-operators and growing shops",
+    body: "Whether you're a one-person operation or a growing crew, BookedOnCall helps you look professional without paying for a full front desk.",
   },
   {
     title: "Practical over flashy",
-    body: "The goal is simple: answer more calls, capture better details, and help your team move faster on real work.",
+    body: "The goal is simple: answer more calls, capture better details, and help you move faster on real work.",
   },
   {
     title: "No long-term contracts",
@@ -112,7 +112,7 @@ export const comingSoonProofItems = [
   },
   {
     title: "Customer proof",
-    body: "Before-and-after results showing how teams use BookedOnCall to answer more calls, capture more leads, and keep work from slipping to voicemail.",
+    body: "Before-and-after results showing how real businesses use BookedOnCall to answer more calls, capture more leads, and keep work from slipping to voicemail.",
   },
   {
     title: "Trade case studies",
@@ -123,19 +123,19 @@ export const comingSoonProofItems = [
 export const workflowSteps = [
   {
     title: "A customer calls your business",
-    body: "BookedOnCall answers when your team cannot get to the phone."
+    body: "BookedOnCall answers when you cannot get to the phone."
   },
   {
     title: "The assistant gets the basics",
-    body: "Caller name, callback number, address, and job details are collected so your team is not starting from scratch."
+    body: "Caller name, callback number, address, and job details are collected so you are not starting from scratch."
   },
   {
     title: "BookedOnCall checks the next step",
-    body: "When scheduling is connected, it can offer an appointment. If not, it captures a clean callback for your team."
+    body: "When scheduling is connected, it can offer an appointment. If not, it captures a clean callback for you."
   },
   {
-    title: "Your team gets the result",
-    body: "Every call ends with a clear summary, a booked appointment, or a callback request."
+    title: "You get the result",
+    body: "You get a clear summary, a booked appointment, or a callback request."
   }
 ] as const
 
@@ -155,11 +155,11 @@ export const useCasePages = {
     ],
     reasons: [
       "Catch emergency and routine plumbing calls while the crew is on site.",
-      "Gather the customer details your office needs before calling back.",
+      "Gather the customer details you need before calling back.",
       "Offer appointments when your scheduling setup allows it."
     ],
     trustCopy:
-      "Plumbing calls are often urgent. When water is going where it should not, people do not want to hear voicemail. BookedOnCall helps you sound responsive even when the whole team is already in the field.",
+      "Plumbing calls are often urgent. When water is going where it should not, people do not want to hear voicemail. BookedOnCall helps you sound responsive even when everyone is already in the field.",
     ctaTitle: "Ready to set up plumbing call coverage?",
     ctaBody: "Choose a plan and make sure the next plumbing call gets answered."
   },
@@ -178,11 +178,11 @@ export const useCasePages = {
     ],
     reasons: [
       "Handle tune-up, no-heat, and no-cool calls with clear intake.",
-      "Collect symptoms, address, and callback details before dispatch steps in.",
+      "Collect symptoms, address, and callback details before the next step.",
       "Offer appointments when your calendar is connected, or send the call back for follow-up."
     ],
     trustCopy:
-      "HVAC calls can be high-pressure and time-sensitive, especially in peak summer and winter weeks. BookedOnCall helps your business sound steady and responsive when demand jumps and the team is stretched.",
+      "HVAC calls can be high-pressure and time-sensitive, especially in peak summer and winter weeks. BookedOnCall helps your business sound steady and responsive when demand jumps and you are stretched thin.",
     ctaTitle: "Need better HVAC call coverage?",
     ctaBody: "Choose a plan and make sure heating and cooling calls get answered the first time."
   },
@@ -201,11 +201,11 @@ export const useCasePages = {
     ],
     reasons: [
       "Collect project details for panel, outlet, lighting, and troubleshooting calls.",
-      "Send higher-risk work back to your team instead of forcing a bad booking.",
-      "Keep new leads organized so your office can move quickly."
+      "Send higher-risk work back to you instead of forcing a bad booking.",
+      "Keep new leads organized so you can move quickly."
     ],
     trustCopy:
-      "Electrical work often needs a little more judgment before anything gets promised. BookedOnCall helps you capture the right details, keep the customer moving, and hand the job back to your team when that is the right call.",
+      "Electrical work often needs a little more judgment before anything gets promised. BookedOnCall helps you capture the right details, keep the customer moving, and hand the job back for human review when that is the right call.",
     ctaTitle: "Ready to set up electrical call handling?",
     ctaBody: "Choose a plan and give new electrical leads a better first response."
   },
@@ -219,8 +219,8 @@ export const useCasePages = {
     cardSummary: "Handle estimate requests and painting inquiries while the crew is on site or in the middle of a project.",
     commonCalls: [
       "Interior and exterior painting estimate requests from homeowners who want a quick response.",
-      "Questions about timelines, project scope, and callback follow-up while the team is out working.",
-      "New leads that need to be captured clearly before your office or estimator calls back."
+      "Questions about timelines, project scope, and callback follow-up while you are out working.",
+      "New leads that need to be captured clearly before you or an estimator calls back."
     ],
     reasons: [
       "Catch estimate requests while painters are on ladders, in prep, or on active projects.",
@@ -241,14 +241,14 @@ export const useCasePages = {
       "BookedOnCall helps flooring contractors answer installation, replacement, and repair calls without letting new leads slip past the office.",
     cardSummary: "Capture flooring installs, replacements, and repair requests with a more professional first response.",
     commonCalls: [
-      "Hardwood, tile, vinyl, carpet, and repair calls that come in while the team is on install.",
-      "Measurement and estimate requests where the office needs clean notes before following up.",
+      "Hardwood, tile, vinyl, carpet, and repair calls that come in while you are on install.",
+      "Measurement and estimate requests where you need clean notes before following up.",
       "Customers comparing contractors and deciding who actually answers the phone."
     ],
     reasons: [
       "Catch flooring leads while the crew is on install and cannot stop to answer.",
       "Collect room details, surface type, address, and callback information up front.",
-      "Make it easier for your office to follow up fast with the right context."
+      "Make it easier to follow up fast with the right context."
     ],
     trustCopy:
       "A lot of flooring work starts with an estimate request. If the first call goes unanswered, that customer may never call back. BookedOnCall helps you keep those opportunities alive.",
@@ -266,15 +266,15 @@ export const useCasePages = {
     commonCalls: [
       "Maintenance, cleanup, irrigation, and install calls that come in while your crew is on route.",
       "Seasonal spikes where homeowners are calling several companies at once.",
-      "Project inquiries that need to be captured clearly before your office follows up."
+      "Project inquiries that need to be captured clearly before you follow up."
     ],
     reasons: [
       "Catch landscaping calls while the crew is driving between jobs or already on site.",
       "Collect property details, service needs, and callback info before the customer moves on.",
-      "Keep routine jobs moving while still handing larger project decisions back to your team."
+      "Keep routine jobs moving while still handing larger project decisions back to you."
     ],
     trustCopy:
-      "Landscaping teams spend most of the day away from the phone. BookedOnCall helps you stay responsive without forcing someone to stop mid-route just to catch the next lead.",
+      "Landscaping businesses spend most of the day away from the phone. BookedOnCall helps you stay responsive without forcing someone to stop mid-route just to catch the next lead.",
     ctaTitle: "Need better landscaping call coverage?",
     ctaBody: "Choose a plan and make sure maintenance and project calls get a faster first response."
   },
@@ -287,13 +287,13 @@ export const useCasePages = {
       "BookedOnCall helps home-service businesses answer new calls, capture the job details, and route the next step without losing good leads to voicemail.",
     cardSummary: "A better first response for handyman, repair, install, and general home-service calls.",
     commonCalls: [
-      "Handyman, repair, install, and general service inquiries that come in while your team is already booked out in the field.",
+      "Handyman, repair, install, and general service inquiries that come in while you are already booked out in the field.",
       "Calls that need a quick first response and a clean callback instead of a long voicemail.",
-      "New-customer inquiries where the office needs the basics before deciding on the next step."
+      "New-customer inquiries where you need the basics before deciding on the next step."
     ],
     reasons: [
-      "Catch new calls while your team is out working instead of tied to the phone.",
-      "Collect the details your office needs before calling the customer back.",
+      "Catch new calls while you are out working instead of tied to the phone.",
+      "Collect the details you need before calling the customer back.",
       "Keep your process simple without replacing the tools and habits your business already uses."
     ],
     trustCopy:
@@ -317,10 +317,10 @@ export const integrationPages = {
   jobber: {
     title: "BookedOnCall + Jobber",
     summary:
-      "Connect BookedOnCall to Jobber so new calls can flow into the scheduling process your team already uses.",
+      "Connect BookedOnCall to Jobber so new calls can flow into the scheduling process you already use.",
     bullets: [
       "Check availability through Jobber when you want BookedOnCall to offer appointment times.",
-      "Keep your office on the same tools it already uses every day.",
+      "Keep your business on the same tools it already uses every day.",
       "Fall back to a clean callback handoff when a job still needs a person."
     ]
   },
@@ -330,7 +330,7 @@ export const integrationPages = {
       "Connect BookedOnCall to Google Calendar so callers can be offered supported appointment times when you want them to be.",
     bullets: [
       "Check availability against your connected calendar.",
-      "Offer supported appointment times without changing the way your team schedules work.",
+      "Offer supported appointment times without changing the way you schedule work.",
       "Keep callback capture available for jobs that still need a human decision."
     ]
   }

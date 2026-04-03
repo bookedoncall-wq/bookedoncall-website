@@ -3,7 +3,7 @@
   "brand": {
     "name": "BookedOnCall",
     "tagline": "AI call answering for trades businesses",
-    "description": "BookedOnCall answers missed calls for trades businesses, gathers the customer details your team needs, and helps book jobs or capture callbacks.",
+    "description": "BookedOnCall answers missed calls for trades businesses, captures the customer details you need, and helps book jobs or capture callbacks.",
     "websiteOrigin": "https://bookedoncall.com",
     "appOrigin": "https://app.bookedoncall.com"
   },
@@ -35,14 +35,14 @@
     "Collects caller name, callback number, address, job details, and service notes.",
     "Can offer appointments when scheduling is enabled and a supported calendar or scheduling tool is connected.",
     "Works with Jobber and Google Calendar for supported scheduling setups.",
-    "Delivers a clear call summary, booked appointment, or callback request after every call.",
+    "Delivers a clear call summary and the next step, whether that is a booked appointment or a callback request.",
     "Can send follow-up messages when customer messaging is turned on."
   ],
   "integrations": [
     {
       "id": "jobber",
       "name": "Jobber",
-      "description": "Connect Jobber so BookedOnCall can fit into the scheduling process your team already uses."
+      "description": "Connect Jobber so BookedOnCall fits the scheduling process you already use."
     },
     {
       "id": "google-calendar",
@@ -57,7 +57,7 @@
       "monthlyUsd": 250,
       "includedMinutes": 200,
       "overageMinuteUsd": 0.75,
-      "summary": "For small teams that want missed-call coverage, callback capture, and straightforward setup.",
+      "summary": "For owner-operators and growing shops that want missed-call coverage, callback capture, and straightforward setup.",
       "capabilities": {
         "assistantName": false,
         "voiceSelection": false,
@@ -69,10 +69,10 @@
       "features": [
         "200 included call minutes each month",
         "AI call answering and lead intake",
-        "Callback capture and handoff to your team",
+        "Callback capture and clean handoff when you want to step in",
         "Appointment booking when scheduling is enabled",
         "Jobber or Google Calendar integration when connected",
-        "Call summaries after every conversation",
+        "Call summaries with the next step clearly laid out",
         "Default assistant voice and greeting"
       ]
     },
@@ -82,7 +82,7 @@
       "monthlyUsd": 350,
       "includedMinutes": 400,
       "overageMinuteUsd": 0.75,
-      "summary": "For teams that want more included minutes and a more branded caller experience.",
+      "summary": "For businesses that want more included minutes and a more branded caller experience.",
       "capabilities": {
         "assistantName": true,
         "voiceSelection": true,
@@ -94,10 +94,10 @@
       "features": [
         "400 included call minutes each month",
         "AI call answering and lead intake",
-        "Callback capture and handoff to your team",
+        "Callback capture and clean handoff when you want to step in",
         "Appointment booking when scheduling is enabled",
         "Jobber or Google Calendar integration when connected",
-        "Call summaries after every conversation",
+        "Call summaries with the next step clearly laid out",
         "Choose the voice callers hear",
         "Give the assistant a custom name",
         "Customize the greeting and assistant behavior"

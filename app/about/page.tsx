@@ -1,5 +1,4 @@
 import { Heart, Phone, Target, Users } from "lucide-react"
-import { ComingSoonProof } from "@/components/marketing/ComingSoonProof"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
@@ -15,7 +14,7 @@ const values = [
   },
   {
     icon: Users,
-    title: "Built for smaller teams",
+    title: "Built for owner-operators and growing shops",
     description:
       "The solo plumber, the two-person HVAC crew, the family-run electrical business. They deserve the same level of responsiveness as a company with a full front desk.",
   },
@@ -29,7 +28,7 @@ const values = [
     icon: Target,
     title: "Keep it practical",
     description:
-      "If a tool is hard to set up, hard to trust, or hard to use when the phone rings, it does not belong in a real trades business.",
+      "If a tool is hard to set up, hard to trust, or hard to use when the phone rings, it doesn't belong in a real trades business.",
   },
 ] as const
 
@@ -55,7 +54,7 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="About us"
         title="Why we built BookedOnCall."
-        description="BookedOnCall exists because too many great trades businesses lose good jobs simply because they cannot answer the phone while they are doing the work."
+        description="BookedOnCall exists because too many great trades businesses lose good jobs simply because they can&apos;t answer the phone while they&apos;re doing the work."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -79,12 +78,12 @@ export default function AboutPage() {
               <p>
                 That problem stayed with me. Years later, while I was having work done on my own house, I saw the same
                 thing again. Great tradespeople were losing work, not because they were worse at the job, but because
-                they did not have someone free to answer the phone every time it rang.
+                they didn&apos;t have someone free to answer the phone every time it rang.
               </p>
               <p>
                 That felt backward. The small, family-run, and owner-operated shops are often the businesses customers
-                trust most. But they do not always have the budget for a receptionist or a front office. They should
-                not have to choose between doing the work well and catching the next opportunity.
+                trust most. But they don&apos;t always have the budget for a receptionist or a front office. They shouldn&apos;t
+                have to choose between doing the work well and catching the next opportunity.
               </p>
               <p className="font-semibold text-slate-950">
                 BookedOnCall was built to help fix that. The goal is simple: help trades businesses answer more calls,
@@ -112,7 +111,7 @@ export default function AboutPage() {
             <h2 className="mb-4 text-3xl font-black text-slate-950">No trades business should lose a good job because nobody could answer the phone.</h2>
             <p className="max-w-3xl text-base leading-8 text-slate-700">
               That idea drives the product. If something helps a trades business answer more calls, capture better
-              details, and move faster on real work, it belongs in BookedOnCall. If it does not, it is noise.
+              details, and move faster on real work, it belongs in BookedOnCall. If it doesn&apos;t, it&apos;s noise.
             </p>
           </article>
 
@@ -130,14 +129,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ComingSoonProof
-        title="More of the story will live here."
-        description="As BookedOnCall grows, this is where we will publish sample calls, customer proof, and case studies that show how real trades businesses are using it."
-      />
-
       <CtaBand
         title="Want to see if BookedOnCall fits your business?"
-        body="Review pricing, ask questions, and choose the plan that matches the way your team handles calls."
+        body="Review pricing, ask questions, and choose the plan that matches the way you want calls handled."
       />
     </>
   )

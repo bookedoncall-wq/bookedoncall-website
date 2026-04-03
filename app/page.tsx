@@ -1,5 +1,4 @@
 import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck, Wrench } from "lucide-react"
-import { ComingSoonProof } from "@/components/marketing/ComingSoonProof"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
@@ -35,10 +34,10 @@ export default function HomePage() {
             </p>
             <div className="grid gap-5">
               <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                You are on the job. Your phone still gets answered.
+                You&apos;re on the job. Your phone still gets answered.
               </h1>
               <p className="max-w-3xl text-xl leading-8 text-slate-600">
-                When the phone rings while you are on a job, BookedOnCall answers, gets the details, and helps move the customer toward a booking or a callback.
+                When the phone rings while you&apos;re on a job, BookedOnCall answers, gets the details, and helps move the customer toward a booking or callback.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -88,10 +87,10 @@ export default function HomePage() {
                   <strong>Caller:</strong> &ldquo;My AC stopped working. Can someone come out this week?&rdquo;
                 </p>
                 <p>
-                  <strong>Assistant:</strong> gets the problem, callback details, and address, then checks your calendar or sends the info to your team.
+                  <strong>Assistant:</strong> gets the problem, callback details, and address, then checks your calendar or sends the info your way.
                 </p>
                 <p>
-                  <strong>Outcome:</strong> book the job when it fits your setup, or send a clean callback to your team.
+                  <strong>Outcome:</strong> book the job when it fits your setup, or send a clean callback your way.
                 </p>
               </div>
             </div>
@@ -101,7 +100,7 @@ export default function HomePage() {
                 <strong className="text-slate-950">After the call</strong>
               </div>
               <ul className="grid gap-2 text-sm leading-6 text-slate-600">
-                <li>A clear summary your team can review fast</li>
+                <li>A clear summary you can review fast</li>
                 <li>A booked appointment or callback request</li>
                 <li>Customer details and next steps in one place</li>
               </ul>
@@ -114,7 +113,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-4 text-center text-sm font-semibold text-white sm:grid-cols-3">
           <p className="flex items-center justify-center gap-2">
             <PhoneCall className="size-4 text-amber-300" />
-            Inbound call coverage while crews are on site
+            Inbound call coverage while you&apos;re on a job
           </p>
           <p className="flex items-center justify-center gap-2">
             <CalendarClock className="size-4 text-amber-300" />
@@ -122,7 +121,7 @@ export default function HomePage() {
           </p>
           <p className="flex items-center justify-center gap-2">
             <ShieldCheck className="size-4 text-amber-300" />
-            Clean callback handoff when a person needs to step in
+            Clean callback handoff when you need to step in
           </p>
         </div>
       </section>
@@ -144,7 +143,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why people trust it</p>
             <h2 className="text-4xl font-black text-slate-950">Built for real trades businesses, not call-center theory.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall exists because smaller trades teams lose real work when the phone rings at the wrong moment. The product is built around that reality.
+              BookedOnCall exists because good trades businesses lose real work when the phone rings at the wrong moment. The product is built around that reality.
             </p>
             <TrackedLink
               href="/about"
@@ -218,7 +217,7 @@ export default function HomePage() {
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">Honest about what AI can do</h3>
               <p className="text-sm leading-7 text-slate-600">
-                We don't promise every call will be perfect. We focus on catching the jobs that matter and handing off the rest cleanly to your team.
+                We don&apos;t promise every call will be perfect. We focus on catching the jobs that matter and handing off the rest cleanly to you.
               </p>
             </article>
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
@@ -243,7 +242,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
             <h2 className="text-4xl font-black text-slate-950">From first ring to booked job or clean callback.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall answers the call, gets the basics, checks availability when it should, and hands off anything that still needs your team.
+              BookedOnCall answers the call, gets the basics, checks availability when it should, and hands off anything that still needs a person.
             </p>
           </div>
           <div className="grid gap-4">
@@ -267,7 +266,7 @@ export default function HomePage() {
             <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">By trade</p>
             <h2 className="text-4xl font-black text-slate-950">Built for the kinds of businesses that live on the phone.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              Plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service teams all have different calls coming in. The goal is the same: answer them faster and lose fewer jobs.
+              Plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses all have different calls coming in. The goal is the same: answer them faster and lose fewer jobs.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -340,11 +339,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ComingSoonProof
-        title="More proof is on the way."
-        description="We do not have public audio demos, customer proof, or trade-by-trade case studies ready yet, but the site now has a place for them as soon as they are ready to publish."
-      />
-
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="grid gap-4">
@@ -369,7 +363,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Supported integrations</p>
-            <h2 className="text-4xl font-black text-slate-950">Works with the tools your team already uses.</h2>
+            <h2 className="text-4xl font-black text-slate-950">Works with the tools you already use.</h2>
             <p className="text-lg leading-8 text-slate-600">
               Connect Jobber or Google Calendar so BookedOnCall fits the way your business already schedules work.
             </p>

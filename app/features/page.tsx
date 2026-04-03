@@ -32,10 +32,10 @@ const capabilityGroups = [
   {
     title: "Hand off what needs a person",
     items: [
-      "Send callbacks and manual-review jobs back to your team cleanly.",
+      "Send callbacks and manual-review jobs back to you cleanly.",
       "Keep summaries, customer details, and next steps in one place.",
       "Use Pro to choose the assistant voice, assistant name, and branded greeting.",
-      "Get set up without changing the tools your team already relies on."
+      "Get set up without changing the tools you already rely on."
     ]
   }
 ] as const
@@ -54,7 +54,7 @@ export default function FeaturesPage() {
       />
       <PageIntro
         eyebrow="Features"
-        title="What your team gets with BookedOnCall."
+        title="What you get with BookedOnCall."
         description="BookedOnCall is built for the real calls trades businesses get every day: new jobs, scheduling requests, callbacks, and after-hours intake."
       />
 
@@ -98,7 +98,7 @@ export default function FeaturesPage() {
           <div className="grid gap-4 md:grid-cols-3">
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Voicemail</h3>
-              <p className="text-sm leading-7 text-slate-600">Voicemail captures a fraction of the details your team needs and many callers hang up before leaving a message. BookedOnCall asks the right questions and collects structured job details.</p>
+              <p className="text-sm leading-7 text-slate-600">Voicemail captures a fraction of the details you need and many callers hang up before leaving a message. BookedOnCall asks the right questions and collects structured job details.</p>
             </article>
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Hiring a receptionist</h3>
@@ -124,10 +124,10 @@ export default function FeaturesPage() {
             </ul>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">When your team takes over</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">When you take over</h2>
             <ul className="mb-6 grid gap-3 text-sm leading-7 text-slate-600">
               <li>Out-of-area requests, approval-only jobs, and edge cases can be sent back as callbacks.</li>
-              <li>Your team still gets the customer details and a clean summary of the call.</li>
+              <li>You still get the customer details and a clean summary of the call.</li>
               <li>Nothing has to be forced into a booking just to keep the caller moving.</li>
             </ul>
             <div className="grid gap-3 text-sm leading-7">

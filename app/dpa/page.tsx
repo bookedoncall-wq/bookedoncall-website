@@ -15,7 +15,7 @@ export default function DpaPage() {
       <PageIntro
         eyebrow="Legal"
         title="Data Processing Addendum"
-        description="This summary DPA describes how BookedOnCall processes customer data to provide the service, including setup, connected integrations, and ongoing operations."
+        description="This summary DPA describes how BookedOnCall processes customer data to provide call answering, connected integrations, and account support."
       />
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-4xl gap-6 rounded-[1.75rem] border border-white bg-white p-8 shadow-sm">
@@ -23,19 +23,19 @@ export default function DpaPage() {
           <section className="grid gap-3">
             <h2 className="text-2xl font-black text-slate-950">Roles</h2>
             <p className="text-base leading-8 text-slate-700">
-            Customers act as controllers for the business data they provide or direct through BookedOnCall. BookedOnCall acts as a processor for that runtime data to the extent required to operate the service.
+              Customers act as controllers for the business and customer data they provide through BookedOnCall. BookedOnCall processes that data only as needed to deliver the service.
             </p>
           </section>
           <section className="grid gap-3">
             <h2 className="text-2xl font-black text-slate-950">Scope</h2>
             <p className="text-base leading-8 text-slate-700">
-            Processing may include contact details, call summaries, business configuration, integration identifiers, and operational metadata required to run the service.
+              Processing may include contact details, call summaries, business setup details, connected integration identifiers, and service records needed to run the product.
             </p>
           </section>
           <section className="grid gap-3">
             <h2 className="text-2xl font-black text-slate-950">Subprocessors and connected services</h2>
             <p className="text-base leading-8 text-slate-700">
-            Payment, authentication, communications, and connected scheduling providers may process data as needed for the service. Jobber and Google Calendar processing only applies where a customer business has connected those integrations.
+              Payment, authentication, communications, and connected scheduling providers may process data as needed for the service. Jobber and Google Calendar processing only applies when a customer has connected those integrations.
             </p>
           </section>
           <section className="grid gap-3">

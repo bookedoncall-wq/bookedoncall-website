@@ -7,7 +7,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "How It Works",
   description:
-    "BookedOnCall answers the call, gets the basics, offers supported bookings, and hands off anything that still needs your team.",
+    "BookedOnCall answers the call, gets the basics, offers supported bookings, and hands off anything that still needs a person.",
   path: "/how-it-works",
 })
 
@@ -26,7 +26,7 @@ export default function HowItWorksPage() {
       <PageIntro
         eyebrow="How it works"
         title="What happens when a customer calls."
-        description="BookedOnCall answers the call, gets the basics, checks availability when it should, and hands off anything that still needs your team."
+        description="BookedOnCall answers the call, gets the basics, checks availability when it should, and hands off anything that still needs a person."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ export default function HowItWorksPage() {
             </p>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">When your team takes over</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">When you take over</h2>
             <p className="text-base leading-8 text-slate-600">
               Out-of-area requests, approval-only jobs, and anything you want reviewed still get handed back cleanly with the customer details attached.
             </p>
@@ -60,7 +60,7 @@ export default function HowItWorksPage() {
 
       <CtaBand
         title="Want to talk through your call flow?"
-        body="See the plans and we will help you set BookedOnCall up for the way your team handles calls."
+        body="See the plans and we will help you set BookedOnCall up for the way you want calls handled."
       />
     </>
   )

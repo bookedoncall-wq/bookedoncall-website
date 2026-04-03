@@ -27,7 +27,7 @@ export default function JobberPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Need Jobber in the loop?" body="Choose a plan and connect Jobber so BookedOnCall fits the way your team already schedules work." />
+      <CtaBand title="Need Jobber in the loop?" body="Choose a plan and connect Jobber so BookedOnCall fits the way you already schedule work." />
     </>
   )
 }

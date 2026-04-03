@@ -1,3 +1,4 @@
+import { ComingSoonProof } from "@/components/marketing/ComingSoonProof"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
@@ -6,16 +7,16 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 const demoCalls = [
   {
     title: "Sample plumbing call",
-    scenario: "A homeowner calls about a leaking water heater while your team is already on jobs.",
+    scenario: "A homeowner calls about a leaking water heater while you are already on jobs.",
     transcript: [
       "Caller: My water heater is leaking and I need someone to take a look today if possible.",
       "Assistant: Absolutely, let me get your details. What’s the best number to reach you, and where’s the job?",
       "Caller: 303-555-0188. The address is 412 West Cedar in Denver.",
       "Assistant: Got it. Is the leak steady, or is water pooling up right now?",
       "Caller: There is water pooling in the utility room.",
-      "Assistant: Okay, I’m flagging this as urgent and sending everything over so your team can get back to you fast.",
+      "Assistant: Okay, I’m flagging this as urgent and sending everything over so you can get back to them fast.",
     ],
-    outcome: "The team gets the caller details, address, urgency, and callback number without relying on voicemail.",
+    outcome: "You get the caller details, address, urgency, and callback number without relying on voicemail.",
   },
   {
     title: "Sample HVAC call",
@@ -26,9 +27,9 @@ const demoCalls = [
       "Caller: 720-555-0142. We’re in Littleton.",
       "Assistant: Thanks. Is the system blowing air that’s not cold, or is it not turning on at all?",
       "Caller: It’s blowing, but it isn’t cold.",
-      "Assistant: Got it. I’ll send your details over so the team can follow up or get you on the schedule.",
+      "Assistant: Got it. I’ll send your details over so you can follow up or get them on the schedule.",
     ],
-    outcome: "Your team gets symptom details up front and can decide whether to book or return the call with the right context.",
+    outcome: "You get symptom details up front and can decide whether to book or return the call with the right context.",
   },
   {
     title: "Sample electrical call",
@@ -39,9 +40,9 @@ const demoCalls = [
       "Caller: 970-555-0105. We’re in Fort Collins.",
       "Assistant: Thanks. Is it just the lights, or are outlets or breakers acting up too?",
       "Caller: Mostly lights, but one breaker has tripped twice this week.",
-      "Assistant: Good to know. I’ll pass everything along so your team can take a look and reach out.",
+      "Assistant: Good to know. I’ll pass everything along so you can take a look and reach out.",
     ],
-    outcome: "The caller keeps moving, and your team gets the job details without forcing a risky instant booking.",
+    outcome: "The caller keeps moving, and you get the job details without forcing a risky instant booking.",
   },
 ] as const
 
@@ -67,7 +68,7 @@ export default function DemoCallsPage() {
       <PageIntro
         eyebrow="Sample call demos"
         title="Illustrative call transcripts."
-        description="These are sample call flows, not customer recordings. They show the kind of questions BookedOnCall can ask and the kind of details your team can get back."
+        description="These are sample call flows, not customer recordings. They show the kind of questions BookedOnCall can ask and the kind of details you can get back."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -93,9 +94,15 @@ export default function DemoCallsPage() {
         </div>
       </section>
 
+      <ComingSoonProof
+        eyebrow="More proof"
+        title="More demos and proof will live here."
+        description="The transcript examples are live now. Audio demos, customer proof, and trade-by-trade case studies will be added here as they are ready to publish."
+      />
+
       <CtaBand
         title="Want to hear how this could fit your business?"
-        body="See the plans and send your details. We can talk through the kinds of calls your team gets every week."
+        body="See the plans and send your details. We can talk through the kinds of calls you get every week."
       />
     </>
   )
