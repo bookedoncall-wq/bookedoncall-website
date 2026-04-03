@@ -15,24 +15,24 @@ export default function AfterHoursCallAnsweringForPlumbersPage() {
       path="/compare/after-hours-call-answering-for-plumbers"
       eyebrow="Guide"
       title="After-hours call answering for plumbers."
-      description="Plumbing leads do not wait for office hours. If your phone goes unanswered at the wrong moment, that customer may never come back."
+      description="Plumbing leads don't wait for office hours. If your phone goes unanswered at the wrong moment, that customer may never come back."
       serviceName="After-hours call answering for plumbers"
       serviceDescription="Why after-hours call answering matters for plumbing businesses and how BookedOnCall can help."
       quickPoints={[
         "Urgent plumbing callers usually want reassurance before they want a quote.",
         "After-hours voicemails often turn into next-morning callbacks with thin details.",
-        "A stronger first response gives your team context before the job goes cold.",
+        "A stronger first response gives you context before the job goes cold.",
       ]}
       sections={[
         {
           title: "What happens after hours",
           body:
-            "Plumbing calls often come in at the worst times: after dinner, late at night, early in the morning, or while the whole crew is already buried in jobs. When that call hits voicemail, there is a good chance the customer just calls the next shop.",
+            "Plumbing calls often come in at the worst times: after dinner, late at night, early in the morning, or while you're already buried in jobs. When that call hits voicemail, there's a good chance the customer just calls the next shop.",
         },
         {
           title: "Why plumbers care about first response",
           body:
-            "A plumbing lead is often urgent. The caller is not just comparing prices. They want to know whether someone is going to respond and whether they can trust your shop to show up.",
+            "A plumbing lead is often urgent. The caller isn't just comparing prices. They want to know whether someone is going to respond and whether they can trust your shop to show up.",
         },
         {
           title: "What a better setup looks like",

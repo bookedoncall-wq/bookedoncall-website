@@ -97,7 +97,7 @@ export default function DemoCallsPage() {
       <ComingSoonProof
         eyebrow="More proof"
         title="More demos and proof will live here."
-        description="The transcript examples are live now. Audio demos, customer proof, and trade-by-trade case studies will be added here as they are ready to publish."
+        description="The transcript examples are live now. Audio demos, customer proof, and trade-by-trade case studies will be added here as they're ready to publish."
       />
 
       <CtaBand

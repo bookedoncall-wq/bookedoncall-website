@@ -36,7 +36,7 @@ export default function ProductPage() {
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What it replaces</p>
             <h2 className="mb-4 text-3xl font-black text-slate-950">A missed call, a rushed voicemail, or a lead that goes cold.</h2>
             <p className="text-base leading-8 text-slate-700">
-              BookedOnCall is built for the moment when the phone rings and nobody on your team can stop what they are doing to answer it. It gives that caller a real first response, captures the details, and helps move the job toward the right next step.
+              BookedOnCall is built for the moment when the phone rings and you can't stop what you're doing to answer it. It gives that caller a real first response, captures the details, and helps move the job toward the right next step.
             </p>
           </article>
 
@@ -87,7 +87,7 @@ export default function ProductPage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After the call</p>
             <h2 className="text-4xl font-black text-slate-950">You get something usable, not just a message.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              The goal is not to sound clever. The goal is to give your team enough context to act quickly.
+              The goal isn't to sound clever. The goal is to give you enough context to act quickly.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">

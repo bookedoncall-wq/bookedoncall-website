@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/lib/seo"
 export const metadata = buildPageMetadata({
   title: "AI receptionist vs voicemail",
   description:
-    "A practical comparison of AI call answering versus voicemail for trades businesses that miss calls while they are already on jobs.",
+    "A practical comparison of AI call answering versus voicemail for trades businesses that miss calls while they're already on jobs.",
   path: "/compare/ai-receptionist-vs-voicemail",
 })
 
@@ -15,7 +15,7 @@ export default function AiReceptionistVsVoicemailPage() {
       path="/compare/ai-receptionist-vs-voicemail"
       eyebrow="Comparison"
       title="AI receptionist vs voicemail."
-      description="If you miss calls because everyone is out working, voicemail is usually the fallback. For a lot of trades businesses, it is also where good jobs disappear."
+      description="If you miss calls because everyone is out working, voicemail is usually the fallback. For a lot of trades businesses, it's also where good jobs disappear."
       serviceName="AI receptionist vs voicemail for trades businesses"
       serviceDescription="A practical comparison of AI call answering versus voicemail for trades businesses."
       quickPoints={[
@@ -37,12 +37,12 @@ export default function AiReceptionistVsVoicemailPage() {
         {
           title: "Why this matters most for trades businesses",
           body:
-            "This matters most for owner-operators, smaller crews, and growing shops that do not have a full-time receptionist but still want to sound responsive and professional when a new customer calls.",
+            "This matters most for owner-operators, smaller crews, and growing shops that don't have a full-time receptionist but still want to sound responsive and professional when a new customer calls.",
         },
         {
           title: "Where BookedOnCall fits",
           body:
-            "BookedOnCall is not trying to be a generic contact-center tool. It is built for the home-service call flow: answer the missed call, capture the job details, and either move toward a supported booking or hand the call back as a clean callback.",
+            "BookedOnCall isn't trying to be a generic contact-center tool. It's built for the home-service call flow: answer the missed call, capture the job details, and either move toward a supported booking or hand the call back as a clean callback.",
         },
       ]}
       proofItems={sourcedProof.filter((item) => item.id !== "bls-receptionist-wage")}

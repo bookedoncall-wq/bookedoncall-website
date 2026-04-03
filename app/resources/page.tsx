@@ -20,7 +20,7 @@ const extraResources = [
   {
     title: "About BookedOnCall",
     href: "/about",
-    description: "Why the product exists, who it is built for, and the founder story behind it.",
+    description: "Why the product exists, who it's built for, and the founder story behind it.",
   },
 ] as const
 

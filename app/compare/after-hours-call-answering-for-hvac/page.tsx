@@ -15,13 +15,13 @@ export default function AfterHoursCallAnsweringForHvacPage() {
       path="/compare/after-hours-call-answering-for-hvac"
       eyebrow="Guide"
       title="After-hours call answering for HVAC."
-      description="No-heat and no-cool calls do not wait for office hours. If the phone goes unanswered at the wrong moment, that customer may be on the next call within minutes."
+      description="No-heat and no-cool calls don't wait for office hours. If the phone goes unanswered at the wrong moment, that customer may be on the next call within minutes."
       serviceName="After-hours call answering for HVAC"
       serviceDescription="Why after-hours call answering matters for HVAC businesses and how BookedOnCall can help."
       quickPoints={[
         "Weather spikes make after-hours HVAC responsiveness matter more, not less.",
         "A caller with no heat or no cooling wants a real first response, not a generic mailbox.",
-        "The faster your team gets clean notes, the faster the real next step happens.",
+        "The faster you get clean notes, the faster the real next step happens.",
       ]}
       sections={[
         {
@@ -30,7 +30,7 @@ export default function AfterHoursCallAnsweringForHvacPage() {
             "No-heat and no-cool calls often come in during the hottest or coldest stretches of the year, which is exactly when the team is already buried. That makes the first response more important, not less.",
         },
         {
-          title: "The biggest loss is not just the missed ring",
+          title: "The biggest loss isn't just the missed ring",
           body:
             "The real loss is the weak next step. If the caller hears voicemail, leaves a partial message, or hangs up, your office has to start from scratch the next morning and may still lose the job to a faster competitor.",
         },

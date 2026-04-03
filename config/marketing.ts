@@ -37,22 +37,22 @@ export const faqEntries = [
   {
     question: "Can BookedOnCall handle emergency or urgent calls?",
     answer:
-      "BookedOnCall can flag calls that sound urgent based on what the caller describes, like a burst pipe or no heat in winter. It can mark those calls for fast follow-up, but it does not replace your own emergency protocols."
+      "BookedOnCall can flag calls that sound urgent based on what the caller describes, like a burst pipe or no heat in winter. It can mark those calls for fast follow-up, but it doesn't replace your own emergency protocols."
   },
   {
     question: "Do I need to change my phone number?",
     answer:
-      "No. You keep your existing business number. BookedOnCall answers the calls you cannot get to, either by forwarding or as a backup after a set number of rings."
+      "No. You keep your existing business number. BookedOnCall answers the calls you can't get to, either by forwarding or as a backup after a set number of rings."
   },
   {
     question: "What if the caller asks to continue in another supported language?",
     answer:
-      "BookedOnCall starts in English by default so it does not switch languages by accident. If a caller clearly asks to continue in another supported language, the assistant can switch and keep the call moving. English is still the primary default today."
+      "BookedOnCall starts in English by default so it doesn't switch languages by accident. If a caller clearly asks to continue in another supported language, the assistant can switch and keep the call moving. English is still the primary default today."
   },
   {
     question: "Can I try BookedOnCall before committing?",
     answer:
-      "We are not offering a self-serve free trial right now, but we are happy to walk you through a demo call so you can hear how it sounds for your trade before you decide."
+      "We're not offering a self-serve free trial right now, but we're happy to walk you through a demo call so you can hear how it sounds for your trade before you decide."
   },
   {
     question: "Is there a long-term contract?",
@@ -77,7 +77,7 @@ export const homepageHighlights = [
     body: "BookedOnCall answers the calls you miss and gathers the basics before the lead goes cold."
   },
   {
-    title: "Sound buttoned-up even when the crew is busy",
+    title: "Sound buttoned-up even when you're busy",
     body: "Give callers a fast, professional first response even when nobody can stop mid-job to answer the phone."
   },
   {
@@ -93,7 +93,7 @@ export const homepageTrustPoints = [
   },
   {
     title: "Built around field reality",
-    body: "It is built around what actually happens in the trades: the phone rings while you are driving, quoting, or already on a job.",
+    body: "It's built around what actually happens in the trades: the phone rings while you're driving, quoting, or already on a job.",
   },
   {
     title: "Practical over flashy",
@@ -101,7 +101,7 @@ export const homepageTrustPoints = [
   },
   {
     title: "Month-to-month and easy to try",
-    body: "Monthly billing, no setup fee, and no long contract. Keep it if it helps. Cancel if it does not.",
+    body: "Monthly billing, no setup fee, and no long contract. Keep it if it helps. Cancel if it doesn't.",
   },
 ] as const
 
@@ -123,11 +123,11 @@ export const comingSoonProofItems = [
 export const workflowSteps = [
   {
     title: "A customer calls your business",
-    body: "BookedOnCall answers when you cannot get to the phone, so the lead does not drop into voicemail."
+    body: "BookedOnCall answers when you can't get to the phone, so the lead doesn't drop into voicemail."
   },
   {
     title: "The assistant gets the basics",
-    body: "Caller name, callback number, address, and job details are collected so your team is not starting from scratch."
+    body: "Caller name, callback number, address, and job details are collected so you're not starting from scratch."
   },
   {
     title: "BookedOnCall checks the next step",
@@ -142,7 +142,7 @@ export const workflowSteps = [
 export const productFlowSteps = [
   {
     title: "Answer the call",
-    body: "BookedOnCall picks up when you cannot get to the phone, whether you are in the truck, on a ladder, or already inside the next job."
+    body: "BookedOnCall picks up when you can't get to the phone, whether you're in the truck, on a ladder, or already inside the next job."
   },
   {
     title: "Qualify the work",
@@ -212,7 +212,7 @@ export const useCasePages = {
       "Offer appointments when your scheduling setup allows it."
     ],
     trustCopy:
-      "Plumbing calls are often urgent. When water is going where it should not, people do not want to hear voicemail. BookedOnCall helps you sound responsive even when everyone is already in the field.",
+      "Plumbing calls are often urgent. When water is going where it shouldn't, people don't want to hear voicemail. BookedOnCall helps you sound responsive even when everyone is already in the field.",
     ctaTitle: "Ready to set up plumbing call coverage?",
     ctaBody: "Choose a plan and make sure the next plumbing call gets answered."
   },
@@ -235,7 +235,7 @@ export const useCasePages = {
       "Offer appointments when your calendar is connected, or send the call back for follow-up."
     ],
     trustCopy:
-      "HVAC calls can be high-pressure and time-sensitive, especially in peak summer and winter weeks. BookedOnCall helps your business sound steady and responsive when demand jumps and you are stretched thin.",
+      "HVAC calls can be high-pressure and time-sensitive, especially in peak summer and winter weeks. BookedOnCall helps your business sound steady and responsive when demand jumps and you're stretched thin.",
     ctaTitle: "Need better HVAC call coverage?",
     ctaBody: "Choose a plan and make sure heating and cooling calls get answered the first time."
   },
@@ -272,7 +272,7 @@ export const useCasePages = {
     cardSummary: "Handle estimate requests and painting inquiries while you're on site or in the middle of a project.",
     commonCalls: [
       "Interior and exterior painting estimate requests from homeowners who want a quick response.",
-      "Questions about timelines, project scope, and callback follow-up while you are out working.",
+      "Questions about timelines, project scope, and callback follow-up while you're out working.",
       "New leads that need to be captured clearly before you or an estimator calls back."
     ],
     reasons: [
@@ -283,7 +283,7 @@ export const useCasePages = {
     trustCopy:
       "Painting businesses win work by being responsive, organized, and easy to deal with. BookedOnCall helps you make that strong first impression even when everyone is already in the field.",
     ctaTitle: "Need better coverage for painting leads?",
-    ctaBody: "Choose a plan and make sure estimate requests do not disappear into voicemail."
+    ctaBody: "Choose a plan and make sure estimate requests don't disappear into voicemail."
   },
   flooring: {
     label: "Flooring",
@@ -294,12 +294,12 @@ export const useCasePages = {
       "BookedOnCall helps flooring contractors answer installation, replacement, and repair calls without letting new leads slip past the office.",
     cardSummary: "Capture flooring installs, replacements, and repair requests with a more professional first response.",
     commonCalls: [
-      "Hardwood, tile, vinyl, carpet, and repair calls that come in while you are on install.",
+      "Hardwood, tile, vinyl, carpet, and repair calls that come in while you're on install.",
       "Measurement and estimate requests where you need clean notes before following up.",
       "Customers comparing contractors and deciding who actually answers the phone."
     ],
     reasons: [
-      "Catch flooring leads while you're on install and cannot stop to answer.",
+      "Catch flooring leads while you're on install and can't stop to answer.",
       "Collect room details, surface type, address, and callback information up front.",
       "Make it easier to follow up fast with the right context."
     ],
@@ -340,12 +340,12 @@ export const useCasePages = {
       "BookedOnCall helps home-service businesses answer new calls, capture the job details, and route the next step without losing good leads to voicemail.",
     cardSummary: "A better first response for handyman, repair, install, and general home-service calls.",
     commonCalls: [
-      "Handyman, repair, install, and general service inquiries that come in while you are already booked out in the field.",
+      "Handyman, repair, install, and general service inquiries that come in while you're already booked out in the field.",
       "Calls that need a quick first response and a clean callback instead of a long voicemail.",
       "New-customer inquiries where you need the basics before deciding on the next step."
     ],
     reasons: [
-      "Catch new calls while you are out working instead of tied to the phone.",
+      "Catch new calls while you're out working instead of tied to the phone.",
       "Collect the details you need before calling the customer back.",
       "Keep your process simple without replacing the tools and habits your business already uses."
     ],

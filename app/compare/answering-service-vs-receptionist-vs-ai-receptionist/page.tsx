@@ -32,7 +32,7 @@ export default function AnsweringServiceVsReceptionistVsAiReceptionistPage() {
         {
           title: "Where a receptionist is strongest",
           body:
-            "A receptionist can do more than answer the phone. They can handle broader office coordination, relationship continuity, and edge cases across the day. That is valuable, but it is a much bigger operating decision than simply solving missed calls.",
+            "A receptionist can do more than answer the phone. They can handle broader office coordination, relationship continuity, and edge cases across the day. That's valuable, but it's a much bigger operating decision than simply solving missed calls.",
         },
         {
           title: "Where answering services often fall short",

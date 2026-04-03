@@ -136,7 +136,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
             <h2 className="text-4xl font-black text-slate-950">Answer, qualify, then move to the right next step.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall is not trying to sound clever. It is trying to give your business a better first response and your team a cleaner handoff.
+              BookedOnCall isn't trying to sound clever. It's trying to give your business a better first response and you a cleaner handoff.
             </p>
             <TrackedLink
               href="/product"
@@ -169,7 +169,7 @@ export default function HomePage() {
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After the call</p>
             <h2 className="mb-4 text-4xl font-black text-slate-950">You get something usable, not just a message.</h2>
             <p className="mb-6 text-lg leading-8 text-slate-600">
-              The point is not just that a call was answered. The point is that your team gets enough context to do something useful next.
+              The point isn't just that a call was answered. The point is that you get enough context to do something useful next.
             </p>
             <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Example summary</p>

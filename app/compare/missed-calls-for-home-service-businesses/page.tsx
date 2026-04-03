@@ -37,12 +37,12 @@ export default function MissedCallsForHomeServiceBusinessesPage() {
         {
           title: "What a better setup looks like",
           body:
-            "The customer gets a response, the basics are captured, and your team gets enough detail to decide the next step. Some jobs should move toward a booking. Others should come back for review. Either way, the caller should not hit a dead end.",
+            "The customer gets a response, the basics are captured, and you get enough detail to decide the next step. Some jobs should move toward a booking. Others should come back for review. Either way, the caller shouldn't hit a dead end.",
         },
         {
           title: "Where BookedOnCall fits",
           body:
-            "BookedOnCall is built for that missed-call problem specifically. It answers when the team cannot, captures the job details, and either moves the work toward a supported booking or hands it back as a clean callback with context.",
+            "BookedOnCall is built for that missed-call problem specifically. It answers when you can't, captures the job details, and either moves the work toward a supported booking or hands it back as a clean callback with context.",
         },
       ]}
       proofItems={sourcedProof}
