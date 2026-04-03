@@ -259,6 +259,20 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
+
+                <div className="rounded-[1.1rem] border border-slate-700 bg-slate-900 p-4">
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Example alert</p>
+                    <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-bold text-amber-700">
+                      Urgent follow-up
+                    </span>
+                  </div>
+                  <div className="grid gap-1.5 text-sm">
+                    <p className="font-black text-white">Sarah M. | Littleton</p>
+                    <p className="leading-6 text-slate-300">AC blowing warm air. Wants same-day help if possible.</p>
+                    <p className="text-slate-400">720-555-0142</p>
+                  </div>
+                </div>
               </div>
             </article>
           </div>
