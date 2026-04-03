@@ -2,7 +2,7 @@ import { Suspense } from "react"
 import { LeadCaptureForm } from "@/components/marketing/LeadCaptureForm"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { buildLeadFormHref, plans, siteConfig } from "@/config/site"
+import { buildLeadFormHref, customerLoginPath, plans, siteConfig } from "@/config/site"
 import { buildPageMetadata } from "@/lib/seo"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -22,6 +22,20 @@ export default function SignUpPage() {
         title="Tell us how your business handles calls today."
         description="Start with your details. We will help you decide whether Starter or Pro fits, how scheduling should work, and when BookedOnCall should book versus hand the call back as a clean callback."
       />
+
+      <section className="border-b border-slate-100 bg-white px-4 py-5 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-2 text-center text-sm text-slate-600">
+          <span>Already a customer?</span>
+          <TrackedLink
+            href={customerLoginPath}
+            eventName="marketing_cta_clicked"
+            eventPayload={{ placement: "signup_existing_customer", href: customerLoginPath }}
+            className="font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
+          >
+            Log in
+          </TrackedLink>
+        </div>
+      </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">

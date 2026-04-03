@@ -10,6 +10,8 @@ export async function GET() {
     `- Integrations: ${siteConfig.url}/integrations`,
     `- Resources: ${siteConfig.url}/resources`,
     `- Talk to us: ${siteConfig.url}/sign-up`,
+    `- Existing customer login: ${siteConfig.url}/login`,
+    `- Customer app sign-in: ${siteConfig.appUrl}/sign-in`,
     `- Read sample calls: ${siteConfig.url}/demo-calls`,
     `- Description: ${positioning.oneLiner}`,
     `- Supported trades: ${publicSiteContract.supportedTrades.join(", ")}`,

@@ -10,6 +10,7 @@ const pages = [
   "/features",
   "/how-it-works",
   "/pricing",
+  "/login",
   "/sign-up",
   "/about",
   "/faq",

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { buildLeadFormHref, primaryNav } from "@/config/site"
+import { buildLeadFormHref, customerLoginPath, primaryNav } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 export default function Nav() {
@@ -40,6 +40,14 @@ export default function Nav() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <TrackedLink
+            href={customerLoginPath}
+            eventName="marketing_cta_clicked"
+            eventPayload={{ placement: "nav_customer_login", href: customerLoginPath }}
+            className="text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950"
+          >
+            Customer login
+          </TrackedLink>
           <TrackedLink
             href="/demo-calls"
             eventName="marketing_cta_clicked"
@@ -87,6 +95,14 @@ export default function Nav() {
                 {link.label}
               </TrackedLink>
             ))}
+            <TrackedLink
+              href={customerLoginPath}
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "mobile_nav_customer_login", href: customerLoginPath }}
+              className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
+            >
+              Customer login
+            </TrackedLink>
             <TrackedLink
               href="/demo-calls"
               eventName="marketing_cta_clicked"

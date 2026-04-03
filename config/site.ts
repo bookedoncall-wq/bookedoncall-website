@@ -9,6 +9,7 @@ export const siteConfig = {
   title: `${contract.brand.name} | ${contract.brand.tagline}`,
   description: contract.brand.description,
   url: contract.brand.websiteOrigin,
+  appUrl: contract.brand.appOrigin,
   email: contract.contacts.salesEmail,
   supportEmail: contract.contacts.supportEmail,
   privacyEmail: contract.contacts.privacyEmail,
@@ -24,6 +25,8 @@ export const supportedTrades = contract.supportedTrades
 export const integrations = contract.integrations
 export const positioning = contract.positioning
 export const sourcedProof = contract.sourcedProof
+export const customerLoginPath = "/login" as const
+export const customerLoginUrl = new URL("/sign-in", `${contract.brand.appOrigin}/`).toString()
 
 export const primaryNav = [
   { label: "Product", href: "/product" },

@@ -1,4 +1,4 @@
-import { buildLeadFormHref, secondaryNav, siteConfig } from "@/config/site"
+import { buildLeadFormHref, customerLoginPath, secondaryNav, siteConfig } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 const footerColumns = [
@@ -9,6 +9,7 @@ const footerColumns = [
       { label: "Features", href: "/features" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Customer login", href: customerLoginPath },
     ],
   },
   {
