@@ -48,7 +48,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-950 text-slate-300">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.7fr)] lg:items-start">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,2.1fr)] lg:items-start">
           <div className="grid gap-4">
             <div className="flex items-center gap-2 text-lg font-black tracking-tight text-white">
               <span>
@@ -77,7 +77,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
             {footerColumns.map((column) => (
               <div key={column.title} className="grid content-start gap-3">
                 <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-slate-500">{column.title}</h2>

@@ -191,7 +191,7 @@ export const resourceHighlights = [
     description: "A practical comparison for shops that lose work because calls go unanswered."
   },
   {
-    title: "Receptionist, answering service, or AI?",
+    title: "AI, receptionist, or answering service?",
     href: "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
     description: "A grounded comparison of the three main ways small shops try to cover missed calls."
   },

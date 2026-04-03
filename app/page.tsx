@@ -14,6 +14,18 @@ export const metadata = buildPageMetadata({
   path: "/",
 })
 
+const handoffOutcomes = [
+  "Callback request",
+  "Booking request",
+  "Urgent flag",
+] as const
+
+const handoffDeliveryChannels = [
+  "Email summary",
+  "Text alert",
+  "Jobber or calendar workflow",
+] as const
+
 export default function HomePage() {
   return (
     <>
@@ -193,21 +205,62 @@ export default function HomePage() {
             </div>
           </article>
 
-          <div className="grid content-start gap-3 md:grid-cols-3">
-            {afterCallArtifacts.map((artifact, index) => (
-              <article
-                key={artifact.title}
-                className={`flex h-full min-h-[112px] flex-col rounded-[1.25rem] border p-4 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
-              >
-                <div className="mb-2 flex items-center gap-2.5">
-                  {index === 0 ? <ClipboardList className="size-4 text-amber-600" /> : null}
-                  {index === 1 ? <CalendarClock className="size-4 text-amber-600" /> : null}
-                  {index === 2 ? <ShieldCheck className="size-4 text-amber-600" /> : null}
-                  <h3 className="text-base font-black text-slate-950">{artifact.title}</h3>
+          <div className="grid content-start gap-3">
+            <div className="grid content-start gap-3 md:grid-cols-3">
+              {afterCallArtifacts.map((artifact, index) => (
+                <article
+                  key={artifact.title}
+                  className={`flex h-full min-h-[112px] flex-col rounded-[1.25rem] border p-4 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
+                >
+                  <div className="mb-2 flex items-center gap-2.5">
+                    {index === 0 ? <ClipboardList className="size-4 text-amber-600" /> : null}
+                    {index === 1 ? <CalendarClock className="size-4 text-amber-600" /> : null}
+                    {index === 2 ? <ShieldCheck className="size-4 text-amber-600" /> : null}
+                    <h3 className="text-base font-black text-slate-950">{artifact.title}</h3>
+                  </div>
+                  <p className="text-[13px] leading-5 text-slate-700">{artifact.body}</p>
+                </article>
+              ))}
+            </div>
+
+            <article className="rounded-[1.5rem] border border-slate-900 bg-slate-950 p-5 text-white shadow-sm">
+              <div className="grid gap-5">
+                <div className="grid gap-3 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+                  <div className="grid gap-2">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-300">How it gets back to you</p>
+                    <p className="max-w-lg text-sm leading-6 text-slate-300">
+                      The result can land as a clean callback, a booking path, or an urgent follow-up with enough context to act fast.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 lg:justify-end">
+                    {handoffDeliveryChannels.map((channel) => (
+                      <span
+                        key={channel}
+                        className="rounded-full border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs font-bold text-slate-200"
+                      >
+                        {channel}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-[13px] leading-5 text-slate-700">{artifact.body}</p>
-              </article>
-            ))}
+
+                <div className="grid gap-3 md:grid-cols-3">
+                  {handoffOutcomes.map((outcome, index) => (
+                    <div
+                      key={outcome}
+                      className={`rounded-[1.1rem] border px-4 py-3 ${index === 1 ? "border-amber-300 bg-amber-50 text-slate-950" : "border-slate-700 bg-slate-900 text-white"}`}
+                    >
+                      <div className="flex items-center gap-2">
+                        {index === 0 ? <ClipboardList className="size-4 text-amber-300" /> : null}
+                        {index === 1 ? <CalendarClock className={`size-4 ${index === 1 ? "text-amber-700" : "text-amber-300"}`} /> : null}
+                        {index === 2 ? <ShieldCheck className="size-4 text-amber-300" /> : null}
+                        <span className={`text-sm font-black ${index === 1 ? "text-slate-950" : "text-white"}`}>{outcome}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
