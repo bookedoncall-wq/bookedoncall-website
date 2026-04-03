@@ -26,6 +26,12 @@ const handoffDeliveryChannels = [
   "Jobber or calendar workflow",
 ] as const
 
+const nextStepRules = [
+  "Within your service area",
+  "Fits the kind of work you want booked",
+  "Matches an available slot on the connected schedule",
+] as const
+
 export default function HomePage() {
   return (
     <>
@@ -177,35 +183,54 @@ export default function HomePage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-          <article className="rounded-[2rem] border border-white bg-white p-7 shadow-sm">
+          <article className="flex h-full flex-col rounded-[2rem] border border-white bg-white p-7 shadow-sm">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After the call</p>
             <h2 className="mb-4 text-4xl font-black text-slate-950">You get something usable, not just a message.</h2>
             <p className="mb-6 text-lg leading-8 text-slate-600">
               The point isn&apos;t just that a call was answered. The point is that you get enough context to do something useful next.
             </p>
-            <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Example summary</p>
-              <div className="grid gap-2 text-sm leading-7 text-slate-700">
-                <p>
-                  <strong>Caller:</strong> Sarah M.
+            <div className="grid h-full content-start gap-4">
+              <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Example summary</p>
+                <div className="grid gap-2 text-sm leading-7 text-slate-700">
+                  <p>
+                    <strong>Caller:</strong> Sarah M.
+                  </p>
+                  <p>
+                    <strong>Callback:</strong> 720-555-0142
+                  </p>
+                  <p>
+                    <strong>Address:</strong> Littleton
+                  </p>
+                  <p>
+                    <strong>Issue:</strong> AC blowing warm air
+                  </p>
+                  <p>
+                    <strong>Next step:</strong> Follow up for supported booking or callback
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-slate-200 bg-white p-5">
+                <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What decides the next step</p>
+                <p className="mb-4 text-sm leading-6 text-slate-600">
+                  BookedOnCall does not force every caller into a booking. It checks a few practical rules first.
                 </p>
-                <p>
-                  <strong>Callback:</strong> 720-555-0142
-                </p>
-                <p>
-                  <strong>Address:</strong> Littleton
-                </p>
-                <p>
-                  <strong>Issue:</strong> AC blowing warm air
-                </p>
-                <p>
-                  <strong>Next step:</strong> Follow up for supported booking or callback
-                </p>
+                <div className="grid gap-2">
+                  {nextStepRules.map((rule) => (
+                    <div
+                      key={rule}
+                      className="rounded-[1rem] border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700"
+                    >
+                      {rule}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </article>
 
-          <div className="grid content-start gap-3">
+          <div className="grid h-full content-start gap-3">
             <div className="grid content-start gap-3 md:grid-cols-3">
               {afterCallArtifacts.map((artifact, index) => (
                 <article
@@ -258,20 +283,6 @@ export default function HomePage() {
                       </div>
                     </div>
                   ))}
-                </div>
-
-                <div className="rounded-[1.1rem] border border-slate-700 bg-slate-900 p-4">
-                  <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Example alert</p>
-                    <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-bold text-amber-700">
-                      Urgent follow-up
-                    </span>
-                  </div>
-                  <div className="grid gap-1.5 text-sm">
-                    <p className="font-black text-white">Sarah M. | Littleton</p>
-                    <p className="leading-6 text-slate-300">AC blowing warm air. Wants same-day help if possible.</p>
-                    <p className="text-slate-400">720-555-0142</p>
-                  </div>
                 </div>
               </div>
             </article>
