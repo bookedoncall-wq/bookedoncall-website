@@ -193,19 +193,19 @@ export default function HomePage() {
             </div>
           </article>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid content-start gap-3 md:grid-cols-3">
             {afterCallArtifacts.map((artifact, index) => (
               <article
                 key={artifact.title}
-                className={`flex h-full min-h-[180px] flex-col rounded-[1.5rem] border p-5 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
+                className={`flex h-full min-h-[112px] flex-col rounded-[1.25rem] border p-4 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
               >
-                <div className="mb-3 flex items-center gap-3">
-                  {index === 0 ? <ClipboardList className="size-5 text-amber-600" /> : null}
-                  {index === 1 ? <CalendarClock className="size-5 text-amber-600" /> : null}
-                  {index === 2 ? <ShieldCheck className="size-5 text-amber-600" /> : null}
-                  <h3 className="text-lg font-black text-slate-950">{artifact.title}</h3>
+                <div className="mb-2 flex items-center gap-2.5">
+                  {index === 0 ? <ClipboardList className="size-4 text-amber-600" /> : null}
+                  {index === 1 ? <CalendarClock className="size-4 text-amber-600" /> : null}
+                  {index === 2 ? <ShieldCheck className="size-4 text-amber-600" /> : null}
+                  <h3 className="text-base font-black text-slate-950">{artifact.title}</h3>
                 </div>
-                <p className="text-sm leading-6 text-slate-700">{artifact.body}</p>
+                <p className="text-[13px] leading-5 text-slate-700">{artifact.body}</p>
               </article>
             ))}
           </div>
