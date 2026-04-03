@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/lib/seo"
 export const metadata = buildPageMetadata({
   title: "AI receptionist vs voicemail",
   description:
-    "A practical comparison of AI call answering versus voicemail for trades businesses that miss calls while the crew is on jobs.",
+    "A practical comparison of AI call answering versus voicemail for trades businesses that miss calls while they are already on jobs.",
   path: "/compare/ai-receptionist-vs-voicemail",
 })
 

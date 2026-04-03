@@ -7,7 +7,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 const demoCalls = [
   {
     title: "Sample plumbing call",
-    scenario: "A homeowner calls about a leaking water heater while your crew is already out on jobs.",
+    scenario: "A homeowner calls about a leaking water heater while you're already out on jobs.",
     transcript: [
       "Caller: My water heater is leaking and I need someone to take a look today if possible.",
       "Assistant: Absolutely, let me get your details. What’s the best number to reach you, and where’s the job?",

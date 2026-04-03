@@ -82,12 +82,12 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
-          <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
-            <h2 className="mb-3 text-2xl font-black text-slate-950">Catch the first response</h2>
-            <p className="text-base leading-7 text-slate-600">
-              The goal is to keep a real caller from dropping into voicemail while your crew is already in the field.
-            </p>
-          </article>
+            <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+              <h2 className="mb-3 text-2xl font-black text-slate-950">Catch the first response</h2>
+              <p className="text-base leading-7 text-slate-600">
+              The goal is to keep a real caller from dropping into voicemail while you&apos;re already in the field.
+              </p>
+            </article>
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Get usable job details</h2>
             <p className="text-base leading-7 text-slate-700">

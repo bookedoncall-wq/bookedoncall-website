@@ -28,7 +28,7 @@ export default function IndustriesPage() {
       <PageIntro
         eyebrow="Industries"
         title="Built for the trades that live on inbound calls."
-        description="BookedOnCall is built for home-service businesses that miss calls while the crew is already out working. Start with the trade that looks most like your business."
+        description="BookedOnCall is built for home-service businesses that miss calls while you're already out working. Start with the trade that looks most like your business."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">

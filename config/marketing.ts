@@ -89,7 +89,7 @@ export const homepageHighlights = [
 export const homepageTrustPoints = [
   {
     title: "Made for owner-operators",
-    body: "Useful for a one-person shop or a growing crew that needs help catching calls without adding a full front desk.",
+    body: "Useful for a one-person shop or a growing business that needs help catching calls without adding a full front desk.",
   },
   {
     title: "Built around field reality",
@@ -199,7 +199,7 @@ export const useCasePages = {
     path: "/for/plumbers",
     title: "AI call answering for plumbing businesses",
     summary:
-      "BookedOnCall helps plumbing businesses answer leak, clog, and water-heater calls while the crew is busy, then book the job or capture a callback.",
+      "BookedOnCall helps plumbing businesses answer leak, clog, and water-heater calls while you're busy on other jobs, then book the job or capture a callback.",
     cardSummary: "Handle leak, drain, and water-heater calls without sending customers to voicemail.",
     commonCalls: [
       "Leak, clog, water-heater, and sewer-line calls that need a fast first response.",
@@ -207,7 +207,7 @@ export const useCasePages = {
       "After-hours calls where you still want the customer details captured cleanly."
     ],
     reasons: [
-      "Catch emergency and routine plumbing calls while the crew is on site.",
+      "Catch emergency and routine plumbing calls while you're already tied up on another job.",
       "Gather the customer details you need before calling back.",
       "Offer appointments when your scheduling setup allows it."
     ],
@@ -269,7 +269,7 @@ export const useCasePages = {
     title: "AI call answering for painting businesses",
     summary:
       "BookedOnCall helps painting businesses answer estimate requests, project inquiries, and callback needs without losing leads to voicemail.",
-    cardSummary: "Handle estimate requests and painting inquiries while the crew is on site or in the middle of a project.",
+    cardSummary: "Handle estimate requests and painting inquiries while you're on site or in the middle of a project.",
     commonCalls: [
       "Interior and exterior painting estimate requests from homeowners who want a quick response.",
       "Questions about timelines, project scope, and callback follow-up while you are out working.",
@@ -281,7 +281,7 @@ export const useCasePages = {
       "Keep the pipeline moving even when the first step is a callback, not an instant booking."
     ],
     trustCopy:
-      "Painting businesses win work by being responsive, organized, and easy to deal with. BookedOnCall helps you make that strong first impression even when the whole crew is in the field.",
+      "Painting businesses win work by being responsive, organized, and easy to deal with. BookedOnCall helps you make that strong first impression even when everyone is already in the field.",
     ctaTitle: "Need better coverage for painting leads?",
     ctaBody: "Choose a plan and make sure estimate requests do not disappear into voicemail."
   },
@@ -299,7 +299,7 @@ export const useCasePages = {
       "Customers comparing contractors and deciding who actually answers the phone."
     ],
     reasons: [
-      "Catch flooring leads while the crew is on install and cannot stop to answer.",
+      "Catch flooring leads while you're on install and cannot stop to answer.",
       "Collect room details, surface type, address, and callback information up front.",
       "Make it easier to follow up fast with the right context."
     ],
@@ -314,15 +314,15 @@ export const useCasePages = {
     path: "/for/landscaping",
     title: "AI call answering for landscaping businesses",
     summary:
-      "BookedOnCall helps landscaping businesses answer maintenance, cleanup, irrigation, and project calls while the crew is outside doing the work.",
+      "BookedOnCall helps landscaping businesses answer maintenance, cleanup, irrigation, and project calls while you're outside doing the work.",
     cardSummary: "Handle maintenance, cleanup, irrigation, and project calls without missing new business.",
     commonCalls: [
-      "Maintenance, cleanup, irrigation, and install calls that come in while your crew is on route.",
+      "Maintenance, cleanup, irrigation, and install calls that come in while you're already on route.",
       "Seasonal spikes where homeowners are calling several companies at once.",
       "Project inquiries that need to be captured clearly before you follow up."
     ],
     reasons: [
-      "Catch landscaping calls while the crew is driving between jobs or already on site.",
+      "Catch landscaping calls while you're driving between jobs or already on site.",
       "Collect property details, service needs, and callback info before the customer moves on.",
       "Keep routine jobs moving while still handing larger project decisions back to you."
     ],
