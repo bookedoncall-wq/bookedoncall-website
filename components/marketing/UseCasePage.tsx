@@ -80,6 +80,67 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
         </div>
       </section>
 
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
+          <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+            <h2 className="mb-3 text-2xl font-black text-slate-950">Catch the first response</h2>
+            <p className="text-base leading-7 text-slate-600">
+              The goal is to keep a real caller from dropping into voicemail while your crew is already in the field.
+            </p>
+          </article>
+          <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
+            <h2 className="mb-3 text-2xl font-black text-slate-950">Get usable job details</h2>
+            <p className="text-base leading-7 text-slate-700">
+              Name, callback number, address, and a clear description of the job give your team a better next step than a rushed message.
+            </p>
+          </article>
+          <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+            <h2 className="mb-3 text-2xl font-black text-slate-950">Book or hand back cleanly</h2>
+            <p className="text-base leading-7 text-slate-600">
+              Supported jobs can move toward a booking. Edge cases and approval-only work still come back as clean callbacks with context.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
+          <TrackedLink
+            href="/product"
+            eventName="marketing_cta_clicked"
+            eventPayload={{ placement: "use_case_product", path }}
+            className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+          >
+            <h2 className="mb-3 text-2xl font-black text-slate-950">See the product flow</h2>
+            <p className="text-base leading-7 text-slate-600">
+              See how a call moves from first ring to a booked slot or a clean callback.
+            </p>
+          </TrackedLink>
+          <TrackedLink
+            href="/demo-calls"
+            eventName="marketing_cta_clicked"
+            eventPayload={{ placement: "use_case_demo", path }}
+            className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+          >
+            <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
+            <p className="text-base leading-7 text-slate-600">
+              Hear how the assistant can sound on real-world service calls before you decide anything.
+            </p>
+          </TrackedLink>
+          <TrackedLink
+            href="/pricing"
+            eventName="marketing_cta_clicked"
+            eventPayload={{ placement: "use_case_pricing_card", path }}
+            className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+          >
+            <h2 className="mb-3 text-2xl font-black text-slate-950">See pricing</h2>
+            <p className="text-base leading-7 text-slate-600">
+              Compare Starter and Pro, then talk through which setup fits your business.
+            </p>
+          </TrackedLink>
+        </div>
+      </section>
+
       <CtaBand title={content.ctaTitle} body={content.ctaBody} />
     </>
   )

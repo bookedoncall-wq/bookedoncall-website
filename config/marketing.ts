@@ -45,9 +45,9 @@ export const faqEntries = [
       "No. You keep your existing business number. BookedOnCall answers the calls you cannot get to, either by forwarding or as a backup after a set number of rings."
   },
   {
-    question: "What happens if the caller speaks Spanish?",
+    question: "What if the caller asks to continue in another supported language?",
     answer:
-      "BookedOnCall currently handles English calls. Spanish-language support is on the roadmap but is not available today."
+      "BookedOnCall starts in English by default so it does not switch languages by accident. If a caller clearly asks to continue in another supported language, the assistant can switch and keep the call moving. English is still the primary default today."
   },
   {
     question: "Can I try BookedOnCall before committing?",
@@ -88,20 +88,20 @@ export const homepageHighlights = [
 
 export const homepageTrustPoints = [
   {
-    title: "Built from a real trades problem",
-    body: "BookedOnCall was built because too many good trades businesses lose work simply because nobody can answer the phone while the job is getting done.",
+    title: "Made for owner-operators",
+    body: "Useful for a one-person shop or a growing crew that needs help catching calls without adding a full front desk.",
   },
   {
-    title: "Made for owner-operators and growing shops",
-    body: "Whether you're a one-person operation or a growing crew, BookedOnCall helps you look professional without paying for a full front desk.",
+    title: "Built around field reality",
+    body: "It is built around what actually happens in the trades: the phone rings while you are driving, quoting, or already on a job.",
   },
   {
     title: "Practical over flashy",
-    body: "The goal is simple: answer more calls, capture better details, and help you move faster on real work.",
+    body: "The goal is simple: answer more calls, capture clean details, and make the next step easier.",
   },
   {
-    title: "No long-term contracts",
-    body: "BookedOnCall is billed monthly. No annual commitments, no setup fees, no cancellation penalties. If it works for your business, you keep it.",
+    title: "Month-to-month and easy to try",
+    body: "Monthly billing, no setup fee, and no long contract. Keep it if it helps. Cancel if it does not.",
   },
 ] as const
 
@@ -123,20 +123,73 @@ export const comingSoonProofItems = [
 export const workflowSteps = [
   {
     title: "A customer calls your business",
-    body: "BookedOnCall answers when you cannot get to the phone."
+    body: "BookedOnCall answers when you cannot get to the phone, so the lead does not drop into voicemail."
   },
   {
     title: "The assistant gets the basics",
-    body: "Caller name, callback number, address, and job details are collected so you are not starting from scratch."
+    body: "Caller name, callback number, address, and job details are collected so your team is not starting from scratch."
   },
   {
     title: "BookedOnCall checks the next step",
-    body: "When scheduling is connected, it can offer an appointment. If not, it captures a clean callback for you."
+    body: "When scheduling is connected and the request fits your setup, it can offer a booking. If not, it captures a clean callback."
   },
   {
     title: "You get the result",
-    body: "You get a clear summary, a booked appointment, or a callback request."
+    body: "You get a clear summary, a booked appointment, or a clean callback request with context."
   }
+] as const
+
+export const productFlowSteps = [
+  {
+    title: "Answer the call",
+    body: "BookedOnCall picks up when you cannot get to the phone, whether you are in the truck, on a ladder, or already inside the next job."
+  },
+  {
+    title: "Qualify the work",
+    body: "It gets the basics first: caller name, callback number, service address, and what is actually going on."
+  },
+  {
+    title: "Move to the right next step",
+    body: "If the request fits your rules and your schedule is connected, it can move toward a booking. If not, it hands the call back as a clean callback."
+  },
+] as const
+
+export const afterCallArtifacts = [
+  {
+    title: "Call summary",
+    body: "A fast read on who called, what they need, and what should happen next."
+  },
+  {
+    title: "Booking path",
+    body: "When scheduling is connected and the request fits your setup, the call can move toward a confirmed slot."
+  },
+  {
+    title: "Callback handoff",
+    body: "Out-of-area, manual-review, and approval-only jobs still come back with usable details."
+  },
+] as const
+
+export const resourceHighlights = [
+  {
+    title: "Sample call transcripts",
+    href: "/demo-calls",
+    description: "Read illustrative plumbing, HVAC, and electrical call examples."
+  },
+  {
+    title: "Missed calls guide",
+    href: "/compare/missed-calls-for-home-service-businesses",
+    description: "Why missed calls matter, what a better setup looks like, and where BookedOnCall fits."
+  },
+  {
+    title: "AI receptionist vs voicemail",
+    href: "/compare/ai-receptionist-vs-voicemail",
+    description: "A practical comparison for shops that lose work because calls go unanswered."
+  },
+  {
+    title: "Answering service vs receptionist vs AI",
+    href: "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
+    description: "A grounded comparison of the three main ways small shops try to cover missed calls."
+  },
 ] as const
 
 export const useCasePages = {
@@ -322,6 +375,11 @@ export const integrationPages = {
       "Check availability through Jobber when you want BookedOnCall to offer appointment times.",
       "Keep your business on the same tools it already uses every day.",
       "Fall back to a clean callback handoff when a job still needs a person."
+    ],
+    outcomeCards: [
+      "BookedOnCall can move supported jobs toward a booking when your Jobber calendar is connected.",
+      "Your team can keep using the same scheduling process instead of learning a new back office.",
+      "Manual-review jobs still come back as clean callbacks instead of messy voicemail."
     ]
   },
   "google-calendar": {
@@ -332,6 +390,11 @@ export const integrationPages = {
       "Check availability against your connected calendar.",
       "Offer supported appointment times without changing the way you schedule work.",
       "Keep callback capture available for jobs that still need a human decision."
+    ],
+    outcomeCards: [
+      "BookedOnCall can check the calendar before offering supported appointment times.",
+      "You keep the scheduling workflow you already know instead of moving to a new system.",
+      "If a person should decide, the call still comes back as a clean callback."
     ]
   }
 } as const

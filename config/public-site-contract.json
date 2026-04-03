@@ -3,9 +3,15 @@
   "brand": {
     "name": "BookedOnCall",
     "tagline": "AI call answering for trades businesses",
-    "description": "BookedOnCall answers missed calls for trades businesses, captures the customer details you need, and helps book jobs or capture callbacks.",
+    "description": "BookedOnCall is an AI phone assistant for home-service businesses that answers missed calls, captures job details, and either books the work or hands it back as a clean callback.",
     "websiteOrigin": "https://bookedoncall.com",
     "appOrigin": "https://app.bookedoncall.com"
+  },
+  "positioning": {
+    "oneLiner": "BookedOnCall is an AI phone assistant for home-service businesses that answers missed calls, captures job details, and either books the work or hands it back as a clean callback.",
+    "primaryAudience": "Owner-operators and growing home-service shops",
+    "primaryCtaLabel": "Talk to us",
+    "secondaryCtaLabel": "Hear a sample call"
   },
   "contacts": {
     "salesEmail": "bookedoncall@bookedoncall.com",
@@ -37,6 +43,29 @@
     "Works with Jobber and Google Calendar for supported scheduling setups.",
     "Delivers a clear call summary and the next step, whether that is a booked appointment or a callback request.",
     "Can send follow-up messages when customer messaging is turned on."
+  ],
+  "sourcedProof": [
+    {
+      "id": "google-missed-calls",
+      "title": "Missed calls may affect responsiveness",
+      "detail": "Google Local Services Ads says missed calls may negatively affect a business's responsiveness.",
+      "sourceLabel": "Google Local Services Ads",
+      "sourceUrl": "https://support.google.com/localservices/answer/7527305?hl=en"
+    },
+    {
+      "id": "google-returned-calls",
+      "title": "Returned calls still count as lead handling",
+      "detail": "Google treats a missed call plus successful follow-up as a real lead path, which makes callback speed matter.",
+      "sourceLabel": "Google Local Services Ads",
+      "sourceUrl": "https://support.google.com/localservices/answer/7195435?hl=en"
+    },
+    {
+      "id": "bls-receptionist-wage",
+      "title": "$17.90/hour median receptionist wage",
+      "detail": "The U.S. Bureau of Labor Statistics reported a median hourly wage of $17.90 for receptionists in May 2024.",
+      "sourceLabel": "U.S. Bureau of Labor Statistics",
+      "sourceUrl": "https://www.bls.gov/ooh/office-and-administrative-support/receptionists.htm"
+    }
   ],
   "integrations": [
     {
@@ -70,7 +99,7 @@
         "200 included call minutes each month",
         "AI call answering and lead intake",
         "Callback capture and clean handoff when you want to step in",
-        "Appointment booking when scheduling is enabled",
+        "Booking when your setup allows it",
         "Jobber or Google Calendar integration when connected",
         "Call summaries with the next step clearly laid out",
         "Default assistant voice and greeting"
@@ -95,7 +124,7 @@
         "400 included call minutes each month",
         "AI call answering and lead intake",
         "Callback capture and clean handoff when you want to step in",
-        "Appointment booking when scheduling is enabled",
+        "Booking when your setup allows it",
         "Jobber or Google Calendar integration when connected",
         "Call summaries with the next step clearly laid out",
         "Choose the voice callers hear",

@@ -102,7 +102,7 @@ export default function FeaturesPage() {
             </article>
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Hiring a receptionist</h3>
-              <p className="text-sm leading-7 text-slate-600">A full-time receptionist costs $35,000 to $45,000 per year and still cannot answer calls at 2 AM. BookedOnCall starts at $250/month and works around the clock.</p>
+              <p className="text-sm leading-7 text-slate-600">Hiring a receptionist adds wage and staffing overhead. BookedOnCall starts at $250/month and stays available around the clock.</p>
             </article>
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Generic AI tools</h3>

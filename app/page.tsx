@@ -1,17 +1,16 @@
-import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck, Wrench } from "lucide-react"
+import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck } from "lucide-react"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { buildGetStartedHref, buildLeadFormHref, integrations, plans, siteConfig, supportedTrades, validatedCapabilities } from "@/config/site"
-import { homepageHighlights, homepageTrustPoints, useCaseOrder, useCasePages, workflowSteps } from "@/config/marketing"
+import { afterCallArtifacts, faqEntries, homepageTrustPoints, productFlowSteps, resourceHighlights, useCaseOrder, useCasePages } from "@/config/marketing"
+import { buildLeadFormHref, integrations, plans, positioning, sourcedProof, supportedTrades } from "@/config/site"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
 import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
 export const metadata = buildPageMetadata({
-  title: "AI call answering for trades businesses",
-  description:
-    "BookedOnCall answers missed calls for trades businesses, captures the customer details you need, and helps book jobs or capture callbacks.",
+  title: "AI phone assistant for trades businesses",
+  description: positioning.oneLiner,
   path: "/",
 })
 
@@ -21,28 +20,26 @@ export default function HomePage() {
       <StructuredData
         data={buildServiceSchema({
           name: "BookedOnCall",
-          description: siteConfig.description,
+          description: positioning.oneLiner,
           path: "/",
         })}
       />
 
       <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="grid gap-7">
             <p className="w-fit rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
-              AI call answering for trades businesses
+              Built for shops that miss calls while the crew is on the job
             </p>
             <div className="grid gap-5">
               <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                You&apos;re on the job. Your phone still gets answered.
+                Your crew is on the job. Your phone still gets answered.
               </h1>
-              <p className="max-w-3xl text-xl leading-8 text-slate-600">
-                When the phone rings while you&apos;re on a job, BookedOnCall answers, gets the details, and helps move the customer toward a booking or callback.
-              </p>
+              <p className="max-w-3xl text-xl leading-8 text-slate-600">{positioning.oneLiner}</p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <TrackedLink
-                href={buildGetStartedHref(undefined, "website-home-hero")}
+                href={buildLeadFormHref(undefined, "website-home-hero")}
                 eventName="signup_started"
                 eventPayload={{ placement: "home_hero_primary" }}
                 className={cn(
@@ -50,18 +47,18 @@ export default function HomePage() {
                   "rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                See plans
+                {positioning.primaryCtaLabel}
               </TrackedLink>
               <TrackedLink
-                href="/how-it-works"
+                href="/demo-calls"
                 eventName="marketing_cta_clicked"
-                eventPayload={{ placement: "home_hero_secondary", href: "/how-it-works" }}
+                eventPayload={{ placement: "home_hero_secondary", href: "/demo-calls" }}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   "rounded-xl border-slate-300 px-6 text-slate-950 hover:bg-white"
                 )}
               >
-                See how it works
+                {positioning.secondaryCtaLabel}
               </TrackedLink>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -87,22 +84,25 @@ export default function HomePage() {
                   <strong>Caller:</strong> &ldquo;My AC stopped working. Can someone come out this week?&rdquo;
                 </p>
                 <p>
-                  <strong>Assistant:</strong> gets the problem, callback details, and address, then checks your calendar or sends the info your way.
+                  <strong>Assistant:</strong> &ldquo;I can help with that. What&apos;s the best callback number and service address?&rdquo;
                 </p>
                 <p>
-                  <strong>Outcome:</strong> book the job when it fits your setup, or send a clean callback your way.
+                  <strong>Caller:</strong> &ldquo;720-555-0142. We&apos;re in Littleton.&rdquo;
+                </p>
+                <p>
+                  <strong>Assistant:</strong> &ldquo;Thanks. Is the system blowing air that isn&apos;t cold, or not turning on at all?&rdquo;
                 </p>
               </div>
             </div>
             <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5">
               <div className="flex items-center gap-3">
                 <ClipboardList className="size-5 text-amber-500" />
-                <strong className="text-slate-950">After the call</strong>
+                <strong className="text-slate-950">What your team gets back</strong>
               </div>
               <ul className="grid gap-2 text-sm leading-6 text-slate-600">
-                <li>A clear summary you can review fast</li>
-                <li>A booked appointment or callback request</li>
-                <li>Customer details and next steps in one place</li>
+                <li>Caller details and service address</li>
+                <li>Job summary with the likely next step</li>
+                <li>A supported booking or a clean callback handoff</li>
               </ul>
             </div>
           </aside>
@@ -110,55 +110,102 @@ export default function HomePage() {
       </section>
 
       <section className="border-y border-slate-200 bg-slate-950 px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-4 text-center text-sm font-semibold text-white sm:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-4 text-center text-sm font-semibold text-white sm:grid-cols-2 lg:grid-cols-4">
           <p className="flex items-center justify-center gap-2">
             <PhoneCall className="size-4 text-amber-300" />
-            Inbound call coverage while you&apos;re on a job
+            Answers missed calls while you&apos;re on the job
           </p>
           <p className="flex items-center justify-center gap-2">
             <CalendarClock className="size-4 text-amber-300" />
-            Appointment booking when your rules and calendar allow it
+            Booking when your setup allows it
           </p>
           <p className="flex items-center justify-center gap-2">
             <ShieldCheck className="size-4 text-amber-300" />
-            Clean callback handoff when you need to step in
+            Clean callbacks when a person should step in
+          </p>
+          <p className="flex items-center justify-center gap-2">
+            <ArrowRight className="size-4 text-amber-300" />
+            Works with Jobber and Google Calendar
           </p>
         </div>
       </section>
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-3">
-          {homepageHighlights.map((item) => (
-            <article key={item.title} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
-              <h2 className="mb-3 text-2xl font-black text-slate-950">{item.title}</h2>
-              <p className="text-base leading-7 text-slate-600">{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.78fr_1.22fr]">
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why people trust it</p>
-            <h2 className="text-4xl font-black text-slate-950">Built for real trades businesses, not call-center theory.</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
+            <h2 className="text-4xl font-black text-slate-950">Answer, qualify, then move to the right next step.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall exists because good trades businesses lose real work when the phone rings at the wrong moment. The product is built around that reality.
+              BookedOnCall is not trying to sound clever. It is trying to give your business a better first response and your team a cleaner handoff.
             </p>
             <TrackedLink
-              href="/about"
+              href="/product"
               eventName="marketing_cta_clicked"
-              eventPayload={{ placement: "home_about", href: "/about" }}
-              className="w-fit text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
+              eventPayload={{ placement: "home_product", href: "/product" }}
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-bold text-amber-700 transition hover:border-amber-300 hover:bg-amber-100"
             >
-              Read the founder story
+              See the product page
+              <ArrowRight className="size-4" />
             </TrackedLink>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            {homepageTrustPoints.map((item) => (
-              <article key={item.title} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
-                <p className="text-base leading-7 text-slate-600">{item.body}</p>
+            {productFlowSteps.map((step, index) => (
+              <article key={step.title} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                <div className="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">
+                  <span>Step {index + 1}</span>
+                  <ArrowRight className="size-4" />
+                </div>
+                <h3 className="mb-3 text-2xl font-black text-slate-950">{step.title}</h3>
+                <p className="text-base leading-7 text-slate-600">{step.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+          <article className="rounded-[2rem] border border-white bg-white p-7 shadow-sm">
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After the call</p>
+            <h2 className="mb-4 text-4xl font-black text-slate-950">You get something usable, not just a message.</h2>
+            <p className="mb-6 text-lg leading-8 text-slate-600">
+              The point is not just that a call was answered. The point is that your team gets enough context to do something useful next.
+            </p>
+            <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Example summary</p>
+              <div className="grid gap-2 text-sm leading-7 text-slate-700">
+                <p>
+                  <strong>Caller:</strong> Sarah M.
+                </p>
+                <p>
+                  <strong>Callback:</strong> 720-555-0142
+                </p>
+                <p>
+                  <strong>Address:</strong> Littleton
+                </p>
+                <p>
+                  <strong>Issue:</strong> AC blowing warm air
+                </p>
+                <p>
+                  <strong>Next step:</strong> Follow up for supported booking or callback
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {afterCallArtifacts.map((artifact, index) => (
+              <article
+                key={artifact.title}
+                className={`rounded-[1.75rem] border p-6 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  {index === 0 ? <ClipboardList className="size-5 text-amber-600" /> : null}
+                  {index === 1 ? <CalendarClock className="size-5 text-amber-600" /> : null}
+                  {index === 2 ? <ShieldCheck className="size-5 text-amber-600" /> : null}
+                  <h3 className="text-xl font-black text-slate-950">{artifact.title}</h3>
+                </div>
+                <p className="text-sm leading-7 text-slate-700">{artifact.body}</p>
               </article>
             ))}
           </div>
@@ -166,94 +213,64 @@ export default function HomePage() {
       </section>
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10">
-          <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">The math on missed calls</p>
-            <h2 className="text-4xl font-black text-slate-950">What you lose when the phone goes unanswered.</h2>
-            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              The real cost of missed calls goes beyond the phone bill. Compare what it takes to keep that line covered.
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <article className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
-              <h3 className="mb-3 text-lg font-black text-slate-950">Full-time receptionist</h3>
-              <p className="text-3xl font-black text-slate-950 mb-3">$35K-45K</p>
-              <p className="text-sm leading-6 text-slate-600">per year, plus benefits, training, and turnover costs</p>
-            </article>
-            <article className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
-              <h3 className="mb-3 text-lg font-black text-slate-950">Traditional answering service</h3>
-              <p className="text-3xl font-black text-slate-950 mb-3">$300-800</p>
-              <p className="text-sm leading-6 text-slate-600">per month with long-term contracts</p>
-            </article>
-            <article className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
-              <h3 className="mb-3 text-lg font-black text-slate-950">BookedOnCall Starter</h3>
-              <p className="text-3xl font-black text-slate-950 mb-3">$250</p>
-              <p className="text-sm leading-6 text-slate-600">per month, no contract, cancel anytime</p>
-            </article>
-            <article className="rounded-[1.5rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
-              <h3 className="mb-3 text-lg font-black text-slate-950">The actual ROI</h3>
-              <p className="text-sm leading-7 text-slate-600">When BookedOnCall helps you land just 2 to 3 extra jobs per month, it pays for itself many times over.</p>
-            </article>
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-slate-50 p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+            <div className="grid gap-4">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why shops trust it</p>
+              <h2 className="text-4xl font-black text-slate-950">Built for field reality, not call-center theory.</h2>
+              <p className="text-lg leading-8 text-slate-600">
+                BookedOnCall exists because good trades businesses lose real work when the phone rings at the wrong moment. The product is built around that reality.
+              </p>
+              <TrackedLink
+                href="/about"
+                eventName="marketing_cta_clicked"
+                eventPayload={{ placement: "home_about", href: "/about" }}
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-200 bg-white px-4 py-2 text-sm font-bold text-amber-700 transition hover:border-amber-300 hover:bg-amber-50"
+              >
+                Read the founder story
+                <ArrowRight className="size-4" />
+              </TrackedLink>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {homepageTrustPoints.map((item, index) => (
+                <article
+                  key={item.title}
+                  className={cn(
+                    "h-full rounded-[1.5rem] border p-6 shadow-sm",
+                    index === 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"
+                  )}
+                >
+                  <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
+                  <p className="text-base leading-7 text-slate-600">{item.body}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10">
+        <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why BookedOnCall</p>
-            <h2 className="text-4xl font-black text-slate-950">Built for trades. Honest about AI. Built by people who get it.</h2>
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Source-backed context</p>
+            <h2 className="text-4xl font-black text-slate-950">A few facts worth knowing.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              Most call-answering tools are built for generic customer service. BookedOnCall is different.
+              BookedOnCall should stand on product truth first. When we use outside context, it should be sourced and easy to verify.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-black text-slate-950">Built specifically for trades</h3>
-              <p className="text-sm leading-7 text-slate-600">
-                Designed around plumbing, HVAC, electrical, and home-service call flows. Not a one-size-fits-all generic tool.
-              </p>
-            </article>
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-black text-slate-950">Honest about what AI can do</h3>
-              <p className="text-sm leading-7 text-slate-600">
-                We don&apos;t promise every call will be perfect. We focus on catching the jobs that matter and handing off the rest cleanly to you.
-              </p>
-            </article>
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-black text-slate-950">Your tools, not ours</h3>
-              <p className="text-sm leading-7 text-slate-600">
-                Integrates with Jobber and Google Calendar so you keep using the tools you already trust.
-              </p>
-            </article>
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-black text-slate-950">No long contracts</h3>
-              <p className="text-sm leading-7 text-slate-600">
-                Simple monthly pricing with no enterprise sales process. Start small, scale when it works for you.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.7fr_1.3fr]">
-          <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
-            <h2 className="text-4xl font-black text-slate-950">From first ring to booked job or clean callback.</h2>
-            <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall answers the call, gets the basics, checks availability when it should, and hands off anything that still needs a person.
-            </p>
-          </div>
-          <div className="grid gap-4">
-            {workflowSteps.map((step, index) => (
-              <article key={step.title} className="grid gap-3 rounded-[1.5rem] border border-white bg-white p-6 shadow-sm">
-                <div className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">
-                  <span>Step {index + 1}</span>
-                  <ArrowRight className="size-4" />
-                </div>
-                <h3 className="text-2xl font-black text-slate-950">{step.title}</h3>
-                <p className="text-base leading-7 text-slate-600">{step.body}</p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {sourcedProof.map((item) => (
+              <article key={item.id} className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+                <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
+                <p className="mb-4 text-sm leading-7 text-slate-700">{item.detail}</p>
+                <TrackedLink
+                  href={item.sourceUrl}
+                  eventName="marketing_cta_clicked"
+                  eventPayload={{ placement: "home_source", href: item.sourceUrl }}
+                  className="text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
+                >
+                  Source: {item.sourceLabel}
+                </TrackedLink>
               </article>
             ))}
           </div>
@@ -263,10 +280,10 @@ export default function HomePage() {
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">By trade</p>
-            <h2 className="text-4xl font-black text-slate-950">Built for the kinds of businesses that live on the phone.</h2>
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Industries</p>
+            <h2 className="text-4xl font-black text-slate-950">Built for the trades that live on inbound calls.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              Plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses all have different calls coming in. The goal is the same: answer them faster and lose fewer jobs.
+              Plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses all have different call patterns. The first-response problem is the same.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -283,141 +300,155 @@ export default function HomePage() {
                   <div className="grid gap-2">
                     <h3 className="text-xl font-black text-slate-950">{useCase.label}</h3>
                     <p className="text-sm leading-6 text-slate-600">{useCase.cardSummary}</p>
-                    <span className="pt-2 text-sm font-bold text-amber-700">Read more</span>
+                    <span className="pt-2 text-sm font-bold text-amber-700">See this trade</span>
                   </div>
                 </TrackedLink>
               )
             })}
           </div>
+          <div className="flex justify-center">
+            <TrackedLink
+              href="/industries"
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "home_industries", href: "/industries" }}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-bold text-slate-900 transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            >
+              Browse all industries
+              <ArrowRight className="size-4" />
+            </TrackedLink>
+          </div>
         </div>
       </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8">
-          <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">See more</p>
-            <h2 className="text-4xl font-black text-slate-950">Guides, comparisons, and sample calls.</h2>
-            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              If you want more than a homepage overview, start with these pages.
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.76fr_1.24fr]">
+          <div className="grid gap-4">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Integrations</p>
+            <h2 className="text-4xl font-black text-slate-950">Fits the tools you already use.</h2>
+            <p className="text-lg leading-8 text-slate-600">
+              BookedOnCall is built to fit your current scheduling workflow. Today that means supported setups with Jobber and Google Calendar.
             </p>
+            <TrackedLink
+              href="/integrations"
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "home_integrations_hub", href: "/integrations" }}
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-200 bg-white px-4 py-2 text-sm font-bold text-amber-700 transition hover:border-amber-300 hover:bg-amber-50"
+            >
+              See all integrations
+              <ArrowRight className="size-4" />
+            </TrackedLink>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            <TrackedLink
-              href="/demo-calls"
-              eventName="marketing_cta_clicked"
-              eventPayload={{ placement: "home_resources", href: "/demo-calls" }}
-              className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
-            >
-              <h3 className="mb-3 text-2xl font-black text-slate-950">Sample call transcripts</h3>
-              <p className="text-base leading-7 text-slate-600">
-                Read illustrative plumbing, HVAC, and electrical call examples to hear how the call flow can sound.
-              </p>
-            </TrackedLink>
-            <TrackedLink
-              href="/compare/ai-receptionist-vs-voicemail"
-              eventName="marketing_cta_clicked"
-              eventPayload={{ placement: "home_resources", href: "/compare/ai-receptionist-vs-voicemail" }}
-              className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
-            >
-              <h3 className="mb-3 text-2xl font-black text-slate-950">AI receptionist vs voicemail</h3>
-              <p className="text-base leading-7 text-slate-600">
-                A practical comparison for trades businesses that miss calls because everyone is already out working.
-              </p>
-            </TrackedLink>
-            <TrackedLink
-              href="/compare/after-hours-call-answering-for-plumbers"
-              eventName="marketing_cta_clicked"
-              eventPayload={{ placement: "home_resources", href: "/compare/after-hours-call-answering-for-plumbers" }}
-              className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
-            >
-              <h3 className="mb-3 text-2xl font-black text-slate-950">After-hours call answering for plumbers</h3>
-              <p className="text-base leading-7 text-slate-600">
-                A trade-specific guide on why plumbing calls after hours matter and how to avoid losing them.
-              </p>
-            </TrackedLink>
+          <div className="grid gap-4 md:grid-cols-2">
+            {integrations.map((integration, index) => (
+              <TrackedLink
+                key={integration.id}
+                href={`/integrations/${integration.id}`}
+                eventName="marketing_cta_clicked"
+                eventPayload={{ placement: "home_integrations", integration: integration.id }}
+                className={`flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40 ${index === 0 ? "border-white bg-white" : "border-amber-200 bg-amber-50"}`}
+              >
+                <div className="grid gap-3">
+                  <div className="text-2xl font-black text-slate-950">{integration.name}</div>
+                  <p className="text-base leading-7 text-slate-600">{integration.description}</p>
+                </div>
+                <span className="text-sm font-bold text-amber-700">See integration details</span>
+              </TrackedLink>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
-          <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What BookedOnCall handles</p>
-            <h2 className="text-4xl font-black text-slate-950">Built for the calls trades businesses get every day.</h2>
-            <p className="text-lg leading-8 text-slate-600">
-              These are the calls BookedOnCall is built to handle well.
+        <div className="mx-auto grid max-w-6xl gap-8">
+          <div className="grid gap-4 text-center">
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Resources</p>
+            <h2 className="text-4xl font-black text-slate-950">Read, compare, and hear how it works.</h2>
+            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
+              A lot of buyers want more than a homepage. These are the best pages to start with.
             </p>
           </div>
-          <div className="grid gap-3">
-            {validatedCapabilities.map((capability) => (
-              <div key={capability} className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <Wrench className="mt-1 size-5 shrink-0 text-amber-500" />
-                <p className="text-sm leading-7 text-slate-700">{capability}</p>
-              </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {resourceHighlights.map((resource) => (
+              <TrackedLink
+                key={resource.href}
+                href={resource.href}
+                eventName="marketing_cta_clicked"
+                eventPayload={{ placement: "home_resources", href: resource.href }}
+                className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+              >
+                <h3 className="mb-3 text-2xl font-black text-slate-950">{resource.title}</h3>
+                <p className="text-base leading-7 text-slate-600">{resource.description}</p>
+              </TrackedLink>
             ))}
           </div>
         </div>
       </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
-          <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Supported integrations</p>
-            <h2 className="text-4xl font-black text-slate-950">Works with the tools you already use.</h2>
-            <p className="text-lg leading-8 text-slate-600">
-              Connect Jobber or Google Calendar so BookedOnCall fits the way your business already schedules work.
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {integrations.map((integration) => (
-                <TrackedLink
-                  key={integration.id}
-                  href={`/integrations/${integration.id}`}
-                  eventName="marketing_cta_clicked"
-                  eventPayload={{ placement: "home_integrations", integration: integration.id }}
-                  className="flex min-h-[168px] flex-col justify-between rounded-[1.5rem] border border-slate-200 bg-white p-5 text-left transition-colors hover:border-amber-300 hover:bg-amber-50/40"
-                >
-                  <div className="grid gap-2">
-                    <div className="text-base font-black text-slate-950">{integration.name}</div>
-                    <p className="text-sm leading-6 text-slate-600">{integration.description}</p>
-                  </div>
-                  <span className="text-sm font-bold text-amber-700">See integration details</span>
-                </TrackedLink>
-              ))}
-            </div>
-          </div>
-
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Pricing</p>
-            <h2 className="text-4xl font-black text-slate-950">Simple monthly pricing.</h2>
-            <div className="grid gap-4">
-              {plans.map((plan) => (
-                <article key={plan.id} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="mb-3 flex items-center justify-between gap-3">
-                    <h3 className="text-2xl font-black text-slate-950">{plan.name}</h3>
-                    <strong className="text-2xl text-slate-950">${plan.monthlyUsd}/mo</strong>
-                  </div>
-                  <p className="mb-4 text-sm leading-7 text-slate-600">{plan.summary}</p>
-                  <p className="mb-4 text-sm font-semibold text-slate-700">
-                    {plan.includedMinutes} included minutes, then ${plan.overageMinuteUsd.toFixed(2)}/minute.
-                  </p>
-                  <TrackedLink
-                    href={buildLeadFormHref(plan.id, "website-home-plan")}
-                    eventName="pricing_plan_selected"
-                    eventPayload={{ placement: "home_plan", planId: plan.id }}
-                    className="text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
-                  >
-                    Choose {plan.name}
-                  </TrackedLink>
-                </article>
-              ))}
-            </div>
+            <h2 className="text-4xl font-black text-slate-950">Straightforward monthly pricing.</h2>
+            <p className="text-lg leading-8 text-slate-600">
+              Start with the plan that looks closest. Then talk to us about how you want calls, callbacks, and supported booking handled.
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {plans.map((plan) => (
+              <article key={plan.id} className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <h3 className="text-2xl font-black text-slate-950">{plan.name}</h3>
+                  <strong className="text-2xl text-slate-950">${plan.monthlyUsd}/mo</strong>
+                </div>
+                <p className="mb-4 text-sm leading-7 text-slate-600">{plan.summary}</p>
+                <p className="mb-4 text-sm font-semibold text-slate-700">
+                  {plan.includedMinutes} included minutes, then ${plan.overageMinuteUsd.toFixed(2)}/minute.
+                </p>
+                <TrackedLink
+                  href={buildLeadFormHref(plan.id, "website-home-plan")}
+                  eventName="pricing_plan_selected"
+                  eventPayload={{ placement: "home_plan", planId: plan.id }}
+                  className="text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
+                >
+                  Talk to us about {plan.name}
+                </TrackedLink>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8">
+          <div className="grid gap-4 text-center">
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">FAQ</p>
+            <h2 className="text-4xl font-black text-slate-950">Straight answers to the main buying questions.</h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {faqEntries.slice(0, 4).map((entry) => (
+              <article key={entry.question} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                <h3 className="mb-3 text-xl font-black text-slate-950">{entry.question}</h3>
+                <p className="text-sm leading-7 text-slate-600">{entry.answer}</p>
+              </article>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <TrackedLink
+              href="/faq"
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "home_faq", href: "/faq" }}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-bold text-slate-900 transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            >
+              Read the full FAQ
+              <ArrowRight className="size-4" />
+            </TrackedLink>
           </div>
         </div>
       </section>
 
       <CtaBand
-        title="Want to see if it fits your business?"
-        body="Review the plans, see how it works, and reach out when you want to talk through your call flow."
+        title="Want to see if BookedOnCall fits your business?"
+        body="Hear a sample call, review the pages that match your trade, and talk to us about how your team handles missed calls today."
       />
     </>
   )

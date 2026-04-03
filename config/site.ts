@@ -22,15 +22,20 @@ export const plans = contract.plans
 export const validatedCapabilities = contract.validatedCapabilities
 export const supportedTrades = contract.supportedTrades
 export const integrations = contract.integrations
+export const positioning = contract.positioning
+export const sourcedProof = contract.sourcedProof
 
 export const primaryNav = [
-  { label: "Features", href: "/features" },
-  { label: "How It Works", href: "/how-it-works" },
+  { label: "Product", href: "/product" },
+  { label: "Industries", href: "/industries" },
+  { label: "Integrations", href: "/integrations" },
   { label: "Pricing", href: "/pricing" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Resources", href: "/resources" },
 ] as const
 
 export const secondaryNav = [
+  { label: "Product", href: "/product" },
+  { label: "Industries", href: "/industries" },
   { label: "For Plumbers", href: "/for/plumbers" },
   { label: "For HVAC", href: "/for/hvac" },
   { label: "For Electricians", href: "/for/electricians" },
@@ -38,8 +43,12 @@ export const secondaryNav = [
   { label: "For Flooring", href: "/for/flooring" },
   { label: "For Landscapers", href: "/for/landscaping" },
   { label: "For General Home Services", href: "/for/general-home-services" },
+  { label: "Integrations", href: "/integrations" },
   { label: "Jobber", href: "/integrations/jobber" },
   { label: "Google Calendar", href: "/integrations/google-calendar" },
+  { label: "Resources", href: "/resources" },
+  { label: "Sample Calls", href: "/demo-calls" },
+  { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
 ] as const
 

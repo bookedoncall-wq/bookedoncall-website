@@ -3,6 +3,10 @@ import { absoluteUrl } from "@/config/site"
 
 const pages = [
   "/",
+  "/product",
+  "/industries",
+  "/integrations",
+  "/resources",
   "/features",
   "/how-it-works",
   "/pricing",
@@ -10,6 +14,9 @@ const pages = [
   "/about",
   "/faq",
   "/demo-calls",
+  "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
+  "/compare/missed-calls-for-home-service-businesses",
+  "/compare/after-hours-call-answering-for-hvac",
   "/compare/ai-receptionist-vs-voicemail",
   "/compare/after-hours-call-answering-for-plumbers",
   "/for/plumbers",
@@ -32,9 +39,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: absoluteUrl(path),
     lastModified: now,
     changeFrequency:
-      path === "/" || path === "/pricing" || path === "/faq"
+      path === "/" || path === "/pricing" || path === "/faq" || path === "/product"
         ? "weekly"
-        : path.startsWith("/for/") || path.startsWith("/integrations/")
+        : path.startsWith("/for/") || path.startsWith("/integrations/") || path.startsWith("/compare/")
           ? "monthly"
           : "monthly",
     priority:
@@ -42,7 +49,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 1
         : path === "/pricing"
           ? 0.95
-          : path === "/features" || path === "/how-it-works" || path === "/faq"
+          : path === "/product"
+            ? 0.92
+            : path === "/industries" || path === "/integrations" || path === "/resources"
+              ? 0.88
+              : path === "/features" || path === "/how-it-works" || path === "/faq"
             ? 0.85
             : 0.7,
   }))

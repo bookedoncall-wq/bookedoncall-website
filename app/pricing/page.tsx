@@ -23,7 +23,7 @@ export default function PricingPage() {
       <PageIntro
         eyebrow="Pricing"
         title="Straightforward monthly pricing."
-        description="Starter keeps things simple. Pro adds a more branded caller experience for businesses that want more control over how the assistant sounds and introduces itself."
+        description="Start with the plan that looks closest. Then talk to us about how you want calls, callbacks, and supported booking handled."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -72,7 +72,7 @@ export default function PricingPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Choose {plan.name}
+                Talk to us about {plan.name}
               </TrackedLink>
             </article>
           ))}
@@ -106,7 +106,7 @@ export default function PricingPage() {
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">How setup works</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
-              <li>Choose the plan that fits your business.</li>
+              <li>Start with the plan that looks closest to your business.</li>
               <li>Tell us how you want BookedOnCall to handle your calls.</li>
               <li>Connect your calendar if you want BookedOnCall to offer appointment times.</li>
               <li>Extra minutes are billed at the published per-minute rate for your plan.</li>
@@ -160,8 +160,8 @@ export default function PricingPage() {
       </section>
 
       <CtaBand
-        title="Ready to get started?"
-        body="Choose the plan that looks right and we will help you get BookedOnCall set up for your business."
+        title="Want to talk through pricing?"
+        body="Start with the plan that looks closest, then talk to us about how your business wants calls handled."
       />
     </>
   )

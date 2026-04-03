@@ -1,3 +1,4 @@
+import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { faqEntries } from "@/config/marketing"
@@ -31,6 +32,11 @@ export default function FaqPage() {
           ))}
         </div>
       </section>
+
+      <CtaBand
+        title="Still have questions about your setup?"
+        body="Hear a sample call or talk to us about how your business wants calls, callbacks, and supported booking handled."
+      />
     </>
   )
 }

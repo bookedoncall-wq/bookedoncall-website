@@ -7,14 +7,14 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 const demoCalls = [
   {
     title: "Sample plumbing call",
-    scenario: "A homeowner calls about a leaking water heater while you are already on jobs.",
+    scenario: "A homeowner calls about a leaking water heater while your crew is already out on jobs.",
     transcript: [
       "Caller: My water heater is leaking and I need someone to take a look today if possible.",
       "Assistant: Absolutely, let me get your details. What’s the best number to reach you, and where’s the job?",
       "Caller: 303-555-0188. The address is 412 West Cedar in Denver.",
       "Assistant: Got it. Is the leak steady, or is water pooling up right now?",
       "Caller: There is water pooling in the utility room.",
-      "Assistant: Okay, I’m flagging this as urgent and sending everything over so you can get back to them fast.",
+      "Assistant: Okay. That sounds urgent. I’m noting that now so the team can follow up quickly.",
     ],
     outcome: "You get the caller details, address, urgency, and callback number without relying on voicemail.",
   },
@@ -27,9 +27,9 @@ const demoCalls = [
       "Caller: 720-555-0142. We’re in Littleton.",
       "Assistant: Thanks. Is the system blowing air that’s not cold, or is it not turning on at all?",
       "Caller: It’s blowing, but it isn’t cold.",
-      "Assistant: Got it. I’ll send your details over so you can follow up or get them on the schedule.",
+      "Assistant: Got it. I have the problem, your number, and the location. The team can follow up with the next step.",
     ],
-    outcome: "You get symptom details up front and can decide whether to book or return the call with the right context.",
+    outcome: "You get symptom details up front so you can book it or call back with the right context.",
   },
   {
     title: "Sample electrical call",
@@ -40,9 +40,9 @@ const demoCalls = [
       "Caller: 970-555-0105. We’re in Fort Collins.",
       "Assistant: Thanks. Is it just the lights, or are outlets or breakers acting up too?",
       "Caller: Mostly lights, but one breaker has tripped twice this week.",
-      "Assistant: Good to know. I’ll pass everything along so you can take a look and reach out.",
+      "Assistant: Thanks. I’ve got the details, and I’ll make sure the team sees the breaker issue too.",
     ],
-    outcome: "The caller keeps moving, and you get the job details without forcing a risky instant booking.",
+    outcome: "You get the details and the breaker concern without forcing a risky instant booking.",
   },
 ] as const
 

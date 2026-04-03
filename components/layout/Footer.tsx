@@ -1,25 +1,37 @@
-import { buildGetStartedHref, secondaryNav, siteConfig } from "@/config/site"
+import { buildLeadFormHref, secondaryNav, siteConfig } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 const footerColumns = [
   {
     title: "Product",
     links: [
+      { label: "Product", href: "/product" },
       { label: "Features", href: "/features" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Demo Calls", href: "/demo-calls" },
-      { label: "AI vs Voicemail", href: "/compare/ai-receptionist-vs-voicemail" },
-      { label: "FAQ", href: "/faq" },
     ],
   },
   {
-    title: "Use cases",
+    title: "Industries",
     links: secondaryNav.filter((item) => item.href.startsWith("/for/")),
   },
   {
     title: "Integrations",
-    links: secondaryNav.filter((item) => item.href.startsWith("/integrations/")),
+    links: [
+      { label: "Integrations", href: "/integrations" },
+      ...secondaryNav.filter((item) => item.href.startsWith("/integrations/")),
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Resources", href: "/resources" },
+      { label: "Sample Calls", href: "/demo-calls" },
+      { label: "AI vs Voicemail", href: "/compare/ai-receptionist-vs-voicemail" },
+      { label: "Missed Calls Guide", href: "/compare/missed-calls-for-home-service-businesses" },
+      { label: "FAQ", href: "/faq" },
+      { label: "About", href: "/about" },
+    ],
   },
   {
     title: "Legal",
@@ -36,7 +48,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-950 text-slate-300">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.25fr_repeat(4,1fr)]">
+        <div className="grid gap-10 md:grid-cols-[1.25fr_repeat(5,1fr)]">
           <div className="grid gap-4">
             <div className="flex items-center gap-2 text-lg font-black tracking-tight text-white">
               <span>
@@ -47,20 +59,20 @@ export default function Footer() {
             <p className="max-w-sm text-sm leading-7 text-slate-400">{siteConfig.description}</p>
             <div className="flex flex-wrap gap-3">
               <TrackedLink
-                href={buildGetStartedHref(undefined, "website-footer")}
+                href={buildLeadFormHref(undefined, "website-footer")}
                 eventName="signup_started"
                 eventPayload={{ placement: "footer_primary" }}
                 className="rounded-xl bg-white px-4 py-2 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-100"
               >
-                See plans
+                Talk to us
               </TrackedLink>
               <TrackedLink
-                href={`mailto:${siteConfig.email}`}
-                eventName="contact_sales_clicked"
-                eventPayload={{ placement: "footer_contact" }}
+                href="/demo-calls"
+                eventName="marketing_cta_clicked"
+                eventPayload={{ placement: "footer_secondary", href: "/demo-calls" }}
                 className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:border-slate-500 hover:bg-slate-900"
               >
-                Talk to us
+                Hear a sample call
               </TrackedLink>
             </div>
           </div>

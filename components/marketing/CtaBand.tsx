@@ -1,4 +1,4 @@
-import { buildGetStartedHref, siteConfig } from "@/config/site"
+import { buildLeadFormHref } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -6,9 +6,20 @@ import { cn } from "@/lib/utils"
 type CtaBandProps = {
   title: string
   body: string
+  primaryLabel?: string
+  primaryHref?: string
+  secondaryLabel?: string
+  secondaryHref?: string
 }
 
-export function CtaBand({ title, body }: CtaBandProps) {
+export function CtaBand({
+  title,
+  body,
+  primaryLabel = "Talk to us",
+  primaryHref = buildLeadFormHref(undefined, "website-cta-band"),
+  secondaryLabel = "Hear a sample call",
+  secondaryHref = "/demo-calls",
+}: CtaBandProps) {
   return (
     <section className="bg-slate-950 px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-4xl gap-6 text-center">
@@ -16,7 +27,7 @@ export function CtaBand({ title, body }: CtaBandProps) {
         <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-300">{body}</p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <TrackedLink
-            href={buildGetStartedHref(undefined, "website-cta-band")}
+            href={primaryHref}
             eventName="signup_started"
             eventPayload={{ placement: "cta_band_primary" }}
             className={cn(
@@ -24,18 +35,18 @@ export function CtaBand({ title, body }: CtaBandProps) {
               "rounded-xl border-transparent bg-amber-500 px-6 text-white hover:bg-amber-400"
             )}
           >
-            See plans
+            {primaryLabel}
           </TrackedLink>
           <TrackedLink
-            href={`mailto:${siteConfig.email}`}
-            eventName="contact_sales_clicked"
-            eventPayload={{ placement: "cta_band_secondary" }}
+            href={secondaryHref}
+            eventName="marketing_cta_clicked"
+            eventPayload={{ placement: "cta_band_secondary", href: secondaryHref }}
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "rounded-xl border-slate-700 bg-transparent px-6 text-white hover:bg-slate-900"
             )}
           >
-            Talk to us
+            {secondaryLabel}
           </TrackedLink>
         </div>
       </div>

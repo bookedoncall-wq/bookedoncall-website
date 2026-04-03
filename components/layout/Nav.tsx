@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { buildGetStartedHref, primaryNav, siteConfig } from "@/config/site"
+import { buildLeadFormHref, primaryNav } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 export default function Nav() {
@@ -41,15 +41,15 @@ export default function Nav() {
 
         <div className="hidden items-center gap-3 md:flex">
           <TrackedLink
-            href={`mailto:${siteConfig.email}`}
-            eventName="contact_sales_clicked"
-            eventPayload={{ placement: "nav_contact" }}
+            href="/demo-calls"
+            eventName="marketing_cta_clicked"
+            eventPayload={{ placement: "nav_secondary", href: "/demo-calls" }}
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950"
           >
-            Contact
+            Hear a sample call
           </TrackedLink>
           <TrackedLink
-            href={buildGetStartedHref(undefined, "website-nav")}
+            href={buildLeadFormHref(undefined, "website-nav")}
             eventName="signup_started"
             eventPayload={{ placement: "nav_primary" }}
             className={cn(
@@ -57,7 +57,7 @@ export default function Nav() {
               "rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
             )}
           >
-            See plans
+            Talk to us
           </TrackedLink>
         </div>
 
@@ -88,23 +88,23 @@ export default function Nav() {
               </TrackedLink>
             ))}
             <TrackedLink
-              href={`mailto:${siteConfig.email}`}
-              eventName="contact_sales_clicked"
-              eventPayload={{ placement: "mobile_nav_contact" }}
+              href="/demo-calls"
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "mobile_nav_secondary", href: "/demo-calls" }}
               className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
             >
-              Contact
+              Hear a sample call
             </TrackedLink>
             <TrackedLink
-              href={buildGetStartedHref(undefined, "website-mobile-nav")}
+              href={buildLeadFormHref(undefined, "website-mobile-nav")}
               eventName="signup_started"
               eventPayload={{ placement: "mobile_nav_primary" }}
-            className={cn(
+              className={cn(
                 buttonVariants({ size: "sm" }),
                 "mt-2 justify-center rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
               )}
             >
-              See plans
+              Talk to us
             </TrackedLink>
           </div>
         </div>
