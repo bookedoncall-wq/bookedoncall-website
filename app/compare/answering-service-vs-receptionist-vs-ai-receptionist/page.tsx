@@ -37,7 +37,7 @@ export default function AnsweringServiceVsReceptionistVsAiReceptionistPage() {
         {
           title: "Where answering services often fall short",
           body:
-            "Answering services can keep the line covered, but they often rely on generic scripts and may still leave your team with thin notes, partial context, and a second conversation that has to start over.",
+            "Answering services can keep the line covered, but they often rely on generic scripts and may still leave you with thin notes, partial context, and a second conversation that has to start over.",
         },
         {
           title: "Where BookedOnCall fits",
@@ -48,7 +48,7 @@ export default function AnsweringServiceVsReceptionistVsAiReceptionistPage() {
       proofItems={sourcedProof.filter((item) => item.id !== "google-missed-calls")}
       nextLinks={[
         { label: "See pricing", href: "/pricing" },
-        { label: "Hear a sample call", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/demo-calls" },
         { label: "See the product", href: "/product" },
       ]}
       ctaTitle="Want to compare the options against your actual call flow?"

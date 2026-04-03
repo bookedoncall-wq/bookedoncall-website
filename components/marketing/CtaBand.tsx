@@ -17,7 +17,7 @@ export function CtaBand({
   body,
   primaryLabel = "Talk to us",
   primaryHref = buildLeadFormHref(undefined, "website-cta-band"),
-  secondaryLabel = "Hear a sample call",
+  secondaryLabel = "Read sample calls",
   secondaryHref = "/demo-calls",
 }: CtaBandProps) {
   return (

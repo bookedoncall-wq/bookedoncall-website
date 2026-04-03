@@ -48,7 +48,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-950 text-slate-300">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.25fr_repeat(5,1fr)]">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.7fr)] lg:items-start">
           <div className="grid gap-4">
             <div className="flex items-center gap-2 text-lg font-black tracking-tight text-white">
               <span>
@@ -72,29 +72,31 @@ export default function Footer() {
                 eventPayload={{ placement: "footer_secondary", href: "/demo-calls" }}
                 className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:border-slate-500 hover:bg-slate-900"
               >
-                Hear a sample call
+                Read sample calls
               </TrackedLink>
             </div>
           </div>
 
-          {footerColumns.map((column) => (
-            <div key={column.title} className="grid gap-3">
-              <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">{column.title}</h2>
-              <div className="grid gap-2">
-                {column.links.map((link) => (
-                  <TrackedLink
-                    key={link.href}
-                    href={link.href}
-                    eventName={link.href.startsWith("mailto:") ? "contact_sales_clicked" : "marketing_cta_clicked"}
-                    eventPayload={{ placement: "footer_link", href: link.href }}
-                    className="text-sm leading-6 text-slate-300 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </TrackedLink>
-                ))}
+          <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+            {footerColumns.map((column) => (
+              <div key={column.title} className="grid content-start gap-3">
+                <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-slate-500">{column.title}</h2>
+                <div className="grid gap-2">
+                  {column.links.map((link) => (
+                    <TrackedLink
+                      key={link.href}
+                      href={link.href}
+                      eventName={link.href.startsWith("mailto:") ? "contact_sales_clicked" : "marketing_cta_clicked"}
+                      eventPayload={{ placement: "footer_link", href: link.href }}
+                      className="text-sm leading-6 text-slate-300 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </TrackedLink>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-col gap-3 border-t border-slate-800 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">

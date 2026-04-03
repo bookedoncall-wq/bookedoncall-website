@@ -27,12 +27,12 @@ export default function AiReceptionistVsVoicemailPage() {
         {
           title: "Voicemail is a weak first response",
           body:
-            "Voicemail may be familiar, but it usually gives you less context and less consistency. Some callers leave detailed messages. Some leave almost nothing. Some hang up and move on to the next shop before your team even gets a chance to call back.",
+            "Voicemail may be familiar, but it usually gives you less context and less consistency. Some callers leave detailed messages. Some leave almost nothing. Some hang up and move on to the next shop before you even get a chance to call back.",
         },
         {
           title: "The real difference is what happens next",
           body:
-            "A better first response does more than pick up the call. It gathers the basics, keeps the caller moving, and gives your team enough detail to decide whether the job should be booked or called back with context.",
+            "A better first response does more than pick up the call. It gathers the basics, keeps the caller moving, and gives you enough detail to decide whether the job should be booked or called back with context.",
         },
         {
           title: "Why this matters most for trades businesses",
@@ -47,12 +47,12 @@ export default function AiReceptionistVsVoicemailPage() {
       ]}
       proofItems={sourcedProof.filter((item) => item.id !== "bls-receptionist-wage")}
       nextLinks={[
-        { label: "Hear a sample call", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/demo-calls" },
         { label: "See the product", href: "/product" },
         { label: "See pricing", href: "/pricing" },
       ]}
       ctaTitle="Want something better than voicemail?"
-      ctaBody="Hear a sample call, then talk to us about how your business handles missed calls today."
+      ctaBody="Read sample calls, then talk to us about how your business handles missed calls today."
     />
   )
 }

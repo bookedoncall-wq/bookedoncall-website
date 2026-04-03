@@ -36,7 +36,7 @@ export default function ProductPage() {
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What it replaces</p>
             <h2 className="mb-4 text-3xl font-black text-slate-950">A missed call, a rushed voicemail, or a lead that goes cold.</h2>
             <p className="text-base leading-8 text-slate-700">
-              BookedOnCall is built for the moment when the phone rings and you can't stop what you're doing to answer it. It gives that caller a real first response, captures the details, and helps move the job toward the right next step.
+              BookedOnCall is built for the moment when the phone rings and you can&apos;t stop what you&apos;re doing to answer it. It gives that caller a real first response, captures the details, and helps move the job toward the right next step.
             </p>
           </article>
 
@@ -87,7 +87,7 @@ export default function ProductPage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After the call</p>
             <h2 className="text-4xl font-black text-slate-950">You get something usable, not just a message.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              The goal isn't to sound clever. The goal is to give you enough context to act quickly.
+              The goal isn&apos;t to sound clever. The goal is to give you enough context to act quickly.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
@@ -171,7 +171,7 @@ export default function ProductPage() {
         <div className="mx-auto grid max-w-5xl gap-6 rounded-[2rem] border border-white bg-white p-8 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Ready to see how it fits?</p>
-            <h2 className="text-3xl font-black text-slate-950">Hear a sample call or talk through your setup.</h2>
+            <h2 className="text-3xl font-black text-slate-950">Read sample calls or talk through your setup.</h2>
             <p className="text-base leading-8 text-slate-600">
               If you want to know whether BookedOnCall fits your business, the fastest path is hearing a call and talking through how you want new jobs handled.
             </p>
@@ -183,7 +183,7 @@ export default function ProductPage() {
               eventPayload={{ placement: "product_demo", href: "/demo-calls" }}
               className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-bold text-slate-900 transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
-              Hear a sample call
+              Read sample calls
             </TrackedLink>
             <TrackedLink
               href={buildLeadFormHref(undefined, "website-product")}
@@ -199,7 +199,7 @@ export default function ProductPage() {
 
       <CtaBand
         title="Want to talk through your call flow?"
-        body="Tell us how your team handles missed calls today and we will help you decide where BookedOnCall fits."
+        body="Tell us how you handle missed calls today and we will help you decide where BookedOnCall fits."
       />
     </>
   )

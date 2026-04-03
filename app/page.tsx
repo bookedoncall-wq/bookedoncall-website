@@ -97,7 +97,7 @@ export default function HomePage() {
             <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5">
               <div className="flex items-center gap-3">
                 <ClipboardList className="size-5 text-amber-500" />
-                <strong className="text-slate-950">What your team gets back</strong>
+                <strong className="text-slate-950">What you get back</strong>
               </div>
               <ul className="grid gap-2 text-sm leading-6 text-slate-600">
                 <li>Caller details and service address</li>
@@ -136,7 +136,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
             <h2 className="text-4xl font-black text-slate-950">Answer, qualify, then move to the right next step.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall isn't trying to sound clever. It's trying to give your business a better first response and you a cleaner handoff.
+              BookedOnCall isn&apos;t trying to sound clever. It&apos;s trying to give your business a better first response and you a cleaner handoff.
             </p>
             <TrackedLink
               href="/product"
@@ -169,7 +169,7 @@ export default function HomePage() {
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After the call</p>
             <h2 className="mb-4 text-4xl font-black text-slate-950">You get something usable, not just a message.</h2>
             <p className="mb-6 text-lg leading-8 text-slate-600">
-              The point isn't just that a call was answered. The point is that you get enough context to do something useful next.
+              The point isn&apos;t just that a call was answered. The point is that you get enough context to do something useful next.
             </p>
             <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Example summary</p>
@@ -193,19 +193,19 @@ export default function HomePage() {
             </div>
           </article>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3 md:items-start">
             {afterCallArtifacts.map((artifact, index) => (
               <article
                 key={artifact.title}
-                className={`rounded-[1.75rem] border p-6 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
+                className={`self-start rounded-[1.5rem] border p-5 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
               >
-                <div className="mb-4 flex items-center gap-3">
+                <div className="mb-3 flex items-center gap-3">
                   {index === 0 ? <ClipboardList className="size-5 text-amber-600" /> : null}
                   {index === 1 ? <CalendarClock className="size-5 text-amber-600" /> : null}
                   {index === 2 ? <ShieldCheck className="size-5 text-amber-600" /> : null}
-                  <h3 className="text-xl font-black text-slate-950">{artifact.title}</h3>
+                  <h3 className="text-lg font-black text-slate-950">{artifact.title}</h3>
                 </div>
-                <p className="text-sm leading-7 text-slate-700">{artifact.body}</p>
+                <p className="text-sm leading-6 text-slate-700">{artifact.body}</p>
               </article>
             ))}
           </div>
@@ -252,17 +252,17 @@ export default function HomePage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Source-backed context</p>
-            <h2 className="text-4xl font-black text-slate-950">A few facts worth knowing.</h2>
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Useful context</p>
+            <h2 className="text-4xl font-black text-slate-950">A few practical benchmarks.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              BookedOnCall should stand on product truth first. When we use outside context, it should be sourced and easy to verify.
+              Not product claims. Just a few outside references that help frame missed calls, callback speed, and staffing cost.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {sourcedProof.map((item) => (
-              <article key={item.id} className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
-                <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
-                <p className="mb-4 text-sm leading-7 text-slate-700">{item.detail}</p>
+              <article key={item.id} className="rounded-[1.5rem] border border-white bg-white p-5 shadow-sm">
+                <h3 className="mb-3 text-lg font-black text-slate-950">{item.title}</h3>
+                <p className="mb-4 text-sm leading-6 text-slate-700">{item.detail}</p>
                 <TrackedLink
                   href={item.sourceUrl}
                   eventName="marketing_cta_clicked"
@@ -376,7 +376,7 @@ export default function HomePage() {
                 eventPayload={{ placement: "home_resources", href: resource.href }}
                 className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
               >
-                <h3 className="mb-3 text-2xl font-black text-slate-950">{resource.title}</h3>
+                <h3 className="mb-3 text-[1.35rem] font-black leading-tight text-slate-950">{resource.title}</h3>
                 <p className="text-base leading-7 text-slate-600">{resource.description}</p>
               </TrackedLink>
             ))}
@@ -448,7 +448,7 @@ export default function HomePage() {
 
       <CtaBand
         title="Want to see if BookedOnCall fits your business?"
-        body="Hear a sample call, review the pages that match your trade, and talk to us about how your team handles missed calls today."
+        body="Read sample calls, review the pages that match your trade, and talk to us about how you handle missed calls today."
       />
     </>
   )

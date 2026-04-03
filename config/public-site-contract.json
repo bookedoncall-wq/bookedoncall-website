@@ -11,7 +11,7 @@
     "oneLiner": "BookedOnCall is an AI phone assistant for home-service businesses that answers missed calls, captures job details, and either books the work or hands it back as a clean callback.",
     "primaryAudience": "Owner-operators and growing home-service shops",
     "primaryCtaLabel": "Talk to us",
-    "secondaryCtaLabel": "Hear a sample call"
+    "secondaryCtaLabel": "Read sample calls"
   },
   "contacts": {
     "salesEmail": "bookedoncall@bookedoncall.com",
@@ -46,18 +46,18 @@
   ],
   "sourcedProof": [
     {
-      "id": "google-missed-calls",
-      "title": "Missed calls may affect responsiveness",
-      "detail": "Google Local Services Ads says missed calls may negatively affect a business's responsiveness.",
+      "id": "google-response-time",
+      "title": "Fast response time can help you win more leads",
+      "detail": "Google says a consistently fast response time could improve ad ranking and increase a business's ability to receive leads.",
       "sourceLabel": "Google Local Services Ads",
-      "sourceUrl": "https://support.google.com/localservices/answer/7527305?hl=en"
+      "sourceUrl": "https://support.google.com/localservices/answer/6224859?hl=en"
     },
     {
-      "id": "google-returned-calls",
-      "title": "Returned calls still count as lead handling",
-      "detail": "Google treats a missed call plus successful follow-up as a real lead path, which makes callback speed matter.",
-      "sourceLabel": "Google Local Services Ads",
-      "sourceUrl": "https://support.google.com/localservices/answer/7195435?hl=en"
+      "id": "nfib-hiring-pressure",
+      "title": "Hiring help is still hard for small businesses",
+      "detail": "NFIB's March 2026 Jobs Report found 32% of small business owners had job openings they could not fill, above the historical average of 24%.",
+      "sourceLabel": "NFIB Jobs Report",
+      "sourceUrl": "https://www.nfib.com/news/press-release/nfib-jobs-report-employment-index-pulls-back/"
     },
     {
       "id": "bls-receptionist-wage",

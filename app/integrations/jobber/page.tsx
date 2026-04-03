@@ -64,7 +64,7 @@ export default function JobberPage() {
             className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
-            <p className="text-base leading-7 text-slate-600">Hear how the assistant sounds before you decide whether this workflow fits your business.</p>
+            <p className="text-base leading-7 text-slate-600">See how the assistant handles these calls before you decide whether this workflow fits your business.</p>
           </TrackedLink>
           <TrackedLink
             href="/pricing"

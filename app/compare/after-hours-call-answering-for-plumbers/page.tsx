@@ -48,11 +48,11 @@ export default function AfterHoursCallAnsweringForPlumbersPage() {
       proofItems={sourcedProof.filter((item) => item.id !== "bls-receptionist-wage")}
       nextLinks={[
         { label: "See the plumbing page", href: "/for/plumbers" },
-        { label: "Hear a sample call", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/demo-calls" },
         { label: "See pricing", href: "/pricing" },
       ]}
       ctaTitle="Need better after-hours coverage for plumbing calls?"
-      ctaBody="Hear a sample call, then talk to us about how your shop wants urgent plumbing calls handled."
+      ctaBody="Read sample calls, then talk to us about how your shop wants urgent plumbing calls handled."
     />
   )
 }

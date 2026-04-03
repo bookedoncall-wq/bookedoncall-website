@@ -86,8 +86,8 @@ export default function ResourcesPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Source-backed context</p>
-            <h2 className="text-4xl font-black text-slate-950">A few facts worth knowing.</h2>
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Useful context</p>
+            <h2 className="text-4xl font-black text-slate-950">A few practical benchmarks.</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {sourcedProof.map((item) => (
@@ -110,7 +110,7 @@ export default function ResourcesPage() {
 
       <CtaBand
         title="Want the short version for your business?"
-        body="Hear a sample call, review the pages that match your trade, and then talk to us about how your team wants calls handled."
+        body="Read sample calls, review the pages that match your trade, and then talk to us about how you want calls handled."
       />
     </>
   )

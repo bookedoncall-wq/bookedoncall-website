@@ -41,7 +41,7 @@ export default function SignUpPage() {
             <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Before you decide</h2>
               <p className="text-base leading-7 text-slate-600">
-                The fastest way to know whether BookedOnCall fits is hearing a sample call and talking through how you want new jobs handled.
+                The fastest way to know whether BookedOnCall fits is reading sample calls and talking through how you want new jobs handled.
               </p>
               <div className="mt-5 grid gap-3">
                 <TrackedLink
@@ -50,7 +50,7 @@ export default function SignUpPage() {
                   eventPayload={{ placement: "signup_demo", href: "/demo-calls" }}
                   className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold text-slate-900 transition-colors hover:border-amber-300 hover:bg-amber-50/40"
                 >
-                  Hear a sample call
+                  Read sample calls
                 </TrackedLink>
                 <TrackedLink
                   href="/product"

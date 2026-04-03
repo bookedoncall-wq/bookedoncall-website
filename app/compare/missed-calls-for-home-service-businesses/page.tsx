@@ -15,11 +15,11 @@ export default function MissedCallsForHomeServiceBusinessesPage() {
       path="/compare/missed-calls-for-home-service-businesses"
       eyebrow="Guide"
       title="Missed calls for home-service businesses."
-      description="In home services, the missed call is usually not the real problem. The real problem is what happens next: thin details, slow follow-up, and a lead that goes cold before your team gets back to it."
+      description="In home services, the missed call is usually not the real problem. The real problem is what happens next: thin details, slow follow-up, and a lead that goes cold before you get back to it."
       serviceName="Missed calls for home-service businesses"
       serviceDescription="Why missed calls matter for home-service businesses and how BookedOnCall can help."
       quickPoints={[
-        "The first response sets the tone before your team ever calls back.",
+        "The first response sets the tone before you ever call back.",
         "Urgent jobs, estimate requests, and after-hours calls all break differently when nobody answers.",
         "A stronger setup gives the business usable details instead of a weak voicemail fallback.",
       ]}
@@ -32,7 +32,7 @@ export default function MissedCallsForHomeServiceBusinessesPage() {
         {
           title: "The first loss is speed, but the second loss is context",
           body:
-            "Even when your team calls back quickly, a missed call usually creates more cleanup. Someone has to interpret a voicemail, call again to collect the basics, and rebuild context that could have been captured on the first conversation.",
+            "Even when you call back quickly, a missed call usually creates more cleanup. Someone has to interpret a voicemail, call again to collect the basics, and rebuild context that could have been captured on the first conversation.",
         },
         {
           title: "What a better setup looks like",
@@ -49,10 +49,10 @@ export default function MissedCallsForHomeServiceBusinessesPage() {
       nextLinks={[
         { label: "See the product", href: "/product" },
         { label: "Browse industries", href: "/industries" },
-        { label: "Hear a sample call", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/demo-calls" },
       ]}
       ctaTitle="Want a better setup than missed calls and voicemail?"
-      ctaBody="Hear a sample call, then talk to us about how your business handles missed calls today."
+      ctaBody="Read sample calls, then talk to us about how your business handles missed calls today."
     />
   )
 }

@@ -10,7 +10,7 @@ export async function GET() {
     `- Integrations: ${siteConfig.url}/integrations`,
     `- Resources: ${siteConfig.url}/resources`,
     `- Talk to us: ${siteConfig.url}/sign-up`,
-    `- Hear a sample call: ${siteConfig.url}/demo-calls`,
+    `- Read sample calls: ${siteConfig.url}/demo-calls`,
     `- Description: ${positioning.oneLiner}`,
     `- Supported trades: ${publicSiteContract.supportedTrades.join(", ")}`,
     `- Integrations: ${publicSiteContract.integrations.map((integration) => integration.name).join(", ")}`,

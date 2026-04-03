@@ -27,7 +27,7 @@ export default function AfterHoursCallAnsweringForHvacPage() {
         {
           title: "After-hours HVAC calls are usually high-pressure",
           body:
-            "No-heat and no-cool calls often come in during the hottest or coldest stretches of the year, which is exactly when the team is already buried. That makes the first response more important, not less.",
+            "No-heat and no-cool calls often come in during the hottest or coldest stretches of the year, which is exactly when you're already buried. That makes the first response more important, not less.",
         },
         {
           title: "The biggest loss isn't just the missed ring",
@@ -37,22 +37,22 @@ export default function AfterHoursCallAnsweringForHvacPage() {
         {
           title: "What a better setup looks like",
           body:
-            "The caller gets a response, the assistant captures the number, address, and symptoms, and your team gets a cleaner handoff. If the request fits your setup, BookedOnCall can move toward the next supported step. If not, it still comes back as a clean callback.",
+            "The caller gets a response, the assistant captures the number, address, and symptoms, and you get a cleaner handoff. If the request fits your setup, BookedOnCall can move toward the next supported step. If not, it still comes back as a clean callback.",
         },
         {
           title: "Where BookedOnCall fits",
           body:
-            "BookedOnCall helps HVAC businesses stay responsive after hours without pretending every call should be handled the same way. It captures the basics, keeps the caller moving, and gives the team usable context for what happens next.",
+            "BookedOnCall helps HVAC businesses stay responsive after hours without pretending every call should be handled the same way. It captures the basics, keeps the caller moving, and gives you usable context for what happens next.",
         },
       ]}
       proofItems={sourcedProof.filter((item) => item.id !== "bls-receptionist-wage")}
       nextLinks={[
         { label: "See the HVAC page", href: "/for/hvac" },
-        { label: "Hear a sample call", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/demo-calls" },
         { label: "See pricing", href: "/pricing" },
       ]}
       ctaTitle="Need better after-hours HVAC coverage?"
-      ctaBody="Hear a sample call, then talk to us about how your team wants urgent heating and cooling calls handled."
+      ctaBody="Read sample calls, then talk to us about how you want urgent heating and cooling calls handled."
     />
   )
 }

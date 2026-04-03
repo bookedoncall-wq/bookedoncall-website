@@ -46,7 +46,7 @@ export default function Nav() {
             eventPayload={{ placement: "nav_secondary", href: "/demo-calls" }}
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950"
           >
-            Hear a sample call
+            Read sample calls
           </TrackedLink>
           <TrackedLink
             href={buildLeadFormHref(undefined, "website-nav")}
@@ -93,7 +93,7 @@ export default function Nav() {
               eventPayload={{ placement: "mobile_nav_secondary", href: "/demo-calls" }}
               className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
             >
-              Hear a sample call
+              Read sample calls
             </TrackedLink>
             <TrackedLink
               href={buildLeadFormHref(undefined, "website-mobile-nav")}

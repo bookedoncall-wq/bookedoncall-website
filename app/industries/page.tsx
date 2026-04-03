@@ -78,7 +78,7 @@ export default function IndustriesPage() {
             <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
               <h3 className="mb-3 text-2xl font-black text-slate-950">The next step should be clean</h3>
               <p className="text-base leading-7 text-slate-600">
-                Some jobs should move toward a booking. Others should come back for review. Either way, the team needs clear details and a clean handoff.
+                Some jobs should move toward a booking. Others should come back for review. Either way, you need clear details and a clean handoff.
               </p>
             </article>
           </div>
@@ -112,7 +112,7 @@ export default function IndustriesPage() {
             className="rounded-[1.75rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
-            <p className="text-base leading-7 text-slate-600">Hear how the assistant can sound before you decide whether it fits your business.</p>
+            <p className="text-base leading-7 text-slate-600">See how the assistant handles calls before you decide whether it fits your business.</p>
           </TrackedLink>
         </div>
 
@@ -127,7 +127,7 @@ export default function IndustriesPage() {
 
       <CtaBand
         title="Want to see which setup fits your trade?"
-        body="Start with your trade page, hear a sample call, or talk to us about how your business handles missed calls today."
+        body="Start with your trade page, read sample calls, or talk to us about how your business handles missed calls today."
       />
     </>
   )

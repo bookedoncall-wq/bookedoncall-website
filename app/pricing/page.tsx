@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 export const metadata = buildPageMetadata({
   title: "Pricing",
   description:
-    "BookedOnCall pricing for Starter and Pro plans, included minutes, and extra branding controls on Pro.",
+    "BookedOnCall pricing for Starter and Pro plans, included minutes, minute overages, and extra caller-experience controls on Pro.",
   path: "/pricing",
 })
 
@@ -23,11 +23,15 @@ export default function PricingPage() {
       <PageIntro
         eyebrow="Pricing"
         title="Straightforward monthly pricing."
-        description="Start with the plan that looks closest. Then talk to us about how you want calls, callbacks, and supported booking handled."
+        description="Start with the plan that fits your call volume now. Then talk to us about how you want calls, callbacks, and supported booking handled."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-6">
+          <div className="rounded-[1.5rem] border border-slate-200 bg-white px-5 py-4 text-sm leading-6 text-slate-700 shadow-sm">
+            Minutes keep pricing simple. Start with the plan that fits your current volume. If you keep running well past the included minutes, we&apos;ll usually recommend the next tier instead of leaving you on the wrong plan.
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
           {plans.map((plan, index) => (
             <article
               key={plan.id}
@@ -53,8 +57,8 @@ export default function PricingPage() {
                 <span className="pb-2 text-slate-500">/ month</span>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
-                {plan.includedMinutes} included minutes, then ${plan.overageMinuteUsd.toFixed(2)}/minute.
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-700">
+                {plan.includedMinutes} included minutes each month. Extra time is billed at ${plan.overageMinuteUsd.toFixed(2)}/minute.
               </div>
 
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
@@ -76,6 +80,7 @@ export default function PricingPage() {
               </TrackedLink>
             </article>
           ))}
+          </div>
         </div>
       </section>
 
@@ -85,7 +90,7 @@ export default function PricingPage() {
             <h2 className="mb-4 text-3xl font-black text-slate-950">Who Starter fits best</h2>
             <div className="grid gap-4 text-sm leading-7 text-slate-600">
               <div>
-                <p>Starter is built for businesses that want missed-call coverage, clear callbacks, and straightforward setup so you can get live in days, not weeks.</p>
+                <p>Starter is built for businesses that want missed-call coverage, clear callbacks, and straightforward setup without paying for more volume than they need right away.</p>
               </div>
               <div>
                 <p>It&apos;s a great fit for owner-operators, family-run shops, and growing businesses that are tired of losing jobs to voicemail.</p>
@@ -104,12 +109,13 @@ export default function PricingPage() {
             </div>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">How setup works</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">How pricing works</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
-              <li>Start with the plan that looks closest to your business.</li>
+              <li>Start with the plan that looks closest to your current call volume.</li>
               <li>Tell us how you want BookedOnCall to handle your calls.</li>
               <li>Connect your calendar if you want BookedOnCall to offer appointment times.</li>
               <li>Extra minutes are billed at the published per-minute rate for your plan.</li>
+              <li>If your usage keeps climbing, we&apos;ll usually recommend the next tier.</li>
             </ul>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">

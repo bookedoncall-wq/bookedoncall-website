@@ -86,7 +86,7 @@ export default function IntegrationsPage() {
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Supported booking, not forced booking</h2>
             <p className="text-base leading-7 text-slate-700">
-              Integrations help on bookable jobs. They don't force edge cases into a slot when a person should decide.
+              Integrations help on bookable jobs. They don&apos;t force edge cases into a slot when a person should decide.
             </p>
           </article>
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
@@ -100,7 +100,7 @@ export default function IntegrationsPage() {
 
       <CtaBand
         title="Want to see how BookedOnCall fits your scheduling setup?"
-        body="Look at the integration pages, hear a sample call, and then talk to us about how your team wants jobs routed."
+        body="Look at the integration pages, read sample calls, and then talk to us about how you want jobs routed."
       />
     </>
   )

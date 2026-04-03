@@ -73,7 +73,7 @@ export default function GoogleCalendarPage() {
             className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See pricing</h2>
-            <p className="text-base leading-7 text-slate-600">Review Starter and Pro, then talk through how calendar-backed booking should work for your team.</p>
+            <p className="text-base leading-7 text-slate-600">Review Starter and Pro, then talk through how calendar-backed booking should work for your business.</p>
           </TrackedLink>
         </div>
       </section>

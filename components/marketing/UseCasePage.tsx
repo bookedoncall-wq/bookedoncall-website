@@ -91,7 +91,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Get usable job details</h2>
             <p className="text-base leading-7 text-slate-700">
-              Name, callback number, address, and a clear description of the job give your team a better next step than a rushed message.
+              Name, callback number, address, and a clear description of the job give you a better next step than a rushed message.
             </p>
           </article>
           <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
@@ -124,7 +124,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
             <p className="text-base leading-7 text-slate-600">
-              Hear how the assistant can sound on real-world service calls before you decide anything.
+              See how the assistant handles real-world service calls before you decide anything.
             </p>
           </TrackedLink>
           <TrackedLink

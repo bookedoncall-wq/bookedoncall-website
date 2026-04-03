@@ -14,7 +14,7 @@ const demoCalls = [
       "Caller: 303-555-0188. The address is 412 West Cedar in Denver.",
       "Assistant: Got it. Is the leak steady, or is water pooling up right now?",
       "Caller: There is water pooling in the utility room.",
-      "Assistant: Okay. That sounds urgent. I’m noting that now so the team can follow up quickly.",
+      "Assistant: Okay. That sounds urgent. I’m noting that now so someone can follow up quickly.",
     ],
     outcome: "You get the caller details, address, urgency, and callback number without relying on voicemail.",
   },
@@ -27,7 +27,7 @@ const demoCalls = [
       "Caller: 720-555-0142. We’re in Littleton.",
       "Assistant: Thanks. Is the system blowing air that’s not cold, or is it not turning on at all?",
       "Caller: It’s blowing, but it isn’t cold.",
-      "Assistant: Got it. I have the problem, your number, and the location. The team can follow up with the next step.",
+      "Assistant: Got it. I have the problem, your number, and the location. Someone can follow up with the next step.",
     ],
     outcome: "You get symptom details up front so you can book it or call back with the right context.",
   },
@@ -40,7 +40,7 @@ const demoCalls = [
       "Caller: 970-555-0105. We’re in Fort Collins.",
       "Assistant: Thanks. Is it just the lights, or are outlets or breakers acting up too?",
       "Caller: Mostly lights, but one breaker has tripped twice this week.",
-      "Assistant: Thanks. I’ve got the details, and I’ll make sure the team sees the breaker issue too.",
+      "Assistant: Thanks. I’ve got the details, including the breaker issue.",
     ],
     outcome: "You get the details and the breaker concern without forcing a risky instant booking.",
   },
@@ -66,7 +66,7 @@ export default function DemoCallsPage() {
         })}
       />
       <PageIntro
-        eyebrow="Sample call demos"
+        eyebrow="Sample calls"
         title="Illustrative call transcripts."
         description="These are sample call flows, not customer recordings. They show the kind of questions BookedOnCall can ask and the kind of details you can get back."
       />

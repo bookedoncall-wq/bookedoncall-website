@@ -5,6 +5,11 @@ export const faqEntries = [
       "Starter gives you the core product: answered calls, callback capture, booking when enabled, and clear summaries with the next step. Pro adds more included minutes and more control over how the assistant sounds and introduces itself."
   },
   {
+    question: "Which plan should I start with?",
+    answer:
+      "Starter is the right starting point for many owner-operators and smaller shops. Pro makes more sense if you want more included minutes and more control over the caller experience from day one."
+  },
+  {
     question: "Does BookedOnCall always book appointments automatically?",
     answer:
       "No. BookedOnCall books jobs only when scheduling is turned on and the request fits the rules you want it to follow. It can still capture the lead and send the call back to you when a person should decide."
@@ -27,7 +32,7 @@ export const faqEntries = [
   {
     question: "How are extra minutes billed?",
     answer:
-      "Plans include a monthly minute allowance. Additional minutes are billed at the published per-minute rate for the selected plan."
+      "Plans include a monthly minute allowance. Extra minutes are billed at the published per-minute rate for your plan. If you keep running well past the included minutes, we'll usually recommend the next tier instead of leaving you on the wrong plan."
   },
   {
     question: "How long does setup take?",
@@ -62,7 +67,7 @@ export const faqEntries = [
   {
     question: "How does BookedOnCall compare to a live answering service?",
     answer:
-      "A traditional answering service uses human operators who follow a script. BookedOnCall uses AI to handle the call, collect details, and route the next step. The trade-off is cost: live services often charge $1-2 per minute or more. BookedOnCall includes minutes in the plan at a lower per-minute rate, and the assistant is available around the clock without staffing limitations."
+      "A traditional answering service uses human operators who follow a script. BookedOnCall uses AI to handle the call, collect details, and route the next step. Live services usually cost materially more per minute, while BookedOnCall keeps pricing simpler with included minutes and a published overage rate."
   },
   {
     question: "What information does the assistant collect on each call?",
@@ -157,15 +162,15 @@ export const productFlowSteps = [
 export const afterCallArtifacts = [
   {
     title: "Call summary",
-    body: "A fast read on who called, what they need, and what should happen next."
+    body: "Who called, what they need, and the clearest next step."
   },
   {
     title: "Booking path",
-    body: "When scheduling is connected and the request fits your setup, the call can move toward a confirmed slot."
+    body: "If scheduling is connected and the request fits, the call can move toward a confirmed slot."
   },
   {
     title: "Callback handoff",
-    body: "Out-of-area, manual-review, and approval-only jobs still come back with usable details."
+    body: "Manual-review, approval-only, and out-of-area jobs still come back with clean details."
   },
 ] as const
 
@@ -186,7 +191,7 @@ export const resourceHighlights = [
     description: "A practical comparison for shops that lose work because calls go unanswered."
   },
   {
-    title: "Answering service vs receptionist vs AI",
+    title: "Receptionist, answering service, or AI?",
     href: "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
     description: "A grounded comparison of the three main ways small shops try to cover missed calls."
   },
