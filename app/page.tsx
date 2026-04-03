@@ -193,11 +193,11 @@ export default function HomePage() {
             </div>
           </article>
 
-          <div className="grid gap-4 md:grid-cols-3 md:items-start">
+          <div className="grid gap-4 md:grid-cols-3">
             {afterCallArtifacts.map((artifact, index) => (
               <article
                 key={artifact.title}
-                className={`self-start rounded-[1.5rem] border p-5 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
+                className={`flex h-full min-h-[180px] flex-col rounded-[1.5rem] border p-5 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
               >
                 <div className="mb-3 flex items-center gap-3">
                   {index === 0 ? <ClipboardList className="size-5 text-amber-600" /> : null}
