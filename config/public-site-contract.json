@@ -1,17 +1,17 @@
 {
-  "version": 2,
+  "version": 3,
   "brand": {
     "name": "BookedOnCall",
-    "tagline": "AI call answering for trades businesses",
-    "description": "BookedOnCall is an AI phone assistant for home-service businesses that answers missed calls, captures job details, and either books the work or hands it back as a clean callback.",
+    "tagline": "AI phone assistant for trades businesses",
+    "description": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures the job details, and moves each caller toward booking or a clear callback based on the shop's setup.",
     "websiteOrigin": "https://bookedoncall.com",
     "appOrigin": "https://app.bookedoncall.com"
   },
   "positioning": {
-    "oneLiner": "BookedOnCall is an AI phone assistant for home-service businesses that answers missed calls, captures job details, and either books the work or hands it back as a clean callback.",
+    "oneLiner": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures the job details, and moves each caller toward booking or a clear callback based on the shop's setup.",
     "primaryAudience": "Owner-operators and growing home-service shops",
-    "primaryCtaLabel": "Talk to us",
-    "secondaryCtaLabel": "Read sample calls"
+    "primaryCtaLabel": "Start setup",
+    "secondaryCtaLabel": "See example calls"
   },
   "contacts": {
     "salesEmail": "bookedoncall@bookedoncall.com",
@@ -46,18 +46,18 @@
   ],
   "sourcedProof": [
     {
-      "id": "google-response-time",
-      "title": "Fast response time can help you win more leads",
-      "detail": "Google says a consistently fast response time could improve ad ranking and increase a business's ability to receive leads.",
-      "sourceLabel": "Google Local Services Ads",
-      "sourceUrl": "https://support.google.com/localservices/answer/6224859?hl=en"
+      "id": "voicemail-dropoff",
+      "title": "54% said they would not leave a voicemail",
+      "detail": "In Moneypenny's 2023 Censuswide survey of UK and US consumers, over half said they would not leave a voicemail when calling a business.",
+      "sourceLabel": "Moneypenny / Censuswide",
+      "sourceUrl": "https://resources.moneypenny.com/wp-content/uploads/2023/07/REPORT-Call-Trends-2023-2.pdf"
     },
     {
-      "id": "nfib-hiring-pressure",
-      "title": "Hiring help is still hard for small businesses",
-      "detail": "NFIB's March 2026 Jobs Report found 32% of small business owners had job openings they could not fill, above the historical average of 24%.",
-      "sourceLabel": "NFIB Jobs Report",
-      "sourceUrl": "https://www.nfib.com/news/press-release/nfib-jobs-report-employment-index-pulls-back/"
+      "id": "google-response-time",
+      "title": "Fast response can increase your ability to receive leads",
+      "detail": "Google says consistently fast response time can improve ad ranking and increase a provider's ability to receive leads.",
+      "sourceLabel": "Google Local Services Ads",
+      "sourceUrl": "https://support.google.com/localservices/answer/6224859?hl=en"
     },
     {
       "id": "bls-receptionist-wage",
@@ -86,7 +86,7 @@
       "monthlyUsd": 250,
       "includedMinutes": 200,
       "overageMinuteUsd": 0.75,
-      "summary": "For owner-operators and growing shops that want missed-call coverage, callback capture, and straightforward setup.",
+      "summary": "For owner-operators and growing shops that want a better first response, clear callback coverage, and straightforward setup.",
       "capabilities": {
         "assistantName": false,
         "voiceSelection": false,
@@ -98,7 +98,7 @@
       "features": [
         "200 included call minutes each month",
         "AI call answering and lead intake",
-        "Callback capture and clean handoff when you want to step in",
+        "Callback capture and clear handoff when you want to step in",
         "Booking when your setup allows it",
         "Jobber or Google Calendar integration when connected",
         "Call summaries with the next step clearly laid out",
@@ -123,7 +123,7 @@
       "features": [
         "400 included call minutes each month",
         "AI call answering and lead intake",
-        "Callback capture and clean handoff when you want to step in",
+        "Callback capture and clear handoff when you want to step in",
         "Booking when your setup allows it",
         "Jobber or Google Calendar integration when connected",
         "Call summaries with the next step clearly laid out",

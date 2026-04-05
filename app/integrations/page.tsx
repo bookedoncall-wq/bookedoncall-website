@@ -100,7 +100,7 @@ export default function IntegrationsPage() {
 
       <CtaBand
         title="Want to see how BookedOnCall fits your scheduling setup?"
-        body="Look at the integration pages, read sample calls, and then talk to us about how you want jobs routed."
+        body="Review Jobber and Google Calendar, read example calls, and start setup when you want them in the booking path."
       />
     </>
   )

@@ -52,7 +52,7 @@ export default function AfterHoursCallAnsweringForPlumbersPage() {
         { label: "See pricing", href: "/pricing" },
       ]}
       ctaTitle="Need better after-hours coverage for plumbing calls?"
-      ctaBody="Read sample calls, then talk to us about how your shop wants urgent plumbing calls handled."
+      ctaBody="Read example calls, review the plumbing path, and start setup when you're ready."
     />
   )
 }

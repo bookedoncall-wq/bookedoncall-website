@@ -18,9 +18,9 @@ const extraResources = [
     description: "The clearest walkthrough of what BookedOnCall does from first ring to next step.",
   },
   {
-    title: "About BookedOnCall",
-    href: "/about",
-    description: "Why the product exists, who it's built for, and the founder story behind it.",
+    title: "Integrations",
+    href: "/integrations",
+    description: "See how Jobber and Google Calendar fit into the call flow when you want scheduling support.",
   },
 ] as const
 
@@ -45,13 +45,13 @@ export default function ResourcesPage() {
       />
       <PageIntro
         eyebrow="Resources"
-        title="The pages that help buyers decide faster."
-        description="If you want more than the homepage, start here. These pages show how BookedOnCall sounds, how it compares, and where it fits in the real workflow of a trades business."
+        title="Examples, comparisons, pricing, and integrations."
+        description="Start with example calls. Then compare BookedOnCall to voicemail and answering services. Then review pricing and integrations."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {resourceHighlights.map((resource) => (
+          {resourceHighlights.map((resource, index) => (
             <TrackedLink
               key={resource.href}
               href={resource.href}
@@ -59,6 +59,7 @@ export default function ResourcesPage() {
               eventPayload={{ placement: "resources_primary", href: resource.href }}
               className="rounded-[1.75rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-amber-700">Step {index + 1}</p>
               <h2 className="mb-3 text-2xl font-black text-slate-950">{resource.title}</h2>
               <p className="text-base leading-7 text-slate-600">{resource.description}</p>
             </TrackedLink>
@@ -109,8 +110,8 @@ export default function ResourcesPage() {
       </section>
 
       <CtaBand
-        title="Want the short version for your business?"
-        body="Read sample calls, review the pages that match your trade, and then talk to us about how you want calls handled."
+        title="Ready to see how BookedOnCall fits your shop?"
+        body="Start with examples, compare the alternatives, and then move into pricing or setup when you're ready."
       />
     </>
   )

@@ -35,7 +35,7 @@ export default function FaqPage() {
 
       <CtaBand
         title="Still have questions about your setup?"
-        body="Read sample calls or talk to us about how your business wants calls, callbacks, and supported booking handled."
+        body="Read example calls, review pricing, and start setup when you're ready."
       />
     </>
   )

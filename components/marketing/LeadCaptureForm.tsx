@@ -112,9 +112,9 @@ export function LeadCaptureForm() {
   return (
     <section id="lead-form" className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
       <div className="grid gap-3">
-        <h2 className="text-2xl font-black text-slate-950">Tell us about your business</h2>
+        <h2 className="text-2xl font-black text-slate-950">Request setup</h2>
         <p className="text-base leading-7 text-slate-600">
-          Fill this out and we will follow up to talk through your trade, schedule, and how you want BookedOnCall to handle calls.
+          Tell us about your shop, your current phone coverage, and the plan you are considering. We will follow up with the right setup path and send you into the app when your account is ready.
         </p>
       </div>
 
@@ -199,12 +199,12 @@ export function LeadCaptureForm() {
         </div>
 
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
-          What should we know about your calls?
+          What should we know before we set you up?
           <textarea
             value={form.details}
             onChange={(event) => updateField("details", event.target.value)}
             className="min-h-36 rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
-            placeholder="Tell us about your trade, scheduling setup, after-hours calls, or anything else you want us to know."
+            placeholder="Tell us about your trade, scheduling setup, after-hours calls, or anything else we should know before onboarding."
           />
         </label>
 
@@ -224,9 +224,9 @@ export function LeadCaptureForm() {
             disabled={status === "submitting"}
             className="inline-flex items-center justify-center rounded-xl bg-slate-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {status === "submitting" ? "Sending..." : "Send my details"}
+            {status === "submitting" ? "Sending..." : "Request setup"}
           </button>
-          <p className="text-sm leading-6 text-slate-500">We will follow up personally. No fake instant demo, no spam.</p>
+          <p className="text-sm leading-6 text-slate-500">Already a customer? Use customer login.</p>
         </div>
 
         {message ? (

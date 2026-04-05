@@ -27,7 +27,7 @@ export const faqEntries = [
   {
     question: "What happens after I choose a plan?",
     answer:
-      "Send us your details through the form and we will follow up. We will talk through your trade, scheduling setup, and how you want calls handled. Pro customers can also choose the assistant voice, name, greeting, and behavior."
+      "If self-serve checkout is enabled, you move straight into secure checkout and app onboarding. If not, we use your details to guide the right setup path before sending you into the app."
   },
   {
     question: "How are extra minutes billed?",
@@ -57,7 +57,7 @@ export const faqEntries = [
   {
     question: "Can I try BookedOnCall before committing?",
     answer:
-      "We're not offering a self-serve free trial right now, but we're happy to walk you through a demo call so you can hear how it sounds for your trade before you decide."
+      "There is no free trial right now, but we can walk you through example calls and get you to a private test call before any live number points at BookedOnCall."
   },
   {
     question: "Is there a long-term contract?",
@@ -176,24 +176,24 @@ export const afterCallArtifacts = [
 
 export const resourceHighlights = [
   {
-    title: "Sample call transcripts",
+    title: "Example calls",
     href: "/demo-calls",
-    description: "Read illustrative plumbing, HVAC, and electrical call examples."
-  },
-  {
-    title: "Missed calls guide",
-    href: "/compare/missed-calls-for-home-service-businesses",
-    description: "Why missed calls matter, what a better setup looks like, and where BookedOnCall fits."
+    description: "Start here to hear how a plumbing, HVAC, or electrical call can move from first question to clear next step."
   },
   {
     title: "AI receptionist vs voicemail",
     href: "/compare/ai-receptionist-vs-voicemail",
-    description: "A practical comparison for shops that lose work because calls go unanswered."
+    description: "See what changes when callers get a real first response instead of a voicemail box."
   },
   {
     title: "AI, receptionist, or answering service?",
     href: "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
-    description: "A grounded comparison of the three main ways small shops try to cover missed calls."
+    description: "Compare the tradeoffs on cost, control, and call quality before you choose a coverage model."
+  },
+  {
+    title: "Pricing",
+    href: "/pricing",
+    description: "Check what Starter and Pro include, what extra minutes cost, and which plan fits your shop."
   },
 ] as const
 

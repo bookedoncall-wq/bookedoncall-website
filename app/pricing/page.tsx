@@ -3,7 +3,7 @@ import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { faqEntries } from "@/config/marketing"
-import { buildLeadFormHref, plans } from "@/config/site"
+import { buildGetStartedHref, plans, selfServeCheckoutEnabled } from "@/config/site"
 import { buildBreadcrumbSchema, buildFaqSchema, buildPageMetadata } from "@/lib/seo"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -23,7 +23,11 @@ export default function PricingPage() {
       <PageIntro
         eyebrow="Pricing"
         title="Straightforward monthly pricing."
-        description="Start with the plan that fits your call volume now. Then talk to us about how you want calls, callbacks, and supported booking handled."
+        description={
+          selfServeCheckoutEnabled
+            ? "Start with the plan that fits your call volume now, then continue through secure checkout and app onboarding."
+            : "Start with the plan that fits your call volume now, then request setup so we can align how calls, callbacks, and supported booking should work for your business."
+        }
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -68,7 +72,7 @@ export default function PricingPage() {
               </ul>
 
               <TrackedLink
-                href={buildLeadFormHref(plan.id, "website-pricing")}
+                href={buildGetStartedHref(plan.id, "website-pricing")}
                 eventName="pricing_plan_selected"
                 eventPayload={{ placement: "pricing_card", planId: plan.id }}
                 className={cn(
@@ -76,7 +80,7 @@ export default function PricingPage() {
                   "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                Talk to us about {plan.name}
+                {selfServeCheckoutEnabled ? `Start with ${plan.name}` : `Request ${plan.name} setup`}
               </TrackedLink>
             </article>
           ))}
@@ -167,7 +171,7 @@ export default function PricingPage() {
 
       <CtaBand
         title="Want to talk through pricing?"
-        body="Start with the plan that looks closest, then talk to us about how your business wants calls handled."
+        body="Start with the plan that looks closest, then move into setup and fine-tune the call flow during onboarding."
       />
     </>
   )

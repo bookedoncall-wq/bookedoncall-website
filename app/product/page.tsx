@@ -4,7 +4,7 @@ import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { afterCallArtifacts, productFlowSteps } from "@/config/marketing"
-import { buildLeadFormHref, integrations, positioning, sourcedProof, validatedCapabilities } from "@/config/site"
+import { buildGetStartedHref, integrations, positioning, primaryCtaLabel, sourcedProof, validatedCapabilities } from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
 export const metadata = buildPageMetadata({
@@ -186,12 +186,12 @@ export default function ProductPage() {
               Read sample calls
             </TrackedLink>
             <TrackedLink
-              href={buildLeadFormHref(undefined, "website-product")}
+              href={buildGetStartedHref(undefined, "website-product")}
               eventName="signup_started"
               eventPayload={{ placement: "product_primary" }}
               className="rounded-xl bg-slate-950 px-5 py-3 text-center text-sm font-bold text-white transition-colors hover:bg-slate-800"
             >
-              Talk to us
+              {primaryCtaLabel}
             </TrackedLink>
           </div>
         </div>

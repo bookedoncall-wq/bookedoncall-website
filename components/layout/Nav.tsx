@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { buildLeadFormHref, customerLoginPath, primaryNav } from "@/config/site"
+import { buildGetStartedHref, customerLoginPath, positioning, primaryCtaLabel, primaryNav } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 export default function Nav() {
@@ -49,15 +49,15 @@ export default function Nav() {
             Customer login
           </TrackedLink>
           <TrackedLink
-            href="/demo-calls"
+            href="/examples"
             eventName="marketing_cta_clicked"
-            eventPayload={{ placement: "nav_secondary", href: "/demo-calls" }}
+            eventPayload={{ placement: "nav_secondary", href: "/examples" }}
             className="text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950"
           >
-            Read sample calls
+            {positioning.secondaryCtaLabel}
           </TrackedLink>
           <TrackedLink
-            href={buildLeadFormHref(undefined, "website-nav")}
+            href={buildGetStartedHref(undefined, "website-nav")}
             eventName="signup_started"
             eventPayload={{ placement: "nav_primary" }}
             className={cn(
@@ -65,7 +65,7 @@ export default function Nav() {
               "rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
             )}
           >
-            Talk to us
+            {primaryCtaLabel}
           </TrackedLink>
         </div>
 
@@ -104,15 +104,15 @@ export default function Nav() {
               Customer login
             </TrackedLink>
             <TrackedLink
-              href="/demo-calls"
+              href="/examples"
               eventName="marketing_cta_clicked"
-              eventPayload={{ placement: "mobile_nav_secondary", href: "/demo-calls" }}
+              eventPayload={{ placement: "mobile_nav_secondary", href: "/examples" }}
               className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
             >
-              Read sample calls
+              {positioning.secondaryCtaLabel}
             </TrackedLink>
             <TrackedLink
-              href={buildLeadFormHref(undefined, "website-mobile-nav")}
+              href={buildGetStartedHref(undefined, "website-mobile-nav")}
               eventName="signup_started"
               eventPayload={{ placement: "mobile_nav_primary" }}
               className={cn(
@@ -120,7 +120,7 @@ export default function Nav() {
                 "mt-2 justify-center rounded-xl border-transparent bg-slate-950 px-4 text-white hover:bg-slate-800"
               )}
             >
-              Talk to us
+              {primaryCtaLabel}
             </TrackedLink>
           </div>
         </div>

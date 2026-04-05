@@ -1,4 +1,4 @@
-import { buildLeadFormHref } from "@/config/site"
+import { buildGetStartedHref, positioning, primaryCtaLabel } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -15,10 +15,10 @@ type CtaBandProps = {
 export function CtaBand({
   title,
   body,
-  primaryLabel = "Talk to us",
-  primaryHref = buildLeadFormHref(undefined, "website-cta-band"),
-  secondaryLabel = "Read sample calls",
-  secondaryHref = "/demo-calls",
+  primaryLabel = primaryCtaLabel,
+  primaryHref = buildGetStartedHref(undefined, "website-cta-band"),
+  secondaryLabel = positioning.secondaryCtaLabel,
+  secondaryHref = "/examples",
 }: CtaBandProps) {
   return (
     <section className="bg-slate-950 px-4 py-20 sm:px-6 lg:px-8">

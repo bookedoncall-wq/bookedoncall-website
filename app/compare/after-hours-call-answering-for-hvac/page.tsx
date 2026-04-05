@@ -52,7 +52,7 @@ export default function AfterHoursCallAnsweringForHvacPage() {
         { label: "See pricing", href: "/pricing" },
       ]}
       ctaTitle="Need better after-hours HVAC coverage?"
-      ctaBody="Read sample calls, then talk to us about how you want urgent heating and cooling calls handled."
+      ctaBody="Read example calls, review the HVAC path, and start setup when you're ready."
     />
   )
 }

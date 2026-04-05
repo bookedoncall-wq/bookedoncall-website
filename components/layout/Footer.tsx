@@ -1,4 +1,4 @@
-import { buildLeadFormHref, customerLoginPath, secondaryNav, siteConfig } from "@/config/site"
+import { buildGetStartedHref, customerLoginPath, positioning, primaryCtaLabel, secondaryNav, siteConfig } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 const footerColumns = [
@@ -27,7 +27,7 @@ const footerColumns = [
     title: "Resources",
     links: [
       { label: "Resources", href: "/resources" },
-      { label: "Sample Calls", href: "/demo-calls" },
+      { label: "Examples", href: "/examples" },
       { label: "AI vs Voicemail", href: "/compare/ai-receptionist-vs-voicemail" },
       { label: "Missed Calls Guide", href: "/compare/missed-calls-for-home-service-businesses" },
       { label: "FAQ", href: "/faq" },
@@ -60,20 +60,20 @@ export default function Footer() {
             <p className="max-w-sm text-sm leading-7 text-slate-400">{siteConfig.description}</p>
             <div className="flex flex-wrap gap-3">
               <TrackedLink
-                href={buildLeadFormHref(undefined, "website-footer")}
+                href={buildGetStartedHref(undefined, "website-footer")}
                 eventName="signup_started"
                 eventPayload={{ placement: "footer_primary" }}
                 className="rounded-xl bg-white px-4 py-2 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-100"
               >
-                Talk to us
+                {primaryCtaLabel}
               </TrackedLink>
               <TrackedLink
-                href="/demo-calls"
+                href="/examples"
                 eventName="marketing_cta_clicked"
-                eventPayload={{ placement: "footer_secondary", href: "/demo-calls" }}
+                eventPayload={{ placement: "footer_secondary", href: "/examples" }}
                 className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:border-slate-500 hover:bg-slate-900"
               >
-                Read sample calls
+                {positioning.secondaryCtaLabel}
               </TrackedLink>
             </div>
           </div>

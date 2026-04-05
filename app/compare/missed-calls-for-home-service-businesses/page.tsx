@@ -52,7 +52,7 @@ export default function MissedCallsForHomeServiceBusinessesPage() {
         { label: "Read sample calls", href: "/demo-calls" },
       ]}
       ctaTitle="Want a better setup than missed calls and voicemail?"
-      ctaBody="Read sample calls, then talk to us about how your business handles missed calls today."
+      ctaBody="Read example calls, compare the fit, and start setup when you're ready."
     />
   )
 }

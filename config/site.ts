@@ -26,7 +26,10 @@ export const integrations = contract.integrations
 export const positioning = contract.positioning
 export const sourcedProof = contract.sourcedProof
 export const customerLoginPath = "/login" as const
+export const leadCapturePath = "/sign-up" as const
 export const customerLoginUrl = new URL("/sign-in", `${contract.brand.appOrigin}/`).toString()
+export const selfServeCheckoutEnabled = contract.featureFlags.selfServeCheckout === true
+export const primaryCtaLabel = positioning.primaryCtaLabel || "Start setup"
 
 export const primaryNav = [
   { label: "Product", href: "/product" },
@@ -50,7 +53,7 @@ export const secondaryNav = [
   { label: "Jobber", href: "/integrations/jobber" },
   { label: "Google Calendar", href: "/integrations/google-calendar" },
   { label: "Resources", href: "/resources" },
-  { label: "Sample Calls", href: "/demo-calls" },
+  { label: "Examples", href: "/examples" },
   { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
 ] as const
@@ -61,7 +64,10 @@ export function getPlan(planId?: string | null) {
 }
 
 export function buildGetStartedHref(planId?: string | null, source = "website") {
-  const url = new URL("/sign-up", `${siteConfig.url}/`)
+  if (!selfServeCheckoutEnabled) {
+    return buildLeadFormHref(planId, source)
+  }
+  const url = new URL("/start", `${siteConfig.appUrl}/`)
   const plan = getPlan(planId) || plans[0]
   if (plan) {
     url.searchParams.set("plan", plan.id)
@@ -69,11 +75,19 @@ export function buildGetStartedHref(planId?: string | null, source = "website") 
   if (source) {
     url.searchParams.set("source", source)
   }
-  return `${url.pathname}${url.search}`
+  return url.toString()
 }
 
 export function buildLeadFormHref(planId?: string | null, source = "website") {
-  return `${buildGetStartedHref(planId, source)}#lead-form`
+  const url = new URL(leadCapturePath, `${siteConfig.url}/`)
+  const plan = getPlan(planId) || plans[0]
+  if (plan) {
+    url.searchParams.set("plan", plan.id)
+  }
+  if (source) {
+    url.searchParams.set("source", source)
+  }
+  return `${url.pathname}${url.search}#lead-form`
 }
 
 export function absoluteUrl(path = "/") {

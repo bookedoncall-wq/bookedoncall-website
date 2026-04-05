@@ -1,4 +1,3 @@
-import { ComingSoonProof } from "@/components/marketing/ComingSoonProof"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
@@ -47,9 +46,9 @@ const demoCalls = [
 ] as const
 
 export const metadata = buildPageMetadata({
-  title: "Sample call transcripts",
+  title: "Example calls",
   description:
-    "Illustrative sample call transcripts showing how BookedOnCall can sound on plumbing, HVAC, and electrical calls.",
+    "Example call flows showing how BookedOnCall handles common plumbing, HVAC, and electrical scenarios.",
   path: "/demo-calls",
 })
 
@@ -66,9 +65,9 @@ export default function DemoCallsPage() {
         })}
       />
       <PageIntro
-        eyebrow="Sample calls"
-        title="Illustrative call transcripts."
-        description="These are sample call flows, not customer recordings. They show the kind of questions BookedOnCall can ask and the kind of details you can get back."
+        eyebrow="Examples"
+        title="See how common calls can move from first ring to clear next step."
+        description="Start with three common scenarios. Each one shows what the caller says, what BookedOnCall asks, and what your shop gets back."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -87,22 +86,36 @@ export default function DemoCallsPage() {
                 ))}
               </div>
               <p className="mt-5 text-sm leading-7 text-slate-600">
-                <strong className="text-slate-950">Why it matters:</strong> {call.outcome}
+                <strong className="text-slate-950">What the shop gets back:</strong> {call.outcome}
               </p>
             </article>
           ))}
         </div>
       </section>
 
-      <ComingSoonProof
-        eyebrow="More proof"
-        title="More demos and proof will live here."
-        description="The transcript examples are live now. Audio demos, customer proof, and trade-by-trade case studies will be added here as they're ready to publish."
-      />
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-7 shadow-sm">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Lower-risk setup</p>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">Private test first. Live only when it sounds right.</h2>
+            <p className="text-base leading-8 text-slate-600">
+              BookedOnCall starts with a private test call so you can hear the flow, review the handoff, and decide what should happen before your live number points at it.
+            </p>
+          </article>
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What to review next</p>
+            <div className="grid gap-3 text-sm leading-7 text-slate-600">
+              <p>Compare BookedOnCall to voicemail if your shop still loses work to unanswered calls.</p>
+              <p>Check pricing when you want to see what Starter and Pro include.</p>
+              <p>Review integrations if you want Jobber or Google Calendar in the booking path.</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
       <CtaBand
-        title="Want to hear how this could fit your business?"
-        body="See the plans and send your details. We can talk through the kinds of calls you get every week."
+        title="Ready to turn example calls into your setup?"
+        body="Choose a plan, run a private test call, and go live only when the flow sounds right."
       />
     </>
   )

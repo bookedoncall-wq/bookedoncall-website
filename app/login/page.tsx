@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { buildLeadFormHref, customerLoginUrl, siteConfig } from "@/config/site"
+import { buildGetStartedHref, customerLoginUrl, primaryCtaLabel, selfServeCheckoutEnabled, siteConfig } from "@/config/site"
 import { buildPageMetadata } from "@/lib/seo"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
@@ -27,7 +27,9 @@ export default function LoginPage() {
             <div className="grid gap-3">
               <h2 className="text-3xl font-black text-slate-950">Use the app for sign-in and onboarding.</h2>
               <p className="text-base leading-7 text-slate-600">
-                Existing customers should use the BookedOnCall app for login, onboarding, and dashboard access. If you were sent to finish setup after checkout, the app will route you to the right place after you sign in.
+                {selfServeCheckoutEnabled
+                  ? "Existing customers should use the BookedOnCall app for login, onboarding, and dashboard access. New customers should start on the website, then continue into secure checkout and app setup."
+                  : "Existing customers should use the BookedOnCall app for login, onboarding, and dashboard access. New customers should start on the website first so we can send them into the right app flow."}
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -43,7 +45,7 @@ export default function LoginPage() {
                 Go to customer login
               </TrackedLink>
               <TrackedLink
-                href={buildLeadFormHref(undefined, "website-login-page")}
+                href={buildGetStartedHref(undefined, "website-login-page")}
                 eventName="signup_started"
                 eventPayload={{ placement: "login_secondary" }}
                 className={cn(
@@ -51,7 +53,7 @@ export default function LoginPage() {
                   "rounded-xl border-slate-300 px-6 text-slate-950 hover:bg-white"
                 )}
               >
-                Talk to us
+                {primaryCtaLabel}
               </TrackedLink>
             </div>
             <p className="text-sm leading-6 text-slate-500">
@@ -75,12 +77,12 @@ export default function LoginPage() {
                 If your onboarding link is stale or you are not sure which email was used, contact {siteConfig.email} and we will help you get back into the right account.
               </p>
               <TrackedLink
-                href={buildLeadFormHref(undefined, "website-login-help")}
+                href={buildGetStartedHref(undefined, "website-login-help")}
                 eventName="signup_started"
                 eventPayload={{ placement: "login_help" }}
                 className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-amber-700"
               >
-                Talk to us
+                {primaryCtaLabel}
                 <ArrowRight className="size-4" />
               </TrackedLink>
             </article>

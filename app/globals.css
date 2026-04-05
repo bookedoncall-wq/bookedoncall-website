@@ -142,6 +142,10 @@
   ::selection {
     background: rgba(245, 158, 11, 0.22);
   }
+
+  .font-black {
+    font-weight: 800;
+  }
 }
 
 @layer utilities {

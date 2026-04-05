@@ -3,7 +3,7 @@ import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { afterCallArtifacts, faqEntries, homepageTrustPoints, productFlowSteps, resourceHighlights, useCaseOrder, useCasePages } from "@/config/marketing"
-import { buildLeadFormHref, integrations, plans, positioning, sourcedProof, supportedTrades } from "@/config/site"
+import { buildGetStartedHref, integrations, plans, positioning, primaryCtaLabel, selfServeCheckoutEnabled, sourcedProof, supportedTrades } from "@/config/site"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
 import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
@@ -47,17 +47,17 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="grid gap-7">
             <p className="w-fit rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
-              Built for shops that miss calls while you&apos;re on the job
+              Built for trades businesses that want a better first response
             </p>
             <div className="grid gap-5">
-              <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                You&apos;re on the job. Your phone still gets answered.
+              <h1 className="max-w-4xl text-5xl font-extrabold leading-[0.96] text-slate-950 sm:text-6xl">
+                Answer more calls. Win more of the work your shop should get.
               </h1>
               <p className="max-w-3xl text-xl leading-8 text-slate-600">{positioning.oneLiner}</p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <TrackedLink
-                href={buildLeadFormHref(undefined, "website-home-hero")}
+                href={buildGetStartedHref(undefined, "website-home-hero")}
                 eventName="signup_started"
                 eventPayload={{ placement: "home_hero_primary" }}
                 className={cn(
@@ -65,7 +65,7 @@ export default function HomePage() {
                   "rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
                 )}
               >
-                {positioning.primaryCtaLabel}
+                {primaryCtaLabel}
               </TrackedLink>
               <TrackedLink
                 href="/demo-calls"
@@ -131,19 +131,19 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-4 text-center text-sm font-semibold text-white sm:grid-cols-2 lg:grid-cols-4">
           <p className="flex items-center justify-center gap-2">
             <PhoneCall className="size-4 text-amber-300" />
-            Answers missed calls while you&apos;re on the job
+            Gives callers a better first response
           </p>
           <p className="flex items-center justify-center gap-2">
             <CalendarClock className="size-4 text-amber-300" />
-            Booking when your setup allows it
+            Private test call before you go live
           </p>
           <p className="flex items-center justify-center gap-2">
             <ShieldCheck className="size-4 text-amber-300" />
-            Clean callbacks when a person should step in
+            Booking when your setup allows it
           </p>
           <p className="flex items-center justify-center gap-2">
             <ArrowRight className="size-4 text-amber-300" />
-            Works with Jobber and Google Calendar
+            Keep your number flow with Jobber or Google Calendar when connected
           </p>
         </div>
       </section>
@@ -438,13 +438,13 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
             <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Resources</p>
-            <h2 className="text-4xl font-black text-slate-950">Read, compare, and hear how it works.</h2>
+            <h2 className="text-4xl font-black text-slate-950">Start with examples, then compare the alternatives.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              A lot of buyers want more than a homepage. These are the best pages to start with.
+              Hear example calls first. Then compare BookedOnCall to voicemail and answering services. Then check pricing and integrations.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {resourceHighlights.map((resource) => (
+            {resourceHighlights.map((resource, index) => (
               <TrackedLink
                 key={resource.href}
                 href={resource.href}
@@ -452,6 +452,7 @@ export default function HomePage() {
                 eventPayload={{ placement: "home_resources", href: resource.href }}
                 className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
               >
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-amber-700">Step {index + 1}</p>
                 <h3 className="mb-3 text-[1.35rem] font-black leading-tight text-slate-950">{resource.title}</h3>
                 <p className="text-base leading-7 text-slate-600">{resource.description}</p>
               </TrackedLink>
@@ -466,7 +467,9 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Pricing</p>
             <h2 className="text-4xl font-black text-slate-950">Straightforward monthly pricing.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              Start with the plan that looks closest. Then talk to us about how you want calls, callbacks, and supported booking handled.
+              {selfServeCheckoutEnabled
+                ? "Start with the plan that looks closest. Then continue through secure checkout and app setup at your own pace."
+                : "Start with the plan that looks closest. Then request setup so we can align how calls, callbacks, and supported booking should work for your business."}
             </p>
           </div>
           <div className="grid gap-4">
@@ -481,12 +484,12 @@ export default function HomePage() {
                   {plan.includedMinutes} included minutes, then ${plan.overageMinuteUsd.toFixed(2)}/minute.
                 </p>
                 <TrackedLink
-                  href={buildLeadFormHref(plan.id, "website-home-plan")}
+                  href={buildGetStartedHref(plan.id, "website-home-plan")}
                   eventName="pricing_plan_selected"
                   eventPayload={{ placement: "home_plan", planId: plan.id }}
                   className="text-sm font-bold text-amber-700 underline decoration-amber-300 underline-offset-4"
                 >
-                  Talk to us about {plan.name}
+                  {selfServeCheckoutEnabled ? `Start with ${plan.name}` : `Request ${plan.name} setup`}
                 </TrackedLink>
               </article>
             ))}
@@ -524,7 +527,7 @@ export default function HomePage() {
 
       <CtaBand
         title="Want to see if BookedOnCall fits your business?"
-        body="Read sample calls, review the pages that match your trade, and talk to us about how you handle missed calls today."
+        body="Read example calls, review the pages that match your trade, and start setup when you're ready."
       />
     </>
   )

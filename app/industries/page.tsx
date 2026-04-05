@@ -127,7 +127,7 @@ export default function IndustriesPage() {
 
       <CtaBand
         title="Want to see which setup fits your trade?"
-        body="Start with your trade page, read sample calls, or talk to us about how your business handles missed calls today."
+        body="Start with the trade page that matches your work, then review example calls, integrations, and pricing."
       />
     </>
   )

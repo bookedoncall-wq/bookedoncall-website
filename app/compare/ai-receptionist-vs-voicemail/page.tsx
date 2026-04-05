@@ -52,7 +52,7 @@ export default function AiReceptionistVsVoicemailPage() {
         { label: "See pricing", href: "/pricing" },
       ]}
       ctaTitle="Want something better than voicemail?"
-      ctaBody="Read sample calls, then talk to us about how your business handles missed calls today."
+      ctaBody="Read example calls, compare the fit, and start setup when you're ready."
     />
   )
 }
