@@ -27,7 +27,7 @@ const extraResources = [
 export const metadata = buildPageMetadata({
   title: "Resources",
   description:
-    "Sample calls, comparisons, practical guides, and proof-backed context for trades businesses evaluating BookedOnCall.",
+    "Example calls, comparisons, pricing, integrations, and FAQs for trades businesses evaluating BookedOnCall.",
   path: "/resources",
 })
 
@@ -46,7 +46,7 @@ export default function ResourcesPage() {
       <PageIntro
         eyebrow="Resources"
         title="Examples, comparisons, pricing, and integrations."
-        description="Start with example calls. Then compare BookedOnCall to voicemail and answering services. Then review pricing and integrations."
+        description="Hear how BookedOnCall sounds, compare it with voicemail and answering services, and review pricing and integrations."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -87,8 +87,8 @@ export default function ResourcesPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Useful context</p>
-            <h2 className="text-4xl font-black text-slate-950">A few practical benchmarks.</h2>
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Outside numbers</p>
+            <h2 className="text-4xl font-black text-slate-950">A few outside numbers worth knowing.</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {sourcedProof.map((item) => (
@@ -111,7 +111,7 @@ export default function ResourcesPage() {
 
       <CtaBand
         title="Ready to see how BookedOnCall fits your shop?"
-        body="Start with examples, compare the alternatives, and then move into pricing or setup when you're ready."
+        body="Hear example calls, compare your options, and move into pricing or setup when you&apos;re ready."
       />
     </>
   )

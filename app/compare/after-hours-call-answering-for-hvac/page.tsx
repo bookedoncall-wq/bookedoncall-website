@@ -37,10 +37,10 @@ export default function AfterHoursCallAnsweringForHvacPage() {
         {
           title: "What a better setup looks like",
           body:
-            "The caller gets a response, the assistant captures the number, address, and symptoms, and you get a cleaner handoff. If the request fits your setup, BookedOnCall can move toward the next supported step. If not, it still comes back as a clean callback.",
+            "The caller gets a response, the assistant captures the number, address, and symptoms, and you get a clearer handoff. If the request fits your setup, BookedOnCall can move toward the next supported step. If not, it still comes back with clear details for follow-up.",
         },
         {
-          title: "Where BookedOnCall fits",
+          title: "How BookedOnCall helps",
           body:
             "BookedOnCall helps HVAC businesses stay responsive after hours without pretending every call should be handled the same way. It captures the basics, keeps the caller moving, and gives you usable context for what happens next.",
         },

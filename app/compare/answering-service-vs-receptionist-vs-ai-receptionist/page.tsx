@@ -40,7 +40,7 @@ export default function AnsweringServiceVsReceptionistVsAiReceptionistPage() {
             "Answering services can keep the line covered, but they often rely on generic scripts and may still leave you with thin notes, partial context, and a second conversation that has to start over.",
         },
         {
-          title: "Where BookedOnCall fits",
+          title: "How BookedOnCall helps",
           body:
             "BookedOnCall fits the middle ground for businesses that want a stronger first response than voicemail or a generic answering service, but are not trying to build a full front desk first. It is built around the trades call flow: capture the job, keep the customer moving, and route the right next step.",
         },
@@ -52,7 +52,7 @@ export default function AnsweringServiceVsReceptionistVsAiReceptionistPage() {
         { label: "See the product", href: "/product" },
       ]}
       ctaTitle="Want to compare the options against your actual call flow?"
-      ctaBody="Talk to us about how your business handles missed calls today and whether BookedOnCall fits that gap."
+      ctaBody="Talk to us about how your business handles incoming calls today and what the right setup looks like."
     />
   )
 }

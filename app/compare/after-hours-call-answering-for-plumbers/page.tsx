@@ -37,10 +37,10 @@ export default function AfterHoursCallAnsweringForPlumbersPage() {
         {
           title: "What a better setup looks like",
           body:
-            "Urgent callers get a response instead of a dead-end voicemail. You get the customer name, number, address, and problem details. Jobs that still need a person come back as clean callbacks instead of scattered messages.",
+            "Urgent callers get a response instead of a dead-end voicemail. You get the customer name, number, address, and problem details. Jobs that still need a person come back with clear details for follow-up instead of scattered messages.",
         },
         {
-          title: "Where BookedOnCall fits",
+          title: "How BookedOnCall helps",
           body:
             "BookedOnCall gives plumbing businesses a better after-hours first response. It can collect the customer details, capture the problem, and help you follow up faster instead of starting from a rushed voicemail.",
         },

@@ -50,7 +50,7 @@ export default function HomePage() {
               Built for trades businesses that want a better first response
             </p>
             <div className="grid gap-5">
-              <h1 className="max-w-4xl text-5xl font-extrabold leading-[0.96] text-slate-950 sm:text-6xl">
+              <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
                 Answer more calls. Win more of the work your shop should get.
               </h1>
               <p className="max-w-3xl text-xl leading-8 text-slate-600">{positioning.oneLiner}</p>
@@ -120,7 +120,7 @@ export default function HomePage() {
               <ul className="grid gap-2 text-sm leading-6 text-slate-600">
                 <li>Caller details and service address</li>
                 <li>Job summary with the likely next step</li>
-                <li>A supported booking or a clean callback handoff</li>
+                <li>A supported booking path or a clear callback handoff</li>
               </ul>
             </div>
           </aside>
@@ -154,7 +154,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How it works</p>
             <h2 className="text-4xl font-black text-slate-950">Answer, qualify, then move to the right next step.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall isn&apos;t trying to sound clever. It&apos;s trying to give your business a better first response and you a cleaner handoff.
+              BookedOnCall isn&apos;t trying to sound clever. It&apos;s trying to give your business a better first response and you a clearer next step.
             </p>
             <TrackedLink
               href="/product"
@@ -252,7 +252,7 @@ export default function HomePage() {
                   <div className="grid gap-2">
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-300">How it gets back to you</p>
                     <p className="max-w-lg text-sm leading-6 text-slate-300">
-                      The result can land as a clean callback, a booking path, or an urgent follow-up with enough context to act fast.
+                      The result can come back as a clear callback request, a booking path, or an urgent follow-up with enough context to act fast.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2 lg:justify-end">
@@ -328,10 +328,10 @@ export default function HomePage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Useful context</p>
-            <h2 className="text-4xl font-black text-slate-950">A few practical benchmarks.</h2>
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Outside numbers</p>
+            <h2 className="text-4xl font-black text-slate-950">A few outside numbers worth knowing.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              Not product claims. Just a few outside references that help frame missed calls, callback speed, and staffing cost.
+              These references help show why response time, follow-up speed, and staffing cost matter when you decide how to handle incoming calls.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
@@ -438,9 +438,9 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
             <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Resources</p>
-            <h2 className="text-4xl font-black text-slate-950">Start with examples, then compare the alternatives.</h2>
+            <h2 className="text-4xl font-black text-slate-950">See how it sounds, then compare your options.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              Hear example calls first. Then compare BookedOnCall to voicemail and answering services. Then check pricing and integrations.
+              Hear example calls, compare BookedOnCall with voicemail and answering services, and review pricing and integrations when you&apos;re ready.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -469,7 +469,7 @@ export default function HomePage() {
             <p className="text-lg leading-8 text-slate-600">
               {selfServeCheckoutEnabled
                 ? "Start with the plan that looks closest. Then continue through secure checkout and app setup at your own pace."
-                : "Start with the plan that looks closest. Then request setup so we can align how calls, callbacks, and supported booking should work for your business."}
+                : "Start with the plan that fits your call volume. Then we help set the right call flow before anything goes live."}
             </p>
           </div>
           <div className="grid gap-4">

@@ -75,9 +75,9 @@ export default async function SignUpPage({
 
           <aside className="grid gap-4">
             <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="mb-3 text-2xl font-black text-slate-950">Before we provision your workspace</h2>
+              <h2 className="mb-3 text-2xl font-black text-slate-950">Before you start onboarding</h2>
               <p className="text-base leading-7 text-slate-600">
-                The fastest way to know whether BookedOnCall fits is to review the examples and tell us how you want new jobs handled before we send you into onboarding.
+                The fastest way to know whether BookedOnCall fits is to hear a few example calls and see how the handoff would work for your shop.
               </p>
               <div className="mt-5 grid gap-3">
                 <TrackedLink
@@ -103,8 +103,8 @@ export default async function SignUpPage({
               <h2 className="mb-3 text-2xl font-black text-slate-950">What happens next</h2>
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
                 <li>We confirm which trade and call types matter most for your business.</li>
-                <li>We align on whether BookedOnCall should book jobs or route clean callbacks.</li>
-                <li>We send the right app onboarding path once your workspace is ready.</li>
+                <li>We align on what can be booked automatically and what should come back to your team.</li>
+                <li>We send your app access and onboarding steps once the workspace is ready.</li>
                 <li>You run a private test call before any live number points at BookedOnCall.</li>
               </ul>
             </article>

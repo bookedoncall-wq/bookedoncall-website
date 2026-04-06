@@ -41,7 +41,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
           </article>
 
           <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
-            <h2 className="mb-4 text-3xl font-black text-slate-950">Why businesses use BookedOnCall</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">Why shops in this trade care</h2>
             <div className="grid gap-3">
               {content.reasons.map((item) => (
                 <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-base leading-8 text-slate-700">
@@ -95,9 +95,9 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
             </p>
           </article>
           <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
-            <h2 className="mb-3 text-2xl font-black text-slate-950">Book or hand back cleanly</h2>
+            <h2 className="mb-3 text-2xl font-black text-slate-950">Book when it fits, follow up when it doesn&apos;t</h2>
             <p className="text-base leading-7 text-slate-600">
-              Supported jobs can move toward a booking. Edge cases and approval-only work still come back as clean callbacks with context.
+              Supported jobs can move toward a booking. Edge cases and approval-only work still come back with clear details for follow-up.
             </p>
           </article>
         </div>
@@ -113,7 +113,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See the product flow</h2>
             <p className="text-base leading-7 text-slate-600">
-              See how a call moves from first ring to a booked slot or a clean callback.
+              See how a call moves from first ring to a booking path or a clear next step.
             </p>
           </TrackedLink>
           <TrackedLink
@@ -135,7 +135,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See pricing</h2>
             <p className="text-base leading-7 text-slate-600">
-              Compare Starter and Pro, then talk through which setup fits your business.
+              Compare Starter and Pro and see which setup fits your shop.
             </p>
           </TrackedLink>
         </div>

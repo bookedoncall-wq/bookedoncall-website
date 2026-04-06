@@ -20,7 +20,7 @@ export const faqEntries = [
       "BookedOnCall works with Jobber and Google Calendar so it can fit into the scheduling tools many home-service businesses already use."
   },
   {
-    question: "What happens if a job is outside the service area or needs manual review?",
+    question: "What happens if a job is outside the service area or needs your approval?",
     answer:
       "BookedOnCall can still collect the customer details and send the call back to you for review instead of forcing a booking."
   },
@@ -136,11 +136,11 @@ export const workflowSteps = [
   },
   {
     title: "BookedOnCall checks the next step",
-    body: "When scheduling is connected and the request fits your setup, it can offer a booking. If not, it captures a clean callback."
+    body: "When scheduling is connected and the request fits your setup, it can offer a booking. If not, it captures the lead and tees up the right follow-up."
   },
   {
     title: "You get the result",
-    body: "You get a clear summary, a booked appointment, or a clean callback request with context."
+    body: "You get a clear summary, a booked appointment, or a follow-up request with context."
   }
 ] as const
 
@@ -155,7 +155,7 @@ export const productFlowSteps = [
   },
   {
     title: "Move to the right next step",
-    body: "If the request fits your rules and your schedule is connected, it can move toward a booking. If not, it hands the call back as a clean callback."
+    body: "If the request fits your rules and your schedule is connected, it can move toward a booking. If not, it sends the call back with clear details for follow-up."
   },
 ] as const
 
@@ -170,7 +170,7 @@ export const afterCallArtifacts = [
   },
   {
     title: "Callback handoff",
-    body: "Manual-review, approval-only, and out-of-area jobs still come back with clean details."
+    body: "Out-of-area jobs, approval-only work, and other edge cases still come back with clear details."
   },
 ] as const
 
@@ -250,8 +250,8 @@ export const useCasePages = {
     path: "/for/electricians",
     title: "AI call answering for electrical contractors",
     summary:
-      "BookedOnCall helps electrical contractors answer new calls, qualify the work, and send risky or complex jobs back for human review when needed.",
-    cardSummary: "Qualify electrical jobs clearly and send risky or unusual work back for human review.",
+      "BookedOnCall helps electrical contractors answer new calls, qualify the work, and send risky or complex jobs back to your team when needed.",
+    cardSummary: "Qualify electrical jobs clearly and send risky or unusual work back to your team.",
     commonCalls: [
       "Panel, outlet, lighting, troubleshooting, and service-upgrade calls that need better intake.",
       "Jobs where safety, scope, or pricing questions mean a person should make the final call.",
@@ -263,7 +263,7 @@ export const useCasePages = {
       "Keep new leads organized so you can move quickly."
     ],
     trustCopy:
-      "Electrical work often needs a little more judgment before anything gets promised. BookedOnCall helps you capture the right details, keep the customer moving, and hand the job back for human review when that is the right call.",
+      "Electrical work often needs a little more judgment before anything gets promised. BookedOnCall helps you capture the right details, keep the customer moving, and hand the job back to your team when that is the right call.",
     ctaTitle: "Ready to set up electrical call handling?",
     ctaBody: "Choose a plan and give new electrical leads a better first response."
   },
@@ -346,7 +346,7 @@ export const useCasePages = {
     cardSummary: "A better first response for handyman, repair, install, and general home-service calls.",
     commonCalls: [
       "Handyman, repair, install, and general service inquiries that come in while you're already booked out in the field.",
-      "Calls that need a quick first response and a clean callback instead of a long voicemail.",
+      "Calls that need a quick first response and a clear follow-up instead of a long voicemail.",
       "New-customer inquiries where you need the basics before deciding on the next step."
     ],
     reasons: [
@@ -379,12 +379,12 @@ export const integrationPages = {
     bullets: [
       "Check availability through Jobber when you want BookedOnCall to offer appointment times.",
       "Keep your business on the same tools it already uses every day.",
-      "Fall back to a clean callback handoff when a job still needs a person."
+      "Send the call back with clear details when a job still needs a person."
     ],
     outcomeCards: [
       "BookedOnCall can move supported jobs toward a booking when your Jobber calendar is connected.",
       "Your team can keep using the same scheduling process instead of learning a new back office.",
-      "Manual-review jobs still come back as clean callbacks instead of messy voicemail."
+      "Jobs that still need your approval come back with clear details instead of messy voicemail."
     ]
   },
   "google-calendar": {
@@ -399,7 +399,7 @@ export const integrationPages = {
     outcomeCards: [
       "BookedOnCall can check the calendar before offering supported appointment times.",
       "You keep the scheduling workflow you already know instead of moving to a new system.",
-      "If a person should decide, the call still comes back as a clean callback."
+      "If a person should decide, the call still comes back with clear details for follow-up."
     ]
   }
 } as const

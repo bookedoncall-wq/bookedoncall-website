@@ -60,7 +60,7 @@ export default function DemoCallsPage() {
         data={buildServiceSchema({
           name: "Sample BookedOnCall call transcripts",
           description:
-            "Illustrative sample call transcripts for plumbing, HVAC, and electrical service businesses.",
+            "Example call transcripts for plumbing, HVAC, and electrical service businesses.",
           path: "/demo-calls",
         })}
       />
@@ -105,7 +105,7 @@ export default function DemoCallsPage() {
           <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What to review next</p>
             <div className="grid gap-3 text-sm leading-7 text-slate-600">
-              <p>Compare BookedOnCall to voicemail if your shop still loses work to unanswered calls.</p>
+              <p>Compare BookedOnCall to voicemail if unanswered calls still turn into missed work.</p>
               <p>Check pricing when you want to see what Starter and Pro include.</p>
               <p>Review integrations if you want Jobber or Google Calendar in the booking path.</p>
             </div>

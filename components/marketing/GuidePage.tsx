@@ -83,8 +83,8 @@ export function GuidePage({
         <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-6xl gap-8">
             <div className="grid gap-4 text-center">
-              <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Useful context</p>
-              <h2 className="text-4xl font-black text-slate-950">A few practical benchmarks.</h2>
+              <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Outside numbers</p>
+              <h2 className="text-4xl font-black text-slate-950">A few outside numbers worth knowing.</h2>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {proofItems.map((item) => (
@@ -111,7 +111,7 @@ export function GuidePage({
           <div className="mx-auto grid max-w-6xl gap-8">
             <div className="grid gap-4 text-center">
               <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Next steps</p>
-              <h2 className="text-4xl font-black text-slate-950">Keep going from here.</h2>
+              <h2 className="text-4xl font-black text-slate-950">Where to look next.</h2>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {nextLinks.map((link) => (

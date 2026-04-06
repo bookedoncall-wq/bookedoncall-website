@@ -26,7 +26,7 @@ export default function ProductPage() {
       />
       <PageIntro
         eyebrow="Product"
-        title="The AI phone assistant for trades businesses that miss calls while they’re on the job."
+        title="The AI phone assistant for trades businesses that want a better first response."
         description={positioning.oneLiner}
       />
 
@@ -53,7 +53,7 @@ export default function ProductPage() {
                 <strong>Assistant:</strong> “I can help with that. What’s the best callback number and the service address?”
               </p>
               <p>
-                <strong>Next step:</strong> The job can move toward a booking if it fits your setup, or come back as a clean callback with context.
+                <strong>Next step:</strong> The job can move toward a booking if it fits your setup, or come back to your team with clear details for follow-up.
               </p>
             </div>
           </article>
@@ -145,8 +145,8 @@ export default function ProductPage() {
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4 text-center">
-            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why this matters</p>
-            <h2 className="text-4xl font-black text-slate-950">A few facts worth keeping in view.</h2>
+            <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Outside numbers</p>
+            <h2 className="text-4xl font-black text-slate-950">A few outside numbers worth knowing.</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {sourcedProof.map((item) => (
@@ -173,7 +173,7 @@ export default function ProductPage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Ready to see how it fits?</p>
             <h2 className="text-3xl font-black text-slate-950">Read sample calls or talk through your setup.</h2>
             <p className="text-base leading-8 text-slate-600">
-              If you want to know whether BookedOnCall fits your business, the fastest path is hearing a call and talking through how you want new jobs handled.
+              If you want to know whether BookedOnCall fits your business, hear how the calls sound and see how the flow would work for your shop.
             </p>
           </div>
           <div className="grid gap-3">
@@ -199,7 +199,7 @@ export default function ProductPage() {
 
       <CtaBand
         title="Want to talk through your call flow?"
-        body="Tell us how you handle missed calls today and we will help you decide where BookedOnCall fits."
+        body="Tell us how your shop handles incoming calls today and we&apos;ll help set the right flow."
       />
     </>
   )

@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/lib/seo"
 export const metadata = buildPageMetadata({
   title: "Missed calls for home-service businesses",
   description:
-    "Why missed calls matter for home-service businesses, what a better setup looks like, and where BookedOnCall fits.",
+    "Why missed calls matter for home-service businesses, what a better setup looks like, and how BookedOnCall helps.",
   path: "/compare/missed-calls-for-home-service-businesses",
 })
 
@@ -40,9 +40,9 @@ export default function MissedCallsForHomeServiceBusinessesPage() {
             "The customer gets a response, the basics are captured, and you get enough detail to decide the next step. Some jobs should move toward a booking. Others should come back for review. Either way, the caller shouldn't hit a dead end.",
         },
         {
-          title: "Where BookedOnCall fits",
+          title: "How BookedOnCall helps",
           body:
-            "BookedOnCall is built for that missed-call problem specifically. It answers when you can't, captures the job details, and either moves the work toward a supported booking or hands it back as a clean callback with context.",
+            "BookedOnCall is built for that missed-call problem specifically. It answers when you can't, captures the job details, and either moves the work toward a supported booking or sends it back with clear details for follow-up.",
         },
       ]}
       proofItems={sourcedProof}

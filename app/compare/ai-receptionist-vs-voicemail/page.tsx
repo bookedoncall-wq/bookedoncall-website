@@ -35,14 +35,14 @@ export default function AiReceptionistVsVoicemailPage() {
             "A better first response does more than pick up the call. It gathers the basics, keeps the caller moving, and gives you enough detail to decide whether the job should be booked or called back with context.",
         },
         {
-          title: "Why this matters most for trades businesses",
+          title: "Why trades shops feel it faster",
           body:
             "This matters most for owner-operators, smaller crews, and growing shops that don't have a full-time receptionist but still want to sound responsive and professional when a new customer calls.",
         },
         {
-          title: "Where BookedOnCall fits",
+          title: "How BookedOnCall helps",
           body:
-            "BookedOnCall isn't trying to be a generic contact-center tool. It's built for the home-service call flow: answer the missed call, capture the job details, and either move toward a supported booking or hand the call back as a clean callback.",
+            "BookedOnCall isn't trying to be a generic contact-center tool. It's built for the home-service call flow: answer the missed call, capture the job details, and either move toward a supported booking or send the call back with clear details for follow-up.",
         },
       ]}
       proofItems={sourcedProof.filter((item) => item.id !== "bls-receptionist-wage")}
