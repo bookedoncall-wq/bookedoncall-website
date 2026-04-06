@@ -80,7 +80,12 @@ export function LeadCaptureForm() {
       if (!response.ok || !body.ok) {
         setErrors(body.errors || {})
         setStatus("error")
-        setMessage(body.message || "We could not submit your request. Please try again.")
+        setMessage(
+          body.message ||
+            (body.errors && Object.keys(body.errors).length
+              ? "Please fix the highlighted fields and try again."
+              : "We could not submit your request. Please try again.")
+        )
         return
       }
 
