@@ -49,7 +49,7 @@ export default function MissedCallsForHomeServiceBusinessesPage() {
       nextLinks={[
         { label: "See the product", href: "/product" },
         { label: "Browse industries", href: "/industries" },
-        { label: "Read sample calls", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/examples" },
       ]}
       ctaTitle="Want a better setup than missed calls and voicemail?"
       ctaBody="Read example calls, compare the fit, and start setup when you're ready."

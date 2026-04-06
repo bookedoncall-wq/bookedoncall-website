@@ -15,7 +15,7 @@ const requiredRoutes = [
   "app/sign-up/page.tsx",
   "app/api/leads/route.ts",
   "app/faq/page.tsx",
-  "app/demo-calls/page.tsx",
+  "app/examples/page.tsx",
   "app/compare/ai-receptionist-vs-voicemail/page.tsx",
   "app/compare/after-hours-call-answering-for-plumbers/page.tsx",
   "app/for/plumbers/page.tsx",
@@ -97,7 +97,7 @@ if (!layoutSource.includes("StructuredData")) {
 }
 
 const sitemapSource = readText("app/sitemap.ts")
-if (!sitemapSource.includes("/faq") || !sitemapSource.includes("/integrations/jobber") || !sitemapSource.includes("/demo-calls")) {
+if (!sitemapSource.includes("/faq") || !sitemapSource.includes("/integrations/jobber") || !sitemapSource.includes("/examples")) {
   errors.push("app/sitemap.ts must include FAQ, demo, and integration pages")
 }
 

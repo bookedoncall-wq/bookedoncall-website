@@ -117,7 +117,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
             </p>
           </TrackedLink>
           <TrackedLink
-            href="/demo-calls"
+            href="/examples"
             eventName="marketing_cta_clicked"
             eventPayload={{ placement: "use_case_demo", path }}
             className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"

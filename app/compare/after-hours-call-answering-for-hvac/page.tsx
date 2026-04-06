@@ -48,7 +48,7 @@ export default function AfterHoursCallAnsweringForHvacPage() {
       proofItems={sourcedProof.filter((item) => item.id !== "bls-receptionist-wage")}
       nextLinks={[
         { label: "See the HVAC page", href: "/for/hvac" },
-        { label: "Read sample calls", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/examples" },
         { label: "See pricing", href: "/pricing" },
       ]}
       ctaTitle="Need better after-hours HVAC coverage?"

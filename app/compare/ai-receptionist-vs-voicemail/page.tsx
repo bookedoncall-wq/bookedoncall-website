@@ -47,7 +47,7 @@ export default function AiReceptionistVsVoicemailPage() {
       ]}
       proofItems={sourcedProof.filter((item) => item.id !== "bls-receptionist-wage")}
       nextLinks={[
-        { label: "Read sample calls", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/examples" },
         { label: "See the product", href: "/product" },
         { label: "See pricing", href: "/pricing" },
       ]}

@@ -177,7 +177,7 @@ export const afterCallArtifacts = [
 export const resourceHighlights = [
   {
     title: "Example calls",
-    href: "/demo-calls",
+    href: "/examples",
     description: "Start here to hear how a plumbing, HVAC, or electrical call can move from first question to clear next step."
   },
   {

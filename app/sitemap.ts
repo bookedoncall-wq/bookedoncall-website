@@ -15,7 +15,6 @@ const pages = [
   "/about",
   "/faq",
   "/examples",
-  "/demo-calls",
   "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
   "/compare/missed-calls-for-home-service-businesses",
   "/compare/after-hours-call-answering-for-hvac",

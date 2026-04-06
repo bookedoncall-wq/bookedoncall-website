@@ -106,9 +106,9 @@ export default function IndustriesPage() {
             <p className="text-base leading-7 text-slate-600">Learn how Jobber and Google Calendar fit into the call flow when you want scheduling support.</p>
           </TrackedLink>
           <TrackedLink
-            href="/demo-calls"
+            href="/examples"
             eventName="marketing_cta_clicked"
-            eventPayload={{ placement: "industries_demo", href: "/demo-calls" }}
+            eventPayload={{ placement: "industries_demo", href: "/examples" }}
             className="rounded-[1.75rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>

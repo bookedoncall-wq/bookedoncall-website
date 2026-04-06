@@ -178,9 +178,9 @@ export default function ProductPage() {
           </div>
           <div className="grid gap-3">
             <TrackedLink
-              href="/demo-calls"
+              href="/examples"
               eventName="marketing_cta_clicked"
-              eventPayload={{ placement: "product_demo", href: "/demo-calls" }}
+              eventPayload={{ placement: "product_demo", href: "/examples" }}
               className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-bold text-slate-900 transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               Read sample calls

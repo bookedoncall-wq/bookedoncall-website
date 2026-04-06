@@ -68,9 +68,9 @@ export default function HomePage() {
                 {primaryCtaLabel}
               </TrackedLink>
               <TrackedLink
-                href="/demo-calls"
+                href="/examples"
                 eventName="marketing_cta_clicked"
-                eventPayload={{ placement: "home_hero_secondary", href: "/demo-calls" }}
+                eventPayload={{ placement: "home_hero_secondary", href: "/examples" }}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   "rounded-xl border-slate-300 px-6 text-slate-950 hover:bg-white"

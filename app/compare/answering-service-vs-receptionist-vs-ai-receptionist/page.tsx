@@ -48,7 +48,7 @@ export default function AnsweringServiceVsReceptionistVsAiReceptionistPage() {
       proofItems={sourcedProof.filter((item) => item.id !== "google-missed-calls")}
       nextLinks={[
         { label: "See pricing", href: "/pricing" },
-        { label: "Read sample calls", href: "/demo-calls" },
+        { label: "Read sample calls", href: "/examples" },
         { label: "See the product", href: "/product" },
       ]}
       ctaTitle="Want to compare the options against your actual call flow?"
