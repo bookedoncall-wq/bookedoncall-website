@@ -94,10 +94,10 @@ export default function PricingPage() {
             <h2 className="mb-4 text-3xl font-black text-slate-950">Who Starter fits best</h2>
             <div className="grid gap-4 text-sm leading-7 text-slate-600">
               <div>
-                <p>Starter is built for businesses that want missed-call coverage, clear callbacks, and straightforward setup without paying for more volume than they need right away.</p>
+                <p>Starter is built for businesses that want a better first response, clear callbacks, and straightforward setup without paying for more volume than they need right away.</p>
               </div>
               <div>
-                <p>It&apos;s a great fit for owner-operators, family-run shops, and growing businesses that are tired of losing jobs to voicemail.</p>
+                <p>It&apos;s a great fit for owner-operators, family-run shops, and growing businesses that want cleaner handoffs before they add more volume or deeper customization.</p>
               </div>
             </div>
           </article>
@@ -125,8 +125,8 @@ export default function PricingPage() {
           <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Why people trust it</h2>
             <div className="grid gap-4 text-sm leading-7 text-slate-600">
-              <p>BookedOnCall was built around a simple problem: too many good trades businesses lose work because nobody can answer the phone while you&apos;re on a job.</p>
-              <p>That&apos;s why the product is focused on the basics that matter most: answering more calls, capturing clean details, and helping you move faster on real work.</p>
+              <p>BookedOnCall is built around a simple goal: give inbound callers a better first response and give your team a clearer next step.</p>
+              <p>That means answering more calls, capturing clean details, and moving quickly on the work your shop should actually win.</p>
             </div>
           </article>
         </div>

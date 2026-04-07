@@ -331,7 +331,7 @@ export default function HomePage() {
             <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Outside numbers</p>
             <h2 className="text-4xl font-black text-slate-950">A few outside numbers worth knowing.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              These references help show why response time, follow-up speed, and staffing cost matter when you decide how to handle incoming calls.
+              These references add context around response time, follow-up speed, and staffing cost as you compare different ways to handle inbound calls.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
