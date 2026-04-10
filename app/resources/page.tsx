@@ -20,7 +20,7 @@ const extraResources = [
   {
     title: "Integrations",
     href: "/integrations",
-    description: "See how Jobber and Google Calendar fit into the call flow when you want scheduling support.",
+    description: "See how Jobber, Google Calendar, and Text / SMS fit into the call flow, plus what is planned next.",
   },
 ] as const
 

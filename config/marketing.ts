@@ -17,7 +17,7 @@ export const faqEntries = [
   {
     question: "What integrations are supported today?",
     answer:
-      "BookedOnCall works with Jobber and Google Calendar so it can fit into the scheduling tools many home-service businesses already use."
+      "BookedOnCall supports Jobber, Google Calendar, and customer text messaging today. QuickBooks is the next targeted integration on the roadmap, but it is not live yet."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -87,7 +87,7 @@ export const homepageHighlights = [
   },
   {
     title: "Keep using the tools you already know",
-    body: "Connect Jobber or Google Calendar so BookedOnCall fits the way your business already schedules work."
+    body: "Keep Jobber, Google Calendar, and customer text messaging in the flow without changing how your team already works."
   }
 ] as const
 
@@ -131,12 +131,12 @@ export const workflowSteps = [
     body: "BookedOnCall answers when you can't get to the phone, so the lead doesn't drop into voicemail."
   },
   {
-    title: "The assistant gets the basics",
-    body: "Caller name, callback number, address, and job details are collected so you're not starting from scratch."
+    title: "The assistant confirms the core details",
+    body: "Caller name, callback number, service address, and the job details are captured first so your team has something usable right away."
   },
   {
     title: "BookedOnCall checks the next step",
-    body: "When scheduling is connected and the request fits your setup, it can offer a booking. If not, it captures the lead and tees up the right follow-up."
+    body: "If scheduling is connected and the request fits your setup, it can move toward a booking. If not, it captures the lead and lines up the right callback or follow-up."
   },
   {
     title: "You get the result",
@@ -146,16 +146,16 @@ export const workflowSteps = [
 
 export const productFlowSteps = [
   {
-    title: "Answer the call",
+    title: "Pick up right away",
     body: "BookedOnCall picks up when you can't get to the phone, whether you're in the truck, on a ladder, or already inside the next job."
   },
   {
-    title: "Qualify the work",
-    body: "It gets the basics first: caller name, callback number, service address, and what is actually going on."
+    title: "Confirm the core details",
+    body: "It gets the problem, callback number, service address, and the details your team needs before deciding the next step."
   },
   {
-    title: "Move to the right next step",
-    body: "If the request fits your rules and your schedule is connected, it can move toward a booking. If not, it sends the call back with clear details for follow-up."
+    title: "Route the job the right way",
+    body: "If the request fits your rules and your schedule is connected, it can move toward a booking. If not, it comes back to your team with a clear callback handoff."
   },
 ] as const
 
@@ -401,5 +401,38 @@ export const integrationPages = {
       "You keep the scheduling workflow you already know instead of moving to a new system.",
       "If a person should decide, the call still comes back with clear details for follow-up."
     ]
+  },
+  "text-sms": {
+    title: "BookedOnCall + Text / SMS",
+    summary:
+      "Use customer text messaging for supported follow-up, confirmations, and callback communication after the call.",
+    bullets: [
+      "Send supported customer follow-up texts after the call when messaging is enabled.",
+      "Keep confirmations, callback updates, and simple next-step communication in a channel customers already check.",
+      "Use messaging to support the handoff, not to force the whole job to be solved over text."
+    ],
+    outcomeCards: [
+      "Customers can receive supported follow-up texts once the call has the details your team needs.",
+      "Your team still gets the summary and decides what should move toward booking, callback, or manual review.",
+      "Messaging stays aligned with your configured workflow instead of turning into a separate office process."
+    ]
+  },
+  quickbooks: {
+    title: "BookedOnCall + QuickBooks",
+    summary:
+      "QuickBooks is the next targeted integration on the roadmap for customer context and cleaner office follow-up, but it is not live today.",
+    bullets: [
+      "The planned first step is read-only customer context, not a write-heavy accounting workflow inside the call path.",
+      "The goal is better office follow-up with clearer customer history when the business has usable QuickBooks data.",
+      "Roadmap items are directional and may change as the product and implementation priorities evolve."
+    ],
+    outcomeCards: [
+      "Planned: better customer context for repeat callers and office follow-up.",
+      "Planned: a narrow first release that adds signal without making QuickBooks a hard dependency for every call.",
+      "Current status: not available in BookedOnCall today."
+    ]
   }
 } as const
+
+export const roadmapDisclaimer =
+  "Roadmap items and coming-soon statements are informational only, may change, and do not guarantee delivery on a specific timeline."

@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "brand": {
     "name": "BookedOnCall",
     "tagline": "AI phone assistant for trades businesses",
@@ -40,9 +40,9 @@
     "Answers inbound calls for plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses.",
     "Collects caller name, callback number, address, job details, and service notes.",
     "Can offer appointments when scheduling is enabled and a supported calendar or scheduling tool is connected.",
-    "Works with Jobber and Google Calendar for supported scheduling setups.",
+    "Works with Jobber, Google Calendar, and customer text messaging for supported follow-up flows.",
     "Delivers a clear call summary and the next step, whether that is a booked appointment or a callback request.",
-    "Can send follow-up messages when customer messaging is turned on."
+    "Can send follow-up texts when customer messaging is turned on."
   ],
   "sourcedProof": [
     {
@@ -71,12 +71,26 @@
     {
       "id": "jobber",
       "name": "Jobber",
-      "description": "Connect Jobber so BookedOnCall fits the scheduling process you already use."
+      "description": "Connect Jobber so BookedOnCall fits the scheduling process you already use.",
+      "status": "available"
     },
     {
       "id": "google-calendar",
       "name": "Google Calendar",
-      "description": "Connect Google Calendar so BookedOnCall can check availability and book supported appointments."
+      "description": "Connect Google Calendar so BookedOnCall can check availability and book supported appointments.",
+      "status": "available"
+    },
+    {
+      "id": "text-sms",
+      "name": "Text / SMS",
+      "description": "Use customer text messaging for supported follow-up, confirmations, and callback communication.",
+      "status": "available"
+    },
+    {
+      "id": "quickbooks",
+      "name": "QuickBooks",
+      "description": "Coming soon: QuickBooks is the next targeted integration on the roadmap for customer context and office follow-up.",
+      "status": "coming_soon"
     }
   ],
   "plans": [

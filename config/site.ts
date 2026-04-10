@@ -23,6 +23,8 @@ export const plans = contract.plans
 export const validatedCapabilities = contract.validatedCapabilities
 export const supportedTrades = contract.supportedTrades
 export const integrations = contract.integrations
+export const liveIntegrations = integrations.filter((integration) => integration.status === "available")
+export const roadmapIntegrations = integrations.filter((integration) => integration.status === "coming_soon")
 export const positioning = contract.positioning
 export const sourcedProof = contract.sourcedProof
 export const customerLoginPath = "/login" as const
@@ -52,6 +54,8 @@ export const secondaryNav = [
   { label: "Integrations", href: "/integrations" },
   { label: "Jobber", href: "/integrations/jobber" },
   { label: "Google Calendar", href: "/integrations/google-calendar" },
+  { label: "Text / SMS", href: "/integrations/text-sms" },
+  { label: "QuickBooks", href: "/integrations/quickbooks" },
   { label: "Resources", href: "/resources" },
   { label: "Examples", href: "/examples" },
   { label: "FAQ", href: "/faq" },

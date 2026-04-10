@@ -43,11 +43,11 @@ const exampleCalls = [
     ],
     transcript: [
       "Caller: Our AC stopped working and the house is getting hot fast.",
-      "Assistant: Let me help get this moving. What’s a good callback number and your address?",
+      "Assistant: I can help with that. What’s the best callback number and the service address?",
       "Caller: 720-555-0142. We’re in Littleton.",
       "Assistant: Thanks. Is the system blowing air that’s not cold, or is it not turning on at all?",
       "Caller: It’s blowing, but it isn’t cold.",
-      "Assistant: Got it. I have the problem, your number, and the location. Someone can follow up with the next step."
+      "Assistant: Got it. I have the problem, your number, and the location. This can move toward the right next step now."
     ]
   },
   {
@@ -87,7 +87,7 @@ const nextSteps = [
   },
   {
     title: "Review integrations",
-    body: "See how Jobber and Google Calendar fit in once you want real booking paths.",
+    body: "See the live Jobber, Google Calendar, and Text / SMS integrations, plus the QuickBooks roadmap note.",
     href: "/integrations",
   }
 ] as const

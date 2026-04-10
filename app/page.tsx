@@ -99,16 +99,16 @@ export default function HomePage() {
               </div>
               <div className="grid gap-3 text-sm leading-6 text-slate-200">
                 <p>
-                  <strong>Caller:</strong> &ldquo;My AC stopped working. Can someone come out this week?&rdquo;
+                  <strong>Caller:</strong> &ldquo;Our AC stopped working and the house is getting hot.&rdquo;
                 </p>
                 <p>
                   <strong>Assistant:</strong> &ldquo;I can help with that. What&apos;s the best callback number and service address?&rdquo;
                 </p>
                 <p>
-                  <strong>Caller:</strong> &ldquo;720-555-0142. We&apos;re in Littleton.&rdquo;
+                  <strong>Caller:</strong> &ldquo;719-555-0142. We&apos;re at 4821 Maple Drive.&rdquo;
                 </p>
                 <p>
-                  <strong>Assistant:</strong> &ldquo;Thanks. Is the system blowing air that isn&apos;t cold, or not turning on at all?&rdquo;
+                  <strong>Assistant:</strong> &ldquo;Thanks. I&apos;ll confirm a few details so this can either move toward booking or come back to the team with a clear next step.&rdquo;
                 </p>
               </div>
             </div>
@@ -118,8 +118,8 @@ export default function HomePage() {
                 <strong className="text-slate-950">What you get back</strong>
               </div>
               <ul className="grid gap-2 text-sm leading-6 text-slate-600">
-                <li>Caller details and service address</li>
-                <li>Job summary with the likely next step</li>
+                <li>Confirmed callback details and service address</li>
+                <li>Job summary with the next step spelled out</li>
                 <li>A supported booking path or a clear callback handoff</li>
               </ul>
             </div>
@@ -143,7 +143,7 @@ export default function HomePage() {
           </p>
           <p className="flex items-center justify-center gap-2">
             <ArrowRight className="size-4 text-amber-300" />
-            Keep your number flow with Jobber or Google Calendar when connected
+            Keep your number flow with scheduling and messaging tools when connected
           </p>
         </div>
       </section>
@@ -402,7 +402,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Integrations</p>
             <h2 className="text-4xl font-black text-slate-950">Fits the tools you already use.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall is built to fit your current scheduling workflow. Today that means supported setups with Jobber and Google Calendar.
+              BookedOnCall is built to fit your current workflow. Today that includes Jobber, Google Calendar, and customer Text / SMS follow-up. QuickBooks is the next targeted integration on the roadmap.
             </p>
             <TrackedLink
               href="/integrations"
@@ -421,13 +421,20 @@ export default function HomePage() {
                 href={`/integrations/${integration.id}`}
                 eventName="marketing_cta_clicked"
                 eventPayload={{ placement: "home_integrations", integration: integration.id }}
-                className={`flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40 ${index === 0 ? "border-white bg-white" : "border-amber-200 bg-amber-50"}`}
+                className={`flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40 ${integration.status === "coming_soon" || index > 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
               >
                 <div className="grid gap-3">
+                  <span
+                    className={`inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] ${integration.status === "coming_soon" ? "border border-amber-300 bg-white text-amber-800" : "border border-emerald-200 bg-emerald-50 text-emerald-800"}`}
+                  >
+                    {integration.status === "coming_soon" ? "Coming soon" : "Available now"}
+                  </span>
                   <div className="text-2xl font-black text-slate-950">{integration.name}</div>
                   <p className="text-base leading-7 text-slate-600">{integration.description}</p>
                 </div>
-                <span className="text-sm font-bold text-amber-700">See integration details</span>
+                <span className="text-sm font-bold text-amber-700">
+                  {integration.status === "coming_soon" ? "See roadmap note" : "See integration details"}
+                </span>
               </TrackedLink>
             ))}
           </div>

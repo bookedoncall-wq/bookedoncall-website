@@ -3,7 +3,7 @@ import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { afterCallArtifacts, productFlowSteps } from "@/config/marketing"
+import { afterCallArtifacts, productFlowSteps, roadmapDisclaimer } from "@/config/marketing"
 import { buildGetStartedHref, integrations, positioning, primaryCtaLabel, sourcedProof, validatedCapabilities } from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
@@ -53,7 +53,7 @@ export default function ProductPage() {
                 <strong>Assistant:</strong> “I can help with that. What’s the best callback number and the service address?”
               </p>
               <p>
-                <strong>Next step:</strong> The job can move toward a booking if it fits your setup, or come back to your team with clear details for follow-up.
+                <strong>Next step:</strong> BookedOnCall gets the basics first, then the job can move toward a booking if it fits your setup, or come back to your team with clear details for follow-up.
               </p>
             </div>
           </article>
@@ -133,10 +133,18 @@ export default function ProductPage() {
                   eventPayload={{ placement: "product_integration", href: `/integrations/${integration.id}` }}
                   className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left transition-colors hover:border-amber-300 hover:bg-amber-50/40"
                 >
+                  <span
+                    className={`mb-3 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] ${integration.status === "coming_soon" ? "border border-amber-300 bg-white text-amber-800" : "border border-emerald-200 bg-emerald-50 text-emerald-800"}`}
+                  >
+                    {integration.status === "coming_soon" ? "Coming soon" : "Available now"}
+                  </span>
                   <p className="mb-2 text-lg font-black text-slate-950">{integration.name}</p>
                   <p className="text-sm leading-7 text-slate-600">{integration.description}</p>
                 </TrackedLink>
               ))}
+              <p className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-7 text-amber-900">
+                {roadmapDisclaimer}
+              </p>
             </div>
           </article>
         </div>

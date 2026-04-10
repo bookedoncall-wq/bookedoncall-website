@@ -39,6 +39,12 @@ export default function TermsPage() {
             </p>
           </section>
           <section className="grid gap-3">
+            <h2 className="text-2xl font-black text-slate-950">Roadmap and coming soon statements</h2>
+            <p className="text-base leading-8 text-slate-700">
+            Any roadmap, planned integration, or coming-soon statement on bookedoncall.com is informational only, may change, and does not guarantee delivery on a specific timeline.
+            </p>
+          </section>
+          <section className="grid gap-3">
             <h2 className="text-2xl font-black text-slate-950">Operational responsibility</h2>
             <p className="text-base leading-8 text-slate-700">
             Customers remain responsible for reviewing their service area, scheduling rules, pricing, escalation behavior, and other settings used by BookedOnCall.

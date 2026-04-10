@@ -27,6 +27,8 @@ const requiredRoutes = [
   "app/for/general-home-services/page.tsx",
   "app/integrations/jobber/page.tsx",
   "app/integrations/google-calendar/page.tsx",
+  "app/integrations/text-sms/page.tsx",
+  "app/integrations/quickbooks/page.tsx",
   "app/privacy/page.tsx",
   "app/terms/page.tsx",
   "app/dpa/page.tsx",
@@ -97,7 +99,13 @@ if (!layoutSource.includes("StructuredData")) {
 }
 
 const sitemapSource = readText("app/sitemap.ts")
-if (!sitemapSource.includes("/faq") || !sitemapSource.includes("/integrations/jobber") || !sitemapSource.includes("/examples")) {
+if (
+  !sitemapSource.includes("/faq") ||
+  !sitemapSource.includes("/integrations/jobber") ||
+  !sitemapSource.includes("/integrations/text-sms") ||
+  !sitemapSource.includes("/integrations/quickbooks") ||
+  !sitemapSource.includes("/examples")
+) {
   errors.push("app/sitemap.ts must include FAQ, demo, and integration pages")
 }
 

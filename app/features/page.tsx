@@ -147,7 +147,9 @@ export default function FeaturesPage() {
                   eventPayload={{ placement: "features_integration", integration: integration.id }}
                   className="rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-900 transition-colors hover:border-amber-300"
                 >
-                  Read the {integration.name} integration page
+                  {integration.status === "coming_soon"
+                    ? `See the ${integration.name} roadmap page`
+                    : `Read the ${integration.name} integration page`}
                 </TrackedLink>
               ))}
             </div>
