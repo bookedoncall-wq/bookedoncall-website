@@ -13,6 +13,37 @@ export const metadata = buildPageMetadata({
   path: "/product",
 })
 
+const callFlowMoments = [
+  {
+    step: "Step 1",
+    title: "The caller explains what is wrong",
+    transcriptLabel: "Caller",
+    transcript: "Our AC stopped working and the house is getting hot.",
+    detail: "The call starts like a normal customer call, not a phone tree."
+  },
+  {
+    step: "Step 2",
+    title: "BookedOnCall gets the basics first",
+    transcriptLabel: "Assistant",
+    transcript: "I can help with that. What's the best callback number and the service address?",
+    detail: "Contact details and location get captured before the job goes anywhere."
+  },
+  {
+    step: "Step 3",
+    title: "The job gets qualified against your setup",
+    transcriptLabel: "Assistant",
+    transcript: "A few quick questions so I can move this the right way for your shop.",
+    detail: "BookedOnCall checks service type, urgency, and whether the request fits your booking rules."
+  },
+  {
+    step: "Step 4",
+    title: "The call ends with a clear next step",
+    transcriptLabel: "Result",
+    transcript: "Move toward booking if it fits, or hand it back with a clean callback summary.",
+    detail: "Your team gets something actionable instead of a thin voicemail."
+  }
+] as const
+
 export default function ProductPage() {
   return (
     <>
@@ -45,16 +76,22 @@ export default function ProductPage() {
               <PhoneCall className="size-5 text-amber-300" />
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-300">What happens on a call</p>
             </div>
-            <div className="grid gap-4 text-sm leading-7 text-slate-200">
-              <p>
-                <strong>Caller:</strong> “Our AC stopped working and the house is getting hot.”
-              </p>
-              <p>
-                <strong>Assistant:</strong> “I can help with that. What’s the best callback number and the service address?”
-              </p>
-              <p>
-                <strong>Next step:</strong> BookedOnCall gets the basics first, then the job can move toward a booking if it fits your setup, or come back to your team with clear details for follow-up.
-              </p>
+            <p className="mb-6 max-w-xl text-sm leading-7 text-slate-300">
+              A real call has a sequence. First the caller explains the problem, then BookedOnCall captures the basics, qualifies the request, and ends with a next step your team can actually use.
+            </p>
+            <div className="grid gap-3">
+              {callFlowMoments.map((moment) => (
+                <div key={moment.step} className="rounded-[1.25rem] border border-slate-800 bg-slate-900/70 p-4">
+                  <div className="mb-2 flex items-center justify-between gap-3">
+                    <span className="text-xs font-bold uppercase tracking-[0.18em] text-amber-300">{moment.step}</span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">{moment.title}</span>
+                  </div>
+                  <p className="mb-2 text-sm leading-7 text-slate-100">
+                    <strong>{moment.transcriptLabel}:</strong> &ldquo;{moment.transcript}&rdquo;
+                  </p>
+                  <p className="text-sm leading-6 text-slate-400">{moment.detail}</p>
+                </div>
+              ))}
             </div>
           </article>
         </div>

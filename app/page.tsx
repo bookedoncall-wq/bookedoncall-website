@@ -32,6 +32,25 @@ const nextStepRules = [
   "Matches an available slot on the connected schedule",
 ] as const
 
+const heroCallFlowMoments = [
+  {
+    speaker: "Caller",
+    line: "Our AC stopped working and the house is getting hot."
+  },
+  {
+    speaker: "Assistant",
+    line: "I can help with that. What's the best callback number and service address?"
+  },
+  {
+    speaker: "Caller",
+    line: "719-555-0142. We're at 4821 Maple Drive."
+  },
+  {
+    speaker: "Assistant",
+    line: "Thanks. I'll confirm a few details so this can move toward booking or come back to the team with a clear callback next step."
+  }
+] as const
+
 export default function HomePage() {
   return (
     <>
@@ -98,18 +117,11 @@ export default function HomePage() {
                 <PhoneCall className="size-5 text-amber-300" />
               </div>
               <div className="grid gap-3 text-sm leading-6 text-slate-200">
-                <p>
-                  <strong>Caller:</strong> &ldquo;Our AC stopped working and the house is getting hot.&rdquo;
-                </p>
-                <p>
-                  <strong>Assistant:</strong> &ldquo;I can help with that. What&apos;s the best callback number and service address?&rdquo;
-                </p>
-                <p>
-                  <strong>Caller:</strong> &ldquo;719-555-0142. We&apos;re at 4821 Maple Drive.&rdquo;
-                </p>
-                <p>
-                  <strong>Assistant:</strong> &ldquo;Thanks. I&apos;ll confirm a few details so this can either move toward booking or come back to the team with a clear next step.&rdquo;
-                </p>
+                {heroCallFlowMoments.map((moment, index) => (
+                  <p key={`${moment.speaker}-${index}`}>
+                    <strong>{moment.speaker}:</strong> &ldquo;{moment.line}&rdquo;
+                  </p>
+                ))}
               </div>
             </div>
             <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5">
