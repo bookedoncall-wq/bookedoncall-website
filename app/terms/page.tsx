@@ -248,7 +248,7 @@ export default function TermsPage() {
       <LegalSection title="18. Contact">
         <p>
           Questions about these Terms, contractual notices, or legal requests can be sent to{" "}
-          <a href={`mailto:${siteConfig.legalEmail}`} className="font-semibold text-slate-900 underline underline-offset-4">
+          <a href={`mailto:${siteConfig.legalEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">
             {siteConfig.legalEmail}
           </a>
           .

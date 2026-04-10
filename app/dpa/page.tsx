@@ -170,7 +170,7 @@ export default function DpaPage() {
       <LegalSection title="14. Contact">
         <p>
           DPA questions, diligence requests, and processor-related inquiries can be sent to{" "}
-          <a href={`mailto:${siteConfig.legalEmail}`} className="font-semibold text-slate-900 underline underline-offset-4">
+          <a href={`mailto:${siteConfig.legalEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">
             {siteConfig.legalEmail}
           </a>
           .

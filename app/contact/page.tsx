@@ -36,7 +36,7 @@ export default function ContactPage() {
       <LegalSection title="1. General and sales">
         <p>
           Product questions, demos, commercial inquiries, and general contact requests can be sent to{" "}
-          <a href={`mailto:${siteConfig.email}`} className="font-semibold text-slate-900 underline underline-offset-4">
+          <a href={`mailto:${siteConfig.email}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">
             {siteConfig.email}
           </a>
           .
@@ -46,7 +46,7 @@ export default function ContactPage() {
       <LegalSection title="2. Customer support">
         <p>
           Existing customers who need help with setup, account access, integrations, billing questions, or operational issues can contact{" "}
-          <a href={`mailto:${siteConfig.supportEmail}`} className="font-semibold text-slate-900 underline underline-offset-4">
+          <a href={`mailto:${siteConfig.supportEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">
             {siteConfig.supportEmail}
           </a>
           .
@@ -56,7 +56,7 @@ export default function ContactPage() {
       <LegalSection title="3. Privacy">
         <p>
           Privacy rights requests, deletion requests, and questions about how BookedOnCall handles personal information can be sent to{" "}
-          <a href={`mailto:${siteConfig.privacyEmail}`} className="font-semibold text-slate-900 underline underline-offset-4">
+          <a href={`mailto:${siteConfig.privacyEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">
             {siteConfig.privacyEmail}
           </a>
           .
@@ -71,7 +71,7 @@ export default function ContactPage() {
         <p>
           Legal notices, contract reviews, DPA requests, procurement paperwork, security questionnaires, and diligence requests can be
           sent to{" "}
-          <a href={`mailto:${siteConfig.legalEmail}`} className="font-semibold text-slate-900 underline underline-offset-4">
+          <a href={`mailto:${siteConfig.legalEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">
             {siteConfig.legalEmail}
           </a>
           .

@@ -192,7 +192,7 @@ export default function PrivacyPage() {
       <LegalSection title="13. Contact">
         <p>
           Privacy questions, rights requests, and service data inquiries can be sent to{" "}
-          <a href={`mailto:${siteConfig.privacyEmail}`} className="font-semibold text-slate-900 underline underline-offset-4">
+          <a href={`mailto:${siteConfig.privacyEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">
             {siteConfig.privacyEmail}
           </a>
           .
