@@ -31,7 +31,7 @@ export function LegalPageShell({ currentPath, title, description, summaryItems, 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:items-start">
           <aside className="lg:sticky lg:top-24">
-            <div className="grid gap-5 rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+            <div className="grid gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <div className="grid gap-1">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Legal</p>
                 <p className="text-sm leading-7 text-slate-600">
@@ -68,7 +68,7 @@ export function LegalPageShell({ currentPath, title, description, summaryItems, 
           </aside>
 
           <div className="grid gap-8">
-            <div className="grid gap-6 rounded-[1.75rem] border border-white bg-white p-8 shadow-sm">
+            <div className="grid gap-6 rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Last updated: {siteConfig.lastUpdated}</p>
                 <p className="text-sm leading-7 text-slate-600">Summary only for convenience. The full text below governs.</p>
@@ -83,7 +83,7 @@ export function LegalPageShell({ currentPath, title, description, summaryItems, 
               </div>
             </div>
 
-            <div className="grid gap-10 rounded-[1.75rem] border border-white bg-white p-8 shadow-sm sm:p-10">{children}</div>
+            <div className="grid gap-10 rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">{children}</div>
           </div>
         </div>
       </section>

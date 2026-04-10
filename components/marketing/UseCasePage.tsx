@@ -29,7 +29,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Common calls in this trade</h2>
             <div className="grid gap-3">
               {content.commonCalls.map((item) => (
@@ -40,7 +40,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
             </div>
           </article>
 
-          <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Why shops in this trade care</h2>
             <div className="grid gap-3">
               {content.reasons.map((item) => (
@@ -82,7 +82,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
-            <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+            <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Catch the first response</h2>
               <p className="text-base leading-7 text-slate-600">
               The goal is to keep a real caller from dropping into voicemail while you&apos;re already in the field.
@@ -94,7 +94,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
               Name, callback number, address, and a clear description of the job give you a better next step than a rushed message.
             </p>
           </article>
-          <article className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Book when it fits, follow up when it doesn&apos;t</h2>
             <p className="text-base leading-7 text-slate-600">
               Supported jobs can move toward a booking. Edge cases and approval-only work still come back with clear details for follow-up.

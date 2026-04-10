@@ -134,7 +134,7 @@ export default function PricingPage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
-          <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Questions people usually ask before buying</h2>
             <div className="grid gap-4">
               {faqEntries.map((entry) => (
@@ -148,7 +148,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6 text-center sm:grid-cols-2 lg:grid-cols-4">
           <div className="grid gap-2">
             <p className="text-2xl font-black text-slate-950">No contracts</p>

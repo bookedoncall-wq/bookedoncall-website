@@ -25,7 +25,7 @@ export default function FaqPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-4xl gap-4">
           {faqEntries.map((entry) => (
-            <article key={entry.question} className="rounded-[1.5rem] border border-white bg-white p-6 shadow-sm">
+            <article key={entry.question} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">{entry.question}</h2>
               <p className="text-base leading-8 text-slate-600">{entry.answer}</p>
             </article>

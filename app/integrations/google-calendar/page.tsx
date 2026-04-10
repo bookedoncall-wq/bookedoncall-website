@@ -21,7 +21,7 @@ export default function GoogleCalendarPage() {
       <PageIntro eyebrow="Integration" title={content.title} description={content.summary} />
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">What changes when the calendar is connected</h2>
             <div className="grid gap-3">
               {content.bullets.map((bullet) => (
@@ -36,7 +36,7 @@ export default function GoogleCalendarPage() {
             {content.outcomeCards.map((card, index) => (
               <article
                 key={card}
-                className={`rounded-[1.75rem] border p-6 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
+                className={`rounded-[1.75rem] border p-6 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
               >
                 <h2 className="mb-3 text-xl font-black text-slate-950">Outcome {index + 1}</h2>
                 <p className="text-sm leading-7 text-slate-700">{card}</p>

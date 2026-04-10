@@ -41,7 +41,7 @@ export default function IndustriesPage() {
                 href={page.path}
                 eventName="marketing_cta_clicked"
                 eventPayload={{ placement: "industries_grid", href: page.path }}
-                className="rounded-[1.75rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+                className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
               >
                 <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">{page.label}</p>
                 <h2 className="mb-3 text-2xl font-black text-slate-950">{page.title}</h2>
@@ -91,7 +91,7 @@ export default function IndustriesPage() {
             href="/product"
             eventName="marketing_cta_clicked"
             eventPayload={{ placement: "industries_product", href: "/product" }}
-            className="rounded-[1.75rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See the product flow</h2>
             <p className="text-base leading-7 text-slate-600">See how BookedOnCall answers, qualifies, and either books or hands the job back cleanly.</p>
@@ -100,7 +100,7 @@ export default function IndustriesPage() {
             href="/integrations"
             eventName="marketing_cta_clicked"
             eventPayload={{ placement: "industries_integrations", href: "/integrations" }}
-            className="rounded-[1.75rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See supported integrations</h2>
             <p className="text-base leading-7 text-slate-600">Learn how Jobber and Google Calendar fit into the call flow when you want scheduling support.</p>
@@ -109,7 +109,7 @@ export default function IndustriesPage() {
             href="/examples"
             eventName="marketing_cta_clicked"
             eventPayload={{ placement: "industries_demo", href: "/examples" }}
-            className="rounded-[1.75rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
             <p className="text-base leading-7 text-slate-600">See how the assistant handles calls before you decide whether it fits your business.</p>

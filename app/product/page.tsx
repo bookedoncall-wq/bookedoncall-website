@@ -68,7 +68,7 @@ export default function ProductPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {productFlowSteps.map((step, index) => (
-              <article key={step.title} className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+              <article key={step.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">
                   <span>Step {index + 1}</span>
                   <ArrowRight className="size-4" />
@@ -111,7 +111,7 @@ export default function ProductPage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What it handles well</p>
             <div className="grid gap-3">
               {validatedCapabilities.map((capability) => (
@@ -122,7 +122,7 @@ export default function ProductPage() {
             </div>
           </article>
 
-          <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Fits the tools you already use</p>
             <div className="grid gap-4">
               {integrations.map((integration) => (
@@ -173,7 +173,7 @@ export default function ProductPage() {
       </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-5xl gap-6 rounded-[2rem] border border-white bg-white p-8 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="mx-auto grid max-w-5xl gap-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[1fr_auto] lg:items-center">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Ready to see how it fits?</p>
             <h2 className="text-3xl font-black text-slate-950">Read sample calls or talk through your setup.</h2>

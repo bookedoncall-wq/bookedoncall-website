@@ -183,7 +183,7 @@ export default function HomePage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-          <article className="rounded-[2rem] border border-white bg-white p-7 shadow-sm">
+          <article className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After the call</p>
             <h2 className="mb-4 text-4xl font-black text-slate-950">You get something usable, not just a message.</h2>
             <p className="mb-6 text-lg leading-8 text-slate-600">
@@ -216,7 +216,7 @@ export default function HomePage() {
               {afterCallArtifacts.map((artifact, index) => (
                 <article
                   key={artifact.title}
-                  className={`flex h-full min-h-[112px] flex-col rounded-[1.25rem] border p-4 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
+                  className={`flex h-full min-h-[112px] flex-col rounded-[1.25rem] border p-4 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
                 >
                   <div className="mb-2 flex items-center gap-2.5">
                     {index === 0 ? <ClipboardList className="size-4 text-amber-600" /> : null}
@@ -336,7 +336,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {sourcedProof.map((item) => (
-              <article key={item.id} className="rounded-[1.5rem] border border-white bg-white p-5 shadow-sm">
+              <article key={item.id} className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
                 <h3 className="mb-3 text-lg font-black text-slate-950">{item.title}</h3>
                 <p className="mb-4 text-sm leading-6 text-slate-700">{item.detail}</p>
                 <TrackedLink
@@ -397,31 +397,33 @@ export default function HomePage() {
       </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.76fr_1.24fr]">
-          <div className="grid gap-4">
+        <div className="mx-auto grid max-w-6xl gap-8">
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+            <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Integrations</p>
             <h2 className="text-4xl font-black text-slate-950">Fits the tools you already use.</h2>
             <p className="text-lg leading-8 text-slate-600">
               BookedOnCall is built to fit your current workflow. Today that includes Jobber, Google Calendar, and customer Text / SMS follow-up. QuickBooks is the next targeted integration on the roadmap.
             </p>
+            </div>
             <TrackedLink
               href="/integrations"
               eventName="marketing_cta_clicked"
               eventPayload={{ placement: "home_integrations_hub", href: "/integrations" }}
-              className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-200 bg-white px-4 py-2 text-sm font-bold text-amber-700 transition hover:border-amber-300 hover:bg-amber-50"
+              className="inline-flex w-fit items-center gap-2 self-start rounded-full border border-amber-200 bg-white px-4 py-2 text-sm font-bold text-amber-700 transition hover:border-amber-300 hover:bg-amber-50 lg:self-end"
             >
               See all integrations
               <ArrowRight className="size-4" />
             </TrackedLink>
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {integrations.map((integration, index) => (
               <TrackedLink
                 key={integration.id}
                 href={`/integrations/${integration.id}`}
                 eventName="marketing_cta_clicked"
                 eventPayload={{ placement: "home_integrations", integration: integration.id }}
-                className={`flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40 ${integration.status === "coming_soon" || index > 1 ? "border-amber-200 bg-amber-50" : "border-white bg-white"}`}
+                className={`flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40 ${integration.status === "coming_soon" || index > 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
               >
                 <div className="grid gap-3">
                   <span
@@ -481,7 +483,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-4">
             {plans.map((plan) => (
-              <article key={plan.id} className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+              <article key={plan.id} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <h3 className="text-2xl font-black text-slate-950">{plan.name}</h3>
                   <strong className="text-2xl text-slate-950">${plan.monthlyUsd}/mo</strong>

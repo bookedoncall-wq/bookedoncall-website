@@ -120,7 +120,7 @@ export default function ExamplesPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6">
           {exampleCalls.map((call) => (
-            <article key={call.title} className="grid gap-6 rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+            <article key={call.title} className="grid gap-6 rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
               <div className="grid gap-3">
                 <h2 className="text-3xl font-black text-slate-950">{call.title}</h2>
                 <p className="text-base leading-7 text-slate-600">{call.callerProblem}</p>

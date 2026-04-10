@@ -71,7 +71,7 @@ export function GuidePage({
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6">
           {sections.map((section) => (
-            <article key={section.title} className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+            <article key={section.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
               <h2 className="mb-4 text-3xl font-black text-slate-950">{section.title}</h2>
               <p className="text-base leading-8 text-slate-700">{section.body}</p>
             </article>
@@ -120,7 +120,7 @@ export function GuidePage({
                   href={link.href}
                   eventName="marketing_cta_clicked"
                   eventPayload={{ placement: "guide_next", href: link.href }}
-                  className="rounded-[1.5rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+                  className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
                 >
                   <p className="text-lg font-black text-slate-950">{link.label}</p>
                 </TrackedLink>

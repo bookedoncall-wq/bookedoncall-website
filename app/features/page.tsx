@@ -61,7 +61,7 @@ export default function FeaturesPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
           {capabilityGroups.map((group) => (
-            <article key={group.title} className="rounded-[1.5rem] border border-white bg-white p-6 shadow-sm">
+            <article key={group.title} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-4 text-2xl font-black text-slate-950">{group.title}</h2>
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
                 {group.items.map((item) => (

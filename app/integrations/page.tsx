@@ -44,7 +44,7 @@ export default function IntegrationsPage() {
               href={`/integrations/${integration.id}`}
               eventName="marketing_cta_clicked"
               eventPayload={{ placement: "integrations_hub_card", href: `/integrations/${integration.id}` }}
-              className="rounded-[1.75rem] border border-white bg-white p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/30"
+              className="rounded-[1.75rem] border border-slate-200 bg-white p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/30"
             >
               <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">{integration.name}</p>
               <h2 className="mb-3 text-3xl font-black text-slate-950">{card.title}</h2>

@@ -59,7 +59,7 @@ export default function AboutPage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6">
-          <article className="rounded-[1.75rem] border border-white bg-white p-7 shadow-sm">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
               <Heart className="size-4" />
               The founder&apos;s story

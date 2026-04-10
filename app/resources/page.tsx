@@ -57,7 +57,7 @@ export default function ResourcesPage() {
               href={resource.href}
               eventName="marketing_cta_clicked"
               eventPayload={{ placement: "resources_primary", href: resource.href }}
-              className="rounded-[1.75rem] border border-white bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+              className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-amber-700">Step {index + 1}</p>
               <h2 className="mb-3 text-2xl font-black text-slate-950">{resource.title}</h2>
@@ -92,7 +92,7 @@ export default function ResourcesPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {sourcedProof.map((item) => (
-              <article key={item.id} className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm">
+              <article key={item.id} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
                 <p className="text-sm leading-7 text-slate-700">{item.detail}</p>
                 <TrackedLink
