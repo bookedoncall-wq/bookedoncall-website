@@ -38,7 +38,7 @@ export default function TermsPage() {
             Third-party integrations such as Jobber and Google Calendar are optional. Availability of a connected service does not create a guarantee that every request can be booked automatically.
             </p>
           </section>
-          <section className="grid gap-3">
+          <section id="roadmap-and-coming-soon-statements" className="grid gap-3">
             <h2 className="text-2xl font-black text-slate-950">Roadmap and coming soon statements</h2>
             <p className="text-base leading-8 text-slate-700">
             Any roadmap, planned integration, or coming-soon statement on bookedoncall.com is informational only, may change, and does not guarantee delivery on a specific timeline.

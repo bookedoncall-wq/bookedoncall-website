@@ -1,5 +1,6 @@
 import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck } from "lucide-react"
 import { CtaBand } from "@/components/marketing/CtaBand"
+import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { afterCallArtifacts, faqEntries, homepageTrustPoints, productFlowSteps, resourceHighlights, useCaseOrder, useCasePages } from "@/config/marketing"
@@ -427,7 +428,7 @@ export default function HomePage() {
                   <span
                     className={`inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] ${integration.status === "coming_soon" ? "border border-amber-300 bg-white text-amber-800" : "border border-emerald-200 bg-emerald-50 text-emerald-800"}`}
                   >
-                    {integration.status === "coming_soon" ? "Coming soon" : "Available now"}
+                    {integration.status === "coming_soon" ? "Coming soon*" : "Available now"}
                   </span>
                   <div className="text-2xl font-black text-slate-950">{integration.name}</div>
                   <p className="text-base leading-7 text-slate-600">{integration.description}</p>
@@ -438,6 +439,7 @@ export default function HomePage() {
               </TrackedLink>
             ))}
           </div>
+          <RoadmapFootnote className="md:col-span-2 lg:col-span-1" />
         </div>
       </section>
 

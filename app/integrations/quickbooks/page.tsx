@@ -1,7 +1,8 @@
 import { PageIntro } from "@/components/marketing/PageIntro"
+import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { integrationPages, roadmapDisclaimer } from "@/config/marketing"
+import { integrationPages } from "@/config/marketing"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
 const content = integrationPages.quickbooks
@@ -23,7 +24,7 @@ export default function QuickBooksPage() {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 shadow-sm">
             <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
-              Coming soon
+              Coming soon*
             </div>
             <h2 className="mb-4 text-3xl font-black text-slate-950">What we are targeting first</h2>
             <div className="grid gap-3">
@@ -51,9 +52,7 @@ export default function QuickBooksPage() {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-4">
-          <div className="rounded-[1.75rem] border border-amber-200 bg-amber-50 px-6 py-5 text-base leading-8 text-amber-900 shadow-sm">
-            {roadmapDisclaimer}
-          </div>
+          <RoadmapFootnote className="rounded-[1.75rem] border border-amber-200 bg-amber-50 px-6 py-5 text-base text-amber-900 shadow-sm" />
           <div className="grid gap-4 md:grid-cols-3">
             <TrackedLink
               href="/integrations"

@@ -1,8 +1,9 @@
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
+import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { integrationPages, roadmapDisclaimer } from "@/config/marketing"
+import { integrationPages } from "@/config/marketing"
 import { liveIntegrations, roadmapIntegrations } from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
@@ -77,7 +78,7 @@ export default function IntegrationsPage() {
               className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/60"
             >
               <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
-                Coming soon
+                Coming soon*
               </div>
               <h2 className="mb-3 text-3xl font-black text-slate-950">{card.title}</h2>
               <p className="mb-5 text-base leading-7 text-slate-700">{card.summary}</p>
@@ -93,9 +94,7 @@ export default function IntegrationsPage() {
                 )
               })}
             </div>
-            <p className="rounded-[1.5rem] border border-amber-200 bg-white px-5 py-4 text-sm leading-7 text-amber-900">
-              {roadmapDisclaimer}
-            </p>
+            <RoadmapFootnote className="rounded-[1.5rem] border border-amber-200 bg-white px-5 py-4 text-amber-900" />
           </div>
         </div>
       </section>

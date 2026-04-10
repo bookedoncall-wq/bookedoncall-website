@@ -1,9 +1,10 @@
 import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck } from "lucide-react"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
+import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { afterCallArtifacts, productFlowSteps, roadmapDisclaimer } from "@/config/marketing"
+import { afterCallArtifacts, productFlowSteps } from "@/config/marketing"
 import { buildGetStartedHref, integrations, positioning, primaryCtaLabel, sourcedProof, validatedCapabilities } from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
@@ -136,15 +137,13 @@ export default function ProductPage() {
                   <span
                     className={`mb-3 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] ${integration.status === "coming_soon" ? "border border-amber-300 bg-white text-amber-800" : "border border-emerald-200 bg-emerald-50 text-emerald-800"}`}
                   >
-                    {integration.status === "coming_soon" ? "Coming soon" : "Available now"}
+                    {integration.status === "coming_soon" ? "Coming soon*" : "Available now"}
                   </span>
                   <p className="mb-2 text-lg font-black text-slate-950">{integration.name}</p>
                   <p className="text-sm leading-7 text-slate-600">{integration.description}</p>
                 </TrackedLink>
               ))}
-              <p className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-7 text-amber-900">
-                {roadmapDisclaimer}
-              </p>
+              <RoadmapFootnote className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900" />
             </div>
           </article>
         </div>
