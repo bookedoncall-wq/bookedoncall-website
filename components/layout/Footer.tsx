@@ -40,7 +40,7 @@ const footerColumns = [
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
       { label: "DPA", href: "/dpa" },
-      { label: "Contact", href: `mailto:${siteConfig.email}` },
+      { label: "Contact", href: "/contact" },
     ],
   },
 ] as const

@@ -34,6 +34,7 @@ const pages = [
   "/privacy",
   "/terms",
   "/dpa",
+  "/contact",
 ] as const
 
 export default function sitemap(): MetadataRoute.Sitemap {

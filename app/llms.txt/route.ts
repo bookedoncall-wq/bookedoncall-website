@@ -30,7 +30,7 @@ export async function GET() {
     `- Privacy: ${siteConfig.url}/privacy`,
     `- Terms: ${siteConfig.url}/terms`,
     `- DPA: ${siteConfig.url}/dpa`,
-    `- Contact: ${siteConfig.email}`,
+    `- Contact: ${siteConfig.url}/contact`,
   ]
 
   return new Response(lines.join("\n"), {
