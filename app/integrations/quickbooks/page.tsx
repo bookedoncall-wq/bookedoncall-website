@@ -1,5 +1,4 @@
 import { PageIntro } from "@/components/marketing/PageIntro"
-import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { integrationPages } from "@/config/marketing"
@@ -52,7 +51,6 @@ export default function QuickBooksPage() {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-4">
-          <RoadmapFootnote className="rounded-[1.75rem] border border-amber-200 bg-amber-50 px-6 py-5 text-base text-amber-900 shadow-sm" />
           <div className="grid gap-4 md:grid-cols-3">
             <TrackedLink
               href="/integrations"

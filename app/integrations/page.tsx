@@ -1,6 +1,5 @@
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
-import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { integrationPages } from "@/config/marketing"
@@ -94,7 +93,6 @@ export default function IntegrationsPage() {
                 )
               })}
             </div>
-            <RoadmapFootnote className="rounded-[1.5rem] border border-amber-200 bg-white px-5 py-4 text-amber-900" />
           </div>
         </div>
       </section>

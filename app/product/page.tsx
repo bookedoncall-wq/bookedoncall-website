@@ -1,7 +1,6 @@
 import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck } from "lucide-react"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { PageIntro } from "@/components/marketing/PageIntro"
-import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { afterCallArtifacts, productFlowSteps } from "@/config/marketing"
@@ -143,7 +142,6 @@ export default function ProductPage() {
                   <p className="text-sm leading-7 text-slate-600">{integration.description}</p>
                 </TrackedLink>
               ))}
-              <RoadmapFootnote className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900" />
             </div>
           </article>
         </div>

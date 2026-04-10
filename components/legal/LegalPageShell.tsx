@@ -46,7 +46,7 @@ export function LegalPageShell({ currentPath, title, description, summaryItems, 
                       key={link.href}
                       href={link.href}
                       className={cn(
-                        "rounded-2xl border px-4 py-3 text-sm font-semibold transition-colors",
+                        "flex min-h-12 w-full items-center rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition-colors",
                         active
                           ? "border-amber-300 bg-amber-50 text-amber-900"
                           : "border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950",

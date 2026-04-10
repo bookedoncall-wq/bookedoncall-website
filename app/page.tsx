@@ -1,6 +1,5 @@
 import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck } from "lucide-react"
 import { CtaBand } from "@/components/marketing/CtaBand"
-import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { afterCallArtifacts, faqEntries, homepageTrustPoints, productFlowSteps, resourceHighlights, useCaseOrder, useCasePages } from "@/config/marketing"
@@ -439,7 +438,6 @@ export default function HomePage() {
               </TrackedLink>
             ))}
           </div>
-          <RoadmapFootnote className="md:col-span-2 lg:col-span-1" />
         </div>
       </section>
 

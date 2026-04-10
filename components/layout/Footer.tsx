@@ -1,4 +1,5 @@
 import { buildGetStartedHref, customerLoginPath, positioning, primaryCtaLabel, secondaryNav, siteConfig } from "@/config/site"
+import { RoadmapFootnote } from "@/components/marketing/RoadmapFootnote"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 const footerColumns = [
@@ -103,6 +104,10 @@ export default function Footer() {
         <div className="flex flex-col gap-3 border-t border-slate-800 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {siteConfig.name}. AI call answering for trades businesses.</p>
           <p>Questions? {siteConfig.email}</p>
+        </div>
+
+        <div className="pt-3">
+          <RoadmapFootnote className="mx-auto max-w-4xl text-center text-xs text-slate-500" />
         </div>
       </div>
     </footer>
