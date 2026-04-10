@@ -29,16 +29,16 @@ export function LegalPageShell({ currentPath, title, description, summaryItems, 
     <>
       <PageIntro eyebrow="Legal" title={title} description={description} />
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:items-start">
-          <aside className="lg:sticky lg:top-24">
-            <div className="grid gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[280px_minmax(0,1fr)] lg:items-start">
+          <aside className="min-w-0 lg:sticky lg:top-24">
+            <div className="grid min-w-0 gap-5 overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <div className="grid gap-1">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Legal</p>
                 <p className="text-sm leading-7 text-slate-600">
                   Short summaries appear first for readability. The full document below controls if there is any conflict.
                 </p>
               </div>
-              <nav className="grid gap-2" aria-label="Legal pages">
+              <nav className="grid min-w-0 gap-2" aria-label="Legal pages">
                 {legalLinks.map((link) => {
                   const active = link.href === currentPath
                   return (
@@ -46,7 +46,7 @@ export function LegalPageShell({ currentPath, title, description, summaryItems, 
                       key={link.href}
                       href={link.href}
                       className={cn(
-                        "flex min-h-12 w-full items-center rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition-colors",
+                        "block min-w-0 rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition-colors",
                         active
                           ? "border-amber-300 bg-amber-50 text-amber-900"
                           : "border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950",
@@ -57,9 +57,12 @@ export function LegalPageShell({ currentPath, title, description, summaryItems, 
                   )
                 })}
               </nav>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-7 text-slate-600">
+              <div className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-7 text-slate-600">
                 Questions about legal terms, privacy, or data processing can be sent to{" "}
-                <a href={`mailto:${siteConfig.legalEmail}`} className="font-semibold text-slate-900 underline underline-offset-4">
+                <a
+                  href={`mailto:${siteConfig.legalEmail}`}
+                  className="break-all font-semibold text-slate-900 underline underline-offset-4"
+                >
                   {siteConfig.legalEmail}
                 </a>
                 .
