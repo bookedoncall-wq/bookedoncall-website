@@ -3,7 +3,7 @@ import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { afterCallArtifacts, faqEntries, homepageTrustPoints, productFlowSteps, resourceHighlights, useCaseOrder, useCasePages } from "@/config/marketing"
-import { buildGetStartedHref, integrations, plans, positioning, primaryCtaLabel, selfServeCheckoutEnabled, sourcedProof, supportedTrades } from "@/config/site"
+import { buildGetStartedHref, integrations, plans, positioning, primaryCtaLabel, selfServeCheckoutEnabled, sourcedProof, supportedTradeLinks } from "@/config/site"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
 import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
@@ -99,13 +99,16 @@ export default function HomePage() {
               </TrackedLink>
             </div>
             <div className="flex flex-wrap gap-2">
-              {supportedTrades.map((trade) => (
-                <span
-                  key={trade}
-                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-600"
+              {supportedTradeLinks.map((trade) => (
+                <TrackedLink
+                  key={trade.href}
+                  href={trade.href}
+                  eventName="marketing_cta_clicked"
+                  eventPayload={{ placement: "home_hero_trade_chip", trade: trade.label, href: trade.href }}
+                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-600 transition-colors hover:border-amber-300 hover:bg-amber-50/40 hover:text-slate-950"
                 >
-                  {trade}
-                </span>
+                  {trade.label}
+                </TrackedLink>
               ))}
             </div>
           </div>

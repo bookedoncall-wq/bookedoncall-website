@@ -3,7 +3,7 @@ import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { useCaseOrder, useCasePages } from "@/config/marketing"
-import { supportedTrades } from "@/config/site"
+import { supportedTradeLinks } from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
 export const metadata = buildPageMetadata({
@@ -117,10 +117,16 @@ export default function IndustriesPage() {
         </div>
 
         <div className="mx-auto mt-10 flex max-w-6xl flex-wrap gap-2">
-          {supportedTrades.map((trade) => (
-            <span key={trade} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-600">
-              {trade}
-            </span>
+          {supportedTradeLinks.map((trade) => (
+            <TrackedLink
+              key={trade.href}
+              href={trade.href}
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "industries_trade_chip", trade: trade.label, href: trade.href }}
+              className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-600 transition-colors hover:border-amber-300 hover:bg-amber-50/40 hover:text-slate-950"
+            >
+              {trade.label}
+            </TrackedLink>
           ))}
         </div>
       </section>

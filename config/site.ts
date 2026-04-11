@@ -22,6 +22,19 @@ export const siteConfig = {
 export const plans = contract.plans
 export const validatedCapabilities = contract.validatedCapabilities
 export const supportedTrades = contract.supportedTrades
+const supportedTradeHrefByLabel: Record<string, string> = {
+  Plumbing: "/for/plumbers",
+  HVAC: "/for/hvac",
+  Electrical: "/for/electricians",
+  Painting: "/for/painters",
+  Flooring: "/for/flooring",
+  Landscaping: "/for/landscaping",
+  "General home services": "/for/general-home-services",
+}
+export const supportedTradeLinks = supportedTrades.map((trade) => ({
+  label: trade,
+  href: supportedTradeHrefByLabel[trade] || "/industries",
+}))
 export const integrations = contract.integrations
 export const liveIntegrations = integrations.filter((integration) => integration.status === "available")
 export const roadmapIntegrations = integrations.filter((integration) => integration.status === "coming_soon")
