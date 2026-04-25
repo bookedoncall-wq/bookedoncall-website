@@ -40,6 +40,7 @@ export function LeadCaptureForm() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [message, setMessage] = useState("")
+  const [mailtoHref, setMailtoHref] = useState("")
   const planInterest = form.planInterest || selectedPlanFromUrl
 
   function updateField<K extends keyof FormState>(key: K, value: FormState[K]) {
@@ -55,6 +56,7 @@ export function LeadCaptureForm() {
     event.preventDefault()
     setStatus("submitting")
     setMessage("")
+    setMailtoHref("")
 
     const payload = {
       ...form,
@@ -73,7 +75,7 @@ export function LeadCaptureForm() {
         ok?: boolean
         message?: string
         errors?: Record<string, string>
-        delivery?: "webhook" | "mailto"
+        delivery?: "mailto" | "resend"
         mailtoHref?: string
       }
 
@@ -93,11 +95,12 @@ export function LeadCaptureForm() {
         placement: "sign_up_form",
         planId: planInterest,
         trade: form.trade,
-        delivery: body.delivery || "unknown",
+        delivery: body.delivery || "mailto",
       })
 
       setStatus("success")
-      setMessage(body.message || "Thanks. We received your details and will follow up soon.")
+      setMessage(body.message || "Your email app should open with your details filled in. Send that email to complete the setup request.")
+      setMailtoHref(body.delivery === "mailto" ? body.mailtoHref || "" : "")
       setErrors({})
       setForm((current) => ({
         ...current,
@@ -238,10 +241,18 @@ export function LeadCaptureForm() {
           <p
             className={status === "success" ? "text-sm font-semibold text-green-700" : "text-sm font-semibold text-red-600"}
             aria-live="polite"
-          >
-            {message}
-          </p>
-        ) : null}
+        >
+          {message}
+          {status === "success" && mailtoHref ? (
+            <>
+              {" "}
+              <a href={mailtoHref} className="underline decoration-green-300 underline-offset-4">
+                Open the email draft again.
+              </a>
+            </>
+          ) : null}
+        </p>
+      ) : null}
       </form>
     </section>
   )

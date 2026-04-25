@@ -55,6 +55,18 @@ const requiredFiles = [
   ".github/workflows/verify-content.yml",
 ]
 
+const forbiddenLeadWebhookEnvNames = [
+  "BOOKEDONCALL_LEAD_WEBHOOK_URL",
+  "BOOKEDONCALL_LEAD_WEBHOOK_SECRET",
+]
+
+const leadWebhookGuardFiles = [
+  ".env.example",
+  "README.md",
+  "app/api/leads/route.ts",
+  "components/marketing/LeadCaptureForm.tsx",
+]
+
 function readText(relativePath) {
   return fs.readFileSync(path.join(repoRoot, relativePath), "utf8")
 }
@@ -125,6 +137,23 @@ if (packageJson.dependencies?.stripe || packageJson.devDependencies?.stripe) {
 const envExample = readText(".env.example")
 if (/^\s*STRIPE_[A-Z0-9_]*\s*=/im.test(envExample)) {
   errors.push(".env.example must not define STRIPE_* variables in the website repo")
+}
+
+for (const relativePath of leadWebhookGuardFiles) {
+  const source = readText(relativePath)
+  for (const envName of forbiddenLeadWebhookEnvNames) {
+    if (source.includes(envName)) {
+      errors.push(`${relativePath} must not reference ${envName}; website lead delivery must use explicit Resend email or mailto fallback`)
+    }
+  }
+}
+
+const leadRouteSource = readText("app/api/leads/route.ts")
+if (!leadRouteSource.includes("RESEND_API_KEY") || !leadRouteSource.includes("RESEND_FROM_EMAIL")) {
+  errors.push("app/api/leads/route.ts must support explicit Resend lead delivery")
+}
+if (!leadRouteSource.includes("mailtoHref") || !leadRouteSource.includes("buildLeadMailtoHref")) {
+  errors.push("app/api/leads/route.ts must preserve the mailto fallback lead path")
 }
 
 if (errors.length > 0) {

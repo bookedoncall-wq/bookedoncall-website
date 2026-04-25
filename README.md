@@ -39,9 +39,10 @@ npm run sync:monorepo-truth
 
 This repo should not hold checkout or billing secrets. There is no website-owned Stripe flow.
 
-- Lead form submissions post to `app/api/leads/route.ts`.
-- In production, set `BOOKEDONCALL_LEAD_WEBHOOK_URL` to forward lead submissions into your CRM, automation tool, or internal intake endpoint.
-- `BOOKEDONCALL_LEAD_WEBHOOK_SECRET` is optional and can be used to authenticate those webhook deliveries.
+- Lead form submissions post to `app/api/leads/route.ts`, which validates the payload and sends a text-only Resend email to the configured sales inbox when `RESEND_API_KEY` and `RESEND_FROM_EMAIL` are configured.
+- If Resend is not configured or delivery fails, the lead form returns a `mailto:` handoff so the visitor can still complete the request from their email client.
+- Marketing analytics events are pushed to `window.dataLayer`; configure `NEXT_PUBLIC_GTM_ID` to load Google Tag Manager from the checked-in layout.
+- The website intentionally does not support hidden lead-webhook environment variables or a website-owned checkout/billing target.
 - Security headers, robots, sitemap, manifest, and `llms.txt` are generated from the App Router.
 
 ## Content and verification guardrails
@@ -56,4 +57,5 @@ This repo should not hold checkout or billing secrets. There is no website-owned
 - Do not reintroduce a website-owned checkout route.
 - Do not drift from the monorepo public contract for plans, app URLs, or legal contacts.
 - Do not describe booking, reminders, write-through integrations, or dashboard capabilities more strongly than the app currently supports.
+- Keep lead delivery explicit: Resend email delivery is allowed, webhook-based hidden lead delivery is not.
 - Prefer concrete, machine-readable copy over vague marketing language. This repo is optimized for both human conversion and search/AI discoverability.
