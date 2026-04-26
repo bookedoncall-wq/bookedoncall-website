@@ -5,6 +5,7 @@ export const runtime = "nodejs"
 
 const leadRateLimitWindowMs = 10 * 60 * 1000
 const leadRateLimitMaxSubmissions = 5
+const anonymousLeadRateLimitMaxSubmissions = 2
 const resendRequestTimeoutMs = 8000
 const leadSubmissionBuckets = new Map<string, number[]>()
 
@@ -101,15 +102,15 @@ function buildLeadMailtoHref(lead: Lead) {
 function getClientFingerprint(request: Request) {
   const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
   const realIp = request.headers.get("x-real-ip")?.trim()
-  return forwardedFor || realIp || null
+  return forwardedFor || realIp || "anonymous-missing-ip-header"
 }
 
-function isRateLimited(fingerprint: string) {
+function isRateLimited(fingerprint: string, maxSubmissions = leadRateLimitMaxSubmissions) {
   const now = Date.now()
   const cutoff = now - leadRateLimitWindowMs
   const recentSubmissions = (leadSubmissionBuckets.get(fingerprint) || []).filter((timestamp) => timestamp > cutoff)
 
-  if (recentSubmissions.length >= leadRateLimitMaxSubmissions) {
+  if (recentSubmissions.length >= maxSubmissions) {
     leadSubmissionBuckets.set(fingerprint, recentSubmissions)
     return true
   }
@@ -199,7 +200,11 @@ export async function POST(request: Request) {
   }
 
   const clientFingerprint = getClientFingerprint(request)
-  if (clientFingerprint && isRateLimited(clientFingerprint)) {
+  const maxSubmissions =
+    clientFingerprint === "anonymous-missing-ip-header"
+      ? anonymousLeadRateLimitMaxSubmissions
+      : leadRateLimitMaxSubmissions
+  if (isRateLimited(clientFingerprint, maxSubmissions)) {
     return NextResponse.json(
       {
         ok: false,

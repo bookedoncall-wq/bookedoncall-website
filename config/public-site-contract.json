@@ -40,7 +40,7 @@
     "Answers inbound calls for plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses.",
     "Collects caller name, callback number, address, job details, and service notes.",
     "Can offer appointments when scheduling is enabled and a supported calendar or scheduling tool is connected.",
-    "Works with Jobber, Google Calendar, and customer text messaging for supported follow-up flows.",
+    "Works with Jobber, Google Calendar, and customer text messaging when those workflows are configured for supported follow-up flows.",
     "Delivers a clear call summary and the next step, whether that is a booked appointment or a callback request.",
     "Can send follow-up texts when customer messaging is turned on."
   ],

@@ -17,7 +17,7 @@ export const faqEntries = [
   {
     question: "What integrations are supported today?",
     answer:
-      "BookedOnCall supports Jobber, Google Calendar, and customer text messaging today. QuickBooks is the next targeted integration on the roadmap, but it is not live yet."
+      "BookedOnCall supports Jobber, Google Calendar, and customer text messaging when those workflows are configured for your business. QuickBooks is the next targeted integration on the roadmap, but it is not live yet."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -37,7 +37,7 @@ export const faqEntries = [
   {
     question: "How long does setup take?",
     answer:
-      "Setup usually takes one call to go over your preferences and a short configuration step. Most businesses are live within a day or two."
+      "Setup usually takes one call to go over your preferences and a short configuration step. Timing depends on phone forwarding, scheduling connections, and your first private test call."
   },
   {
     question: "Can BookedOnCall handle emergency or urgent calls?",
@@ -87,7 +87,7 @@ export const homepageHighlights = [
   },
   {
     title: "Keep using the tools you already know",
-    body: "Keep Jobber, Google Calendar, and customer text messaging in the flow without changing how your team already works."
+    body: "Keep Jobber, Google Calendar, and customer text messaging in the flow when those workflows are configured for your business."
   }
 ] as const
 
