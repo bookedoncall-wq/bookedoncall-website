@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
-import { plans, supportedTrades } from "@/config/site"
+import { customerLoginPath, plans, supportedTrades } from "@/config/site"
 import { trackMarketingEvent } from "@/lib/analytics"
 
 type FormState = {
@@ -131,6 +131,7 @@ export function LeadCaptureForm() {
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
             Your name
             <input
+              name="name"
               value={form.name}
               onChange={(event) => updateField("name", event.target.value)}
               className="rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
@@ -142,6 +143,7 @@ export function LeadCaptureForm() {
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
             Business name
             <input
+              name="businessName"
               value={form.businessName}
               onChange={(event) => updateField("businessName", event.target.value)}
               className="rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
@@ -151,25 +153,30 @@ export function LeadCaptureForm() {
           </label>
 
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
-            Trade
+            Primary trade
             <select
+              name="trade"
               value={form.trade}
               onChange={(event) => updateField("trade", event.target.value)}
               className="rounded-xl border border-slate-300 bg-white px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
             >
-              <option value="">Choose your trade</option>
+              <option value="">Choose the closest starting point</option>
               {supportedTrades.map((trade) => (
                 <option key={trade} value={trade}>
                   {trade}
                 </option>
               ))}
             </select>
+            <span className="text-xs leading-5 text-slate-500">
+              This sets the starting template. Add secondary services, like tile, flooring, or handyman work, in the notes.
+            </span>
             {errors.trade ? <span className="text-sm text-red-600">{errors.trade}</span> : null}
           </label>
 
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
             Best phone number
             <input
+              name="phone"
               value={form.phone}
               onChange={(event) => updateField("phone", event.target.value)}
               className="rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
@@ -179,8 +186,9 @@ export function LeadCaptureForm() {
           </label>
 
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
-            Email address
+            Email address (optional)
             <input
+              name="email"
               value={form.email}
               onChange={(event) => updateField("email", event.target.value)}
               className="rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
@@ -192,6 +200,7 @@ export function LeadCaptureForm() {
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
             Plan
             <select
+              name="planInterest"
               value={planInterest}
               onChange={(event) => updateField("planInterest", event.target.value)}
               className="rounded-xl border border-slate-300 bg-white px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
@@ -209,16 +218,18 @@ export function LeadCaptureForm() {
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           What should we know before we set you up?
           <textarea
+            name="details"
             value={form.details}
             onChange={(event) => updateField("details", event.target.value)}
             className="min-h-36 rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
-            placeholder="Tell us about your trade, scheduling setup, after-hours calls, or anything else we should know before onboarding."
+            placeholder="Tell us about your actual services, secondary trades you handle, scheduling setup, after-hours calls, or anything else we should know before onboarding."
           />
         </label>
 
         <label className="hidden">
           Leave this empty
           <input
+            name="website"
             tabIndex={-1}
             autoComplete="off"
             value={form.website}
@@ -234,7 +245,12 @@ export function LeadCaptureForm() {
           >
             {status === "submitting" ? "Sending..." : "Request setup"}
           </button>
-          <p className="text-sm leading-6 text-slate-500">Already a customer? Use customer login.</p>
+          <p className="text-sm leading-6 text-slate-500">
+            Already a customer?{" "}
+            <a href={customerLoginPath} className="font-semibold text-slate-700 underline decoration-slate-300 underline-offset-4">
+              Use customer login.
+            </a>
+          </p>
         </div>
 
         {message ? (

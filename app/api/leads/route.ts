@@ -55,7 +55,7 @@ function validateLead(lead: Lead) {
     errors.businessName = "Enter your business name."
   }
   if (!lead.trade) {
-    errors.trade = "Choose your trade."
+    errors.trade = "Choose the closest starting point."
   }
   if (!lead.phone) {
     errors.phone = "Enter the best phone number to reach you."
@@ -80,7 +80,7 @@ function buildLeadEmailText(lead: Lead) {
     "",
     `Name: ${lead.name}`,
     `Business name: ${lead.businessName}`,
-    `Trade: ${lead.trade}`,
+    `Primary trade: ${lead.trade}`,
     `Phone: ${lead.phone}`,
     `Email: ${lead.email || "Not provided"}`,
     `Plan: ${lead.planInterest}`,

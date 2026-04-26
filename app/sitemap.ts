@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next"
-import { absoluteUrl } from "@/config/site"
+import { absoluteUrl, siteConfig } from "@/config/site"
 
 const pages = [
   "/",
@@ -38,10 +38,9 @@ const pages = [
 ] as const
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
   return pages.map((path) => ({
     url: absoluteUrl(path),
-    lastModified: now,
+    lastModified: siteConfig.lastUpdated,
     changeFrequency:
       path === "/" || path === "/pricing" || path === "/faq" || path === "/product"
         ? "weekly"
