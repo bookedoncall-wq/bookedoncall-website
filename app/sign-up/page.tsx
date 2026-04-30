@@ -1,5 +1,4 @@
 import { Suspense } from "react"
-import { redirect } from "next/navigation"
 import { LeadCaptureForm } from "@/components/marketing/LeadCaptureForm"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
@@ -15,28 +14,7 @@ export const metadata = buildPageMetadata({
   path: "/sign-up",
 })
 
-type SearchParams = Record<string, string | string[] | undefined>
-
-function getFirstSearchParam(searchParams: SearchParams, key: string) {
-  const value = searchParams[key]
-  return Array.isArray(value) ? value[0] : value
-}
-
-export default async function SignUpPage({
-  searchParams,
-}: {
-  searchParams: Promise<SearchParams>
-}) {
-  const resolvedSearchParams = await searchParams
-  if (selfServeCheckoutEnabled) {
-    redirect(
-      buildGetStartedHref(
-        getFirstSearchParam(resolvedSearchParams, "plan"),
-        getFirstSearchParam(resolvedSearchParams, "source") || "website-sign-up-page"
-      )
-    )
-  }
-
+export default function SignUpPage() {
   return (
     <>
       <PageIntro
@@ -62,15 +40,35 @@ export default async function SignUpPage({
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="grid gap-6">
-            <Suspense
-              fallback={
-                <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-                  <p className="text-base leading-7 text-slate-600">Loading form...</p>
-                </div>
-              }
-            >
-              <LeadCaptureForm />
-            </Suspense>
+            {selfServeCheckoutEnabled ? (
+              <article className="grid gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <h2 className="text-2xl font-black text-slate-950">Start in the customer app</h2>
+                <p className="text-base leading-7 text-slate-600">
+                  New customers can start setup in the secure app when self-serve checkout is enabled. Existing customers should use customer login.
+                </p>
+                <TrackedLink
+                  href={buildGetStartedHref(undefined, "website-sign-up-page")}
+                  eventName="signup_started"
+                  eventPayload={{ placement: "signup_self_serve_card" }}
+                  className={cn(
+                    buttonVariants({ size: "lg" }),
+                    "justify-center rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
+                  )}
+                >
+                  Start setup
+                </TrackedLink>
+              </article>
+            ) : (
+              <Suspense
+                fallback={
+                  <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+                    <p className="text-base leading-7 text-slate-600">Loading form...</p>
+                  </div>
+                }
+              >
+                <LeadCaptureForm />
+              </Suspense>
+            )}
           </div>
 
           <aside className="grid gap-4">

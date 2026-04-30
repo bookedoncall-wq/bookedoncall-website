@@ -9,7 +9,8 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 
 export const metadata = buildPageMetadata({
   title: "Product",
-  description: positioning.oneLiner,
+  description:
+    "See how BookedOnCall answers trades calls, captures caller details, qualifies the job, and hands off booking or callback next steps based on your setup.",
   path: "/product",
 })
 
