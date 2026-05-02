@@ -156,6 +156,26 @@ if (!leadRouteSource.includes("mailtoHref") || !leadRouteSource.includes("buildL
   errors.push("app/api/leads/route.ts must preserve the mailto fallback lead path")
 }
 
+const leadFormSource = readText("components/marketing/LeadCaptureForm.tsx")
+if (!leadFormSource.includes("buildLeadMailtoHref") || !leadFormSource.includes("client_request_failed")) {
+  errors.push("components/marketing/LeadCaptureForm.tsx must preserve a client-side mailto fallback when lead API submission fails")
+}
+
+const pricingSource = readText("app/pricing/page.tsx")
+if (/No contracts/i.test(pricingSource) || /No setup fees/i.test(pricingSource)) {
+  errors.push("app/pricing/page.tsx must not make absolute no-contract or no-setup-fee claims that can conflict with custom commercial terms")
+}
+
+const quickBooksSource = readText("app/integrations/quickbooks/page.tsx")
+if (/buildServiceSchema/i.test(quickBooksSource)) {
+  errors.push("app/integrations/quickbooks/page.tsx must not emit Service schema for a roadmap-only integration")
+}
+
+const verifyWorkflowSource = readText(".github/workflows/verify-content.yml")
+if (!/npm run verify:seo/.test(verifyWorkflowSource)) {
+  errors.push(".github/workflows/verify-content.yml must run npm run verify:seo after build")
+}
+
 if (errors.length > 0) {
   console.error("verify:content failed")
   for (const error of errors) {

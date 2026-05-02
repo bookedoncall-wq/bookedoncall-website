@@ -151,12 +151,12 @@ export default function PricingPage() {
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6 text-center sm:grid-cols-2 lg:grid-cols-4">
           <div className="grid gap-2">
-            <p className="text-2xl font-black text-slate-950">No contracts</p>
-            <p className="text-sm leading-6 text-slate-500">Month-to-month billing. Cancel anytime.</p>
+            <p className="text-2xl font-black text-slate-950">Clear plan terms</p>
+            <p className="text-sm leading-6 text-slate-500">Self-serve plans are month to month unless a separate agreement says otherwise.</p>
           </div>
           <div className="grid gap-2">
-            <p className="text-2xl font-black text-slate-950">No setup fees</p>
-            <p className="text-sm leading-6 text-slate-500">We help you get configured at no extra cost.</p>
+            <p className="text-2xl font-black text-slate-950">Setup help included</p>
+            <p className="text-sm leading-6 text-slate-500">Listed plans include guided setup; custom rollout costs are stated before you commit.</p>
           </div>
           <div className="grid gap-2">
             <p className="text-2xl font-black text-slate-950">No per-call charges</p>

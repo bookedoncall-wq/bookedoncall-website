@@ -33,5 +33,8 @@ jobs:
       - name: Verify content
         run: npm run verify:content
 
+      - name: Verify SEO
+        run: npm run verify:seo
+
       - name: Verify security posture
         run: npm run verify:security

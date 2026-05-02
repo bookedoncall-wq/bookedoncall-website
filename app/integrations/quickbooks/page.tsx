@@ -2,7 +2,7 @@ import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { integrationPages } from "@/config/marketing"
-import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
+import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo"
 
 const content = integrationPages.quickbooks
 
@@ -16,7 +16,6 @@ export default function QuickBooksPage() {
   return (
     <>
       <StructuredData data={buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "QuickBooks roadmap", path: "/integrations/quickbooks" }])} />
-      <StructuredData data={buildServiceSchema({ name: content.title, description: content.summary, path: "/integrations/quickbooks" })} />
       <PageIntro eyebrow="Roadmap" title={content.title} description={content.summary} />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">

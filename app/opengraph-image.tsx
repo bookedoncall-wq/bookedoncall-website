@@ -41,7 +41,7 @@ export default function OGImage() {
             AI call answering for trades businesses.
           </span>
           <span style={{ fontSize: 28, lineHeight: 1.4, color: "#334155" }}>
-            Answer missed calls, capture customer details, and book jobs or callbacks without sending leads to voicemail.
+            Answer missed calls, capture customer details, and move qualified calls toward booking or callback handoff.
           </span>
         </div>
 

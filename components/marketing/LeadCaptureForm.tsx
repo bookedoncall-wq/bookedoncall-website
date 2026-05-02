@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
-import { customerLoginPath, plans, supportedTrades } from "@/config/site"
+import { customerLoginPath, plans, siteConfig, supportedTrades } from "@/config/site"
 import { trackMarketingEvent } from "@/lib/analytics"
 
 type FormState = {
@@ -21,6 +21,28 @@ const defaultPlanId = plans[0]?.id ?? "starter"
 function getPlanFromSearchParams(searchParams: URLSearchParams) {
   const plan = searchParams.get("plan")?.trim().toLowerCase()
   return plans.find((item) => item.id === plan)?.id ?? defaultPlanId
+}
+
+function buildLeadEmailText(lead: FormState & { source: string }) {
+  return [
+    `New ${siteConfig.name} website lead`,
+    "",
+    `Name: ${lead.name}`,
+    `Business name: ${lead.businessName}`,
+    `Primary trade: ${lead.trade}`,
+    `Phone: ${lead.phone}`,
+    `Email: ${lead.email || "Not provided"}`,
+    `Plan: ${lead.planInterest}`,
+    `Source: ${lead.source || "website-form"}`,
+    "",
+    "Notes:",
+    lead.details || "None provided",
+  ].join("\n")
+}
+
+function buildLeadMailtoHref(lead: FormState & { source: string }) {
+  const subject = `${siteConfig.name} ${lead.planInterest || "Starter"} lead`
+  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildLeadEmailText(lead))}`
 }
 
 export function LeadCaptureForm() {
@@ -112,8 +134,19 @@ export function LeadCaptureForm() {
         window.location.href = body.mailtoHref
       }
     } catch {
-      setStatus("error")
-      setMessage("We could not submit your request. Please try again.")
+      const fallbackMailtoHref = buildLeadMailtoHref(payload)
+      trackMarketingEvent("lead_form_submitted", {
+        placement: "sign_up_form",
+        planId: planInterest,
+        trade: form.trade,
+        delivery: "mailto",
+        fallbackReason: "client_request_failed",
+      })
+      setStatus("success")
+      setMessage("We could not submit through the website, so your email app should open with your details filled in. Send that email to complete the setup request.")
+      setMailtoHref(fallbackMailtoHref)
+      setErrors({})
+      window.location.href = fallbackMailtoHref
     }
   }
 
@@ -259,7 +292,7 @@ export function LeadCaptureForm() {
             aria-live="polite"
         >
           {message}
-          {status === "success" && mailtoHref ? (
+          {mailtoHref ? (
             <>
               {" "}
               <a href={mailtoHref} className="underline decoration-green-300 underline-offset-4">
