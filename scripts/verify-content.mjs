@@ -29,6 +29,8 @@ const requiredRoutes = [
   "app/integrations/google-calendar/page.tsx",
   "app/integrations/text-sms/page.tsx",
   "app/integrations/quickbooks/page.tsx",
+  "app/integrations/housecall-pro/page.tsx",
+  "app/integrations/servicetitan/page.tsx",
   "app/privacy/page.tsx",
   "app/terms/page.tsx",
   "app/dpa/page.tsx",
@@ -47,6 +49,8 @@ const bannedPatterns = [
   /usage analytics dashboard/i,
   /team member access/i,
   /live integrations/i,
+  /housecall pro (?:is|integration is) (?:available|supported|live)/i,
+  /servicetitan (?:is|integration is) (?:available|supported|live)/i,
   /no setup fees?/i,
   /no contracts/i,
   /no long contract/i,
@@ -122,6 +126,8 @@ if (
   !sitemapSource.includes("/integrations/jobber") ||
   !sitemapSource.includes("/integrations/text-sms") ||
   !sitemapSource.includes("/integrations/quickbooks") ||
+  !sitemapSource.includes("/integrations/housecall-pro") ||
+  !sitemapSource.includes("/integrations/servicetitan") ||
   !sitemapSource.includes("/examples")
 ) {
   errors.push("app/sitemap.ts must include FAQ, demo, and integration pages")
@@ -175,6 +181,12 @@ if (/No contracts/i.test(pricingSource)) {
 const quickBooksSource = readText("app/integrations/quickbooks/page.tsx")
 if (/buildServiceSchema/i.test(quickBooksSource)) {
   errors.push("app/integrations/quickbooks/page.tsx must not emit Service schema for a roadmap-only integration")
+}
+for (const relativePath of ["app/integrations/housecall-pro/page.tsx", "app/integrations/servicetitan/page.tsx"]) {
+  const source = readText(relativePath)
+  if (/buildServiceSchema/i.test(source)) {
+    errors.push(`${relativePath} must not emit Service schema for a roadmap-only integration`)
+  }
 }
 
 const verifyWorkflowSource = readText(".github/workflows/verify-content.yml")

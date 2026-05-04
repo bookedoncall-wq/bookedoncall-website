@@ -9,7 +9,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Integrations",
   description:
-    "See how BookedOnCall works with Jobber, Google Calendar, and Text / SMS today, plus the QuickBooks roadmap note.",
+    "See how BookedOnCall works with Jobber, Google Calendar, and Text / SMS today, plus roadmap notes for QuickBooks, Housecall Pro, and ServiceTitan.",
   path: "/integrations",
 })
 
@@ -21,14 +21,14 @@ export default function IntegrationsPage() {
         data={buildServiceSchema({
           name: "BookedOnCall integrations",
           description:
-            "BookedOnCall integrations for Jobber, Google Calendar, Text / SMS, and the QuickBooks roadmap.",
+            "BookedOnCall integration guidance for supported Jobber, Google Calendar, and Text / SMS workflows plus roadmap items.",
           path: "/integrations",
         })}
       />
       <PageIntro
         eyebrow="Integrations"
         title="Fits the tools you already use."
-        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. Today that means supported workflows with Jobber, Google Calendar, and Text / SMS. QuickBooks is the next targeted integration on the roadmap."
+        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. Today that means supported workflows with Jobber, Google Calendar, and Text / SMS. QuickBooks, Housecall Pro, and ServiceTitan are roadmap or evaluation items and are not available today."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">

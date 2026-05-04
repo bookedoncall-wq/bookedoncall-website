@@ -69,6 +69,8 @@ export const secondaryNav = [
   { label: "Google Calendar", href: "/integrations/google-calendar" },
   { label: "Text / SMS", href: "/integrations/text-sms" },
   { label: "QuickBooks", href: "/integrations/quickbooks" },
+  { label: "Housecall Pro", href: "/integrations/housecall-pro" },
+  { label: "ServiceTitan", href: "/integrations/servicetitan" },
   { label: "Resources", href: "/resources" },
   { label: "Examples", href: "/examples" },
   { label: "FAQ", href: "/faq" },

@@ -418,7 +418,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Integrations</p>
             <h2 className="text-4xl font-black text-slate-950">Fits the tools you already use.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall is built to fit your current workflow. That includes supported Jobber, Google Calendar, and customer Text / SMS follow-up when those workflows are configured for your business. QuickBooks is the next targeted integration on the roadmap.
+              BookedOnCall is built to fit your current workflow. That includes supported Jobber, Google Calendar, and customer Text / SMS follow-up when those workflows are configured for your business. QuickBooks, Housecall Pro, and ServiceTitan are roadmap or evaluation items.
             </p>
             </div>
             <TrackedLink

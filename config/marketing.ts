@@ -17,7 +17,7 @@ export const faqEntries = [
   {
     question: "What integrations are supported today?",
     answer:
-      "BookedOnCall supports Jobber, Google Calendar, and customer text messaging when those workflows are configured for your business. QuickBooks is the next targeted integration on the roadmap, but it is not live yet."
+      "BookedOnCall supports Jobber, Google Calendar, and customer text messaging when those workflows are configured for your business. QuickBooks, Housecall Pro, and ServiceTitan are roadmap or evaluation items and are not available today."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -429,6 +429,36 @@ export const integrationPages = {
     outcomeCards: [
       "Planned: better customer context for repeat callers and office follow-up.",
       "Planned: a narrow first release that adds signal without making QuickBooks a hard dependency for every call.",
+      "Current status: not available in BookedOnCall today."
+    ]
+  },
+  "housecall-pro": {
+    title: "BookedOnCall + Housecall Pro",
+    summary:
+      "Housecall Pro is a requested field-service integration under evaluation, but it is not live in BookedOnCall today.",
+    bullets: [
+      "The first safe target would be a narrow booking or callback handoff that respects the customer's existing Housecall Pro workflow.",
+      "Housecall Pro provider access, tenant credentials, contract tests, smoke evidence, and pilot workflow review are required before any launch claim.",
+      "Roadmap items are directional and may change as provider access, customer demand, and launch priorities evolve."
+    ],
+    outcomeCards: [
+      "Under evaluation: capture the caller details BookedOnCall already collects and map them into the right Housecall Pro workflow.",
+      "Required before launch: provider-backed sandbox or tenant proof, current-head smoke evidence, and a manual workflow review.",
+      "Current status: not available in BookedOnCall today."
+    ]
+  },
+  servicetitan: {
+    title: "BookedOnCall + ServiceTitan",
+    summary:
+      "ServiceTitan is a partner-gated integration candidate that requires API access, workflow mapping, and provider proof before it can become a launch integration.",
+    bullets: [
+      "The safest first target is CSR-reviewed booking intake or availability-aware scheduling only after ServiceTitan access and scopes are approved.",
+      "ServiceTitan requires tenant or partner API credentials, app keys, scopes, sandbox validation, and customer-approved booking-provider mapping.",
+      "Roadmap items are directional and may change as partner access, certification, and pilot-customer requirements are confirmed."
+    ],
+    outcomeCards: [
+      "Under evaluation: route qualified caller details into the ServiceTitan workflow without bypassing CSR review where the tenant requires it.",
+      "Required before launch: ServiceTitan sandbox or tenant proof, provider smoke, release evidence, and customer workflow approval.",
       "Current status: not available in BookedOnCall today."
     ]
   }

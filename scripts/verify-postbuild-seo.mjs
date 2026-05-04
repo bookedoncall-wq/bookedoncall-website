@@ -49,6 +49,8 @@ const bannedHtmlPatterns = [
   /writes? new appointments? back in real time/i,
   /usage analytics dashboard/i,
   /team member access/i,
+  /housecall pro (?:is|integration is) (?:available|supported|live)/i,
+  /servicetitan (?:is|integration is) (?:available|supported|live)/i,
 ]
 
 const errors = []

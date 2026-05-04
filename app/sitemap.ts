@@ -31,6 +31,8 @@ const pages = [
   "/integrations/google-calendar",
   "/integrations/text-sms",
   "/integrations/quickbooks",
+  "/integrations/housecall-pro",
+  "/integrations/servicetitan",
   "/privacy",
   "/terms",
   "/dpa",
