@@ -57,7 +57,7 @@ export default function QuickBooksPage() {
               eventPayload={{ placement: "quickbooks_integrations", href: "/integrations" }}
               className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
-              <h2 className="mb-3 text-2xl font-black text-slate-950">See live integrations</h2>
+              <h2 className="mb-3 text-2xl font-black text-slate-950">See supported integrations</h2>
               <p className="text-base leading-7 text-slate-600">Review the integrations you can use today while QuickBooks stays in the roadmap bucket.</p>
             </TrackedLink>
             <TrackedLink

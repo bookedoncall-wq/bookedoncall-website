@@ -62,7 +62,7 @@ export const faqEntries = [
   {
     question: "Is there a long-term contract?",
     answer:
-      "No. BookedOnCall is billed monthly with no long-term commitment. You can cancel anytime."
+      "Standard public plans are monthly unless a separate order form or written agreement says otherwise. Cancellation and renewal terms follow the plan or agreement that applies to your account."
   },
   {
     question: "How does BookedOnCall compare to a live answering service?",
@@ -106,7 +106,7 @@ export const homepageTrustPoints = [
   },
   {
     title: "Month-to-month and easy to try",
-    body: "Monthly billing, no setup fee, and no long contract. Keep it if it helps. Cancel if it doesn't.",
+    body: "Standard public plans are monthly with a clear setup path. Keep it if it helps, and review any separate written terms before you start.",
   },
 ] as const
 

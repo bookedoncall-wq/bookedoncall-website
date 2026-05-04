@@ -122,7 +122,7 @@ export default function IntegrationsPage() {
 
       <CtaBand
         title="Want to see how BookedOnCall fits your scheduling setup?"
-        body="Review the live integrations, see what is planned next, read example calls, and start setup when you want them in the flow."
+        body="Review the supported integrations, see what is planned next, read example calls, and start setup when you want them in the flow."
       />
     </>
   )

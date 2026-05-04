@@ -87,7 +87,7 @@ const nextSteps = [
   },
   {
     title: "Review integrations",
-    body: "See the live Jobber, Google Calendar, and Text / SMS integrations, plus the QuickBooks roadmap note.",
+    body: "See the supported Jobber, Google Calendar, and Text / SMS workflows, plus the QuickBooks roadmap note.",
     href: "/integrations",
   }
 ] as const

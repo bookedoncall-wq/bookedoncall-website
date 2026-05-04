@@ -46,6 +46,12 @@ const bannedPatterns = [
   /writes? new appointments? back in real time/i,
   /usage analytics dashboard/i,
   /team member access/i,
+  /live integrations/i,
+  /no setup fees?/i,
+  /no contracts/i,
+  /no long contract/i,
+  /no long-term commitment/i,
+  /cancel anytime/i,
 ]
 
 const requiredFiles = [
@@ -162,8 +168,8 @@ if (!leadFormSource.includes("buildLeadMailtoHref") || !leadFormSource.includes(
 }
 
 const pricingSource = readText("app/pricing/page.tsx")
-if (/No contracts/i.test(pricingSource) || /No setup fees/i.test(pricingSource)) {
-  errors.push("app/pricing/page.tsx must not make absolute no-contract or no-setup-fee claims that can conflict with custom commercial terms")
+if (/No contracts/i.test(pricingSource)) {
+  errors.push("app/pricing/page.tsx must not make absolute no-contract claims that can conflict with custom commercial terms")
 }
 
 const quickBooksSource = readText("app/integrations/quickbooks/page.tsx")
