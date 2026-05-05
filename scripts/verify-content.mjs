@@ -14,6 +14,7 @@ const requiredRoutes = [
   "app/pricing/page.tsx",
   "app/sign-up/page.tsx",
   "app/api/leads/route.ts",
+  "lib/integration-review-intake.ts",
   "app/faq/page.tsx",
   "app/examples/page.tsx",
   "app/compare/ai-receptionist-vs-voicemail/page.tsx",
@@ -63,6 +64,7 @@ const requiredFiles = [
   "config/public-site-contract.json",
   "scripts/sync-monorepo-public-truth.mjs",
   ".github/workflows/verify-content.yml",
+  "scripts/verify-runtime.mjs",
 ]
 
 const forbiddenLeadWebhookEnvNames = [
@@ -105,6 +107,7 @@ function collectFiles(dir) {
 collectFiles(path.join(repoRoot, "app"))
 collectFiles(path.join(repoRoot, "config"))
 collectFiles(path.join(repoRoot, "components"))
+collectFiles(path.join(repoRoot, "lib"))
 
 for (const filePath of appFiles) {
   const source = fs.readFileSync(filePath, "utf8")
@@ -145,6 +148,9 @@ const packageJson = JSON.parse(readText("package.json"))
 if (packageJson.dependencies?.stripe || packageJson.devDependencies?.stripe) {
   errors.push("package.json must not depend on stripe in the website repo")
 }
+if (packageJson.scripts?.["verify:runtime"] !== "node ./scripts/verify-runtime.mjs") {
+  errors.push("package.json must expose npm run verify:runtime for production-mode route and lead API smoke coverage")
+}
 
 const envExample = readText(".env.example")
 if (/^\s*STRIPE_[A-Z0-9_]*\s*=/im.test(envExample)) {
@@ -164,13 +170,62 @@ const leadRouteSource = readText("app/api/leads/route.ts")
 if (!leadRouteSource.includes("RESEND_API_KEY") || !leadRouteSource.includes("RESEND_FROM_EMAIL")) {
   errors.push("app/api/leads/route.ts must support explicit Resend lead delivery")
 }
+
+const runtimeVerifierSource = readText("scripts/verify-runtime.mjs")
+for (const requiredRuntimeGuard of [
+  ".next/server/app/page.js",
+  ".next/server/app/sign-up/page.js",
+  ".next/server/app/api/leads/route.js",
+  "RESEND_API_KEY: \"\"",
+  "Housecall%20Pro%20review%20lead",
+  "client_secret: abcdefghijklmnopqrstuvwxyz",
+  "Do not paste provider credentials",
+]) {
+  if (!runtimeVerifierSource.includes(requiredRuntimeGuard)) {
+    errors.push(`scripts/verify-runtime.mjs must preserve production runtime guard phrase: ${requiredRuntimeGuard}`)
+  }
+}
 if (!leadRouteSource.includes("mailtoHref") || !leadRouteSource.includes("buildLeadMailtoHref")) {
   errors.push("app/api/leads/route.ts must preserve the mailto fallback lead path")
+}
+for (const requiredLeadSecretGuard of [
+  "providerSecretMessage",
+  "containsProviderSecretLikeContent",
+  "@/lib/integration-review-intake",
+  "Provider credential policy: no provider credentials should be collected through the public form."
+]) {
+  if (!leadRouteSource.includes(requiredLeadSecretGuard)) {
+    errors.push(`app/api/leads/route.ts must preserve assisted-review secret guard phrase: ${requiredLeadSecretGuard}`)
+  }
 }
 
 const leadFormSource = readText("components/marketing/LeadCaptureForm.tsx")
 if (!leadFormSource.includes("buildLeadMailtoHref") || !leadFormSource.includes("client_request_failed")) {
   errors.push("components/marketing/LeadCaptureForm.tsx must preserve a client-side mailto fallback when lead API submission fails")
+}
+for (const requiredLeadFormGuard of [
+  "containsProviderSecretLikeContent",
+  "@/lib/integration-review-intake",
+  "Request review",
+]) {
+  if (!leadFormSource.includes(requiredLeadFormGuard)) {
+    errors.push(`components/marketing/LeadCaptureForm.tsx must preserve assisted-review intake guard phrase: ${requiredLeadFormGuard}`)
+  }
+}
+
+const integrationReviewIntakeSource = readText("lib/integration-review-intake.ts")
+for (const requiredSharedGuard of [
+  "providerSecretLikePatterns",
+  "containsProviderSecretLikeContent",
+  "Request Housecall Pro review",
+  "Request ServiceTitan review",
+  "Do not paste provider credentials",
+  "Do not paste API keys, webhook secrets, or credentials",
+  "Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials"
+]) {
+  if (!integrationReviewIntakeSource.includes(requiredSharedGuard)) {
+    errors.push(`lib/integration-review-intake.ts must preserve assisted-review intake guard phrase: ${requiredSharedGuard}`)
+  }
 }
 
 const pricingSource = readText("app/pricing/page.tsx")
@@ -182,10 +237,43 @@ const quickBooksSource = readText("app/integrations/quickbooks/page.tsx")
 if (/buildServiceSchema/i.test(quickBooksSource)) {
   errors.push("app/integrations/quickbooks/page.tsx must not emit Service schema for a roadmap-only integration")
 }
-for (const relativePath of ["app/integrations/housecall-pro/page.tsx", "app/integrations/servicetitan/page.tsx"]) {
+const assistedReviewRoutes = [
+  {
+    path: "app/integrations/housecall-pro/page.tsx",
+    required: [
+      "Assisted integration review",
+      "Request Housecall Pro review",
+      "No credentials are collected through the public form",
+      "Provider smoke, release evidence, and manual workflow review are required"
+    ],
+    forbidden: [/Connect Housecall Pro/i, /Housecall Pro is available/i, /Housecall Pro is supported/i]
+  },
+  {
+    path: "app/integrations/servicetitan/page.tsx",
+    required: [
+      "Assisted integration review",
+      "Request ServiceTitan review",
+      "No ServiceTitan secrets are collected through the public form",
+      "Provider smoke, release evidence, and customer workflow approval are required"
+    ],
+    forbidden: [/Connect ServiceTitan/i, /ServiceTitan is available/i, /ServiceTitan is supported/i]
+  },
+]
+
+for (const { path: relativePath, required, forbidden } of assistedReviewRoutes) {
   const source = readText(relativePath)
   if (/buildServiceSchema/i.test(source)) {
     errors.push(`${relativePath} must not emit Service schema for a roadmap-only integration`)
+  }
+  for (const requiredPhrase of required) {
+    if (!source.includes(requiredPhrase)) {
+      errors.push(`${relativePath} must include assisted-review proof-boundary phrase: ${requiredPhrase}`)
+    }
+  }
+  for (const forbiddenPattern of forbidden) {
+    if (forbiddenPattern.test(source)) {
+      errors.push(`${relativePath} must not imply an unsupported provider is connectable or live: ${forbiddenPattern}`)
+    }
   }
 }
 

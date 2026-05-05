@@ -17,7 +17,7 @@ export const faqEntries = [
   {
     question: "What integrations are supported today?",
     answer:
-      "BookedOnCall supports Jobber, Google Calendar, and customer text messaging when those workflows are configured for your business. QuickBooks, Housecall Pro, and ServiceTitan are roadmap or evaluation items and are not available today."
+      "BookedOnCall supports Jobber, Google Calendar, and customer text messaging when those workflows are configured for your business. QuickBooks is roadmap-only. Housecall Pro and ServiceTitan can be reviewed for assisted pilots when the customer can provide the required provider access, but they are not available as live self-serve integrations today."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -435,29 +435,31 @@ export const integrationPages = {
   "housecall-pro": {
     title: "BookedOnCall + Housecall Pro",
     summary:
-      "Housecall Pro is a requested field-service integration under evaluation, but it is not live in BookedOnCall today.",
+      "Housecall Pro can be reviewed for an assisted pilot when an eligible shop can provide owner-approved API access, but it is not live in BookedOnCall today.",
     bullets: [
-      "The first safe target would be a narrow booking or callback handoff that respects the customer's existing Housecall Pro workflow.",
-      "Housecall Pro provider access, tenant credentials, contract tests, smoke evidence, and pilot workflow review are required before any launch claim.",
+      "The practical first path is a Housecall Pro MAX-plan customer-admin review, using owner-approved API key or webhook access only after secure credential handling is ready.",
+      "The first safe workflow is callback handoff or owner-reviewed job creation that respects the customer's existing Housecall Pro process.",
+      "Provider access, tenant-specific credentials, contract tests, smoke evidence, and pilot workflow review are required before any launch claim.",
       "Roadmap items are directional and may change as provider access, customer demand, and launch priorities evolve."
     ],
     outcomeCards: [
-      "Under evaluation: capture the caller details BookedOnCall already collects and map them into the right Housecall Pro workflow.",
-      "Required before launch: provider-backed sandbox or tenant proof, current-head smoke evidence, and a manual workflow review.",
+      "Assisted review: gather plan eligibility, admin owner, desired handoff behavior, and API/webhook access path before any credential collection.",
+      "Required before launch: provider-backed sandbox or tenant proof, current-head smoke evidence, and manual workflow review.",
       "Current status: not available in BookedOnCall today."
     ]
   },
   servicetitan: {
     title: "BookedOnCall + ServiceTitan",
     summary:
-      "ServiceTitan is a partner-gated integration candidate that requires API access, workflow mapping, and provider proof before it can become a launch integration.",
+      "ServiceTitan can be reviewed for named customers with tenant-admin API participation, but it requires access, workflow mapping, and provider proof before it can become a launch integration.",
     bullets: [
-      "The safest first target is CSR-reviewed booking intake or availability-aware scheduling only after ServiceTitan access and scopes are approved.",
+      "The practical first path is a tenant-private or pilot-specific review where a ServiceTitan admin confirms tenant ID, scopes, app access, and booking-provider setup.",
+      "The safest first workflow is CSR-reviewed booking intake or callback handoff. Availability-aware scheduling comes only after ServiceTitan access and scopes are approved.",
       "ServiceTitan requires tenant or partner API credentials, app keys, scopes, sandbox validation, and customer-approved booking-provider mapping.",
       "Roadmap items are directional and may change as partner access, certification, and pilot-customer requirements are confirmed."
     ],
     outcomeCards: [
-      "Under evaluation: route qualified caller details into the ServiceTitan workflow without bypassing CSR review where the tenant requires it.",
+      "Assisted review: gather tenant-admin owner, desired booking/callback workflow, Scheduling Pro status, and mapping requirements before any credential collection.",
       "Required before launch: ServiceTitan sandbox or tenant proof, provider smoke, release evidence, and customer workflow approval.",
       "Current status: not available in BookedOnCall today."
     ]

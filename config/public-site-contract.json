@@ -95,13 +95,13 @@
     {
       "id": "housecall-pro",
       "name": "Housecall Pro",
-      "description": "Under evaluation: Housecall Pro is a requested field-service integration, but it is not live in BookedOnCall today.",
+      "description": "Assisted review: Housecall Pro may be evaluated for eligible MAX-plan shops with owner-approved API access, but it is not live in BookedOnCall today.",
       "status": "coming_soon"
     },
     {
       "id": "servicetitan",
       "name": "ServiceTitan",
-      "description": "Under evaluation: ServiceTitan is partner-gated and requires provider proof before it can become a launch integration.",
+      "description": "Assisted review: ServiceTitan may be evaluated for named customers with tenant-admin API participation, but it is not live in BookedOnCall today.",
       "status": "coming_soon"
     }
   ],

@@ -4,6 +4,12 @@ import { useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { customerLoginPath, plans, siteConfig, supportedTrades } from "@/config/site"
 import { trackMarketingEvent } from "@/lib/analytics"
+import {
+  containsProviderSecretLikeContent,
+  getIntegrationReviewCopy,
+  normalizeLeadSource,
+  providerSecretMessage,
+} from "@/lib/integration-review-intake"
 
 type FormState = {
   name: string
@@ -24,9 +30,22 @@ function getPlanFromSearchParams(searchParams: URLSearchParams) {
 }
 
 function buildLeadEmailText(lead: FormState & { source: string }) {
+  const reviewCopy = getIntegrationReviewCopy(lead.source)
+  const reviewLines = reviewCopy
+    ? [
+        `Lead type: Assisted ${reviewCopy.provider} integration review`,
+        "Provider credential policy: no provider credentials should be collected through the public form.",
+        "",
+        "Review intake checklist:",
+        ...reviewCopy.include.map((item) => `- ${item}`),
+        "",
+      ]
+    : []
+
   return [
     `New ${siteConfig.name} website lead`,
     "",
+    ...reviewLines,
     `Name: ${lead.name}`,
     `Business name: ${lead.businessName}`,
     `Primary trade: ${lead.trade}`,
@@ -41,13 +60,18 @@ function buildLeadEmailText(lead: FormState & { source: string }) {
 }
 
 function buildLeadMailtoHref(lead: FormState & { source: string }) {
-  const subject = `${siteConfig.name} ${lead.planInterest || "Starter"} lead`
+  const reviewCopy = getIntegrationReviewCopy(lead.source)
+  const subject = reviewCopy
+    ? `${siteConfig.name} ${reviewCopy.provider} review lead`
+    : `${siteConfig.name} ${lead.planInterest || "Starter"} lead`
   return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildLeadEmailText(lead))}`
 }
 
 export function LeadCaptureForm() {
   const searchParams = useSearchParams()
   const selectedPlanFromUrl = useMemo(() => getPlanFromSearchParams(searchParams), [searchParams])
+  const source = useMemo(() => normalizeLeadSource(searchParams.get("source")), [searchParams])
+  const reviewCopy = useMemo(() => getIntegrationReviewCopy(source), [source])
 
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -83,7 +107,14 @@ export function LeadCaptureForm() {
     const payload = {
       ...form,
       planInterest,
-      source: searchParams.get("source") || "website-form",
+      source,
+    }
+
+    if (containsProviderSecretLikeContent(form.details)) {
+      setErrors({ details: providerSecretMessage })
+      setStatus("error")
+      setMessage(providerSecretMessage)
+      return
     }
 
     try {
@@ -153,11 +184,25 @@ export function LeadCaptureForm() {
   return (
     <section id="lead-form" className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
       <div className="grid gap-3">
-        <h2 className="text-2xl font-black text-slate-950">Request setup</h2>
+        <h2 className="text-2xl font-black text-slate-950">{reviewCopy ? reviewCopy.title : "Request setup"}</h2>
         <p className="text-base leading-7 text-slate-600">
-          Tell us about your shop, your current phone coverage, and the plan you are considering. We will follow up with the right setup path and send you into the app when your account is ready.
+          {reviewCopy
+            ? reviewCopy.description
+            : "Tell us about your shop, your current phone coverage, and the plan you are considering. We will follow up with the right setup path and send you into the app when your account is ready."}
         </p>
       </div>
+
+      {reviewCopy ? (
+        <div className="mt-5 grid gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-slate-700">
+          <p className="font-bold text-slate-950">What to include for {reviewCopy.provider}</p>
+          <ul className="grid gap-2">
+            {reviewCopy.include.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="font-semibold text-amber-900">{providerSecretMessage}</p>
+        </div>
+      ) : null}
 
       <form className="mt-6 grid gap-5" onSubmit={handleSubmit} noValidate>
         <div className="grid gap-5 md:grid-cols-2">
@@ -255,8 +300,13 @@ export function LeadCaptureForm() {
             value={form.details}
             onChange={(event) => updateField("details", event.target.value)}
             className="min-h-36 rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
-            placeholder="Tell us about your actual services, secondary trades you handle, scheduling setup, after-hours calls, or anything else we should know before onboarding."
+            placeholder={
+              reviewCopy
+                ? reviewCopy.placeholder
+                : "Tell us about your actual services, secondary trades you handle, scheduling setup, after-hours calls, or anything else we should know before onboarding."
+            }
           />
+          {errors.details ? <span className="text-sm text-red-600">{errors.details}</span> : null}
         </label>
 
         <label className="hidden">
@@ -276,7 +326,7 @@ export function LeadCaptureForm() {
             disabled={status === "submitting"}
             className="inline-flex items-center justify-center rounded-xl bg-slate-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {status === "submitting" ? "Sending..." : "Request setup"}
+            {status === "submitting" ? "Sending..." : reviewCopy ? "Request review" : "Request setup"}
           </button>
           <p className="text-sm leading-6 text-slate-500">
             Already a customer?{" "}

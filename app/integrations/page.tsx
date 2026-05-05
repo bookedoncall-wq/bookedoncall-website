@@ -13,6 +13,13 @@ export const metadata = buildPageMetadata({
   path: "/integrations",
 })
 
+function formatRoadmapBadge(integration: (typeof roadmapIntegrations)[number]) {
+  if (integration.id === "housecall-pro" || integration.id === "servicetitan") {
+    return "Assisted review*"
+  }
+  return "Coming soon*"
+}
+
 export default function IntegrationsPage() {
   return (
     <>
@@ -77,7 +84,7 @@ export default function IntegrationsPage() {
               className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/60"
             >
               <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
-                Coming soon*
+                {formatRoadmapBadge(integration)}
               </div>
               <h2 className="mb-3 text-3xl font-black text-slate-950">{card.title}</h2>
               <p className="mb-5 text-base leading-7 text-slate-700">{card.summary}</p>
@@ -88,7 +95,9 @@ export default function IntegrationsPage() {
                   </div>
                 ))}
               </div>
-              <span className="mt-5 inline-flex text-sm font-bold text-amber-700">See roadmap note</span>
+              <span className="mt-5 inline-flex text-sm font-bold text-amber-700">
+                {integration.id === "housecall-pro" || integration.id === "servicetitan" ? "See review path" : "See roadmap note"}
+              </span>
             </TrackedLink>
                 )
               })}

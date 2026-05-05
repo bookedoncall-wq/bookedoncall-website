@@ -33,6 +33,9 @@ jobs:
       - name: Verify content
         run: npm run verify:content
 
+      - name: Verify runtime
+        run: npm run verify:runtime
+
       - name: Verify SEO
         run: npm run verify:seo
 

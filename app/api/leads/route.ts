@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server"
 import { siteConfig } from "@/config/site"
+import {
+  containsProviderSecretLikeContent,
+  getIntegrationReviewCopy,
+  normalizeLeadSource,
+  providerSecretMessage,
+} from "@/lib/integration-review-intake"
 
 export const runtime = "nodejs"
 
@@ -41,7 +47,7 @@ function normalizeLead(payload: LeadPayload) {
     email: normalizeEmail(payload.email),
     planInterest: normalizeText(payload.planInterest),
     details: normalizeText(payload.details),
-    source: normalizeText(payload.source),
+    source: normalizeLeadSource(normalizeText(payload.source)),
     website: normalizeText(payload.website),
   }
 }
@@ -67,18 +73,38 @@ function validateLead(lead: Lead) {
   if (!lead.planInterest) {
     errors.planInterest = "Choose the plan you are most interested in."
   }
+  if (containsProviderSecretLikeContent(lead.details)) {
+    errors.details = providerSecretMessage
+  }
 
   return errors
 }
 
 function buildLeadSubject(lead: Lead) {
+  const reviewCopy = getIntegrationReviewCopy(lead.source)
+  if (reviewCopy) {
+    return `${siteConfig.name} ${reviewCopy.provider} review lead`
+  }
   return `${siteConfig.name} ${lead.planInterest || "Starter"} lead`
 }
 
 function buildLeadEmailText(lead: Lead) {
+  const reviewCopy = getIntegrationReviewCopy(lead.source)
+  const reviewLines = reviewCopy
+    ? [
+        `Lead type: Assisted ${reviewCopy.provider} integration review`,
+        "Provider credential policy: no provider credentials should be collected through the public form.",
+        "",
+        "Review intake checklist:",
+        ...reviewCopy.include.map((item) => `- ${item}`),
+        "",
+      ]
+    : []
+
   return [
     `New ${siteConfig.name} website lead`,
     "",
+    ...reviewLines,
     `Name: ${lead.name}`,
     `Business name: ${lead.businessName}`,
     `Primary trade: ${lead.trade}`,
@@ -93,7 +119,7 @@ function buildLeadEmailText(lead: Lead) {
 }
 
 function buildLeadMailtoHref(lead: Lead) {
-  const subject = `${siteConfig.name} ${lead.planInterest || "Starter"} lead`
+  const subject = buildLeadSubject(lead)
   const body = buildLeadEmailText(lead)
 
   return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
