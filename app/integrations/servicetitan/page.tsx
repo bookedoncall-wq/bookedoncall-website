@@ -20,7 +20,7 @@ const reviewSteps = [
   },
   {
     title: "Prove before enabling",
-    body: "No ServiceTitan secrets are collected through the public form. Provider smoke, release evidence, and customer workflow approval are required before any tenant is enabled."
+    body: "No ServiceTitan secrets are collected through the public form. Provider-backed test evidence and customer workflow approval are required before any tenant is enabled."
   }
 ] as const
 
@@ -129,7 +129,7 @@ export default function ServiceTitanPage() {
       </section>
       <CtaBand
         title="Need ServiceTitan in the workflow?"
-        body="Start with an assisted integration review. BookedOnCall will keep live booking claims off until tenant access, smoke evidence, and the customer workflow are proven."
+        body="Start with an assisted integration review. BookedOnCall will keep live booking claims off until tenant access, provider-backed test evidence, and the customer workflow are proven."
         primaryLabel="Request ServiceTitan review"
         primaryHref={reviewHref}
         secondaryLabel="See supported integrations"

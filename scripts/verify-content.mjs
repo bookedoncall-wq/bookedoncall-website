@@ -65,6 +65,7 @@ const requiredFiles = [
   "scripts/sync-monorepo-public-truth.mjs",
   ".github/workflows/verify-content.yml",
   "scripts/verify-runtime.mjs",
+  "scripts/verify-journeys.mjs",
 ]
 
 const forbiddenLeadWebhookEnvNames = [
@@ -151,6 +152,9 @@ if (packageJson.dependencies?.stripe || packageJson.devDependencies?.stripe) {
 if (packageJson.scripts?.["verify:runtime"] !== "node ./scripts/verify-runtime.mjs") {
   errors.push("package.json must expose npm run verify:runtime for production-mode route and lead API smoke coverage")
 }
+if (packageJson.scripts?.["verify:journeys"] !== "node ./scripts/verify-journeys.mjs") {
+  errors.push("package.json must expose npm run verify:journeys for production-mode marketing route and CTA journey coverage")
+}
 
 const envExample = readText(".env.example")
 if (/^\s*STRIPE_[A-Z0-9_]*\s*=/im.test(envExample)) {
@@ -187,6 +191,19 @@ for (const requiredRuntimeGuard of [
 }
 if (!leadRouteSource.includes("mailtoHref") || !leadRouteSource.includes("buildLeadMailtoHref")) {
   errors.push("app/api/leads/route.ts must preserve the mailto fallback lead path")
+}
+
+const journeyVerifierSource = readText("scripts/verify-journeys.mjs")
+for (const requiredJourneyGuard of [
+  "SYNTHETIC_PASS",
+  "manual gate",
+  "unexpected app handoff path",
+  "not deployed website proof",
+  "not live in BookedOnCall today",
+]) {
+  if (!journeyVerifierSource.includes(requiredJourneyGuard)) {
+    errors.push(`scripts/verify-journeys.mjs must preserve production journey guard phrase: ${requiredJourneyGuard}`)
+  }
 }
 for (const requiredLeadSecretGuard of [
   "providerSecretMessage",
@@ -244,7 +261,7 @@ const assistedReviewRoutes = [
       "Assisted integration review",
       "Request Housecall Pro review",
       "No credentials are collected through the public form",
-      "Provider smoke, release evidence, and manual workflow review are required"
+      "Provider-backed test evidence and customer workflow review are required"
     ],
     forbidden: [/Connect Housecall Pro/i, /Housecall Pro is available/i, /Housecall Pro is supported/i]
   },
@@ -254,7 +271,7 @@ const assistedReviewRoutes = [
       "Assisted integration review",
       "Request ServiceTitan review",
       "No ServiceTitan secrets are collected through the public form",
-      "Provider smoke, release evidence, and customer workflow approval are required"
+      "Provider-backed test evidence and customer workflow approval are required"
     ],
     forbidden: [/Connect ServiceTitan/i, /ServiceTitan is available/i, /ServiceTitan is supported/i]
   },
@@ -280,6 +297,9 @@ for (const { path: relativePath, required, forbidden } of assistedReviewRoutes) 
 const verifyWorkflowSource = readText(".github/workflows/verify-content.yml")
 if (!/npm run verify:seo/.test(verifyWorkflowSource)) {
   errors.push(".github/workflows/verify-content.yml must run npm run verify:seo after build")
+}
+if (!/npm run verify:journeys/.test(verifyWorkflowSource)) {
+  errors.push(".github/workflows/verify-content.yml must run npm run verify:journeys after build")
 }
 
 if (errors.length > 0) {

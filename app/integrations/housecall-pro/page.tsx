@@ -20,7 +20,7 @@ const reviewSteps = [
   },
   {
     title: "Prove before enabling",
-    body: "No credentials are collected through the public form. Provider smoke, release evidence, and manual workflow review are required before any customer is enabled."
+    body: "No credentials are collected through the public form. Provider-backed test evidence and customer workflow review are required before any customer is enabled."
   }
 ] as const
 
@@ -129,7 +129,7 @@ export default function HousecallProPage() {
       </section>
       <CtaBand
         title="Need Housecall Pro in the workflow?"
-        body="Start with an assisted integration review. BookedOnCall will keep live booking claims off until provider access, smoke evidence, and the customer workflow are proven."
+        body="Start with an assisted integration review. BookedOnCall will keep live booking claims off until provider access, provider-backed test evidence, and the customer workflow are proven."
         primaryLabel="Request Housecall Pro review"
         primaryHref={reviewHref}
         secondaryLabel="See supported integrations"

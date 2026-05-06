@@ -36,6 +36,9 @@ jobs:
       - name: Verify runtime
         run: npm run verify:runtime
 
+      - name: Verify journeys
+        run: npm run verify:journeys
+
       - name: Verify SEO
         run: npm run verify:seo
 

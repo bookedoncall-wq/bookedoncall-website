@@ -1,6 +1,6 @@
 import { LegalPageShell, LegalSection } from "@/components/legal/LegalPageShell"
 import { buildPageMetadata } from "@/lib/seo"
-import { siteConfig } from "@/config/site"
+import { customerLoginUrl, siteConfig } from "@/config/site"
 
 export const metadata = buildPageMetadata({
   title: "Contact",
@@ -90,9 +90,9 @@ export default function ContactPage() {
           </a>
         </p>
         <p>
-          Customer app:{" "}
-          <a href={siteConfig.appUrl} className="font-semibold text-slate-900 underline underline-offset-4">
-            {siteConfig.appUrl}
+          Customer app sign-in:{" "}
+          <a href={customerLoginUrl} className="font-semibold text-slate-900 underline underline-offset-4">
+            {customerLoginUrl}
           </a>
         </p>
       </LegalSection>

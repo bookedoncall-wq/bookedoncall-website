@@ -439,19 +439,19 @@ export const integrationPages = {
     bullets: [
       "The practical first path is a Housecall Pro MAX-plan customer-admin review, using owner-approved API key or webhook access only after secure credential handling is ready.",
       "The first safe workflow is callback handoff or owner-reviewed job creation that respects the customer's existing Housecall Pro process.",
-      "Provider access, tenant-specific credentials, contract tests, smoke evidence, and pilot workflow review are required before any launch claim.",
+      "Provider access, tenant-specific credentials, contract tests, provider-backed test evidence, and pilot workflow review are required before any launch claim.",
       "Roadmap items are directional and may change as provider access, customer demand, and launch priorities evolve."
     ],
     outcomeCards: [
       "Assisted review: gather plan eligibility, admin owner, desired handoff behavior, and API/webhook access path before any credential collection.",
-      "Required before launch: provider-backed sandbox or tenant proof, current-head smoke evidence, and manual workflow review.",
+      "Required before launch: provider-backed sandbox or tenant proof, provider-backed test evidence, and customer workflow review.",
       "Current status: not available in BookedOnCall today."
     ]
   },
   servicetitan: {
     title: "BookedOnCall + ServiceTitan",
     summary:
-      "ServiceTitan can be reviewed for named customers with tenant-admin API participation, but it requires access, workflow mapping, and provider proof before it can become a launch integration.",
+      "ServiceTitan can be reviewed for named customers with tenant-admin API participation, but it is not live in BookedOnCall today and requires access, workflow mapping, and provider proof before it can become a launch integration.",
     bullets: [
       "The practical first path is a tenant-private or pilot-specific review where a ServiceTitan admin confirms tenant ID, scopes, app access, and booking-provider setup.",
       "The safest first workflow is CSR-reviewed booking intake or callback handoff. Availability-aware scheduling comes only after ServiceTitan access and scopes are approved.",
@@ -460,7 +460,7 @@ export const integrationPages = {
     ],
     outcomeCards: [
       "Assisted review: gather tenant-admin owner, desired booking/callback workflow, Scheduling Pro status, and mapping requirements before any credential collection.",
-      "Required before launch: ServiceTitan sandbox or tenant proof, provider smoke, release evidence, and customer workflow approval.",
+      "Required before launch: ServiceTitan sandbox or tenant proof, provider-backed test evidence, and customer workflow approval.",
       "Current status: not available in BookedOnCall today."
     ]
   }
