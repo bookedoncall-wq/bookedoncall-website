@@ -3,7 +3,18 @@ import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { afterCallArtifacts, faqEntries, homepageTrustPoints, productFlowSteps, resourceHighlights, useCaseOrder, useCasePages } from "@/config/marketing"
-import { buildGetStartedHref, integrations, plans, positioning, primaryCtaLabel, selfServeCheckoutEnabled, sourcedProof, supportedTradeLinks } from "@/config/site"
+import {
+  buildGetStartedHref,
+  getIntegrationActionLabel,
+  getIntegrationBadgeLabel,
+  integrations,
+  plans,
+  positioning,
+  primaryCtaLabel,
+  selfServeCheckoutEnabled,
+  sourcedProof,
+  supportedTradeLinks,
+} from "@/config/site"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
 import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
@@ -50,20 +61,6 @@ const heroCallFlowMoments = [
     line: "Thanks. I'll confirm a few details so this can move toward booking or come back to the team with a clear callback next step."
   }
 ] as const
-
-function formatIntegrationBadge(integration: (typeof integrations)[number]) {
-  if (integration.id === "housecall-pro" || integration.id === "servicetitan") {
-    return "Assisted review*"
-  }
-  return integration.status === "coming_soon" ? "Coming soon*" : "Available now"
-}
-
-function formatIntegrationCardAction(integration: (typeof integrations)[number]) {
-  if (integration.id === "housecall-pro" || integration.id === "servicetitan") {
-    return "See review path"
-  }
-  return integration.status === "coming_soon" ? "See roadmap note" : "See integration details"
-}
 
 export default function HomePage() {
   return (
@@ -458,13 +455,13 @@ export default function HomePage() {
                   <span
                     className={`inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] ${integration.status === "coming_soon" ? "border border-amber-300 bg-white text-amber-800" : "border border-emerald-200 bg-emerald-50 text-emerald-800"}`}
                   >
-                    {formatIntegrationBadge(integration)}
+                    {getIntegrationBadgeLabel(integration)}
                   </span>
                   <div className="text-2xl font-black text-slate-950">{integration.name}</div>
                   <p className="text-base leading-7 text-slate-600">{integration.description}</p>
                 </div>
                 <span className="text-sm font-bold text-amber-700">
-                  {formatIntegrationCardAction(integration)}
+                  {getIntegrationActionLabel(integration)}
                 </span>
               </TrackedLink>
             ))}

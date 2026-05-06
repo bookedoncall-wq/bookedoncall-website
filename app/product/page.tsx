@@ -4,7 +4,15 @@ import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { afterCallArtifacts, productFlowSteps } from "@/config/marketing"
-import { buildGetStartedHref, integrations, positioning, primaryCtaLabel, sourcedProof, validatedCapabilities } from "@/config/site"
+import {
+  buildGetStartedHref,
+  getIntegrationBadgeLabel,
+  integrations,
+  positioning,
+  primaryCtaLabel,
+  sourcedProof,
+  validatedCapabilities,
+} from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
 export const metadata = buildPageMetadata({
@@ -174,7 +182,7 @@ export default function ProductPage() {
                   <span
                     className={`mb-3 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] ${integration.status === "coming_soon" ? "border border-amber-300 bg-white text-amber-800" : "border border-emerald-200 bg-emerald-50 text-emerald-800"}`}
                   >
-                    {integration.status === "coming_soon" ? "Coming soon*" : "Available now"}
+                    {getIntegrationBadgeLabel(integration)}
                   </span>
                   <p className="mb-2 text-lg font-black text-slate-950">{integration.name}</p>
                   <p className="text-sm leading-7 text-slate-600">{integration.description}</p>

@@ -11,8 +11,10 @@ const requiredRoutes = [
   "app/about/page.tsx",
   "app/features/page.tsx",
   "app/how-it-works/page.tsx",
+  "app/product/page.tsx",
   "app/pricing/page.tsx",
   "app/sign-up/page.tsx",
+  "app/integrations/page.tsx",
   "app/api/leads/route.ts",
   "lib/integration-review-intake.ts",
   "app/faq/page.tsx",
@@ -242,6 +244,47 @@ for (const requiredSharedGuard of [
 ]) {
   if (!integrationReviewIntakeSource.includes(requiredSharedGuard)) {
     errors.push(`lib/integration-review-intake.ts must preserve assisted-review intake guard phrase: ${requiredSharedGuard}`)
+  }
+}
+
+const siteConfigSource = readText("config/site.ts")
+for (const requiredIntegrationGuard of [
+  "isAssistedReviewIntegration",
+  "getIntegrationBadgeLabel",
+  "getIntegrationActionLabel",
+  "getIntegrationTextLinkLabel",
+  "Assisted review*",
+  "See review path",
+  "See the ${integration.name} review path"
+]) {
+  if (!siteConfigSource.includes(requiredIntegrationGuard)) {
+    errors.push(`config/site.ts must preserve assisted-review integration guard phrase: ${requiredIntegrationGuard}`)
+  }
+}
+
+for (const { path: relativePath, required } of [
+  {
+    path: "app/page.tsx",
+    required: ["getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
+  },
+  {
+    path: "app/integrations/page.tsx",
+    required: ["getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
+  },
+  {
+    path: "app/product/page.tsx",
+    required: ["getIntegrationBadgeLabel(integration)"]
+  },
+  {
+    path: "app/features/page.tsx",
+    required: ["getIntegrationTextLinkLabel(integration)"]
+  }
+]) {
+  const source = readText(relativePath)
+  for (const requiredPhrase of required) {
+    if (!source.includes(requiredPhrase)) {
+      errors.push(`${relativePath} must use shared assisted-review integration labeling: ${requiredPhrase}`)
+    }
   }
 }
 

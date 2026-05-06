@@ -46,6 +46,33 @@ export const customerLoginUrl = new URL("/sign-in", `${contract.brand.appOrigin}
 export const selfServeCheckoutEnabled = contract.featureFlags.selfServeCheckout === true
 export const primaryCtaLabel = positioning.primaryCtaLabel || "Start setup"
 
+export function isAssistedReviewIntegration(integration: (typeof integrations)[number]) {
+  return integration.id === "housecall-pro" || integration.id === "servicetitan"
+}
+
+export function getIntegrationBadgeLabel(integration: (typeof integrations)[number]) {
+  if (isAssistedReviewIntegration(integration)) {
+    return "Assisted review*"
+  }
+  return integration.status === "coming_soon" ? "Coming soon*" : "Available now"
+}
+
+export function getIntegrationActionLabel(integration: (typeof integrations)[number]) {
+  if (isAssistedReviewIntegration(integration)) {
+    return "See review path"
+  }
+  return integration.status === "coming_soon" ? "See roadmap note" : "See integration details"
+}
+
+export function getIntegrationTextLinkLabel(integration: (typeof integrations)[number]) {
+  if (isAssistedReviewIntegration(integration)) {
+    return `See the ${integration.name} review path`
+  }
+  return integration.status === "coming_soon"
+    ? `See the ${integration.name} roadmap page`
+    : `Read the ${integration.name} integration page`
+}
+
 export const primaryNav = [
   { label: "Product", href: "/product" },
   { label: "Industries", href: "/industries" },
