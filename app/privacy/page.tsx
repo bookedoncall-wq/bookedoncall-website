@@ -58,7 +58,7 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong>Business setup information</strong>, such as services offered, service areas, hours, escalation rules, pricing
-            guidance, dispatch preferences, transfer destinations, and connected integration settings.
+            guidance, dispatch preferences, fallback contact paths, and connected integration settings.
           </li>
           <li>
             <strong>Call and messaging records</strong>, such as caller phone numbers, addresses, job details, call audio or recordings if
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
         <p>We use information as needed to:</p>
         <ul className="list-disc pl-6">
           <li>provide, operate, secure, and support the Service,</li>
-          <li>answer calls, route conversations, summarize interactions, and perform configured follow-up workflows,</li>
+          <li>answer calls, route conversations to configured fallback contact paths, summarize interactions, and perform configured follow-up workflows,</li>
           <li>maintain accounts, billing, authentication, and customer support,</li>
           <li>monitor performance, detect abuse, debug failures, and improve reliability and safety,</li>
           <li>comply with legal obligations, enforce agreements, and protect rights and safety, and</li>

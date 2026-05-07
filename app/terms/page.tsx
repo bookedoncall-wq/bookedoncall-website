@@ -62,8 +62,8 @@ export default function TermsPage() {
       <LegalSection title="3. Service description and limitations">
         <p>
           BookedOnCall is an AI phone assistant designed for trades and home-service businesses. Depending on your configuration, the
-          Service may answer inbound calls, capture caller details, summarize conversations, transfer callers, route conversations to your
-          team, schedule or reschedule work through connected tools, and send follow-up communications.
+          Service may answer inbound calls, capture caller details, summarize conversations, route callers to configured fallback contact
+          paths or follow-up workflows, schedule or reschedule work through connected tools, and send follow-up communications.
         </p>
         <p>
           The Service is not a guaranteed human answering service, emergency dispatch service, or life-safety system. You may not rely on
@@ -84,15 +84,16 @@ export default function TermsPage() {
           delayed follow-up actions.
         </p>
         <p>
-          You remain responsible for reviewing your configuration, business rules, transfer destinations, service coverage, escalation
-          paths, messaging templates, and connected-system permissions. You also remain responsible for any final operational decision to
-          dispatch, quote, book, cancel, or communicate with an end customer.
+          You remain responsible for reviewing your configuration, business rules, fallback contact paths, service coverage, escalation
+          paths, messaging templates, and connected-system permissions. BookedOnCall follow-up routing is not proof of a live phone bridge
+          unless that capability is separately enabled and validated for your account. You also remain responsible for any final
+          operational decision to dispatch, quote, book, cancel, or communicate with an end customer.
         </p>
       </LegalSection>
 
       <LegalSection title="5. Customer responsibilities">
         <ul className="list-disc pl-6">
-          <li>Configure the Service accurately, including service areas, hours, escalation instructions, transfer destinations, and booking rules.</li>
+          <li>Configure the Service accurately, including service areas, hours, escalation instructions, fallback contact paths, and booking rules.</li>
           <li>Maintain valid rights and permissions for any connected phone numbers, calendars, CRMs, schedulers, or other third-party systems.</li>
           <li>Provide legally sufficient notices and obtain any consents required for calling, texting, recording, storing, or processing communications.</li>
           <li>Review outputs, monitor follow-up work, and keep human oversight over business-critical decisions.</li>

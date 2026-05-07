@@ -86,6 +86,10 @@ function readText(relativePath) {
   return fs.readFileSync(path.join(repoRoot, relativePath), "utf8")
 }
 
+function normalizeInlineText(value) {
+  return value.replace(/\s+/g, " ")
+}
+
 const errors = []
 
 for (const relativePath of [...requiredRoutes, ...requiredFiles]) {
@@ -291,6 +295,37 @@ for (const { path: relativePath, required } of [
 const pricingSource = readText("app/pricing/page.tsx")
 if (/No contracts/i.test(pricingSource)) {
   errors.push("app/pricing/page.tsx must not make absolute no-contract claims that can conflict with custom commercial terms")
+}
+
+const termsSource = readText("app/terms/page.tsx")
+const normalizedTermsSource = normalizeInlineText(termsSource)
+for (const forbiddenLegalTransferPattern of [/transfer callers/i, /transfer destinations/i]) {
+  if (forbiddenLegalTransferPattern.test(termsSource)) {
+    errors.push(`app/terms/page.tsx must not imply live transfer behavior: ${forbiddenLegalTransferPattern}`)
+  }
+}
+for (const requiredTermsPhrase of [
+  "route callers to configured fallback contact paths or follow-up workflows",
+  "follow-up routing is not proof of a live phone bridge",
+  "fallback contact paths"
+]) {
+  if (!normalizedTermsSource.includes(requiredTermsPhrase)) {
+    errors.push(`app/terms/page.tsx must preserve current transfer proof-boundary phrase: ${requiredTermsPhrase}`)
+  }
+}
+
+const privacySource = readText("app/privacy/page.tsx")
+const normalizedPrivacySource = normalizeInlineText(privacySource)
+if (/transfer destinations/i.test(privacySource)) {
+  errors.push("app/privacy/page.tsx must describe fallback contact paths instead of transfer destinations")
+}
+for (const requiredPrivacyPhrase of [
+  "fallback contact paths",
+  "route conversations to configured fallback contact paths"
+]) {
+  if (!normalizedPrivacySource.includes(requiredPrivacyPhrase)) {
+    errors.push(`app/privacy/page.tsx must preserve current transfer proof-boundary phrase: ${requiredPrivacyPhrase}`)
+  }
 }
 
 const quickBooksSource = readText("app/integrations/quickbooks/page.tsx")
