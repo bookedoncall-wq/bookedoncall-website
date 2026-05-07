@@ -39,8 +39,8 @@ const requiredRoutes = [
   "app/dpa/page.tsx",
   "app/llms.txt/route.ts",
   "app/manifest.ts",
-  "app/robots.ts",
-  "app/sitemap.ts",
+  "app/robots.txt/route.ts",
+  "app/sitemap.xml/route.ts",
 ]
 
 const bannedPatterns = [
@@ -130,7 +130,7 @@ if (!layoutSource.includes("StructuredData")) {
   errors.push("app/layout.tsx must emit structured data")
 }
 
-const sitemapSource = readText("app/sitemap.ts")
+const sitemapSource = readText("app/sitemap.xml/route.ts")
 if (
   !sitemapSource.includes("/faq") ||
   !sitemapSource.includes("/integrations/jobber") ||
@@ -140,7 +140,7 @@ if (
   !sitemapSource.includes("/integrations/servicetitan") ||
   !sitemapSource.includes("/examples")
 ) {
-  errors.push("app/sitemap.ts must include FAQ, demo, and integration pages")
+  errors.push("app/sitemap.xml/route.ts must include FAQ, demo, and integration pages")
 }
 
 if (fs.existsSync(path.join(repoRoot, "app/api/checkout/route.ts"))) {
@@ -148,12 +148,15 @@ if (fs.existsSync(path.join(repoRoot, "app/api/checkout/route.ts"))) {
 }
 
 if (fs.existsSync(path.join(repoRoot, "public/robots.txt"))) {
-  errors.push("Use app/robots.ts as the canonical robots source instead of public/robots.txt")
+  errors.push("Use app/robots.txt/route.ts as the canonical robots source instead of public/robots.txt")
 }
 
 const packageJson = JSON.parse(readText("package.json"))
 if (packageJson.dependencies?.stripe || packageJson.devDependencies?.stripe) {
   errors.push("package.json must not depend on stripe in the website repo")
+}
+if (packageJson.scripts?.build !== "next build") {
+  errors.push("package.json must use the Next 16 default production builder; next build --webpack produced a local next start 500 during launch verification")
 }
 if (packageJson.scripts?.["verify:runtime"] !== "node ./scripts/verify-runtime.mjs") {
   errors.push("package.json must expose npm run verify:runtime for production-mode route and lead API smoke coverage")
@@ -183,9 +186,10 @@ if (!leadRouteSource.includes("RESEND_API_KEY") || !leadRouteSource.includes("RE
 
 const runtimeVerifierSource = readText("scripts/verify-runtime.mjs")
 for (const requiredRuntimeGuard of [
-  ".next/server/app/page.js",
-  ".next/server/app/sign-up/page.js",
-  ".next/server/app/api/leads/route.js",
+  "assertBuildRoutes(repoRoot, requiredBuildRoutes, \"verify:runtime\")",
+  "\"/page\"",
+  "\"/sign-up/page\"",
+  "\"/api/leads/route\"",
   "RESEND_API_KEY: \"\"",
   "Housecall%20Pro%20review%20lead",
   "client_secret: abcdefghijklmnopqrstuvwxyz",
@@ -201,6 +205,8 @@ if (!leadRouteSource.includes("mailtoHref") || !leadRouteSource.includes("buildL
 
 const journeyVerifierSource = readText("scripts/verify-journeys.mjs")
 for (const requiredJourneyGuard of [
+  "assertBuildRoutes(repoRoot, requiredBuildRoutes, \"verify:journeys\")",
+  "\"/sitemap.xml/route\"",
   "SYNTHETIC_PASS",
   "manual gate",
   "unexpected app handoff path",
@@ -209,6 +215,18 @@ for (const requiredJourneyGuard of [
 ]) {
   if (!journeyVerifierSource.includes(requiredJourneyGuard)) {
     errors.push(`scripts/verify-journeys.mjs must preserve production journey guard phrase: ${requiredJourneyGuard}`)
+  }
+}
+const productionVerifierSource = readText("scripts/lib/next-production-verifier.mjs")
+for (const requiredProductionVerifierGuard of [
+  ".next/BUILD_ID",
+  ".next/server/app-paths-manifest.json",
+  ".next/app-path-routes-manifest.json",
+  "next start",
+  "Request timed out after",
+]) {
+  if (!productionVerifierSource.includes(requiredProductionVerifierGuard)) {
+    errors.push(`scripts/lib/next-production-verifier.mjs must preserve production verification guard phrase: ${requiredProductionVerifierGuard}`)
   }
 }
 for (const requiredLeadSecretGuard of [

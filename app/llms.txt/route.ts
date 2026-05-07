@@ -1,5 +1,7 @@
 import { buildGetStartedHref, positioning, primaryCtaLabel, publicSiteContract, selfServeCheckoutEnabled, siteConfig } from "@/config/site"
 
+export const runtime = "nodejs"
+
 export async function GET() {
   const availableIntegrations = publicSiteContract.integrations
     .filter((integration) => integration.status === "available")

@@ -1,23 +1,19 @@
 #!/usr/bin/env node
 
-import { spawn } from "node:child_process"
 import fs from "node:fs"
-import http from "node:http"
-import net from "node:net"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
+import { assertBuildRoutes, getFreePort, requestText, startNextServer, waitForServer } from "./lib/next-production-verifier.mjs"
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const contract = JSON.parse(fs.readFileSync(path.join(repoRoot, "config", "public-site-contract.json"), "utf8"))
 const siteOrigin = new URL(contract.brand.websiteOrigin).origin
 const appOrigin = new URL(contract.brand.appOrigin).origin
-const startupTimeoutMs = 30_000
-const requestTimeoutMs = 8_000
 
-const requiredBuildArtifacts = [
-  ".next/server/app/page.js",
-  ".next/server/app/sitemap.xml.body",
-  ".next/server/app/sign-up/page.js",
+const requiredBuildRoutes = [
+  "/page",
+  "/sitemap.xml/route",
+  "/sign-up/page",
 ]
 
 const criticalRouteExpectations = {
@@ -64,76 +60,8 @@ function parseArgs(argv) {
   return options
 }
 
-function addLogLine(logs, chunk) {
-  const value = String(chunk || "").trim()
-  if (!value) return
-  logs.push(value)
-  while (logs.length > 80) logs.shift()
-}
-
 function assertBuildArtifacts() {
-  const missing = requiredBuildArtifacts.filter((relativePath) => !fs.existsSync(path.join(repoRoot, relativePath)))
-  if (missing.length > 0) {
-    throw new Error(`Missing production build artifacts: ${missing.join(", ")}. Run npm run build before npm run verify:journeys.`)
-  }
-}
-
-function getFreePort() {
-  return new Promise((resolve, reject) => {
-    const server = net.createServer()
-    server.once("error", reject)
-    server.listen(0, "127.0.0.1", () => {
-      const address = server.address()
-      const port = typeof address === "object" && address ? address.port : null
-      server.close(() => {
-        if (port) resolve(port)
-        else reject(new Error("Unable to reserve a local journey verification port."))
-      })
-    })
-  })
-}
-
-function requestText(url, options = {}) {
-  return new Promise((resolve, reject) => {
-    const request = http.request(url, options, (response) => {
-      const chunks = []
-      response.on("data", (chunk) => chunks.push(chunk))
-      response.on("end", () => {
-        resolve({
-          status: response.statusCode || 0,
-          headers: response.headers,
-          body: Buffer.concat(chunks).toString("utf8"),
-        })
-      })
-    })
-
-    request.setTimeout(requestTimeoutMs, () => {
-      request.destroy(new Error(`Request timed out after ${requestTimeoutMs}ms: ${url}`))
-    })
-    request.on("error", reject)
-    request.end()
-  })
-}
-
-async function waitForServer(baseUrl, child, logs) {
-  const startedAt = Date.now()
-  let lastError = null
-
-  while (Date.now() - startedAt < startupTimeoutMs) {
-    if (child.exitCode !== null) {
-      throw new Error(`next start exited before serving requests with code ${child.exitCode}. Logs:\n${logs.join("\n")}`)
-    }
-
-    try {
-      await requestText(`${baseUrl}/`)
-      return
-    } catch (error) {
-      lastError = error
-      await new Promise((resolve) => setTimeout(resolve, 400))
-    }
-  }
-
-  throw new Error(`Timed out waiting for next start. Last error: ${lastError?.message || "unknown"}. Logs:\n${logs.join("\n")}`)
+  assertBuildRoutes(repoRoot, requiredBuildRoutes, "verify:journeys")
 }
 
 function decodeHtml(value) {
@@ -306,22 +234,12 @@ async function main() {
 
   const port = process.env.BOOKEDONCALL_VERIFY_JOURNEYS_PORT || (await getFreePort())
   const baseUrl = `http://127.0.0.1:${port}`
-  const nextBin = path.join(repoRoot, "node_modules", "next", "dist", "bin", "next")
-  const logs = []
-  const child = spawn(process.execPath, [nextBin, "start", "-p", String(port)], {
-    cwd: repoRoot,
-    env: {
-      ...process.env,
-      BOOKEDONCALL_LEAD_NOTIFY_TO: "",
-      RESEND_API_KEY: "",
-      RESEND_FROM_EMAIL: "",
-      RESEND_REPLY_TO_EMAIL: "",
-    },
-    stdio: ["ignore", "pipe", "pipe"],
+  const { child, logs } = startNextServer(repoRoot, port, {
+    BOOKEDONCALL_LEAD_NOTIFY_TO: "",
+    RESEND_API_KEY: "",
+    RESEND_FROM_EMAIL: "",
+    RESEND_REPLY_TO_EMAIL: "",
   })
-
-  child.stdout.on("data", (chunk) => addLogLine(logs, chunk))
-  child.stderr.on("data", (chunk) => addLogLine(logs, chunk))
 
   try {
     await waitForServer(baseUrl, child, logs)
