@@ -26,7 +26,7 @@ export default function QuickBooksPage() {
             </div>
             <h2 className="mb-4 text-3xl font-black text-slate-950">What we are targeting first</h2>
             <p className="mb-5 text-base leading-7 text-amber-950">
-              QuickBooks is not live in BookedOnCall today; supported launch integrations remain listed on the integrations overview.
+              QuickBooks is not live in BookedOnCall today; supported integrations remain listed on the integrations overview.
             </p>
             <div className="grid gap-3">
               {content.bullets.map((bullet) => (

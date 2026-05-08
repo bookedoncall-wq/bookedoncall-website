@@ -350,6 +350,25 @@ const quickBooksSource = readText("app/integrations/quickbooks/page.tsx")
 if (/buildServiceSchema/i.test(quickBooksSource)) {
   errors.push("app/integrations/quickbooks/page.tsx must not emit Service schema for a roadmap-only integration")
 }
+for (const forbiddenCustomerFacingIntegrationPhrase of [
+  /launch-safe path/i,
+  /launch integration/i,
+  /launch integrations/i,
+  /launch claim/i,
+  /provider proof/i,
+  /provider-backed test evidence/i,
+]) {
+  for (const relativePath of [
+    "app/integrations/quickbooks/page.tsx",
+    "app/integrations/housecall-pro/page.tsx",
+    "app/integrations/servicetitan/page.tsx",
+    "config/marketing.ts",
+  ]) {
+    if (forbiddenCustomerFacingIntegrationPhrase.test(readText(relativePath))) {
+      errors.push(`${relativePath} must use buyer-facing roadmap wording instead of internal proof/release phrase: ${forbiddenCustomerFacingIntegrationPhrase}`)
+    }
+  }
+}
 const assistedReviewRoutes = [
   {
     path: "app/integrations/housecall-pro/page.tsx",
@@ -357,7 +376,7 @@ const assistedReviewRoutes = [
       "Assisted integration review",
       "Request Housecall Pro review",
       "No credentials are collected through the public form",
-      "Provider-backed test evidence and customer workflow review are required"
+      "Provider-backed testing and customer workflow review are required"
     ],
     forbidden: [/Connect Housecall Pro/i, /Housecall Pro is available/i, /Housecall Pro is supported/i]
   },
@@ -367,7 +386,7 @@ const assistedReviewRoutes = [
       "Assisted integration review",
       "Request ServiceTitan review",
       "No ServiceTitan secrets are collected through the public form",
-      "Provider-backed test evidence and customer workflow approval are required"
+      "Provider-backed testing and customer workflow approval are required"
     ],
     forbidden: [/Connect ServiceTitan/i, /ServiceTitan is available/i, /ServiceTitan is supported/i]
   },

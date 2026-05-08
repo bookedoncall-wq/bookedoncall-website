@@ -20,7 +20,7 @@ const reviewSteps = [
   },
   {
     title: "Prove before enabling",
-    body: "No ServiceTitan secrets are collected through the public form. Provider-backed test evidence and customer workflow approval are required before any tenant is enabled."
+    body: "No ServiceTitan secrets are collected through the public form. Provider-backed testing and customer workflow approval are required before any tenant is enabled."
   }
 ] as const
 
@@ -72,7 +72,7 @@ export default function ServiceTitanPage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How to move it forward</p>
             <h2 className="text-3xl font-black text-slate-950">Bring ServiceTitan into a guided review.</h2>
             <p className="max-w-3xl text-base leading-7 text-slate-600">
-              This is the launch-safe path for ServiceTitan shops. It collects the customer admin, workflow, and mapping context before any tenant secret, app key, or provider write path is discussed.
+              This is the assisted-review path for ServiceTitan shops. It collects the customer admin, workflow, and mapping context before any tenant secret, app key, or provider write path is discussed.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
@@ -129,7 +129,7 @@ export default function ServiceTitanPage() {
       </section>
       <CtaBand
         title="Need ServiceTitan in the workflow?"
-        body="Start with an assisted integration review. BookedOnCall will keep live booking claims off until tenant access, provider-backed test evidence, and the customer workflow are proven."
+        body="Start with an assisted integration review. BookedOnCall will keep live booking claims off until tenant access, provider-backed testing, and the customer workflow are proven."
         primaryLabel="Request ServiceTitan review"
         primaryHref={reviewHref}
         secondaryLabel="See supported integrations"
