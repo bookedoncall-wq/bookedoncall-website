@@ -26,7 +26,7 @@ const criticalRouteExpectations = {
   "/integrations/jobber": ["Jobber", "connected"],
   "/integrations/google-calendar": ["Google Calendar", "connected"],
   "/integrations/text-sms": ["Text", "supported follow-up"],
-  "/integrations/quickbooks": ["Coming soon", "QuickBooks"],
+  "/integrations/quickbooks": ["Roadmap only", "not live in BookedOnCall today", "QuickBooks"],
   "/integrations/housecall-pro": ["Assisted integration review", "not live in BookedOnCall today", "No credentials"],
   "/integrations/servicetitan": ["Assisted integration review", "not live in BookedOnCall today", "No ServiceTitan secrets"],
   "/contact": ["Product questions", contract.contacts.salesEmail],

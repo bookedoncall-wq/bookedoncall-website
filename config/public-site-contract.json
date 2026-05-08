@@ -89,7 +89,7 @@
     {
       "id": "quickbooks",
       "name": "QuickBooks",
-      "description": "Coming soon: QuickBooks is the next targeted integration on the roadmap for customer context and office follow-up.",
+      "description": "Roadmap-only: QuickBooks is a targeted future integration for customer context and office follow-up, but it is not live in BookedOnCall today.",
       "status": "coming_soon"
     },
     {

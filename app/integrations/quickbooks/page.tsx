@@ -22,9 +22,12 @@ export default function QuickBooksPage() {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 shadow-sm">
             <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
-              Coming soon*
+              Roadmap only*
             </div>
             <h2 className="mb-4 text-3xl font-black text-slate-950">What we are targeting first</h2>
+            <p className="mb-5 text-base leading-7 text-amber-950">
+              QuickBooks is not live in BookedOnCall today; supported launch integrations remain listed on the integrations overview.
+            </p>
             <div className="grid gap-3">
               {content.bullets.map((bullet) => (
                 <div key={bullet} className="rounded-2xl border border-slate-200 bg-white p-4 text-base leading-8 text-slate-700">

@@ -54,7 +54,7 @@ export function getIntegrationBadgeLabel(integration: (typeof integrations)[numb
   if (isAssistedReviewIntegration(integration)) {
     return "Assisted review*"
   }
-  return integration.status === "coming_soon" ? "Coming soon*" : "Available now"
+  return integration.status === "coming_soon" ? "Roadmap only*" : "Available now"
 }
 
 export function getIntegrationActionLabel(integration: (typeof integrations)[number]) {
