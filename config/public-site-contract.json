@@ -3,12 +3,12 @@
   "brand": {
     "name": "BookedOnCall",
     "tagline": "AI phone assistant for trades businesses",
-    "description": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures the job details, and moves each caller toward booking or a clear callback based on the shop's setup.",
+    "description": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures job details, and moves each caller toward a safe booking path or clear callback based on the shop's reviewed setup.",
     "websiteOrigin": "https://bookedoncall.com",
     "appOrigin": "https://app.bookedoncall.com"
   },
   "positioning": {
-    "oneLiner": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures the job details, and moves each caller toward booking or a clear callback based on the shop's setup.",
+    "oneLiner": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures job details, and moves each caller toward a safe booking path or clear callback based on the shop's reviewed setup.",
     "primaryAudience": "Owner-operators and growing home-service shops",
     "primaryCtaLabel": "Start setup",
     "secondaryCtaLabel": "See example calls"
@@ -39,8 +39,8 @@
   "validatedCapabilities": [
     "Answers inbound calls for plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses.",
     "Collects caller name, callback number, address, job details, and service notes.",
-    "Can offer appointments when scheduling is enabled and a supported calendar or scheduling tool is connected.",
-    "Works with Jobber, Google Calendar, and customer text messaging when those workflows are configured for supported follow-up flows.",
+    "Can offer appointment paths only when scheduling is enabled, the workflow is configured, and the request fits the shop's booking rules.",
+    "Works with Jobber, Google Calendar, and customer text messaging as configured workflows for supported setup and follow-up flows.",
     "Delivers a clear call summary and the next step, whether that is a booked appointment or a callback request.",
     "Can send follow-up texts when customer messaging is turned on."
   ],
@@ -71,19 +71,19 @@
     {
       "id": "jobber",
       "name": "Jobber",
-      "description": "Connect Jobber so BookedOnCall fits the scheduling process you already use.",
+      "description": "Use Jobber as a configured workflow so BookedOnCall can fit the scheduling process you already use after setup review.",
       "status": "available"
     },
     {
       "id": "google-calendar",
       "name": "Google Calendar",
-      "description": "Connect Google Calendar so BookedOnCall can check availability and book supported appointments.",
+      "description": "Use Google Calendar as a configured workflow so BookedOnCall can check availability before offering supported appointment paths.",
       "status": "available"
     },
     {
       "id": "text-sms",
       "name": "Text / SMS",
-      "description": "Use customer text messaging for supported follow-up, confirmations, and callback communication.",
+      "description": "Use customer text messaging as a configured workflow for supported follow-up, confirmations, and callback communication.",
       "status": "available"
     },
     {
@@ -125,8 +125,8 @@
         "200 included call minutes each month",
         "AI call answering and lead intake",
         "Callback capture and clear handoff when you want to step in",
-        "Booking when your setup allows it",
-        "Jobber or Google Calendar integration when connected",
+        "Booking paths when your reviewed setup allows it",
+        "Jobber or Google Calendar workflows when configured",
         "Call summaries with the next step clearly laid out",
         "Default assistant voice and greeting"
       ]
@@ -150,8 +150,8 @@
         "400 included call minutes each month",
         "AI call answering and lead intake",
         "Callback capture and clear handoff when you want to step in",
-        "Booking when your setup allows it",
-        "Jobber or Google Calendar integration when connected",
+        "Booking paths when your reviewed setup allows it",
+        "Jobber or Google Calendar workflows when configured",
         "Call summaries with the next step clearly laid out",
         "Choose the voice callers hear",
         "Give the assistant a custom name",

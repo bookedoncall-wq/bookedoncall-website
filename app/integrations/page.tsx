@@ -9,7 +9,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Integrations",
   description:
-    "See how BookedOnCall works with Jobber, Google Calendar, and Text / SMS today, plus roadmap notes for QuickBooks, Housecall Pro, and ServiceTitan.",
+    "See how BookedOnCall can be configured with Jobber, Google Calendar, and Text / SMS, plus roadmap notes for QuickBooks, Housecall Pro, and ServiceTitan.",
   path: "/integrations",
 })
 
@@ -21,20 +21,20 @@ export default function IntegrationsPage() {
         data={buildServiceSchema({
           name: "BookedOnCall integrations",
           description:
-            "BookedOnCall integration guidance for supported Jobber, Google Calendar, and Text / SMS workflows plus roadmap items.",
+            "BookedOnCall integration guidance for configured Jobber, Google Calendar, and Text / SMS workflows plus roadmap items.",
           path: "/integrations",
         })}
       />
       <PageIntro
         eyebrow="Integrations"
         title="Fits the tools you already use."
-        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. Today that means supported workflows with Jobber, Google Calendar, and Text / SMS. QuickBooks, Housecall Pro, and ServiceTitan are roadmap or evaluation items and are not available today."
+        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. The current configurable workflows are Jobber, Google Calendar, and Text / SMS after setup review. QuickBooks, Housecall Pro, and ServiceTitan are roadmap or evaluation items and are not available today."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Available now</p>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Configured workflows</p>
             <div className="grid gap-6 lg:grid-cols-3">
               {liveIntegrations.map((integration) => {
                 const card = integrationPages[integration.id as keyof typeof integrationPages]
@@ -49,6 +49,9 @@ export default function IntegrationsPage() {
               <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">{integration.name}</p>
               <h2 className="mb-3 text-3xl font-black text-slate-950">{card.title}</h2>
               <p className="mb-5 text-base leading-7 text-slate-600">{card.summary}</p>
+              <div className="mb-5 inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-emerald-800">
+                {getIntegrationBadgeLabel(integration)}
+              </div>
               <div className="grid gap-3">
                 {card.outcomeCards.map((item) => (
                   <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-7 text-slate-700">
@@ -56,7 +59,7 @@ export default function IntegrationsPage() {
                   </div>
                 ))}
               </div>
-              <span className="mt-5 inline-flex text-sm font-bold text-amber-700">See integration details</span>
+              <span className="mt-5 inline-flex text-sm font-bold text-amber-700">{getIntegrationActionLabel(integration)}</span>
             </TrackedLink>
                 )
               })}
@@ -122,7 +125,7 @@ export default function IntegrationsPage() {
 
       <CtaBand
         title="Want to see how BookedOnCall fits your scheduling setup?"
-        body="Review the supported integrations, see what is planned next, read example calls, and start setup when you want them in the flow."
+        body="Review the configurable workflows, see what is planned next, read example calls, and start setup when you want them in the flow."
       />
     </>
   )

@@ -54,14 +54,14 @@ export function getIntegrationBadgeLabel(integration: (typeof integrations)[numb
   if (isAssistedReviewIntegration(integration)) {
     return "Assisted review*"
   }
-  return integration.status === "coming_soon" ? "Roadmap only*" : "Available now"
+  return integration.status === "coming_soon" ? "Roadmap only*" : "Configured workflow*"
 }
 
 export function getIntegrationActionLabel(integration: (typeof integrations)[number]) {
   if (isAssistedReviewIntegration(integration)) {
     return "See review path"
   }
-  return integration.status === "coming_soon" ? "See roadmap note" : "See integration details"
+  return integration.status === "coming_soon" ? "See roadmap note" : "See setup details"
 }
 
 export function getIntegrationTextLinkLabel(integration: (typeof integrations)[number]) {
@@ -70,7 +70,7 @@ export function getIntegrationTextLinkLabel(integration: (typeof integrations)[n
   }
   return integration.status === "coming_soon"
     ? `See the ${integration.name} roadmap page`
-    : `Read the ${integration.name} integration page`
+    : `Read the ${integration.name} setup page`
 }
 
 export const primaryNav = [

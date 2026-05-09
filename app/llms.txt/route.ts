@@ -3,7 +3,7 @@ import { buildGetStartedHref, positioning, primaryCtaLabel, publicSiteContract, 
 export const runtime = "nodejs"
 
 export async function GET() {
-  const availableIntegrations = publicSiteContract.integrations
+  const configurableIntegrations = publicSiteContract.integrations
     .filter((integration) => integration.status === "available")
     .map((integration) => integration.name)
   const roadmapIntegrations = publicSiteContract.integrations
@@ -25,7 +25,7 @@ export async function GET() {
     `- Description: ${positioning.oneLiner}`,
     `- Setup flow: ${selfServeCheckoutEnabled ? "New customers start on the website and continue into secure checkout on the app. Existing customers use the app for sign-in, onboarding, and dashboard access." : "New customers start on the website first so we can guide the right setup path. Existing customers use the app for sign-in, onboarding, and dashboard access."}`,
     `- Supported trades: ${publicSiteContract.supportedTrades.join(", ")}`,
-    `- Integrations available today: ${availableIntegrations.join(", ")}`,
+    `- Configurable integration workflows: ${configurableIntegrations.join(", ")}`,
     `- Roadmap integrations: ${roadmapIntegrations.join(", ") || "None listed"}`,
     `- Pricing page: ${siteConfig.url}/pricing`,
     `- FAQ page: ${siteConfig.url}/faq`,

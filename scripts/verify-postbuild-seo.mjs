@@ -49,6 +49,8 @@ const bannedHtmlPatterns = [
   /writes? new appointments? back in real time/i,
   /usage analytics dashboard/i,
   /team member access/i,
+  /Available now/i,
+  /Integrations available today/i,
   /housecall pro (?:is|integration is) (?:available|supported|live)/i,
   /servicetitan (?:is|integration is) (?:available|supported|live)/i,
 ]
@@ -156,6 +158,7 @@ function assertLlmsSourceConsistency() {
     "publicSiteContract.integrations",
     "integration.status === \"available\"",
     "integration.status === \"coming_soon\"",
+    "Configurable integration workflows",
     "selfServeCheckoutEnabled ?",
     "siteConfig.appUrl",
     "siteConfig.url}/sign-up",

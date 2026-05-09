@@ -15,9 +15,9 @@ export const faqEntries = [
       "No. BookedOnCall books jobs only when scheduling is turned on and the request fits the rules you want it to follow. It can still capture the lead and send the call back to you when a person should decide."
   },
   {
-    question: "What integrations are supported today?",
+    question: "Which integration workflows can be configured?",
     answer:
-      "BookedOnCall supports Jobber, Google Calendar, and customer text messaging when those workflows are configured for your business. QuickBooks is roadmap-only. Housecall Pro and ServiceTitan can be reviewed for assisted pilots when the customer can provide the required provider access, but they are not available as live self-serve integrations today."
+      "BookedOnCall supports configured Jobber, Google Calendar, and customer text messaging workflows after setup review for your business. QuickBooks is roadmap-only. Housecall Pro and ServiceTitan can be reviewed for assisted pilots when the customer can provide the required provider access, but they are not available as live self-serve integrations today."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -87,7 +87,7 @@ export const homepageHighlights = [
   },
   {
     title: "Keep using the tools you already know",
-    body: "Keep Jobber, Google Calendar, and customer text messaging in the flow when those workflows are configured for your business."
+    body: "Keep Jobber, Google Calendar, and customer text messaging in the flow after those workflows are configured for your business."
   }
 ] as const
 
@@ -136,7 +136,7 @@ export const workflowSteps = [
   },
   {
     title: "BookedOnCall checks the next step",
-    body: "If scheduling is connected and the request fits your setup, it can move toward a booking. If not, it captures the lead and lines up the right callback or follow-up."
+    body: "If scheduling is configured and the request fits your reviewed setup, it can move toward a booking path. If not, it captures the lead and lines up the right callback or follow-up."
   },
   {
     title: "You get the result",
@@ -155,7 +155,7 @@ export const productFlowSteps = [
   },
   {
     title: "Route the job the right way",
-    body: "If the request fits your rules and your schedule is connected, it can move toward a booking. If not, it comes back to your team with a clear callback handoff."
+    body: "If the request fits your rules and your schedule is configured, it can move toward a booking path. If not, it comes back to your team with a clear callback handoff."
   },
 ] as const
 
@@ -166,7 +166,7 @@ export const afterCallArtifacts = [
   },
   {
     title: "Booking path",
-    body: "If scheduling is connected and the request fits, the call can move toward a confirmed slot."
+    body: "If scheduling is configured and the request fits, the call can move toward a reviewed appointment path."
   },
   {
     title: "Callback handoff",
@@ -375,14 +375,14 @@ export const integrationPages = {
   jobber: {
     title: "BookedOnCall + Jobber",
     summary:
-      "Connect BookedOnCall to Jobber so new calls can flow into the scheduling process you already use.",
+      "Configure BookedOnCall with Jobber so new calls can flow into the scheduling process you already use after setup review.",
     bullets: [
-      "Check availability through Jobber when you want BookedOnCall to offer appointment times.",
+      "Check availability through Jobber when the configured workflow is approved to offer appointment times.",
       "Keep your business on the same tools it already uses every day.",
       "Send the call back with clear details when a job still needs a person."
     ],
     outcomeCards: [
-      "BookedOnCall can move supported jobs toward a booking when your Jobber calendar is connected.",
+      "BookedOnCall can move supported jobs toward a booking path when the Jobber workflow is configured and reviewed.",
       "Your team can keep using the same scheduling process instead of learning a new back office.",
       "Jobs that still need your approval come back with clear details instead of messy voicemail."
     ]
@@ -390,7 +390,7 @@ export const integrationPages = {
   "google-calendar": {
     title: "BookedOnCall + Google Calendar",
     summary:
-      "Connect BookedOnCall to Google Calendar so callers can be offered supported appointment times when you want them to be.",
+      "Configure BookedOnCall with Google Calendar so callers can be offered supported appointment paths when the workflow is reviewed.",
     bullets: [
       "Check availability against your connected calendar.",
       "Offer supported appointment times without changing the way you schedule work.",
@@ -405,7 +405,7 @@ export const integrationPages = {
   "text-sms": {
     title: "BookedOnCall + Text / SMS",
     summary:
-      "Use customer text messaging for supported follow-up, confirmations, and callback communication after the call.",
+      "Use customer text messaging as a configured workflow for supported follow-up, confirmations, and callback communication after the call.",
     bullets: [
       "Send supported customer follow-up texts after the call when messaging is enabled.",
       "Keep confirmations, callback updates, and simple next-step communication in a channel customers already check.",

@@ -52,6 +52,8 @@ const bannedPatterns = [
   /usage analytics dashboard/i,
   /team member access/i,
   /live integrations/i,
+  /Available now/i,
+  /Integrations available today/i,
   /housecall pro (?:is|integration is) (?:available|supported|live)/i,
   /servicetitan (?:is|integration is) (?:available|supported|live)/i,
   /no setup fees?/i,
@@ -275,6 +277,7 @@ for (const requiredIntegrationGuard of [
   "getIntegrationBadgeLabel",
   "getIntegrationActionLabel",
   "getIntegrationTextLinkLabel",
+  "Configured workflow*",
   "Assisted review*",
   "See review path",
   "See the ${integration.name} review path"
@@ -291,7 +294,7 @@ for (const { path: relativePath, required } of [
   },
   {
     path: "app/integrations/page.tsx",
-    required: ["getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
+    required: ["Configured workflows", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
   },
   {
     path: "app/product/page.tsx",

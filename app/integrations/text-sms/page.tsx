@@ -77,7 +77,7 @@ export default function TextSmsPage() {
           </TrackedLink>
         </div>
       </section>
-      <CtaBand title="Need customer texting in the flow?" body="Use Text / SMS for supported follow-up and confirmations without changing how your team handles the next step." />
+      <CtaBand title="Need customer texting in the flow?" body="Use Text / SMS as a configured workflow for supported follow-up and confirmations without changing how your team handles the next step." />
     </>
   )
 }
