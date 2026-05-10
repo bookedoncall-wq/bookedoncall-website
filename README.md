@@ -32,6 +32,10 @@ npm run dev
 npm run lint
 npm run build
 npm run verify:content
+npm run verify:runtime
+npm run verify:journeys
+npm run verify:seo
+npm run verify:security
 npm run sync:monorepo-truth
 ```
 
@@ -50,7 +54,12 @@ This repo should not hold checkout or billing secrets. There is no website-owned
 - `npm run lint` must pass with zero warnings.
 - `npm run build` must pass before deploy.
 - `npm run verify:content` checks for required routes, metadata files, contract presence, and stale marketing claims.
-- `.github/workflows/verify-content.yml` is the baseline CI workflow for this repo.
+- `npm run verify:runtime` checks the production build markers needed for route and runtime proof.
+- `npm run verify:journeys` checks the conversion, comparison, pricing, FAQ, and lead-capture journey surfaces.
+- `npm run verify:seo` checks sitemap, robots, canonical, metadata, JSON-LD, and AI-discovery surfaces after build.
+- `npm run verify:security` runs the website production dependency audit and repo-native secret scan.
+- `.github/workflows/verify-content.yml` is the baseline website truth workflow for this repo.
+- `.github/workflows/security.yml` runs CodeQL, Trivy filesystem/IaC scanning, repo-native secret scan, and dependency review. Those checks are CI scanner coverage, not proof of platform secret rotation or production provider safety.
 
 ## Editing rules
 
