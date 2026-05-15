@@ -36,8 +36,17 @@ export const supportedTradeLinks = supportedTrades.map((trade) => ({
   href: supportedTradeHrefByLabel[trade] || "/industries",
 }))
 export const integrations = contract.integrations
+const assistedReviewIntegrationIds = new Set(["housecall-pro", "servicetitan"])
+
+export function isAssistedReviewIntegration(integration: (typeof integrations)[number]) {
+  return assistedReviewIntegrationIds.has(integration.id)
+}
+
 export const liveIntegrations = integrations.filter((integration) => integration.status === "available")
-export const roadmapIntegrations = integrations.filter((integration) => integration.status === "coming_soon")
+export const assistedReviewIntegrations = integrations.filter(isAssistedReviewIntegration)
+export const roadmapIntegrations = integrations.filter(
+  (integration) => integration.status === "coming_soon" && !isAssistedReviewIntegration(integration)
+)
 export const positioning = contract.positioning
 export const sourcedProof = contract.sourcedProof
 export const customerLoginPath = "/login" as const
@@ -46,27 +55,23 @@ export const customerLoginUrl = new URL("/sign-in", `${contract.brand.appOrigin}
 export const selfServeCheckoutEnabled = contract.featureFlags.selfServeCheckout === true
 export const primaryCtaLabel = positioning.primaryCtaLabel || "Start setup"
 
-export function isAssistedReviewIntegration(integration: (typeof integrations)[number]) {
-  return integration.id === "housecall-pro" || integration.id === "servicetitan"
-}
-
 export function getIntegrationBadgeLabel(integration: (typeof integrations)[number]) {
   if (isAssistedReviewIntegration(integration)) {
-    return "Assisted review*"
+    return "Compatibility review*"
   }
   return integration.status === "coming_soon" ? "Roadmap only*" : "Configured workflow*"
 }
 
 export function getIntegrationActionLabel(integration: (typeof integrations)[number]) {
   if (isAssistedReviewIntegration(integration)) {
-    return "See review path"
+    return "Request compatibility review"
   }
   return integration.status === "coming_soon" ? "See roadmap note" : "See setup details"
 }
 
 export function getIntegrationTextLinkLabel(integration: (typeof integrations)[number]) {
   if (isAssistedReviewIntegration(integration)) {
-    return `See the ${integration.name} review path`
+    return `Request a ${integration.name} compatibility review`
   }
   return integration.status === "coming_soon"
     ? `See the ${integration.name} roadmap page`

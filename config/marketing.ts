@@ -17,7 +17,7 @@ export const faqEntries = [
   {
     question: "Which integration workflows can be configured?",
     answer:
-      "BookedOnCall supports configured Jobber, Google Calendar, and customer text messaging workflows after setup review for your business. QuickBooks is roadmap-only. Housecall Pro and ServiceTitan can be reviewed for assisted pilots when the customer can provide the required provider access, but they are not available as live self-serve integrations today."
+      "BookedOnCall supports configured Jobber, Google Calendar, and customer text messaging workflows after setup review for your business. QuickBooks is roadmap-only. If your shop uses Housecall Pro or ServiceTitan, you can request a compatibility review so we can map the safest callback, CSR, or scheduling handoff path."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -435,33 +435,31 @@ export const integrationPages = {
   "housecall-pro": {
     title: "BookedOnCall + Housecall Pro",
     summary:
-      "Housecall Pro can be reviewed for an assisted pilot when an eligible shop can provide owner-approved API access, but it is not live in BookedOnCall today.",
+      "If your shop uses Housecall Pro, BookedOnCall can review the workflow and map the safest way to capture calls, route callbacks, and support your existing office process.",
     bullets: [
-      "The practical first path is a Housecall Pro MAX-plan customer-admin review, using owner-approved API key or webhook access only after secure credential handling is ready.",
-      "The first safe workflow is callback handoff or owner-reviewed job creation that respects the customer's existing Housecall Pro process.",
-      "Provider access, tenant-specific credentials, contract tests, provider-backed testing, and pilot workflow review are required before this can be described as supported.",
-      "Roadmap items are directional and may change as provider access, customer demand, and launch priorities evolve."
+      "Start with how your team uses Housecall Pro today: what should be booked, what should be reviewed, and what should become a callback.",
+      "The first safe workflow is often callback handoff or office-reviewed job creation, so your team stays in control of edge cases.",
+      "The public form collects workflow context only. Do not paste provider credentials, API keys, or webhook secrets."
     ],
     outcomeCards: [
-      "Assisted review: gather plan eligibility, admin owner, desired handoff behavior, and API/webhook access path before any credential collection.",
-      "Required before support: provider-backed sandbox or tenant validation, provider-backed testing, and customer workflow review.",
-      "Current status: not available in BookedOnCall today."
+      "Compatibility review: map the service types, callback rules, and handoff behavior that matter to your office.",
+      "Bookable work stays narrow until your workflow has been reviewed and confirmed.",
+      "If Housecall Pro is not the right first step, BookedOnCall can still capture clean call details for your team."
     ]
   },
   servicetitan: {
     title: "BookedOnCall + ServiceTitan",
     summary:
-      "ServiceTitan can be reviewed for named customers with tenant-admin API participation, but it is not live in BookedOnCall today and requires access, workflow mapping, and provider-backed validation before it can become a supported integration.",
+      "If your shop uses ServiceTitan, BookedOnCall can review the workflow and map the safest path for CSR review, callback handoff, or scheduling support.",
     bullets: [
-      "The practical first path is a tenant-private or pilot-specific review where a ServiceTitan admin confirms tenant ID, scopes, app access, and booking-provider setup.",
-      "The safest first workflow is CSR-reviewed booking intake or callback handoff. Availability-aware scheduling comes only after ServiceTitan access and scopes are approved.",
-      "ServiceTitan requires tenant or partner API credentials, app keys, scopes, sandbox validation, and customer-approved booking-provider mapping.",
-      "Roadmap items are directional and may change as partner access, certification, and pilot-customer requirements are confirmed."
+      "Start with your office workflow: which calls should become bookings, which need CSR review, and which should be routed to callback.",
+      "The safest first workflow is usually CSR-reviewed booking intake or callback handoff, especially for jobs with dispatch rules or unusual service needs.",
+      "The public form collects workflow context only. Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials."
     ],
     outcomeCards: [
-      "Assisted review: gather tenant-admin owner, desired booking/callback workflow, Scheduling Pro status, and mapping requirements before any credential collection.",
-      "Required before support: ServiceTitan sandbox or tenant validation, provider-backed testing, and customer workflow approval.",
-      "Current status: not available in BookedOnCall today."
+      "Compatibility review: map the call types, office decision rules, and handoff behavior that matter to your team.",
+      "Bookable work stays narrow until your workflow has been reviewed and confirmed.",
+      "If ServiceTitan is not the right first step, BookedOnCall can still capture clean call details for CSR follow-up."
     ]
   }
 } as const

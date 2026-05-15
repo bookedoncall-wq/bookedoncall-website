@@ -3,13 +3,19 @@ import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { integrationPages } from "@/config/marketing"
-import { getIntegrationActionLabel, getIntegrationBadgeLabel, liveIntegrations, roadmapIntegrations } from "@/config/site"
+import {
+  assistedReviewIntegrations,
+  getIntegrationActionLabel,
+  getIntegrationBadgeLabel,
+  liveIntegrations,
+  roadmapIntegrations
+} from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
 
 export const metadata = buildPageMetadata({
   title: "Integrations",
   description:
-    "See how BookedOnCall can be configured with Jobber, Google Calendar, and Text / SMS, plus roadmap notes for QuickBooks, Housecall Pro, and ServiceTitan.",
+    "See how BookedOnCall can be configured with Jobber, Google Calendar, and Text / SMS, plus compatibility reviews for Housecall Pro and ServiceTitan workflows.",
   path: "/integrations",
 })
 
@@ -21,14 +27,14 @@ export default function IntegrationsPage() {
         data={buildServiceSchema({
           name: "BookedOnCall integrations",
           description:
-            "BookedOnCall integration guidance for configured Jobber, Google Calendar, and Text / SMS workflows plus roadmap items.",
+            "BookedOnCall integration guidance for configured Jobber, Google Calendar, and Text / SMS workflows plus compatibility reviews for additional field-service systems.",
           path: "/integrations",
         })}
       />
       <PageIntro
         eyebrow="Integrations"
         title="Fits the tools you already use."
-        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. The current configurable workflows are Jobber, Google Calendar, and Text / SMS after setup review. QuickBooks, Housecall Pro, and ServiceTitan are roadmap or evaluation items and are not available today."
+        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. Current configurable workflows include Jobber, Google Calendar, and Text / SMS after setup review. If your shop uses Housecall Pro or ServiceTitan, request a compatibility review so we can map the safest callback, CSR, or scheduling handoff."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -67,8 +73,40 @@ export default function IntegrationsPage() {
           </div>
 
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Roadmap</p>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Compatibility reviews</p>
             <div className="grid gap-6 lg:grid-cols-2">
+              {assistedReviewIntegrations.map((integration) => {
+                const card = integrationPages[integration.id as keyof typeof integrationPages]
+                return (
+            <TrackedLink
+              key={integration.id}
+              href={`/integrations/${integration.id}`}
+              eventName="marketing_cta_clicked"
+              eventPayload={{ placement: "integrations_hub_card", href: `/integrations/${integration.id}` }}
+              className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/60"
+            >
+              <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
+                {getIntegrationBadgeLabel(integration)}
+              </div>
+              <h2 className="mb-3 text-3xl font-black text-slate-950">{card.title}</h2>
+              <p className="mb-5 text-base leading-7 text-slate-700">{card.summary}</p>
+              <div className="grid gap-3">
+                {card.outcomeCards.map((item) => (
+                  <div key={item} className="rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-7 text-slate-700">
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <span className="mt-5 inline-flex text-sm font-bold text-amber-700">{getIntegrationActionLabel(integration)}</span>
+            </TrackedLink>
+                )
+              })}
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Roadmap</p>
+            <div className="grid gap-6">
               {roadmapIntegrations.map((integration) => {
                 const card = integrationPages[integration.id as keyof typeof integrationPages]
                 return (
@@ -125,7 +163,7 @@ export default function IntegrationsPage() {
 
       <CtaBand
         title="Want to see how BookedOnCall fits your scheduling setup?"
-        body="Review the configurable workflows, see what is planned next, read example calls, and start setup when you want them in the flow."
+        body="Review the configurable workflows, request a compatibility review for the system your office already uses, read example calls, and start setup when you want them in the flow."
       />
     </>
   )

@@ -95,13 +95,13 @@
     {
       "id": "housecall-pro",
       "name": "Housecall Pro",
-      "description": "Assisted review: Housecall Pro may be evaluated for eligible MAX-plan shops with owner-approved API access, but it is not live in BookedOnCall today.",
+      "description": "Compatibility review: if your shop uses Housecall Pro, BookedOnCall can review the workflow and recommend a safe callback or scheduling handoff path.",
       "status": "coming_soon"
     },
     {
       "id": "servicetitan",
       "name": "ServiceTitan",
-      "description": "Assisted review: ServiceTitan may be evaluated for named customers with tenant-admin API participation, but it is not live in BookedOnCall today.",
+      "description": "Compatibility review: if your shop uses ServiceTitan, BookedOnCall can review the workflow and recommend a safe CSR, callback, or scheduling handoff path.",
       "status": "coming_soon"
     }
   ],

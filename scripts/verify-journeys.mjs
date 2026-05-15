@@ -27,8 +27,8 @@ const criticalRouteExpectations = {
   "/integrations/google-calendar": ["Google Calendar", "connected"],
   "/integrations/text-sms": ["Text", "supported follow-up"],
   "/integrations/quickbooks": ["Roadmap only", "not live in BookedOnCall today", "QuickBooks"],
-  "/integrations/housecall-pro": ["Assisted integration review", "not live in BookedOnCall today", "No credentials"],
-  "/integrations/servicetitan": ["Assisted integration review", "not live in BookedOnCall today", "No ServiceTitan secrets"],
+  "/integrations/housecall-pro": ["Compatibility review", "workflow context only", "Do not paste API keys"],
+  "/integrations/servicetitan": ["Compatibility review", "workflow context only", "Do not paste tenant IDs"],
   "/contact": ["Product questions", contract.contacts.salesEmail],
 }
 
@@ -147,11 +147,21 @@ function assertIntegrationClaimBoundaries(errors, route, body) {
   if (route === "/integrations/quickbooks" && /connect quickbooks|quickbooks is available|quickbooks is supported/i.test(body)) {
     errors.push("/integrations/quickbooks may imply roadmap-only QuickBooks is currently available")
   }
-  if (route === "/integrations/housecall-pro" && /connect housecall pro|housecall pro is available|housecall pro is supported/i.test(body)) {
-    errors.push("/integrations/housecall-pro may imply Housecall Pro is currently self-serve or live")
+  if (
+    route === "/integrations/housecall-pro" &&
+    /provider-backed|provider proof|provider write path|evaluation bucket|connect housecall pro|housecall pro is available|housecall pro is supported/i.test(
+      body
+    )
+  ) {
+    errors.push("/integrations/housecall-pro contains internal posture language or implies Housecall Pro is currently self-serve or live")
   }
-  if (route === "/integrations/servicetitan" && /connect servicetitan|servicetitan is available|servicetitan is supported/i.test(body)) {
-    errors.push("/integrations/servicetitan may imply ServiceTitan is currently self-serve or live")
+  if (
+    route === "/integrations/servicetitan" &&
+    /provider-backed|provider proof|provider write path|partner-gated|tenant-admin gated|connect servicetitan|servicetitan is available|servicetitan is supported/i.test(
+      body
+    )
+  ) {
+    errors.push("/integrations/servicetitan contains internal posture language or implies ServiceTitan is currently self-serve or live")
   }
 }
 

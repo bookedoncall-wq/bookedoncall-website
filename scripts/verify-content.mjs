@@ -274,13 +274,14 @@ for (const requiredSharedGuard of [
 const siteConfigSource = readText("config/site.ts")
 for (const requiredIntegrationGuard of [
   "isAssistedReviewIntegration",
+  "assistedReviewIntegrations",
   "getIntegrationBadgeLabel",
   "getIntegrationActionLabel",
   "getIntegrationTextLinkLabel",
   "Configured workflow*",
-  "Assisted review*",
-  "See review path",
-  "See the ${integration.name} review path"
+  "Compatibility review*",
+  "Request compatibility review",
+  "Request a ${integration.name} compatibility review"
 ]) {
   if (!siteConfigSource.includes(requiredIntegrationGuard)) {
     errors.push(`config/site.ts must preserve assisted-review integration guard phrase: ${requiredIntegrationGuard}`)
@@ -294,7 +295,7 @@ for (const { path: relativePath, required } of [
   },
   {
     path: "app/integrations/page.tsx",
-    required: ["Configured workflows", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
+    required: ["Configured workflows", "Compatibility reviews", "assistedReviewIntegrations", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
   },
   {
     path: "app/product/page.tsx",
@@ -360,6 +361,12 @@ for (const forbiddenCustomerFacingIntegrationPhrase of [
   /launch claim/i,
   /provider proof/i,
   /provider-backed test evidence/i,
+  /provider-backed testing/i,
+  /provider write path/i,
+  /pilot workflow review/i,
+  /tenant-admin gated/i,
+  /evaluation bucket/i,
+  /partner-gated bucket/i,
 ]) {
   for (const relativePath of [
     "app/integrations/quickbooks/page.tsx",
@@ -376,22 +383,22 @@ const assistedReviewRoutes = [
   {
     path: "app/integrations/housecall-pro/page.tsx",
     required: [
-      "Assisted integration review",
+      "Compatibility review",
       "Request Housecall Pro review",
-      "No credentials are collected through the public form",
-      "Provider-backed testing and customer workflow review are required"
+      "The public review request is for workflow context only",
+      "Do not paste API keys, webhook secrets, or Housecall Pro credentials"
     ],
-    forbidden: [/Connect Housecall Pro/i, /Housecall Pro is available/i, /Housecall Pro is supported/i]
+    forbidden: [/Connect Housecall Pro/i, /Housecall Pro is available/i, /Housecall Pro is supported/i, /roadmap/i]
   },
   {
     path: "app/integrations/servicetitan/page.tsx",
     required: [
-      "Assisted integration review",
+      "Compatibility review",
       "Request ServiceTitan review",
-      "No ServiceTitan secrets are collected through the public form",
-      "Provider-backed testing and customer workflow approval are required"
+      "The public review request is for workflow context only",
+      "Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials"
     ],
-    forbidden: [/Connect ServiceTitan/i, /ServiceTitan is available/i, /ServiceTitan is supported/i]
+    forbidden: [/Connect ServiceTitan/i, /ServiceTitan is available/i, /ServiceTitan is supported/i, /roadmap/i]
   },
 ]
 
