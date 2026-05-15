@@ -45,8 +45,8 @@ async function runRuntimeChecks(baseUrl) {
   assertResponse(errors, "GET /", await requestText(`${baseUrl}/`), 200, ["BookedOnCall"])
   assertResponse(
     errors,
-    "GET /sign-up assisted review",
-    await requestText(`${baseUrl}/sign-up?plan=starter&source=housecall-pro-integration-review`),
+    "GET /sign-up roadmap interest",
+    await requestText(`${baseUrl}/sign-up?plan=starter&source=housecall-pro-roadmap-interest`),
     200,
     ["Request setup", "Loading form..."]
   )
@@ -58,14 +58,14 @@ async function runRuntimeChecks(baseUrl) {
     phone: "555-0100",
     email: "runtime@example.com",
     planInterest: "starter",
-    source: "housecall-pro-integration-review",
-    details: "Housecall Pro MAX admin can review callback handoff.",
+    source: "housecall-pro-roadmap-interest",
+    details: "Housecall Pro callback handoff would matter most.",
   })
-  assertResponse(errors, "POST /api/leads safe assisted-review lead", safeLead, 200, [
+  assertResponse(errors, "POST /api/leads safe roadmap-interest lead", safeLead, 200, [
     "\"ok\":true",
     "\"delivery\":\"mailto\"",
-    "Housecall%20Pro%20review%20lead",
-    "Provider%20credential%20policy",
+    "Housecall%20Pro%20roadmap%20interest",
+    "Credential%20note",
   ])
 
   const secretLead = await postJson(baseUrl, {
@@ -75,7 +75,7 @@ async function runRuntimeChecks(baseUrl) {
     phone: "555-0100",
     email: "runtime@example.com",
     planInterest: "starter",
-    source: "servicetitan-integration-review",
+    source: "servicetitan-roadmap-interest",
     details: "client_secret: abcdefghijklmnopqrstuvwxyz",
   })
   assertResponse(errors, "POST /api/leads provider-secret payload", secretLead, 400, [

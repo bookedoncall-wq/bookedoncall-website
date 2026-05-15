@@ -83,7 +83,7 @@ function validateLead(lead: Lead) {
 function buildLeadSubject(lead: Lead) {
   const reviewCopy = getIntegrationReviewCopy(lead.source)
   if (reviewCopy) {
-    return `${siteConfig.name} ${reviewCopy.provider} review lead`
+    return `${siteConfig.name} ${reviewCopy.leadType}`
   }
   return `${siteConfig.name} ${lead.planInterest || "Starter"} lead`
 }
@@ -92,10 +92,10 @@ function buildLeadEmailText(lead: Lead) {
   const reviewCopy = getIntegrationReviewCopy(lead.source)
   const reviewLines = reviewCopy
     ? [
-        `Lead type: Assisted ${reviewCopy.provider} integration review`,
-        "Provider credential policy: no provider credentials should be collected through the public form.",
+        `Lead type: ${reviewCopy.leadType}`,
+        "Credential note: do not collect provider credentials through the public form.",
         "",
-        "Review intake checklist:",
+        "Roadmap interest context:",
         ...reviewCopy.include.map((item) => `- ${item}`),
         "",
       ]

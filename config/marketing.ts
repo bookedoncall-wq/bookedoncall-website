@@ -17,7 +17,7 @@ export const faqEntries = [
   {
     question: "Which integration workflows can be configured?",
     answer:
-      "BookedOnCall supports configured Jobber, Google Calendar, and customer text messaging workflows after setup review for your business. QuickBooks is roadmap-only. If your shop uses Housecall Pro or ServiceTitan, you can request a compatibility review so we can map the safest callback, CSR, or scheduling handoff path."
+      "BookedOnCall supports configured Jobber, Google Calendar, and customer text messaging workflows after setup review for your business. QuickBooks, Housecall Pro, and ServiceTitan are roadmap-only possible future integrations, not live self-serve integrations today."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -435,31 +435,31 @@ export const integrationPages = {
   "housecall-pro": {
     title: "BookedOnCall + Housecall Pro",
     summary:
-      "If your shop uses Housecall Pro, BookedOnCall can review the workflow and map the safest way to capture calls, route callbacks, and support your existing office process.",
+      "Housecall Pro is a possible future integration on the BookedOnCall roadmap for shops that want the assistant to fit their existing field-service workflow.",
     bullets: [
-      "Start with how your team uses Housecall Pro today: what should be booked, what should be reviewed, and what should become a callback.",
-      "The first safe workflow is often callback handoff or office-reviewed job creation, so your team stays in control of edge cases.",
-      "The public form collects workflow context only. Do not paste provider credentials, API keys, or webhook secrets."
+      "The possible future goal is to support cleaner call intake and handoff for shops already using Housecall Pro.",
+      "Any first release would stay narrow and respect the office workflow instead of forcing every caller into an automatic booking.",
+      "If this matters to your shop, tell us you use Housecall Pro so we can prioritize demand. Do not paste provider credentials, API keys, or webhook secrets."
     ],
     outcomeCards: [
-      "Compatibility review: map the service types, callback rules, and handoff behavior that matter to your office.",
-      "Bookable work stays narrow until your workflow has been reviewed and confirmed.",
-      "If Housecall Pro is not the right first step, BookedOnCall can still capture clean call details for your team."
+      "Roadmap: possible future support for Housecall Pro-aware call intake and handoff.",
+      "Current product: BookedOnCall can still capture caller details and route callbacks without a Housecall Pro connection.",
+      "Current status: not available as a live integration in BookedOnCall today."
     ]
   },
   servicetitan: {
     title: "BookedOnCall + ServiceTitan",
     summary:
-      "If your shop uses ServiceTitan, BookedOnCall can review the workflow and map the safest path for CSR review, callback handoff, or scheduling support.",
+      "ServiceTitan is a possible future integration on the BookedOnCall roadmap for larger shops that want AI call intake to fit their CSR and dispatch workflow.",
     bullets: [
-      "Start with your office workflow: which calls should become bookings, which need CSR review, and which should be routed to callback.",
-      "The safest first workflow is usually CSR-reviewed booking intake or callback handoff, especially for jobs with dispatch rules or unusual service needs.",
-      "The public form collects workflow context only. Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials."
+      "The possible future goal is to support cleaner call intake and handoff for teams already running ServiceTitan.",
+      "Any first release would stay narrow and respect CSR, dispatch, capacity, and approval workflows instead of forcing every caller into an automatic booking.",
+      "If this matters to your shop, tell us you use ServiceTitan so we can prioritize demand. Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials."
     ],
     outcomeCards: [
-      "Compatibility review: map the call types, office decision rules, and handoff behavior that matter to your team.",
-      "Bookable work stays narrow until your workflow has been reviewed and confirmed.",
-      "If ServiceTitan is not the right first step, BookedOnCall can still capture clean call details for CSR follow-up."
+      "Roadmap: possible future support for ServiceTitan-aware call intake and CSR handoff.",
+      "Current product: BookedOnCall can still capture caller details and route callbacks without a ServiceTitan connection.",
+      "Current status: not available as a live integration in BookedOnCall today."
     ]
   }
 } as const

@@ -7,25 +7,25 @@ import { buildLeadFormHref } from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo"
 
 const content = integrationPages.servicetitan
-const reviewHref = buildLeadFormHref(undefined, "servicetitan-integration-review")
+const interestHref = buildLeadFormHref(undefined, "servicetitan-roadmap-interest")
 
-const reviewSteps = [
+const roadmapSteps = [
   {
-    title: "Start with workflow fit",
-    body: "Tell us how your office uses ServiceTitan today: job types, CSR rules, booking handoffs, capacity limits, and what needs review before a caller gets a time."
+    title: "Capture clean caller details",
+    body: "The possible future goal is to help ServiceTitan shops get cleaner intake notes and customer context without promising a live connection today."
   },
   {
-    title: "Map CSR rules first",
-    body: "Most ServiceTitan shops start with CSR-reviewed booking intake or callback handoff so dispatch-sensitive work stays under office control."
+    title: "Respect CSR and dispatch control",
+    body: "A first release would likely stay narrow: callback handoff, CSR-reviewed scheduling support, and clear intake before anything affects dispatch-sensitive workflows."
   },
   {
-    title: "Keep credentials out of the form",
-    body: "The public review request is for workflow context only. Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials."
+    title: "Prioritize demand safely",
+    body: "Tell us you use ServiceTitan and what workflow matters most. Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials."
   }
 ] as const
 
 export const metadata = buildPageMetadata({
-  title: "ServiceTitan compatibility review",
+  title: "ServiceTitan roadmap",
   description: content.summary,
   path: "/integrations/servicetitan",
 })
@@ -33,16 +33,16 @@ export const metadata = buildPageMetadata({
 export default function ServiceTitanPage() {
   return (
     <>
-      <StructuredData data={buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "ServiceTitan compatibility review", path: "/integrations/servicetitan" }])} />
-      <PageIntro eyebrow="Compatibility review" title={content.title} description={content.summary} />
+      <StructuredData data={buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "ServiceTitan roadmap", path: "/integrations/servicetitan" }])} />
+      <PageIntro eyebrow="Roadmap" title={content.title} description={content.summary} />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 shadow-sm">
             <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
-              Compatibility review*
+              Roadmap only*
             </div>
-            <h2 className="mb-4 text-3xl font-black text-slate-950">What we review with you</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">A possible future integration</h2>
             <div className="grid gap-3">
               {content.bullets.map((bullet) => (
                 <div key={bullet} className="rounded-2xl border border-slate-200 bg-white p-4 text-base leading-8 text-slate-700">
@@ -58,7 +58,7 @@ export default function ServiceTitanPage() {
                 key={card}
                 className={`rounded-[1.75rem] border p-6 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
               >
-                <h2 className="mb-3 text-xl font-black text-slate-950">Review {index + 1}</h2>
+                <h2 className="mb-3 text-xl font-black text-slate-950">Roadmap note {index + 1}</h2>
                 <p className="text-sm leading-7 text-slate-700">{card}</p>
               </article>
             ))}
@@ -70,13 +70,13 @@ export default function ServiceTitanPage() {
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-3">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How to move it forward</p>
-            <h2 className="text-3xl font-black text-slate-950">Map ServiceTitan around your current office flow.</h2>
+            <h2 className="text-3xl font-black text-slate-950">Tell us where ServiceTitan should fit.</h2>
             <p className="max-w-3xl text-base leading-7 text-slate-600">
-              This review helps decide whether BookedOnCall should hand calls back to a CSR, support office-reviewed booking intake, or keep the first setup focused on clean callback capture.
+              ServiceTitan is on the roadmap as a possible future integration. It is not available in BookedOnCall today, and roadmap timing may change as customer demand and implementation work evolve.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            {reviewSteps.map((step) => (
+            {roadmapSteps.map((step) => (
               <article key={step.title} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
                 <h2 className="mb-3 text-xl font-black text-slate-950">{step.title}</h2>
                 <p className="text-sm leading-7 text-slate-700">{step.body}</p>
@@ -84,12 +84,12 @@ export default function ServiceTitanPage() {
             ))}
           </div>
           <TrackedLink
-            href={reviewHref}
+            href={interestHref}
             eventName="marketing_cta_clicked"
-            eventPayload={{ placement: "servicetitan_assisted_review", href: reviewHref }}
+            eventPayload={{ placement: "servicetitan_roadmap_interest", href: interestHref }}
             className="inline-flex w-fit rounded-xl border border-amber-300 bg-amber-500 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-amber-400"
           >
-            Request ServiceTitan review
+            Share ServiceTitan interest
           </TrackedLink>
         </div>
       </section>
@@ -128,10 +128,10 @@ export default function ServiceTitanPage() {
         </div>
       </section>
       <CtaBand
-        title="Need ServiceTitan in the workflow?"
-        body="Start with a compatibility review. BookedOnCall will map your ServiceTitan workflow and recommend the safest first handoff before any credentials are discussed."
-        primaryLabel="Request ServiceTitan review"
-        primaryHref={reviewHref}
+        title="Want ServiceTitan on the roadmap?"
+        body="Tell us you use ServiceTitan and what workflow matters most. This is a roadmap interest signal, not a live integration request, and you should not paste provider credentials."
+        primaryLabel="Share ServiceTitan interest"
+        primaryHref={interestHref}
         secondaryLabel="See supported integrations"
         secondaryHref="/integrations"
       />

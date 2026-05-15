@@ -27,8 +27,8 @@ const criticalRouteExpectations = {
   "/integrations/google-calendar": ["Google Calendar", "connected"],
   "/integrations/text-sms": ["Text", "supported follow-up"],
   "/integrations/quickbooks": ["Roadmap only", "not live in BookedOnCall today", "QuickBooks"],
-  "/integrations/housecall-pro": ["Compatibility review", "workflow context only", "Do not paste API keys"],
-  "/integrations/servicetitan": ["Compatibility review", "workflow context only", "Do not paste tenant IDs"],
+  "/integrations/housecall-pro": ["Roadmap only", "not available in BookedOnCall today", "Share Housecall Pro interest"],
+  "/integrations/servicetitan": ["Roadmap only", "not available in BookedOnCall today", "Share ServiceTitan interest"],
   "/contact": ["Product questions", contract.contacts.salesEmail],
 }
 
@@ -149,7 +149,7 @@ function assertIntegrationClaimBoundaries(errors, route, body) {
   }
   if (
     route === "/integrations/housecall-pro" &&
-    /provider-backed|provider proof|provider write path|evaluation bucket|connect housecall pro|housecall pro is available|housecall pro is supported/i.test(
+    /provider-backed|provider proof|provider write path|evaluation bucket|compatibility review|request housecall pro review|connect housecall pro|housecall pro is available|housecall pro is supported/i.test(
       body
     )
   ) {
@@ -157,7 +157,7 @@ function assertIntegrationClaimBoundaries(errors, route, body) {
   }
   if (
     route === "/integrations/servicetitan" &&
-    /provider-backed|provider proof|provider write path|partner-gated|tenant-admin gated|connect servicetitan|servicetitan is available|servicetitan is supported/i.test(
+    /provider-backed|provider proof|provider write path|partner-gated|tenant-admin gated|compatibility review|request servicetitan review|connect servicetitan|servicetitan is available|servicetitan is supported/i.test(
       body
     )
   ) {

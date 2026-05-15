@@ -193,7 +193,7 @@ for (const requiredRuntimeGuard of [
   "\"/sign-up/page\"",
   "\"/api/leads/route\"",
   "RESEND_API_KEY: \"\"",
-  "Housecall%20Pro%20review%20lead",
+  "Housecall%20Pro%20roadmap%20interest",
   "client_secret: abcdefghijklmnopqrstuvwxyz",
   "Do not paste provider credentials",
 ]) {
@@ -235,10 +235,10 @@ for (const requiredLeadSecretGuard of [
   "providerSecretMessage",
   "containsProviderSecretLikeContent",
   "@/lib/integration-review-intake",
-  "Provider credential policy: no provider credentials should be collected through the public form."
+  "Credential note: do not collect provider credentials through the public form."
 ]) {
   if (!leadRouteSource.includes(requiredLeadSecretGuard)) {
-    errors.push(`app/api/leads/route.ts must preserve assisted-review secret guard phrase: ${requiredLeadSecretGuard}`)
+    errors.push(`app/api/leads/route.ts must preserve roadmap-interest secret guard phrase: ${requiredLeadSecretGuard}`)
   }
 }
 
@@ -249,10 +249,10 @@ if (!leadFormSource.includes("buildLeadMailtoHref") || !leadFormSource.includes(
 for (const requiredLeadFormGuard of [
   "containsProviderSecretLikeContent",
   "@/lib/integration-review-intake",
-  "Request review",
+  "Share interest",
 ]) {
   if (!leadFormSource.includes(requiredLeadFormGuard)) {
-    errors.push(`components/marketing/LeadCaptureForm.tsx must preserve assisted-review intake guard phrase: ${requiredLeadFormGuard}`)
+    errors.push(`components/marketing/LeadCaptureForm.tsx must preserve roadmap-interest intake guard phrase: ${requiredLeadFormGuard}`)
   }
 }
 
@@ -260,31 +260,30 @@ const integrationReviewIntakeSource = readText("lib/integration-review-intake.ts
 for (const requiredSharedGuard of [
   "providerSecretLikePatterns",
   "containsProviderSecretLikeContent",
-  "Request Housecall Pro review",
-  "Request ServiceTitan review",
+  "Share Housecall Pro interest",
+  "Share ServiceTitan interest",
+  "roadmap interest, not a live integration request",
   "Do not paste provider credentials",
   "Do not paste API keys, webhook secrets, or credentials",
   "Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials"
 ]) {
   if (!integrationReviewIntakeSource.includes(requiredSharedGuard)) {
-    errors.push(`lib/integration-review-intake.ts must preserve assisted-review intake guard phrase: ${requiredSharedGuard}`)
+    errors.push(`lib/integration-review-intake.ts must preserve roadmap-interest intake guard phrase: ${requiredSharedGuard}`)
   }
 }
 
 const siteConfigSource = readText("config/site.ts")
 for (const requiredIntegrationGuard of [
-  "isAssistedReviewIntegration",
-  "assistedReviewIntegrations",
   "getIntegrationBadgeLabel",
   "getIntegrationActionLabel",
   "getIntegrationTextLinkLabel",
   "Configured workflow*",
-  "Compatibility review*",
-  "Request compatibility review",
-  "Request a ${integration.name} compatibility review"
+  "Roadmap only*",
+  "See roadmap note",
+  "See the ${integration.name} roadmap page"
 ]) {
   if (!siteConfigSource.includes(requiredIntegrationGuard)) {
-    errors.push(`config/site.ts must preserve assisted-review integration guard phrase: ${requiredIntegrationGuard}`)
+    errors.push(`config/site.ts must preserve roadmap integration guard phrase: ${requiredIntegrationGuard}`)
   }
 }
 
@@ -295,7 +294,7 @@ for (const { path: relativePath, required } of [
   },
   {
     path: "app/integrations/page.tsx",
-    required: ["Configured workflows", "Compatibility reviews", "assistedReviewIntegrations", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
+    required: ["Configured workflows", "Roadmap", "roadmapIntegrations", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
   },
   {
     path: "app/product/page.tsx",
@@ -309,7 +308,7 @@ for (const { path: relativePath, required } of [
   const source = readText(relativePath)
   for (const requiredPhrase of required) {
     if (!source.includes(requiredPhrase)) {
-      errors.push(`${relativePath} must use shared assisted-review integration labeling: ${requiredPhrase}`)
+      errors.push(`${relativePath} must use shared roadmap integration labeling: ${requiredPhrase}`)
     }
   }
 }
@@ -364,6 +363,10 @@ for (const forbiddenCustomerFacingIntegrationPhrase of [
   /provider-backed testing/i,
   /provider write path/i,
   /pilot workflow review/i,
+  /compatibility review/i,
+  /assisted integration review/i,
+  /guided .* review/i,
+  /request compatibility review/i,
   /tenant-admin gated/i,
   /evaluation bucket/i,
   /partner-gated bucket/i,
@@ -379,37 +382,39 @@ for (const forbiddenCustomerFacingIntegrationPhrase of [
     }
   }
 }
-const assistedReviewRoutes = [
+const roadmapRoutes = [
   {
     path: "app/integrations/housecall-pro/page.tsx",
     required: [
-      "Compatibility review",
-      "Request Housecall Pro review",
-      "The public review request is for workflow context only",
+      "Roadmap",
+      "Roadmap only*",
+      "Share Housecall Pro interest",
+      "not available in BookedOnCall today",
       "Do not paste API keys, webhook secrets, or Housecall Pro credentials"
     ],
-    forbidden: [/Connect Housecall Pro/i, /Housecall Pro is available/i, /Housecall Pro is supported/i, /roadmap/i]
+    forbidden: [/Connect Housecall Pro/i, /Housecall Pro is available/i, /Housecall Pro is supported/i, /compatibility review/i, /Request Housecall Pro review/i]
   },
   {
     path: "app/integrations/servicetitan/page.tsx",
     required: [
-      "Compatibility review",
-      "Request ServiceTitan review",
-      "The public review request is for workflow context only",
+      "Roadmap",
+      "Roadmap only*",
+      "Share ServiceTitan interest",
+      "not available in BookedOnCall today",
       "Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials"
     ],
-    forbidden: [/Connect ServiceTitan/i, /ServiceTitan is available/i, /ServiceTitan is supported/i, /roadmap/i]
+    forbidden: [/Connect ServiceTitan/i, /ServiceTitan is available/i, /ServiceTitan is supported/i, /compatibility review/i, /Request ServiceTitan review/i]
   },
 ]
 
-for (const { path: relativePath, required, forbidden } of assistedReviewRoutes) {
+for (const { path: relativePath, required, forbidden } of roadmapRoutes) {
   const source = readText(relativePath)
   if (/buildServiceSchema/i.test(source)) {
     errors.push(`${relativePath} must not emit Service schema for a roadmap-only integration`)
   }
   for (const requiredPhrase of required) {
     if (!source.includes(requiredPhrase)) {
-      errors.push(`${relativePath} must include assisted-review proof-boundary phrase: ${requiredPhrase}`)
+      errors.push(`${relativePath} must include roadmap proof-boundary phrase: ${requiredPhrase}`)
     }
   }
   for (const forbiddenPattern of forbidden) {

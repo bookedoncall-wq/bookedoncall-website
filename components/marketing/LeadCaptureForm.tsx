@@ -33,10 +33,10 @@ function buildLeadEmailText(lead: FormState & { source: string }) {
   const reviewCopy = getIntegrationReviewCopy(lead.source)
   const reviewLines = reviewCopy
     ? [
-        `Lead type: Assisted ${reviewCopy.provider} integration review`,
-        "Provider credential policy: no provider credentials should be collected through the public form.",
+        `Lead type: ${reviewCopy.leadType}`,
+        "Credential note: do not collect provider credentials through the public form.",
         "",
-        "Review intake checklist:",
+        "Roadmap interest context:",
         ...reviewCopy.include.map((item) => `- ${item}`),
         "",
       ]
@@ -62,7 +62,7 @@ function buildLeadEmailText(lead: FormState & { source: string }) {
 function buildLeadMailtoHref(lead: FormState & { source: string }) {
   const reviewCopy = getIntegrationReviewCopy(lead.source)
   const subject = reviewCopy
-    ? `${siteConfig.name} ${reviewCopy.provider} review lead`
+    ? `${siteConfig.name} ${reviewCopy.leadType}`
     : `${siteConfig.name} ${lead.planInterest || "Starter"} lead`
   return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildLeadEmailText(lead))}`
 }
@@ -326,7 +326,7 @@ export function LeadCaptureForm() {
             disabled={status === "submitting"}
             className="inline-flex items-center justify-center rounded-xl bg-slate-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {status === "submitting" ? "Sending..." : reviewCopy ? "Request review" : "Request setup"}
+            {status === "submitting" ? "Sending..." : reviewCopy ? "Share interest" : "Request setup"}
           </button>
           <p className="text-sm leading-6 text-slate-500">
             Already a customer?{" "}

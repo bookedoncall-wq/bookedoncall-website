@@ -7,25 +7,25 @@ import { buildLeadFormHref } from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo"
 
 const content = integrationPages["housecall-pro"]
-const reviewHref = buildLeadFormHref(undefined, "housecall-pro-integration-review")
+const interestHref = buildLeadFormHref(undefined, "housecall-pro-roadmap-interest")
 
-const reviewSteps = [
+const roadmapSteps = [
   {
-    title: "Start with workflow fit",
-    body: "Tell us how your office uses Housecall Pro today: job types, callback rules, dispatch handoffs, and what your team wants reviewed before anything is scheduled."
+    title: "Capture clean caller details",
+    body: "The possible future goal is to help shops using Housecall Pro receive cleaner call notes and customer context without promising a live connection today."
   },
   {
-    title: "Choose the first workflow",
-    body: "Most shops start with clean callback handoff or office-reviewed job creation so the team keeps control of unusual work."
+    title: "Support office-reviewed handoff",
+    body: "A first release would likely stay narrow: callback handoff, office-reviewed scheduling support, and clear intake before anything gets added to another system."
   },
   {
-    title: "Keep credentials out of the form",
-    body: "The public review request is for workflow context only. Do not paste API keys, webhook secrets, or Housecall Pro credentials."
+    title: "Prioritize demand safely",
+    body: "Tell us you use Housecall Pro and what workflow matters most. Do not paste API keys, webhook secrets, or Housecall Pro credentials."
   }
 ] as const
 
 export const metadata = buildPageMetadata({
-  title: "Housecall Pro compatibility review",
+  title: "Housecall Pro roadmap",
   description: content.summary,
   path: "/integrations/housecall-pro",
 })
@@ -33,16 +33,16 @@ export const metadata = buildPageMetadata({
 export default function HousecallProPage() {
   return (
     <>
-      <StructuredData data={buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Housecall Pro compatibility review", path: "/integrations/housecall-pro" }])} />
-      <PageIntro eyebrow="Compatibility review" title={content.title} description={content.summary} />
+      <StructuredData data={buildBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Housecall Pro roadmap", path: "/integrations/housecall-pro" }])} />
+      <PageIntro eyebrow="Roadmap" title={content.title} description={content.summary} />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 shadow-sm">
             <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
-              Compatibility review*
+              Roadmap only*
             </div>
-            <h2 className="mb-4 text-3xl font-black text-slate-950">What we review with you</h2>
+            <h2 className="mb-4 text-3xl font-black text-slate-950">A possible future integration</h2>
             <div className="grid gap-3">
               {content.bullets.map((bullet) => (
                 <div key={bullet} className="rounded-2xl border border-slate-200 bg-white p-4 text-base leading-8 text-slate-700">
@@ -58,7 +58,7 @@ export default function HousecallProPage() {
                 key={card}
                 className={`rounded-[1.75rem] border p-6 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
               >
-                <h2 className="mb-3 text-xl font-black text-slate-950">Review {index + 1}</h2>
+                <h2 className="mb-3 text-xl font-black text-slate-950">Roadmap note {index + 1}</h2>
                 <p className="text-sm leading-7 text-slate-700">{card}</p>
               </article>
             ))}
@@ -70,13 +70,13 @@ export default function HousecallProPage() {
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-3">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How to move it forward</p>
-            <h2 className="text-3xl font-black text-slate-950">Map Housecall Pro around your current office flow.</h2>
+            <h2 className="text-3xl font-black text-slate-950">Tell us where Housecall Pro should fit.</h2>
             <p className="max-w-3xl text-base leading-7 text-slate-600">
-              This review helps decide whether BookedOnCall should hand calls back to your team, support office-reviewed job creation, or keep the first setup focused on clean callback capture.
+              Housecall Pro is on the roadmap as a possible future integration. It is not available in BookedOnCall today, and roadmap timing may change as customer demand and implementation work evolve.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            {reviewSteps.map((step) => (
+            {roadmapSteps.map((step) => (
               <article key={step.title} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
                 <h2 className="mb-3 text-xl font-black text-slate-950">{step.title}</h2>
                 <p className="text-sm leading-7 text-slate-700">{step.body}</p>
@@ -84,12 +84,12 @@ export default function HousecallProPage() {
             ))}
           </div>
           <TrackedLink
-            href={reviewHref}
+            href={interestHref}
             eventName="marketing_cta_clicked"
-            eventPayload={{ placement: "housecall_pro_assisted_review", href: reviewHref }}
+            eventPayload={{ placement: "housecall_pro_roadmap_interest", href: interestHref }}
             className="inline-flex w-fit rounded-xl border border-amber-300 bg-amber-500 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-amber-400"
           >
-            Request Housecall Pro review
+            Share Housecall Pro interest
           </TrackedLink>
         </div>
       </section>
@@ -128,10 +128,10 @@ export default function HousecallProPage() {
         </div>
       </section>
       <CtaBand
-        title="Need Housecall Pro in the workflow?"
-        body="Start with a compatibility review. BookedOnCall will map your Housecall Pro workflow and recommend the safest first handoff before any credentials are discussed."
-        primaryLabel="Request Housecall Pro review"
-        primaryHref={reviewHref}
+        title="Want Housecall Pro on the roadmap?"
+        body="Tell us you use Housecall Pro and what workflow matters most. This is a roadmap interest signal, not a live integration request, and you should not paste provider credentials."
+        primaryLabel="Share Housecall Pro interest"
+        primaryHref={interestHref}
         secondaryLabel="See supported integrations"
         secondaryHref="/integrations"
       />

@@ -36,17 +36,8 @@ export const supportedTradeLinks = supportedTrades.map((trade) => ({
   href: supportedTradeHrefByLabel[trade] || "/industries",
 }))
 export const integrations = contract.integrations
-const assistedReviewIntegrationIds = new Set(["housecall-pro", "servicetitan"])
-
-export function isAssistedReviewIntegration(integration: (typeof integrations)[number]) {
-  return assistedReviewIntegrationIds.has(integration.id)
-}
-
 export const liveIntegrations = integrations.filter((integration) => integration.status === "available")
-export const assistedReviewIntegrations = integrations.filter(isAssistedReviewIntegration)
-export const roadmapIntegrations = integrations.filter(
-  (integration) => integration.status === "coming_soon" && !isAssistedReviewIntegration(integration)
-)
+export const roadmapIntegrations = integrations.filter((integration) => integration.status === "coming_soon")
 export const positioning = contract.positioning
 export const sourcedProof = contract.sourcedProof
 export const customerLoginPath = "/login" as const
@@ -56,23 +47,14 @@ export const selfServeCheckoutEnabled = contract.featureFlags.selfServeCheckout 
 export const primaryCtaLabel = positioning.primaryCtaLabel || "Start setup"
 
 export function getIntegrationBadgeLabel(integration: (typeof integrations)[number]) {
-  if (isAssistedReviewIntegration(integration)) {
-    return "Compatibility review*"
-  }
   return integration.status === "coming_soon" ? "Roadmap only*" : "Configured workflow*"
 }
 
 export function getIntegrationActionLabel(integration: (typeof integrations)[number]) {
-  if (isAssistedReviewIntegration(integration)) {
-    return "Request compatibility review"
-  }
   return integration.status === "coming_soon" ? "See roadmap note" : "See setup details"
 }
 
 export function getIntegrationTextLinkLabel(integration: (typeof integrations)[number]) {
-  if (isAssistedReviewIntegration(integration)) {
-    return `Request a ${integration.name} compatibility review`
-  }
   return integration.status === "coming_soon"
     ? `See the ${integration.name} roadmap page`
     : `Read the ${integration.name} setup page`

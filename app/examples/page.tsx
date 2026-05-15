@@ -87,7 +87,7 @@ const nextSteps = [
   },
   {
     title: "Review integrations",
-    body: "See the supported Jobber, Google Calendar, and Text / SMS workflows, plus compatibility reviews for Housecall Pro and ServiceTitan.",
+    body: "See the supported Jobber, Google Calendar, and Text / SMS workflows, plus roadmap notes for QuickBooks, Housecall Pro, and ServiceTitan.",
     href: "/integrations",
   }
 ] as const

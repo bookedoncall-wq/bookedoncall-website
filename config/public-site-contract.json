@@ -95,13 +95,13 @@
     {
       "id": "housecall-pro",
       "name": "Housecall Pro",
-      "description": "Compatibility review: if your shop uses Housecall Pro, BookedOnCall can review the workflow and recommend a safe callback or scheduling handoff path.",
+      "description": "Roadmap-only: Housecall Pro is a possible future integration for shops that want BookedOnCall to fit their existing field-service workflow.",
       "status": "coming_soon"
     },
     {
       "id": "servicetitan",
       "name": "ServiceTitan",
-      "description": "Compatibility review: if your shop uses ServiceTitan, BookedOnCall can review the workflow and recommend a safe CSR, callback, or scheduling handoff path.",
+      "description": "Roadmap-only: ServiceTitan is a possible future integration for larger shops that want BookedOnCall to fit their existing CSR and dispatch workflow.",
       "status": "coming_soon"
     }
   ],
