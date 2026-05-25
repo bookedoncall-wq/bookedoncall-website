@@ -1,6 +1,8 @@
 "use client"
 
 import { SignIn, useAuth } from "@clerk/nextjs"
+import { useSignIn } from "@clerk/nextjs/legacy"
+import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
 type TokenSummary =
@@ -27,10 +29,56 @@ declare global {
 
 export default function AuthProofSessionClient({ boundary }: { boundary: string }) {
   const auth = useAuth()
+  const { isLoaded: signInLoaded, setActive, signIn } = useSignIn()
+  const searchParams = useSearchParams()
+  const signInToken = searchParams.get("token")
   const [summary, setSummary] = useState<TokenSummary>({
     status: "token_missing",
     reason: "not_signed_in_or_unloaded",
   })
+  const [ticketStatus, setTicketStatus] = useState<"idle" | "working" | "complete" | "blocked">("idle")
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function consumeTicket() {
+      if (!signInToken || signInLoaded !== true || !signIn || !setActive || auth.isSignedIn === true || ticketStatus !== "idle") {
+        return
+      }
+
+      setTicketStatus("working")
+      try {
+        const signInAttempt = await signIn.create({
+          strategy: "ticket",
+          ticket: signInToken,
+        })
+
+        if (cancelled) {
+          return
+        }
+
+        if (signInAttempt.status === "complete" && signInAttempt.createdSessionId) {
+          await setActive({ session: signInAttempt.createdSessionId })
+          if (!cancelled) {
+            setTicketStatus("complete")
+          }
+          return
+        }
+
+        setTicketStatus("blocked")
+      } catch {
+        if (!cancelled) {
+          setTicketStatus("blocked")
+        }
+      }
+    }
+
+    void consumeTicket()
+
+    return () => {
+      cancelled = true
+    }
+  }, [auth.isSignedIn, setActive, signIn, signInLoaded, signInToken, ticketStatus])
 
   useEffect(() => {
     let cancelled = false
@@ -91,7 +139,11 @@ export default function AuthProofSessionClient({ boundary }: { boundary: string 
             <div>
               <h2 className="text-2xl font-black text-slate-950">Sign-in required</h2>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                The provider session has not been established in this browser context.
+                {ticketStatus === "working"
+                  ? "A single-use provider ticket is being exchanged for a browser session."
+                  : ticketStatus === "blocked"
+                    ? "The single-use provider ticket could not establish a browser session."
+                    : "The provider session has not been established in this browser context."}
               </p>
             </div>
             <SignIn routing="hash" />
