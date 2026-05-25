@@ -9,6 +9,7 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const requiredBuildRoutes = [
   "/page",
   "/sign-up/page",
+  "/auth-proof/session/page",
   "/api/leads/route",
 ]
 
@@ -49,6 +50,13 @@ async function runRuntimeChecks(baseUrl) {
     await requestText(`${baseUrl}/sign-up?plan=starter&source=housecall-pro-roadmap-interest`),
     200,
     ["Request setup", "Loading form..."]
+  )
+  assertResponse(
+    errors,
+    "GET /auth-proof/session disabled by default",
+    await requestText(`${baseUrl}/auth-proof/session`),
+    200,
+    ["Session proof unavailable", "Proof-only route"]
   )
 
   const safeLead = await postJson(baseUrl, {
