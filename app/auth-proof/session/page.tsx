@@ -1,5 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs"
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import AuthProofSessionClient from "./session-client"
 
 export const metadata: Metadata = {
@@ -61,8 +62,22 @@ export default function AuthProofSessionPage() {
 
   return (
     <ClerkProvider publishableKey={config.publishableKey}>
-      <AuthProofSessionClient boundary={AUTH_PROOF_BOUNDARY} />
+      <Suspense fallback={<AuthProofLoading />}>
+        <AuthProofSessionClient boundary={AUTH_PROOF_BOUNDARY} />
+      </Suspense>
     </ClerkProvider>
+  )
+}
+
+function AuthProofLoading() {
+  return (
+    <section className="mx-auto grid min-h-[60vh] max-w-3xl place-items-center px-4 py-20">
+      <div className="rounded-2xl border border-slate-200 bg-white p-6 text-slate-950 shadow-sm">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Auth proof</p>
+        <h1 className="mt-3 text-3xl font-black">Loading session proof</h1>
+        <p className="mt-4 text-sm leading-6 text-slate-600">{AUTH_PROOF_BOUNDARY}</p>
+      </div>
+    </section>
   )
 }
 
