@@ -9,7 +9,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Industries",
   description:
-    "See how BookedOnCall fits plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses.",
+    "See how BookedOnCall fits plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home-service businesses.",
   path: "/industries",
 })
 
@@ -21,7 +21,7 @@ export default function IndustriesPage() {
         data={buildServiceSchema({
           name: "BookedOnCall industries",
           description:
-            "Industry pages for plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses.",
+            "Industry pages for plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home-service businesses.",
           path: "/industries",
         })}
       />
@@ -66,13 +66,13 @@ export default function IndustriesPage() {
             <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
               <h3 className="mb-3 text-2xl font-black text-slate-950">Urgent jobs need a first response</h3>
               <p className="text-base leading-7 text-slate-600">
-                Plumbing, HVAC, and electrical calls often come with real urgency. A dead-end voicemail is a weak first impression when the customer wants help now.
+                Plumbing, HVAC, electrical, and roofing calls often come with real urgency. A dead-end voicemail is a weak first impression when the customer wants help now.
               </p>
             </article>
             <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
               <h3 className="mb-3 text-2xl font-black text-slate-950">Estimate and install leads go cold fast</h3>
               <p className="text-base leading-7 text-slate-700">
-                Painting, flooring, landscaping, and general home-service inquiries often go to whichever shop sounds most responsive first.
+                Painting, flooring, landscaping, roofing, and general home-service inquiries often go to whichever shop sounds most responsive first.
               </p>
             </article>
             <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">

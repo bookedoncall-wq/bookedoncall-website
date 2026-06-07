@@ -29,6 +29,7 @@ const supportedTradeHrefByLabel: Record<string, string> = {
   Painting: "/for/painters",
   Flooring: "/for/flooring",
   Landscaping: "/for/landscaping",
+  Roofing: "/for/roofing",
   "General home services": "/for/general-home-services",
 }
 export const supportedTradeLinks = supportedTrades.map((trade) => ({
@@ -77,6 +78,7 @@ export const secondaryNav = [
   { label: "For Painters", href: "/for/painters" },
   { label: "For Flooring", href: "/for/flooring" },
   { label: "For Landscapers", href: "/for/landscaping" },
+  { label: "For Roofers", href: "/for/roofing" },
   { label: "For General Home Services", href: "/for/general-home-services" },
   { label: "Integrations", href: "/integrations" },
   { label: "Jobber", href: "/integrations/jobber" },

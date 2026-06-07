@@ -27,6 +27,7 @@ const pages = [
   "/for/painters",
   "/for/flooring",
   "/for/landscaping",
+  "/for/roofing",
   "/for/general-home-services",
   "/integrations/jobber",
   "/integrations/google-calendar",

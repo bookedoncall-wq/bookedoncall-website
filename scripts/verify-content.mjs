@@ -27,6 +27,7 @@ const requiredRoutes = [
   "app/for/painters/page.tsx",
   "app/for/flooring/page.tsx",
   "app/for/landscaping/page.tsx",
+  "app/for/roofing/page.tsx",
   "app/for/general-home-services/page.tsx",
   "app/integrations/jobber/page.tsx",
   "app/integrations/google-calendar/page.tsx",

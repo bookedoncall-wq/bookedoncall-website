@@ -385,7 +385,7 @@ export default function HomePage() {
             <p className="mx-auto text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Industries</p>
             <h2 className="text-4xl font-black text-slate-950">Built for the trades that live on inbound calls.</h2>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-              Plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses all have different call patterns. The first-response problem is the same.
+              Plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home-service businesses all have different call patterns. The first-response problem is the same.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">

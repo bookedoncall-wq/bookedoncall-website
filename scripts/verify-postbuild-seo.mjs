@@ -16,6 +16,7 @@ const tradeRouteByLabel = {
   Painting: "/for/painters",
   Flooring: "/for/flooring",
   Landscaping: "/for/landscaping",
+  Roofing: "/for/roofing",
   "General home services": "/for/general-home-services",
 }
 

@@ -34,10 +34,11 @@
     "Painting",
     "Flooring",
     "Landscaping",
+    "Roofing",
     "General home services"
   ],
   "validatedCapabilities": [
-    "Answers inbound calls for plumbing, HVAC, electrical, painting, flooring, landscaping, and general home-service businesses.",
+    "Answers inbound calls for plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home-service businesses.",
     "Collects caller name, callback number, address, job details, and service notes.",
     "Can offer appointment paths only when scheduling is enabled, the workflow is configured, and the request fits the shop's booking rules.",
     "Works with Jobber, Google Calendar, and customer text messaging as configured workflows for supported setup and follow-up flows.",

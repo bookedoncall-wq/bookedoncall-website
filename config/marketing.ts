@@ -336,6 +336,29 @@ export const useCasePages = {
     ctaTitle: "Need better landscaping call coverage?",
     ctaBody: "Choose a plan and make sure maintenance and project calls get a faster first response."
   },
+  roofing: {
+    label: "Roofers",
+    navLabel: "For Roofers",
+    path: "/for/roofing",
+    title: "AI call answering for roofing companies",
+    summary:
+      "BookedOnCall helps roofing companies answer leak, storm-damage, repair, replacement, and inspection calls while crews are already on jobs.",
+    cardSummary: "Capture roof leak, storm-damage, repair, replacement, and inspection calls with a clearer first response.",
+    commonCalls: [
+      "Roof leak, storm-damage, repair, replacement, and inspection calls that need a fast first response.",
+      "Estimate requests where the caller needs to know someone received the details before choosing another roofer.",
+      "Weather-driven spikes where the office is overloaded and crews are already in the field."
+    ],
+    reasons: [
+      "Catch roofing leads while crews are on roofs, driving between jobs, or handling weather-related demand.",
+      "Collect address, roof issue, urgency, access notes, and callback details before the lead cools off.",
+      "Send approval-heavy or weather-sensitive jobs back with clean notes instead of forcing a bad booking."
+    ],
+    trustCopy:
+      "Roofing calls often come in waves after leaks, storms, or insurance-driven repair needs. BookedOnCall helps your shop sound responsive, collect the right details, and keep the next step clear when a person should still review the job.",
+    ctaTitle: "Need better roofing call coverage?",
+    ctaBody: "Choose a plan and make sure roof repair, replacement, and inspection calls get a better first response."
+  },
   "general-home-services": {
     label: "General Home Services",
     navLabel: "For General Home Services",
@@ -368,6 +391,7 @@ export const useCaseOrder = [
   "painters",
   "flooring",
   "landscaping",
+  "roofing",
   "general-home-services",
 ] as const
 

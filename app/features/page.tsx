@@ -106,7 +106,7 @@ export default function FeaturesPage() {
             </article>
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Generic AI tools</h3>
-              <p className="text-sm leading-7 text-slate-600">Most AI answering tools are built for any industry. BookedOnCall is built for trades: plumbing, HVAC, electrical, painting, flooring, landscaping, and general home services.</p>
+              <p className="text-sm leading-7 text-slate-600">Most AI answering tools are built for any industry. BookedOnCall is built for trades: plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home services.</p>
             </article>
           </div>
         </div>
