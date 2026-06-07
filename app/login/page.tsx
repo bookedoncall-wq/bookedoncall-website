@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 
 export const metadata = buildPageMetadata({
   title: "Customer login",
-  description: "Existing customers can use the BookedOnCall app to sign in, finish onboarding, and manage their dashboard.",
+  description: "Existing BookedOnCall owners can use the customer app after their workspace access has been enabled.",
   path: "/login",
 })
 
@@ -17,17 +17,17 @@ export default function LoginPage() {
     <>
       <PageIntro
         eyebrow="Existing customers"
-        title="Log in to your BookedOnCall dashboard."
-        description="If you already have a BookedOnCall account, use the app to sign in, finish onboarding, or manage your business settings."
+        title="Log in when your workspace is enabled."
+        description="BookedOnCall owner access opens through the customer app after your workspace has been set up. New customers should request setup first."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <article className="grid gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
             <div className="grid gap-3">
-              <h2 className="text-3xl font-black text-slate-950">Existing customers sign in here.</h2>
+              <h2 className="text-3xl font-black text-slate-950">Existing owners sign in here.</h2>
               <p className="text-base leading-7 text-slate-600">
-                Existing customers use the BookedOnCall app for sign-in, onboarding, and dashboard access. If you are new here, start on the website first.
+                Use the app after your BookedOnCall workspace access is enabled. If your setup is still being prepared, start on the website or contact us so we can route you to the right account.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -55,7 +55,7 @@ export default function LoginPage() {
               </TrackedLink>
             </div>
             <p className="text-sm leading-6 text-slate-500">
-              Existing customers use the app. New customers start on the website.
+              If the app says access is not available, your workspace is not enabled for that environment yet.
             </p>
           </article>
 
@@ -63,8 +63,8 @@ export default function LoginPage() {
             <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">What happens after you sign in</h2>
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
-                <li>You land in the dashboard if your account is already set up.</li>
-                <li>If you are mid-onboarding, the app can send you back to finish setup.</li>
+                <li>You land in the dashboard when your owner access and workspace are enabled.</li>
+                <li>If you are mid-onboarding, we will send the right app access path when the workspace is ready.</li>
                 <li>If your account has access to more than one business, you can choose the workspace you want to manage.</li>
               </ul>
             </article>
@@ -72,7 +72,7 @@ export default function LoginPage() {
             <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Need help getting in?</h2>
               <p className="text-base leading-7 text-slate-600">
-                If your onboarding link is stale or you are not sure which email was used, contact {siteConfig.email} and we will help you get back into the right account.
+                If your onboarding link is stale, your app access is not enabled yet, or you are not sure which email was used, contact {siteConfig.email} and we will help you get back into the right account.
               </p>
               <TrackedLink
                 href={buildGetStartedHref(undefined, "website-login-help")}
