@@ -110,6 +110,34 @@ export const homepageTrustPoints = [
   },
 ] as const
 
+export const basicSetupSteps = [
+  {
+    title: "Business basics",
+    body: "Confirm your trade, service area, hours, and the calls BookedOnCall should handle first.",
+  },
+  {
+    title: "Call rules",
+    body: "Choose callback capture, owner-approved booking requests, urgent-call escalation, and any pricing-range limits.",
+  },
+  {
+    title: "Calendar path",
+    body: "Pick Google Calendar, Jobber, or a callback-only fallback so the first setup does not become a technical project.",
+  },
+  {
+    title: "Phone and test call",
+    body: "Review how calls reach BookedOnCall, then run a private test call before live forwarding changes.",
+  },
+] as const
+
+export const setupChecklistItems = [
+  "Services you want answered first",
+  "Service area and after-hours rules",
+  "Calendar or callback-only starting path",
+  "Owner approval rules before booking is confirmed",
+  "Best phone path for missed or overflow calls",
+  "Plan choice and billing contact",
+] as const
+
 export const comingSoonProofItems = [
   {
     title: "Browser voice demo",
