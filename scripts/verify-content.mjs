@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url"
 import path from "node:path"
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
+const monorepoContractPath = path.resolve(repoRoot, "../TVA_All_In_One/config/bookedoncall-public-site-contract.json")
 
 const requiredRoutes = [
   "app/page.tsx",
@@ -18,6 +19,7 @@ const requiredRoutes = [
   "app/api/leads/route.ts",
   "lib/integration-review-intake.ts",
   "app/faq/page.tsx",
+  "app/demo-calls/page.tsx",
   "app/examples/page.tsx",
   "app/compare/ai-receptionist-vs-voicemail/page.tsx",
   "app/compare/after-hours-call-answering-for-plumbers/page.tsx",
@@ -141,6 +143,7 @@ if (
   !sitemapSource.includes("/integrations/quickbooks") ||
   !sitemapSource.includes("/integrations/housecall-pro") ||
   !sitemapSource.includes("/integrations/servicetitan") ||
+  !sitemapSource.includes("/demo-calls") ||
   !sitemapSource.includes("/examples")
 ) {
   errors.push("app/sitemap.xml/route.ts must include FAQ, demo, and integration pages")
@@ -171,6 +174,15 @@ if (packageJson.scripts?.["verify:journeys"] !== "node ./scripts/verify-journeys
 const envExample = readText(".env.example")
 if (/^\s*STRIPE_[A-Z0-9_]*\s*=/im.test(envExample)) {
   errors.push(".env.example must not define STRIPE_* variables in the website repo")
+}
+
+if (fs.existsSync(monorepoContractPath)) {
+  const monorepoContractSource = fs.readFileSync(monorepoContractPath, "utf8")
+  const websiteContractSource = readText("config/public-site-contract.json")
+  const expectedWebsiteContractSource = `${JSON.stringify(JSON.parse(monorepoContractSource), null, 2)}\n`
+  if (websiteContractSource !== expectedWebsiteContractSource) {
+    errors.push(`config/public-site-contract.json is out of sync with ${monorepoContractPath}; run npm run sync:monorepo-truth`)
+  }
 }
 
 for (const relativePath of leadWebhookGuardFiles) {

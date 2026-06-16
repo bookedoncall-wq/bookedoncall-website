@@ -76,9 +76,9 @@ const exampleCalls = [
 
 const nextSteps = [
   {
-    title: "Compare the alternatives",
-    body: "See where BookedOnCall fits against voicemail, answering services, and other fallback options.",
-    href: "/compare/ai-receptionist-vs-voicemail",
+    title: "See the demo path",
+    body: "Review how examples, private test calls, and sandbox browser demos fit together before live forwarding.",
+    href: "/demo-calls",
   },
   {
     title: "Check pricing",

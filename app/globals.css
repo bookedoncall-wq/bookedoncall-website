@@ -131,12 +131,24 @@
   body {
     @apply bg-background text-foreground;
   }
+  main,
+  section,
+  article,
+  aside,
+  div {
+    min-width: 0;
+  }
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+    overflow-wrap: break-word;
+  }
+  p,
+  li {
+    overflow-wrap: break-word;
   }
   a {
     text-underline-offset: 0.18em;

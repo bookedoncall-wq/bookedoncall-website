@@ -1,5 +1,7 @@
 import type { NextConfig } from "next"
 
+const includeUpgradeInsecureRequests = process.env.BOOKEDONCALL_LOCAL_HTTP_PROOF !== "1"
+
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
@@ -20,7 +22,7 @@ const securityHeaders = [
       "worker-src 'self' blob:",
       "frame-src https://www.googletagmanager.com https://challenges.cloudflare.com",
       "form-action 'self' https://app.bookedoncall.com https://*.clerk.accounts.dev https://*.clerk.com",
-      "upgrade-insecure-requests",
+      ...(includeUpgradeInsecureRequests ? ["upgrade-insecure-requests"] : []),
     ].join("; "),
   },
 ]

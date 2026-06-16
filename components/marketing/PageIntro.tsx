@@ -13,8 +13,8 @@ export function PageIntro({ eyebrow, title, description }: PageIntroProps) {
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="text-4xl font-black leading-tight text-slate-950 sm:text-5xl">{title}</h1>
-        <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600">{description}</p>
+        <h1 className="text-3xl font-black leading-tight text-slate-950 sm:text-5xl">{title}</h1>
+        <p className="mx-auto max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">{description}</p>
       </div>
     </section>
   )

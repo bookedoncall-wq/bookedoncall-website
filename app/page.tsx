@@ -2,7 +2,7 @@ import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck } from
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
-import { afterCallArtifacts, faqEntries, homepageTrustPoints, productFlowSteps, resourceHighlights, useCaseOrder, useCasePages } from "@/config/marketing"
+import { afterCallArtifacts, basicSetupSteps, faqEntries, homepageTrustPoints, productFlowSteps, resourceHighlights, useCaseOrder, useCasePages } from "@/config/marketing"
 import {
   buildGetStartedHref,
   getIntegrationActionLabel,
@@ -73,17 +73,17 @@ export default function HomePage() {
         })}
       />
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
+      <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="grid gap-7">
-            <p className="w-fit rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
+            <p className="w-fit max-w-full rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-center text-sm font-bold leading-6 text-amber-800">
               Built for trades businesses that want a better first response
             </p>
             <div className="grid gap-5">
-              <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
+              <h1 className="max-w-4xl text-4xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
                 Answer more calls. Win more of the work your shop should get.
               </h1>
-              <p className="max-w-3xl text-xl leading-8 text-slate-600">{positioning.oneLiner}</p>
+              <p className="max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">{positioning.oneLiner}</p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <TrackedLink
@@ -204,6 +204,50 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 px-4 py-20 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8">
+          <div className="grid gap-4 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+            <div className="grid gap-4">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-300">Setup path</p>
+              <h2 className="text-4xl font-black">Basic setup should feel like setting up an answering service.</h2>
+            </div>
+            <p className="text-lg leading-8 text-slate-300">
+              Start with a short, practical setup: what you do, where you work, when calls should be handled, how appointment requests should be reviewed, and how you want the first private test call to behave.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {basicSetupSteps.map((step, index) => (
+              <article key={step.title} className="grid min-h-[190px] gap-4 rounded-[1.5rem] border border-slate-700 bg-slate-900 p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="rounded-full border border-amber-300 bg-amber-400 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-slate-950">
+                    {index + 1}
+                  </span>
+                  {index === 0 ? <ClipboardList className="size-5 text-amber-300" /> : null}
+                  {index === 1 ? <ShieldCheck className="size-5 text-amber-300" /> : null}
+                  {index === 2 ? <CalendarClock className="size-5 text-amber-300" /> : null}
+                  {index === 3 ? <PhoneCall className="size-5 text-amber-300" /> : null}
+                </div>
+                <div className="grid gap-2">
+                  <h3 className="text-xl font-black">{step.title}</h3>
+                  <p className="text-sm leading-6 text-slate-300">{step.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <TrackedLink
+            href={buildGetStartedHref(undefined, "website-home-setup-path")}
+            eventName="signup_started"
+            eventPayload={{ placement: "home_setup_path" }}
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "w-fit justify-center rounded-xl border-transparent bg-amber-500 px-6 text-white hover:bg-amber-400"
+            )}
+          >
+            Start the basic setup path
+          </TrackedLink>
         </div>
       </section>
 
