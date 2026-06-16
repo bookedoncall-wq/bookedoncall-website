@@ -15,6 +15,7 @@ const pages = [
   "/sign-up",
   "/about",
   "/faq",
+  "/demo-calls",
   "/examples",
   "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
   "/compare/missed-calls-for-home-service-businesses",
@@ -51,7 +52,7 @@ function xmlEscape(value: string) {
 }
 
 function routeChangeFrequency(path: string) {
-  if (path === "/" || path === "/pricing" || path === "/faq" || path === "/product") {
+  if (path === "/" || path === "/pricing" || path === "/faq" || path === "/product" || path === "/demo-calls") {
     return "weekly"
   }
   return "monthly"

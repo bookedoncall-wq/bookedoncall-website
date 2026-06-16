@@ -13,6 +13,7 @@ const appOrigin = new URL(contract.brand.appOrigin).origin
 const requiredBuildRoutes = [
   "/page",
   "/sitemap.xml/route",
+  "/demo-calls/page",
   "/sign-up/page",
 ]
 
@@ -22,6 +23,7 @@ const criticalRouteExpectations = {
   "/pricing": ["Starter", "Pro", "included minutes"],
   "/login": ["Go to customer login", `${appOrigin}/sign-in`],
   "/sign-up": ["Request setup", "private test call"],
+  "/demo-calls": ["Demo calls", "private test call", "Start setup"],
   "/integrations": ["Jobber", "Google Calendar", "QuickBooks", "Housecall Pro", "ServiceTitan"],
   "/integrations/jobber": ["Jobber", "connected"],
   "/integrations/google-calendar": ["Google Calendar", "connected"],

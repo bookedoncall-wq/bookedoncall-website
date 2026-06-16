@@ -19,6 +19,7 @@ const requiredRoutes = [
   "app/api/leads/route.ts",
   "lib/integration-review-intake.ts",
   "app/faq/page.tsx",
+  "app/demo-calls/page.tsx",
   "app/examples/page.tsx",
   "app/compare/ai-receptionist-vs-voicemail/page.tsx",
   "app/compare/after-hours-call-answering-for-plumbers/page.tsx",
@@ -142,6 +143,7 @@ if (
   !sitemapSource.includes("/integrations/quickbooks") ||
   !sitemapSource.includes("/integrations/housecall-pro") ||
   !sitemapSource.includes("/integrations/servicetitan") ||
+  !sitemapSource.includes("/demo-calls") ||
   !sitemapSource.includes("/examples")
 ) {
   errors.push("app/sitemap.xml/route.ts must include FAQ, demo, and integration pages")

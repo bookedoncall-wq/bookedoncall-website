@@ -73,17 +73,17 @@ export default function HomePage() {
         })}
       />
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
+      <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="grid gap-7">
             <p className="w-fit rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
               Built for trades businesses that want a better first response
             </p>
             <div className="grid gap-5">
-              <h1 className="max-w-4xl text-5xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
+              <h1 className="max-w-4xl text-4xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
                 Answer more calls. Win more of the work your shop should get.
               </h1>
-              <p className="max-w-3xl text-xl leading-8 text-slate-600">{positioning.oneLiner}</p>
+              <p className="max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">{positioning.oneLiner}</p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <TrackedLink

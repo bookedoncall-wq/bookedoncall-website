@@ -2,12 +2,12 @@ export const faqEntries = [
   {
     question: "What is the difference between Starter and Pro?",
     answer:
-      "Starter gives you the core product: answered calls, callback capture, booking when enabled, and clear summaries with the next step. Pro adds more included minutes and more control over how the assistant sounds and introduces itself."
+      "Starter gives you the core product: answered calls, clean intake, owner-approved booking requests when your setup allows it, callback capture, and clear summaries with the next step. Pro adds more included minutes and more control over how the assistant sounds and introduces itself."
   },
   {
     question: "Which plan should I start with?",
     answer:
-      "Starter is the right starting point for many owner-operators and smaller shops. Pro makes more sense if you want more included minutes and more control over the caller experience from day one."
+      "Starter is the right starting point for many owner-operators and smaller shops where one missed job can cover the monthly price. Pro makes more sense if you want more included minutes, a more branded caller experience, and tighter owner-review workflow from day one."
   },
   {
     question: "Does BookedOnCall always book appointments automatically?",
@@ -37,7 +37,7 @@ export const faqEntries = [
   {
     question: "How long does setup take?",
     answer:
-      "Setup usually takes one call to go over your preferences and a short configuration step. Timing depends on phone forwarding, scheduling connections, and your first private test call."
+      "Basic setup is designed to take about 15 minutes when your business info, services, service area, hours, phone-forwarding choice, calendar, alerts, and plan choice are ready. Advanced call rules and custom wording can take longer, but they do not need to block the first private test call."
   },
   {
     question: "Can BookedOnCall handle emergency or urgent calls?",
@@ -57,7 +57,7 @@ export const faqEntries = [
   {
     question: "Can I try BookedOnCall before committing?",
     answer:
-      "There is no free trial right now, but we can walk you through example calls and get you to a private test call before any live number points at BookedOnCall."
+      "There is no free trial right now, but you can review example call transcripts and run a private test call before any live number points at BookedOnCall. Browser voice demos run as sandboxes that do not change your calendar or create real appointments."
   },
   {
     question: "Is there a long-term contract?",
@@ -67,7 +67,7 @@ export const faqEntries = [
   {
     question: "How does BookedOnCall compare to a live answering service?",
     answer:
-      "A traditional answering service uses human operators who follow a script. BookedOnCall uses AI to handle the call, collect details, and route the next step. Live services usually cost materially more per minute, while BookedOnCall keeps pricing simpler with included minutes and a published overage rate."
+      "A traditional answering service uses human operators who follow a script. BookedOnCall uses AI to answer, collect details, and route the next step around your reviewed setup. Live services usually cost materially more per minute, while BookedOnCall keeps pricing simpler with included minutes and a published overage rate."
   },
   {
     question: "What information does the assistant collect on each call?",
@@ -112,8 +112,8 @@ export const homepageTrustPoints = [
 
 export const comingSoonProofItems = [
   {
-    title: "Audio call demos",
-    body: "Recorded examples by trade so people can hear how BookedOnCall sounds on plumbing, HVAC, electrical, and other home-service calls.",
+    title: "Browser voice demo",
+    body: "A sandbox voice demo with visible transcript, microphone consent, and no calendar or appointment changes.",
   },
   {
     title: "Customer proof",
@@ -175,6 +175,11 @@ export const afterCallArtifacts = [
 ] as const
 
 export const resourceHighlights = [
+  {
+    title: "Demo calls",
+    href: "/demo-calls",
+    description: "See how example transcripts, private test calls, and sandbox browser voice demos help you review the call flow before live forwarding."
+  },
   {
     title: "Example calls",
     href: "/examples",

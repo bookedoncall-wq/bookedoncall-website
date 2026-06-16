@@ -22,7 +22,7 @@ export default function PricingPage() {
       <StructuredData data={buildFaqSchema(faqEntries)} />
       <PageIntro
         eyebrow="Pricing"
-        title="Straightforward monthly pricing."
+        title="Pricing built around missed-job value."
         description={
           selfServeCheckoutEnabled
             ? "Start with the plan that fits your call volume now, then continue through secure checkout and app onboarding."
@@ -33,7 +33,7 @@ export default function PricingPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6">
           <div className="rounded-[1.5rem] border border-slate-200 bg-white px-5 py-4 text-sm leading-6 text-slate-700 shadow-sm">
-            Minutes keep pricing simple. Start with the plan that fits your current volume. If you keep running well past the included minutes, we&apos;ll usually recommend the next tier instead of leaving you on the wrong plan.
+            One missed service job can cover the monthly price for many trades businesses. Minutes keep billing predictable, and the setup path keeps the call flow focused on your service area, schedule, and owner-review rules.
           </div>
           <div className="grid gap-6 md:grid-cols-2">
           {plans.map((plan, index) => (

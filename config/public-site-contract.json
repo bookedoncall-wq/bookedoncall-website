@@ -41,7 +41,7 @@
     "Answers inbound calls for plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home-service businesses.",
     "Collects caller name, callback number, address, job details, and service notes.",
     "Can offer appointment paths only when scheduling is enabled, the workflow is configured, and the request fits the shop's booking rules.",
-    "Works with Jobber, Google Calendar, and customer text messaging as configured workflows for supported setup and follow-up flows.",
+    "Supports setup-reviewed Jobber, Google Calendar, and customer text messaging workflows after the needed connection checks.",
     "Delivers a clear call summary and the next step, whether that is a booked appointment or a callback request.",
     "Can send follow-up texts when customer messaging is turned on."
   ],
@@ -110,10 +110,10 @@
     {
       "id": "starter",
       "name": "Starter",
-      "monthlyUsd": 250,
+      "monthlyUsd": 299,
       "includedMinutes": 200,
       "overageMinuteUsd": 0.75,
-      "summary": "For owner-operators and growing shops that want a better first response, clear callback coverage, and straightforward setup.",
+      "summary": "For owner-operators and small shops that want missed calls handled with clean intake, owner-approved booking requests, and clear callback coverage.",
       "capabilities": {
         "assistantName": false,
         "voiceSelection": false,
@@ -124,9 +124,9 @@
       },
       "features": [
         "200 included call minutes each month",
-        "AI call answering and lead intake",
-        "Callback capture and clear handoff when you want to step in",
-        "Booking paths when your reviewed setup allows it",
+        "Trades-focused call answering and lead intake",
+        "Callback capture and owner-approved booking requests when you want to step in",
+        "Booking paths when your reviewed setup and connected schedule allow it",
         "Jobber or Google Calendar workflows when configured",
         "Call summaries with the next step clearly laid out",
         "Default assistant voice and greeting"
@@ -135,10 +135,10 @@
     {
       "id": "pro",
       "name": "Pro",
-      "monthlyUsd": 350,
-      "includedMinutes": 400,
+      "monthlyUsd": 499,
+      "includedMinutes": 500,
       "overageMinuteUsd": 0.75,
-      "summary": "For businesses that want more included minutes and a more branded caller experience.",
+      "summary": "For shops that want more included minutes, a more branded caller experience, and tighter owner-review workflow.",
       "capabilities": {
         "assistantName": true,
         "voiceSelection": true,
@@ -148,10 +148,10 @@
         "voiceUnavailableMessage": true
       },
       "features": [
-        "400 included call minutes each month",
-        "AI call answering and lead intake",
-        "Callback capture and clear handoff when you want to step in",
-        "Booking paths when your reviewed setup allows it",
+        "500 included call minutes each month",
+        "Trades-focused call answering and lead intake",
+        "Callback capture and owner-approved booking requests when you want to step in",
+        "Booking paths when your reviewed setup and connected schedule allow it",
         "Jobber or Google Calendar workflows when configured",
         "Call summaries with the next step clearly laid out",
         "Choose the voice callers hear",

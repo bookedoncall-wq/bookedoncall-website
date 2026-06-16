@@ -67,6 +67,39 @@ function buildLeadMailtoHref(lead: FormState & { source: string }) {
   return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildLeadEmailText(lead))}`
 }
 
+function normalizeFormText(value: string) {
+  return value.replace(/\s+/g, " ").trim()
+}
+
+function validateLeadForm(lead: FormState & { source: string }) {
+  const errors: Record<string, string> = {}
+  const email = normalizeFormText(lead.email).toLowerCase()
+
+  if (!normalizeFormText(lead.name)) {
+    errors.name = "Enter your name."
+  }
+  if (!normalizeFormText(lead.businessName)) {
+    errors.businessName = "Enter your business name."
+  }
+  if (!normalizeFormText(lead.trade)) {
+    errors.trade = "Choose the closest starting point."
+  }
+  if (!normalizeFormText(lead.phone)) {
+    errors.phone = "Enter the best phone number to reach you."
+  }
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errors.email = "Enter a valid email address."
+  }
+  if (!normalizeFormText(lead.planInterest)) {
+    errors.planInterest = "Choose the plan you are most interested in."
+  }
+  if (containsProviderSecretLikeContent(lead.details)) {
+    errors.details = providerSecretMessage
+  }
+
+  return errors
+}
+
 export function LeadCaptureForm() {
   const searchParams = useSearchParams()
   const selectedPlanFromUrl = useMemo(() => getPlanFromSearchParams(searchParams), [searchParams])
@@ -106,14 +139,22 @@ export function LeadCaptureForm() {
 
     const payload = {
       ...form,
+      name: normalizeFormText(form.name),
+      businessName: normalizeFormText(form.businessName),
+      trade: normalizeFormText(form.trade),
+      phone: normalizeFormText(form.phone),
+      email: normalizeFormText(form.email).toLowerCase(),
+      details: form.details.trim(),
+      website: form.website.trim(),
       planInterest,
       source,
     }
 
-    if (containsProviderSecretLikeContent(form.details)) {
-      setErrors({ details: providerSecretMessage })
+    const validationErrors = validateLeadForm(payload)
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
       setStatus("error")
-      setMessage(providerSecretMessage)
+      setMessage("Please fix the highlighted fields and try again.")
       return
     }
 
