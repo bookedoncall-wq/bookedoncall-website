@@ -34,6 +34,7 @@ npm run build
 npm run verify:content
 npm run verify:runtime
 npm run verify:journeys
+npm run verify:production-leads -- --origin https://www.bookedoncall.com --execute-send
 npm run verify:seo
 npm run verify:security
 npm run sync:monorepo-truth
@@ -45,6 +46,7 @@ This repo should not hold checkout or billing secrets. There is no website-owned
 
 - Lead form submissions post to `app/api/leads/route.ts`, which validates the payload and sends a text-only Resend email to the configured sales inbox when `RESEND_API_KEY` and `RESEND_FROM_EMAIL` are configured.
 - If Resend is not configured or delivery fails, the lead form returns a `mailto:` handoff so the visitor can still complete the request from their email client.
+- Production lead capture can be checked with `npm run verify:production-leads -- --origin https://www.bookedoncall.com --execute-send`. The flag is explicit because it submits one synthetic setup request and may send a Resend email.
 - Marketing analytics events are pushed to `window.dataLayer`; configure `NEXT_PUBLIC_GTM_ID` to load Google Tag Manager from the checked-in layout.
 - The website intentionally does not support hidden lead-webhook environment variables or a website-owned checkout/billing target.
 - Security headers, robots, sitemap, manifest, and `llms.txt` are generated from the App Router.
