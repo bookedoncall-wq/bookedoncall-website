@@ -73,6 +73,7 @@ const requiredFiles = [
   ".github/workflows/verify-content.yml",
   "scripts/verify-runtime.mjs",
   "scripts/verify-journeys.mjs",
+  "scripts/verify-production-leads.mjs",
 ]
 
 const forbiddenLeadWebhookEnvNames = [
@@ -170,6 +171,9 @@ if (packageJson.scripts?.["verify:runtime"] !== "node ./scripts/verify-runtime.m
 if (packageJson.scripts?.["verify:journeys"] !== "node ./scripts/verify-journeys.mjs") {
   errors.push("package.json must expose npm run verify:journeys for production-mode marketing route and CTA journey coverage")
 }
+if (packageJson.scripts?.["verify:production-leads"] !== "node ./scripts/verify-production-leads.mjs") {
+  errors.push("package.json must expose npm run verify:production-leads for synthetic production lead-capture checks")
+}
 
 const envExample = readText(".env.example")
 if (/^\s*STRIPE_[A-Z0-9_]*\s*=/im.test(envExample)) {
@@ -212,6 +216,19 @@ for (const requiredRuntimeGuard of [
 ]) {
   if (!runtimeVerifierSource.includes(requiredRuntimeGuard)) {
     errors.push(`scripts/verify-runtime.mjs must preserve production runtime guard phrase: ${requiredRuntimeGuard}`)
+  }
+}
+const productionLeadVerifierSource = readText("scripts/verify-production-leads.mjs")
+for (const requiredProductionLeadGuard of [
+  "--execute-send",
+  "Synthetic production lead smoke",
+  "client_secret: abcdefghijklmnopqrstuvwxyz",
+  "Do not paste provider credentials",
+  "lead-provider acceptance when delivery=resend",
+  "does not prove checkout",
+]) {
+  if (!productionLeadVerifierSource.includes(requiredProductionLeadGuard)) {
+    errors.push(`scripts/verify-production-leads.mjs must preserve production lead verifier guard phrase: ${requiredProductionLeadGuard}`)
   }
 }
 if (!leadRouteSource.includes("mailtoHref") || !leadRouteSource.includes("buildLeadMailtoHref")) {
