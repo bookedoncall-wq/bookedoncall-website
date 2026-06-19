@@ -7,7 +7,7 @@ export const faqEntries = [
   {
     question: "Which plan should I start with?",
     answer:
-      "Starter is the right starting point for many owner-operators and smaller shops where one missed job can cover the monthly price. Pro makes more sense if you want more included minutes, a more branded caller experience, and tighter owner-review workflow from day one."
+      "Starter is the right starting point for many owner-operators and smaller shops where one missed job can cover the monthly price. Pro makes more sense if you want more included minutes, a more branded caller experience, and tighter owner-review controls from day one."
   },
   {
     question: "Does BookedOnCall always book appointments automatically?",
@@ -15,9 +15,9 @@ export const faqEntries = [
       "No. BookedOnCall books jobs only when scheduling is turned on and the request fits the rules you want it to follow. It can still capture the lead and send the call back to you when a person should decide."
   },
   {
-    question: "Which integration workflows can be configured?",
+    question: "Which tools can BookedOnCall work with?",
     answer:
-      "BookedOnCall supports setup-reviewed Jobber, Google Calendar, email summary, and customer text messaging workflows for your business. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations, not live self-serve integrations today."
+      "During setup, BookedOnCall can work with Jobber, Google Calendar, email summaries, and customer text messaging after you choose the rules for your shop. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations, not live self-serve integrations today."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -27,7 +27,7 @@ export const faqEntries = [
   {
     question: "What happens after I choose a plan?",
     answer:
-      "If self-serve checkout is enabled, you move straight into secure checkout and app onboarding. If not, we use your details to guide the right setup path before sending you into the app."
+      "Start setup from the website. Depending on your account path, you will either continue into secure checkout and app onboarding or get guided setup help before the app handoff."
   },
   {
     question: "How are extra minutes billed?",
@@ -57,7 +57,7 @@ export const faqEntries = [
   {
     question: "Can I try BookedOnCall before committing?",
     answer:
-      "There is no free trial right now, but you can review example call transcripts, try the browser call preview, and run a private test call before any live number points at BookedOnCall. Public previews do not change your calendar or create real appointments."
+      "There is no free trial right now, but you can review example call transcripts, try the live web voice demo, and run a private test call before any live number points at BookedOnCall. Public demos do not change your calendar or create real appointments."
   },
   {
     question: "Is there a long-term contract?",
@@ -87,7 +87,7 @@ export const homepageHighlights = [
   },
   {
     title: "Keep using the tools you already know",
-    body: "Keep Jobber, Google Calendar, email summaries, and customer text messaging in the flow after those workflows are configured for your business."
+    body: "Keep Jobber, Google Calendar, email summaries, and customer text messaging in the flow after those tools are set up for your business."
   }
 ] as const
 
@@ -140,11 +140,11 @@ export const setupChecklistItems = [
 
 export const comingSoonProofItems = [
   {
-    title: "Browser voice demo",
-    body: "A browser call preview with visible transcript, optional microphone input, and no calendar or appointment changes.",
+    title: "Live web voice demo",
+    body: "A public live voice demo with sample shops, visible transcript, rate limits, and no calendar or appointment changes.",
   },
   {
-    title: "Customer proof",
+    title: "Customer results",
     body: "Before-and-after results showing how real businesses use BookedOnCall to answer more calls, capture more leads, and keep work from slipping to voicemail.",
   },
   {
@@ -164,7 +164,7 @@ export const workflowSteps = [
   },
   {
     title: "BookedOnCall checks the next step",
-    body: "If scheduling is configured and the request fits your reviewed setup, it can move toward a booking path. If not, it captures the lead and lines up the right callback or follow-up."
+    body: "If scheduling is turned on and the request fits your reviewed rules, it can move toward a booking path. If not, it captures the lead and lines up the right callback or follow-up."
   },
   {
     title: "You get the result",
@@ -183,7 +183,7 @@ export const productFlowSteps = [
   },
   {
     title: "Route the job the right way",
-    body: "If the request fits your rules and your schedule is configured, it can move toward a booking path. If not, it comes back to your team with a clear callback handoff."
+    body: "If the request fits your rules and your schedule is set up, it can move toward a booking path. If not, it comes back to your team with a clear callback handoff."
   },
 ] as const
 
@@ -194,7 +194,7 @@ export const afterCallArtifacts = [
   },
   {
     title: "Booking path",
-    body: "If scheduling is configured and the request fits, the call can move toward a reviewed appointment path."
+    body: "If scheduling is turned on and the request fits, the call can move toward a reviewed appointment path."
   },
   {
     title: "Callback handoff",
@@ -206,7 +206,7 @@ export const resourceHighlights = [
   {
     title: "Demo calls",
     href: "/demo-calls",
-    description: "Try the browser call preview, review example transcripts, and see how private test calls help you review the call flow before live forwarding."
+    description: "Try the live web voice demo, review example transcripts, and see how private test calls help you review the call flow before live forwarding."
   },
   {
     title: "Example calls",
@@ -432,14 +432,14 @@ export const integrationPages = {
   jobber: {
     title: "BookedOnCall + Jobber",
     summary:
-      "Configure BookedOnCall with Jobber so new calls can flow into the scheduling process you already use after setup review.",
+      "Set up BookedOnCall with Jobber so new calls can flow into the scheduling process you already use.",
     bullets: [
-      "Check availability through Jobber when your reviewed setup is approved to offer appointment times.",
+      "Check availability through Jobber when your shop rules allow appointment times.",
       "Keep your business on the same tools it already uses every day.",
       "Send the call back with clear details when a job still needs a person."
     ],
     outcomeCards: [
-      "BookedOnCall can move supported jobs toward a booking path when the Jobber workflow is configured and reviewed.",
+      "BookedOnCall can move supported jobs toward a booking path after Jobber is set up and your rules are reviewed.",
       "Your team can keep using the same scheduling process instead of learning a new back office.",
       "Jobs that still need your approval come back with clear details instead of messy voicemail."
     ]
@@ -447,7 +447,7 @@ export const integrationPages = {
   "google-calendar": {
     title: "BookedOnCall + Google Calendar",
     summary:
-      "Configure BookedOnCall with Google Calendar so callers can be offered supported appointment paths when the workflow is reviewed.",
+      "Set up BookedOnCall with Google Calendar so callers can be offered supported appointment paths after your rules are reviewed.",
     bullets: [
       "Check availability against your connected calendar.",
       "Offer supported appointment times without changing the way you schedule work.",
@@ -455,7 +455,7 @@ export const integrationPages = {
     ],
     outcomeCards: [
       "BookedOnCall can check the calendar before offering supported appointment times.",
-      "You keep the scheduling workflow you already know instead of moving to a new system.",
+      "You keep the scheduling process you already know instead of moving to a new system.",
       "If a person should decide, the call still comes back with clear details for follow-up."
     ]
   },
@@ -465,7 +465,7 @@ export const integrationPages = {
       "Send call summaries and next steps to the inbox you already check so missed calls turn into reviewable work instead of scattered notes.",
     bullets: [
       "Receive caller details, job notes, urgency, and the recommended next step after each handled call.",
-      "Keep the first launch workflow simple while your calendar, Jobber, or text setup is reviewed.",
+      "Keep the first setup simple while your calendar, Jobber, or text setup is reviewed.",
       "Use email summaries as the dependable handoff even when a job still needs owner approval."
     ],
     outcomeCards: [
@@ -479,7 +479,7 @@ export const integrationPages = {
     summary:
       "Use customer text messaging for supported follow-up, confirmations, and callback communication after the call.",
     bullets: [
-      "Send supported customer follow-up texts after the call when messaging is enabled.",
+      "Send supported customer follow-up texts after the call when messaging is turned on.",
       "Keep confirmations, callback updates, and simple next-step communication in a channel customers already check.",
       "Use messaging to support the handoff, not to force the whole job to be solved over text."
     ],
@@ -494,7 +494,7 @@ export const integrationPages = {
     summary:
       "QuickBooks is the next targeted integration on the roadmap for customer context and cleaner office follow-up, but it is not live today.",
     bullets: [
-      "The planned first step is read-only customer context, not a write-heavy accounting workflow inside the call path.",
+      "The planned first step is read-only customer context, not accounting updates during the call.",
       "The goal is better office follow-up with clearer customer history when the business has usable QuickBooks data.",
       "Roadmap items are directional and may change as the product and implementation priorities evolve."
     ],
@@ -507,10 +507,10 @@ export const integrationPages = {
   "housecall-pro": {
     title: "BookedOnCall + Housecall Pro",
     summary:
-      "Housecall Pro is a possible future integration on the BookedOnCall roadmap for shops that want the assistant to fit their existing field-service workflow.",
+      "Housecall Pro is a possible future integration for shops that want the assistant to fit the way their office already works.",
     bullets: [
       "The possible future goal is to support cleaner call intake and handoff for shops already using Housecall Pro.",
-      "Any first release would stay narrow and respect the office workflow instead of forcing every caller into an automatic booking.",
+      "Any first release would stay narrow and respect the office process instead of forcing every caller into an automatic booking.",
       "If this matters to your shop, tell us you use Housecall Pro so we can prioritize demand. Do not paste provider credentials, API keys, or webhook secrets."
     ],
     outcomeCards: [
@@ -522,10 +522,10 @@ export const integrationPages = {
   servicetitan: {
     title: "BookedOnCall + ServiceTitan",
     summary:
-      "ServiceTitan is a possible future integration on the BookedOnCall roadmap for larger shops that want AI call intake to fit their CSR and dispatch workflow.",
+      "ServiceTitan is a possible future integration for larger shops that want AI call intake to fit their CSR and dispatch process.",
     bullets: [
       "The possible future goal is to support cleaner call intake and handoff for teams already running ServiceTitan.",
-      "Any first release would stay narrow and respect CSR, dispatch, capacity, and approval workflows instead of forcing every caller into an automatic booking.",
+      "Any first release would stay narrow and respect CSR, dispatch, capacity, and approval rules instead of forcing every caller into an automatic booking.",
       "If this matters to your shop, tell us you use ServiceTitan so we can prioritize demand. Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials."
     ],
     outcomeCards: [

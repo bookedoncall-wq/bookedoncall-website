@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarClock, ClipboardList, PhoneCall, ShieldCheck } from "lucide-react"
+import { ArrowRight, CalendarClock, CheckCircle2, ClipboardList, MailCheck, PhoneCall, ShieldCheck } from "lucide-react"
 import { CtaBand } from "@/components/marketing/CtaBand"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
@@ -50,16 +50,28 @@ const heroCallFlowMoments = [
   },
   {
     speaker: "Assistant",
-    line: "I can help with that. What's the best callback number and service address?"
+    line: "I can help get that to the HVAC team. What is your name, callback number, and service address?"
   },
   {
     speaker: "Caller",
-    line: "719-555-0142. We're at 4821 Maple Drive."
+    line: "This is Jamie. Use the number I called from. The house is in your service area."
   },
   {
     speaker: "Assistant",
-    line: "Thanks. I'll confirm a few details so this can move toward booking or come back to the team with a clear callback next step."
+    line: "Thanks. I will check the job type, service area, and schedule rules before offering the next step."
   }
+] as const
+
+const heroOperatorChecks = [
+  "Service matched: no-cool diagnostic",
+  "Service area confirmed before scheduling",
+  "Owner confirmation required before final booking",
+] as const
+
+const heroSetupProofPoints = [
+  "15-minute basic setup target",
+  "Private test call before live forwarding",
+  "Month-to-month public plans",
 ] as const
 
 export default function HomePage() {
@@ -74,17 +86,69 @@ export default function HomePage() {
       />
       <StructuredData data={buildSoftwareApplicationSchema()} />
 
-      <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <section className="relative overflow-hidden bg-slate-950 px-4 py-14 text-white sm:px-6 sm:py-16 lg:px-8">
+        <div className="absolute inset-y-8 right-0 hidden w-[44%] lg:block" aria-hidden="true">
+          <div className="grid h-full content-center gap-4 pl-8">
+            <div className="grid gap-3 rounded-xl border border-white/10 bg-white/8 p-5 shadow-2xl shadow-black/30 backdrop-blur">
+              <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
+                <div className="grid gap-1">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-300">Handled call</p>
+                  <p className="text-lg font-black text-white">HVAC no-cool request</p>
+                </div>
+                <PhoneCall className="size-5 text-amber-300" />
+              </div>
+              <div className="grid gap-3 text-sm leading-6 text-slate-200">
+                {heroCallFlowMoments.map((moment, index) => (
+                  <div
+                    key={`${moment.speaker}-${index}`}
+                    className={cn(
+                      "max-w-[92%] rounded-xl border px-4 py-3",
+                      moment.speaker === "Assistant"
+                        ? "border-white/10 bg-slate-900/90 text-slate-200"
+                        : "justify-self-end border-amber-300/30 bg-amber-300/15 text-amber-50"
+                    )}
+                  >
+                    <strong className="block text-xs uppercase tracking-[0.12em] text-slate-400">{moment.speaker}</strong>
+                    {moment.line}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-3 rounded-xl border border-white/10 bg-white/8 p-5 backdrop-blur">
+              <div className="grid gap-3 sm:grid-cols-3">
+                {heroOperatorChecks.map((check) => (
+                  <div key={check} className="flex items-start gap-2 rounded-lg border border-white/10 bg-slate-900/80 p-3 text-xs font-semibold leading-5 text-slate-200">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" />
+                    <span>{check}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="grid gap-2 rounded-lg border border-amber-300/30 bg-amber-300/15 p-4">
+                <div className="flex items-center gap-2">
+                  <MailCheck className="size-4 text-amber-200" />
+                  <p className="text-sm font-black text-white">Owner handoff</p>
+                </div>
+                <p className="text-sm leading-6 text-amber-50">
+                  Booking request pending owner confirmation. Caller details, service area, symptoms, preferred window, and follow-up message are ready for review.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-9 lg:min-h-[610px] lg:grid-cols-[0.54fr_0.46fr] lg:items-center">
           <div className="grid gap-7">
-            <p className="w-fit max-w-full rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-center text-sm font-bold leading-6 text-amber-800">
-              Built for trades businesses that want a better first response
+            <p className="w-fit max-w-full rounded-full border border-amber-300/40 bg-amber-300/10 px-4 py-1.5 text-center text-sm font-bold leading-6 text-amber-100">
+              Trades call coverage that behaves like a consistent answering service
             </p>
             <div className="grid gap-5">
-              <h1 className="max-w-4xl text-4xl font-black leading-[0.96] text-slate-950 sm:text-6xl">
-                Answer more calls. Win more of the work your shop should get.
+              <h1 className="max-w-[600px] text-4xl font-black leading-[0.98] text-white sm:text-6xl">
+                AI phone answering for trades businesses.
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">{positioning.oneLiner}</p>
+              <p className="max-w-[580px] text-lg leading-8 text-slate-200 sm:text-xl">
+                Answer missed calls, capture clean job details, and move the caller toward owner-approved booking or a clear callback based on the setup your shop controls.
+              </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <TrackedLink
@@ -93,7 +157,7 @@ export default function HomePage() {
                 eventPayload={{ placement: "home_hero_primary" }}
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "rounded-xl border-transparent bg-slate-950 px-6 text-white hover:bg-slate-800"
+                  "rounded-xl border-transparent bg-amber-500 px-6 text-white hover:bg-amber-400"
                 )}
               >
                 {primaryCtaLabel}
@@ -104,11 +168,19 @@ export default function HomePage() {
                 eventPayload={{ placement: "home_hero_secondary", href: "/demo-calls" }}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "rounded-xl border-slate-300 px-6 text-slate-950 hover:bg-white"
+                  "rounded-xl border-slate-600 bg-slate-900/50 px-6 text-white hover:bg-slate-900"
                 )}
               >
                 {positioning.secondaryCtaLabel}
               </TrackedLink>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {heroSetupProofPoints.map((point) => (
+                <div key={point} className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/8 px-3 py-2 text-sm font-semibold text-slate-200">
+                  <ShieldCheck className="size-4 shrink-0 text-amber-300" />
+                  <span>{point}</span>
+                </div>
+              ))}
             </div>
             <div className="flex flex-wrap gap-2">
               {supportedTradeLinks.map((trade) => (
@@ -117,7 +189,7 @@ export default function HomePage() {
                   href={trade.href}
                   eventName="marketing_cta_clicked"
                   eventPayload={{ placement: "home_hero_trade_chip", trade: trade.label, href: trade.href }}
-                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-semibold text-slate-600 transition-colors hover:border-amber-300 hover:bg-amber-50/40 hover:text-slate-950"
+                  className="rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-sm font-semibold text-slate-200 transition-colors hover:border-amber-300 hover:bg-amber-300/10 hover:text-white"
                 >
                   {trade.label}
                 </TrackedLink>
@@ -125,32 +197,19 @@ export default function HomePage() {
             </div>
           </div>
 
-          <aside className="grid gap-4 rounded-[2rem] border border-amber-100 bg-white p-6 shadow-[0_28px_60px_rgba(15,23,42,0.08)]">
-            <div className="rounded-2xl bg-slate-950 p-5 text-white">
-              <div className="mb-4 flex items-center justify-between">
-                <span className="text-sm font-bold uppercase tracking-[0.18em] text-amber-300">Example call</span>
-                <PhoneCall className="size-5 text-amber-300" />
-              </div>
-              <div className="grid gap-3 text-sm leading-6 text-slate-200">
-                {heroCallFlowMoments.map((moment, index) => (
-                  <p key={`${moment.speaker}-${index}`}>
-                    <strong>{moment.speaker}:</strong> &ldquo;{moment.line}&rdquo;
-                  </p>
-                ))}
-              </div>
+          <div className="grid gap-4 rounded-xl border border-white/10 bg-white/8 p-4 backdrop-blur lg:hidden">
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-sm font-bold uppercase tracking-[0.18em] text-amber-200">Example handled call</span>
+              <PhoneCall className="size-5 text-amber-200" />
             </div>
-            <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <div className="flex items-center gap-3">
-                <ClipboardList className="size-5 text-amber-500" />
-                <strong className="text-slate-950">What you get back</strong>
-              </div>
-              <ul className="grid gap-2 text-sm leading-6 text-slate-600">
-                <li>Confirmed callback details and service address</li>
-                <li>Job summary with the next step spelled out</li>
-                <li>A supported booking path or a clear callback handoff</li>
-              </ul>
+            <div className="grid gap-3 text-sm leading-6 text-slate-200">
+              {heroCallFlowMoments.slice(0, 3).map((moment, index) => (
+                <p key={`${moment.speaker}-${index}`}>
+                  <strong>{moment.speaker}:</strong> &ldquo;{moment.line}&rdquo;
+                </p>
+              ))}
             </div>
-          </aside>
+          </div>
         </div>
       </section>
 
@@ -264,13 +323,13 @@ export default function HomePage() {
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Example summary</p>
               <div className="grid gap-2 text-sm leading-7 text-slate-700">
                 <p>
-                  <strong>Caller:</strong> Sarah M.
+                  <strong>Caller:</strong> Caller name captured
                 </p>
                 <p>
-                  <strong>Callback:</strong> 720-555-0142
+                  <strong>Callback:</strong> Verified callback number
                 </p>
                 <p>
-                  <strong>Address:</strong> Littleton
+                  <strong>Address:</strong> Service area checked
                 </p>
                 <p>
                   <strong>Issue:</strong> AC blowing warm air
@@ -474,7 +533,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Integrations</p>
             <h2 className="text-4xl font-black text-slate-950">Fits the tools you already use.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall is built to fit your current workflow. That includes Jobber, Google Calendar, email summaries, and customer Text / SMS follow-up after those workflows are configured for your business. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations.
+              BookedOnCall is built to fit how your shop already works. That includes Jobber, Google Calendar, email summaries, and customer Text / SMS follow-up after those tools are set up for your business. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations.
             </p>
             </div>
             <TrackedLink

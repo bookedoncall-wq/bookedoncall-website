@@ -9,6 +9,8 @@ export type MarketingEventName =
   | "onboarding_completed"
   | "contact_sales_clicked"
   | "lead_form_submitted"
+  | "demo_voice_call_started"
+  | "demo_voice_call_failed"
 
 declare global {
   interface Window {

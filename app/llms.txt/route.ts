@@ -32,6 +32,8 @@ export async function GET() {
     `- FAQ page: ${siteConfig.url}/faq`,
     `- Privacy: ${siteConfig.url}/privacy`,
     `- Terms: ${siteConfig.url}/terms`,
+    `- Call Handling Notice: ${siteConfig.url}/call-handling-notice`,
+    `- SMS Terms: ${siteConfig.url}/sms-terms`,
     `- DPA: ${siteConfig.url}/dpa`,
     `- Contact: ${siteConfig.url}/contact`,
   ]

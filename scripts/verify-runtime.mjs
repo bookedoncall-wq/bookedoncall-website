@@ -11,6 +11,7 @@ const requiredBuildRoutes = [
   "/sign-up/page",
   "/auth-proof/session/page",
   "/api/leads/route",
+  "/api/demo-session/route",
 ]
 
 function assertBuildArtifacts() {
@@ -40,6 +41,16 @@ async function postJson(baseUrl, payload) {
   })
 }
 
+async function postDemoSession(baseUrl, payload) {
+  return requestText(`${baseUrl}/api/demo-session`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  })
+}
+
 async function runRuntimeChecks(baseUrl) {
   const errors = []
 
@@ -53,10 +64,24 @@ async function runRuntimeChecks(baseUrl) {
   )
   assertResponse(
     errors,
-    "GET /auth-proof/session disabled by default",
+    "GET /auth-proof/session inactive by default",
     await requestText(`${baseUrl}/auth-proof/session`),
     200,
-    ["Session proof unavailable", "Proof-only route"]
+    ["Customer app access check unavailable", "does not show customer records"]
+  )
+  assertResponse(
+    errors,
+    "GET /api/demo-session disabled by default",
+    await requestText(`${baseUrl}/api/demo-session`),
+    200,
+    ["\"ok\":true", "\"configured\":false", "\"maxCallSeconds\":180"]
+  )
+  assertResponse(
+    errors,
+    "POST /api/demo-session disabled by default",
+    await postDemoSession(baseUrl, { scenarioId: "summit-air-hvac" }),
+    503,
+    ["\"ok\":false", "live web demo is temporarily unavailable"]
   )
 
   const safeLead = await postJson(baseUrl, {
@@ -100,6 +125,9 @@ async function main() {
   const port = process.env.BOOKEDONCALL_VERIFY_RUNTIME_PORT || (await getFreePort())
   const baseUrl = `http://127.0.0.1:${port}`
   const { child, logs } = startNextServer(repoRoot, port, {
+    BOOKEDONCALL_DEMO_VOICE_ENABLED: "false",
+    VAPI_WEB_PUBLIC_KEY: "",
+    VAPI_DEMO_ASSISTANT_ID: "",
     BOOKEDONCALL_LEAD_NOTIFY_TO: "",
     RESEND_API_KEY: "",
     RESEND_FROM_EMAIL: "",

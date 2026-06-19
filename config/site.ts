@@ -48,7 +48,7 @@ export const selfServeCheckoutEnabled = contract.featureFlags.selfServeCheckout 
 export const primaryCtaLabel = positioning.primaryCtaLabel || "Start setup"
 
 export function getIntegrationBadgeLabel(integration: (typeof integrations)[number]) {
-  return integration.status === "coming_soon" ? "Planned" : "Ready to connect"
+  return integration.status === "coming_soon" ? "Planned" : "Ready during setup"
 }
 
 export function getIntegrationActionLabel(integration: (typeof integrations)[number]) {

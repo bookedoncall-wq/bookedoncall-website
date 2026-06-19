@@ -41,6 +41,8 @@ const footerColumns = [
     links: [
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
+      { label: "Call Notice", href: "/call-handling-notice" },
+      { label: "SMS Terms", href: "/sms-terms" },
       { label: "DPA", href: "/dpa" },
       { label: "Contact", href: "/contact" },
     ],

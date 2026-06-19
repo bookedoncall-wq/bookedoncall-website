@@ -37,6 +37,8 @@ const requiredRoutes = [
   "/examples",
   "/privacy",
   "/terms",
+  "/call-handling-notice",
+  "/sms-terms",
   "/dpa",
   "/contact",
   ...contract.supportedTrades.map((trade) => tradeRouteByLabel[trade]).filter(Boolean),
@@ -56,8 +58,21 @@ const bannedHtmlPatterns = [
   /housecall pro (?:is|integration is) (?:available|supported|live)/i,
   /servicetitan (?:is|integration is) (?:available|supported|live)/i,
   /safe demo path/i,
+  /browser call preview/i,
   /configured workflow\*/i,
   /roadmap only\*/i,
+  /when it is connected/i,
+  /connected in this environment/i,
+  /not connected in this environment/i,
+  /not connected here/i,
+  /this environment yet/i,
+  /self-serve checkout is enabled/i,
+  /auth proof/i,
+  /proof-only route/i,
+  /session proof/i,
+  /not proof of a live/i,
+  /\b(?:Vapi|Retell|Telnyx|Twilio|Deepgram|ElevenLabs)\b/i,
+  /\bDaily(?:\.co)?\b/i,
 ]
 
 const errors = []
@@ -169,6 +184,8 @@ function assertLlmsSourceConsistency() {
     "siteConfig.appUrl",
     "siteConfig.url}/sign-up",
     "publicSiteContract.supportedTrades",
+    "call-handling-notice",
+    "sms-terms",
   ]) {
     if (!source.includes(snippet)) {
       addError(`llms.txt source must stay contract-driven; missing source snippet: ${snippet}`)

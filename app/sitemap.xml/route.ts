@@ -39,6 +39,8 @@ const pages = [
   "/integrations/servicetitan",
   "/privacy",
   "/terms",
+  "/call-handling-notice",
+  "/sms-terms",
   "/dpa",
   "/contact",
 ] as const

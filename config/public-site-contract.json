@@ -20,7 +20,7 @@
     "legalEmail": "bookedoncall@bookedoncall.com"
   },
   "legal": {
-    "lastUpdated": "2026-04-01",
+    "lastUpdated": "2026-06-19",
     "governingLaw": "Colorado",
     "venue": "Colorado"
   },
@@ -40,8 +40,8 @@
   "validatedCapabilities": [
     "Answers inbound calls for plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home-service businesses.",
     "Collects caller name, callback number, address, job details, and service notes.",
-    "Can offer appointment paths only when scheduling is enabled, the workflow is configured, and the request fits the shop's booking rules.",
-    "Supports setup-reviewed Jobber, Google Calendar, email summary, and customer text messaging workflows after the needed connection checks.",
+    "Can offer appointment paths when scheduling is turned on, the shop's rules have been reviewed, and the request fits those rules.",
+    "Can use Jobber, Google Calendar, email summaries, and customer text messaging after those tools are set up during onboarding.",
     "Delivers a clear call summary and the next step, whether that is a booked appointment or a callback request.",
     "Can send follow-up texts when customer messaging is turned on."
   ],
@@ -102,13 +102,13 @@
     {
       "id": "housecall-pro",
       "name": "Housecall Pro",
-      "description": "Planned: Housecall Pro is a possible future integration for shops that want BookedOnCall to fit their existing field-service workflow.",
+      "description": "Planned: Housecall Pro is a possible future integration for shops that want BookedOnCall to fit how their office already works.",
       "status": "coming_soon"
     },
     {
       "id": "servicetitan",
       "name": "ServiceTitan",
-      "description": "Planned: ServiceTitan is a possible future integration for larger shops that want BookedOnCall to fit their existing CSR and dispatch workflow.",
+      "description": "Planned: ServiceTitan is a possible future integration for larger shops that want BookedOnCall to fit their CSR and dispatch process.",
       "status": "coming_soon"
     }
   ],
@@ -133,7 +133,7 @@
         "Trades-focused call answering and lead intake",
         "Callback capture and owner-approved booking requests when you want to step in",
         "Booking paths when your reviewed setup and connected schedule allow it",
-        "Jobber, Google Calendar, email, or text workflows when configured",
+        "Jobber, Google Calendar, email, or text follow-up when set up",
         "Call summaries with the next step clearly laid out",
         "Default assistant voice and greeting"
       ]
@@ -144,7 +144,7 @@
       "monthlyUsd": 499,
       "includedMinutes": 500,
       "overageMinuteUsd": 0.75,
-      "summary": "For shops that want more included minutes, a more branded caller experience, and tighter owner-review workflow.",
+      "summary": "For shops that want more included minutes, a more branded caller experience, and tighter owner-review controls.",
       "capabilities": {
         "assistantName": true,
         "voiceSelection": true,
@@ -158,7 +158,7 @@
         "Trades-focused call answering and lead intake",
         "Callback capture and owner-approved booking requests when you want to step in",
         "Booking paths when your reviewed setup and connected schedule allow it",
-        "Jobber, Google Calendar, email, or text workflows when configured",
+        "Jobber, Google Calendar, email, or text follow-up when set up",
         "Call summaries with the next step clearly laid out",
         "Choose the voice callers hear",
         "Give the assistant a custom name",

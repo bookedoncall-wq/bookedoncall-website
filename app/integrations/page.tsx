@@ -33,13 +33,13 @@ export default function IntegrationsPage() {
       <PageIntro
         eyebrow="Integrations"
         title="Fits the tools you already use."
-        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. Current setup-reviewed workflows include Jobber, Google Calendar, email summaries, and Text / SMS. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations."
+        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. Jobber, Google Calendar, email summaries, and Text / SMS can be connected during setup when the rules are enabled for your business. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Ready to connect</p>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Ready during setup</p>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {liveIntegrations.map((integration) => {
                 const card = integrationPages[integration.id as keyof typeof integrationPages]

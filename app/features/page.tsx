@@ -119,7 +119,7 @@ export default function FeaturesPage() {
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
               <li>Scheduling is turned on for the kinds of jobs you want BookedOnCall to handle.</li>
               <li>Jobber or Google Calendar is connected for scheduling.</li>
-              <li>Email or Text / SMS is configured for the handoff or follow-up path you choose.</li>
+              <li>Email or Text / SMS is set up for the handoff or follow-up path you choose.</li>
               <li>The request fits the rules you want BookedOnCall to follow before a booking is confirmed.</li>
               <li>The caller gives the details needed to move forward.</li>
             </ul>

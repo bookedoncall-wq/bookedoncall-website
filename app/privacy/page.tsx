@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site"
 export const metadata = buildPageMetadata({
   title: "Privacy Policy",
   description:
-    "BookedOnCall privacy information for bookedoncall.com, customer setup, AI-assisted call handling, and operation of the service.",
+    "BookedOnCall privacy information for website visitors, setup requests, owners, callers, AI-assisted calls, recordings, messages, connected tools, and support.",
   path: "/privacy",
 })
 
@@ -14,158 +14,202 @@ export default function PrivacyPage() {
     <LegalPageShell
       currentPath="/privacy"
       title="Privacy Policy"
-      description="This policy explains how BookedOnCall handles information collected through bookedoncall.com, customer onboarding, connected systems, and operation of the service."
+      description="This policy explains how BookedOnCall collects, uses, discloses, retains, and protects information through the website, customer app, AI-assisted call handling, connected tools, support, and billing."
       summaryItems={[
         {
-          title: "We collect what is needed to run the service",
+          title: "We collect what the service needs",
           body:
-            "That can include contact details, business setup information, call records, caller intake details, transcripts, summaries, connected-system metadata, billing details, and website usage logs.",
+            "That can include account details, setup details, caller intake, call metadata, recordings or transcripts when enabled, summaries, connected-tool metadata, billing records, and website logs.",
         },
         {
-          title: "Service providers help us operate",
+          title: "Calls may involve AI and recording",
           body:
-            "We use third-party infrastructure and service providers for hosting, communications, payments, authentication, AI processing, and connected workflows when customers enable them.",
+            "When a business uses BookedOnCall, caller information may be processed by AI-assisted call handling, speech, telephony, scheduling, messaging, and support systems.",
         },
         {
-          title: "Retention is purpose-based",
+          title: "Owners control customer workflows",
           body:
-            "We retain information for as long as needed to provide the service, secure it, support customers, resolve disputes, and comply with law or contractual requirements.",
+            "Our customers decide how their business uses the service, including service rules, notices, consent posture, connected tools, and caller follow-up.",
         },
         {
-          title: "Rights depend on jurisdiction",
+          title: "Rights depend on role and location",
           body:
-            "Depending on where you are located and your relationship to the data, you may be able to request access, correction, deletion, portability, or objection to certain processing.",
+            "Depending on applicable law, you may request access, correction, deletion, portability, restriction, objection, opt-out, or appeal, subject to verification and legal limits.",
         },
       ]}
     >
-      <LegalSection title="1. Scope of this policy">
+      <LegalSection title="1. Scope">
         <p>
-          This Privacy Policy applies to bookedoncall.com, related pages and forms, customer onboarding, the BookedOnCall service, and our
-          handling of information in support, billing, operations, and connected workflows.
+          This Privacy Policy applies to bookedoncall.com, the BookedOnCall customer app, setup and contact forms, AI-assisted call
+          handling, connected tools, support, billing, and related operations.
         </p>
         <p>
-          It does not override a separate customer agreement, DPA, or other written contract. If a separate agreement controls a specific
-          processing relationship, that agreement will govern to the extent of any conflict.
+          This policy does not replace a separate written customer agreement, Data Processing Addendum, or other contract. If a separate
+          agreement governs a specific processing relationship, that agreement controls to the extent of any conflict.
         </p>
       </LegalSection>
 
-      <LegalSection title="2. Information we collect">
-        <p>We may collect or receive the following categories of information:</p>
+      <LegalSection title="2. Our role">
+        <p>
+          For website visitors, prospects, account administration, billing, security, fraud prevention, and legal compliance, BookedOnCall
+          generally acts as an independent business or controller. For personal information that a customer routes through the Service for
+          that customer&apos;s business, BookedOnCall generally acts as a service provider or processor on the customer&apos;s behalf.
+        </p>
+        <p>
+          If you are a caller or end customer of a business that uses BookedOnCall, that business is usually responsible for deciding why
+          and how your information is processed. You may contact that business directly for questions about its services, notices,
+          appointments, prices, or legal basis for contacting you.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="3. Information we collect">
+        <p>We may collect or receive these categories of information:</p>
         <ul className="list-disc pl-6">
           <li>
-            <strong>Contact and account details</strong>, such as names, business names, email addresses, phone numbers, billing contacts,
-            and user login information.
+            <strong>Contact and account details:</strong> names, business names, email addresses, phone numbers, billing contacts, login
+            details, account roles, and support contacts.
           </li>
           <li>
-            <strong>Business setup information</strong>, such as services offered, service areas, hours, escalation rules, pricing
-            guidance, dispatch preferences, fallback contact paths, and connected integration settings.
+            <strong>Business setup information:</strong> trade, services offered, service areas, hours, emergency rules, escalation paths,
+            pricing guidance, dispatch preferences, fallback contacts, calendars, connected tools, and caller instructions.
           </li>
           <li>
-            <strong>Call and messaging records</strong>, such as caller phone numbers, addresses, job details, call audio or recordings if
-            enabled, transcripts, summaries, call outcome metadata, and related follow-up records.
+            <strong>Call and message information:</strong> caller names, callback numbers, job addresses, requested services, job details,
+            urgency signals, call metadata, recordings if enabled, transcripts, summaries, outcomes, notes, and follow-up status.
           </li>
           <li>
-            <strong>Payment and commercial records</strong>, such as subscription details, invoices, usage data, and payment processor
-            metadata.
+            <strong>Connected-tool metadata:</strong> calendar availability, scheduling identifiers, CRM references, message delivery
+            status, authentication status, integration settings, and related workflow records.
           </li>
           <li>
-            <strong>Technical and usage data</strong>, such as IP addresses, browser type, device information, request logs, timestamps,
-            error reports, and security telemetry.
+            <strong>Billing and commercial records:</strong> plan, subscription status, invoices, payment processor metadata, usage
+            records, included minutes, overage data, taxes, credits, and support records.
           </li>
           <li>
-            <strong>Connected-system data</strong>, such as calendar availability, scheduling identifiers, CRM references, message delivery
-            statuses, or other integration outputs when a customer enables those systems.
+            <strong>Website, device, and security data:</strong> IP address, browser and device details, pages viewed, referring pages,
+            timestamps, form submissions, cookies or similar technologies, logs, error reports, abuse signals, and security telemetry.
           </li>
         </ul>
       </LegalSection>
 
-      <LegalSection title="3. Sources of information">
-        <p>We collect information directly from you, automatically from your use of the website or service, and from third parties such as:</p>
+      <LegalSection title="4. Sources of information">
+        <p>We collect information directly from you, automatically from your use of the website or Service, and from sources such as:</p>
         <ul className="list-disc pl-6">
-          <li>callers and message recipients who interact with a customer&apos;s chosen service workflows,</li>
-          <li>your connected systems and integration partners,</li>
-          <li>payment processors, authentication providers, and communications providers, and</li>
-          <li>service providers that help us secure, host, and support the platform.</li>
+          <li>customers, callers, leads, and message recipients who interact with configured workflows,</li>
+          <li>customer-authorized calendars, CRMs, schedulers, phone systems, messaging systems, and other connected tools,</li>
+          <li>payment processors, authentication providers, telephony providers, AI and speech providers, hosting providers, and support tools, and</li>
+          <li>public or business sources that help us respond to sales, support, security, or legal requests.</li>
         </ul>
       </LegalSection>
 
-      <LegalSection title="4. How we use information">
-        <p>We use information as needed to:</p>
+      <LegalSection title="5. How we use information">
+        <p>We use information to:</p>
         <ul className="list-disc pl-6">
-          <li>provide, operate, secure, and support the Service,</li>
-          <li>answer calls, route conversations to configured fallback contact paths, summarize interactions, and perform configured follow-up workflows,</li>
-          <li>maintain accounts, billing, authentication, and customer support,</li>
-          <li>monitor performance, detect abuse, debug failures, and improve reliability and safety,</li>
-          <li>comply with legal obligations, enforce agreements, and protect rights and safety, and</li>
-          <li>communicate with customers, prospects, and authorized users about the Service.</li>
+          <li>provide, operate, secure, monitor, troubleshoot, and support the Service,</li>
+          <li>answer calls, disclose assistant behavior, capture job details, summarize conversations, and route next steps,</li>
+          <li>support callback, owner-review, scheduling, messaging, and connected-tool workflows selected by customers,</li>
+          <li>maintain accounts, authentication, billing, subscriptions, usage limits, and customer support,</li>
+          <li>detect abuse, investigate incidents, debug failures, prevent fraud, enforce agreements, and protect rights and safety,</li>
+          <li>improve reliability, product quality, analytics, training, and operational processes, and</li>
+          <li>comply with law and respond to lawful requests.</li>
         </ul>
         <p>
-          Where applicable data protection law requires a legal basis, we generally rely on performance of a contract, legitimate
-          interests, legal obligations, and consent where required.
+          Where applicable law requires a legal basis, we generally rely on performance of a contract, legitimate interests, legal
+          obligations, consent where required, and documented customer instructions for processor activities.
         </p>
       </LegalSection>
 
-      <LegalSection title="5. AI, telephony, and call handling">
+      <LegalSection title="6. AI-assisted call handling">
         <p>
-          BookedOnCall is built around AI-assisted call handling and related workflows. That means information you or your callers provide
-          may be processed by telephony providers, speech systems, large language model providers, scheduling systems, messaging systems,
-          and other infrastructure required to provide the chosen service workflow.
+          BookedOnCall is built around AI-assisted call handling. Information provided by owners, callers, and connected systems may be
+          processed by telephony, speech, AI, scheduling, messaging, hosting, analytics, support, and security systems needed to provide
+          the selected workflow.
         </p>
         <p>
-          Customers are responsible for configuring lawful notices, recording disclosures, consent flows, and human review processes
-          appropriate to their business. BookedOnCall does not guarantee that every automated classification, transcript, or summary will
-          be complete or error-free.
+          We use human review, redaction, logs, and support processes where appropriate, but automated classifications, transcripts,
+          summaries, and suggested next steps may be incomplete or incorrect. Customers remain responsible for notices, consent,
+          configuration, business decisions, and human review appropriate to their business.
         </p>
       </LegalSection>
 
-      <LegalSection title="6. How we disclose information">
+      <LegalSection title="7. Cookies and analytics">
+        <p>
+          We may use cookies, tags, pixels, local storage, analytics tools, and similar technologies to operate the website, remember
+          preferences, understand traffic, measure marketing performance, secure the Service, and improve user experience.
+        </p>
+        <p>
+          You can use browser settings to limit cookies. Some website or Service features may not work properly if cookies or similar
+          technologies are blocked.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="8. How we disclose information">
         <p>We may disclose information:</p>
         <ul className="list-disc pl-6">
-          <li>to service providers and subprocessors that help operate hosting, security, authentication, payments, communications, AI processing, and support,</li>
-          <li>to customer-authorized integrations or downstream systems when the customer enables those connections,</li>
-          <li>to comply with law, legal process, or lawful requests from public authorities,</li>
-          <li>to enforce contracts, respond to claims, or protect rights, property, safety, or security, and</li>
-          <li>in connection with a financing, merger, acquisition, reorganization, or sale of assets, subject to customary confidentiality safeguards.</li>
+          <li>to service providers and subprocessors that help with hosting, security, authentication, payments, communications, AI processing, analytics, and support,</li>
+          <li>to customer-authorized tools such as calendars, schedulers, CRMs, messaging systems, or billing systems,</li>
+          <li>to customers and authorized users of an account, including call summaries, caller details, setup status, and support records,</li>
+          <li>to comply with law, legal process, regulator requests, subpoenas, or lawful public authority requests,</li>
+          <li>to enforce agreements, recover amounts owed, investigate abuse, respond to claims, or protect rights, property, safety, and security, and</li>
+          <li>in connection with financing, merger, acquisition, reorganization, bankruptcy, or sale of assets, subject to reasonable safeguards.</li>
         </ul>
         <p>
-          We do not disclose customer service data to unrelated third parties for their own independent marketing use.
+          We do not sell customer service data for money. We also do not disclose customer service data to unrelated third parties for
+          their own independent marketing use. If future advertising or analytics practices require an opt-out under applicable law, we
+          will provide the required notice and control.
         </p>
       </LegalSection>
 
-      <LegalSection title="7. Retention">
+      <LegalSection title="9. Retention">
         <p>
-          We retain information for as long as reasonably necessary to provide the Service, maintain security and audit records, satisfy
-          contractual commitments, resolve disputes, comply with legal obligations, and enforce our agreements. Retention periods vary by
-          data type, account status, product configuration, and applicable law.
+          We retain information for as long as reasonably necessary to provide the Service, maintain security and audit records, support
+          customers, resolve disputes, comply with law, enforce agreements, and support backup or disaster recovery. Retention periods vary
+          by data type, account status, product configuration, customer agreement, and applicable law.
         </p>
         <p>
-          We may also retain limited backup, log, and security data for a longer period where needed for disaster recovery, fraud
-          prevention, incident investigation, or legal compliance.
+          Unless a customer agreement or product setting says otherwise, our default goal is to keep normalized call records, summaries,
+          and workflow history only as long as needed for customer review and service operation; keep raw provider payloads and temporary
+          support artifacts for shorter periods where practical; and retain limited billing, security, audit, deletion, and legal records
+          as needed for compliance and dispute protection.
         </p>
       </LegalSection>
 
-      <LegalSection title="8. Security">
+      <LegalSection title="10. Security">
         <p>
           We use administrative, technical, and organizational measures designed to protect information appropriate to the nature of the
-          data and the risks presented. No method of transmission, storage, or processing is completely secure, and we cannot guarantee
-          absolute security.
+          data and the risks presented. Measures may include access controls, authentication, encryption in transit, logging, monitoring,
+          redaction, vendor review, backups, and incident response processes.
+        </p>
+        <p>
+          No method of transmission, storage, or processing is completely secure, and we cannot guarantee absolute security.
         </p>
       </LegalSection>
 
-      <LegalSection title="9. Rights and choices">
+      <LegalSection title="11. Your choices and rights">
         <p>
-          Depending on applicable law and your relationship to the information, you may have rights to request access, correction,
-          deletion, restriction, portability, or objection to certain processing. You may also have the right to appeal a denial where
-          local law provides that option.
+          Depending on your location and relationship to the information, you may have rights to request access, correction, deletion,
+          portability, restriction, objection, opt-out of certain processing, or appeal of a denied request. You may also be able to opt
+          out of marketing communications or text messages by following instructions in those messages.
         </p>
         <p>
-          We may need to verify your identity, authority, and the scope of the request before acting on it. Some requests may be limited
-          where the information is needed to provide the Service, protect security, comply with law, or establish, exercise, or defend
-          legal claims.
+          We may need to verify your identity, authority, account relationship, and request scope before acting. Some requests may be
+          limited where information is needed to provide the Service, protect security, comply with law, honor another person&apos;s rights,
+          complete a transaction, maintain audit records, or establish, exercise, or defend legal claims.
         </p>
       </LegalSection>
 
-      <LegalSection title="10. International processing">
+      <LegalSection title="12. California, Colorado, and other state privacy notices">
+        <p>
+          Some U.S. state privacy laws provide additional rights and notice requirements. We use the categories above to describe the
+          personal information we collect, the sources of that information, the purposes of use, and the categories of recipients.
+        </p>
+        <p>
+          You may submit privacy requests using the contact below. We will not discriminate against you for exercising rights that apply
+          to you. Authorized-agent requests must include proof of authority and may require direct verification with the individual.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="13. International processing">
         <p>
           BookedOnCall and its service providers may process information in the United States and other countries where we or our
           providers operate. Those locations may have data protection laws that differ from those in your jurisdiction.
@@ -175,21 +219,21 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="11. Children&apos;s privacy">
+      <LegalSection title="14. Children">
         <p>
           The Service is designed for business use and is not directed to children. We do not knowingly collect personal information from
           children in circumstances where such collection is prohibited by law.
         </p>
       </LegalSection>
 
-      <LegalSection title="12. Changes to this policy">
+      <LegalSection title="15. Changes to this policy">
         <p>
           We may update this Privacy Policy from time to time. When we do, we will revise the &quot;Last updated&quot; date above. Material changes
-          may also be communicated through the website, the customer portal, or other reasonable means.
+          may also be communicated through the website, customer app, or other reasonable means.
         </p>
       </LegalSection>
 
-      <LegalSection title="13. Contact">
+      <LegalSection title="16. Contact">
         <p>
           Privacy questions, rights requests, and service data inquiries can be sent to{" "}
           <a href={`mailto:${siteConfig.privacyEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">

@@ -44,6 +44,7 @@ This repo should not hold checkout or billing secrets. There is no website-owned
 - If Resend is not configured or delivery fails, the lead form returns a `mailto:` handoff so the visitor can still complete the request from their email client.
 - Production lead capture can be checked with `npm run verify:production-leads -- --origin https://www.bookedoncall.com --execute-send`. The flag is explicit because it submits one synthetic setup request and may send a Resend email.
 - Marketing analytics events are pushed to `window.dataLayer`; configure `NEXT_PUBLIC_GTM_ID` to load Google Tag Manager from the checked-in layout.
+- The public voice demo uses `app/api/demo-session/route.ts` as a server-side gate before the client loads Vapi. Configure `BOOKEDONCALL_DEMO_VOICE_ENABLED=true`, `VAPI_WEB_PUBLIC_KEY`, and `VAPI_DEMO_ASSISTANT_ID` only after the assistant is ready for public demo calls. The website route adds basic rate limiting and a time limit, but the operator still needs Vapi-side budget monitoring for the monthly demo allowance.
 - The website intentionally does not support hidden lead-webhook environment variables or a website-owned checkout/billing target.
 - Security headers, robots, sitemap, manifest, and `llms.txt` are generated from the App Router.
 
@@ -64,5 +65,6 @@ This repo should not hold checkout or billing secrets. There is no website-owned
 - Do not reintroduce a website-owned checkout route.
 - Keep `config/public-site-contract.json` aligned with the current launch offer for plans, app URLs, integrations, and legal contacts.
 - Do not describe booking, reminders, write-through integrations, or dashboard capabilities more strongly than the app currently supports.
+- Do not reintroduce a scripted browser call preview as the primary demo. Use the Vapi-gated live voice demo, example calls, or private setup test calls.
 - Keep lead delivery explicit: Resend email delivery is allowed, webhook-based hidden lead delivery is not.
 - Prefer concrete, machine-readable copy over vague marketing language. This repo is optimized for both human conversion and search/AI discoverability.

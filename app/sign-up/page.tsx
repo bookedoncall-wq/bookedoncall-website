@@ -1,4 +1,5 @@
 import { Suspense } from "react"
+import { CalendarClock, CheckCircle2, PhoneCall, ShieldCheck } from "lucide-react"
 import { LeadCaptureForm } from "@/components/marketing/LeadCaptureForm"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
@@ -14,6 +15,29 @@ export const metadata = buildPageMetadata({
     "Tell us about your shop, choose the plan you are considering, and we will follow up with the right BookedOnCall setup path.",
   path: "/sign-up",
 })
+
+const setupConfidenceItems = [
+  {
+    icon: CheckCircle2,
+    title: "Simple starting point",
+    body: "Pick the closest trade, plan, and call path. Advanced wording can wait until after the first test.",
+  },
+  {
+    icon: CalendarClock,
+    title: "Calendar when you want it",
+    body: "Start with Google Calendar, Jobber, or callback-only while scheduling rules are reviewed.",
+  },
+  {
+    icon: PhoneCall,
+    title: "Keep your number flow",
+    body: "Use missed-call or overflow forwarding so you can still answer when you are available.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Test before callers hear it",
+    body: "Run a private test call before live forwarding changes.",
+  },
+] as const
 
 export default function SignUpPage() {
   return (
@@ -38,6 +62,23 @@ export default function SignUpPage() {
         </div>
       </section>
 
+      <section className="border-b border-slate-100 bg-white px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-4">
+          {setupConfidenceItems.map((item) => {
+            const Icon = item.icon
+            return (
+              <article key={item.title} className="grid gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <div className="flex items-center gap-2">
+                  <Icon className="size-4 text-amber-600" />
+                  <h2 className="text-base font-black text-slate-950">{item.title}</h2>
+                </div>
+                <p className="text-sm leading-6 text-slate-600">{item.body}</p>
+              </article>
+            )
+          })}
+        </div>
+      </section>
+
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="grid gap-6">
@@ -45,7 +86,7 @@ export default function SignUpPage() {
               <article className="grid gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
                 <h2 className="text-2xl font-black text-slate-950">Start in the customer app</h2>
                 <p className="text-base leading-7 text-slate-600">
-                  New customers can start setup in the secure app when self-serve checkout is enabled. Existing customers should use customer login.
+                  New customers can start setup in the secure app. Existing customers should use customer login.
                 </p>
                 <TrackedLink
                   href={buildGetStartedHref(undefined, "website-sign-up-page")}
@@ -101,7 +142,7 @@ export default function SignUpPage() {
             <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Want to hear it first?</h2>
               <p className="text-base leading-7 text-slate-600">
-                Try demo calls before setup so you know what callers hear and what your team gets back.
+                Try the live web voice demo or review example calls before setup so you know what callers hear and what your team gets back.
               </p>
               <div className="mt-5 grid gap-3">
                 <TrackedLink

@@ -1,6 +1,6 @@
 import { CalendarClock, FileText, Mic } from "lucide-react"
 import { CtaBand } from "@/components/marketing/CtaBand"
-import { DemoCallPreview } from "@/components/marketing/DemoCallPreview"
+import { VapiDemoCallPreview } from "@/components/marketing/VapiDemoCallPreview"
 import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
@@ -20,16 +20,16 @@ const demoStates = [
   },
   {
     icon: Mic,
-    title: "Try the browser call preview",
-    body: "Use a guided browser preview with visible transcript, optional microphone input, and no calendar or appointment changes.",
-    status: "Preview",
+    title: "Try the live voice demo",
+    body: "Start the live web demo, choose a sample shop, and watch the transcript as you talk.",
+    status: "Voice demo",
   },
 ] as const
 
 export const metadata = buildPageMetadata({
   title: "Demo calls",
   description:
-    "Try BookedOnCall demo call paths with a browser call preview, example transcripts, and private test-call setup.",
+    "Try BookedOnCall demo call paths with a live web voice demo, example transcripts, and private test-call setup.",
   path: "/demo-calls",
 })
 
@@ -41,17 +41,17 @@ export default function DemoCallsPage() {
         data={buildServiceSchema({
           name: "BookedOnCall demo calls",
           description:
-            "Demo call paths showing a browser call preview, example transcripts, and private test-call setup.",
+            "Demo call paths showing a live web voice demo, example transcripts, and private test-call setup.",
           path: "/demo-calls",
         })}
       />
       <PageIntro
         eyebrow="Demo calls"
         title="Try the call flow before a customer hears it."
-        description="Start with the browser call preview, review example transcripts, and run a private test call during setup before any live forwarding changes."
+        description="Start the live voice demo, review example transcripts, and run a private test call during setup before any live forwarding changes."
       />
 
-      <DemoCallPreview />
+      <VapiDemoCallPreview />
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">

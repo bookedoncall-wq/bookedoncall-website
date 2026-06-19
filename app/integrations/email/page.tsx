@@ -65,7 +65,7 @@ export default function EmailIntegrationPage() {
             className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">Try demo calls</h2>
-            <p className="text-base leading-7 text-slate-600">Use the browser call preview and example calls before deciding how summaries should reach your inbox.</p>
+            <p className="text-base leading-7 text-slate-600">Try the live web voice demo, then review example calls before deciding how summaries should reach your inbox.</p>
           </TrackedLink>
           <TrackedLink
             href="/pricing"

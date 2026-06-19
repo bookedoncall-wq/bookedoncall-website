@@ -26,8 +26,8 @@ type SummaryRow = {
 
 const launchAssumptions = [
   "Business profile, services, service area, hours, and owner alert rules are set.",
-  "Google Calendar or Jobber is connected when scheduling is enabled.",
-  "Email summaries and optional Text / SMS follow-up are configured.",
+  "Google Calendar or Jobber is connected when scheduling is turned on.",
+  "Email summaries and optional Text / SMS follow-up are set up.",
   "Owner-approved booking is the default unless the owner turns on direct booking.",
 ] as const
 
@@ -87,7 +87,7 @@ const exampleCalls = [
       { label: "Customer", value: "Jamie; callback number captured from caller ID authorization" },
       { label: "Job", value: "AC running but blowing warm air; no-cool diagnostic requested" },
       { label: "Location", value: "In service area after address check" },
-      { label: "Scheduling", value: "Morning window selected; confirm or decline in the owner workflow" },
+      { label: "Scheduling", value: "Morning window selected; owner can confirm or decline" },
       { label: "Follow-up", value: "Email summary sent; optional customer text says the request is pending confirmation" },
     ] satisfies SummaryRow[],
     customerFollowUp:
@@ -139,7 +139,7 @@ const exampleCalls = [
     checks: [
       "Service: water-heater leak is recognized as a plumbing call.",
       "Urgency: active leak triggers escalation instead of a routine booking path.",
-      "Pricing: no quote is given unless the owner has enabled approved ranges.",
+      "Pricing: no quote is given unless the owner has turned on approved ranges.",
       "Outcome: callback handoff is clear to the caller and owner.",
     ],
     ownerSummary: [
@@ -220,7 +220,7 @@ const exampleCalls = [
 const nextSteps = [
   {
     title: "Try demo calls",
-    body: "Use the browser call preview, then run a private test call during setup before live forwarding changes.",
+    body: "Try the live web voice demo, then run a private test call during setup before live forwarding changes.",
     href: "/demo-calls",
   },
   {
@@ -230,7 +230,7 @@ const nextSteps = [
   },
   {
     title: "Review integrations",
-    body: "See Jobber, Google Calendar, email summary, and Text / SMS workflows, plus planned integrations for QuickBooks, Housecall Pro, and ServiceTitan.",
+    body: "See how Jobber, Google Calendar, email summaries, and Text / SMS can fit the call flow, plus planned integrations for QuickBooks, Housecall Pro, and ServiceTitan.",
     href: "/integrations",
   },
 ] as const
@@ -257,16 +257,16 @@ export default function ExamplesPage() {
       <PageIntro
         eyebrow="Examples"
         title="See what a handled call should look like."
-        description="These examples show the best-case launch flow after setup: what the caller hears, what BookedOnCall checks, what the owner gets back, and what the customer is told."
+        description="These examples show the customer-ready flow after setup: what the caller hears, what BookedOnCall checks, what the owner gets back, and what the customer is told."
       />
 
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div className="grid gap-3">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Best-case setup assumed</p>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After basic setup</p>
             <h2 className="text-3xl font-black text-slate-950">The examples show a shop after basic setup is complete.</h2>
             <p className="text-base leading-8 text-slate-600">
-              They are not generic scripts. They show the intended launch structure when the owner has reviewed services, service area, hours, scheduling, and follow-up rules.
+              They are not generic scripts. They show the intended customer-ready structure when the owner has reviewed services, service area, hours, scheduling, and follow-up rules.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2">

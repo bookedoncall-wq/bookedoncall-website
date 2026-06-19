@@ -255,8 +255,10 @@ export function LeadCaptureForm() {
               onChange={(event) => updateField("name", event.target.value)}
               className="rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
               autoComplete="name"
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? "lead-name-error" : undefined}
             />
-            {errors.name ? <span className="text-sm text-red-600">{errors.name}</span> : null}
+            {errors.name ? <span id="lead-name-error" className="text-sm text-red-600">{errors.name}</span> : null}
           </label>
 
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
@@ -267,8 +269,10 @@ export function LeadCaptureForm() {
               onChange={(event) => updateField("businessName", event.target.value)}
               className="rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
               autoComplete="organization"
+              aria-invalid={Boolean(errors.businessName)}
+              aria-describedby={errors.businessName ? "lead-business-name-error" : undefined}
             />
-            {errors.businessName ? <span className="text-sm text-red-600">{errors.businessName}</span> : null}
+            {errors.businessName ? <span id="lead-business-name-error" className="text-sm text-red-600">{errors.businessName}</span> : null}
           </label>
 
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
@@ -278,6 +282,8 @@ export function LeadCaptureForm() {
               value={form.trade}
               onChange={(event) => updateField("trade", event.target.value)}
               className="rounded-xl border border-slate-300 bg-white px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
+              aria-invalid={Boolean(errors.trade)}
+              aria-describedby={errors.trade ? "lead-trade-error lead-trade-help" : "lead-trade-help"}
             >
               <option value="">Choose the closest starting point</option>
               {supportedTrades.map((trade) => (
@@ -286,10 +292,10 @@ export function LeadCaptureForm() {
                 </option>
               ))}
             </select>
-            <span className="text-xs leading-5 text-slate-500">
+            <span id="lead-trade-help" className="text-xs leading-5 text-slate-500">
               This sets the starting template. Add secondary services, like tile, flooring, or handyman work, in the notes.
             </span>
-            {errors.trade ? <span className="text-sm text-red-600">{errors.trade}</span> : null}
+            {errors.trade ? <span id="lead-trade-error" className="text-sm text-red-600">{errors.trade}</span> : null}
           </label>
 
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
@@ -300,8 +306,10 @@ export function LeadCaptureForm() {
               onChange={(event) => updateField("phone", event.target.value)}
               className="rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
               autoComplete="tel"
+              aria-invalid={Boolean(errors.phone)}
+              aria-describedby={errors.phone ? "lead-phone-error" : undefined}
             />
-            {errors.phone ? <span className="text-sm text-red-600">{errors.phone}</span> : null}
+            {errors.phone ? <span id="lead-phone-error" className="text-sm text-red-600">{errors.phone}</span> : null}
           </label>
 
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
@@ -312,8 +320,10 @@ export function LeadCaptureForm() {
               onChange={(event) => updateField("email", event.target.value)}
               className="rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
               autoComplete="email"
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? "lead-email-error" : undefined}
             />
-            {errors.email ? <span className="text-sm text-red-600">{errors.email}</span> : null}
+            {errors.email ? <span id="lead-email-error" className="text-sm text-red-600">{errors.email}</span> : null}
           </label>
 
           <label className="grid gap-2 text-sm font-semibold text-slate-700">
@@ -323,6 +333,8 @@ export function LeadCaptureForm() {
               value={planInterest}
               onChange={(event) => updateField("planInterest", event.target.value)}
               className="rounded-xl border border-slate-300 bg-white px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
+              aria-invalid={Boolean(errors.planInterest)}
+              aria-describedby={errors.planInterest ? "lead-plan-error" : undefined}
             >
               {plans.map((plan) => (
                 <option key={plan.id} value={plan.id}>
@@ -330,7 +342,7 @@ export function LeadCaptureForm() {
                 </option>
               ))}
             </select>
-            {errors.planInterest ? <span className="text-sm text-red-600">{errors.planInterest}</span> : null}
+            {errors.planInterest ? <span id="lead-plan-error" className="text-sm text-red-600">{errors.planInterest}</span> : null}
           </label>
         </div>
 
@@ -341,13 +353,15 @@ export function LeadCaptureForm() {
             value={form.details}
             onChange={(event) => updateField("details", event.target.value)}
             className="min-h-36 rounded-xl border border-slate-300 px-4 py-3 font-normal text-slate-950 outline-none transition focus:border-amber-400"
+            aria-invalid={Boolean(errors.details)}
+            aria-describedby={errors.details ? "lead-details-error" : undefined}
             placeholder={
               reviewCopy
                 ? reviewCopy.placeholder
                 : "Tell us about your actual services, secondary trades you handle, scheduling setup, after-hours calls, or anything else we should know before onboarding."
             }
           />
-          {errors.details ? <span className="text-sm text-red-600">{errors.details}</span> : null}
+          {errors.details ? <span id="lead-details-error" className="text-sm text-red-600">{errors.details}</span> : null}
         </label>
 
         <label className="hidden">
@@ -376,10 +390,23 @@ export function LeadCaptureForm() {
             </a>
           </p>
         </div>
+        <p className="text-xs leading-6 text-slate-500">
+          By submitting this request, you agree that BookedOnCall may contact you about setup and handle the information you provide
+          according to the{" "}
+          <a href="/privacy" className="font-semibold text-slate-700 underline decoration-slate-300 underline-offset-4">
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a href="/terms" className="font-semibold text-slate-700 underline decoration-slate-300 underline-offset-4">
+            Terms
+          </a>
+          .
+        </p>
 
         {message ? (
           <p
             className={status === "success" ? "text-sm font-semibold text-green-700" : "text-sm font-semibold text-red-600"}
+            role={status === "success" ? "status" : "alert"}
             aria-live="polite"
         >
           {message}

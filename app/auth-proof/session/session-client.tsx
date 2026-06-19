@@ -128,8 +128,8 @@ export default function AuthProofSessionClient({ boundary }: { boundary: string 
   return (
     <section className="mx-auto grid max-w-4xl gap-6 px-4 py-20">
       <header className="grid gap-3">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Auth proof</p>
-        <h1 className="text-4xl font-black text-slate-950">Clerk session status</h1>
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Owner access</p>
+        <h1 className="text-4xl font-black text-slate-950">Customer app access</h1>
         <p className="max-w-3xl text-base leading-7 text-slate-700">{boundary}</p>
       </header>
 
@@ -140,10 +140,10 @@ export default function AuthProofSessionClient({ boundary }: { boundary: string 
               <h2 className="text-2xl font-black text-slate-950">Sign-in required</h2>
               <p className="mt-2 text-sm leading-6 text-slate-600">
                 {ticketStatus === "working"
-                  ? "A single-use provider ticket is being exchanged for a browser session."
+                  ? "Checking the single-use sign-in link."
                   : ticketStatus === "blocked"
-                    ? "The single-use provider ticket could not establish a browser session."
-                    : "The provider session has not been established in this browser context."}
+                    ? "The single-use sign-in link could not open customer app access."
+                    : "This browser is not signed in to the customer app yet."}
               </p>
             </div>
             <SignIn routing="hash" />
@@ -153,35 +153,35 @@ export default function AuthProofSessionClient({ boundary }: { boundary: string 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <h2 className="text-2xl font-black text-slate-950">
-                  {hasToken ? "Session token available" : "Session token unavailable"}
+                  {hasToken ? "Customer app access found" : "Customer app access incomplete"}
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-slate-600">
-                  The route reports redacted token facts only.
+                  Only a redacted access check is shown here.
                 </p>
               </div>
               <span className="w-fit rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-sm font-bold text-amber-800">
-                {hasToken ? "Session present" : "Token missing"}
+                {hasToken ? "Access found" : "Access incomplete"}
               </span>
             </div>
 
             {hasToken ? (
               <dl className="grid gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm sm:grid-cols-3">
                 <div>
-                  <dt className="font-bold text-slate-950">Token shape</dt>
+                  <dt className="font-bold text-slate-950">Access format</dt>
                   <dd className="mt-1 text-slate-600">{summary.tokenShape}</dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-slate-950">Length band</dt>
+                  <dt className="font-bold text-slate-950">Access size</dt>
                   <dd className="mt-1 text-slate-600">{summary.tokenLengthBand}</dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-slate-950">Fingerprint</dt>
+                  <dt className="font-bold text-slate-950">Access reference</dt>
                   <dd className="mt-1 text-slate-600">{summary.tokenFingerprint}</dd>
                 </div>
               </dl>
             ) : (
               <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900">
-                Clerk reported a signed-in browser session, but no usable request token was available.
+                This browser appears signed in, but customer app access could not be confirmed.
               </p>
             )}
           </div>

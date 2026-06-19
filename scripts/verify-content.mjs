@@ -16,6 +16,7 @@ const requiredRoutes = [
   "app/sign-up/page.tsx",
   "app/integrations/page.tsx",
   "app/api/leads/route.ts",
+  "app/api/demo-session/route.ts",
   "lib/integration-review-intake.ts",
   "app/faq/page.tsx",
   "app/demo-calls/page.tsx",
@@ -39,11 +40,16 @@ const requiredRoutes = [
   "app/integrations/servicetitan/page.tsx",
   "app/privacy/page.tsx",
   "app/terms/page.tsx",
+  "app/call-handling-notice/page.tsx",
+  "app/sms-terms/page.tsx",
   "app/dpa/page.tsx",
+  "app/auth-proof/session/page.tsx",
+  "app/auth-proof/session/session-client.tsx",
   "app/llms.txt/route.ts",
   "app/manifest.ts",
   "app/robots.txt/route.ts",
   "app/sitemap.xml/route.ts",
+  "components/marketing/VapiDemoCallPreview.tsx",
 ]
 
 const bannedPatterns = [
@@ -65,8 +71,22 @@ const bannedPatterns = [
   /no long-term commitment/i,
   /cancel anytime/i,
   /safe demo path/i,
+  /browser call preview/i,
   /configured workflow\*/i,
   /roadmap only\*/i,
+  /when it is connected/i,
+  /connected in this environment/i,
+  /not connected in this environment/i,
+  /not connected here/i,
+  /this environment yet/i,
+  /self-serve checkout is enabled/i,
+  /auth proof/i,
+  /proof-only route/i,
+  /session proof/i,
+  /not proof of a live/i,
+  /vapi-powered/i,
+  /reached vapi/i,
+  /vapi session/i,
 ]
 
 const requiredFiles = [
@@ -149,9 +169,11 @@ if (
   !sitemapSource.includes("/integrations/housecall-pro") ||
   !sitemapSource.includes("/integrations/servicetitan") ||
   !sitemapSource.includes("/demo-calls") ||
-  !sitemapSource.includes("/examples")
+  !sitemapSource.includes("/examples") ||
+  !sitemapSource.includes("/call-handling-notice") ||
+  !sitemapSource.includes("/sms-terms")
 ) {
-  errors.push("app/sitemap.xml/route.ts must include FAQ, demo, and integration pages")
+  errors.push("app/sitemap.xml/route.ts must include FAQ, demo, legal notice, SMS terms, and integration pages")
 }
 
 if (fs.existsSync(path.join(repoRoot, "app/api/checkout/route.ts"))) {
@@ -165,6 +187,9 @@ if (fs.existsSync(path.join(repoRoot, "public/robots.txt"))) {
 const packageJson = JSON.parse(readText("package.json"))
 if (packageJson.dependencies?.stripe || packageJson.devDependencies?.stripe) {
   errors.push("package.json must not depend on stripe in the website repo")
+}
+if (packageJson.dependencies?.["@vapi-ai/web"] !== "^2.5.2") {
+  errors.push("package.json must depend on @vapi-ai/web for the controlled live voice demo")
 }
 if (packageJson.scripts?.build !== "next build") {
   errors.push("package.json must use the Next 16 default production builder; next build --webpack produced a local next start 500 during launch verification")
@@ -207,6 +232,9 @@ for (const requiredRuntimeGuard of [
   "\"/page\"",
   "\"/sign-up/page\"",
   "\"/api/leads/route\"",
+  "\"/api/demo-session/route\"",
+  "POST /api/demo-session disabled by default",
+  "BOOKEDONCALL_DEMO_VOICE_ENABLED: \"false\"",
   "RESEND_API_KEY: \"\"",
   "Housecall%20Pro%20roadmap%20interest",
   "client_secret: abcdefghijklmnopqrstuvwxyz",
@@ -284,6 +312,34 @@ for (const requiredLeadFormGuard of [
   }
 }
 
+const demoRouteSource = readText("app/api/demo-session/route.ts")
+for (const requiredDemoGuard of [
+  "BOOKEDONCALL_DEMO_VOICE_ENABLED",
+  "VAPI_WEB_PUBLIC_KEY",
+  "VAPI_DEMO_ASSISTANT_ID",
+  "VAPI_DEMO_MONTHLY_BUDGET_USD",
+  "BOOKEDONCALL_DEMO_MAX_CALL_SECONDS",
+  "BOOKEDONCALL_DEMO_MAX_STARTS_PER_HOUR",
+  "isRateLimited",
+]) {
+  if (!demoRouteSource.includes(requiredDemoGuard)) {
+    errors.push(`app/api/demo-session/route.ts must preserve live demo session guard phrase: ${requiredDemoGuard}`)
+  }
+}
+
+const vapiDemoSource = readText("components/marketing/VapiDemoCallPreview.tsx")
+for (const requiredVapiDemoGuard of [
+  "@vapi-ai/web",
+  "/api/demo-session",
+  "public_website_demo_no_real_actions",
+  "No real appointments, calendar changes, customer texts, or customer records",
+  "demo_voice_call_started",
+]) {
+  if (!vapiDemoSource.includes(requiredVapiDemoGuard)) {
+    errors.push(`components/marketing/VapiDemoCallPreview.tsx must preserve live demo guard phrase: ${requiredVapiDemoGuard}`)
+  }
+}
+
 const integrationReviewIntakeSource = readText("lib/integration-review-intake.ts")
 for (const requiredSharedGuard of [
   "providerSecretLikePatterns",
@@ -305,7 +361,7 @@ for (const requiredIntegrationGuard of [
   "getIntegrationBadgeLabel",
   "getIntegrationActionLabel",
   "getIntegrationTextLinkLabel",
-  "Ready to connect",
+  "Ready during setup",
   "Planned",
   "See current status",
   "See the planned ${integration.name} workflow"
@@ -322,7 +378,7 @@ for (const { path: relativePath, required } of [
   },
   {
     path: "app/integrations/page.tsx",
-    required: ["Ready to connect", "Roadmap", "roadmapIntegrations", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
+    required: ["Ready during setup", "Roadmap", "roadmapIntegrations", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
   },
   {
     path: "app/product/page.tsx",
@@ -354,26 +410,27 @@ for (const forbiddenLegalTransferPattern of [/transfer callers/i, /transfer dest
   }
 }
 for (const requiredTermsPhrase of [
-  "route callers to configured fallback contact paths or follow-up workflows",
-  "follow-up routing is not proof of a live phone bridge",
-  "fallback contact paths"
+  "route callers to a configured next step",
+  "You remain responsible for reviewing call summaries",
+  "The Service is not a 911 service"
 ]) {
   if (!normalizedTermsSource.includes(requiredTermsPhrase)) {
-    errors.push(`app/terms/page.tsx must preserve current transfer proof-boundary phrase: ${requiredTermsPhrase}`)
+    errors.push(`app/terms/page.tsx must preserve customer-facing call-handling legal phrase: ${requiredTermsPhrase}`)
   }
 }
 
 const privacySource = readText("app/privacy/page.tsx")
 const normalizedPrivacySource = normalizeInlineText(privacySource)
 if (/transfer destinations/i.test(privacySource)) {
-  errors.push("app/privacy/page.tsx must describe fallback contact paths instead of transfer destinations")
+  errors.push("app/privacy/page.tsx must describe customer-facing routing behavior instead of transfer destinations")
 }
 for (const requiredPrivacyPhrase of [
-  "fallback contact paths",
-  "route conversations to configured fallback contact paths"
+  "route next steps",
+  "Customers remain responsible for notices, consent",
+  "caller information may be processed"
 ]) {
   if (!normalizedPrivacySource.includes(requiredPrivacyPhrase)) {
-    errors.push(`app/privacy/page.tsx must preserve current transfer proof-boundary phrase: ${requiredPrivacyPhrase}`)
+    errors.push(`app/privacy/page.tsx must preserve customer-facing call-handling privacy phrase: ${requiredPrivacyPhrase}`)
   }
 }
 
