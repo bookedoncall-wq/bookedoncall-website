@@ -14,7 +14,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Integrations",
   description:
-    "See how BookedOnCall can be configured with Jobber, Google Calendar, and Text / SMS, plus roadmap notes for QuickBooks, Housecall Pro, and ServiceTitan.",
+    "See how BookedOnCall can be configured with Jobber, Google Calendar, email summaries, and Text / SMS, plus planned workflows for QuickBooks, Housecall Pro, and ServiceTitan.",
   path: "/integrations",
 })
 
@@ -26,21 +26,21 @@ export default function IntegrationsPage() {
         data={buildServiceSchema({
           name: "BookedOnCall integrations",
           description:
-            "BookedOnCall integration guidance for configured Jobber, Google Calendar, and Text / SMS workflows plus roadmap items.",
+            "BookedOnCall integration guidance for Jobber, Google Calendar, email summary, and Text / SMS workflows plus planned integration items.",
           path: "/integrations",
         })}
       />
       <PageIntro
         eyebrow="Integrations"
         title="Fits the tools you already use."
-        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. Current configurable workflows include Jobber, Google Calendar, and Text / SMS after setup review. QuickBooks, Housecall Pro, and ServiceTitan are roadmap-only possible future integrations."
+        description="BookedOnCall is built to fit your existing workflow, not force a brand-new back office. Current setup-reviewed workflows include Jobber, Google Calendar, email summaries, and Text / SMS. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
           <div className="grid gap-4">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Configured workflows</p>
-            <div className="grid gap-6 lg:grid-cols-3">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Ready to connect</p>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {liveIntegrations.map((integration) => {
                 const card = integrationPages[integration.id as keyof typeof integrationPages]
                 return (

@@ -103,7 +103,7 @@ export default function IndustriesPage() {
             className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See supported integrations</h2>
-            <p className="text-base leading-7 text-slate-600">Learn how Jobber and Google Calendar fit into the call flow when you want scheduling support.</p>
+            <p className="text-base leading-7 text-slate-600">Learn how Jobber, Google Calendar, email summaries, and Text / SMS fit into the call flow when you want scheduling or follow-up support.</p>
           </TrackedLink>
           <TrackedLink
             href="/examples"

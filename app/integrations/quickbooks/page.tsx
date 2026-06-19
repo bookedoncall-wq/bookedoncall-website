@@ -22,7 +22,7 @@ export default function QuickBooksPage() {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 shadow-sm">
             <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
-              Roadmap only*
+              Planned
             </div>
             <h2 className="mb-4 text-3xl font-black text-slate-950">What we are targeting first</h2>
             <p className="mb-5 text-base leading-7 text-amber-950">
@@ -61,7 +61,7 @@ export default function QuickBooksPage() {
               className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <h2 className="mb-3 text-2xl font-black text-slate-950">See supported integrations</h2>
-              <p className="text-base leading-7 text-slate-600">Review the integrations you can use today while QuickBooks stays in the roadmap bucket.</p>
+              <p className="text-base leading-7 text-slate-600">Review the integrations you can use today while QuickBooks stays planned for future consideration.</p>
             </TrackedLink>
             <TrackedLink
               href="/product"

@@ -17,7 +17,7 @@ export const faqEntries = [
   {
     question: "Which integration workflows can be configured?",
     answer:
-      "BookedOnCall supports configured Jobber, Google Calendar, and customer text messaging workflows after setup review for your business. QuickBooks, Housecall Pro, and ServiceTitan are roadmap-only possible future integrations, not live self-serve integrations today."
+      "BookedOnCall supports setup-reviewed Jobber, Google Calendar, email summary, and customer text messaging workflows for your business. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations, not live self-serve integrations today."
   },
   {
     question: "What happens if a job is outside the service area or needs your approval?",
@@ -57,7 +57,7 @@ export const faqEntries = [
   {
     question: "Can I try BookedOnCall before committing?",
     answer:
-      "There is no free trial right now, but you can review example call transcripts and run a private test call before any live number points at BookedOnCall. Browser voice demos run as sandboxes that do not change your calendar or create real appointments."
+      "There is no free trial right now, but you can review example call transcripts, try the browser call preview, and run a private test call before any live number points at BookedOnCall. Public previews do not change your calendar or create real appointments."
   },
   {
     question: "Is there a long-term contract?",
@@ -87,7 +87,7 @@ export const homepageHighlights = [
   },
   {
     title: "Keep using the tools you already know",
-    body: "Keep Jobber, Google Calendar, and customer text messaging in the flow after those workflows are configured for your business."
+    body: "Keep Jobber, Google Calendar, email summaries, and customer text messaging in the flow after those workflows are configured for your business."
   }
 ] as const
 
@@ -141,7 +141,7 @@ export const setupChecklistItems = [
 export const comingSoonProofItems = [
   {
     title: "Browser voice demo",
-    body: "A sandbox voice demo with visible transcript, microphone consent, and no calendar or appointment changes.",
+    body: "A browser call preview with visible transcript, optional microphone input, and no calendar or appointment changes.",
   },
   {
     title: "Customer proof",
@@ -206,7 +206,7 @@ export const resourceHighlights = [
   {
     title: "Demo calls",
     href: "/demo-calls",
-    description: "See how example transcripts, private test calls, and sandbox browser voice demos help you review the call flow before live forwarding."
+    description: "Try the browser call preview, review example transcripts, and see how private test calls help you review the call flow before live forwarding."
   },
   {
     title: "Example calls",
@@ -434,7 +434,7 @@ export const integrationPages = {
     summary:
       "Configure BookedOnCall with Jobber so new calls can flow into the scheduling process you already use after setup review.",
     bullets: [
-      "Check availability through Jobber when the configured workflow is approved to offer appointment times.",
+      "Check availability through Jobber when your reviewed setup is approved to offer appointment times.",
       "Keep your business on the same tools it already uses every day.",
       "Send the call back with clear details when a job still needs a person."
     ],
@@ -459,10 +459,25 @@ export const integrationPages = {
       "If a person should decide, the call still comes back with clear details for follow-up."
     ]
   },
+  email: {
+    title: "BookedOnCall + Email summaries",
+    summary:
+      "Send call summaries and next steps to the inbox you already check so missed calls turn into reviewable work instead of scattered notes.",
+    bullets: [
+      "Receive caller details, job notes, urgency, and the recommended next step after each handled call.",
+      "Keep the first launch workflow simple while your calendar, Jobber, or text setup is reviewed.",
+      "Use email summaries as the dependable handoff even when a job still needs owner approval."
+    ],
+    outcomeCards: [
+      "Your inbox gets a clear call summary instead of a vague voicemail notification.",
+      "Owner-approved booking, callback, and manual-review calls all have a written next step.",
+      "Email gives the shop a simple fallback even before deeper integrations are turned on."
+    ]
+  },
   "text-sms": {
     title: "BookedOnCall + Text / SMS",
     summary:
-      "Use customer text messaging as a configured workflow for supported follow-up, confirmations, and callback communication after the call.",
+      "Use customer text messaging for supported follow-up, confirmations, and callback communication after the call.",
     bullets: [
       "Send supported customer follow-up texts after the call when messaging is enabled.",
       "Keep confirmations, callback updates, and simple next-step communication in a channel customers already check.",
@@ -471,7 +486,7 @@ export const integrationPages = {
     outcomeCards: [
       "Customers can receive supported follow-up texts once the call has the details your team needs.",
       "Your team still gets the summary and decides what should move toward booking, callback, or manual review.",
-      "Messaging stays aligned with your configured workflow instead of turning into a separate office process."
+      "Messaging stays aligned with your chosen handoff rules instead of turning into a separate office process."
     ]
   },
   quickbooks: {
@@ -522,4 +537,4 @@ export const integrationPages = {
 } as const
 
 export const roadmapDisclaimer =
-  "Roadmap items and coming-soon statements are informational only, may change, and do not guarantee delivery on a specific timeline."
+  "Planned integrations and coming-soon statements are informational only, may change, and do not guarantee delivery on a specific timeline."

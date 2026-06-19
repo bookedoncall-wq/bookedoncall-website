@@ -102,7 +102,7 @@ export default function FeaturesPage() {
             </article>
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Hiring a receptionist</h3>
-              <p className="text-sm leading-7 text-slate-600">Hiring a receptionist adds wage and staffing overhead. BookedOnCall starts at $250/month and stays available around the clock.</p>
+              <p className="text-sm leading-7 text-slate-600">Hiring a receptionist adds wage and staffing overhead. BookedOnCall starts at $299/month and stays available around the clock.</p>
             </article>
             <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Generic AI tools</h3>
@@ -118,8 +118,9 @@ export default function FeaturesPage() {
             <h2 className="mb-4 text-3xl font-black text-slate-950">When BookedOnCall books the job</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
               <li>Scheduling is turned on for the kinds of jobs you want BookedOnCall to handle.</li>
-              <li>Jobber or Google Calendar is connected.</li>
-              <li>The request fits the rules you want booked automatically.</li>
+              <li>Jobber or Google Calendar is connected for scheduling.</li>
+              <li>Email or Text / SMS is configured for the handoff or follow-up path you choose.</li>
+              <li>The request fits the rules you want BookedOnCall to follow before a booking is confirmed.</li>
               <li>The caller gives the details needed to move forward.</li>
             </ul>
           </article>

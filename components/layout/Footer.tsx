@@ -28,6 +28,7 @@ const footerColumns = [
     title: "Resources",
     links: [
       { label: "Resources", href: "/resources" },
+      { label: "Demo calls", href: "/demo-calls" },
       { label: "Examples", href: "/examples" },
       { label: "AI vs Voicemail", href: "/compare/ai-receptionist-vs-voicemail" },
       { label: "Missed Calls Guide", href: "/compare/missed-calls-for-home-service-businesses" },
@@ -69,9 +70,9 @@ export default function Footer() {
                 {primaryCtaLabel}
               </TrackedLink>
               <TrackedLink
-                href="/examples"
+                href="/demo-calls"
                 eventName="marketing_cta_clicked"
-                eventPayload={{ placement: "footer_secondary", href: "/examples" }}
+                eventPayload={{ placement: "footer_secondary", href: "/demo-calls" }}
                 className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:border-slate-500 hover:bg-slate-900"
               >
                 {positioning.secondaryCtaLabel}

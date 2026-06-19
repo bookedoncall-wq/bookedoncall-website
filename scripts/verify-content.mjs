@@ -5,7 +5,6 @@ import { fileURLToPath } from "node:url"
 import path from "node:path"
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
-const monorepoContractPath = path.resolve(repoRoot, "../TVA_All_In_One/config/bookedoncall-public-site-contract.json")
 
 const requiredRoutes = [
   "app/page.tsx",
@@ -33,6 +32,7 @@ const requiredRoutes = [
   "app/for/general-home-services/page.tsx",
   "app/integrations/jobber/page.tsx",
   "app/integrations/google-calendar/page.tsx",
+  "app/integrations/email/page.tsx",
   "app/integrations/text-sms/page.tsx",
   "app/integrations/quickbooks/page.tsx",
   "app/integrations/housecall-pro/page.tsx",
@@ -64,12 +64,15 @@ const bannedPatterns = [
   /no long contract/i,
   /no long-term commitment/i,
   /cancel anytime/i,
+  /safe demo path/i,
+  /configured workflow\*/i,
+  /roadmap only\*/i,
 ]
 
 const requiredFiles = [
   ".env.example",
   "config/public-site-contract.json",
-  "scripts/sync-monorepo-public-truth.mjs",
+  "scripts/check-public-site-contract.mjs",
   ".github/workflows/verify-content.yml",
   "scripts/verify-runtime.mjs",
   "scripts/verify-journeys.mjs",
@@ -140,6 +143,7 @@ const sitemapSource = readText("app/sitemap.xml/route.ts")
 if (
   !sitemapSource.includes("/faq") ||
   !sitemapSource.includes("/integrations/jobber") ||
+  !sitemapSource.includes("/integrations/email") ||
   !sitemapSource.includes("/integrations/text-sms") ||
   !sitemapSource.includes("/integrations/quickbooks") ||
   !sitemapSource.includes("/integrations/housecall-pro") ||
@@ -174,19 +178,13 @@ if (packageJson.scripts?.["verify:journeys"] !== "node ./scripts/verify-journeys
 if (packageJson.scripts?.["verify:production-leads"] !== "node ./scripts/verify-production-leads.mjs") {
   errors.push("package.json must expose npm run verify:production-leads for synthetic production lead-capture checks")
 }
+if (packageJson.scripts?.["check:public-truth"] !== "node ./scripts/check-public-site-contract.mjs") {
+  errors.push("package.json must expose npm run check:public-truth for website-local public contract checks")
+}
 
 const envExample = readText(".env.example")
 if (/^\s*STRIPE_[A-Z0-9_]*\s*=/im.test(envExample)) {
   errors.push(".env.example must not define STRIPE_* variables in the website repo")
-}
-
-if (fs.existsSync(monorepoContractPath)) {
-  const monorepoContractSource = fs.readFileSync(monorepoContractPath, "utf8")
-  const websiteContractSource = readText("config/public-site-contract.json")
-  const expectedWebsiteContractSource = `${JSON.stringify(JSON.parse(monorepoContractSource), null, 2)}\n`
-  if (websiteContractSource !== expectedWebsiteContractSource) {
-    errors.push(`config/public-site-contract.json is out of sync with ${monorepoContractPath}; run npm run sync:monorepo-truth`)
-  }
 }
 
 for (const relativePath of leadWebhookGuardFiles) {
@@ -307,10 +305,10 @@ for (const requiredIntegrationGuard of [
   "getIntegrationBadgeLabel",
   "getIntegrationActionLabel",
   "getIntegrationTextLinkLabel",
-  "Configured workflow*",
-  "Roadmap only*",
-  "See roadmap note",
-  "See the ${integration.name} roadmap page"
+  "Ready to connect",
+  "Planned",
+  "See current status",
+  "See the planned ${integration.name} workflow"
 ]) {
   if (!siteConfigSource.includes(requiredIntegrationGuard)) {
     errors.push(`config/site.ts must preserve roadmap integration guard phrase: ${requiredIntegrationGuard}`)
@@ -324,7 +322,7 @@ for (const { path: relativePath, required } of [
   },
   {
     path: "app/integrations/page.tsx",
-    required: ["Configured workflows", "Roadmap", "roadmapIntegrations", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
+    required: ["Ready to connect", "Roadmap", "roadmapIntegrations", "getIntegrationBadgeLabel(integration)", "getIntegrationActionLabel(integration)"]
   },
   {
     path: "app/product/page.tsx",
@@ -381,7 +379,7 @@ for (const requiredPrivacyPhrase of [
 
 const quickBooksSource = readText("app/integrations/quickbooks/page.tsx")
 if (/buildServiceSchema/i.test(quickBooksSource)) {
-  errors.push("app/integrations/quickbooks/page.tsx must not emit Service schema for a roadmap-only integration")
+  errors.push("app/integrations/quickbooks/page.tsx must not emit Service schema for a planned integration")
 }
 for (const forbiddenCustomerFacingIntegrationPhrase of [
   /launch-safe path/i,
@@ -417,7 +415,7 @@ const roadmapRoutes = [
     path: "app/integrations/housecall-pro/page.tsx",
     required: [
       "Roadmap",
-      "Roadmap only*",
+      "Planned",
       "Share Housecall Pro interest",
       "not available in BookedOnCall today",
       "Do not paste API keys, webhook secrets, or Housecall Pro credentials"
@@ -428,7 +426,7 @@ const roadmapRoutes = [
     path: "app/integrations/servicetitan/page.tsx",
     required: [
       "Roadmap",
-      "Roadmap only*",
+      "Planned",
       "Share ServiceTitan interest",
       "not available in BookedOnCall today",
       "Do not paste tenant IDs, client secrets, app keys, booking-provider tags, or credentials"
@@ -440,7 +438,7 @@ const roadmapRoutes = [
 for (const { path: relativePath, required, forbidden } of roadmapRoutes) {
   const source = readText(relativePath)
   if (/buildServiceSchema/i.test(source)) {
-    errors.push(`${relativePath} must not emit Service schema for a roadmap-only integration`)
+    errors.push(`${relativePath} must not emit Service schema for a planned integration`)
   }
   for (const requiredPhrase of required) {
     if (!source.includes(requiredPhrase)) {

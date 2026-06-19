@@ -62,7 +62,7 @@ export default function DpaPage() {
       <LegalSection title="3. Processing details">
         <p>Subject matter: AI-assisted call handling, call routing, summaries, scheduling support, messaging workflows, account support, and related service operations.</p>
         <p>Duration: For the term of the customer&apos;s use of the Service, plus any limited retention period required for backups, legal compliance, security, or dispute resolution.</p>
-        <p>Nature and purpose: Receiving, storing, organizing, redacting, transmitting, analyzing, and otherwise processing data needed to provide the Service and support the customer&apos;s configured workflows.</p>
+        <p>Nature and purpose: Receiving, storing, organizing, redacting, transmitting, analyzing, and otherwise processing data needed to provide the Service and support the customer&apos;s chosen service workflows.</p>
         <p>Categories of data subjects: Customer personnel, callers, leads, customers, prospects, vendors, and other individuals whose data the customer submits or routes through the Service.</p>
         <p>Categories of personal data: Contact details, call metadata, caller intake details, service addresses, job descriptions, communication content, transcripts, summaries, recordings if enabled, integration identifiers, and related workflow records.</p>
       </LegalSection>

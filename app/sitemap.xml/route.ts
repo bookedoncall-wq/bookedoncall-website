@@ -32,6 +32,7 @@ const pages = [
   "/for/general-home-services",
   "/integrations/jobber",
   "/integrations/google-calendar",
+  "/integrations/email",
   "/integrations/text-sms",
   "/integrations/quickbooks",
   "/integrations/housecall-pro",

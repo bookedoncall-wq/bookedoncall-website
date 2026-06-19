@@ -17,7 +17,7 @@ import {
 } from "@/config/site"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { buildPageMetadata, buildServiceSchema } from "@/lib/seo"
+import { buildPageMetadata, buildServiceSchema, buildSoftwareApplicationSchema } from "@/lib/seo"
 
 export const metadata = buildPageMetadata({
   title: "AI phone assistant for trades businesses",
@@ -72,6 +72,7 @@ export default function HomePage() {
           path: "/",
         })}
       />
+      <StructuredData data={buildSoftwareApplicationSchema()} />
 
       <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -98,9 +99,9 @@ export default function HomePage() {
                 {primaryCtaLabel}
               </TrackedLink>
               <TrackedLink
-                href="/examples"
+                href="/demo-calls"
                 eventName="marketing_cta_clicked"
-                eventPayload={{ placement: "home_hero_secondary", href: "/examples" }}
+                eventPayload={{ placement: "home_hero_secondary", href: "/demo-calls" }}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   "rounded-xl border-slate-300 px-6 text-slate-950 hover:bg-white"
@@ -473,7 +474,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Integrations</p>
             <h2 className="text-4xl font-black text-slate-950">Fits the tools you already use.</h2>
             <p className="text-lg leading-8 text-slate-600">
-              BookedOnCall is built to fit your current workflow. That includes Jobber, Google Calendar, and customer Text / SMS follow-up after those workflows are configured for your business. QuickBooks, Housecall Pro, and ServiceTitan are roadmap-only possible future integrations.
+              BookedOnCall is built to fit your current workflow. That includes Jobber, Google Calendar, email summaries, and customer Text / SMS follow-up after those workflows are configured for your business. QuickBooks, Housecall Pro, and ServiceTitan are planned possible future integrations.
             </p>
             </div>
             <TrackedLink
@@ -487,13 +488,13 @@ export default function HomePage() {
             </TrackedLink>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {integrations.map((integration, index) => (
+            {integrations.map((integration) => (
               <TrackedLink
                 key={integration.id}
                 href={`/integrations/${integration.id}`}
                 eventName="marketing_cta_clicked"
                 eventPayload={{ placement: "home_integrations", integration: integration.id }}
-                className={`flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40 ${integration.status === "coming_soon" || index > 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
+                className={`flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40 ${integration.status === "coming_soon" ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
               >
                 <div className="grid gap-3">
                   <span

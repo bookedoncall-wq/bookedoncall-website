@@ -101,16 +101,16 @@ export default function SignUpPage() {
             <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Want to hear it first?</h2>
               <p className="text-base leading-7 text-slate-600">
-                Review example calls before setup so you know what callers hear and what your team gets back.
+                Try demo calls before setup so you know what callers hear and what your team gets back.
               </p>
               <div className="mt-5 grid gap-3">
                 <TrackedLink
-                  href="/examples"
+                  href="/demo-calls"
                   eventName="marketing_cta_clicked"
-                  eventPayload={{ placement: "signup_demo", href: "/examples" }}
+                  eventPayload={{ placement: "signup_demo", href: "/demo-calls" }}
                   className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold text-slate-900 transition-colors hover:border-amber-300 hover:bg-amber-50/40"
                 >
-                  See example calls
+                  Try demo calls
                 </TrackedLink>
                 <TrackedLink
                   href="/product"

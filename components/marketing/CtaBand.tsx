@@ -18,7 +18,7 @@ export function CtaBand({
   primaryLabel = primaryCtaLabel,
   primaryHref = buildGetStartedHref(undefined, "website-cta-band"),
   secondaryLabel = positioning.secondaryCtaLabel,
-  secondaryHref = "/examples",
+  secondaryHref = "/demo-calls",
 }: CtaBandProps) {
   return (
     <section className="bg-slate-950 px-4 py-20 sm:px-6 lg:px-8">

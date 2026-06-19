@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { absoluteUrl, siteConfig } from "@/config/site"
+import { absoluteUrl, plans, siteConfig } from "@/config/site"
 
 export function buildPageMetadata(input: {
   title: string
@@ -54,6 +54,43 @@ export function buildWebsiteSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
+  }
+}
+
+export function buildSoftwareApplicationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: siteConfig.name,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    url: siteConfig.url,
+    description: siteConfig.description,
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    offers: plans.map((plan) => ({
+      "@type": "Offer",
+      name: `${plan.name} plan`,
+      price: plan.monthlyUsd,
+      priceCurrency: "USD",
+      url: absoluteUrl(`/pricing?plan=${plan.id}`),
+      description: plan.summary,
+      additionalProperty: [
+        {
+          "@type": "PropertyValue",
+          name: "Included minutes",
+          value: plan.includedMinutes,
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Overage per minute",
+          value: `$${plan.overageMinuteUsd.toFixed(2)}`,
+        },
+      ],
+    })),
   }
 }
 

@@ -82,7 +82,7 @@ export default function PrivacyPage() {
       <LegalSection title="3. Sources of information">
         <p>We collect information directly from you, automatically from your use of the website or service, and from third parties such as:</p>
         <ul className="list-disc pl-6">
-          <li>callers and message recipients who interact with a customer&apos;s configured workflows,</li>
+          <li>callers and message recipients who interact with a customer&apos;s chosen service workflows,</li>
           <li>your connected systems and integration partners,</li>
           <li>payment processors, authentication providers, and communications providers, and</li>
           <li>service providers that help us secure, host, and support the platform.</li>
@@ -109,7 +109,7 @@ export default function PrivacyPage() {
         <p>
           BookedOnCall is built around AI-assisted call handling and related workflows. That means information you or your callers provide
           may be processed by telephony providers, speech systems, large language model providers, scheduling systems, messaging systems,
-          and other infrastructure required to provide the configured workflow.
+          and other infrastructure required to provide the chosen service workflow.
         </p>
         <p>
           Customers are responsible for configuring lawful notices, recording disclosures, consent flows, and human review processes

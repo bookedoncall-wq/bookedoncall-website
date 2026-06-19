@@ -7,22 +7,18 @@ This repo is the standalone public marketing and discovery site for BookedOnCall
 - `bookedoncall.com` is the marketing and discovery surface.
 - The current public conversion path is a website-owned lead form at `/sign-up`.
 - `app.bookedoncall.com` remains the planned canonical product surface in the broader system, but it is not the live public entry point right now.
-- The canonical product repo lives at `/Users/david/Documents/Trades Intelligent Assistant/TVA_All_In_One`.
+- The current product buildout is moving into the V2 app repo, while this repository remains the standalone public website.
 
 ## Public product truth
 
-The website consumes a checked-in snapshot of the monorepo public contract:
+The website owns the checked-in public contract used for marketing copy, public plan details, supported trades, integrations, and legal/contact metadata:
 
 - `config/public-site-contract.json`
 
-That snapshot is derived from:
-
-- `/Users/david/Documents/Trades Intelligent Assistant/TVA_All_In_One/config/bookedoncall-public-site-contract.json`
-
-Sync it whenever the public product contract changes:
+Check it whenever the public product contract changes:
 
 ```bash
-npm run sync:monorepo-truth
+npm run check:public-truth
 ```
 
 ## Local commands
@@ -37,7 +33,7 @@ npm run verify:journeys
 npm run verify:production-leads -- --origin https://www.bookedoncall.com --execute-send
 npm run verify:seo
 npm run verify:security
-npm run sync:monorepo-truth
+npm run check:public-truth
 ```
 
 ## Environment and deployment
@@ -66,7 +62,7 @@ This repo should not hold checkout or billing secrets. There is no website-owned
 ## Editing rules
 
 - Do not reintroduce a website-owned checkout route.
-- Do not drift from the monorepo public contract for plans, app URLs, or legal contacts.
+- Keep `config/public-site-contract.json` aligned with the current launch offer for plans, app URLs, integrations, and legal contacts.
 - Do not describe booking, reminders, write-through integrations, or dashboard capabilities more strongly than the app currently supports.
 - Keep lead delivery explicit: Resend email delivery is allowed, webhook-based hidden lead delivery is not.
 - Prefer concrete, machine-readable copy over vague marketing language. This repo is optimized for both human conversion and search/AI discoverability.

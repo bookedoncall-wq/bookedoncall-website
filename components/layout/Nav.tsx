@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { buttonVariants } from "@/lib/button-variants"
 import { cn } from "@/lib/utils"
-import { buildGetStartedHref, customerLoginPath, positioning, primaryCtaLabel, primaryNav } from "@/config/site"
+import { buildGetStartedHref, customerLoginPath, primaryCtaLabel, primaryNav } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 
 export default function Nav() {
@@ -49,14 +49,6 @@ export default function Nav() {
             Customer login
           </TrackedLink>
           <TrackedLink
-            href="/examples"
-            eventName="marketing_cta_clicked"
-            eventPayload={{ placement: "nav_secondary", href: "/examples" }}
-            className="text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950"
-          >
-            {positioning.secondaryCtaLabel}
-          </TrackedLink>
-          <TrackedLink
             href={buildGetStartedHref(undefined, "website-nav")}
             eventName="signup_started"
             eventPayload={{ placement: "nav_primary" }}
@@ -71,7 +63,7 @@ export default function Nav() {
 
         <button
           type="button"
-          className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950 md:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-xl text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950 md:hidden"
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -102,14 +94,6 @@ export default function Nav() {
               className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
             >
               Customer login
-            </TrackedLink>
-            <TrackedLink
-              href="/examples"
-              eventName="marketing_cta_clicked"
-              eventPayload={{ placement: "mobile_nav_secondary", href: "/examples" }}
-              className="rounded-xl px-2 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950"
-            >
-              {positioning.secondaryCtaLabel}
             </TrackedLink>
             <TrackedLink
               href={buildGetStartedHref(undefined, "website-mobile-nav")}

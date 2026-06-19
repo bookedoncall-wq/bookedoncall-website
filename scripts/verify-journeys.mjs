@@ -14,23 +14,26 @@ const requiredBuildRoutes = [
   "/page",
   "/sitemap.xml/route",
   "/demo-calls/page",
+  "/integrations/email/page",
   "/sign-up/page",
 ]
 
 const criticalRouteExpectations = {
-  "/": ["BookedOnCall", "Start setup", "See example calls"],
+  "/": ["BookedOnCall", "Start setup", "Try demo calls"],
   "/product": ["answers inbound calls", "callback", "booking"],
   "/pricing": ["Starter", "Pro", "included minutes"],
   "/login": ["Go to customer login", `${appOrigin}/sign-in`],
   "/sign-up": ["Request setup", "private test call"],
   "/demo-calls": ["Demo calls", "private test call", "Start setup"],
-  "/integrations": ["Jobber", "Google Calendar", "QuickBooks", "Housecall Pro", "ServiceTitan"],
+  "/examples": ["Best-case setup assumed", "Booking request pending owner confirmation", "Urgent owner alert", "Owner summary"],
+  "/integrations": ["Jobber", "Google Calendar", "Email summaries", "QuickBooks", "Housecall Pro", "ServiceTitan"],
   "/integrations/jobber": ["Jobber", "connected"],
   "/integrations/google-calendar": ["Google Calendar", "connected"],
+  "/integrations/email": ["Email summaries", "call summaries", "inbox"],
   "/integrations/text-sms": ["Text", "supported follow-up"],
-  "/integrations/quickbooks": ["Roadmap only", "not live in BookedOnCall today", "QuickBooks"],
-  "/integrations/housecall-pro": ["Roadmap only", "not available in BookedOnCall today", "Share Housecall Pro interest"],
-  "/integrations/servicetitan": ["Roadmap only", "not available in BookedOnCall today", "Share ServiceTitan interest"],
+  "/integrations/quickbooks": ["Planned", "not live in BookedOnCall today", "QuickBooks"],
+  "/integrations/housecall-pro": ["Planned", "not available in BookedOnCall today", "Share Housecall Pro interest"],
+  "/integrations/servicetitan": ["Planned", "not available in BookedOnCall today", "Share ServiceTitan interest"],
   "/contact": ["Product questions", contract.contacts.salesEmail],
 }
 
@@ -45,6 +48,9 @@ const bannedPublicPhrases = [
   /dirty worktree/i,
   /release blocker/i,
   /stale command evidence/i,
+  /Safe demo path/i,
+  /Configured workflow\*/i,
+  /Roadmap only\*/i,
 ]
 
 function parseArgs(argv) {
@@ -147,7 +153,7 @@ function assertRouteCopy(errors, route, body) {
 
 function assertIntegrationClaimBoundaries(errors, route, body) {
   if (route === "/integrations/quickbooks" && /connect quickbooks|quickbooks is available|quickbooks is supported/i.test(body)) {
-    errors.push("/integrations/quickbooks may imply roadmap-only QuickBooks is currently available")
+    errors.push("/integrations/quickbooks may imply planned QuickBooks support is currently available")
   }
   if (
     route === "/integrations/housecall-pro" &&

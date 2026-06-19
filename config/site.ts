@@ -48,16 +48,16 @@ export const selfServeCheckoutEnabled = contract.featureFlags.selfServeCheckout 
 export const primaryCtaLabel = positioning.primaryCtaLabel || "Start setup"
 
 export function getIntegrationBadgeLabel(integration: (typeof integrations)[number]) {
-  return integration.status === "coming_soon" ? "Roadmap only*" : "Configured workflow*"
+  return integration.status === "coming_soon" ? "Planned" : "Ready to connect"
 }
 
 export function getIntegrationActionLabel(integration: (typeof integrations)[number]) {
-  return integration.status === "coming_soon" ? "See roadmap note" : "See setup details"
+  return integration.status === "coming_soon" ? "See current status" : "See setup details"
 }
 
 export function getIntegrationTextLinkLabel(integration: (typeof integrations)[number]) {
   return integration.status === "coming_soon"
-    ? `See the ${integration.name} roadmap page`
+    ? `See the planned ${integration.name} workflow`
     : `Read the ${integration.name} setup page`
 }
 
@@ -65,8 +65,8 @@ export const primaryNav = [
   { label: "Product", href: "/product" },
   { label: "Industries", href: "/industries" },
   { label: "Integrations", href: "/integrations" },
+  { label: "Demo", href: "/demo-calls" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Resources", href: "/resources" },
 ] as const
 
 export const secondaryNav = [
@@ -83,6 +83,7 @@ export const secondaryNav = [
   { label: "Integrations", href: "/integrations" },
   { label: "Jobber", href: "/integrations/jobber" },
   { label: "Google Calendar", href: "/integrations/google-calendar" },
+  { label: "Email summaries", href: "/integrations/email" },
   { label: "Text / SMS", href: "/integrations/text-sms" },
   { label: "QuickBooks", href: "/integrations/quickbooks" },
   { label: "Housecall Pro", href: "/integrations/housecall-pro" },

@@ -33,6 +33,7 @@ const requiredRoutes = [
   "/sign-up",
   "/about",
   "/faq",
+  "/demo-calls",
   "/examples",
   "/privacy",
   "/terms",
@@ -54,6 +55,9 @@ const bannedHtmlPatterns = [
   /Integrations available today/i,
   /housecall pro (?:is|integration is) (?:available|supported|live)/i,
   /servicetitan (?:is|integration is) (?:available|supported|live)/i,
+  /safe demo path/i,
+  /configured workflow\*/i,
+  /roadmap only\*/i,
 ]
 
 const errors = []
@@ -159,7 +163,8 @@ function assertLlmsSourceConsistency() {
     "publicSiteContract.integrations",
     "integration.status === \"available\"",
     "integration.status === \"coming_soon\"",
-    "Configurable integration workflows",
+    "Ready-to-connect integrations",
+    "Planned integrations",
     "selfServeCheckoutEnabled ?",
     "siteConfig.appUrl",
     "siteConfig.url}/sign-up",

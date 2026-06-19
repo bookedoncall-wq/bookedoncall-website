@@ -76,7 +76,7 @@ export default function RootLayout({
         </a>
         <StructuredData data={buildOrganizationSchema()} />
         <StructuredData data={buildWebsiteSchema()} />
-        <div className="relative min-h-screen overflow-x-clip bg-[linear-gradient(135deg,_#fff8ee_0%,_#fffdfa_56%,_#f5f7fb_100%)]">
+        <div className="relative min-h-screen overflow-x-clip bg-white">
           <Nav />
           <main id="main-content" className="flex-1">
             {children}

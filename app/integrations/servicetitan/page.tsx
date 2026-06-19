@@ -40,7 +40,7 @@ export default function ServiceTitanPage() {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 shadow-sm">
             <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
-              Roadmap only*
+              Planned
             </div>
             <h2 className="mb-4 text-3xl font-black text-slate-950">A possible future integration</h2>
             <div className="grid gap-3">
