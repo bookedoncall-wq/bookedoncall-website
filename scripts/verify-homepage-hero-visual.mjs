@@ -11,6 +11,7 @@ const defaultScreenshotDir = "artifacts/screenshots/homepage-hero-visual"
 
 const viewports = [
   { name: "desktop", width: 1512, height: 982, deviceScaleFactor: 1, mobile: false },
+  { name: "safari-large-desktop", width: 2048, height: 1156, deviceScaleFactor: 1, mobile: false },
   { name: "wide-desktop", width: 1920, height: 1080, deviceScaleFactor: 1, mobile: false },
   { name: "iphone", width: 390, height: 844, deviceScaleFactor: 3, mobile: true },
   { name: "android", width: 412, height: 915, deviceScaleFactor: 2.625, mobile: true },
@@ -264,10 +265,13 @@ async function main() {
 
   try {
     const results = await runChecks(baseUrl, options)
+    const proofBoundary = options.origin
+      ? "Live deployed website visual evidence through local Chrome against the supplied origin. This is not Safari proof, live voice proof, provider proof, customer-data proof, or launch readiness."
+      : "Local production-mode website visual evidence only. This is not deployed website proof, live voice proof, provider proof, customer-data proof, or launch readiness."
     const report = {
       schemaVersion: "bookedoncall_homepage_hero_visual_evidence_v1",
       generatedAt: new Date().toISOString(),
-      proofBoundary: "Local production-mode website visual evidence only. This is not deployed website proof, live voice proof, provider proof, customer-data proof, or launch readiness.",
+      proofBoundary,
       baseUrl,
       results,
     }
