@@ -32,7 +32,7 @@ export default function HowItWorksPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-4xl gap-6">
           {workflowSteps.map((step, index) => (
-            <article key={step.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <article key={step.title} className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
               <div className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Step {index + 1}</div>
               <h2 className="mb-3 text-3xl font-black text-slate-950">{step.title}</h2>
               <p className="text-base leading-8 text-slate-600">{step.body}</p>
@@ -43,13 +43,13 @@ export default function HowItWorksPage() {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">When BookedOnCall books the job</h2>
             <p className="text-base leading-8 text-slate-600">
               If scheduling is connected and the request fits the rules you want automated, BookedOnCall can offer an appointment on the call.
             </p>
           </article>
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">When you take over</h2>
             <p className="text-base leading-8 text-slate-600">
               Out-of-area requests, approval-only jobs, and anything you want reviewed still get handed back cleanly with the customer details attached.

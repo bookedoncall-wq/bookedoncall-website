@@ -14,9 +14,9 @@ const demoStates = [
   },
   {
     icon: CalendarClock,
-    title: "Run a private test call",
-    body: "Before your live number points at BookedOnCall, you can hear the call flow and review the handoff.",
-    status: "Setup step",
+    title: "Review your call setup",
+    body: "Before callers are sent to BookedOnCall, place a review call and adjust the flow until it sounds right.",
+    status: "Setup review",
   },
   {
     icon: Mic,
@@ -29,7 +29,7 @@ const demoStates = [
 export const metadata = buildPageMetadata({
   title: "Demo calls",
   description:
-    "Try BookedOnCall demo call paths with a live web voice demo, example transcripts, and private test-call setup.",
+    "Try BookedOnCall demo call paths with a live web voice demo, example transcripts, and setup call review.",
   path: "/demo-calls",
 })
 
@@ -41,14 +41,14 @@ export default function DemoCallsPage() {
         data={buildServiceSchema({
           name: "BookedOnCall demo calls",
           description:
-            "Demo call paths showing a live web voice demo, example transcripts, and private test-call setup.",
+            "Demo call paths showing a live web voice demo, example transcripts, and setup call review.",
           path: "/demo-calls",
         })}
       />
       <PageIntro
         eyebrow="Demo calls"
         title="Try the call flow before a customer hears it."
-        description="Start the live voice demo, review example transcripts, and run a private test call during setup before any live forwarding changes."
+        description="Start the live voice demo, review example transcripts, and place a setup review call before callers are sent to BookedOnCall."
       />
 
       <VapiDemoCallPreview />
@@ -58,7 +58,7 @@ export default function DemoCallsPage() {
           {demoStates.map((state) => {
             const Icon = state.icon
             return (
-              <article key={state.title} className="grid gap-4 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+              <article key={state.title} className="grid gap-4 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm">
                 <div className="flex items-center justify-between gap-3">
                   <Icon className="size-5 text-amber-600" />
                   <span className="rounded-full border border-amber-200 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-amber-700">
@@ -76,7 +76,7 @@ export default function DemoCallsPage() {
       </section>
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-5xl gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm md:grid-cols-[0.9fr_1.1fr] md:items-center">
+        <div className="mx-auto grid max-w-5xl gap-5 rounded-lg border border-slate-200 bg-white p-7 shadow-sm md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div className="grid gap-3">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Buyer checkpoint</p>
             <h2 className="text-3xl font-black text-slate-950">What the demo should prove to you</h2>
@@ -91,8 +91,8 @@ export default function DemoCallsPage() {
       </section>
 
       <CtaBand
-        title="Ready to run your private test call?"
-        body="Start setup, review the plan that fits, and hear how BookedOnCall handles your call flow before live forwarding."
+        title="Ready to review your call setup?"
+        body="Start setup, review the plan that fits, and hear how BookedOnCall handles your call flow before callers hear it."
       />
     </>
   )

@@ -61,7 +61,7 @@ export default function FeaturesPage() {
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
           {capabilityGroups.map((group) => (
-            <article key={group.title} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article key={group.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-4 text-2xl font-black text-slate-950">{group.title}</h2>
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
                 {group.items.map((item) => (
@@ -96,15 +96,15 @@ export default function FeaturesPage() {
             <h2 className="text-4xl font-black text-slate-950">BookedOnCall vs the alternatives.</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Voicemail</h3>
               <p className="text-sm leading-7 text-slate-600">Voicemail captures a fraction of the details you need and many callers hang up before leaving a message. BookedOnCall asks the right questions and collects structured job details.</p>
             </article>
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Hiring a receptionist</h3>
               <p className="text-sm leading-7 text-slate-600">Hiring a receptionist adds wage and staffing overhead. BookedOnCall starts at $299/month and stays available around the clock.</p>
             </article>
-            <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-black text-slate-950">vs Generic AI tools</h3>
               <p className="text-sm leading-7 text-slate-600">Most AI answering tools are built for any industry. BookedOnCall is built for trades: plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home services.</p>
             </article>
@@ -114,7 +114,7 @@ export default function FeaturesPage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">When BookedOnCall books the job</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
               <li>Scheduling is turned on for the kinds of jobs you want BookedOnCall to handle.</li>
@@ -124,7 +124,7 @@ export default function FeaturesPage() {
               <li>The caller gives the details needed to move forward.</li>
             </ul>
           </article>
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">When you take over</h2>
             <ul className="mb-6 grid gap-3 text-sm leading-7 text-slate-600">
               <li>Out-of-area requests, approval-only jobs, and edge cases can be sent back as callbacks.</li>

@@ -19,7 +19,7 @@ export function ComingSoonProof({ eyebrow = "Coming soon", title, description }:
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {comingSoonProofItems.map((item) => (
-            <article key={item.title} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+            <article key={item.title} className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm">
               <div className="mb-4 inline-flex rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
                 Coming soon
               </div>

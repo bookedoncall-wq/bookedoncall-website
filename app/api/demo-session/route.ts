@@ -75,7 +75,7 @@ function unavailableResponse() {
     {
       ok: false,
       configured: false,
-      message: "The live web demo is temporarily unavailable. Example calls and private setup test calls are still available.",
+      message: "The live web demo is temporarily unavailable. Example calls and setup review calls are still available.",
     },
     { status: 503 }
   )
@@ -114,7 +114,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: false,
-        message: "The live demo is getting a lot of use from this connection. Please try again later or request setup for a private test call.",
+        message: "The live demo is getting a lot of use from this connection. Please try again later or request setup to review your call flow.",
       },
       { status: 429 }
     )

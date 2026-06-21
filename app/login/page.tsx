@@ -23,7 +23,7 @@ export default function LoginPage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="grid gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+          <article className="grid gap-5 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
             <div className="grid gap-3">
               <h2 className="text-3xl font-black text-slate-950">Existing owners sign in here.</h2>
               <p className="text-base leading-7 text-slate-600">
@@ -60,7 +60,7 @@ export default function LoginPage() {
           </article>
 
           <aside className="grid gap-4">
-            <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">What happens after you sign in</h2>
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
                 <li>You land in the dashboard when your owner access and workspace are ready.</li>
@@ -69,7 +69,7 @@ export default function LoginPage() {
               </ul>
             </article>
 
-            <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Need help getting in?</h2>
               <p className="text-base leading-7 text-slate-600">
                 If your onboarding link is stale, your app access is not ready yet, or you are not sure which email was used, contact {siteConfig.email} and we will help you get back into the right account.

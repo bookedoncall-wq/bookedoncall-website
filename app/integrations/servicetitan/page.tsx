@@ -38,7 +38,7 @@ export default function ServiceTitanPage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 shadow-sm">
+          <article className="rounded-lg border border-amber-200 bg-amber-50 p-7 shadow-sm">
             <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
               Planned
             </div>
@@ -56,7 +56,7 @@ export default function ServiceTitanPage() {
             {content.outcomeCards.map((card, index) => (
               <article
                 key={card}
-                className={`rounded-[1.75rem] border p-6 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
+                className={`rounded-lg border p-6 shadow-sm ${index === 1 ? "border-amber-200 bg-amber-50" : "border-slate-200 bg-white"}`}
               >
                 <h2 className="mb-3 text-xl font-black text-slate-950">Roadmap note {index + 1}</h2>
                 <p className="text-sm leading-7 text-slate-700">{card}</p>
@@ -77,7 +77,7 @@ export default function ServiceTitanPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {roadmapSteps.map((step) => (
-              <article key={step.title} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+              <article key={step.title} className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm">
                 <h2 className="mb-3 text-xl font-black text-slate-950">{step.title}</h2>
                 <p className="text-sm leading-7 text-slate-700">{step.body}</p>
               </article>
@@ -101,7 +101,7 @@ export default function ServiceTitanPage() {
               href="/integrations"
               eventName="marketing_cta_clicked"
               eventPayload={{ placement: "servicetitan_integrations", href: "/integrations" }}
-              className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+              className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <h2 className="mb-3 text-2xl font-black text-slate-950">See supported integrations</h2>
               <p className="text-base leading-7 text-slate-600">Review the configurable workflows that are available for setup today.</p>
@@ -110,7 +110,7 @@ export default function ServiceTitanPage() {
               href="/product"
               eventName="marketing_cta_clicked"
               eventPayload={{ placement: "servicetitan_product", href: "/product" }}
-              className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+              className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <h2 className="mb-3 text-2xl font-black text-slate-950">See the current product flow</h2>
               <p className="text-base leading-7 text-slate-600">See what BookedOnCall does today from first ring to booking path or callback handoff.</p>
@@ -119,7 +119,7 @@ export default function ServiceTitanPage() {
               href="/examples"
               eventName="marketing_cta_clicked"
               eventPayload={{ placement: "servicetitan_examples", href: "/examples" }}
-              className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+              className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
               <p className="text-base leading-7 text-slate-600">Hear how the current assistant flow captures details, routes callbacks, and supports booking paths.</p>

@@ -5,17 +5,23 @@ import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { resourceHighlights } from "@/config/marketing"
 import { sourcedProof } from "@/config/site"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
+import { cn } from "@/lib/utils"
 
 const extraResources = [
   {
     title: "FAQ",
     href: "/faq",
-    description: "Answers about setup, booking, supported languages, integrations, and pricing.",
+    description: "Answers about setup, appointment handling, supported languages, integrations, and pricing.",
   },
   {
     title: "Product overview",
     href: "/product",
     description: "The clearest walkthrough of what BookedOnCall does from first ring to next step.",
+  },
+  {
+    title: "Pricing and setup",
+    href: "/pricing",
+    description: "Compare Starter and Pro, included minutes, extra-minute rates, and what each plan is built for.",
   },
   {
     title: "Integrations",
@@ -45,37 +51,41 @@ export default function ResourcesPage() {
       />
       <PageIntro
         eyebrow="Resources"
-        title="Examples, comparisons, pricing, and integrations."
-        description="Hear how BookedOnCall sounds, compare it with voicemail and answering services, and review pricing and integrations."
+        title="Hear it, compare it, then choose the setup."
+        description="Start with the caller experience, then compare BookedOnCall with voicemail, answering services, pricing, and the tools your shop already uses."
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-[1.35fr_1fr_1fr_1fr]">
           {resourceHighlights.map((resource, index) => (
             <TrackedLink
               key={resource.href}
               href={resource.href}
               eventName="marketing_cta_clicked"
               eventPayload={{ placement: "resources_primary", href: resource.href }}
-              className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+              className={cn(
+                "rounded-lg border p-6 text-left shadow-sm transition-colors hover:border-amber-300",
+                index === 0
+                  ? "border-slate-800 bg-slate-950 text-white"
+                  : "border-slate-200 bg-white hover:bg-amber-50/40"
+              )}
             >
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-amber-700">Step {index + 1}</p>
-              <h2 className="mb-3 text-2xl font-black text-slate-950">{resource.title}</h2>
-              <p className="text-base leading-7 text-slate-600">{resource.description}</p>
+              <h2 className={cn("mb-3 text-2xl font-black", index === 0 ? "text-white" : "text-slate-950")}>{resource.title}</h2>
+              <p className={cn("text-base leading-7", index === 0 ? "text-slate-300" : "text-slate-600")}>{resource.description}</p>
             </TrackedLink>
           ))}
         </div>
       </section>
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-4">
           {extraResources.map((resource) => (
             <TrackedLink
               key={resource.href}
               href={resource.href}
               eventName="marketing_cta_clicked"
               eventPayload={{ placement: "resources_secondary", href: resource.href }}
-              className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+              className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <h2 className="mb-3 text-2xl font-black text-slate-950">{resource.title}</h2>
               <p className="text-base leading-7 text-slate-600">{resource.description}</p>
@@ -92,7 +102,7 @@ export default function ResourcesPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {sourcedProof.map((item) => (
-              <article key={item.id} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <article key={item.id} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
                 <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
                 <p className="text-sm leading-7 text-slate-700">{item.detail}</p>
                 <TrackedLink
@@ -111,7 +121,7 @@ export default function ResourcesPage() {
 
       <CtaBand
         title="Ready to see how BookedOnCall fits your shop?"
-        body="Hear example calls, compare your options, and move into pricing or setup when you&apos;re ready."
+        body="Hear example calls, compare your options, and move into pricing or setup when you are ready."
       />
     </>
   )

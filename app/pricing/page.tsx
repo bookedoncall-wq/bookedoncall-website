@@ -26,21 +26,21 @@ export default function PricingPage() {
         description={
           selfServeCheckoutEnabled
             ? "Start with the plan that fits your call volume now, then continue through secure checkout and app onboarding."
-            : "Start with the plan that fits your call volume now, then request setup so we can align how calls, callbacks, and supported booking should work for your business."
+            : "Start with the plan that fits your call volume now, then request setup so we can align how calls, callbacks, urgent flags, and supported appointment handling should work for your business."
         }
       />
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6">
-          <div className="rounded-[1.5rem] border border-slate-200 bg-white px-5 py-4 text-sm leading-6 text-slate-700 shadow-sm">
-            One missed service job can cover the monthly price for many trades businesses. Minutes keep billing predictable, and the setup path keeps the call flow focused on your service area, schedule, and owner-review rules.
+          <div className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-sm leading-6 text-slate-700 shadow-sm">
+            One missed service job can cover the monthly price for many trades businesses. Starter is for catching and organizing missed work; Pro is for higher call volume, a more branded caller experience, and tighter review rules.
           </div>
           <div className="grid gap-6 md:grid-cols-2">
           {plans.map((plan, index) => (
             <article
               key={plan.id}
               className={cn(
-                "grid gap-5 rounded-[1.75rem] border bg-white p-7 shadow-sm",
+                "grid gap-5 rounded-lg border bg-white p-7 shadow-sm",
                 index === 1 ? "border-amber-300 shadow-[0_20px_40px_rgba(245,158,11,0.12)]" : "border-slate-200"
               )}
             >
@@ -90,29 +90,29 @@ export default function PricingPage() {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Who Starter fits best</h2>
             <div className="grid gap-4 text-sm leading-7 text-slate-600">
               <div>
-                <p>Starter is built for businesses that want a better first response, clear callbacks, and straightforward setup without paying for more volume than they need right away.</p>
+                <p>Starter is built for owner-operators and small shops that mainly need missed calls answered, customer details captured, and clean callback or booking-request handoffs.</p>
               </div>
               <div>
-                <p>It&apos;s a great fit for owner-operators, family-run shops, and growing businesses that want cleaner handoffs before they add more volume or deeper customization.</p>
+                <p>It is the right starting point when the biggest problem is voicemail, missed details, or calls landing while you are already working.</p>
               </div>
             </div>
           </article>
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Why choose Pro</h2>
             <div className="grid gap-4 text-sm leading-7 text-slate-600">
               <div>
-                <p>Pro is for businesses that want a more branded caller experience, more included minutes, and more control over how the assistant sounds.</p>
+                <p>Pro is for busier shops that want more included minutes, a more branded caller experience, and more control over urgent flags, owner review, and appointment handling.</p>
               </div>
               <div>
-                <p>You can choose the voice callers hear, give the assistant a custom name, and shape the greeting and behavior so it feels more like your business.</p>
+                <p>You can choose the voice callers hear, give the assistant a custom name, and shape the greeting and call style so it feels more like your business.</p>
               </div>
             </div>
           </article>
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">How pricing works</h2>
             <ul className="grid gap-3 text-sm leading-7 text-slate-600">
               <li>Start with the plan that looks closest to your current call volume.</li>
@@ -122,7 +122,7 @@ export default function PricingPage() {
               <li>If your usage keeps climbing, we&apos;ll usually recommend the next tier.</li>
             </ul>
           </article>
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Why people trust it</h2>
             <div className="grid gap-4 text-sm leading-7 text-slate-600">
               <p>BookedOnCall is built around a simple goal: give inbound callers a better first response and give your team a clearer next step.</p>
@@ -134,7 +134,7 @@ export default function PricingPage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Questions people usually ask before buying</h2>
             <div className="grid gap-4">
               {faqEntries.map((entry) => (
@@ -152,7 +152,7 @@ export default function PricingPage() {
         <div className="mx-auto grid max-w-5xl gap-6 text-center sm:grid-cols-2 lg:grid-cols-4">
           <div className="grid gap-2">
             <p className="text-2xl font-black text-slate-950">Clear plan terms</p>
-            <p className="text-sm leading-6 text-slate-500">Self-serve plans are month to month unless a separate agreement says otherwise.</p>
+            <p className="text-sm leading-6 text-slate-500">Public plans are monthly. Plan, usage, renewal, cancellation, and electronic-agreement terms are reviewed during setup.</p>
           </div>
           <div className="grid gap-2">
             <p className="text-2xl font-black text-slate-950">Setup help included</p>

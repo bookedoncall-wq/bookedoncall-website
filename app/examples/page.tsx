@@ -220,7 +220,7 @@ const exampleCalls = [
 const nextSteps = [
   {
     title: "Try demo calls",
-    body: "Try the live web voice demo, then run a private test call during setup before live forwarding changes.",
+    body: "Try the live web voice demo, then review your own call setup before callers are sent to BookedOnCall.",
     href: "/demo-calls",
   },
   {
@@ -285,7 +285,7 @@ export default function ExamplesPage() {
           {exampleCalls.map((call) => {
             const Icon = call.icon
             return (
-              <article key={call.title} className="grid gap-7 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
+              <article key={call.title} className="grid gap-7 rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
                 <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-start">
                   <div className="grid gap-3">
                     <div className="flex flex-wrap items-center gap-3">
@@ -375,7 +375,7 @@ export default function ExamplesPage() {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-7 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-7 shadow-sm">
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Why this structure matters</p>
             <h2 className="mb-4 text-3xl font-black text-slate-950">The assistant should never fake certainty.</h2>
             <p className="text-base leading-8 text-slate-600">
@@ -383,7 +383,7 @@ export default function ExamplesPage() {
             </p>
           </article>
 
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Buyer path</p>
             <div className="grid gap-3">
               {nextSteps.map((step) => (
@@ -392,7 +392,7 @@ export default function ExamplesPage() {
                   href={step.href}
                   eventName="marketing_cta_clicked"
                   eventPayload={{ placement: "examples_next_step", href: step.href }}
-                  className="rounded-[1.25rem] border border-slate-200 bg-slate-50 p-4 transition hover:border-amber-300 hover:bg-amber-50"
+                  className="rounded-lg border border-slate-200 bg-slate-50 p-4 transition hover:border-amber-300 hover:bg-amber-50"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="grid gap-1">
@@ -410,7 +410,7 @@ export default function ExamplesPage() {
 
       <CtaBand
         title="Ready to turn example calls into your setup?"
-        body="Start with the plan that fits, run a private test call, and go live only when the flow sounds right."
+        body="Start with the plan that fits, review the call flow, and go live only when it sounds right."
       />
     </>
   )

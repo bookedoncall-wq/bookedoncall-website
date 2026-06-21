@@ -54,11 +54,11 @@
       "sourceUrl": "https://resources.moneypenny.com/wp-content/uploads/2023/07/REPORT-Call-Trends-2023-2.pdf"
     },
     {
-      "id": "google-response-time",
-      "title": "Fast response can increase your ability to receive leads",
-      "detail": "Google says consistently fast response time can improve ad ranking and increase a provider's ability to receive leads.",
-      "sourceLabel": "Google Local Services Ads",
-      "sourceUrl": "https://support.google.com/localservices/answer/6224859?hl=en"
+      "id": "home-services-call-conversion",
+      "title": "46% of home-services phone leads converted on the call",
+      "detail": "Invoca's 2025 home-services benchmark reports that 37% of digital-marketing calls were leads and 46% of those leads converted during the call.",
+      "sourceLabel": "Invoca Home Services Call Conversion Benchmarks",
+      "sourceUrl": "https://www.invoca.com/report/the-invoca-call-conversion-benchmarks-report-home-services-2025"
     },
     {
       "id": "bls-receptionist-wage",
@@ -119,7 +119,7 @@
       "monthlyUsd": 299,
       "includedMinutes": 200,
       "overageMinuteUsd": 0.75,
-      "summary": "For owner-operators and small shops that want missed calls handled with clean intake, owner-approved booking requests, and clear callback coverage.",
+      "summary": "For owner-operators and small shops that want missed calls answered, caller details captured, and booking requests or callbacks routed cleanly without adding a front desk.",
       "capabilities": {
         "assistantName": false,
         "voiceSelection": false,
@@ -131,9 +131,10 @@
       "features": [
         "200 included call minutes each month",
         "Trades-focused call answering and lead intake",
-        "Callback capture and owner-approved booking requests when you want to step in",
+        "Caller name, callback number, address, service need, urgency, and preferred window captured",
+        "Clear callbacks and owner-approved booking requests when you want to review first",
         "Booking paths when your reviewed setup and connected schedule allow it",
-        "Jobber, Google Calendar, email, or text follow-up when set up",
+        "Jobber, Google Calendar, email, or text follow-up when enabled for your business",
         "Call summaries with the next step clearly laid out",
         "Default assistant voice and greeting"
       ]
@@ -144,7 +145,7 @@
       "monthlyUsd": 499,
       "includedMinutes": 500,
       "overageMinuteUsd": 0.75,
-      "summary": "For shops that want more included minutes, a more branded caller experience, and tighter owner-review controls.",
+      "summary": "For busier shops that want more included minutes, a more branded caller experience, and tighter rules for urgent calls, owner review, and appointment handling.",
       "capabilities": {
         "assistantName": true,
         "voiceSelection": true,
@@ -155,14 +156,13 @@
       },
       "features": [
         "500 included call minutes each month",
-        "Trades-focused call answering and lead intake",
-        "Callback capture and owner-approved booking requests when you want to step in",
-        "Booking paths when your reviewed setup and connected schedule allow it",
-        "Jobber, Google Calendar, email, or text follow-up when set up",
-        "Call summaries with the next step clearly laid out",
+        "Everything in Starter",
+        "More room for after-hours, overflow, and higher call-volume coverage",
+        "More control over urgent-call flags, owner-review rules, and appointment handling",
         "Choose the voice callers hear",
         "Give the assistant a custom name",
-        "Customize the greeting and assistant behavior"
+        "Customize the greeting and call style so it sounds more like your shop",
+        "More detailed call summaries for jobs that need owner review"
       ]
     }
   ]

@@ -2,12 +2,12 @@ export const faqEntries = [
   {
     question: "What is the difference between Starter and Pro?",
     answer:
-      "Starter gives you the core product: answered calls, clean intake, owner-approved booking requests when your setup allows it, callback capture, and clear summaries with the next step. Pro adds more included minutes and more control over how the assistant sounds and introduces itself."
+      "Starter gives you the core product: answered calls, clean intake, owner-approved booking requests when your setup allows it, callback capture, and clear summaries with the next step. Pro adds more included minutes, a more branded caller experience, and more control over urgent-call flags, owner review, and appointment handling."
   },
   {
     question: "Which plan should I start with?",
     answer:
-      "Starter is the right starting point for many owner-operators and smaller shops where one missed job can cover the monthly price. Pro makes more sense if you want more included minutes, a more branded caller experience, and tighter owner-review controls from day one."
+      "Starter is the right starting point for many owner-operators and smaller shops where one missed job can cover the monthly price. Pro makes more sense if you get more calls, want the assistant to sound more like your shop, or need tighter review rules from day one."
   },
   {
     question: "Does BookedOnCall always book appointments automatically?",
@@ -37,7 +37,7 @@ export const faqEntries = [
   {
     question: "How long does setup take?",
     answer:
-      "Basic setup is designed to take about 15 minutes when your business info, services, service area, hours, phone-forwarding choice, calendar, alerts, and plan choice are ready. Advanced call rules and custom wording can take longer, but they do not need to block the first private test call."
+      "Basic setup is designed to take about 15 minutes when your business info, services, service area, hours, phone-forwarding choice, calendar, alerts, and plan choice are ready. Advanced call rules and custom wording can take longer, but they do not need to block your first review call."
   },
   {
     question: "Can BookedOnCall handle emergency or urgent calls?",
@@ -57,12 +57,12 @@ export const faqEntries = [
   {
     question: "Can I try BookedOnCall before committing?",
     answer:
-      "There is no free trial right now, but you can review example call transcripts, try the live web voice demo, and run a private test call before any live number points at BookedOnCall. Public demos do not change your calendar or create real appointments."
+      "There is no free trial right now, but you can review example call transcripts, try the live web voice demo, and place a setup review call before callers are sent to BookedOnCall. Public demos do not change your calendar or create real appointments."
   },
   {
     question: "Is there a long-term contract?",
     answer:
-      "Standard public plans are monthly unless a separate order form or written agreement says otherwise. Cancellation and renewal terms follow the plan or agreement that applies to your account."
+      "Standard public plans are monthly. You review plan, usage, renewal, cancellation, and electronic-agreement terms during setup before you start."
   },
   {
     question: "How does BookedOnCall compare to a live answering service?",
@@ -106,7 +106,7 @@ export const homepageTrustPoints = [
   },
   {
     title: "Month-to-month and easy to try",
-    body: "Standard public plans are monthly with a clear setup path. Keep it if it helps, and review any separate written terms before you start.",
+    body: "Standard public plans are monthly. You review the plan, usage, renewal, and cancellation terms during setup before you start.",
   },
 ] as const
 
@@ -120,19 +120,19 @@ export const basicSetupSteps = [
     body: "Choose callback capture, owner-approved booking requests, urgent-call escalation, and any pricing-range limits.",
   },
   {
-    title: "Calendar path",
-    body: "Pick Google Calendar, Jobber, or a callback-only fallback so the first setup does not become a technical project.",
+    title: "Appointment handling",
+    body: "Connect the calendar or job tool you use, or start with review-first callbacks until you want calls to offer appointment times.",
   },
   {
-    title: "Phone and test call",
-    body: "Review how calls reach BookedOnCall, then run a private test call before live forwarding changes.",
+    title: "Phone and review",
+    body: "Choose how calls reach BookedOnCall, then place a setup review call before callers are sent to the assistant.",
   },
 ] as const
 
 export const setupChecklistItems = [
   "Services you want answered first",
   "Service area and after-hours rules",
-  "Calendar or callback-only starting path",
+  "Calendar or review-first starting path",
   "Owner approval rules before booking is confirmed",
   "Best phone path for missed or overflow calls",
   "Plan choice and billing contact",
@@ -197,36 +197,31 @@ export const afterCallArtifacts = [
     body: "If scheduling is turned on and the request fits, the call can move toward a reviewed appointment path."
   },
   {
-    title: "Callback handoff",
-    body: "Out-of-area jobs, approval-only work, and other edge cases still come back with clear details."
+    title: "Review needed",
+    body: "Out-of-area, approval-only, or unusual jobs come back with the details your team needs."
   },
 ] as const
 
 export const resourceHighlights = [
   {
-    title: "Demo calls",
+    title: "Hear the call experience",
     href: "/demo-calls",
-    description: "Try the live web voice demo, review example transcripts, and see how private test calls help you review the call flow before live forwarding."
+    description: "Try the live web voice demo and review sample-shop conversations before callers hear your setup."
   },
   {
-    title: "Example calls",
+    title: "Review example outcomes",
     href: "/examples",
-    description: "Start here to hear how a plumbing, HVAC, or electrical call can move from first question to clear next step."
+    description: "See how plumbing, HVAC, and electrical calls move from first question to appointment request, urgent flag, or callback."
   },
   {
-    title: "AI receptionist vs voicemail",
+    title: "Compare with voicemail",
     href: "/compare/ai-receptionist-vs-voicemail",
     description: "See what changes when callers get a real first response instead of a voicemail box."
   },
   {
-    title: "AI, receptionist, or answering service?",
+    title: "Compare answering options",
     href: "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
     description: "Compare the tradeoffs on cost, control, and call quality before you choose a coverage model."
-  },
-  {
-    title: "Pricing",
-    href: "/pricing",
-    description: "Check what Starter and Pro include, what extra minutes cost, and which plan fits your shop."
   },
 ] as const
 

@@ -29,7 +29,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Common calls in this trade</h2>
             <div className="grid gap-3">
               {content.commonCalls.map((item) => (
@@ -40,7 +40,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
             </div>
           </article>
 
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Why shops in this trade care</h2>
             <div className="grid gap-3">
               {content.reasons.map((item) => (
@@ -55,7 +55,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-7">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-7">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Built for the way this work actually gets done</h2>
             <p className="max-w-4xl text-base leading-8 text-slate-700">{content.trustCopy}</p>
             <div className="mt-6 flex flex-wrap gap-4 text-sm font-bold">
@@ -82,19 +82,19 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
-            <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Catch the first response</h2>
               <p className="text-base leading-7 text-slate-600">
               The goal is to keep a real caller from dropping into voicemail while you&apos;re already in the field.
               </p>
             </article>
-          <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
+          <article className="rounded-lg border border-amber-200 bg-amber-50 p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Get usable job details</h2>
             <p className="text-base leading-7 text-slate-700">
               Name, callback number, address, and a clear description of the job give you a better next step than a rushed message.
             </p>
           </article>
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Book when it fits, follow up when it doesn&apos;t</h2>
             <p className="text-base leading-7 text-slate-600">
               Supported jobs can move toward a booking. Edge cases and approval-only work still come back with clear details for follow-up.
@@ -109,7 +109,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
             href="/product"
             eventName="marketing_cta_clicked"
             eventPayload={{ placement: "use_case_product", path }}
-            className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See the product flow</h2>
             <p className="text-base leading-7 text-slate-600">
@@ -120,7 +120,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
             href="/examples"
             eventName="marketing_cta_clicked"
             eventPayload={{ placement: "use_case_demo", path }}
-            className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
             <p className="text-base leading-7 text-slate-600">
@@ -131,7 +131,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
             href="/pricing"
             eventName="marketing_cta_clicked"
             eventPayload={{ placement: "use_case_pricing_card", path }}
-            className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+            className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See pricing</h2>
             <p className="text-base leading-7 text-slate-600">

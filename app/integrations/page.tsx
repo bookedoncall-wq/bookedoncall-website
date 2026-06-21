@@ -49,7 +49,7 @@ export default function IntegrationsPage() {
                     href={`/integrations/${integration.id}`}
                     eventName="marketing_cta_clicked"
                     eventPayload={{ placement: "integrations_hub_card", href: `/integrations/${integration.id}` }}
-                    className="rounded-[1.75rem] border border-slate-200 bg-white p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/30"
+                    className="rounded-lg border border-slate-200 bg-white p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/30"
                   >
                     <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-amber-700">{integration.name}</p>
                     <h2 className="mb-3 text-3xl font-black text-slate-950">{card.title}</h2>
@@ -82,7 +82,7 @@ export default function IntegrationsPage() {
                     href={`/integrations/${integration.id}`}
                     eventName="marketing_cta_clicked"
                     eventPayload={{ placement: "integrations_hub_card", href: `/integrations/${integration.id}` }}
-                    className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/60"
+                    className="rounded-lg border border-amber-200 bg-amber-50 p-7 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/60"
                   >
                     <div className="mb-4 inline-flex rounded-full border border-amber-300 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-800">
                       {getIntegrationBadgeLabel(integration)}
@@ -107,19 +107,19 @@ export default function IntegrationsPage() {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Availability checks</h2>
             <p className="text-base leading-7 text-slate-600">
               A connected scheduler lets BookedOnCall check the next step before it offers a supported appointment time.
             </p>
           </article>
-          <article className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-6 shadow-sm">
+          <article className="rounded-lg border border-amber-200 bg-amber-50 p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Supported booking, not forced booking</h2>
             <p className="text-base leading-7 text-slate-700">
               Integrations help on bookable jobs. They don&apos;t force edge cases into a slot when a person should decide.
             </p>
           </article>
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Clean callback fallback</h2>
             <p className="text-base leading-7 text-slate-600">
               Even with integrations connected, the product still needs to hand back manual-review jobs with good context.

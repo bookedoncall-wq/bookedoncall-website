@@ -223,7 +223,7 @@ export function LeadCaptureForm() {
   }
 
   return (
-    <section id="lead-form" className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+    <section id="lead-form" className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
       <div className="grid gap-3">
         <h2 className="text-2xl font-black text-slate-950">{reviewCopy ? reviewCopy.title : "Request setup"}</h2>
         <p className="text-base leading-7 text-slate-600">

@@ -194,12 +194,12 @@ function publicConnectionStatusForStage(stage: string) {
 
 function publicFailureStatusForStage(stage: string) {
   if (stage === "web-call-creation") {
-    return "The live demo could not create a voice session. Request setup for a private test call."
+    return "The live demo could not create a voice session. Request setup and review your call flow with us."
   }
   if (stage === "daily-call-join" || stage === "daily-call-object-creation" || stage === "mobile-permissions" || stage.includes("audio")) {
-    return "The live demo started, but this browser could not connect audio. Check microphone permissions or request setup for a private test call."
+    return "The live demo started, but this browser could not connect audio. Check microphone permissions or request setup and review your call flow with us."
   }
-  return "The live demo started, but this browser could not connect audio. Check microphone permissions or request setup for a private test call."
+  return "The live demo started, but this browser could not connect audio. Check microphone permissions or request setup and review your call flow with us."
 }
 
 export function VapiDemoCallPreview() {
@@ -228,12 +228,12 @@ export function VapiDemoCallPreview() {
         setStatus(
           body.configured
             ? "Live voice demo is ready. Choose a sample shop, allow microphone access, and speak naturally."
-            : "The live voice demo is temporarily unavailable. Use example calls or request setup for a private test call."
+            : "The live voice demo is temporarily unavailable. Use example calls or request setup to review your call flow."
         )
       } catch {
         if (cancelled) return
         setConfigured(false)
-        setStatus("We could not check the live demo right now. Use example calls or request setup for a private test call.")
+        setStatus("We could not check the live demo right now. Use example calls or request setup to review your call flow.")
       }
     }
 
@@ -280,12 +280,12 @@ export function VapiDemoCallPreview() {
       body = (await response.json()) as DemoConfig
       if (!response.ok || !body.ok || !body.publicKey || !body.assistantId) {
         setConfigured(false)
-        setStatus(body.message || "The live voice demo is temporarily unavailable. Request setup for a private test call.")
+        setStatus(body.message || "The live voice demo is temporarily unavailable. Request setup to review your call flow.")
         setIsStarting(false)
         return
       }
     } catch {
-      setStatus("Live voice demo could not start. Request setup for a private test call.")
+      setStatus("Live voice demo could not start. Request setup to review your call flow.")
       setIsStarting(false)
       return
     }
@@ -358,7 +358,7 @@ export function VapiDemoCallPreview() {
           sessionId: body.sessionId,
           failureStage: "runtime-error",
         })
-        void stopDemo("The live demo started, but this browser could not connect audio. Check microphone permissions or request setup for a private test call.")
+        void stopDemo("The live demo started, but this browser could not connect audio. Check microphone permissions or request setup to review your call flow.")
       })
 
       const callLimitSeconds = body.maxCallSeconds || maxCallSeconds
@@ -386,7 +386,7 @@ export function VapiDemoCallPreview() {
         },
       })
     } catch {
-      await stopDemo("The live demo could not start in this browser. Check microphone permissions or request setup for a private test call.")
+      await stopDemo("The live demo could not start in this browser. Check microphone permissions or request setup to review your call flow.")
     }
   }
 

@@ -59,7 +59,7 @@ export default function AboutPage() {
 
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <article className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
               <Heart className="size-4" />
               The founder&apos;s story
@@ -103,7 +103,7 @@ export default function AboutPage() {
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-8">
-          <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-7">
+          <article className="rounded-lg border border-slate-200 bg-slate-50 p-7">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-bold text-amber-800">
               <Target className="size-4" />
               Our north star
@@ -117,7 +117,7 @@ export default function AboutPage() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {values.map((value) => (
-              <article key={value.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <article key={value.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
                   <value.icon className="size-6" />
                 </div>

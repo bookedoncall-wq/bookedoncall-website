@@ -60,7 +60,7 @@ export function GuidePage({
         <section className="bg-white px-4 py-10 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
             {quickPoints.map((point) => (
-              <article key={point} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 shadow-sm">
+              <article key={point} className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm">
                 <p className="text-sm leading-7 text-slate-700">{point}</p>
               </article>
             ))}
@@ -71,7 +71,7 @@ export function GuidePage({
       <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-5xl gap-6">
           {sections.map((section) => (
-            <article key={section.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <article key={section.title} className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
               <h2 className="mb-4 text-3xl font-black text-slate-950">{section.title}</h2>
               <p className="text-base leading-8 text-slate-700">{section.body}</p>
             </article>
@@ -88,7 +88,7 @@ export function GuidePage({
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {proofItems.map((item) => (
-                <article key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                <article key={item.title} className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm">
                   <h3 className="mb-3 text-xl font-black text-slate-950">{item.title}</h3>
                   <p className="mb-4 text-sm leading-7 text-slate-700">{item.detail}</p>
                   <TrackedLink
@@ -120,7 +120,7 @@ export function GuidePage({
                   href={link.href}
                   eventName="marketing_cta_clicked"
                   eventPayload={{ placement: "guide_next", href: link.href }}
-                  className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
+                  className="rounded-lg border border-slate-200 bg-white p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
                 >
                   <p className="text-lg font-black text-slate-950">{link.label}</p>
                 </TrackedLink>

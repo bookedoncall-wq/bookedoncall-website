@@ -20,12 +20,12 @@ const setupConfidenceItems = [
   {
     icon: CheckCircle2,
     title: "Simple starting point",
-    body: "Pick the closest trade, plan, and call path. Advanced wording can wait until after the first test.",
+    body: "Pick the closest trade, plan, and call path. Advanced wording can wait until after the first review.",
   },
   {
     icon: CalendarClock,
-    title: "Calendar when you want it",
-    body: "Start with Google Calendar, Jobber, or callback-only while scheduling rules are reviewed.",
+    title: "Appointments when you want them",
+    body: "Connect Google Calendar or Jobber, or start with review-first callbacks while scheduling rules are finalized.",
   },
   {
     icon: PhoneCall,
@@ -34,8 +34,8 @@ const setupConfidenceItems = [
   },
   {
     icon: ShieldCheck,
-    title: "Test before callers hear it",
-    body: "Run a private test call before live forwarding changes.",
+    title: "Review before callers hear it",
+    body: "Place a setup review call before callers are sent to BookedOnCall.",
   },
 ] as const
 
@@ -45,7 +45,7 @@ export default function SignUpPage() {
       <PageIntro
         eyebrow="Request setup"
         title="Start with the basic setup path."
-        description="Share the essentials about your shop, choose the plan you are considering, and move toward a private test call before any live number points at BookedOnCall. Existing customers should use customer login."
+        description="Share the essentials about your shop, choose the plan you are considering, and review the call flow before callers are sent to BookedOnCall. Existing customers should use customer login."
       />
 
       <section className="border-b border-slate-100 bg-white px-4 py-5 sm:px-6 lg:px-8">
@@ -83,7 +83,7 @@ export default function SignUpPage() {
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="grid gap-6">
             {selfServeCheckoutEnabled ? (
-              <article className="grid gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <article className="grid gap-5 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
                 <h2 className="text-2xl font-black text-slate-950">Start in the customer app</h2>
                 <p className="text-base leading-7 text-slate-600">
                   New customers can start setup in the secure app. Existing customers should use customer login.
@@ -103,7 +103,7 @@ export default function SignUpPage() {
             ) : (
               <Suspense
                 fallback={
-                  <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
                     <p className="text-base leading-7 text-slate-600">Loading form...</p>
                   </div>
                 }
@@ -114,10 +114,10 @@ export default function SignUpPage() {
           </div>
 
           <aside className="grid gap-4">
-            <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Have these ready</h2>
               <p className="text-base leading-7 text-slate-600">
-                Basic setup is designed to stay focused. Advanced wording and edge cases can wait until after the first private test call.
+                Basic setup is designed to stay focused. Advanced wording and edge cases can wait until after your first setup review call.
               </p>
               <ul className="mt-5 grid gap-2 text-sm leading-6 text-slate-600">
                 {setupChecklistItems.map((item) => (
@@ -128,7 +128,7 @@ export default function SignUpPage() {
               </ul>
             </article>
 
-            <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">What happens next</h2>
               <ul className="grid gap-3 text-sm leading-7 text-slate-600">
                 {basicSetupSteps.map((step) => (
@@ -139,7 +139,7 @@ export default function SignUpPage() {
               </ul>
             </article>
 
-            <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Want to hear it first?</h2>
               <p className="text-base leading-7 text-slate-600">
                 Try the live web voice demo or review example calls before setup so you know what callers hear and what your team gets back.
@@ -168,7 +168,7 @@ export default function SignUpPage() {
 
         <div className="mx-auto mt-10 grid max-w-6xl gap-6 md:grid-cols-2">
           {plans.map((plan) => (
-            <article key={plan.id} className="grid gap-5 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+            <article key={plan.id} className="grid gap-5 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <div className="grid gap-2">
                 <h2 className="text-3xl font-black text-slate-950">{plan.name}</h2>
                 <p className="text-base leading-7 text-slate-600">{plan.summary}</p>
@@ -191,7 +191,7 @@ export default function SignUpPage() {
           ))}
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-6xl gap-4 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="mx-auto mt-8 grid max-w-6xl gap-4 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-black text-slate-950">Prefer email?</h2>
           <p className="text-base leading-7 text-slate-600">
             If you would rather reach out directly, you can still contact us at {siteConfig.email}.
