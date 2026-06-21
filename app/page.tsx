@@ -46,26 +46,26 @@ const nextStepRules = [
 const heroCallFlowMoments = [
   {
     speaker: "Caller",
-    line: "Our AC stopped working and the house is getting hot."
+    line: "Our AC is out and the house is getting hot. I need someone out here as soon as possible."
   },
   {
     speaker: "Assistant",
-    line: "I can help get that to the HVAC team. What is your name, callback number, and service address?"
+    line: "I am sorry. Is anyone at risk from the heat right now, and is the system running but blowing warm air?"
   },
   {
     speaker: "Caller",
-    line: "This is Jamie. Use the number I called from. The house is in your service area."
+    line: "It is blowing warm air. No one is in danger, but we have kids here and sooner is better."
   },
   {
     speaker: "Assistant",
-    line: "Thanks. I will check the job type, service area, and schedule rules before offering the next step."
+    line: "I can book tomorrow 8 to 10 a.m. and flag this for owner review in case they can move you up today."
   }
 ] as const
 
 const heroOperatorChecks = [
-  "Service matched: no-cool diagnostic",
-  "Service area confirmed before scheduling",
-  "Owner confirmation required before final booking",
+  "Probes a vague problem before choosing the service",
+  "Books the next opening without ignoring urgency",
+  "Flags possible same-day escalation for the owner",
 ] as const
 
 const heroSetupProofPoints = [
@@ -92,8 +92,7 @@ export default function HomePage() {
             <div className="grid gap-3 rounded-xl border border-white/10 bg-white/8 p-5 shadow-2xl shadow-black/30 backdrop-blur">
               <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
                 <div className="grid gap-1">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-300">Handled call</p>
-                  <p className="text-lg font-black text-white">HVAC no-cool request</p>
+                  <p className="text-lg font-black text-white">Hot house, no-cool call</p>
                 </div>
                 <PhoneCall className="size-5 text-amber-300" />
               </div>
@@ -116,9 +115,9 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-3 rounded-xl border border-white/10 bg-white/8 p-5 backdrop-blur">
-              <div className="grid gap-3 sm:grid-cols-3">
+              <div className="grid gap-2">
                 {heroOperatorChecks.map((check) => (
-                  <div key={check} className="flex items-start gap-2 rounded-lg border border-white/10 bg-slate-900/80 p-3 text-xs font-semibold leading-5 text-slate-200">
+                  <div key={check} className="flex items-start gap-2 rounded-lg border border-white/10 bg-slate-900/80 p-3 text-sm font-semibold leading-6 text-slate-200">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" />
                     <span>{check}</span>
                   </div>
@@ -127,10 +126,10 @@ export default function HomePage() {
               <div className="grid gap-2 rounded-lg border border-amber-300/30 bg-amber-300/15 p-4">
                 <div className="flex items-center gap-2">
                   <MailCheck className="size-4 text-amber-200" />
-                  <p className="text-sm font-black text-white">Owner handoff</p>
+                  <p className="text-sm font-black text-white">Shop-ready summary</p>
                 </div>
                 <p className="text-sm leading-6 text-amber-50">
-                  Booking request pending owner confirmation. Caller details, service area, symptoms, preferred window, and follow-up message are ready for review.
+                  No-cool diagnostic booked for tomorrow, 8 to 10 a.m. AC is blowing warm air, home is heating up, kids are present, no immediate danger reported, and same-day owner review is flagged.
                 </p>
               </div>
             </div>
@@ -140,14 +139,14 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto grid max-w-6xl gap-9 lg:min-h-[610px] lg:grid-cols-[0.54fr_0.46fr] lg:items-center">
           <div className="grid gap-7">
             <p className="w-fit max-w-full rounded-full border border-amber-300/40 bg-amber-300/10 px-4 py-1.5 text-center text-sm font-bold leading-6 text-amber-100">
-              Trades call coverage that behaves like a consistent answering service
+              Trades call coverage that sounds like a trained front desk
             </p>
             <div className="grid gap-5">
               <h1 className="max-w-[600px] text-4xl font-black leading-[0.98] text-white sm:text-6xl">
-                AI phone answering for trades businesses.
+                A phone assistant that sounds like it works for your shop.
               </h1>
               <p className="max-w-[580px] text-lg leading-8 text-slate-200 sm:text-xl">
-                Answer missed calls, capture clean job details, and move the caller toward owner-approved booking or a clear callback based on the setup your shop controls.
+                BookedOnCall answers with patience, asks the questions your team needs, books the call when your rules allow it, and leaves your shop with clean notes for follow-up.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -199,7 +198,7 @@ export default function HomePage() {
 
           <div className="grid gap-4 rounded-xl border border-white/10 bg-white/8 p-4 backdrop-blur lg:hidden">
             <div className="flex items-center justify-between gap-3">
-              <span className="text-sm font-bold uppercase tracking-[0.18em] text-amber-200">Example handled call</span>
+              <span className="text-sm font-bold uppercase tracking-[0.18em] text-amber-200">Handled like your front desk</span>
               <PhoneCall className="size-5 text-amber-200" />
             </div>
             <div className="grid gap-3 text-sm leading-6 text-slate-200">
