@@ -13,10 +13,12 @@
     "security:audit": "npm audit --omit=dev --audit-level=moderate",
     "security:secrets": "node ./scripts/secret-scan.cjs",
     "verify:content": "node ./scripts/verify-content.mjs",
+    "verify:homepage-hero": "node ./scripts/verify-homepage-hero-visual.mjs",
     "verify:journeys": "node ./scripts/verify-journeys.mjs",
     "verify:production-leads": "node ./scripts/verify-production-leads.mjs",
     "verify:runtime": "node ./scripts/verify-runtime.mjs",
     "verify:seo": "node ./scripts/verify-postbuild-seo.mjs",
+    "verify:visual-layout": "node ./scripts/verify-visual-layout.mjs",
     "verify:security": "npm run security:audit && npm run security:secrets",
     "check:public-truth": "node ./scripts/check-public-site-contract.mjs"
   },

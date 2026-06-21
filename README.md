@@ -29,6 +29,8 @@ npm run lint
 npm run build
 npm run verify:content
 npm run verify:runtime
+npm run verify:homepage-hero
+npm run verify:visual-layout
 npm run verify:journeys
 npm run verify:production-leads -- --origin https://www.bookedoncall.com --execute-send
 npm run verify:seo
@@ -54,6 +56,8 @@ This repo should not hold checkout or billing secrets. There is no website-owned
 - `npm run build` must pass before deploy.
 - `npm run verify:content` checks for required routes, metadata files, contract presence, and stale marketing claims.
 - `npm run verify:runtime` checks the production build markers needed for route and runtime proof.
+- `npm run verify:homepage-hero` runs a production-mode desktop, iPhone, and Android visual layout check for the homepage hero and stores screenshots by default.
+- `npm run verify:visual-layout` runs a production-mode visual layout smoke for key customer-facing routes across desktop, iPhone, and Android widths.
 - `npm run verify:journeys` checks the conversion, comparison, pricing, FAQ, and lead-capture journey surfaces.
 - `npm run verify:seo` checks sitemap, robots, canonical, metadata, JSON-LD, and AI-discovery surfaces after build.
 - `npm run verify:security` runs the website production dependency audit and repo-native secret scan.

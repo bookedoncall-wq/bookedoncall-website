@@ -36,6 +36,12 @@ jobs:
       - name: Verify runtime
         run: npm run verify:runtime
 
+      - name: Verify homepage hero visual layout
+        run: npm run verify:homepage-hero -- --no-screenshots
+
+      - name: Verify key-route visual layout
+        run: npm run verify:visual-layout -- --no-screenshots
+
       - name: Verify journeys
         run: npm run verify:journeys
 

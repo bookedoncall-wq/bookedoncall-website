@@ -46,20 +46,20 @@ const nextStepRules = [
 const heroCallFlowMoments = [
   {
     speaker: "Caller",
-    line: "Our AC is out and the house is getting hot. I need someone out here as soon as possible."
+    line: "Our AC is out and the house is getting hot. I need someone out here as soon as possible.",
   },
   {
     speaker: "Assistant",
-    line: "I am sorry. Is anyone at risk from the heat right now, and is the system running but blowing warm air?"
+    line: "I am sorry. Is anyone at risk from the heat right now, and is the system running but blowing warm air?",
   },
   {
     speaker: "Caller",
-    line: "It is blowing warm air. No one is in danger, but we have kids here and sooner is better."
+    line: "It is blowing warm air. No one is in danger, but we have kids here and sooner is better.",
   },
   {
     speaker: "Assistant",
-    line: "I can book tomorrow 8 to 10 a.m. and flag this for owner review in case they can move you up today."
-  }
+    line: "I can book tomorrow 8 to 10 a.m. and flag this for owner review in case they can move you up today.",
+  },
 ] as const
 
 const heroOperatorChecks = [
@@ -71,8 +71,59 @@ const heroOperatorChecks = [
 const heroSetupProofPoints = [
   "15-minute basic setup target",
   "Setup review call before forwarding",
-  "Month-to-month public plans",
+  "Monthly plans with clear terms",
 ] as const
+
+function HeroCallPreview() {
+  return (
+    <div data-home-hero-preview className="grid min-w-0 gap-4">
+      <div className="grid min-w-0 gap-4 rounded-lg border border-white/10 bg-white/8 p-4 shadow-2xl shadow-black/30 backdrop-blur xl:p-5">
+        <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
+          <div className="grid gap-1">
+            <p className="text-base font-black text-white xl:text-lg">Hot house, no-cool call</p>
+          </div>
+          <PhoneCall className="size-5 shrink-0 text-amber-300" />
+        </div>
+        <div className="grid gap-2 rounded-lg border border-white/10 bg-slate-950/45 p-3 text-[13px] leading-5 text-slate-200 xl:text-sm xl:leading-6">
+          {heroCallFlowMoments.map((moment, index) => (
+            <div
+              key={`${moment.speaker}-${index}`}
+              className={cn(
+                "max-w-[90%] rounded-xl border px-3 py-2.5",
+                moment.speaker === "Assistant"
+                  ? "border-white/10 bg-slate-900/90 text-slate-200"
+                  : "justify-self-end border-amber-300/30 bg-amber-300/15 text-amber-50"
+              )}
+            >
+              <strong className="block text-xs uppercase tracking-[0.12em] text-slate-400">{moment.speaker}</strong>
+              {moment.line}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid min-w-0 gap-3 rounded-lg border border-white/10 bg-white/8 p-4 backdrop-blur">
+        <div className="grid gap-2">
+          {heroOperatorChecks.map((check) => (
+            <div key={check} className="flex items-start gap-2 rounded-lg border border-white/10 bg-slate-900/80 p-2.5 text-[13px] font-semibold leading-5 text-slate-200 xl:text-sm xl:leading-6">
+              <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" />
+              <span>{check}</span>
+            </div>
+          ))}
+        </div>
+        <div data-home-hero-summary className="grid min-w-0 gap-2 rounded-lg border border-amber-300/30 bg-amber-300/15 p-3">
+          <div className="flex items-center gap-2">
+            <MailCheck className="size-4 shrink-0 text-amber-200" />
+            <p className="text-sm font-black text-white">Shop-ready summary</p>
+          </div>
+          <p className="text-sm leading-6 text-amber-50">
+            No-cool diagnostic booked for tomorrow, 8 to 10 a.m. Warm-air AC, home heating up, kids present. No immediate danger reported; same-day owner review flagged.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function HomePage() {
   return (
@@ -86,57 +137,8 @@ export default function HomePage() {
       />
       <StructuredData data={buildSoftwareApplicationSchema()} />
 
-      <section className="relative overflow-hidden bg-slate-950 px-4 py-14 text-white sm:px-6 sm:py-16 lg:px-8">
-        <div className="absolute inset-y-8 right-4 hidden w-[42%] max-w-[560px] lg:block xl:right-8" aria-hidden="true">
-          <div className="grid h-full content-center gap-4 pl-8">
-            <div className="grid gap-4 rounded-lg border border-white/10 bg-white/8 p-6 shadow-2xl shadow-black/30 backdrop-blur">
-              <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
-                <div className="grid gap-1">
-                  <p className="text-lg font-black text-white">Hot house, no-cool call</p>
-                </div>
-                <PhoneCall className="size-5 text-amber-300" />
-              </div>
-              <div className="grid gap-3 rounded-lg border border-white/10 bg-slate-950/45 p-3 text-sm leading-6 text-slate-200">
-                {heroCallFlowMoments.map((moment, index) => (
-                  <div
-                    key={`${moment.speaker}-${index}`}
-                    className={cn(
-                      "max-w-[88%] rounded-2xl border px-4 py-3",
-                      moment.speaker === "Assistant"
-                        ? "border-white/10 bg-slate-900/90 text-slate-200"
-                        : "justify-self-end border-amber-300/30 bg-amber-300/15 text-amber-50"
-                    )}
-                  >
-                    <strong className="block text-xs uppercase tracking-[0.12em] text-slate-400">{moment.speaker}</strong>
-                    {moment.line}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid gap-3 rounded-lg border border-white/10 bg-white/8 p-5 backdrop-blur">
-              <div className="grid gap-2">
-                {heroOperatorChecks.map((check) => (
-                  <div key={check} className="flex items-start gap-2 rounded-lg border border-white/10 bg-slate-900/80 p-3 text-sm font-semibold leading-6 text-slate-200">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" />
-                    <span>{check}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="grid gap-2 rounded-lg border border-amber-300/30 bg-amber-300/15 p-4">
-                <div className="flex items-center gap-2">
-                  <MailCheck className="size-4 text-amber-200" />
-                  <p className="text-sm font-black text-white">Shop-ready summary</p>
-                </div>
-                <p className="text-sm leading-6 text-amber-50">
-                  No-cool diagnostic booked for tomorrow, 8 to 10 a.m. AC is blowing warm air, home is heating up, kids are present, no immediate danger reported, and same-day owner review is flagged.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-9 lg:min-h-[610px] lg:grid-cols-[0.54fr_0.46fr] lg:items-center">
+      <section data-home-hero-section className="relative overflow-x-clip bg-slate-950 px-4 py-12 text-white sm:px-6 sm:py-14 lg:px-8">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-9 lg:min-h-[640px] lg:grid-cols-[0.52fr_0.48fr] lg:items-center">
           <div className="grid gap-7">
             <p className="w-fit max-w-full rounded-full border border-amber-300/40 bg-amber-300/10 px-4 py-1.5 text-center text-sm font-bold leading-6 text-amber-100">
               Trades call coverage that sounds like a trained front desk
@@ -196,6 +198,10 @@ export default function HomePage() {
             </div>
           </div>
 
+          <div className="hidden min-w-0 lg:block" aria-hidden="true">
+            <HeroCallPreview />
+          </div>
+
           <div className="grid gap-4 rounded-xl border border-white/10 bg-white/8 p-4 backdrop-blur lg:hidden">
             <div className="flex items-center justify-between gap-3">
               <span className="text-sm font-bold uppercase tracking-[0.18em] text-amber-200">Handled like your front desk</span>
@@ -216,19 +222,19 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-4 text-center text-sm font-semibold text-white sm:grid-cols-2 lg:grid-cols-4">
           <p className="flex items-center justify-center gap-2">
             <PhoneCall className="size-4 text-amber-300" />
-            Gives callers a better first response
+            Answers missed calls like a trained front desk
           </p>
           <p className="flex items-center justify-center gap-2">
             <CalendarClock className="size-4 text-amber-300" />
-            Review the call flow before you go live
+            You approve the call flow before calls forward
           </p>
           <p className="flex items-center justify-center gap-2">
             <ShieldCheck className="size-4 text-amber-300" />
-            Booking when your setup allows it
+            Books only when your rules and schedule allow it
           </p>
           <p className="flex items-center justify-center gap-2">
             <ArrowRight className="size-4 text-amber-300" />
-            Keep your number flow with scheduling and messaging tools when connected
+            Works with your number, calendar, and follow-up tools
           </p>
         </div>
       </section>
