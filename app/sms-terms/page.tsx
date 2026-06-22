@@ -61,26 +61,28 @@ export default function SmsTermsPage() {
         <p>
           By providing a mobile number and opting into a text workflow, you authorize the applicable sender to send text messages to that
           number using automated or non-automated technology. Consent to receive marketing texts is not a condition of purchasing goods or
-          services.
+          services, and marketing texts require any separate consent required by law.
         </p>
         <p>
           Businesses that use BookedOnCall are responsible for collecting and documenting the consent required to text their customers,
-          callers, employees, contractors, and other contacts, and for honoring opt-out requests.
+          callers, employees, contractors, and other contacts, and for honoring opt-out and revocation requests.
         </p>
       </LegalSection>
 
       <LegalSection title="4. Opt-out and help">
         <p>
-          Reply STOP to opt out of supported SMS programs. After you opt out, you may receive one final text confirming the opt-out.
-          Reply HELP for help where supported. You may also contact{" "}
+          Reply STOP to opt out of supported SMS programs. Other clear opt-out words or requests may also revoke consent where required
+          by law. After you opt out, you may receive one final text confirming the opt-out. Reply HELP for help where supported. You may
+          also contact{" "}
           <a href={`mailto:${siteConfig.supportEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">
             {siteConfig.supportEmail}
           </a>
           .
         </p>
         <p>
-          Opting out of one SMS program may not opt you out of every communication from a business, especially where separate numbers,
-          accounts, legal notices, or transactional communications are involved.
+          Opt-out requests should be honored as soon as reasonably practicable and, where the TCPA applies, no later than ten business
+          days after receipt. Opting out of one SMS program may not opt you out of every communication from a business, especially where
+          separate numbers, accounts, legal notices, or transactional communications are involved.
         </p>
       </LegalSection>
 

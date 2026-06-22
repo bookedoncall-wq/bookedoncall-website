@@ -57,8 +57,14 @@ export default function CallHandlingNoticePage() {
           follow up, schedule work, review quality, or handle support.
         </p>
         <p>
-          If you do not want to continue with an AI-assisted or recorded call, you may hang up and contact the business through another
-          path it provides. The business controls its own notices, consent requirements, fallback process, and customer follow-up.
+          If a call announcement or other notice says the call may be recorded or transcribed, continuing the call after that notice may
+          be treated as consent where permitted by law. Some states, customers, or call flows may require stricter consent before
+          recording or transcription can continue.
+        </p>
+        <p>
+          If you do not want to continue with an AI-assisted, recorded, or transcribed call, you may hang up and contact the business
+          through another path it provides. The business controls its own notices, consent requirements, fallback process, and customer
+          follow-up.
         </p>
       </LegalSection>
 

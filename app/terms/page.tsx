@@ -34,7 +34,7 @@ export default function TermsPage() {
         {
           title: "Billing and cancellation terms matter",
           body:
-            "Plan price, included minutes, overages, taxes, cancellation, and payment recovery are governed by these terms and any checkout, order form, or written agreement.",
+            "Plan price, renewal, included minutes, overages, taxes, cancellation, refunds, and payment recovery are governed by these terms and any checkout, order form, or written agreement.",
         },
       ]}
     >
@@ -47,6 +47,11 @@ export default function TermsPage() {
           By accessing or using the Service, creating an account, submitting a setup request, starting a subscription, or allowing calls
           to route through BookedOnCall, you agree to these Terms. If you use the Service for a company or other legal entity, you
           represent that you have authority to bind that entity, and <strong>you</strong> includes that entity.
+        </p>
+        <p>
+          You also agree to these Terms when you click or check an acceptance control, complete a checkout or order form, sign an order,
+          approve setup, or continue using the Service after updated terms take effect. Electronic records, acceptance timestamps, and
+          account records may be used to show the version accepted and the account or business covered by the acceptance.
         </p>
       </LegalSection>
 
@@ -103,6 +108,12 @@ export default function TermsPage() {
           transcriptions, texts, emails, and other communications involving your customers, leads, employees, contractors, or callers. If
           your business needs a stricter notice or consent process, you must configure that requirement with BookedOnCall before relying
           on the Service.
+        </p>
+        <p>
+          If a call announcement or notice says that a call may be recorded or transcribed, a caller who continues the call after that
+          notice may be treated as consenting where that approach is permitted by law. Where stricter consent is required, or where a
+          caller does not want to continue with an AI-assisted, recorded, or transcribed call, the business must provide an alternate
+          contact or owner-review path instead of relying on the call flow.
         </p>
       </LegalSection>
 
@@ -174,23 +185,27 @@ export default function TermsPage() {
 
       <LegalSection title="11. Fees, billing, taxes, overages, and cancellation">
         <p>
-          Plan fees, included minutes, usage charges, setup fees, taxes, and overage rates are described in the pricing page, checkout
-          flow, order form, statement of work, or written agreement that applies to your account. Unless another written agreement says
-          otherwise, self-serve subscriptions are billed monthly in advance, usage overages may be billed in arrears, and fees are stated
-          in U.S. dollars.
+          Plan fees, included minutes, usage charges, setup fees, taxes, overage rates, renewal terms, cancellation methods, and refund
+          terms are described in the pricing page, checkout flow, order form, statement of work, or written agreement that applies to
+          your account. Unless another written agreement says otherwise, self-serve subscriptions renew automatically, are billed monthly
+          in advance, usage overages may be billed in arrears, and fees are stated in U.S. dollars.
         </p>
         <p>
-          You authorize BookedOnCall and its payment processors to charge your payment method for amounts due. You are responsible for
+          You authorize BookedOnCall and its payment processors to charge your payment method for recurring subscription fees, setup
+          fees, overages, taxes, payment recovery amounts, and other amounts due under the applicable order. You are responsible for
           applicable taxes, fees, and payment processor charges other than taxes based on BookedOnCall&apos;s income.
         </p>
         <p>
-          You may cancel a month-to-month self-serve subscription according to the cancellation flow made available for your account or by
-          contacting support. Unless required by law or stated in a separate agreement, prepaid fees are not refundable, cancellation does
-          not erase amounts already due, and service may continue through the paid period subject to these Terms and operational limits.
+          You may cancel a month-to-month self-serve subscription through the cancellation flow made available for your account or by
+          contacting support at the support email listed on the website. If you subscribed online, BookedOnCall will provide an online or
+          otherwise easy-to-use cancellation path where required. Unless required by law or stated in a separate agreement, cancellation
+          takes effect at the end of the then-current paid period, prepaid fees are not refundable, cancellation does not erase amounts
+          already due, and service may continue through the paid period subject to these Terms and operational limits.
         </p>
         <p>
-          If payment fails or an account becomes past due, BookedOnCall may pause new answering, limit usage, require payment recovery,
-          or terminate access after reasonable notice where practicable.
+          If payment fails or an account becomes past due, BookedOnCall may retry the payment method, request updated payment
+          information, pause new answering, limit usage, require payment recovery, suspend connected workflows, or terminate access after
+          reasonable notice where practicable. You remain responsible for charges incurred before suspension, cancellation, or termination.
         </p>
       </LegalSection>
 
@@ -204,6 +219,12 @@ export default function TermsPage() {
         <p>
           You represent that you have the rights and permissions needed to connect any phone number, calendar, CRM, scheduler, payment
           account, email account, text sender, or other third-party account to the Service.
+        </p>
+        <p>
+          If you authorize access to a connected calendar, email, CRM, scheduler, or similar account, BookedOnCall will use that access
+          only for the disclosed Service purpose, such as reading availability, supporting owner-approved scheduling, creating configured
+          workflow records, or sending supported follow-up. You must disconnect accounts or revoke permissions when you no longer want
+          the Service to use that connected account.
         </p>
       </LegalSection>
 
@@ -314,6 +335,11 @@ export default function TermsPage() {
         <p>
           We may update these Terms from time to time. The &quot;Last updated&quot; date above reflects the latest revision. Your continued use of
           the Service after updated Terms become effective constitutes acceptance of the revised Terms.
+        </p>
+        <p>
+          Where required by law or a written agreement, BookedOnCall will provide advance notice of material changes to subscription,
+          renewal, cancellation, pricing, data-processing, or other legally significant terms and will identify how you may cancel or stop
+          using the Service before those changes apply.
         </p>
       </LegalSection>
 

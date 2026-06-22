@@ -34,7 +34,7 @@ export default function PrivacyPage() {
         {
           title: "Rights depend on role and location",
           body:
-            "Depending on applicable law, you may request access, correction, deletion, portability, restriction, objection, opt-out, or appeal, subject to verification and legal limits.",
+            "Depending on applicable law, you may request access, correction, deletion, portability, restriction, objection, opt-out, or appeal, subject to verification, role, and legal limits.",
         },
       ]}
     >
@@ -132,7 +132,24 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="7. Cookies and analytics">
+      <LegalSection title="7. Connected calendars and Google user data">
+        <p>
+          If a customer authorizes BookedOnCall to access Google Calendar or other Google Workspace data, we use that access only for the
+          disclosed Service purpose, such as checking availability, supporting configured scheduling workflows, displaying account status,
+          troubleshooting setup, and maintaining security or audit records.
+        </p>
+        <p>
+          BookedOnCall&apos;s use and transfer of information received from Google APIs will adhere to the Google API Services User Data
+          Policy, including the Limited Use requirements, where those requirements apply. We do not sell Google user data, use Google user
+          data for advertising, or use Google user data to train general AI models.
+        </p>
+        <p>
+          Customers may disconnect connected accounts or revoke permissions through the provider account controls or by contacting
+          support. Some workflows may stop working if the connected account is removed.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="8. Cookies and analytics">
         <p>
           We may use cookies, tags, pixels, local storage, analytics tools, and similar technologies to operate the website, remember
           preferences, understand traffic, measure marketing performance, secure the Service, and improve user experience.
@@ -143,7 +160,7 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="8. How we disclose information">
+      <LegalSection title="9. How we disclose information">
         <p>We may disclose information:</p>
         <ul className="list-disc pl-6">
           <li>to service providers and subprocessors that help with hosting, security, authentication, payments, communications, AI processing, analytics, and support,</li>
@@ -160,7 +177,7 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="9. Retention">
+      <LegalSection title="10. Retention">
         <p>
           We retain information for as long as reasonably necessary to provide the Service, maintain security and audit records, support
           customers, resolve disputes, comply with law, enforce agreements, and support backup or disaster recovery. Retention periods vary
@@ -174,7 +191,7 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="10. Security">
+      <LegalSection title="11. Security">
         <p>
           We use administrative, technical, and organizational measures designed to protect information appropriate to the nature of the
           data and the risks presented. Measures may include access controls, authentication, encryption in transit, logging, monitoring,
@@ -185,7 +202,7 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="11. Your choices and rights">
+      <LegalSection title="12. Your choices and rights">
         <p>
           Depending on your location and relationship to the information, you may have rights to request access, correction, deletion,
           portability, restriction, objection, opt-out of certain processing, or appeal of a denied request. You may also be able to opt
@@ -196,9 +213,14 @@ export default function PrivacyPage() {
           limited where information is needed to provide the Service, protect security, comply with law, honor another person&apos;s rights,
           complete a transaction, maintain audit records, or establish, exercise, or defend legal claims.
         </p>
+        <p>
+          To make a request, contact the privacy email below and describe the request type, the account or business involved, your role,
+          and how we can reach you. If applicable law gives you an appeal right after a request is denied, you may appeal by replying to
+          the decision email or contacting the privacy email with &quot;Privacy Appeal&quot; in the subject line.
+        </p>
       </LegalSection>
 
-      <LegalSection title="12. California, Colorado, and other state privacy notices">
+      <LegalSection title="13. California, Colorado, and other state privacy notices">
         <p>
           Some U.S. state privacy laws provide additional rights and notice requirements. We use the categories above to describe the
           personal information we collect, the sources of that information, the purposes of use, and the categories of recipients.
@@ -207,9 +229,14 @@ export default function PrivacyPage() {
           You may submit privacy requests using the contact below. We will not discriminate against you for exercising rights that apply
           to you. Authorized-agent requests must include proof of authority and may require direct verification with the individual.
         </p>
+        <p>
+          BookedOnCall is designed for trades and home-service business workflows, not for protected health information, payment-card
+          data, government identification numbers, children&apos;s data, or other sensitive regulated data unless a separate written agreement
+          expressly permits that processing and the required safeguards are in place.
+        </p>
       </LegalSection>
 
-      <LegalSection title="13. International processing">
+      <LegalSection title="14. International processing">
         <p>
           BookedOnCall and its service providers may process information in the United States and other countries where we or our
           providers operate. Those locations may have data protection laws that differ from those in your jurisdiction.
@@ -219,21 +246,21 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="14. Children">
+      <LegalSection title="15. Children">
         <p>
           The Service is designed for business use and is not directed to children. We do not knowingly collect personal information from
           children in circumstances where such collection is prohibited by law.
         </p>
       </LegalSection>
 
-      <LegalSection title="15. Changes to this policy">
+      <LegalSection title="16. Changes to this policy">
         <p>
           We may update this Privacy Policy from time to time. When we do, we will revise the &quot;Last updated&quot; date above. Material changes
           may also be communicated through the website, customer app, or other reasonable means.
         </p>
       </LegalSection>
 
-      <LegalSection title="16. Contact">
+      <LegalSection title="17. Contact">
         <p>
           Privacy questions, rights requests, and service data inquiries can be sent to{" "}
           <a href={`mailto:${siteConfig.privacyEmail}`} className="break-all font-semibold text-slate-900 underline underline-offset-4">

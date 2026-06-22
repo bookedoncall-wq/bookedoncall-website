@@ -29,7 +29,7 @@ export default function DpaPage() {
         {
           title: "Subprocessors support operations",
           body:
-            "BookedOnCall may use providers for hosting, authentication, communications, AI processing, payments, analytics, support, and customer-authorized integrations.",
+            "BookedOnCall may use subprocessors for hosting, authentication, communications, AI and speech processing, payments, analytics, support, and customer-authorized integrations.",
         },
         {
           title: "Deletion and assistance are included",
@@ -117,6 +117,11 @@ export default function DpaPage() {
           Customer Personal Data outside the business purposes of providing the Service, or combine Customer Personal Data with personal
           information from other sources except as permitted by applicable law and the customer agreement.
         </p>
+        <p>
+          Where Google API or Workspace data is processed for a customer-authorized integration, BookedOnCall will use and transfer that
+          data only for the disclosed Service purpose and in accordance with the Google API Services User Data Policy, including Limited
+          Use requirements where applicable.
+        </p>
       </LegalSection>
 
       <LegalSection title="7. Confidentiality and personnel">
@@ -153,9 +158,15 @@ export default function DpaPage() {
 
       <LegalSection title="10. Subprocessors">
         <p>
-          The customer authorizes BookedOnCall to use subprocessors reasonably required to operate the Service, including providers for
-          hosting, storage, authentication, communications, telephony, AI and speech processing, payments, analytics, support, security,
-          and customer-authorized integrations.
+          The customer authorizes BookedOnCall to use subprocessors reasonably required to operate the Service. Subprocessor categories
+          may include hosting and cloud infrastructure, database and storage, authentication, payment processing, email delivery, text
+          messaging, telephony and voice, AI and speech processing, analytics, security, logging, support, and customer-authorized
+          calendar, scheduling, CRM, or billing integrations.
+        </p>
+        <p>
+          Not every category applies to every customer. A provider is used only when needed for the Service, selected support operations,
+          or an integration or feature enabled for the customer&apos;s account. Customer-authorized integrations may include services such as
+          Google Calendar or Jobber when the customer connects or approves that workflow.
         </p>
         <p>
           BookedOnCall will remain responsible for subprocessor performance to the extent required by applicable law and will impose data
@@ -163,7 +174,9 @@ export default function DpaPage() {
         </p>
         <p>
           Upon request, BookedOnCall will provide commercially reasonable information about current subprocessor categories and any
-          specific subprocessors required for the customer&apos;s enabled Service configuration.
+          specific subprocessors required for the customer&apos;s enabled Service configuration. BookedOnCall may update subprocessors from
+          time to time and will provide reasonable notice of material subprocessor changes through the website, customer app, email, or
+          another reasonable channel where required by the customer agreement or applicable law.
         </p>
       </LegalSection>
 

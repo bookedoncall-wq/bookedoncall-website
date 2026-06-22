@@ -13,14 +13,21 @@ const defaultRoutes = [
   "/",
   "/product",
   "/demo-calls",
+  "/examples",
   "/pricing",
   "/resources",
   "/sign-up",
+  "/industries",
   "/for/hvac",
   "/for/plumbers",
   "/integrations",
   "/integrations/google-calendar",
   "/integrations/jobber",
+  "/privacy",
+  "/terms",
+  "/call-handling-notice",
+  "/sms-terms",
+  "/dpa",
 ]
 
 const viewports = [

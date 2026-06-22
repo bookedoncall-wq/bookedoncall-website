@@ -285,8 +285,8 @@ export default function ExamplesPage() {
           {exampleCalls.map((call) => {
             const Icon = call.icon
             return (
-              <article key={call.title} className="grid gap-7 rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-                <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-start">
+              <article key={call.title} className="grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+                <div className="grid gap-5 border-b border-slate-200 bg-white p-6 sm:p-7 lg:grid-cols-[minmax(0,0.92fr)_minmax(300px,0.8fr)] lg:items-start">
                   <div className="grid gap-3">
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-amber-800">
@@ -299,13 +299,16 @@ export default function ExamplesPage() {
                     <h2 className="text-3xl font-black text-slate-950">{call.title}</h2>
                     <p className="max-w-3xl text-base leading-8 text-slate-600">{call.situation}</p>
                   </div>
-                  <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-                    <Icon className="size-5 text-amber-600" />
-                    <span className="text-sm font-bold text-slate-900">{call.outcomeDetail}</span>
+                  <div className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
+                    <div className="flex items-center gap-2">
+                      <Icon className="size-5 text-amber-600" />
+                      <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Caller outcome</span>
+                    </div>
+                    <p className="text-base font-bold leading-7 text-slate-950">{call.outcomeDetail}</p>
                   </div>
                 </div>
 
-                <div className="grid gap-7 lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="grid gap-7 p-6 sm:p-7 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
                   <div className="grid gap-4">
                     <div className="flex items-center gap-2">
                       <PhoneCall className="size-4 text-amber-600" />
@@ -329,7 +332,7 @@ export default function ExamplesPage() {
                   </div>
 
                   <div className="grid gap-6">
-                    <div className="grid gap-3">
+                    <div className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-5">
                       <div className="flex items-center gap-2">
                         <ShieldCheck className="size-4 text-amber-600" />
                         <h3 className="text-xl font-black text-slate-950">What BookedOnCall checks</h3>
@@ -343,7 +346,7 @@ export default function ExamplesPage() {
                       </ul>
                     </div>
 
-                    <div className="grid gap-3">
+                    <div className="grid gap-3 rounded-lg border border-slate-200 bg-white p-5">
                       <div className="flex items-center gap-2">
                         <MailCheck className="size-4 text-amber-600" />
                         <h3 className="text-xl font-black text-slate-950">Owner summary</h3>
@@ -360,7 +363,7 @@ export default function ExamplesPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:flex-row sm:items-start">
+                <div className="mx-6 mb-6 flex flex-col gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 sm:mx-7 sm:mb-7 sm:flex-row sm:items-start">
                   <MessageSquareText className="mt-1 size-5 shrink-0 text-amber-600" />
                   <div>
                     <h3 className="text-base font-black text-slate-950">Customer follow-up text or email</h3>
