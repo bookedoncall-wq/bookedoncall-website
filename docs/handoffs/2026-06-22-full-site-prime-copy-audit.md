@@ -11,6 +11,8 @@ Review the public BookedOnCall website as the live customer-facing surface, fix 
 - Roadmap integration pages still clearly state that QuickBooks, Housecall Pro, and ServiceTitan are not live integrations today.
 - The public voice demo button is disabled when the voice demo is not configured, instead of inviting a known unavailable action.
 - Legal pages were already published in the prior 2026-06-22 batch. They remain materially stronger website drafts, not outside-counsel approval.
+- Commit `6492b2937a65dbb25e80f60d35bd6b49249e1989` deployed to production as Vercel deployment `dpl_8g3mSc3twNHb2k1PDrkAGiFx74Mt` at `https://bookedoncall-website-9wjjfqml5-bookedoncall-8233s-projects.vercel.app`, aliased to `https://www.bookedoncall.com`.
+- GitHub checks passed for commit `6492b29`: `Security` and `Verify Content`.
 
 ## Routes Evaluated
 
@@ -42,12 +44,19 @@ All 40 sitemap routes were covered by local journey, SEO, and visual layout chec
 - `npm run verify:security`
 - `npm run security:secrets`
 - `git diff --check`
+- `vercel inspect https://bookedoncall-website-9wjjfqml5-bookedoncall-8233s-projects.vercel.app`
+- `curl -I https://www.bookedoncall.com/examples`
+- `curl -s https://www.bookedoncall.com/examples | rg -n "HVAC no-cool call with direct booking turned on|Appointment booked with owner visibility|After setup is reviewed"`
+- `curl -s https://www.bookedoncall.com/ | rg -n "moves qualified callers toward confirmed appointments|No-cool diagnostic booked|books or routes the call"`
+- `npm run verify:visual-layout -- --origin=https://www.bookedoncall.com --routes=/,/examples,/features,/how-it-works,/demo-calls,/integrations,/integrations/quickbooks,/integrations/housecall-pro,/integrations/servicetitan,/pricing,/privacy,/terms,/call-handling-notice,/sms-terms,/dpa --json-out=artifacts/reviews/2026-06-22-prime-copy-live-visual-layout.json --screenshot-dir=artifacts/screenshots/prime-copy-live-review-2026-06-22`
+- `npm run verify:homepage-hero -- --origin=https://www.bookedoncall.com`
+- `npm run verify:production-leads -- --origin https://www.bookedoncall.com`
 
 ## Proof Level
 
-Repo proof and local production-mode website proof. The local checks cover source, build, runtime, route crawl, SEO, and browser visual layout.
+Repo proof, local production-mode website proof, and live deployed website visual proof for the focused route set. The local checks cover source, build, runtime, route crawl, SEO, and browser visual layout. The live checks cover deployed HTML, Vercel aliasing, focused visual layout, homepage hero layout, and synthetic lead form guards.
 
-This is not deployed website proof until pushed and verified on `https://www.bookedoncall.com`. It is not live voice proof, provider proof, customer-data proof, legal approval, revenue readiness, or full launch readiness.
+This is not live voice proof, provider proof, customer-data proof, legal approval, revenue readiness, or full launch readiness. The production lead check was synthetic only and did not execute a real lead send.
 
 ## Remaining Risks And Gaps
 
@@ -58,4 +67,4 @@ This is not deployed website proof until pushed and verified on `https://www.boo
 
 ## Next Prompt
 
-Deploy the website copy audit commit, verify the production Vercel deployment at `https://www.bookedoncall.com`, then run a focused live visual check for `/`, `/examples`, `/features`, `/how-it-works`, `/demo-calls`, `/integrations`, `/pricing`, and legal pages.
+Continue the first-paid-customer launch path from the app/onboarding side: turn `selfServeCheckout` on only when the app checkout/onboarding path is verified, then rerun website start-setup journeys against the live app path.
