@@ -155,6 +155,67 @@ const exampleCalls = [
       "Thanks, Morgan. The shop has your urgent leak details and will follow up. No appointment time has been confirmed yet.",
   },
   {
+    title: "Roofing leak call with owner-approved booking request",
+    trade: "Roofing",
+    situation:
+      "The caller has a roof leak after a storm. The shop allows BookedOnCall to offer available windows, but the owner wants to confirm roofing requests before an appointment is final.",
+    outcome: "Booking request pending owner confirmation",
+    outcomeDetail:
+      "The caller picks a preferred window. BookedOnCall sends it as a booking request and makes clear that the owner still needs to confirm it.",
+    icon: CalendarCheck,
+    transcript: [
+      {
+        speaker: "Caller",
+        line: "We noticed a wet spot on the ceiling after last night's storm. Can someone look at the roof tomorrow?",
+      },
+      {
+        speaker: "BookedOnCall",
+        line: "I can get that to the roofing team. What is your name, callback number, and service address?",
+      },
+      {
+        speaker: "Caller",
+        line: "This is Taylor. Use the number I called from. The house is in Arvada.",
+      },
+      {
+        speaker: "BookedOnCall",
+        line: "Thanks, Taylor. Is water actively coming in right now, or is it a stain from earlier moisture?",
+      },
+      {
+        speaker: "Caller",
+        line: "It is not dripping right now. We just want someone to inspect it soon.",
+      },
+      {
+        speaker: "BookedOnCall",
+        line: "Your area is covered, and I can take a preferred inspection window. This will be a booking request for the owner to confirm, not a confirmed appointment yet.",
+      },
+      {
+        speaker: "Caller",
+        line: "Tomorrow afternoon would be best.",
+      },
+      {
+        speaker: "BookedOnCall",
+        line: "I have tomorrow afternoon as the preferred window and I am sending it to the shop for confirmation. They will follow up if that window works or if they need another option.",
+      },
+    ] satisfies TranscriptTurn[],
+    checks: [
+      "Service: roof leak inspection is supported for this setup.",
+      "Service area: address is covered before a window is discussed.",
+      "Urgency: no active dripping is reported, so this stays out of emergency escalation.",
+      "Policy: owner confirmation is required before the appointment is final.",
+    ],
+    ownerSummary: [
+      { label: "Outcome", value: "Booking request pending owner confirmation" },
+      { label: "Priority", value: "Review soon; ceiling stain after storm, no active dripping reported" },
+      { label: "Customer", value: "Taylor; callback number captured from caller ID authorization" },
+      { label: "Job", value: "Roof leak inspection requested after storm-related ceiling stain" },
+      { label: "Location", value: "In service area after address check" },
+      { label: "Scheduling", value: "Caller prefers tomorrow afternoon; owner must confirm before final booking" },
+      { label: "Follow-up", value: "Email summary sent; optional customer text confirms request is pending" },
+    ] satisfies SummaryRow[],
+    customerFollowUp:
+      "Thanks, Taylor. Your preferred inspection window has been sent to the shop as a booking request. No appointment is confirmed until the owner approves it.",
+  },
+  {
     title: "Electrical safety call that needs owner review",
     trade: "Electrical",
     situation:
