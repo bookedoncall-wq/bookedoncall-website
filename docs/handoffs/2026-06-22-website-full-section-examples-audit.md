@@ -11,7 +11,8 @@ Review the customer-facing BookedOnCall website across the product, industry, in
 - Website AGENTS now explicitly preserves the intended-prime-product rule: examples and mature-product pages may describe configured/after-setup behavior, not only currently tested surfaces, as long as current availability remains honest.
 - The live website legal pages are already materially stronger and publicly visible with `Last updated: 2026-06-22`.
 - The live deployed website visual audit passed before this edit over 40 customer-facing routes across desktop, iPhone, and Android.
-- This batch then improved the examples page locally by adding the missing service-area review outcome and removing internal-sounding caller-ID wording from owner summaries.
+- This batch improved the examples page by adding the missing service-area review outcome and removing internal-sounding caller-ID wording from owner summaries.
+- The updated examples page was pushed to `origin/main`, appeared on `https://www.bookedoncall.com/examples`, and the live deployed 40-route visual audit passed after deployment.
 
 ## Files Changed
 
@@ -48,6 +49,9 @@ Review the customer-facing BookedOnCall website across the product, industry, in
 - `node scripts/verify-visual-layout.mjs --routes=/,/product,/features,/how-it-works,/pricing,/login,/industries,/for/plumbers,/for/hvac,/for/electricians,/for/painters,/for/flooring,/for/landscaping,/for/roofing,/for/general-home-services,/integrations,/integrations/jobber,/integrations/google-calendar,/integrations/email,/integrations/text-sms,/integrations/quickbooks,/integrations/housecall-pro,/integrations/servicetitan,/resources,/demo-calls,/examples,/compare/ai-receptionist-vs-voicemail,/compare/missed-calls-for-home-service-businesses,/compare/answering-service-vs-receptionist-vs-ai-receptionist,/compare/after-hours-call-answering-for-hvac,/compare/after-hours-call-answering-for-plumbers,/faq,/about,/privacy,/terms,/call-handling-notice,/sms-terms,/dpa,/contact,/sign-up --json-out=artifacts/reviews/2026-06-22-examples-service-area-local-visual-layout.json --screenshot-dir=artifacts/screenshots/2026-06-22-examples-service-area-local-visual`
 - `npm run security:secrets`
 - `git diff --check`
+- `git push origin main`
+- Live `/examples` poll confirming `Service-area review callback` is present and `caller ID authorization` is absent.
+- `node scripts/verify-visual-layout.mjs --origin=https://www.bookedoncall.com --routes=/,/product,/features,/how-it-works,/pricing,/login,/industries,/for/plumbers,/for/hvac,/for/electricians,/for/painters,/for/flooring,/for/landscaping,/for/roofing,/for/general-home-services,/integrations,/integrations/jobber,/integrations/google-calendar,/integrations/email,/integrations/text-sms,/integrations/quickbooks,/integrations/housecall-pro,/integrations/servicetitan,/resources,/demo-calls,/examples,/compare/ai-receptionist-vs-voicemail,/compare/missed-calls-for-home-service-businesses,/compare/answering-service-vs-receptionist-vs-ai-receptionist,/compare/after-hours-call-answering-for-hvac,/compare/after-hours-call-answering-for-plumbers,/faq,/about,/privacy,/terms,/call-handling-notice,/sms-terms,/dpa,/contact,/sign-up --json-out=artifacts/reviews/2026-06-22-examples-service-area-live-visual-layout.json --screenshot-dir=artifacts/screenshots/2026-06-22-examples-service-area-live-visual`
 
 ## Validation Result
 
@@ -55,13 +59,12 @@ All commands above passed.
 
 ## Proof Boundary
 
-- Live deployed website visual proof was collected before this edit from `https://www.bookedoncall.com`.
-- Local production-mode website proof was collected after this edit.
-- This does not prove post-edit deployment, outside-counsel approval, legal compliance, live voice behavior, provider readiness, self-serve checkout readiness, billing readiness, customer-data readiness, or first-paid-customer go-live readiness.
+- Live deployed website visual proof was collected before and after this edit from `https://www.bookedoncall.com`.
+- Local production-mode website proof was collected before deployment.
+- This does not prove outside-counsel approval, legal compliance, live voice behavior, provider readiness, self-serve checkout readiness, billing readiness, customer-data readiness, or first-paid-customer go-live readiness.
 
 ## Remaining Risks And Follow-Ups
 
-- Deploy this commit and rerun deployed visual/journey proof if the examples change should go live immediately.
 - Outside counsel still needs to review Terms, Privacy, DPA, Call Handling Notice, SMS Terms, recording consent, TCPA/SMS posture, renewal/cancellation language, and privacy request operations.
 - The website still sells a mature configured product. The app must continue turning those claims into executable setup, acceptance, call notice, SMS consent, booking, billing, and support workflows before broader self-serve launch.
 
