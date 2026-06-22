@@ -18,6 +18,7 @@ This file applies to the BookedOnCall public website repository. Mechanical chec
 ## Public Claim Boundaries
 
 - The public site may sell the mature configured product: answered calls, clean intake, service-area and rule checks, appointment handling, owner-approved booking requests, summaries, follow-up, and integrations that make sense once the customer is fully set up.
+- Examples and mature-product pages may describe the intended prime product, not only the currently tested surface, when the copy is framed as configured or after-setup behavior instead of a claim that every feature is live for every buyer today.
 - Mature-product language must not blur current availability. Keep setup requirements, owner opt-in, unsupported integrations, demo limits, checkout state, and legal-draft status clear wherever a buyer could otherwise assume something is live today.
 - Do not claim booked, priced, accepted, dispatched, serviceable, self-serve checkout-ready, provider-ready, or launch-ready outcomes as currently available unless the V2 app proof and website contract support that exact availability claim.
 - Customer-facing copy must avoid internal proof language, provider names, stale readiness labels, or proof-ladder jargon unless a buyer needs the provider name to connect or manage an integration.

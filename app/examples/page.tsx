@@ -84,7 +84,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Appointment booked from connected availability" },
       { label: "Priority", value: "Normal service call; no emergency language detected" },
-      { label: "Customer", value: "Jamie; callback number captured from caller ID authorization" },
+      { label: "Customer", value: "Jamie; caller asked the shop to use the number from the call" },
       { label: "Job", value: "AC running but blowing warm air; no-cool diagnostic requested" },
       { label: "Location", value: "In service area after address check" },
       { label: "Scheduling", value: "Morning window booked from connected calendar availability" },
@@ -145,7 +145,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Urgent callback needed" },
       { label: "Priority", value: "High; active leak with water on floor" },
-      { label: "Customer", value: "Morgan; callback number captured from caller ID authorization" },
+      { label: "Customer", value: "Morgan; caller confirmed the number from the call is best" },
       { label: "Job", value: "Water heater leaking into utility room" },
       { label: "Location", value: "Address captured for service-area review" },
       { label: "Scheduling", value: "No time promised; owner should call back before committing" },
@@ -206,7 +206,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Booking request pending owner confirmation" },
       { label: "Priority", value: "Review soon; ceiling stain after storm, no active dripping reported" },
-      { label: "Customer", value: "Taylor; callback number captured from caller ID authorization" },
+      { label: "Customer", value: "Taylor; caller asked the shop to use the number from the call" },
       { label: "Job", value: "Roof leak inspection requested after storm-related ceiling stain" },
       { label: "Location", value: "In service area after address check" },
       { label: "Scheduling", value: "Caller prefers tomorrow afternoon; owner must confirm before final booking" },
@@ -214,6 +214,67 @@ const exampleCalls = [
     ] satisfies SummaryRow[],
     customerFollowUp:
       "Thanks, Taylor. Your preferred inspection window has been sent to the shop as a booking request. No appointment is confirmed until the owner approves it.",
+  },
+  {
+    title: "Landscaping request outside the usual service area",
+    trade: "Landscaping",
+    situation:
+      "The caller wants a spring cleanup, but the address appears outside the shop's normal coverage area. The shop still wants the lead details without the assistant promising service.",
+    outcome: "Service-area review callback",
+    outcomeDetail:
+      "BookedOnCall captures the request and makes clear that the owner needs to review the area before any appointment or service commitment is made.",
+    icon: ClipboardList,
+    transcript: [
+      {
+        speaker: "Caller",
+        line: "Do you do spring yard cleanups in Castle Rock? We need beds cleaned out and mulch refreshed.",
+      },
+      {
+        speaker: "BookedOnCall",
+        line: "I can take the details for the landscaping team. What is your name, callback number, and service address?",
+      },
+      {
+        speaker: "Caller",
+        line: "This is Riley. Use the number I called from. The address is in Castle Rock.",
+      },
+      {
+        speaker: "BookedOnCall",
+        line: "Thanks, Riley. What work are you hoping to have done, and is there a deadline you are trying to meet?",
+      },
+      {
+        speaker: "Caller",
+        line: "Cleanup, edging, and fresh mulch before a graduation party in three weeks.",
+      },
+      {
+        speaker: "BookedOnCall",
+        line: "I have the request and timing. That area may need owner review before the shop can say whether it is covered, so I am not going to promise an appointment yet.",
+      },
+      {
+        speaker: "Caller",
+        line: "That's fine. Please have someone let me know.",
+      },
+      {
+        speaker: "BookedOnCall",
+        line: "I will send the cleanup details, location, timing, and callback request to the shop for review.",
+      },
+    ] satisfies TranscriptTurn[],
+    checks: [
+      "Service: spring cleanup and mulch work are captured as landscaping details.",
+      "Service area: location may be outside normal coverage before any appointment path is offered.",
+      "Timing: caller's event deadline is captured for owner review.",
+      "Outcome: no serviceability or appointment promise is made before the owner checks the area.",
+    ],
+    ownerSummary: [
+      { label: "Outcome", value: "Service-area review callback" },
+      { label: "Priority", value: "Normal lead; graduation-party deadline in three weeks" },
+      { label: "Customer", value: "Riley; caller asked the shop to use the number from the call" },
+      { label: "Job", value: "Spring cleanup, edging, and fresh mulch requested" },
+      { label: "Location", value: "Castle Rock; owner should confirm whether the area is covered" },
+      { label: "Scheduling", value: "No appointment promised; service-area review required first" },
+      { label: "Follow-up", value: "Email summary sent; optional text confirms the shop will review coverage" },
+    ] satisfies SummaryRow[],
+    customerFollowUp:
+      "Thanks, Riley. The shop has your cleanup request and location for review. No appointment or service coverage is confirmed yet.",
   },
   {
     title: "Electrical safety call that needs owner review",
@@ -267,7 +328,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Manual-review callback" },
       { label: "Priority", value: "Review; no smoke or sparks reported, repeated breaker trips noted" },
-      { label: "Customer", value: "Avery; callback number captured from caller ID authorization" },
+      { label: "Customer", value: "Avery; caller confirmed the number from the call is best" },
       { label: "Job", value: "Flickering lights in two rooms; breaker tripped twice this week" },
       { label: "Location", value: "Service-area review needed before scheduling" },
       { label: "Scheduling", value: "No appointment promised; owner should decide" },
@@ -299,7 +360,7 @@ const nextSteps = [
 export const metadata = buildPageMetadata({
   title: "Example calls",
   description:
-    "Structured example call flows showing BookedOnCall intake, booking requests, urgent escalation, owner summaries, and customer follow-up.",
+    "Structured example call flows showing BookedOnCall intake, booking requests, service-area review, urgent escalation, owner summaries, and customer follow-up.",
   path: "/examples",
 })
 
@@ -311,7 +372,7 @@ export default function ExamplesPage() {
         data={buildServiceSchema({
           name: "Structured BookedOnCall example calls",
           description:
-            "Example call flows for trades businesses showing intake, owner-approved booking requests, callbacks, and summaries.",
+            "Example call flows for trades businesses showing intake, direct booking, owner-approved booking requests, service-area review, callbacks, and summaries.",
           path: "/examples",
         })}
       />

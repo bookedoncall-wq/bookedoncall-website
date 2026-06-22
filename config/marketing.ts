@@ -211,7 +211,7 @@ export const resourceHighlights = [
   {
     title: "Review example outcomes",
     href: "/examples",
-    description: "See how plumbing, HVAC, and electrical calls move from first question to booked appointment, urgent flag, booking request, or callback."
+    description: "See how HVAC, plumbing, roofing, landscaping, and electrical calls move from first question to booked appointment, urgent flag, service-area review, booking request, or callback."
   },
   {
     title: "Compare with voicemail",
