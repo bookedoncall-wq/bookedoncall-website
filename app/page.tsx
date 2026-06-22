@@ -148,7 +148,7 @@ export default function HomePage() {
                 A phone assistant that sounds like it works for your shop.
               </h1>
               <p className="max-w-[580px] text-lg leading-8 text-slate-200 sm:text-xl">
-                BookedOnCall answers with patience, asks the questions your team needs, books the call when your rules allow it, and leaves your shop with clean notes for follow-up.
+                BookedOnCall answers with patience, asks the questions your team needs, books or routes the call when your rules allow it, and leaves your shop with clean notes for follow-up.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">

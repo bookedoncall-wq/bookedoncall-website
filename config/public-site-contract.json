@@ -3,12 +3,12 @@
   "brand": {
     "name": "BookedOnCall",
     "tagline": "AI phone assistant for trades businesses",
-    "description": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures job details, and moves each caller toward an owner-approved booking path or clear callback based on the shop's setup.",
+    "description": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures job details, and moves qualified callers toward confirmed appointments, owner-approved booking requests, or clear callbacks based on the shop's setup.",
     "websiteOrigin": "https://www.bookedoncall.com",
     "appOrigin": "https://app.bookedoncall.com"
   },
   "positioning": {
-    "oneLiner": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures job details, and moves each caller toward an owner-approved booking path or clear callback based on the shop's setup.",
+    "oneLiner": "BookedOnCall is an AI phone assistant for home-service businesses that answers inbound calls, captures job details, and moves qualified callers toward confirmed appointments, owner-approved booking requests, or clear callbacks based on the shop's setup.",
     "primaryAudience": "Owner-operators and growing home-service shops",
     "primaryCtaLabel": "Start setup",
     "secondaryCtaLabel": "Try demo calls"
@@ -42,7 +42,7 @@
     "Collects caller name, callback number, address, job details, and service notes.",
     "Can offer appointment paths when scheduling is turned on, the shop's rules have been reviewed, and the request fits those rules.",
     "Can use Jobber, Google Calendar, email summaries, and customer text messaging after those tools are set up during onboarding.",
-    "Delivers a clear call summary and the next step, whether that is a booked appointment or a callback request.",
+    "Delivers a clear call summary and the next step, whether that is a confirmed appointment, an owner-approved booking request, or a callback request.",
     "Can send follow-up texts when customer messaging is turned on."
   ],
   "sourcedProof": [

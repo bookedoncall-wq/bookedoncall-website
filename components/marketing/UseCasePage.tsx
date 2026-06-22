@@ -97,7 +97,7 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
           <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-black text-slate-950">Book when it fits, follow up when it doesn&apos;t</h2>
             <p className="text-base leading-7 text-slate-600">
-              Supported jobs can move toward a booking. Edge cases and approval-only work still come back with clear details for follow-up.
+              Supported jobs can be booked or sent as booking requests depending on your rules. Edge cases and approval-only work still come back with clear details for follow-up.
             </p>
           </article>
         </div>

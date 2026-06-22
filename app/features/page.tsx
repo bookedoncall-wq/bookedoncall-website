@@ -8,7 +8,7 @@ import { buildPageMetadata, buildBreadcrumbSchema, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Features",
   description:
-    "BookedOnCall helps trades businesses answer missed calls, collect customer details, book supported work, and hand off the rest cleanly.",
+    "BookedOnCall helps trades businesses answer missed calls, collect customer details, book supported work when setup allows it, and hand off the rest cleanly.",
   path: "/features",
 })
 
@@ -25,8 +25,8 @@ const capabilityGroups = [
     title: "Book what can be booked",
     items: [
       "Check availability when your calendar or scheduling tool is connected.",
-      "Offer appointments for the jobs you want BookedOnCall to handle.",
-      "Keep scheduling simple instead of making callers wait for a basic booking."
+      "Confirm appointments for jobs you want BookedOnCall to handle when direct booking is enabled.",
+      "Keep owner review for anything outside the rules you choose."
     ]
   },
   {
@@ -48,7 +48,7 @@ export default function FeaturesPage() {
         data={buildServiceSchema({
           name: "BookedOnCall features",
           description:
-            "BookedOnCall helps trades businesses answer calls, collect intake, and either book supported work or hand the call back cleanly.",
+            "BookedOnCall helps trades businesses answer calls, collect intake, and either book supported work when setup allows it or hand the call back cleanly.",
           path: "/features",
         })}
       />
@@ -77,7 +77,7 @@ export default function FeaturesPage() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="grid gap-4">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">Core capabilities</p>
-            <h2 className="text-4xl font-black text-slate-950">What BookedOnCall can handle today.</h2>
+            <h2 className="text-4xl font-black text-slate-950">What BookedOnCall handles.</h2>
           </div>
           <div className="grid gap-3">
             {validatedCapabilities.map((capability) => (
@@ -120,7 +120,7 @@ export default function FeaturesPage() {
               <li>Scheduling is turned on for the kinds of jobs you want BookedOnCall to handle.</li>
               <li>Jobber or Google Calendar is connected for scheduling.</li>
               <li>Email or Text / SMS is set up for the handoff or follow-up path you choose.</li>
-              <li>The request fits the rules you want BookedOnCall to follow before a booking is confirmed.</li>
+              <li>Direct booking is enabled for that service, or the call is marked as an owner-approved booking request.</li>
               <li>The caller gives the details needed to move forward.</li>
             </ul>
           </article>

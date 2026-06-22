@@ -55,7 +55,7 @@ export default function JobberPage() {
             className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
           >
             <h2 className="mb-3 text-2xl font-black text-slate-950">See the product flow</h2>
-            <p className="text-base leading-7 text-slate-600">See how BookedOnCall decides whether to move toward a booking or hand the call back cleanly.</p>
+            <p className="text-base leading-7 text-slate-600">See how BookedOnCall decides whether to book, create a booking request, or hand the call back cleanly.</p>
           </TrackedLink>
           <TrackedLink
             href="/examples"

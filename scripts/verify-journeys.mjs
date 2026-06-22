@@ -25,7 +25,7 @@ const criticalRouteExpectations = {
   "/login": ["Go to customer login", `${appOrigin}/sign-in`],
   "/sign-up": ["Request setup", "setup review call"],
   "/demo-calls": ["Demo calls", "Sample shop demo", "setup review call", "Start setup"],
-  "/examples": ["After basic setup", "Booking request pending owner confirmation", "Urgent owner alert", "Owner summary"],
+  "/examples": ["After setup is reviewed", "Appointment booked with owner visibility", "Urgent owner alert", "Owner summary"],
   "/integrations": ["Jobber", "Google Calendar", "Email summaries", "QuickBooks", "Housecall Pro", "ServiceTitan"],
   "/integrations/jobber": ["Jobber", "connected"],
   "/integrations/google-calendar": ["Google Calendar", "connected"],

@@ -104,7 +104,7 @@ export default function HousecallProPage() {
               className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <h2 className="mb-3 text-2xl font-black text-slate-950">See supported integrations</h2>
-              <p className="text-base leading-7 text-slate-600">Review the configurable workflows that are available for setup today.</p>
+              <p className="text-base leading-7 text-slate-600">Review the configurable workflows that are ready during setup.</p>
             </TrackedLink>
             <TrackedLink
               href="/product"
@@ -112,8 +112,8 @@ export default function HousecallProPage() {
               eventPayload={{ placement: "housecall_pro_product", href: "/product" }}
               className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
-              <h2 className="mb-3 text-2xl font-black text-slate-950">See the current product flow</h2>
-              <p className="text-base leading-7 text-slate-600">See what BookedOnCall does today from first ring to booking path or callback handoff.</p>
+              <h2 className="mb-3 text-2xl font-black text-slate-950">See the core product flow</h2>
+              <p className="text-base leading-7 text-slate-600">See how BookedOnCall moves from first ring to booked appointment, booking request, or callback handoff.</p>
             </TrackedLink>
             <TrackedLink
               href="/examples"
@@ -122,7 +122,7 @@ export default function HousecallProPage() {
               className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
-              <p className="text-base leading-7 text-slate-600">Hear how the current assistant flow captures details, routes callbacks, and supports booking paths.</p>
+              <p className="text-base leading-7 text-slate-600">Hear how the assistant flow captures details, routes callbacks, and supports booking paths.</p>
             </TrackedLink>
           </div>
         </div>

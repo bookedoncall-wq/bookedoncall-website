@@ -47,7 +47,7 @@ export default function AboutPage() {
         data={buildServiceSchema({
           name: "About BookedOnCall",
           description:
-            "The story behind BookedOnCall and the mission to help trades businesses answer more calls and book more jobs.",
+            "The story behind BookedOnCall and the mission to help trades businesses answer more calls and book more good jobs.",
           path: "/about",
         })}
       />

@@ -542,10 +542,15 @@ export function VapiDemoCallPreview() {
             <button
               type="button"
               onClick={() => void startDemo()}
-              disabled={isStarting || isLive}
+              disabled={isStarting || isLive || configured === false}
               className={cn(buttonVariants({ size: "lg" }), "justify-center rounded-xl bg-slate-950 px-5 text-white hover:bg-slate-800")}
             >
-              {isStarting ? (
+              {configured === false ? (
+                <>
+                  <Mic className="size-4" />
+                  Demo unavailable
+                </>
+              ) : isStarting ? (
                 <>
                   <Volume2 className="size-4" />
                   Connecting

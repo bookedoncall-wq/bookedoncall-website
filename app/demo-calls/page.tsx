@@ -10,7 +10,7 @@ const demoStates = [
     icon: FileText,
     title: "Read example transcripts",
     body: "See how common plumbing, HVAC, and electrical calls move from first question to a clean next step.",
-    status: "Ready today",
+    status: "Ready to review",
   },
   {
     icon: CalendarClock,

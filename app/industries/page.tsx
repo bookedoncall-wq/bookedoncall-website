@@ -78,7 +78,7 @@ export default function IndustriesPage() {
             <article className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm">
               <h3 className="mb-3 text-2xl font-black text-slate-950">The next step should be clean</h3>
               <p className="text-base leading-7 text-slate-600">
-                Some jobs should move toward a booking. Others should come back for review. Either way, you need clear details and a clean handoff.
+                Some jobs should get booked. Others should come back for review. Either way, you need clear details and a clean handoff.
               </p>
             </article>
           </div>

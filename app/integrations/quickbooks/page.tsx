@@ -69,8 +69,8 @@ export default function QuickBooksPage() {
               eventPayload={{ placement: "quickbooks_product", href: "/product" }}
               className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
-              <h2 className="mb-3 text-2xl font-black text-slate-950">See the current product flow</h2>
-              <p className="text-base leading-7 text-slate-600">See what BookedOnCall does today from first ring to booking path or callback handoff.</p>
+              <h2 className="mb-3 text-2xl font-black text-slate-950">See the core product flow</h2>
+              <p className="text-base leading-7 text-slate-600">See how BookedOnCall moves from first ring to booked appointment, booking request, or callback handoff.</p>
             </TrackedLink>
             <TrackedLink
               href="/examples"
@@ -79,7 +79,7 @@ export default function QuickBooksPage() {
               className="rounded-lg border border-slate-200 bg-slate-50 p-6 text-left shadow-sm transition-colors hover:border-amber-300 hover:bg-amber-50/40"
             >
               <h2 className="mb-3 text-2xl font-black text-slate-950">Read sample calls</h2>
-              <p className="text-base leading-7 text-slate-600">Hear how the current assistant flow works before layering future customer-context work on top.</p>
+              <p className="text-base leading-7 text-slate-600">Hear how the assistant flow works before layering future customer-context work on top.</p>
             </TrackedLink>
           </div>
         </div>

@@ -28,18 +28,18 @@ const launchAssumptions = [
   "Business profile, services, service area, hours, and owner alert rules are set.",
   "Google Calendar or Jobber is connected when scheduling is turned on.",
   "Email summaries and optional Text / SMS follow-up are set up.",
-  "Owner-approved booking is the default unless the owner turns on direct booking.",
+  "Direct booking is enabled only for services, areas, and rules the owner approves.",
 ] as const
 
 const exampleCalls = [
   {
-    title: "HVAC no-cool call with a bookable service",
+    title: "HVAC no-cool call with direct booking turned on",
     trade: "HVAC",
     situation:
-      "The shop has no-cool diagnostic calls marked as bookable, the address is in service area, and the connected calendar has openings.",
-    outcome: "Booking request pending owner confirmation",
+      "The shop has no-cool diagnostic calls marked as direct-bookable, the address is in service area, the connected calendar has openings, and the owner has approved this booking rule.",
+    outcome: "Appointment booked with owner visibility",
     outcomeDetail:
-      "The caller picks an available window. BookedOnCall treats it as a booking request until the owner confirms it.",
+      "The caller picks an available window. BookedOnCall confirms the appointment because this service is direct-booking enabled for this setup.",
     icon: CalendarCheck,
     transcript: [
       {
@@ -64,7 +64,7 @@ const exampleCalls = [
       },
       {
         speaker: "BookedOnCall",
-        line: "That sounds like a no-cool diagnostic. Your area is covered. I can offer a couple of available windows and mark your choice for owner confirmation.",
+        line: "That sounds like a no-cool diagnostic. Your area is covered, and this service can be booked directly. I can offer a couple of available windows.",
       },
       {
         speaker: "Caller",
@@ -72,26 +72,26 @@ const exampleCalls = [
       },
       {
         speaker: "BookedOnCall",
-        line: "I have a morning window available. I will send that as a booking request. The shop will confirm it before it is final.",
+        line: "You are booked for the morning window tomorrow. The shop will receive the details and can reach out if anything changes.",
       },
     ] satisfies TranscriptTurn[],
     checks: [
       "Service: no-cool diagnostic is bookable for this setup.",
       "Service area: address is covered before any appointment path is offered.",
       "Schedule: connected calendar has an available morning window.",
-      "Policy: owner confirmation is required before final booking.",
+      "Policy: owner has enabled direct booking for this service and rule set.",
     ],
     ownerSummary: [
-      { label: "Outcome", value: "Booking request pending owner confirmation" },
+      { label: "Outcome", value: "Appointment booked from connected availability" },
       { label: "Priority", value: "Normal service call; no emergency language detected" },
       { label: "Customer", value: "Jamie; callback number captured from caller ID authorization" },
       { label: "Job", value: "AC running but blowing warm air; no-cool diagnostic requested" },
       { label: "Location", value: "In service area after address check" },
-      { label: "Scheduling", value: "Morning window selected; owner can confirm or decline" },
-      { label: "Follow-up", value: "Email summary sent; optional customer text says the request is pending confirmation" },
+      { label: "Scheduling", value: "Morning window booked from connected calendar availability" },
+      { label: "Follow-up", value: "Email summary sent; optional customer text confirms the appointment details" },
     ] satisfies SummaryRow[],
     customerFollowUp:
-      "Thanks, Jamie. Your appointment request is being reviewed by the shop. You will get confirmation before the visit is final.",
+      "Thanks, Jamie. Your no-cool diagnostic is booked for the morning window tomorrow. The shop has the details and will reach out if anything changes.",
   },
   {
     title: "Plumbing leak call with urgent escalation",
@@ -263,10 +263,10 @@ export default function ExamplesPage() {
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div className="grid gap-3">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After basic setup</p>
-            <h2 className="text-3xl font-black text-slate-950">The examples show a shop after basic setup is complete.</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After setup is reviewed</p>
+            <h2 className="text-3xl font-black text-slate-950">The examples show a configured shop with rules in place.</h2>
             <p className="text-base leading-8 text-slate-600">
-              They are not generic scripts. They show the intended customer-ready structure when the owner has reviewed services, service area, hours, scheduling, and follow-up rules.
+              They are not generic scripts. They show the intended customer-ready structure when the owner has reviewed services, service area, hours, scheduling, booking permissions, and follow-up rules.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2">

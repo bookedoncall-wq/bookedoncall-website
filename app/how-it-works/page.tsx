@@ -19,7 +19,7 @@ export default function HowItWorksPage() {
         data={buildServiceSchema({
           name: "How BookedOnCall works",
           description:
-            "BookedOnCall answers the call, gets the details, and moves the customer toward a booking or callback.",
+            "BookedOnCall answers the call, gets the details, and moves the customer toward a booking or callback based on your setup.",
           path: "/how-it-works",
         })}
       />
@@ -46,7 +46,7 @@ export default function HowItWorksPage() {
           <article className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="mb-4 text-3xl font-black text-slate-950">When BookedOnCall books the job</h2>
             <p className="text-base leading-8 text-slate-600">
-              If scheduling is connected and the request fits the rules you want automated, BookedOnCall can offer an appointment on the call.
+              If scheduling is connected, direct booking is enabled, and the request fits the rules you reviewed, BookedOnCall can confirm a supported appointment on the call. If you want review first, it can create a booking request instead.
             </p>
           </article>
           <article className="rounded-lg border border-slate-200 bg-slate-50 p-6">

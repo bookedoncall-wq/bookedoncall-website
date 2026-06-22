@@ -37,7 +37,7 @@ export default function MissedCallsForHomeServiceBusinessesPage() {
         {
           title: "What a better setup looks like",
           body:
-            "The customer gets a response, the basics are captured, and you get enough detail to decide the next step. Some jobs should move toward a booking. Others should come back for review. Either way, the caller shouldn't hit a dead end.",
+            "The customer gets a response, the basics are captured, and you get enough detail to decide the next step. Some jobs should be booked. Others should come back for review. Either way, the caller shouldn't hit a dead end.",
         },
         {
           title: "How BookedOnCall helps",

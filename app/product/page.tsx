@@ -45,7 +45,7 @@ const callFlowMoments = [
     step: "Step 4",
     title: "The call ends with a clear next step",
     transcriptLabel: "Result",
-    transcript: "Booked no-cool diagnostic request, captured safety notes, and flagged possible same-day owner review.",
+    transcript: "Booked no-cool diagnostic window, captured safety notes, and flagged possible same-day owner review.",
     detail: "Your team gets something actionable instead of a thin voicemail."
   }
 ] as const

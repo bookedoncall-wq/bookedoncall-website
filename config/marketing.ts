@@ -2,7 +2,7 @@ export const faqEntries = [
   {
     question: "What is the difference between Starter and Pro?",
     answer:
-      "Starter gives you the core product: answered calls, clean intake, owner-approved booking requests when your setup allows it, callback capture, and clear summaries with the next step. Pro adds more included minutes, a more branded caller experience, and more control over urgent-call flags, owner review, and appointment handling."
+      "Starter gives you the core product: answered calls, clean intake, supported appointment paths when your setup allows it, callback capture, and clear summaries with the next step. Pro adds more included minutes, a more branded caller experience, and more control over urgent-call flags, owner review, and appointment handling."
   },
   {
     question: "Which plan should I start with?",
@@ -12,7 +12,7 @@ export const faqEntries = [
   {
     question: "Does BookedOnCall always book appointments automatically?",
     answer:
-      "No. BookedOnCall books jobs only when scheduling is turned on and the request fits the rules you want it to follow. It can still capture the lead and send the call back to you when a person should decide."
+      "No. BookedOnCall confirms appointments only when scheduling is turned on, direct booking is enabled for that request, and the call fits your rules. Otherwise it can send an owner-approved booking request, callback, or review handoff."
   },
   {
     question: "Which tools can BookedOnCall work with?",
@@ -164,11 +164,11 @@ export const workflowSteps = [
   },
   {
     title: "BookedOnCall checks the next step",
-    body: "If scheduling is turned on and the request fits your reviewed rules, it can move toward a booking path. If not, it captures the lead and lines up the right callback or follow-up."
+    body: "If scheduling is turned on and the request fits your reviewed rules, it can confirm an appointment or create a booking request based on your setup. If not, it captures the lead and lines up the right callback or follow-up."
   },
   {
     title: "You get the result",
-    body: "You get a clear summary, a booked appointment, or a follow-up request with context."
+    body: "You get a clear summary, a confirmed appointment, an owner-approved booking request, or a follow-up request with context."
   }
 ] as const
 
@@ -183,7 +183,7 @@ export const productFlowSteps = [
   },
   {
     title: "Route the job the right way",
-    body: "If the request fits your rules and your schedule is set up, it can move toward a booking path. If not, it comes back to your team with a clear callback handoff."
+    body: "If the request fits your rules and your schedule is set up, it can confirm the appointment or create a booking request based on your setup. If not, it comes back to your team with a clear callback handoff."
   },
 ] as const
 
@@ -194,7 +194,7 @@ export const afterCallArtifacts = [
   },
   {
     title: "Booking path",
-    body: "If scheduling is turned on and the request fits, the call can move toward a reviewed appointment path."
+    body: "If scheduling is turned on and the request fits, the call can move toward a confirmed appointment or reviewed appointment path."
   },
   {
     title: "Review needed",
@@ -211,7 +211,7 @@ export const resourceHighlights = [
   {
     title: "Review example outcomes",
     href: "/examples",
-    description: "See how plumbing, HVAC, and electrical calls move from first question to appointment request, urgent flag, or callback."
+    description: "See how plumbing, HVAC, and electrical calls move from first question to booked appointment, urgent flag, booking request, or callback."
   },
   {
     title: "Compare with voicemail",
@@ -232,7 +232,7 @@ export const useCasePages = {
     path: "/for/plumbers",
     title: "AI call answering for plumbing businesses",
     summary:
-      "BookedOnCall helps plumbing businesses answer leak, clog, and water-heater calls while you're busy on other jobs, then book the job or capture a callback.",
+      "BookedOnCall helps plumbing businesses answer leak, clog, and water-heater calls while you're busy on other jobs, then book supported work or capture a callback.",
     cardSummary: "Handle leak, drain, and water-heater calls without sending customers to voicemail.",
     commonCalls: [
       "Leak, clog, water-heater, and sewer-line calls that need a fast first response.",
@@ -510,7 +510,7 @@ export const integrationPages = {
     ],
     outcomeCards: [
       "Roadmap: possible future support for Housecall Pro-aware call intake and handoff.",
-      "Current product: BookedOnCall can still capture caller details and route callbacks without a Housecall Pro connection.",
+      "Core product: BookedOnCall can still capture caller details and route callbacks without a Housecall Pro connection.",
       "Current status: not available as a live integration in BookedOnCall today."
     ]
   },
@@ -525,7 +525,7 @@ export const integrationPages = {
     ],
     outcomeCards: [
       "Roadmap: possible future support for ServiceTitan-aware call intake and CSR handoff.",
-      "Current product: BookedOnCall can still capture caller details and route callbacks without a ServiceTitan connection.",
+      "Core product: BookedOnCall can still capture caller details and route callbacks without a ServiceTitan connection.",
       "Current status: not available as a live integration in BookedOnCall today."
     ]
   }
