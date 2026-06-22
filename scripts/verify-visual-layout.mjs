@@ -339,7 +339,9 @@ async function main() {
     const report = {
       schemaVersion: "bookedoncall_site_visual_layout_evidence_v1",
       generatedAt: new Date().toISOString(),
-      proofBoundary: "Local production-mode website visual evidence only. This is not deployed website proof, live voice proof, provider proof, customer-data proof, revenue readiness, or launch readiness.",
+      proofBoundary: options.origin
+        ? "Live deployed website visual evidence through local Chrome against the supplied origin. This is not Safari proof, live voice proof, provider proof, customer-data proof, revenue readiness, or launch readiness."
+        : "Local production-mode website visual evidence only. This is not deployed website proof, live voice proof, provider proof, customer-data proof, revenue readiness, or launch readiness.",
       baseUrl,
       routeCount: options.routes.length,
       viewportCount: viewports.length,

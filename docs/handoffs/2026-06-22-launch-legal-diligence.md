@@ -10,8 +10,10 @@ Review the live customer-facing website, fix the poor `/examples` desktop layout
 - The live `/examples` page still had a conversion-quality problem that the mechanical verifier did not catch: the first example card used a wide sparse layout with too much empty space in the case-study area.
 - Local `/examples` now uses sectioned example cards with a compact header, explicit caller-outcome panel, and framed checks/owner-summary panels.
 - The visual verifier now includes `/examples`, `/industries`, and public legal pages by default so future full-site visual checks cover the surfaced issue and the launch legal surface.
+- The visual verifier now labels `--origin` runs as live deployed website visual evidence instead of local production-mode evidence.
 - `AGENTS.md` now routes website agents to V2 for product/proof truth, keeps `config/public-site-contract.json` as the website public claim contract, and preserves separate proof/legal/deployment boundaries.
 - Legal pages remain counsel-review drafts, not legal approval, but the updated public disclosures are materially better than the current live baseline.
+- Commit `941fe2e` deployed to Vercel production deployment `dpl_GB2Qi4UbN3DnTEZjmYUUNZQtjjLU`, aliased to `https://www.bookedoncall.com`.
 
 ## Files Changed
 
@@ -21,6 +23,7 @@ Review the live customer-facing website, fix the poor `/examples` desktop layout
   - Reworked example cards to remove the large sparse desktop field and make caller outcome, conversation, checks, owner summary, and customer follow-up easier to scan.
 - `scripts/verify-visual-layout.mjs`
   - Expanded default visual route coverage to include `/examples`, `/industries`, `/privacy`, `/terms`, `/call-handling-notice`, `/sms-terms`, and `/dpa`.
+  - Corrected the proof boundary label for `--origin` runs.
 - `app/terms/page.tsx`
   - Strengthened electronic acceptance, subscription renewal/cancellation/refund, payment recovery, third-party permissions, and material-change language.
 - `app/privacy/page.tsx`
@@ -51,6 +54,12 @@ Review the live customer-facing website, fix the poor `/examples` desktop layout
 - `npm run verify:visual-layout -- --json-out=artifacts/reviews/2026-06-22-local-website-visual-layout.json --screenshot-dir=artifacts/screenshots/local-website-review-2026-06-22`
 - `npm run verify:homepage-hero`
 - `npm run verify:production-leads`
+- `git push origin main`
+- `vercel inspect https://bookedoncall-website-6mt605x8m-bookedoncall-8233s-projects.vercel.app --scope bookedoncall-8233s-projects`
+- `npm run verify:visual-layout -- --origin=https://www.bookedoncall.com --routes=/,/examples,/pricing,/privacy,/terms,/call-handling-notice,/sms-terms,/dpa --json-out=artifacts/reviews/2026-06-22-deployed-website-visual-layout.json --screenshot-dir=artifacts/screenshots/deployed-website-review-2026-06-22`
+- `npm run verify:homepage-hero -- --origin=https://www.bookedoncall.com`
+- `npm run verify:production-leads -- --origin https://www.bookedoncall.com`
+- `npm run verify:visual-layout -- --origin=https://www.bookedoncall.com --routes=/examples,/privacy --json-out=artifacts/reviews/2026-06-22-deployed-proof-label-check.json --screenshot-dir=artifacts/screenshots/deployed-proof-label-check-2026-06-22`
 - Local production-mode targeted screenshots for `/examples` at desktop scroll positions around the first example card:
   - `artifacts/screenshots/local-examples-scroll-review-2026-06-22/desktop-y780.png`
   - `artifacts/screenshots/local-examples-scroll-review-2026-06-22/desktop-y960.png`
@@ -67,10 +76,14 @@ Review the live customer-facing website, fix the poor `/examples` desktop layout
 - Homepage hero proof: passed across 5 viewports.
 - Production lead verification: passed synthetic checks; safe lead send was skipped without `--execute-send`, so this is not inbox delivery proof.
 - Security verification: passed `npm audit --omit=dev --audit-level=moderate` and secret scan.
+- Vercel deployment proof: GitHub/Vercel reported commit `941fe2e` as completed successfully, and `vercel inspect` showed production deployment `dpl_GB2Qi4UbN3DnTEZjmYUUNZQtjjLU` Ready with aliases for `https://www.bookedoncall.com`, `https://bookedoncall.com`, and Vercel production URLs.
+- Deployed website visual proof: passed on live `https://www.bookedoncall.com` across `/`, `/examples`, `/pricing`, `/privacy`, `/terms`, `/call-handling-notice`, `/sms-terms`, and `/dpa` in desktop/iPhone/Android viewports.
+- Deployed homepage hero proof: passed on live `https://www.bookedoncall.com` across 5 viewports.
+- Deployed production lead verification: passed synthetic checks; safe lead send was skipped without `--execute-send`, so this is not inbox delivery proof.
+- Focused deployed proof-label check: passed across `/examples` and `/privacy`, and confirmed `verify:visual-layout -- --origin=...` now reports live deployed website visual evidence instead of local production-mode evidence.
 
 ## Validation Not Run
 
-- No deployed website proof for the local changes yet.
 - No outside-counsel review or legal approval.
 - No real Stripe, phone, SMS provider, calendar-write, customer-data, V2 production runtime, provider, or live voice proof.
 - No manual legal review, keyboard-only accessibility pass, screen-reader pass, or formal contrast audit beyond the existing automated/browser layout checks.
@@ -85,10 +98,10 @@ Review the live customer-facing website, fix the poor `/examples` desktop layout
 
 ## Proof Level
 
-Highest proof reached: live website sampled visual review for current production output, plus local website repo proof and local production-mode browser proof for the changed build.
+Highest proof reached: deployed website visual proof on sampled live production routes, plus website repo proof and local production-mode browser proof for the changed build.
 
-This does not prove deployed state for the new local changes, outside-counsel approval, legal compliance, provider proof, live voice proof, app proof, billing proof, customer-data proof, phone go-live, public self-serve readiness, or launch readiness.
+This does not prove outside-counsel approval, legal compliance, provider proof, live voice proof, app proof, billing proof, customer-data proof, phone go-live, public self-serve readiness, or launch readiness.
 
 ## Next Prompt
 
-Deploy the website changes, then verify the exact deployed output for `/examples`, legal pages, sitemap routes, and public CTAs. Keep the legal pages labeled as counsel-review drafts, not legal approval, and continue V2 launch work by converting the legal/public promises into executable app proof: acceptance capture, call-notice behavior, SMS consent/STOP handling, and support/privacy operator workflows.
+Continue V2 launch work by converting the legal/public promises into executable app proof: acceptance capture, call-notice behavior, SMS consent/STOP handling, and support/privacy operator workflows. Keep the legal pages labeled as counsel-review drafts, not legal approval.
