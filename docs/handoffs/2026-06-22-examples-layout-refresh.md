@@ -33,16 +33,19 @@ Make the public `/examples` page feel customer-ready and consistent with the res
 - `node scripts/verify-visual-layout.mjs --routes=/,/product,/features,/how-it-works,/pricing,/login,/industries,/for/plumbers,/for/hvac,/for/electricians,/for/painters,/for/flooring,/for/landscaping,/for/roofing,/for/general-home-services,/integrations,/integrations/jobber,/integrations/google-calendar,/integrations/email,/integrations/text-sms,/integrations/quickbooks,/integrations/housecall-pro,/integrations/servicetitan,/resources,/demo-calls,/examples,/compare/ai-receptionist-vs-voicemail,/compare/missed-calls-for-home-service-businesses,/compare/answering-service-vs-receptionist-vs-ai-receptionist,/compare/after-hours-call-answering-for-hvac,/compare/after-hours-call-answering-for-plumbers,/faq,/about,/privacy,/terms,/call-handling-notice,/sms-terms,/dpa,/contact,/sign-up --json-out=artifacts/reviews/2026-06-22-examples-layout-refresh-all-public-routes.json --screenshot-dir=artifacts/screenshots/2026-06-22-examples-layout-refresh-all-public-routes` - passed after clean rebuild; 40 routes, 3 viewports
 - `npm run security:secrets` - passed
 - `git diff --check` - passed
+- `git push origin main` - pushed `0d4e5ac` to `main`
+- `curl -fsSL --max-time 10 https://www.bookedoncall.com/examples` polling - live page showed refreshed hero copy on attempt 4
+- `node scripts/verify-visual-layout.mjs --origin=https://www.bookedoncall.com --routes=/examples --json-out=artifacts/reviews/2026-06-22-examples-layout-refresh-live-examples.json --screenshot-dir=artifacts/screenshots/2026-06-22-examples-layout-refresh-live-examples` - passed; 1 route, 3 viewports
 
 ## Proof Level
 
-Repo proof and local production-mode website proof only. This is not deployed website proof, V2 app proof, provider proof, live voice proof, billing proof, customer-data proof, revenue readiness, launch readiness, or legal approval.
+Repo proof, local production-mode website proof, and live deployed website proof for `/examples`. This is not V2 app proof, provider proof, live voice proof, billing proof, customer-data proof, revenue readiness, launch readiness, or legal approval.
 
 ## Validation Not Run
 
 - No legal counsel review.
 - No live customer traffic, live voice/provider, checkout, billing, or CRM proof.
-- No deployed-site verification yet in this handoff.
+- No full deployed-site visual sweep; live deployed visual proof covered the changed `/examples` route only.
 
 ## Risks And Notes
 
@@ -52,4 +55,4 @@ Repo proof and local production-mode website proof only. This is not deployed we
 
 ## Next Prompt
 
-Deploy the website examples layout refresh, verify the deployed `/examples` page and public-route smoke output, then return to V2 AI-operations work or the owner-console simplification depending on the active launch priority.
+Return to V2 AI-operations work or the owner-console simplification depending on the active launch priority.
