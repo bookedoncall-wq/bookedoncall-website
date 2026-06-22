@@ -9,7 +9,6 @@ import {
   ShieldCheck,
 } from "lucide-react"
 import { CtaBand } from "@/components/marketing/CtaBand"
-import { PageIntro } from "@/components/marketing/PageIntro"
 import { StructuredData } from "@/components/marketing/StructuredData"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo"
@@ -24,15 +23,9 @@ type SummaryRow = {
   value: string
 }
 
-const launchAssumptions = [
-  "Business profile, services, service area, hours, and owner alert rules are set.",
-  "Google Calendar or Jobber is connected when scheduling is turned on.",
-  "Email summaries and optional Text / SMS follow-up are set up.",
-  "Direct booking is enabled only for services, areas, and rules the owner approves.",
-] as const
-
 const exampleCalls = [
   {
+    id: "hvac-direct-booking",
     title: "HVAC no-cool call with direct booking turned on",
     trade: "HVAC",
     situation:
@@ -94,6 +87,7 @@ const exampleCalls = [
       "Thanks, Jamie. Your no-cool diagnostic is booked for the morning window tomorrow. The shop has the details and will reach out if anything changes.",
   },
   {
+    id: "plumbing-urgent-callback",
     title: "Plumbing leak call with urgent escalation",
     trade: "Plumbing",
     situation:
@@ -155,6 +149,7 @@ const exampleCalls = [
       "Thanks, Morgan. The shop has your urgent leak details and will follow up. No appointment time has been confirmed yet.",
   },
   {
+    id: "roofing-owner-confirmation",
     title: "Roofing leak call with owner-approved booking request",
     trade: "Roofing",
     situation:
@@ -216,6 +211,7 @@ const exampleCalls = [
       "Thanks, Taylor. Your preferred inspection window has been sent to the shop as a booking request. No appointment is confirmed until the owner approves it.",
   },
   {
+    id: "landscaping-service-area-review",
     title: "Landscaping request outside the usual service area",
     trade: "Landscaping",
     situation:
@@ -277,6 +273,7 @@ const exampleCalls = [
       "Thanks, Riley. The shop has your cleanup request and location for review. No appointment or service coverage is confirmed yet.",
   },
   {
+    id: "electrical-safety-review",
     title: "Electrical safety call that needs owner review",
     trade: "Electrical",
     situation:
@@ -376,61 +373,91 @@ export default function ExamplesPage() {
           path: "/examples",
         })}
       />
-      <PageIntro
-        eyebrow="Examples"
-        title="See what a handled call should look like."
-        description="These examples show the customer-ready flow after setup: what the caller hears, what BookedOnCall checks, what the owner gets back, and what the customer is told."
-      />
+      <section className="border-b border-slate-800 bg-slate-950 px-4 py-8 text-white sm:px-6 sm:py-14 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(300px,0.72fr)] lg:items-end lg:gap-8">
+          <div className="grid gap-4 sm:gap-5">
+            <p className="w-fit rounded-full border border-amber-300/40 bg-amber-300/10 px-3 py-1 text-xs font-bold text-amber-100 sm:px-4 sm:py-1.5 sm:text-sm">
+              Examples
+            </p>
+            <div className="grid gap-4">
+              <h1 className="max-w-4xl text-2xl font-black leading-tight text-white sm:text-5xl">
+                See how calls move from intake to the right owner-approved outcome.
+              </h1>
+              <p className="max-w-3xl text-sm leading-7 text-slate-300 sm:text-lg sm:leading-8">
+                Realistic after-setup examples for direct booking, owner confirmation, urgent callbacks, service-area review, and safety-sensitive manual review.
+              </p>
+              <p className="rounded-lg border border-white/10 bg-white/[0.04] p-3 text-sm font-semibold leading-6 text-amber-100 sm:p-4 lg:hidden">
+                Assumes setup is reviewed: services, coverage, scheduling permissions, alerts, and follow-up rules are in place.
+              </p>
+            </div>
+          </div>
+          <div className="hidden rounded-lg border border-white/10 bg-white/[0.04] p-5 lg:flex lg:gap-3">
+            <ClipboardList className="mt-1 size-5 shrink-0 text-amber-300" />
+            <div className="grid gap-1">
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-amber-100">Setup reviewed</p>
+              <p className="text-sm leading-6 text-slate-300">
+                These examples assume services, coverage, scheduling permissions, alerts, and follow-up rules are in place.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <section className="bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div className="grid gap-3">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">After setup is reviewed</p>
-            <h2 className="text-3xl font-black text-slate-950">The examples show a configured shop with rules in place.</h2>
+            <h2 className="text-2xl font-black text-slate-950 sm:text-3xl">Each example shows a different decision path.</h2>
             <p className="text-base leading-8 text-slate-600">
-              They are not generic scripts. They show the intended customer-ready structure when the owner has reviewed services, service area, hours, scheduling, booking permissions, and follow-up rules.
+              The important part is not the script. It is the rule check: service fit, coverage, urgency, scheduling permission, and whether the owner wants final review.
             </p>
           </div>
-          <div className="grid gap-3 md:grid-cols-2">
-            {launchAssumptions.map((assumption) => (
-              <div key={assumption} className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-7 text-slate-700">
-                <ClipboardList className="mt-1 size-4 shrink-0 text-amber-600" />
-                <span>{assumption}</span>
-              </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {exampleCalls.map((call) => (
+              <TrackedLink
+                key={call.id}
+                href={`#${call.id}`}
+                eventName="marketing_cta_clicked"
+                eventPayload={{ placement: "examples_outcome_index", href: `#${call.id}` }}
+                className="grid gap-2 rounded-lg border border-slate-200 bg-slate-50 p-4 transition hover:border-amber-300 hover:bg-amber-50"
+              >
+                <span className="text-xs font-bold uppercase tracking-[0.14em] text-amber-700">{call.trade}</span>
+                <strong className="text-sm leading-5 text-slate-950">{call.outcome}</strong>
+              </TrackedLink>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10">
+      <section className="bg-slate-50 px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8">
           {exampleCalls.map((call) => {
             const Icon = call.icon
             return (
-              <article key={call.title} className="grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
-                <div className="grid gap-5 border-b border-slate-200 bg-white p-6 sm:p-7 lg:grid-cols-[minmax(0,0.92fr)_minmax(300px,0.8fr)] lg:items-start">
+              <article id={call.id} key={call.title} className="scroll-mt-24 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+                <div className="grid gap-5 border-b border-slate-200 bg-white p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,0.66fr)] lg:items-start">
                   <div className="grid gap-3">
                     <div className="flex flex-wrap items-center gap-3">
-                      <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-amber-800">
+                      <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-amber-800">
                         {call.trade}
                       </span>
-                      <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-emerald-800">
+                      <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-emerald-800">
                         {call.outcome}
                       </span>
                     </div>
-                    <h2 className="text-3xl font-black text-slate-950">{call.title}</h2>
-                    <p className="max-w-3xl text-base leading-8 text-slate-600">{call.situation}</p>
+                    <h2 className="text-2xl font-black text-slate-950 sm:text-3xl">{call.title}</h2>
+                    <p className="max-w-3xl text-base leading-7 text-slate-600">{call.situation}</p>
                   </div>
-                  <div className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <div className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 lg:sticky lg:top-24">
                     <div className="flex items-center gap-2">
                       <Icon className="size-5 text-amber-600" />
-                      <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Caller outcome</span>
+                      <span className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Caller outcome</span>
                     </div>
                     <p className="text-base font-bold leading-7 text-slate-950">{call.outcomeDetail}</p>
                   </div>
                 </div>
 
-                <div className="grid gap-7 p-6 sm:p-7 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
+                <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[minmax(0,0.98fr)_minmax(300px,0.82fr)]">
                   <div className="grid gap-4">
                     <div className="flex items-center gap-2">
                       <PhoneCall className="size-4 text-amber-600" />
@@ -440,7 +467,7 @@ export default function ExamplesPage() {
                       {call.transcript.map((turn, index) => (
                         <p
                           key={`${call.title}-${turn.speaker}-${index}`}
-                          className={`max-w-[94%] rounded-2xl px-4 py-3 text-sm leading-7 ${
+                          className={`max-w-[94%] rounded-lg px-4 py-3 text-sm leading-7 ${
                             turn.speaker === "BookedOnCall"
                               ? "border border-slate-200 bg-slate-50 text-slate-700"
                               : "justify-self-end bg-amber-100 text-amber-950"
@@ -453,7 +480,7 @@ export default function ExamplesPage() {
                     </div>
                   </div>
 
-                  <div className="grid gap-6">
+                  <div className="grid content-start gap-5">
                     <div className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-5">
                       <div className="flex items-center gap-2">
                         <ShieldCheck className="size-4 text-amber-600" />
@@ -485,7 +512,7 @@ export default function ExamplesPage() {
                   </div>
                 </div>
 
-                <div className="mx-6 mb-6 flex flex-col gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 sm:mx-7 sm:mb-7 sm:flex-row sm:items-start">
+                <div className="mx-5 mb-5 flex flex-col gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 sm:mx-6 sm:mb-6 sm:flex-row sm:items-start">
                   <MessageSquareText className="mt-1 size-5 shrink-0 text-amber-600" />
                   <div>
                     <h3 className="text-base font-black text-slate-950">Customer follow-up text or email</h3>
