@@ -10,14 +10,16 @@ This file applies to the BookedOnCall public website repository. Mechanical chec
 
 ## Source Of Truth
 
-- Use `/Users/david/Documents/bookedoncall-v2/AGENTS.md` as the current product and proof constitution. The website must not make claims that exceed V2's current proof posture.
+- Use `/Users/david/Documents/bookedoncall-v2/AGENTS.md` as the product and proof constitution. Use V2 and the app as the source of truth for what BookedOnCall is meant to become at scale, not just what has completed current proof gates.
 - Use `config/public-site-contract.json` as the website's public claim contract for positioning, contacts, plan terms, integrations, legal update date, and self-serve checkout state.
 - Keep the marketing website and V2 app separate codebases. The website sells and explains the product; V2 owns authenticated setup, product brain, onboarding, billing, provider proof, and operator workflows.
 - Treat legal pages as public launch drafts until outside counsel approves them. Better disclosure may be deploy-worthy, but it is not legal approval.
 
 ## Public Claim Boundaries
 
-- Do not claim booked, priced, accepted, dispatched, serviceable, self-serve checkout-ready, provider-ready, or launch-ready outcomes unless the V2 app proof and website contract support that exact claim.
+- The public site may sell the mature configured product: answered calls, clean intake, service-area and rule checks, appointment handling, owner-approved booking requests, summaries, follow-up, and integrations that make sense once the customer is fully set up.
+- Mature-product language must not blur current availability. Keep setup requirements, owner opt-in, unsupported integrations, demo limits, checkout state, and legal-draft status clear wherever a buyer could otherwise assume something is live today.
+- Do not claim booked, priced, accepted, dispatched, serviceable, self-serve checkout-ready, provider-ready, or launch-ready outcomes as currently available unless the V2 app proof and website contract support that exact availability claim.
 - Customer-facing copy must avoid internal proof language, provider names, stale readiness labels, or proof-ladder jargon unless a buyer needs the provider name to connect or manage an integration.
 - Direct booking copy must stay owner-approved by default unless the configured service, service area, scheduling provider, and owner opt-in are all explicit.
 - Planned integrations must stay visibly planned. Do not imply QuickBooks, Housecall Pro, ServiceTitan, or any other roadmap item is live or self-serve unless `config/public-site-contract.json` and V2 proof both say so.
