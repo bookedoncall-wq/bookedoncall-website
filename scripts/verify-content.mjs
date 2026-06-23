@@ -360,6 +360,8 @@ for (const requiredDemoGuard of [
   "VAPI_DEMO_MONTHLY_BUDGET_USD",
   "BOOKEDONCALL_DEMO_MAX_CALL_SECONDS",
   "BOOKEDONCALL_DEMO_MAX_STARTS_PER_HOUR",
+  "maxDemoCallSeconds",
+  "isAllowedDemoOrigin",
   "isRateLimited",
 ]) {
   if (!demoRouteSource.includes(requiredDemoGuard)) {

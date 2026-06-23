@@ -5,6 +5,8 @@ export const runtime = "nodejs"
 
 const demoSessionWindowMs = 60 * 60 * 1000
 const defaultMaxDemoStartsPerWindow = 3
+const maxDemoStartsPerWindow = 10
+const maxDemoCallSeconds = 300
 const demoSessionBuckets = new Map<string, number[]>()
 
 type DemoSessionPayload = {
@@ -31,9 +33,24 @@ function normalizePositiveInteger(value: string | undefined, fallback: number) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback
 }
 
+function normalizeBoundedPositiveInteger(value: string | undefined, fallback: number, max: number) {
+  return Math.min(normalizePositiveInteger(value, fallback), max)
+}
+
 function normalizePositiveNumber(value: string | undefined, fallback: number) {
   const parsed = Number.parseFloat(value || "")
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback
+}
+
+function isAllowedDemoOrigin(request: Request) {
+  const origin = request.headers.get("origin")?.trim()
+  if (!origin) return true
+
+  try {
+    return new URL(origin).origin === new URL(request.url).origin
+  } catch {
+    return false
+  }
 }
 
 function getClientFingerprint(request: Request) {
@@ -45,7 +62,7 @@ function getClientFingerprint(request: Request) {
 function isRateLimited(fingerprint: string) {
   const now = Date.now()
   const cutoff = now - demoSessionWindowMs
-  const maxStarts = normalizePositiveInteger(process.env.BOOKEDONCALL_DEMO_MAX_STARTS_PER_HOUR, defaultMaxDemoStartsPerWindow)
+  const maxStarts = normalizeBoundedPositiveInteger(process.env.BOOKEDONCALL_DEMO_MAX_STARTS_PER_HOUR, defaultMaxDemoStartsPerWindow, maxDemoStartsPerWindow)
   const recentStarts = (demoSessionBuckets.get(fingerprint) || []).filter((timestamp) => timestamp > cutoff)
 
   if (recentStarts.length >= maxStarts) {
@@ -63,7 +80,7 @@ function getDemoConfig() {
   const publicKey = process.env.VAPI_WEB_PUBLIC_KEY?.trim()
   const assistantId = process.env.VAPI_DEMO_ASSISTANT_ID?.trim()
   const monthlyBudgetUsd = normalizePositiveNumber(process.env.VAPI_DEMO_MONTHLY_BUDGET_USD, 50)
-  const maxCallSeconds = normalizePositiveInteger(process.env.BOOKEDONCALL_DEMO_MAX_CALL_SECONDS, 180)
+  const maxCallSeconds = normalizeBoundedPositiveInteger(process.env.BOOKEDONCALL_DEMO_MAX_CALL_SECONDS, 180, maxDemoCallSeconds)
 
   return {
     enabled,
@@ -97,6 +114,10 @@ export function GET() {
 }
 
 export async function POST(request: Request) {
+  if (!isAllowedDemoOrigin(request)) {
+    return NextResponse.json({ ok: false, message: "Start the live demo from bookedoncall.com." }, { status: 403 })
+  }
+
   const config = getDemoConfig()
   if (!config.configured || !config.publicKey || !config.assistantId) {
     return unavailableResponse()
