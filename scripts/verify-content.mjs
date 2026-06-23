@@ -11,9 +11,12 @@ const requiredRoutes = [
   "app/about/page.tsx",
   "app/features/page.tsx",
   "app/how-it-works/page.tsx",
+  "app/industries/page.tsx",
   "app/product/page.tsx",
   "app/pricing/page.tsx",
+  "app/login/page.tsx",
   "app/sign-up/page.tsx",
+  "app/resources/page.tsx",
   "app/integrations/page.tsx",
   "app/api/leads/route.ts",
   "app/api/demo-session/route.ts",
@@ -22,6 +25,9 @@ const requiredRoutes = [
   "app/demo-calls/page.tsx",
   "app/examples/page.tsx",
   "app/compare/ai-receptionist-vs-voicemail/page.tsx",
+  "app/compare/missed-calls-for-home-service-businesses/page.tsx",
+  "app/compare/answering-service-vs-receptionist-vs-ai-receptionist/page.tsx",
+  "app/compare/after-hours-call-answering-for-hvac/page.tsx",
   "app/compare/after-hours-call-answering-for-plumbers/page.tsx",
   "app/for/plumbers/page.tsx",
   "app/for/hvac/page.tsx",
@@ -43,6 +49,7 @@ const requiredRoutes = [
   "app/call-handling-notice/page.tsx",
   "app/sms-terms/page.tsx",
   "app/dpa/page.tsx",
+  "app/contact/page.tsx",
   "app/auth-proof/session/page.tsx",
   "app/auth-proof/session/session-client.tsx",
   "app/llms.txt/route.ts",
@@ -159,21 +166,54 @@ if (!layoutSource.includes("StructuredData")) {
   errors.push("app/layout.tsx must emit structured data")
 }
 
+const customerFacingSitemapRoutes = [
+  "/",
+  "/product",
+  "/features",
+  "/how-it-works",
+  "/pricing",
+  "/login",
+  "/sign-up",
+  "/industries",
+  "/for/plumbers",
+  "/for/hvac",
+  "/for/electricians",
+  "/for/painters",
+  "/for/flooring",
+  "/for/landscaping",
+  "/for/roofing",
+  "/for/general-home-services",
+  "/integrations",
+  "/integrations/jobber",
+  "/integrations/google-calendar",
+  "/integrations/email",
+  "/integrations/text-sms",
+  "/integrations/quickbooks",
+  "/integrations/housecall-pro",
+  "/integrations/servicetitan",
+  "/resources",
+  "/demo-calls",
+  "/examples",
+  "/compare/ai-receptionist-vs-voicemail",
+  "/compare/missed-calls-for-home-service-businesses",
+  "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
+  "/compare/after-hours-call-answering-for-hvac",
+  "/compare/after-hours-call-answering-for-plumbers",
+  "/faq",
+  "/about",
+  "/privacy",
+  "/terms",
+  "/call-handling-notice",
+  "/sms-terms",
+  "/dpa",
+  "/contact",
+]
+
 const sitemapSource = readText("app/sitemap.xml/route.ts")
-if (
-  !sitemapSource.includes("/faq") ||
-  !sitemapSource.includes("/integrations/jobber") ||
-  !sitemapSource.includes("/integrations/email") ||
-  !sitemapSource.includes("/integrations/text-sms") ||
-  !sitemapSource.includes("/integrations/quickbooks") ||
-  !sitemapSource.includes("/integrations/housecall-pro") ||
-  !sitemapSource.includes("/integrations/servicetitan") ||
-  !sitemapSource.includes("/demo-calls") ||
-  !sitemapSource.includes("/examples") ||
-  !sitemapSource.includes("/call-handling-notice") ||
-  !sitemapSource.includes("/sms-terms")
-) {
-  errors.push("app/sitemap.xml/route.ts must include FAQ, demo, legal notice, SMS terms, and integration pages")
+for (const route of customerFacingSitemapRoutes) {
+  if (!sitemapSource.includes(`"${route}"`)) {
+    errors.push(`app/sitemap.xml/route.ts must include customer-facing route: ${route}`)
+  }
 }
 
 if (fs.existsSync(path.join(repoRoot, "app/api/checkout/route.ts"))) {

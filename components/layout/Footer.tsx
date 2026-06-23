@@ -15,7 +15,10 @@ const footerColumns = [
   },
   {
     title: "Industries",
-    links: secondaryNav.filter((item) => item.href.startsWith("/for/")),
+    links: [
+      { label: "Industries", href: "/industries" },
+      ...secondaryNav.filter((item) => item.href.startsWith("/for/")),
+    ],
   },
   {
     title: "Integrations",
@@ -32,6 +35,9 @@ const footerColumns = [
       { label: "Examples", href: "/examples" },
       { label: "AI vs Voicemail", href: "/compare/ai-receptionist-vs-voicemail" },
       { label: "Missed Calls Guide", href: "/compare/missed-calls-for-home-service-businesses" },
+      { label: "Answering Options", href: "/compare/answering-service-vs-receptionist-vs-ai-receptionist" },
+      { label: "After-Hours HVAC", href: "/compare/after-hours-call-answering-for-hvac" },
+      { label: "After-Hours Plumbing", href: "/compare/after-hours-call-answering-for-plumbers" },
       { label: "FAQ", href: "/faq" },
       { label: "About", href: "/about" },
     ],

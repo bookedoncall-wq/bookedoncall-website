@@ -9,6 +9,16 @@ import { cn } from "@/lib/utils"
 
 const extraResources = [
   {
+    title: "After-hours HVAC guide",
+    href: "/compare/after-hours-call-answering-for-hvac",
+    description: "Why no-heat and no-cool callers need a stronger first response outside office hours.",
+  },
+  {
+    title: "After-hours plumbing guide",
+    href: "/compare/after-hours-call-answering-for-plumbers",
+    description: "How urgent plumbing calls break when they land in voicemail and what a better handoff looks like.",
+  },
+  {
     title: "FAQ",
     href: "/faq",
     description: "Answers about setup, appointment handling, supported languages, integrations, and pricing.",
@@ -78,7 +88,7 @@ export default function ResourcesPage() {
       </section>
 
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-3">
           {extraResources.map((resource) => (
             <TrackedLink
               key={resource.href}
