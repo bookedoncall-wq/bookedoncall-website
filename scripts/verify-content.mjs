@@ -301,6 +301,20 @@ if (!leadRouteSource.includes("mailtoHref") || !leadRouteSource.includes("buildL
   errors.push("app/api/leads/route.ts must preserve the mailto fallback lead path")
 }
 
+const examplesSource = readText("app/examples/page.tsx")
+if (/\b\d{3}-555-\d{4}\b/.test(examplesSource)) {
+  errors.push("app/examples/page.tsx must avoid phone-number-like sample values in public examples")
+}
+for (const requiredExamplesGuard of [
+  "Decision path",
+  "View sample conversation",
+  "callback number captured",
+]) {
+  if (!examplesSource.includes(requiredExamplesGuard)) {
+    errors.push(`app/examples/page.tsx must preserve compact buyer-friendly examples guard phrase: ${requiredExamplesGuard}`)
+  }
+}
+
 const journeyVerifierSource = readText("scripts/verify-journeys.mjs")
 for (const requiredJourneyGuard of [
   "assertBuildRoutes(repoRoot, requiredBuildRoutes, \"verify:journeys\")",

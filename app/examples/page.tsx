@@ -45,7 +45,7 @@ const exampleCalls = [
       },
       {
         speaker: "Caller",
-        line: "This is Dana. Call me at 303-555-0186. We are on Maple Ridge Drive in Lakewood.",
+        line: "This is Dana. The number I am calling from is best. We are on Maple Ridge Drive in Lakewood.",
       },
       {
         speaker: "BookedOnCall",
@@ -77,7 +77,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Emergency owner alert after hours" },
       { label: "Priority", value: "Urgent; no heat, 12-degree forecast, vulnerable occupant in home" },
-      { label: "Customer", value: "Dana; callback 303-555-0186" },
+      { label: "Customer", value: "Dana; callback number captured" },
       { label: "Address", value: "Maple Ridge Drive, Lakewood" },
       { label: "Job", value: "Furnace clicks but does not fire" },
       { label: "Pricing", value: "Sample $89-$149 diagnostic range shared; no repair quote given" },
@@ -107,7 +107,7 @@ const exampleCalls = [
       },
       {
         speaker: "Caller",
-        line: "Nate, 214-555-0112. We are on Briar Creek Lane in Plano.",
+        line: "Nate. Use the number I am calling from. We are on Briar Creek Lane in Plano.",
       },
       {
         speaker: "BookedOnCall",
@@ -139,7 +139,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Appointment booked from reviewed rules" },
       { label: "Priority", value: "Routine; no overflow, leak, or active water damage" },
-      { label: "Customer", value: "Nate; callback 214-555-0112" },
+      { label: "Customer", value: "Nate; callback number captured" },
       { label: "Address", value: "Briar Creek Lane, Plano" },
       { label: "Job", value: "Hall toilet keeps running; customer can shut off valve" },
       { label: "Scheduling", value: "Booked Thursday morning from connected availability" },
@@ -169,7 +169,7 @@ const exampleCalls = [
       },
       {
         speaker: "Caller",
-        line: "Priya, 919-555-0174. It is on Brookhaven Drive in Cary.",
+        line: "Priya. The number I am calling from is best. It is on Brookhaven Drive in Cary.",
       },
       {
         speaker: "BookedOnCall",
@@ -201,7 +201,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Owner-review estimate request" },
       { label: "Priority", value: "Normal estimate lead; no smoke, sparks, or outage reported" },
-      { label: "Customer", value: "Priya; callback 919-555-0174" },
+      { label: "Customer", value: "Priya; callback number captured" },
       { label: "Address", value: "Brookhaven Drive, Cary" },
       { label: "Job", value: "Level 2 EV charger; panel may be full and may need upgrade review" },
       { label: "Pricing", value: "Caller pushed for ballpark; no final price given" },
@@ -231,7 +231,7 @@ const exampleCalls = [
       },
       {
         speaker: "Caller",
-        line: "Elena, 512-555-0137. We are on Willow Bend Drive in South Austin.",
+        line: "Elena. Please use the number I am calling from. We are on Willow Bend Drive in South Austin.",
       },
       {
         speaker: "BookedOnCall",
@@ -263,7 +263,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Walkthrough callback" },
       { label: "Priority", value: "Good estimate lead; two-week guest deadline" },
-      { label: "Customer", value: "Elena; callback 512-555-0137" },
+      { label: "Customer", value: "Elena; callback number captured" },
       { label: "Address", value: "Willow Bend Drive, South Austin" },
       { label: "Job", value: "Three bedrooms, walls and trim; one dark-color repaint; color undecided" },
       { label: "Pricing", value: "No quote given; walkthrough needed for prep and finish review" },
@@ -293,7 +293,7 @@ const exampleCalls = [
       },
       {
         speaker: "Caller",
-        line: "Marcus, 208-555-0191. We are near Hill Road in Boise.",
+        line: "Marcus. The number I am calling from is best. We are near Hill Road in Boise.",
       },
       {
         speaker: "BookedOnCall",
@@ -325,7 +325,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Measure request pending owner confirmation" },
       { label: "Priority", value: "Normal estimate lead; possible moisture review needed" },
-      { label: "Customer", value: "Marcus; callback 208-555-0191" },
+      { label: "Customer", value: "Marcus; callback number captured" },
       { label: "Address", value: "Hill Road area, Boise" },
       { label: "Job", value: "LVP for basement, about 600 sq ft; old carpet; no stairs in room" },
       { label: "Scheduling", value: "Caller prefers Wednesday afternoon; owner must confirm measure request" },
@@ -355,7 +355,7 @@ const exampleCalls = [
       },
       {
         speaker: "Caller",
-        line: "Riley, 913-555-0148. The house is off Moonlight Road in Gardner.",
+        line: "Riley. Use the number I am calling from. The house is off Moonlight Road in Gardner.",
       },
       {
         speaker: "BookedOnCall",
@@ -387,7 +387,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Service-area review callback" },
       { label: "Priority", value: "Recurring maintenance lead; route fit needs review" },
-      { label: "Customer", value: "Riley; callback 913-555-0148" },
+      { label: "Customer", value: "Riley; callback number captured" },
       { label: "Address", value: "Moonlight Road area, Gardner" },
       { label: "Job", value: "Weekly mowing, edging, trimming; monthly front-bed cleanup; quarter-acre yard" },
       { label: "Pricing", value: "No weekly price quoted; route and property review required" },
@@ -417,7 +417,7 @@ const exampleCalls = [
       },
       {
         speaker: "Caller",
-        line: "Chris, 615-555-0163. We are on Cedar Hollow Road in Franklin.",
+        line: "Chris. The number I am calling from is best. We are on Cedar Hollow Road in Franklin.",
       },
       {
         speaker: "BookedOnCall",
@@ -449,7 +449,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Urgent leak callback" },
       { label: "Priority", value: "Urgent; active interior drip after storm, soft drywall reported" },
-      { label: "Customer", value: "Chris; callback 615-555-0163" },
+      { label: "Customer", value: "Chris; callback number captured" },
       { label: "Address", value: "Cedar Hollow Road, Franklin" },
       { label: "Job", value: "Guest-room ceiling leak after storm; bucket catching active drip" },
       { label: "Safety", value: "No light fixture reported near leak; ceiling material softening" },
@@ -479,7 +479,7 @@ const exampleCalls = [
       },
       {
         speaker: "Caller",
-        line: "Sam, 704-555-0129. We are near Rea Road in Charlotte.",
+        line: "Sam. Use the number I am calling from. We are near Rea Road in Charlotte.",
       },
       {
         speaker: "BookedOnCall",
@@ -511,7 +511,7 @@ const exampleCalls = [
     ownerSummary: [
       { label: "Outcome", value: "Small-job triage callback" },
       { label: "Priority", value: "Review; loose stair handrail adds safety context" },
-      { label: "Customer", value: "Sam; callback 704-555-0129" },
+      { label: "Customer", value: "Sam; callback number captured" },
       { label: "Address", value: "Rea Road area, Charlotte" },
       { label: "Job", value: "Sagging side gate latch, loose stair handrail, two shelves to mount" },
       { label: "Pricing", value: "No final labor or trip price quoted; minimum-service-call fit needs owner review" },
@@ -643,66 +643,74 @@ export default function ExamplesPage() {
                   </div>
                 </div>
 
-                <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[minmax(0,0.98fr)_minmax(300px,0.82fr)]">
-                  <div className="grid gap-4">
-                    <div className="flex items-center gap-2">
-                      <PhoneCall className="size-4 text-amber-600" />
-                      <h3 className="text-xl font-black text-slate-950">Conversation</h3>
-                    </div>
-                    <div className="grid gap-3">
-                      {call.transcript.map((turn, index) => (
-                        <p
-                          key={`${call.title}-${turn.speaker}-${index}`}
-                          className={`max-w-[94%] rounded-lg px-4 py-3 text-sm leading-7 ${
-                            turn.speaker === "BookedOnCall"
-                              ? "border border-slate-200 bg-slate-50 text-slate-700"
-                              : "justify-self-end bg-amber-100 text-amber-950"
-                          }`}
-                        >
-                          <strong className="block text-xs uppercase tracking-[0.12em] text-slate-500">{turn.speaker}</strong>
-                          {turn.line}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="grid content-start gap-5">
+                <div className="grid gap-5 p-5 sm:p-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,1.1fr)]">
+                  <div className="grid content-start gap-4">
                     <div className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-5">
                       <div className="flex items-center gap-2">
                         <ShieldCheck className="size-4 text-amber-600" />
-                        <h3 className="text-xl font-black text-slate-950">What BookedOnCall checks</h3>
+                        <h3 className="text-xl font-black text-slate-950">Decision path</h3>
                       </div>
-                      <ul className="grid gap-2 text-sm leading-7 text-slate-700">
-                        {call.checks.map((item) => (
-                          <li key={item} className="border-l-2 border-amber-200 pl-3">
-                            {item}
+                      <ol className="grid gap-2 text-sm leading-7 text-slate-700">
+                        {call.checks.map((item, index) => (
+                          <li key={item} className="grid grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-md bg-white p-3">
+                            <span className="grid size-7 place-items-center rounded-full border border-amber-200 bg-amber-50 text-xs font-black text-amber-800">
+                              {index + 1}
+                            </span>
+                            <span>{item}</span>
                           </li>
                         ))}
-                      </ul>
+                      </ol>
                     </div>
 
+                    <details className="group overflow-hidden rounded-lg border border-slate-200 bg-white">
+                      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-black text-slate-950 marker:hidden">
+                        <span className="flex items-center gap-2">
+                          <PhoneCall className="size-4 text-amber-600" />
+                          View sample conversation
+                        </span>
+                        <ArrowRight className="size-4 shrink-0 text-amber-700 transition group-open:rotate-90" />
+                      </summary>
+                      <div className="grid gap-3 border-t border-slate-200 bg-slate-50 p-4">
+                        {call.transcript.map((turn, index) => (
+                          <p
+                            key={`${call.title}-${turn.speaker}-${index}`}
+                            className={`max-w-[94%] rounded-lg px-4 py-3 text-sm leading-7 ${
+                              turn.speaker === "BookedOnCall"
+                                ? "border border-slate-200 bg-white text-slate-700"
+                                : "justify-self-end bg-amber-100 text-amber-950"
+                            }`}
+                          >
+                            <strong className="block text-xs uppercase tracking-[0.12em] text-slate-500">{turn.speaker}</strong>
+                            {turn.line}
+                          </p>
+                        ))}
+                      </div>
+                    </details>
+                  </div>
+
+                  <div className="grid content-start gap-4">
                     <div className="grid gap-3 rounded-lg border border-slate-200 bg-white p-5">
                       <div className="flex items-center gap-2">
                         <MailCheck className="size-4 text-amber-600" />
                         <h3 className="text-xl font-black text-slate-950">Owner summary</h3>
                       </div>
-                      <dl className="grid gap-3 text-sm leading-7">
+                      <dl className="grid gap-3 text-sm leading-7 sm:grid-cols-2">
                         {call.ownerSummary.map((row) => (
-                          <div key={row.label} className="grid gap-1 border-t border-slate-200 pt-3">
+                          <div key={row.label} className="grid gap-1 rounded-md border border-slate-200 bg-slate-50 p-3">
                             <dt className="font-bold text-slate-950">{row.label}</dt>
                             <dd className="text-slate-600">{row.value}</dd>
                           </div>
                         ))}
                       </dl>
                     </div>
-                  </div>
-                </div>
 
-                <div className="mx-5 mb-5 flex flex-col gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 sm:mx-6 sm:mb-6 sm:flex-row sm:items-start">
-                  <MessageSquareText className="mt-1 size-5 shrink-0 text-amber-600" />
-                  <div>
-                    <h3 className="text-base font-black text-slate-950">Customer follow-up text or email</h3>
-                    <p className="mt-1 text-sm leading-7 text-slate-600">{call.customerFollowUp}</p>
+                    <div className="flex flex-col gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 sm:flex-row sm:items-start">
+                      <MessageSquareText className="mt-1 size-5 shrink-0 text-amber-600" />
+                      <div>
+                        <h3 className="text-base font-black text-slate-950">Customer follow-up text or email</h3>
+                        <p className="mt-1 text-sm leading-7 text-slate-600">{call.customerFollowUp}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </article>
