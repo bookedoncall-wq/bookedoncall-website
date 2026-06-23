@@ -10,6 +10,11 @@ type UseCaseContent = {
   commonCalls: readonly string[]
   reasons: readonly string[]
   trustCopy: string
+  showcase?: {
+    href: string
+    title: string
+    body: string
+  }
   ctaTitle: string
   ctaBody: string
 }
@@ -58,6 +63,18 @@ export function UseCasePage({ crumbLabel, path, content }: UseCasePageProps) {
           <article className="rounded-lg border border-slate-200 bg-slate-50 p-7">
             <h2 className="mb-4 text-3xl font-black text-slate-950">Built for the way this work actually gets done</h2>
             <p className="max-w-4xl text-base leading-8 text-slate-700">{content.trustCopy}</p>
+            {content.showcase ? (
+              <TrackedLink
+                href={content.showcase.href}
+                eventName="marketing_cta_clicked"
+                eventPayload={{ placement: "use_case_showcase_example", path, href: content.showcase.href }}
+                className="mt-6 grid max-w-3xl gap-2 border-t border-slate-200 pt-4 transition-colors hover:text-amber-800"
+              >
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-amber-700">Showcase example</span>
+                <strong className="text-lg text-slate-950">{content.showcase.title}</strong>
+                <span className="text-sm leading-6 text-slate-600">{content.showcase.body}</span>
+              </TrackedLink>
+            ) : null}
             <div className="mt-6 flex flex-wrap gap-4 text-sm font-bold">
               <TrackedLink
                 href="/about"

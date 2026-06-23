@@ -22,6 +22,7 @@ export const siteConfig = {
 export const plans = contract.plans
 export const validatedCapabilities = contract.validatedCapabilities
 export const supportedTrades = contract.supportedTrades
+export const showcaseExamples = contract.showcaseExamples
 const supportedTradeHrefByLabel: Record<string, string> = {
   Plumbing: "/for/plumbers",
   HVAC: "/for/hvac",

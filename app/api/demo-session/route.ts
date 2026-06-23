@@ -15,6 +15,11 @@ const allowedDemoProfileIds = new Set([
   "summit-air-hvac",
   "oakline-plumbing",
   "brightline-electric",
+  "truecoat-painting",
+  "grainline-flooring",
+  "greenridge-landscaping",
+  "ridgecap-roofing",
+  "fixwell-home-services",
 ])
 
 function normalizeText(value: unknown) {

@@ -37,6 +37,72 @@
     "Roofing",
     "General home services"
   ],
+  "showcaseExamples": [
+    {
+      "id": "plumbing-running-toilet-booked",
+      "trade": "Plumbing",
+      "title": "Plumbing running-toilet call booked by rule",
+      "path": "/examples#plumbing-running-toilet-booked",
+      "outcome": "Appointment booked from reviewed rules",
+      "summaryArtifact": "Owner summary includes outcome, priority, customer, address, job, scheduling, and next step."
+    },
+    {
+      "id": "hvac-no-heat-after-hours",
+      "trade": "HVAC",
+      "title": "HVAC no-heat call during a cold snap",
+      "path": "/examples#hvac-no-heat-after-hours",
+      "outcome": "Emergency owner alert after hours",
+      "summaryArtifact": "Owner summary includes outcome, priority, customer, address, job, pricing, and next step."
+    },
+    {
+      "id": "electrical-ev-charger-owner-review",
+      "trade": "Electrical",
+      "title": "Electrical EV charger call with price deflected safely",
+      "path": "/examples#electrical-ev-charger-owner-review",
+      "outcome": "Owner-review estimate request",
+      "summaryArtifact": "Owner summary includes outcome, priority, customer, address, job, pricing, and next step."
+    },
+    {
+      "id": "painting-interior-walkthrough",
+      "trade": "Painting",
+      "title": "Painting interior repaint lead with walkthrough callback",
+      "path": "/examples#painting-interior-walkthrough",
+      "outcome": "Walkthrough callback",
+      "summaryArtifact": "Owner summary includes outcome, priority, customer, address, job, pricing, and next step."
+    },
+    {
+      "id": "flooring-lvp-measure-request",
+      "trade": "Flooring",
+      "title": "Flooring LVP basement estimate with measurement request",
+      "path": "/examples#flooring-lvp-measure-request",
+      "outcome": "Measure request pending owner confirmation",
+      "summaryArtifact": "Owner summary includes outcome, priority, customer, address, job, scheduling, and next step."
+    },
+    {
+      "id": "landscaping-weekly-route-review",
+      "trade": "Landscaping",
+      "title": "Landscaping weekly maintenance lead outside the route",
+      "path": "/examples#landscaping-weekly-route-review",
+      "outcome": "Service-area review callback",
+      "summaryArtifact": "Owner summary includes outcome, priority, customer, address, job, pricing, and next step."
+    },
+    {
+      "id": "roofing-active-leak-urgent",
+      "trade": "Roofing",
+      "title": "Roofing active leak after last night's storm",
+      "path": "/examples#roofing-active-leak-urgent",
+      "outcome": "Urgent leak callback",
+      "summaryArtifact": "Owner summary includes outcome, priority, customer, address, job, safety, and next step."
+    },
+    {
+      "id": "general-small-job-triage",
+      "trade": "General home services",
+      "title": "General home-services gate latch call with job-size triage",
+      "path": "/examples#general-small-job-triage",
+      "outcome": "Small-job triage callback",
+      "summaryArtifact": "Owner summary includes outcome, priority, customer, address, job, pricing, and next step."
+    }
+  ],
   "validatedCapabilities": [
     "Answers inbound calls for plumbing, HVAC, electrical, painting, flooring, landscaping, roofing, and general home-service businesses.",
     "Collects caller name, callback number, address, job details, and service notes.",

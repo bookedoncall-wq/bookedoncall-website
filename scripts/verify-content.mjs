@@ -366,6 +366,21 @@ for (const requiredDemoGuard of [
     errors.push(`app/api/demo-session/route.ts must preserve live demo session guard phrase: ${requiredDemoGuard}`)
   }
 }
+const requiredDemoProfileIds = [
+  "summit-air-hvac",
+  "oakline-plumbing",
+  "brightline-electric",
+  "truecoat-painting",
+  "grainline-flooring",
+  "greenridge-landscaping",
+  "ridgecap-roofing",
+  "fixwell-home-services",
+]
+for (const profileId of requiredDemoProfileIds) {
+  if (!demoRouteSource.includes(profileId)) {
+    errors.push(`app/api/demo-session/route.ts must allow demo profile: ${profileId}`)
+  }
+}
 
 const vapiDemoSource = readText("components/marketing/VapiDemoCallPreview.tsx")
 for (const requiredVapiDemoGuard of [
@@ -377,6 +392,11 @@ for (const requiredVapiDemoGuard of [
 ]) {
   if (!vapiDemoSource.includes(requiredVapiDemoGuard)) {
     errors.push(`components/marketing/VapiDemoCallPreview.tsx must preserve live demo guard phrase: ${requiredVapiDemoGuard}`)
+  }
+}
+for (const profileId of requiredDemoProfileIds) {
+  if (!vapiDemoSource.includes(profileId)) {
+    errors.push(`components/marketing/VapiDemoCallPreview.tsx must render demo profile: ${profileId}`)
   }
 }
 

@@ -9,7 +9,7 @@ const demoStates = [
   {
     icon: FileText,
     title: "Read example transcripts",
-    body: "See how common plumbing, HVAC, and electrical calls move from first question to a clean next step.",
+    body: "See one full showcase example for each supported trade, including the owner summary the shop receives.",
     status: "Ready to review",
   },
   {

@@ -211,7 +211,7 @@ export const resourceHighlights = [
   {
     title: "Review example outcomes",
     href: "/examples",
-    description: "See how HVAC, plumbing, roofing, landscaping, and electrical calls move from first question to booked appointment, urgent flag, service-area review, booking request, or callback."
+    description: "See one best call example for each supported trade, from urgent HVAC and roofing handoffs to plumbing booking, painting estimates, flooring measurement, landscaping route review, and small-job triage."
   },
   {
     title: "Compare with voicemail",
@@ -246,6 +246,11 @@ export const useCasePages = {
     ],
     trustCopy:
       "Plumbing calls are often urgent. When water is going where it shouldn't, people don't want to hear voicemail. BookedOnCall helps you sound responsive even when everyone is already in the field.",
+    showcase: {
+      href: "/examples#plumbing-running-toilet-booked",
+      title: "Example: running-toilet call booked by rule",
+      body: "See a routine plumbing call get checked for urgency, service area, and booking rules before an appointment is confirmed."
+    },
     ctaTitle: "Ready to set up plumbing call coverage?",
     ctaBody: "Choose a plan and make sure the next plumbing call gets answered."
   },
@@ -269,6 +274,11 @@ export const useCasePages = {
     ],
     trustCopy:
       "HVAC calls can be high-pressure and time-sensitive, especially in peak summer and winter weeks. BookedOnCall helps your business sound steady and responsive when demand jumps and you're stretched thin.",
+    showcase: {
+      href: "/examples#hvac-no-heat-after-hours",
+      title: "Example: no heat during a cold snap",
+      body: "See an after-hours no-heat call get marked urgent without a fake dispatch or repair quote."
+    },
     ctaTitle: "Need better HVAC call coverage?",
     ctaBody: "Choose a plan and make sure heating and cooling calls get answered the first time."
   },
@@ -292,6 +302,11 @@ export const useCasePages = {
     ],
     trustCopy:
       "Electrical work often needs a little more judgment before anything gets promised. BookedOnCall helps you capture the right details, keep the customer moving, and hand the job back to your team when that is the right call.",
+    showcase: {
+      href: "/examples#electrical-ev-charger-owner-review",
+      title: "Example: EV charger estimate request",
+      body: "See a caller push for a price and the assistant safely route the panel-capacity question to owner review."
+    },
     ctaTitle: "Ready to set up electrical call handling?",
     ctaBody: "Choose a plan and give new electrical leads a better first response."
   },
@@ -315,6 +330,11 @@ export const useCasePages = {
     ],
     trustCopy:
       "Painting businesses win work by being responsive, organized, and easy to deal with. BookedOnCall helps you make that strong first impression even when everyone is already in the field.",
+    showcase: {
+      href: "/examples#painting-interior-walkthrough",
+      title: "Example: three-bedroom repaint lead",
+      body: "See a painting estimate call turn into a polished walkthrough callback with deadline, surfaces, and prep notes captured."
+    },
     ctaTitle: "Need better coverage for painting leads?",
     ctaBody: "Choose a plan and make sure estimate requests don't disappear into voicemail."
   },
@@ -338,6 +358,11 @@ export const useCasePages = {
     ],
     trustCopy:
       "A lot of flooring work starts with an estimate request. If the first call goes unanswered, that customer may never call back. BookedOnCall helps you keep those opportunities alive.",
+    showcase: {
+      href: "/examples#flooring-lvp-measure-request",
+      title: "Example: basement LVP measurement request",
+      body: "See an LVP estimate lead capture square footage, current flooring, moisture risk, and a preferred measure window."
+    },
     ctaTitle: "Ready for better flooring lead coverage?",
     ctaBody: "Choose a plan and make it easier to respond quickly to new flooring inquiries."
   },
@@ -361,6 +386,11 @@ export const useCasePages = {
     ],
     trustCopy:
       "Landscaping businesses spend most of the day away from the phone. BookedOnCall helps you stay responsive without forcing someone to stop mid-route just to catch the next lead.",
+    showcase: {
+      href: "/examples#landscaping-weekly-route-review",
+      title: "Example: weekly maintenance route review",
+      body: "See a recurring-service lead captured cleanly when the property may sit outside the normal crew route."
+    },
     ctaTitle: "Need better landscaping call coverage?",
     ctaBody: "Choose a plan and make sure maintenance and project calls get a faster first response."
   },
@@ -384,6 +414,11 @@ export const useCasePages = {
     ],
     trustCopy:
       "Roofing calls often come in waves after leaks, storms, or insurance-driven repair needs. BookedOnCall helps your shop sound responsive, collect the right details, and keep the next step clear when a person should still review the job.",
+    showcase: {
+      href: "/examples#roofing-active-leak-urgent",
+      title: "Example: active roof leak after a storm",
+      body: "See a storm leak call capture urgency, ceiling details, and callback context without promising a tarp or insurance outcome."
+    },
     ctaTitle: "Need better roofing call coverage?",
     ctaBody: "Choose a plan and make sure roof repair, replacement, and inspection calls get a better first response."
   },
@@ -407,6 +442,11 @@ export const useCasePages = {
     ],
     trustCopy:
       "A lot of growing home-service businesses are too busy to answer every call and too small to hire a dedicated receptionist. BookedOnCall is built for that middle ground.",
+    showcase: {
+      href: "/examples#general-small-job-triage",
+      title: "Example: gate latch and punch-list triage",
+      body: "See a tiny handyman request turn into a better-fit callback after the assistant asks what else can be bundled."
+    },
     ctaTitle: "Need a better way to answer new service calls?",
     ctaBody: "Choose a plan and make sure new home-service leads get a better first response."
   }
