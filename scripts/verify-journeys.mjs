@@ -37,7 +37,7 @@ const criticalRouteExpectations = {
   "/for/general-home-services": ["AI call answering for general home-service businesses", "Common calls in this trade", "Book when it fits"],
   "/resources": ["Hear it, compare it, then choose the setup", "After-hours HVAC guide", "After-hours plumbing guide"],
   "/demo-calls": ["Demo calls", "Sample shop demo", "setup review call", "Start setup"],
-  "/examples": ["After setup is reviewed", "Emergency owner alert after hours", "Appointment booked from reviewed rules", "Owner-review estimate request", "Measure request pending owner confirmation", "Service-area review callback", "Small-job triage callback", "Decision path", "View sample conversation", "Owner summary"],
+  "/examples": ["After setup is reviewed", "Configured outcomes only", "Website demos and examples do not change calendars", "Emergency owner alert after hours", "Appointment booked from reviewed rules", "Owner-review estimate request", "Measure request pending owner confirmation", "Service-area review callback", "Small-job triage callback", "Decision path", "View sample conversation", "Owner summary"],
   "/compare/ai-receptionist-vs-voicemail": ["AI receptionist vs voicemail", "voicemail", "Read sample calls"],
   "/compare/missed-calls-for-home-service-businesses": ["Missed calls for home-service businesses", "Why missed calls hurt more in the trades", "Read sample calls"],
   "/compare/answering-service-vs-receptionist-vs-ai-receptionist": ["Answering service vs receptionist vs AI receptionist", "What each option is really buying you", "Read sample calls"],

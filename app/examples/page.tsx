@@ -540,6 +540,21 @@ const nextSteps = [
   },
 ] as const
 
+const exampleBoundaryNotes = [
+  {
+    title: "Configured outcomes only",
+    body: "A confirmed appointment appears only when that business has reviewed the service, coverage, scheduling permission, and booking rule for that kind of request.",
+  },
+  {
+    title: "Owner review stays available",
+    body: "Urgent, pricing-sensitive, out-of-area, unsafe, or unclear jobs come back as owner review, callback, or appointment request instead of a fake promise.",
+  },
+  {
+    title: "Website demos stay separate",
+    body: "Website demos and examples do not change calendars, send customer texts, dispatch crews, or create real customer records.",
+  },
+] as const
+
 export const metadata = buildPageMetadata({
   title: "Example calls",
   description:
@@ -597,6 +612,14 @@ export default function ExamplesPage() {
             <p className="text-base leading-8 text-slate-600">
               The important part is not the script. It is the rule check: service fit, coverage, urgency, scheduling permission, and whether the owner wants final review.
             </p>
+            <div className="grid gap-3">
+              {exampleBoundaryNotes.map((note) => (
+                <article key={note.title} className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <h3 className="text-sm font-black text-slate-950">{note.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{note.body}</p>
+                </article>
+              ))}
+            </div>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {exampleCalls.map((call) => (
