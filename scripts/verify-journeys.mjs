@@ -19,11 +19,11 @@ const requiredBuildRoutes = [
 ]
 
 const criticalRouteExpectations = {
-  "/": ["BookedOnCall", "Start setup", "Try demo calls"],
-  "/product": ["answers inbound calls", "callback", "booking"],
+  "/": ["BookedOnCall", "Start setup", "Try demo calls", "You bring the basics", "Callers hear it after review"],
+  "/product": ["answers inbound calls", "callback", "booking", "Rules get reviewed"],
   "/features": ["What you get with BookedOnCall", "Book what can be booked", "When you take over"],
   "/how-it-works": ["What happens when a customer calls", "When BookedOnCall books the job", "When you take over"],
-  "/pricing": ["Starter", "Pro", "included minutes"],
+  "/pricing": ["Starter", "Pro", "included minutes", "Callers hear it after review"],
   "/login": ["Go to customer login", `${appOrigin}/sign-in`],
   "/sign-up": ["Request setup", "setup review call"],
   "/industries": ["Built for the trades", "Different trades, similar call pressure", "Read sample calls"],
@@ -36,8 +36,8 @@ const criticalRouteExpectations = {
   "/for/roofing": ["AI call answering for roofing companies", "Common calls in this trade", "Book when it fits"],
   "/for/general-home-services": ["AI call answering for general home-service businesses", "Common calls in this trade", "Book when it fits"],
   "/resources": ["Hear it, compare it, then choose the setup", "After-hours HVAC guide", "After-hours plumbing guide"],
-  "/demo-calls": ["Demo calls", "Sample shop demo", "setup review call", "Start setup"],
-  "/examples": ["After setup is reviewed", "Configured outcomes only", "Website demos and examples do not change calendars", "Emergency owner alert after hours", "Appointment booked from reviewed rules", "Owner-review estimate request", "Measure request pending owner confirmation", "Service-area review callback", "Small-job triage callback", "Decision path", "View sample conversation", "Owner summary"],
+  "/demo-calls": ["Demo calls", "Sample shop demo", "setup review call", "Start setup", "You bring the basics"],
+  "/examples": ["After setup is reviewed", "Configured outcomes only", "Website demos and examples do not change calendars", "Emergency owner alert after hours", "Appointment booked from reviewed rules", "Owner-review estimate request", "Measure request pending owner confirmation", "Service-area review callback", "Small-job triage callback", "Decision path", "View sample conversation", "Owner summary", "Rules get reviewed"],
   "/compare/ai-receptionist-vs-voicemail": ["AI receptionist vs voicemail", "voicemail", "Read sample calls"],
   "/compare/missed-calls-for-home-service-businesses": ["Missed calls for home-service businesses", "Why missed calls hurt more in the trades", "Read sample calls"],
   "/compare/answering-service-vs-receptionist-vs-ai-receptionist": ["Answering service vs receptionist vs AI receptionist", "What each option is really buying you", "Read sample calls"],

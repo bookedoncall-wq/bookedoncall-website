@@ -1,3 +1,4 @@
+import { CalendarClock, ClipboardList, PhoneCall } from "lucide-react"
 import { buildGetStartedHref, positioning, primaryCtaLabel } from "@/config/site"
 import { TrackedLink } from "@/components/marketing/TrackedLink"
 import { buttonVariants } from "@/lib/button-variants"
@@ -11,6 +12,24 @@ type CtaBandProps = {
   secondaryLabel?: string
   secondaryHref?: string
 }
+
+const setupExpectationItems = [
+  {
+    icon: ClipboardList,
+    title: "You bring the basics",
+    body: "Trade, service area, hours, call types, and the best phone path.",
+  },
+  {
+    icon: CalendarClock,
+    title: "Rules get reviewed",
+    body: "Booking, pricing, urgency, and owner-review rules are checked before callers rely on them.",
+  },
+  {
+    icon: PhoneCall,
+    title: "Callers hear it after review",
+    body: "Place a setup review call before missed or overflow calls forward to BookedOnCall.",
+  },
+] as const
 
 export function CtaBand({
   title,
@@ -48,6 +67,20 @@ export function CtaBand({
           >
             {secondaryLabel}
           </TrackedLink>
+        </div>
+        <div aria-label="Setup expectations" className="grid gap-3 pt-2 text-left sm:grid-cols-3">
+          {setupExpectationItems.map((item) => {
+            const Icon = item.icon
+            return (
+              <div key={item.title} className="grid gap-2 rounded-lg border border-white/10 bg-white/8 p-4">
+                <div className="flex items-center gap-2 text-sm font-black text-white">
+                  <Icon className="size-4 shrink-0 text-amber-300" />
+                  <span>{item.title}</span>
+                </div>
+                <p className="text-sm leading-6 text-slate-300">{item.body}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
