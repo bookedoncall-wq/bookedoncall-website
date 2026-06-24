@@ -10,6 +10,7 @@ Run the requested holistic public-website pass outside W3, verify the current cu
 - The website can accept setup interest and explain the mature configured product, but it must not imply public checkout, live answering, direct booking, provider writes, or customer-data readiness are available before setup and separate proof.
 - Local production-mode checks showed the current 40-route website surface is mechanically healthy after a fresh build.
 - Live public visual sweep over the same 40 routes passed before this local edit, proving the deployed site did not have the earlier broad first-screen h1/CTA visual failures at review time.
+- Commit `16ae9a5` was pushed to `origin/main`; the public `/examples` page then reflected the new boundary copy and passed live visual verification.
 
 ## Files Changed
 
@@ -46,18 +47,24 @@ Run the requested holistic public-website pass outside W3, verify the current cu
   - `npm run security:secrets`
   - `npm run verify:security`
   - `git diff --check`
+  - `git push origin main`
+  - `curl -fsSL https://www.bookedoncall.com/examples` snippet check for:
+    - `Configured outcomes only`
+    - `Website demos and examples do not change calendars`
+    - `Appointment booked from reviewed rules`
+  - `npm run verify:visual-layout -- --origin=https://www.bookedoncall.com --routes=/examples --screenshot-dir=artifacts/screenshots/2026-06-24-examples-boundary-live --json-out=artifacts/reviews/2026-06-24-examples-boundary-visual-live.json`
 
 ## Proof Level
 
 - Website repo proof: content contract, public truth contract, lint, build, production-mode journey, runtime, SEO, secrets, npm audit, and local visual layout checks passed.
 - Local browser proof: `/examples` screenshot proof passed on desktop, iPhone, and Android viewports after the edit.
 - Live website observation before the edit: the deployed public site passed the full 40-route visual sweep at `https://www.bookedoncall.com`.
+- Deployed website observation after push: public `/examples` included the new boundary copy and passed desktop, iPhone, and Android visual verification at `https://www.bookedoncall.com`.
 
 This does not prove deployed output for this edited commit, exact Vercel deployment identity, provider readiness, live voice behavior, customer-data readiness, billing readiness, launch readiness, or legal/counsel approval.
 
 ## Validation Not Run
 
-- No deployment or post-deploy live verification for this local edit.
 - No Vercel connector deployment identity inspection.
 - No live voice demo call.
 - No legal/counsel due diligence.
@@ -70,4 +77,4 @@ This does not prove deployed output for this edited commit, exact Vercel deploym
 
 ## Next Safest Task
 
-Deploy or push this website commit if the operator intends the boundary improvement to go live, then run live `/examples` and full-route visual verification against `https://www.bookedoncall.com`. If staying in V2, return to owner setup activation or service-area/services/pricing guardrail rehearsal; do not refresh founder-gated provider/live/deployment rows per commit.
+If deployment-sensitive website work continues, restore Vercel connector access so exact deployment identity, build logs, aliases, and rollback state can be inspected. If staying in V2, return to owner setup activation or service-area/services/pricing guardrail rehearsal; do not refresh founder-gated provider/live/deployment rows per commit.
