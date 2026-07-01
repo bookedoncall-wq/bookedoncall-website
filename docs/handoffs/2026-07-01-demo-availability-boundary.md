@@ -7,9 +7,10 @@ Remove a public-website buyer-trust mismatch where surrounding marketing copy im
 ## Current State
 
 - Website source started at clean HEAD `fc865dd`, one commit ahead of origin.
+- The final website commit `4af4871` was pushed to `origin/main` and Vercel production deployment `dpl_BpeA75rEEnToFWBtymRy46QahuHP` was reported Ready with aliases for `https://www.bookedoncall.com`, `https://bookedoncall.com`, and the production Vercel URLs.
 - `config/public-site-contract.json` still has `featureFlags.selfServeCheckout=false`, so buying CTAs remain on the setup/request path rather than app checkout.
 - The public demo runtime already fails closed when `BOOKEDONCALL_DEMO_VOICE_ENABLED` or required provider env is unavailable.
-- The copy around FAQ, Resources, Demo Calls, Sign-up, Email integration, and Examples still used unconditional "try/start the live web voice demo" language.
+- The copy around FAQ, Resources, Demo Calls, Sign-up, Email integration, and Examples previously used unconditional "try/start the live web voice demo" language. The live custom domain now serves the bounded wording on the checked routes.
 
 ## Files Changed
 
@@ -40,23 +41,26 @@ Remove a public-website buyer-trust mismatch where surrounding marketing copy im
 - `npm run verify:visual-layout -- --no-screenshots --routes=/demo-calls,/faq,/sign-up,/examples,/integrations/email`
 - `npm run verify:production-leads`
 - `npm run verify:visual-layout -- --no-screenshots`
+- `git push origin main`
+- `npx vercel ls bookedoncall-website --scope bookedoncall-8233s-projects`
+- `npx vercel inspect https://bookedoncall-website-3co7zmjlt-bookedoncall-8233s-projects.vercel.app --scope bookedoncall-8233s-projects`
+- Live custom-domain phrase checks for `/demo-calls`, `/examples`, `/integrations/email`, and `/sign-up`
+- `npm run verify:visual-layout -- --origin=https://www.bookedoncall.com --no-screenshots --routes=/demo-calls,/faq,/sign-up,/examples,/integrations/email`
 
 ## Proof Level
 
-Website repo proof plus local production-mode website proof. The changed routes passed contract checks, lint, build, runtime, journey, SEO, synthetic lead-path verification, focused visual layout verification across three viewports, and a full no-screenshot visual layout sweep.
+Website repo proof, local production-mode website proof, Vercel deployment inspection, live custom-domain phrase proof, and focused live deployed website visual proof. The changed routes passed contract checks, lint, build, runtime, journey, SEO, synthetic lead-path verification, focused visual layout verification across three viewports, a full no-screenshot visual layout sweep, custom-domain phrase checks, and a five-route live visual sweep against `https://www.bookedoncall.com`.
 
-This is not deployed website proof, exact Vercel deployment identity proof, provider proof, live voice proof, customer-data proof, billing proof, legal approval, revenue readiness, public self-serve readiness, or launch readiness.
+This is not provider proof, live voice proof, customer-data proof, billing proof, legal approval, revenue readiness, public self-serve readiness, or launch readiness.
 
 ## Validation Not Run
 
-- No live origin check at `https://www.bookedoncall.com`.
-- No Vercel deployment inspection.
 - No real live voice demo start.
 - No legal/counsel due diligence.
 
 ## Risks
 
-- The live website will still show the older unconditional copy until this website commit is deployed.
+- Initial uncached custom-domain checks returned stale prerendered pages from the prior deployment. Cache-busted and follow-up checks regenerated the affected pages and passed on the custom domain.
 - The live demo itself remains dependent on provider/env configuration and rate limits; this batch only fixes public expectation-setting and verifier coverage.
 
 ## Next Prompt
