@@ -5,30 +5,10 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { assertBuildRoutes, getFreePort, startNextServer, waitForServer } from "./lib/next-production-verifier.mjs"
 import { launchLocalChromeCdp } from "./lib/local-chrome-cdp.mjs"
+import { customerFacingRoutes } from "./lib/customer-facing-routes.mjs"
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const defaultScreenshotDir = "artifacts/screenshots/site-visual-layout"
-
-const defaultRoutes = [
-  "/",
-  "/product",
-  "/demo-calls",
-  "/examples",
-  "/pricing",
-  "/resources",
-  "/sign-up",
-  "/industries",
-  "/for/hvac",
-  "/for/plumbers",
-  "/integrations",
-  "/integrations/google-calendar",
-  "/integrations/jobber",
-  "/privacy",
-  "/terms",
-  "/call-handling-notice",
-  "/sms-terms",
-  "/dpa",
-]
 
 const viewports = [
   { name: "desktop", width: 1512, height: 982, deviceScaleFactor: 1, mobile: false },
@@ -42,7 +22,7 @@ function parseArgs(argv) {
     jsonOut: "",
     screenshotDir: defaultScreenshotDir,
     noScreenshots: false,
-    routes: defaultRoutes,
+    routes: customerFacingRoutes,
   }
 
   for (const arg of argv) {

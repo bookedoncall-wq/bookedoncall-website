@@ -4,6 +4,7 @@ import fs from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { assertBuildRoutes, getFreePort, requestText, startNextServer, waitForServer } from "./lib/next-production-verifier.mjs"
+import { customerFacingRoutes } from "./lib/customer-facing-routes.mjs"
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const contract = JSON.parse(fs.readFileSync(path.join(repoRoot, "config", "public-site-contract.json"), "utf8"))
@@ -232,7 +233,7 @@ async function runJourneyChecks(baseUrl) {
 
   const sitemapLocations = parseSitemapLocations(sitemapResponse.body)
   const routes = sitemapLocations.map(routeFromUrl)
-  for (const requiredRoute of Object.keys(criticalRouteExpectations)) {
+  for (const requiredRoute of customerFacingRoutes) {
     if (!routes.includes(requiredRoute)) {
       errors.push(`sitemap is missing critical journey route: ${requiredRoute}`)
     }

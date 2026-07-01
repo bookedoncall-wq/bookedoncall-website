@@ -3,6 +3,7 @@
 import fs from "node:fs"
 import { fileURLToPath } from "node:url"
 import path from "node:path"
+import { customerFacingRoutes } from "./lib/customer-facing-routes.mjs"
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 
@@ -166,51 +167,8 @@ if (!layoutSource.includes("StructuredData")) {
   errors.push("app/layout.tsx must emit structured data")
 }
 
-const customerFacingSitemapRoutes = [
-  "/",
-  "/product",
-  "/features",
-  "/how-it-works",
-  "/pricing",
-  "/login",
-  "/sign-up",
-  "/industries",
-  "/for/plumbers",
-  "/for/hvac",
-  "/for/electricians",
-  "/for/painters",
-  "/for/flooring",
-  "/for/landscaping",
-  "/for/roofing",
-  "/for/general-home-services",
-  "/integrations",
-  "/integrations/jobber",
-  "/integrations/google-calendar",
-  "/integrations/email",
-  "/integrations/text-sms",
-  "/integrations/quickbooks",
-  "/integrations/housecall-pro",
-  "/integrations/servicetitan",
-  "/resources",
-  "/demo-calls",
-  "/examples",
-  "/compare/ai-receptionist-vs-voicemail",
-  "/compare/missed-calls-for-home-service-businesses",
-  "/compare/answering-service-vs-receptionist-vs-ai-receptionist",
-  "/compare/after-hours-call-answering-for-hvac",
-  "/compare/after-hours-call-answering-for-plumbers",
-  "/faq",
-  "/about",
-  "/privacy",
-  "/terms",
-  "/call-handling-notice",
-  "/sms-terms",
-  "/dpa",
-  "/contact",
-]
-
 const sitemapSource = readText("app/sitemap.xml/route.ts")
-for (const route of customerFacingSitemapRoutes) {
+for (const route of customerFacingRoutes) {
   if (!sitemapSource.includes(`"${route}"`)) {
     errors.push(`app/sitemap.xml/route.ts must include customer-facing route: ${route}`)
   }
