@@ -57,7 +57,7 @@ export const faqEntries = [
   {
     question: "Can I try BookedOnCall before committing?",
     answer:
-      "There is no free trial right now, but you can review example call transcripts, try the live web voice demo, and place a setup review call before callers are sent to BookedOnCall. Public demos do not change your calendar or create real appointments."
+      "There is no free trial right now, but you can review example call transcripts, use the live web voice demo when it is available, and place a setup review call before callers are sent to BookedOnCall. Public demos do not change your calendar or create real appointments."
   },
   {
     question: "Is there a long-term contract?",
@@ -206,7 +206,7 @@ export const resourceHighlights = [
   {
     title: "Hear the call experience",
     href: "/demo-calls",
-    description: "Try the live web voice demo and review sample-shop conversations before callers hear your setup."
+    description: "Use the live web voice demo when it is available, then review sample-shop conversations before callers hear your setup."
   },
   {
     title: "Review example outcomes",

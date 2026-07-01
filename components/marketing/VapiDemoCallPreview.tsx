@@ -523,7 +523,7 @@ export function VapiDemoCallPreview() {
               Speak to a trades call assistant in your browser.
             </h2>
             <p className="text-base leading-8 text-slate-300">
-              Choose a sample shop, allow microphone access, and call about any service listed below. The public demo is rate-limited, time-limited, and does not create bookings, send texts, or change calendars.
+              When the live demo is available, choose a sample shop, allow microphone access, and call about any service listed below. The public demo is rate-limited, time-limited, and does not create bookings, send texts, or change calendars.
             </p>
           </div>
 

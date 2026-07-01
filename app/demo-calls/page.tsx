@@ -21,7 +21,7 @@ const demoStates = [
   {
     icon: Mic,
     title: "Try the live voice demo",
-    body: "Start the live web demo, choose a sample shop, and watch the transcript as you talk.",
+    body: "When the live web demo is available, choose a sample shop and watch the transcript as you talk.",
     status: "Voice demo",
   },
 ] as const
@@ -29,7 +29,7 @@ const demoStates = [
 export const metadata = buildPageMetadata({
   title: "Demo calls",
   description:
-    "Try BookedOnCall demo call paths with a live web voice demo, example transcripts, and setup call review.",
+    "Try BookedOnCall demo call paths with example transcripts, setup call review, and the live web voice demo when it is available.",
   path: "/demo-calls",
 })
 
@@ -41,14 +41,14 @@ export default function DemoCallsPage() {
         data={buildServiceSchema({
           name: "BookedOnCall demo calls",
           description:
-            "Demo call paths showing a live web voice demo, example transcripts, and setup call review.",
+            "Demo call paths showing example transcripts, setup call review, and the live web voice demo when it is available.",
           path: "/demo-calls",
         })}
       />
       <PageIntro
         eyebrow="Demo calls"
         title="Try the call flow before a customer hears it."
-        description="Start the live voice demo, review example transcripts, and place a setup review call before callers are sent to BookedOnCall."
+        description="Review example transcripts, use the live voice demo when it is available, and place a setup review call before callers are sent to BookedOnCall."
       />
 
       <VapiDemoCallPreview />
@@ -86,6 +86,7 @@ export default function DemoCallsPage() {
             <li>Your shop gets the caller name, callback number, address, issue, urgency, and next step.</li>
             <li>Booking requests stay inside the rules you reviewed during setup.</li>
             <li>Risky, out-of-area, or unclear calls come back for owner review instead of being forced.</li>
+            <li>Example calls and setup review stay available even when the live voice demo is temporarily unavailable.</li>
           </ul>
         </div>
       </section>

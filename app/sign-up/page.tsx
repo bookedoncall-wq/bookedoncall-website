@@ -142,7 +142,7 @@ export default function SignUpPage() {
             <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="mb-3 text-2xl font-black text-slate-950">Want to hear it first?</h2>
               <p className="text-base leading-7 text-slate-600">
-                Try the live web voice demo or review example calls before setup so you know what callers hear and what your team gets back.
+                Use the live web voice demo when it is available, or review example calls before setup so you know what callers hear and what your team gets back.
               </p>
               <div className="mt-5 grid gap-3">
                 <TrackedLink

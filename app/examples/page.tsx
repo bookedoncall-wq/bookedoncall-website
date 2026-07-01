@@ -525,7 +525,7 @@ const exampleCalls = [
 const nextSteps = [
   {
     title: "Try demo calls",
-    body: "Try the live web voice demo, then review your own call setup before callers are sent to BookedOnCall.",
+    body: "Use the live web voice demo when it is available, then review your own call setup before callers are sent to BookedOnCall.",
     href: "/demo-calls",
   },
   {
