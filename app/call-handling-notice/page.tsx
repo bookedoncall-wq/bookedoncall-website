@@ -48,6 +48,10 @@ export default function CallHandlingNoticePage() {
           Depending on the business&apos;s setup, the assistant may help request a callback, offer available appointment paths, route urgent
           items for owner review, or summarize the call for the business.
         </p>
+        <p>
+          If a caller prefers not to continue with the assistant, the business may configure BookedOnCall to take a message, request an
+          owner callback, or route the caller to another contact path selected by the business.
+        </p>
       </LegalSection>
 
       <LegalSection title="2. Recording, transcription, and summaries">

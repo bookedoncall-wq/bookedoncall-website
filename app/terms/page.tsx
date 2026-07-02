@@ -128,6 +128,10 @@ export default function TermsPage() {
           requests, holds, or owner-review items rather than confirmed jobs. Pricing guidance should be treated as an estimate or range
           unless your written setup clearly authorizes a specific quoted price for a specific service.
         </p>
+        <p>
+          When the Service is configured for owner review, callers should be told that a requested time, price, service-area fit, or next
+          step is not final until the business reviews and confirms it.
+        </p>
       </LegalSection>
 
       <LegalSection title="7. Text messages, email, and customer communications">

@@ -218,6 +218,11 @@ export default function PrivacyPage() {
           and how we can reach you. If applicable law gives you an appeal right after a request is denied, you may appeal by replying to
           the decision email or contacting the privacy email with &quot;Privacy Appeal&quot; in the subject line.
         </p>
+        <p>
+          A deletion, correction, or restriction request may be narrowed, delayed, or denied when a legal hold, security investigation,
+          billing dispute, required recordkeeping obligation, active service need, or other legal limit applies. When that happens, our
+          goal is to keep the retained scope as narrow as reasonably practical.
+        </p>
       </LegalSection>
 
       <LegalSection title="13. California, Colorado, and other state privacy notices">

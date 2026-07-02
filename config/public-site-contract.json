@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "brand": {
     "name": "BookedOnCall",
     "tagline": "AI phone assistant for trades businesses",
@@ -20,7 +20,7 @@
     "legalEmail": "bookedoncall@bookedoncall.com"
   },
   "legal": {
-    "lastUpdated": "2026-06-22",
+    "lastUpdated": "2026-07-02",
     "governingLaw": "Colorado",
     "venue": "Colorado"
   },

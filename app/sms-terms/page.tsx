@@ -55,6 +55,10 @@ export default function SmsTermsPage() {
           BookedOnCall is not designed to send unrelated marketing blasts through customer accounts. Customers may not use BookedOnCall to
           send spam, deceptive messages, or messages without required consent.
         </p>
+        <p>
+          Service-request texts are intended for the request, appointment, support, or account workflow involved. Marketing texts are off
+          by default unless a separate reviewed opt-in flow is enabled.
+        </p>
       </LegalSection>
 
       <LegalSection title="3. Consent and customer responsibility">

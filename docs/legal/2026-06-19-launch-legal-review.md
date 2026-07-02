@@ -1,8 +1,10 @@
 # BookedOnCall Launch Legal Review Packet
 
-Date: 2026-06-22
+Date: 2026-07-02
 
 Status: counsel-review draft. This packet is drafting support for outside counsel and operator planning. It is not legal advice and does not prove legal compliance, outside-counsel approval, provider readiness, production readiness, customer-data readiness, billing readiness, live voice readiness, or launch readiness.
+
+2026-07-02 refresh: public legal pages were aligned with the V2 launch legal template pack around owner-approved booking defaults, caller fallback/message paths, SMS service-request scope, marketing-off-by-default posture, legal-hold/deletion exceptions, and the public last-updated date. Legal approval remains pending and separate.
 
 ## Executive Summary
 

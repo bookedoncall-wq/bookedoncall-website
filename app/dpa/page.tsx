@@ -197,6 +197,11 @@ export default function DpaPage() {
           control according to the customer agreement, unless retention is required by law, necessary for security or audit purposes,
           needed to resolve disputes, or maintained in backups or archives subject to ordinary retention and access controls.
         </p>
+        <p>
+          Deletion or return may be paused or narrowed when a legal hold, security investigation, billing dispute, required recordkeeping
+          obligation, or other lawful exception applies. BookedOnCall will keep retained data limited to the scope reasonably needed for
+          that exception.
+        </p>
       </LegalSection>
 
       <LegalSection title="13. Audit and information rights">
