@@ -265,6 +265,7 @@ if (/\b\d{3}-555-\d{4}\b/.test(examplesSource)) {
 }
 for (const requiredExamplesGuard of [
   "Decision path",
+  "See decision paths",
   "View sample conversation",
   "callback number captured",
 ]) {

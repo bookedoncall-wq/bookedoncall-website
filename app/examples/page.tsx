@@ -587,6 +587,24 @@ export default function ExamplesPage() {
               <p className="max-w-3xl text-sm leading-7 text-slate-300 sm:text-lg sm:leading-8">
                 One best showcase per supported trade: emergency escalation, direct booking when rules allow, owner review, route review, measured estimates, and clean callbacks.
               </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <TrackedLink
+                  href="#hvac-no-heat-after-hours"
+                  eventName="marketing_cta_clicked"
+                  eventPayload={{ placement: "examples_hero", href: "#hvac-no-heat-after-hours" }}
+                  className="inline-flex min-h-11 items-center justify-center rounded-lg bg-amber-400 px-4 py-3 text-sm font-black text-slate-950 transition hover:bg-amber-300"
+                >
+                  See decision paths
+                </TrackedLink>
+                <TrackedLink
+                  href="/sign-up?plan=starter&source=examples-hero#lead-form"
+                  eventName="marketing_cta_clicked"
+                  eventPayload={{ placement: "examples_hero", href: "/sign-up?plan=starter&source=examples-hero#lead-form" }}
+                  className="inline-flex min-h-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.06] px-4 py-3 text-sm font-black text-white transition hover:border-white/30 hover:bg-white/[0.1]"
+                >
+                  Start setup
+                </TrackedLink>
+              </div>
               <p className="rounded-lg border border-white/10 bg-white/[0.04] p-3 text-sm font-semibold leading-6 text-amber-100 sm:p-4 lg:hidden">
                 Assumes setup is reviewed: services, coverage, scheduling permissions, alerts, and follow-up rules are in place.
               </p>
